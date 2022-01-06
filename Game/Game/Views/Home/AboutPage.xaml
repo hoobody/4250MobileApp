@@ -19,7 +19,7 @@
 
                 <Image Source="d20_2.png" Style="{StaticResource ImageMediumStyle}"/>
                 <Label Text="Trijecta" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Jesse McQuillan, Jonathan Doan, Jacob Charbonneau" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Label Text="Jesse McQuillan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
             </StackLayout>
 
