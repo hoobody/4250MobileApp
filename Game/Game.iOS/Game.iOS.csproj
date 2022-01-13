@@ -307,4 +307,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\troll3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\silenced_pistol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sniper.png" />
+  </ItemGroup>
 </Project>

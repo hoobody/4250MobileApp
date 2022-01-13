@@ -16,22 +16,22 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "Gold Sword",
-                    Description = "Sword made of Gold, really expensive looking",
-                    ImageURI = "sword1.png",
-                    Range = 0,
+                    Name = "Silenced Pistol",
+                    Description = "You can never be too quiet",
+                    ImageURI = "silenced_pistol.png",
+                    Range = 5,
                     Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
+                    Value = 3,
+                    Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Pirate Sword",
-                    Description = "Aye matie",
-                    ImageURI = "sword2.png",
-                    Range = 0,
+                    Name = "Sniper",
+                    Description = "Range is your friend",
+                    ImageURI = "sniper.png",
+                    Range = 10,
                     Damage = 8,
-                    Value = 9,
+                    Value = 8,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack},
 
