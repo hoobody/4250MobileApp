@@ -22,18 +22,18 @@
                 Dark
                 -->
 
-            <Color x:Key="PageBackgroundColor">Pink</Color>
-            <Color x:Key="ViewBackgroundColor">green</Color>
-            <Color x:Key="NavigationBarColor">orange</Color>
+            <Color x:Key="PageBackgroundColor">#666666</Color>
+            <Color x:Key="ViewBackgroundColor">#161420</Color>
+            <Color x:Key="NavigationBarColor">#3c4d54</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">red</Color>
-            <Color x:Key="SecondaryBackgroundColor">gray</Color>
+            <Color x:Key="PrimaryBackgroundColor">#696969</Color>
+            <Color x:Key="SecondaryBackgroundColor">#817C9A</Color>
             <Color x:Key="TriciaryBackgroundColor">lightgray</Color>
             <Color x:Key="LightBackgroundColor">orange</Color>
 
-            <Color x:Key="PrimaryTextColor">lightblue</Color>
-            <Color x:Key="SecondaryTextColor">darkblue</Color>
-            <Color x:Key="TriciaryTextColor">darkgreen</Color>
+            <Color x:Key="PrimaryTextColor">#f0f8ff</Color>
+            <Color x:Key="SecondaryTextColor">#f0f8ff</Color>
+            <Color x:Key="TriciaryTextColor"> #f0f8ff</Color>
 
             <Color x:Key="TransparentColor">Transparent</Color>
 
@@ -48,11 +48,11 @@
 
             <!-- Battle Map Colors for Backgrounds -->
             <Color x:Key="BattleMapTransparentColor">Transparent</Color>
-            <Color x:Key="BattleMapCharacterColor">purple</Color>
+            <Color x:Key="BattleMapCharacterColor">#745D97</Color>
             <Color x:Key="BattleMapMonsterColor">lavender</Color>
             <Color x:Key="BattleMapDeathColor">lightgreen</Color>
             <Color x:Key="BattleMapHitColor">darkorange</Color>
-            <Color x:Key="BattleMapMissColor">darkred</Color>
+            <Color x:Key="BattleMapMissColor">#7A4156</Color>
             <Color x:Key="BattleMapLevelColor">skyblue</Color>
 
             <!-- <Thickness x:Key="PageMargin">0</Thickness> -->
