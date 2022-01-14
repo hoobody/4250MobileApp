@@ -20,8 +20,8 @@ namespace Game.GameRules
                     Description = "You can never be too quiet",
                     ImageURI = "silenced_pistol.png",
                     Range = 5,
-                    Damage = 10,
-                    Value = 10,
+                    Damage = 3,
+                    Value = 3,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack},
 
