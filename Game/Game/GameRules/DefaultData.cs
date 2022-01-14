@@ -21,7 +21,7 @@ namespace Game.GameRules
                     ImageURI = "silenced_pistol.png",
                     Range = 5,
                     Damage = 10,
-                    Value = 3,
+                    Value = 10,
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack},
 
