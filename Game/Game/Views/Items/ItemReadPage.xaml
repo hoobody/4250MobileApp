@@ -13,83 +13,218 @@
     </ContentPage.ToolbarItems>
 
 
-    <Grid>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10"
-            HorizontalOptions="Center">
+        <Grid>
             
+            <StackLayout 
+                Style="{StaticResource VerticalStack}"
+                HorizontalOptions="Center"
+                WidthRequest="250"
+                Spacing="10">
+              
+                <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+
+                <StackLayout>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
+                           HorizontalOptions="Center"
+                           BackgroundColor="DarkGray"
+                           />
+                    
+                </StackLayout>
+
+                <StackLayout BackgroundColor="Gray">
+
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HeightRequest="35"
+                                 Spacing="5"
+                                 >
+                        
+                        <Label 
+                            Text="Name :" 
+                            Style="{StaticResource LabelStyle}"
+                            />
+                        <Label 
+                            BackgroundColor="DimGray"
+                            Text="{Binding Data.Name}" 
+                            Style="{StaticResource ValueStyle}"
+                            />
+                        
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HeightRequest="35"
+                                 Spacing="5"
+                                 >
+                        
+                        <Label 
+                            Text="Description : " 
+                            Style="{StaticResource LabelStyle}"
+                        />
+                        
+                        <Label 
+                            BackgroundColor="DimGray"
+                            Text="{Binding Data.Description}" 
+                            Style="{StaticResource ValueStyle}"
+                        />
+                        
+                    </StackLayout>
+                
+                </StackLayout>
+
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="Center"
+                         BackgroundColor="Gray"
+                         HeightRequest="75"
+                         >
+
+                <StackLayout WidthRequest="127">
+                    
+                    <StackLayout BackgroundColor="DimGray" 
+                                 Style="{StaticResource VerticalStack}" 
+                                 VerticalOptions="CenterAndExpand" 
+                                 HorizontalOptions="Center" 
+                                 HeightRequest="65"
+                                 WidthRequest="100"
+                                 >
+
+                        <Label 
+                            Text="Location : " 
+                            HorizontalOptions="Center"
+                            HeightRequest="37"
+                            Style="{StaticResource LabelStyle}"
+                        />
+                        
+                        <Label 
+                            Text="{Binding Data.Location}" 
+                            HorizontalOptions="Center"
+                            FontAttributes="Bold"
+                            Style="{StaticResource ValueStyle}"
+                        />
+                        
+                    </StackLayout>
+                    
+                </StackLayout>
+
+
+                <StackLayout WidthRequest="127">
+                    
+                    <StackLayout BackgroundColor="DimGray" 
+                                 Style="{StaticResource VerticalStack}" 
+                                 VerticalOptions="CenterAndExpand" 
+                                 HorizontalOptions="Center" 
+                                 HeightRequest="65"
+                                 WidthRequest="100"
+                                 >
+                        
+                    <Label 
+                        Text="Attribute : " 
+                        HorizontalOptions="Center"
+                        HeightRequest="37"
+                        Style="{StaticResource LabelStyle}"
+                        />
+                        
+                    <Label 
+                        Text="{Binding Data.Attribute}" 
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"
+                        />
+                        
+                    </StackLayout>
+                    
+                </StackLayout>
+
+            </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             Spacing="50"
+                             HorizontalOptions="CenterAndExpand"
+                             >
+
+
+                    <Label 
+                        Text="Range"
+                        HeightRequest="43"
+                        Style="{StaticResource LabelStyle}"
+                        />
+
+
+                    <StackLayout WidthRequest="51">
+
+                        <Label 
+                                
+                                WidthRequest="45"
+                                HeightRequest="45"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                BackgroundColor="RosyBrown"
+                                FontAttributes ="Bold"
+                                Text="{Binding Data.Range}" 
+                                Style="{StaticResource ValueStyle}"
+                                />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                         HorizontalOptions="CenterAndExpand"
+                         Spacing="50"
+                         >
+                
+                    <Label 
+                        Text="Value" 
+                        HeightRequest="43"
+                        Style="{StaticResource LabelStyle}"
+                        />
+
+                    <StackLayout>  
+                        
+                        <Label 
+                        
+                            WidthRequest="45"
+                            HeightRequest="45"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            BackgroundColor="RosyBrown"
+                            FontAttributes ="Bold"
+                            Text="{Binding Data.Value}" 
+                            Style="{StaticResource ValueStyle}"
+                            />
+                        
+                    </StackLayout>
+                
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HorizontalOptions="Center"
+                                 Spacing="50"
+                                 >
+
+                    <Label 
+                            Text="Damage" 
+                            HeightRequest="43"
+                            Style="{StaticResource LabelStyle}"
+                            />
+
+                    <StackLayout WidthRequest="57">
+
+                        <Label 
+                                WidthRequest="45"
+                                HeightRequest="45"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                BackgroundColor="RosyBrown"
+                                FontAttributes="Bold"
+                                Text="{Binding Data.Damage}" 
+                                Style="{StaticResource ValueStyle}"
+                                />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
             
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
-
-            <StackLayout>
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
-                       HorizontalOptions="Center"
-                       BackgroundColor="DarkGray"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                   Text="Name : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Location : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Location}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Attribute : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Attribute}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Range : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Value : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Value}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Damage : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Damage}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
-        </StackLayout>
-    </Grid>
+        </Grid>
+    
 </ContentPage>
