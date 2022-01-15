@@ -15,11 +15,17 @@
 
     <Grid>
         <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10">
-
+            Spacing="10"
+            HorizontalOptions="Center">
+            
+            
             <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <StackLayout>
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
+                       HorizontalOptions="Center"
+                       BackgroundColor="DarkGray"/>
+            </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
