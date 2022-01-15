@@ -21,12 +21,16 @@
                 WidthRequest="300"
                 Spacing="10">
               
-                <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+                <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
+                       HorizontalOptions="Center"
+                       />
 
                 <StackLayout>
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
                            HorizontalOptions="Center"
-                           BackgroundColor="DarkGray"
+                           BackgroundColor="Transparent"
+                           WidthRequest="150"
+                           HeightRequest="150"
                            />
                     
                 </StackLayout>
@@ -39,7 +43,7 @@
                                  >
                         
                         <Label 
-                            Text="Name :" 
+                            Text=" Name :" 
                             Style="{StaticResource LabelStyle}"
                             />
                         <Label 
@@ -56,7 +60,7 @@
                                  >
                         
                         <Label 
-                            Text="Description : " 
+                            Text=" Description : " 
                             Style="{StaticResource LabelStyle}"
                         />
                         
@@ -72,19 +76,19 @@
 
             <StackLayout Style ="{StaticResource HorizontalStack}" 
                          BackgroundColor="Gray"
-                         HeightRequest="80"
+                         HeightRequest="85"
                          Spacing="-10"
                          WidthRequest="300"
                          >
 
-                <StackLayout WidthRequest="164">
+                <StackLayout WidthRequest="160">
                     
                     <StackLayout BackgroundColor="DimGray" 
                                  Style="{StaticResource VerticalStack}" 
                                  VerticalOptions="CenterAndExpand" 
                                  HorizontalOptions="Center" 
-                                 HeightRequest="65"
-                                 WidthRequest="120"
+                                 HeightRequest="70"
+                                 WidthRequest="140"
                                  >
 
                         <Label 
@@ -106,14 +110,14 @@
                 </StackLayout>
 
 
-                <StackLayout WidthRequest="130">
+                <StackLayout WidthRequest="160">
                     
                     <StackLayout BackgroundColor="DimGray" 
                                  Style="{StaticResource VerticalStack}" 
                                  VerticalOptions="CenterAndExpand" 
                                  HorizontalOptions="Center" 
-                                 HeightRequest="65"
-                                 WidthRequest="120"
+                                 HeightRequest="70"
+                                 WidthRequest="140"
                                  >
                         
                     <Label 
@@ -190,7 +194,7 @@
                     <Label 
                         Text="Damage" 
                         HeightRequest="43"
-                        WidthRequest="100"
+                        WidthRequest="102"
                         Style="{StaticResource LabelStyle}"
                         />
 
