@@ -13,7 +13,7 @@
     </ContentPage.ToolbarItems>
 
 
-    <StackLayout>
+    <Grid>
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
@@ -85,5 +85,5 @@
             </StackLayout>
 
         </StackLayout>
-    </StackLayout>
+    </Grid>
 </ContentPage>
