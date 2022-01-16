@@ -23,16 +23,14 @@
               
                 <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
                        FontSize="Medium"
-                       HorizontalOptions="Center"
-                       />
+                       HorizontalOptions="Center"/>
 
                 <StackLayout>
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
                            HorizontalOptions="Center"
                            BackgroundColor="Transparent"
                            WidthRequest="150"
-                           HeightRequest="150"
-                           />
+                           HeightRequest="150"/>
                     
                 </StackLayout>
 
@@ -40,39 +38,34 @@
 
                     <StackLayout Style="{StaticResource HorizontalStack}"
                                  HeightRequest="40"
-                                 Spacing="5"
-                                 >
+                                 Spacing="5">
                         
                         <Label 
                             Text=" Name :" 
                             FontSize="17"
-                            Style="{StaticResource LabelStyle}"
-                            />
+                            Style="{StaticResource LabelStyle}"/>
+                        
                         <Label 
                             BackgroundColor="DimGray"
                             HeightRequest="25"
                             Text="{Binding Data.Name}" 
-                            Style="{StaticResource ValueStyle}"
-                            />
+                            Style="{StaticResource ValueStyle}"/>
                         
                     </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}"
                                  HeightRequest="35"
-                                 Spacing="5"
-                                 >
+                                 Spacing="5">
                         
                         <Label 
                             Text=" Description : "
                             FontSize="17"
-                            Style="{StaticResource LabelStyle}"
-                        />
+                            Style="{StaticResource LabelStyle}"/>
                         
                         <Label 
                             BackgroundColor="DimGray"
                             Text="{Binding Data.Description}" 
-                            Style="{StaticResource ValueStyle}"
-                        />
+                            Style="{StaticResource ValueStyle}"/>
                         
                     </StackLayout>
                 
@@ -82,8 +75,7 @@
                          BackgroundColor="Gray"
                          HeightRequest="85"
                          Spacing="-10"
-                         WidthRequest="300"
-                         >
+                         WidthRequest="300">
 
                 <StackLayout WidthRequest="160">
                     
@@ -92,22 +84,19 @@
                                  VerticalOptions="CenterAndExpand" 
                                  HorizontalOptions="Center" 
                                  HeightRequest="70"
-                                 WidthRequest="140"
-                                 >
+                                 WidthRequest="140">
 
                         <Label 
                             Text="Location : " 
                             HorizontalOptions="Center"
                             HeightRequest="37"
-                            Style="{StaticResource LabelStyle}"
-                        />
+                            Style="{StaticResource LabelStyle}"/>
                         
                         <Label 
                             Text="{Binding Data.Location}" 
                             HorizontalOptions="Center"
                             FontAttributes="Bold"
-                            Style="{StaticResource ValueStyle}"
-                        />
+                            Style="{StaticResource ValueStyle}"/>
                         
                     </StackLayout>
                     
@@ -121,22 +110,19 @@
                                  VerticalOptions="CenterAndExpand" 
                                  HorizontalOptions="Center" 
                                  HeightRequest="70"
-                                 WidthRequest="140"
-                                 >
+                                 WidthRequest="140">
                         
                     <Label 
                         Text="Attribute : " 
                         HorizontalOptions="Center"
                         HeightRequest="37"
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Style="{StaticResource LabelStyle}"/>
                         
                     <Label 
                         Text="{Binding Data.Attribute}" 
                         HorizontalOptions="Center"
                         FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"
-                        />
+                        Style="{StaticResource ValueStyle}"/>
                         
                     </StackLayout>
                     
@@ -145,8 +131,7 @@
             </StackLayout>
 
                 <StackLayout Orientation ="Horizontal"
-                             HorizontalOptions="CenterAndExpand"
-                             >
+                             HorizontalOptions="CenterAndExpand">
 
 
                     <Label 
@@ -154,8 +139,7 @@
                         FontSize="20"
                         HeightRequest="43"
                         WidthRequest="104"
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Style="{StaticResource LabelStyle}"/>
 
                     <Label       
                         WidthRequest="45"
@@ -165,22 +149,19 @@
                         BackgroundColor="RosyBrown"
                         FontAttributes ="Bold"
                         Text="{Binding Data.Range}" 
-                        Style="{StaticResource ValueStyle}"
-                        />
+                        Style="{StaticResource ValueStyle}"/>
 
             </StackLayout>
 
                 <StackLayout HorizontalOptions="CenterAndExpand"
-                             Orientation="Horizontal"
-                             >
+                             Orientation="Horizontal">
 
                     <Label 
                         Text="Value" 
                         FontSize="20"
                         HeightRequest="43"
                         WidthRequest="104"
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         WidthRequest="45"
@@ -190,8 +171,7 @@
                         BackgroundColor="RosyBrown"
                         FontAttributes ="Bold"
                         Text="{Binding Data.Value}" 
-                        Style="{StaticResource ValueStyle}"
-                        />
+                        Style="{StaticResource ValueStyle}"/>
 
                 </StackLayout>
 
@@ -202,8 +182,7 @@
                         FontSize="20"
                         HeightRequest="43"
                         WidthRequest="102"
-                        Style="{StaticResource LabelStyle}"
-                        />
+                        Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         WidthRequest="45"
@@ -213,8 +192,7 @@
                         BackgroundColor="RosyBrown"
                         FontAttributes="Bold"
                         Text="{Binding Data.Damage}" 
-                        Style="{StaticResource ValueStyle}"
-                        />
+                        Style="{StaticResource ValueStyle}"/>
                     
                 </StackLayout>
 
