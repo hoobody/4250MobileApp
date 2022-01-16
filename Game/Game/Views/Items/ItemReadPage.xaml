@@ -22,6 +22,7 @@
                 Spacing="10">
               
                 <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
+                       FontSize="Medium"
                        HorizontalOptions="Center"
                        />
 
@@ -38,16 +39,18 @@
                 <StackLayout BackgroundColor="Gray">
 
                     <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HeightRequest="35"
+                                 HeightRequest="40"
                                  Spacing="5"
                                  >
                         
                         <Label 
                             Text=" Name :" 
+                            FontSize="17"
                             Style="{StaticResource LabelStyle}"
                             />
                         <Label 
                             BackgroundColor="DimGray"
+                            HeightRequest="25"
                             Text="{Binding Data.Name}" 
                             Style="{StaticResource ValueStyle}"
                             />
@@ -60,7 +63,8 @@
                                  >
                         
                         <Label 
-                            Text=" Description : " 
+                            Text=" Description : "
+                            FontSize="17"
                             Style="{StaticResource LabelStyle}"
                         />
                         
@@ -147,6 +151,7 @@
 
                     <Label 
                         Text="Range"
+                        FontSize="20"
                         HeightRequest="43"
                         WidthRequest="104"
                         Style="{StaticResource LabelStyle}"
@@ -171,6 +176,7 @@
 
                     <Label 
                         Text="Value" 
+                        FontSize="20"
                         HeightRequest="43"
                         WidthRequest="104"
                         Style="{StaticResource LabelStyle}"
@@ -193,6 +199,7 @@
                              Orientation="Horizontal">
                     <Label 
                         Text="Damage" 
+                        FontSize="20"
                         HeightRequest="43"
                         WidthRequest="102"
                         Style="{StaticResource LabelStyle}"
