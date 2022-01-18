@@ -69,7 +69,7 @@
                          HeightRequest="85"
                          Spacing="-15"
                          WidthRequest="300">
-                
+
                 <StackLayout WidthRequest="160">
 
                     <StackLayout BackgroundColor="DimGray"
@@ -89,7 +89,7 @@
                             x:Name="LocationPicker"/>
 
                     </StackLayout>
-                    
+
                 </StackLayout>
 
                 <StackLayout WidthRequest="160">
@@ -115,25 +115,6 @@
                 </StackLayout>
 
             </StackLayout>
-            
-
-            <Grid
-                RowSpacing="1"
-                ColumnSpacing="2"
-                VerticalOptions="Center">
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-
-
-                <Label Grid.Row="4" Grid.Column="0"
-                    Text="Image" 
-                    Style="{StaticResource LabelStyle}"/>
-            </Grid>
 
             <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
