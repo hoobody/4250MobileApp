@@ -37,7 +37,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}"
                              HeightRequest="40"
                              Spacing="5">
-
+                    
                     <Label 
                         Text="Name" 
                         Style="{StaticResource LabelStyle}"/>
@@ -48,14 +48,20 @@
                     
                 </StackLayout>
 
-                <Label Grid.Row="1" Grid.Column="0"
-                    Text="Description" 
-                    Style="{StaticResource LabelStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                             HeightRequest="40"
+                             Spacing="5">
+                    
+                    <Label
+                        Text="Description" 
+                        Style="{StaticResource LabelStyle}"/>
 
-                <Entry Grid.Row="1" Grid.Column="1"
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource EntryStyle}"/>
-
+                    <Entry 
+                        Text="{Binding Data.Description}" 
+                        Style="{StaticResource EntryStyle}"/>
+                    
+                </StackLayout>
+                
             </StackLayout>
 
             <Grid
