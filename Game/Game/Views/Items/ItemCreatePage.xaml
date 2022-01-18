@@ -22,7 +22,7 @@
     </ContentPage.Resources>
 
     <Grid>
-        
+
         <StackLayout Style="{StaticResource VerticalStack}"
             HorizontalOptions="Center"
             WidthRequest="300"
@@ -34,13 +34,19 @@
 
             <StackLayout BackgroundColor="#7b7b7b">
 
-                <Label 
-                    Text="Name" 
-                    Style="{StaticResource LabelStyle}"/>
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                             HeightRequest="40"
+                             Spacing="5">
 
-                <Entry
-                    Text="{Binding Data.Name}" 
-                    Style="{StaticResource EntryStyle}"/>
+                    <Label 
+                        Text="Name" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource EntryStyle}"/>
+                    
+                </StackLayout>
 
                 <Label Grid.Row="1" Grid.Column="0"
                     Text="Description" 
