@@ -116,19 +116,20 @@
 
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+            <StackLayout Style="{StaticResource VerticalStack}" 
+                         HorizontalOptions="Center">
 
-                <Label 
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions="CenterAndExpand">
+
+                    <Label 
                             Text="Range" 
                             Style="{StaticResource LabelStyle}"/>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
+                    
                     <Label 
                             Text="{Binding Data.Range}" 
                             x:Name="RangeValue"
                             Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
@@ -138,17 +139,17 @@
 
                 </StackLayout>
 
-                <Label 
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions="CenterAndExpand">
+
+                    <Label 
                         Text="Value"
                         Style="{StaticResource LabelStyle}"/>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                     <Label 
                             Text="{Binding Data.Value}" 
                             x:Name="ValueValue"
                             Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
@@ -158,17 +159,17 @@
 
                 </StackLayout>
 
-                <Label 
+                <StackLayout Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions="CenterAndExpand">
+
+                    <Label 
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
+                    
                     <Label 
                             Text="{Binding Data.Damage}" 
                             x:Name="DamageValue"
                             Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
