@@ -116,19 +116,6 @@
 
             </StackLayout>
 
-            <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-
-                    <Image 
-                        Source="{Binding Data.ImageURI}"
-                        Style="{StaticResource ImageSmallStyle}"/>
-
-                    <Entry 
-                        Text="{Binding Data.ImageURI}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-            </StackLayout>
-
-
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
                 <Label 
