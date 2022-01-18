@@ -24,7 +24,7 @@
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout BackgroundColor="Gray">
+            <StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
                                  HeightRequest="40"
@@ -32,27 +32,26 @@
 
                     <Label 
                             Text=" Name :" 
-                            FontSize="17"
+                            FontSize="16"
                             Style="{StaticResource LabelStyle}"/>
                     <Label 
-                            BackgroundColor="DimGray"
-                            HeightRequest="25"
+                            BackgroundColor="#838383"
                             Text="{Binding Data.Name}" 
                             Style="{StaticResource ValueStyle}"/>
 
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HeightRequest="35"
+                                 HeightRequest="25"
                                  Spacing="5">
 
                     <Label 
                             Text=" Description : "
-                            FontSize="17"
+                            FontSize="16"
                             Style="{StaticResource LabelStyle}"/>
 
                     <Label 
-                            BackgroundColor="DimGray"
+                            BackgroundColor="#838383"
                             Text="{Binding Data.Description}" 
                             Style="{StaticResource ValueStyle}"/>
 
