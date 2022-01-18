@@ -22,7 +22,11 @@
                    HorizontalOptions="Center"
                    FontSize="Medium"/>
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
+                           HorizontalOptions="Center"
+                           WidthRequest="150"
+                           HeightRequest="150"/>
+
 
             <StackLayout>
 
