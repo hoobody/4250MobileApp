@@ -30,80 +30,90 @@
                 <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+            
+            <StackLayout BackgroundColor="#7b7b7b">
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                <Label 
+                    Text="Name" 
+                    Style="{StaticResource LabelStyle}"/>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                <Entry
+                    Text="{Binding Data.Name}" 
+                    Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+
+            </StackLayout>
+            
+            
+            
+     
+            <Grid
+                RowSpacing="1"
+                ColumnSpacing="2"
+                VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                
+
+                <Label Grid.Row="1" Grid.Column="0"
+                    Text="Description" 
+                    Style="{StaticResource LabelStyle}"/>
                     
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
+                <Entry Grid.Row="1" Grid.Column="1"
+                    Text="{Binding Data.Description}" 
+                    Style="{StaticResource EntryStyle}"/>
+
+                <Label Grid.Row="2" Grid.Column="0"
+                    Text="Location" 
+                    Style="{StaticResource LabelStyle}"/>
+
+                <Picker Grid.Row="2" Grid.Column="1"
+                    ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
+                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                    x:Name="LocationPicker"/>
+
+                <Label Grid.Row="3" Grid.Column="0"
+                    Text="Attribute" 
+                    Style="{StaticResource LabelStyle}"/>
+
+                <Picker Grid.Row="3" Grid.Column="1"
+                    ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
+                    SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                    x:Name="AttributePicker"/>
+
+                <Label Grid.Row="4" Grid.Column="0"
+                    Text="Image" 
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
+
+            <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+
+                    <Image 
+                        Source="{Binding Data.ImageURI}"
+                        Style="{StaticResource ImageSmallStyle}"/>
+
+                    <Entry 
+                        Text="{Binding Data.ImageURI}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Location" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"/>
-
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Attribute" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Picker Grid.Row="3" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="AttributePicker"/>
-
-                    <Label Grid.Row="4" Grid.Column="0"
-                        Text="Image" 
-                        Style="{StaticResource LabelStyle}"/>
-                </Grid>
-
-                <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
-
-                        <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                        <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
-
-                </StackLayout>
+            </StackLayout>
 
 
-                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
-                    <Label 
+                <Label 
                             Text="Range" 
                             Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
-                        <Label 
+                    <Label 
                             Text="{Binding Data.Range}" 
                             x:Name="RangeValue"
                             Style="{StaticResource ValueStyle}"
@@ -111,19 +121,19 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
+                    <Stepper 
                             Value="{Binding Data.Range, Mode=TwoWay}"
                             ValueChanged="Range_OnStepperValueChanged"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <Label 
+                <Label 
                         Text="Value"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
-                        <Label 
+                    <Label 
                             Text="{Binding Data.Value}" 
                             x:Name="ValueValue"
                             Style="{StaticResource ValueStyle}"
@@ -131,19 +141,19 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
+                    <Stepper 
                             Value="{Binding Data.Value, Mode=TwoWay}"
                             ValueChanged="Value_OnStepperValueChanged"/>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <Label 
+                <Label 
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
-                        <Label 
+                    <Label 
                             Text="{Binding Data.Damage}" 
                             x:Name="DamageValue"
                             Style="{StaticResource ValueStyle}"
@@ -151,12 +161,14 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                        <Stepper 
+                    <Stepper 
                             Value="{Binding Data.Damage, Mode=TwoWay}"
                             ValueChanged="Damage_OnStepperValueChanged"/>
 
-                    </StackLayout>
                 </StackLayout>
             </StackLayout>
-        </Grid>
+        
+            
+        </StackLayout>
+    </Grid>
 </ContentPage>
