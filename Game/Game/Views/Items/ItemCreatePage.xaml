@@ -22,6 +22,7 @@
     </ContentPage.Resources>
 
     <Grid>
+        
         <StackLayout Style="{StaticResource VerticalStack}"
             HorizontalOptions="Center"
             WidthRequest="300"
@@ -30,7 +31,7 @@
                 <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
-            
+
             <StackLayout BackgroundColor="#7b7b7b">
 
                 <Label 
@@ -41,12 +42,16 @@
                     Text="{Binding Data.Name}" 
                     Style="{StaticResource EntryStyle}"/>
 
+                <Label Grid.Row="1" Grid.Column="0"
+                    Text="Description" 
+                    Style="{StaticResource LabelStyle}"/>
+
+                <Entry Grid.Row="1" Grid.Column="1"
+                    Text="{Binding Data.Description}" 
+                    Style="{StaticResource EntryStyle}"/>
 
             </StackLayout>
-            
-            
-            
-     
+
             <Grid
                 RowSpacing="1"
                 ColumnSpacing="2"
@@ -58,16 +63,6 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
-
-                
-
-                <Label Grid.Row="1" Grid.Column="0"
-                    Text="Description" 
-                    Style="{StaticResource LabelStyle}"/>
-                    
-                <Entry Grid.Row="1" Grid.Column="1"
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource EntryStyle}"/>
 
                 <Label Grid.Row="2" Grid.Column="0"
                     Text="Location" 
@@ -166,9 +161,11 @@
                             ValueChanged="Damage_OnStepperValueChanged"/>
 
                 </StackLayout>
+                
             </StackLayout>
-        
             
         </StackLayout>
+        
     </Grid>
+    
 </ContentPage>
