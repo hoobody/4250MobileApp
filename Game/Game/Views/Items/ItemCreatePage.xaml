@@ -35,29 +35,29 @@
             <StackLayout BackgroundColor="#7b7b7b">
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                             HeightRequest="40"
-                             Spacing="5">
+                        HeightRequest="40"
+                        Spacing="5">
                     
-                    <Label 
-                        Text="Name" 
+                    <Label Text="Name"
+                        FontSize="16"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry
-                        Text="{Binding Data.Name}" 
+                    <Entry Text="{Binding Data.Name}" 
+                        BackgroundColor="#505050"
                         Style="{StaticResource EntryStyle}"/>
                     
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                             HeightRequest="40"
-                             Spacing="5">
+                        HeightRequest="40"
+                        Spacing="5">
                     
-                    <Label
-                        Text="Description" 
+                    <Label Text="Description" 
+                        FontSize="16"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Entry 
-                        Text="{Binding Data.Description}" 
+                    <Entry Text="{Binding Data.Description}" 
+                        BackgroundColor="#505050"
                         Style="{StaticResource EntryStyle}"/>
                     
                 </StackLayout>
