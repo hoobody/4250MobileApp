@@ -21,10 +21,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <ContentPage.Content>
-
-        <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
+    <Grid>
+        <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
                 <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
@@ -80,8 +78,9 @@
                     <Label Grid.Row="4" Grid.Column="0"
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
+                </Grid>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                         <Image 
                             Source="{Binding Data.ImageURI}"
@@ -91,12 +90,12 @@
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
 
-                    </StackLayout>
-                </Grid>
+                </StackLayout>
 
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
-                        <Label 
+                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+
+                    <Label 
                             Text="Range" 
                             Style="{StaticResource LabelStyle}"/>
 
@@ -109,11 +108,11 @@
                             Padding="0,0,10,0"
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
-                    
+
                         <Stepper 
                             Value="{Binding Data.Range, Mode=TwoWay}"
                             ValueChanged="Range_OnStepperValueChanged"/>
-                        
+
                     </StackLayout>
 
                     <Label 
@@ -121,7 +120,7 @@
                         Style="{StaticResource LabelStyle}"/>
 
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
+
                         <Label 
                             Text="{Binding Data.Value}" 
                             x:Name="ValueValue"
@@ -139,7 +138,7 @@
                     <Label 
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
-                    
+
                     <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
                         <Label 
@@ -153,10 +152,9 @@
                         <Stepper 
                             Value="{Binding Data.Damage, Mode=TwoWay}"
                             ValueChanged="Damage_OnStepperValueChanged"/>
-                    
+
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+        </Grid>
 </ContentPage>
