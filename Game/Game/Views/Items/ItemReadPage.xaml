@@ -34,45 +34,43 @@
                     
                 </StackLayout>
 
-                <StackLayout BackgroundColor="Gray">
+            <StackLayout BackgroundColor="#7b7b7b">
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
+                <StackLayout Style="{StaticResource HorizontalStack}"
                                  HeightRequest="40"
                                  Spacing="5">
-                        
-                        <Label 
+
+                    <Label 
                             Text=" Name :" 
-                            FontSize="17"
+                            FontSize="16"
                             Style="{StaticResource LabelStyle}"/>
-                        
-                        <Label 
-                            BackgroundColor="DimGray"
-                            HeightRequest="25"
+                    <Label 
+                            BackgroundColor="#505050"
                             Text="{Binding Data.Name}" 
                             Style="{StaticResource ValueStyle}"/>
-                        
-                    </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HeightRequest="35"
-                                 Spacing="5">
-                        
-                        <Label 
-                            Text=" Description : "
-                            FontSize="17"
-                            Style="{StaticResource LabelStyle}"/>
-                        
-                        <Label 
-                            BackgroundColor="DimGray"
-                            Text="{Binding Data.Description}" 
-                            Style="{StaticResource ValueStyle}"/>
-                        
-                    </StackLayout>
-                
                 </StackLayout>
 
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                                 HeightRequest="25"
+                                 Spacing="5">
+
+                    <Label 
+                            Text=" Description : "
+                            FontSize="16"
+                            Style="{StaticResource LabelStyle}"/>
+
+                    <Label 
+                            BackgroundColor="#505050"
+                            Text="{Binding Data.Description}" 
+                            Style="{StaticResource ValueStyle}"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
             <StackLayout Style ="{StaticResource HorizontalStack}" 
-                         BackgroundColor="Gray"
+                         BackgroundColor="#7b7b7b"
                          HeightRequest="85"
                          Spacing="-10"
                          WidthRequest="300">
