@@ -129,9 +129,9 @@
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="75"/>
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Column="0" Grid.Row="0"
@@ -169,32 +169,29 @@
                         Style="{StaticResource ValueStyle}"/>
 
                 <Stepper Grid.Column="2" Grid.Row="1"
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
+                        Value="{Binding Data.Value, Mode=TwoWay}"
+                        ValueChanged="Value_OnStepperValueChanged"/>
 
-                </Grid>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" 
-                             HorizontalOptions="CenterAndExpand">
-
-                    <Label 
+                <Label Grid.Column="0" Grid.Row="2"
                         Text="Damage" 
                         Style="{StaticResource LabelStyle}"/>
-                    
-                    <Label 
-                            Text="{Binding Data.Damage}" 
-                            x:Name="DamageValue"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
 
-                    <Stepper Value="{Binding Data.Damage, Mode=TwoWay}"
-                        ValueChanged="Damage_OnStepperValueChanged"
-                        />
+                <Label Grid.Column="1" Grid.Row="2"
+                        Text="{Binding Data.Damage}" 
+                        x:Name="DamageValue"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#505050"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"/>
 
-                </StackLayout>
-         
-            
+                <Stepper Grid.Column="2" Grid.Row="2"
+                        Value="{Binding Data.Damage, Mode=TwoWay}"
+                        ValueChanged="Damage_OnStepperValueChanged"/>
+            </Grid>
+
         </StackLayout>
         
     </Grid>
