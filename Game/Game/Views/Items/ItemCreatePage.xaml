@@ -122,37 +122,36 @@
 
             </StackLayout>
 
-            
-
-                <StackLayout Style="{StaticResource HorizontalStack}" 
-                             HorizontalOptions="CenterAndExpand">
-
-                    <Label 
-                            Text="Range" 
-                            Style="{StaticResource LabelStyle}"/>
-                    
-                    <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"/>
-
-                    <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
-
-                </StackLayout>
-
             <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
-                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60"/>
                     <ColumnDefinition Width="60"/>
                     <ColumnDefinition Width="60"/>
                 </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0"
+                        Text="Range" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                <Label Grid.Column="1" Grid.Row="0"
+                        Text="{Binding Data.Range}" 
+                        x:Name="RangeValue"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#505050"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"/>
+
+                <Stepper Grid.Column="2" Grid.Row="0"  
+                        Value="{Binding Data.Range, Mode=TwoWay}"
+                        ValueChanged="Range_OnStepperValueChanged"/>
 
                 <Label Grid.Column="0" Grid.Row="1"
                         Text="Value"
