@@ -37,7 +37,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}"
                         HeightRequest="40"
                         Spacing="5">
-                    
+
                     <Label Text="Name"
                         FontSize="16"
                         Style="{StaticResource LabelStyle}"/>
@@ -45,13 +45,13 @@
                     <Entry Text="{Binding Data.Name}" 
                         BackgroundColor="#505050"
                         Style="{StaticResource EntryStyle}"/>
-                    
+
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
                         HeightRequest="40"
                         Spacing="5">
-                    
+
                     <Label Text="Description" 
                         FontSize="16"
                         Style="{StaticResource LabelStyle}"/>
@@ -59,14 +59,11 @@
                     <Entry Text="{Binding Data.Description}" 
                         BackgroundColor="#505050"
                         Style="{StaticResource EntryStyle}"/>
-                    
+
                 </StackLayout>
-                
+
             </StackLayout>
 
-            
-            
-            
             <StackLayout Style="{StaticResource HorizontalStack}"
                          BackgroundColor="#7b7b7b"
                          HeightRequest="85"
@@ -126,10 +123,6 @@
             </StackLayout>
 
             
-            
-            
-            <StackLayout Style="{StaticResource VerticalStack}" 
-                         HorizontalOptions="Center">
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions="CenterAndExpand">
@@ -151,19 +144,25 @@
 
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" 
-                             HorizontalOptions="CenterAndExpand">
+                <StackLayout 
+                    Style="{StaticResource HorizontalStack}" 
+                             HorizontalOptions="CenterAndExpand"
+                             Spacing="25">
 
                     <Label 
                         Text="Value"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                        Text="{Binding Data.Value}" 
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#505050"
+                        WidthRequest="45"
+                        HeightRequest="45"
+                        FontAttributes="Bold"
+                        x:Name="ValueValue"
+                        Style="{StaticResource ValueStyle}"/>
 
                     <Stepper 
                             Value="{Binding Data.Value, Mode=TwoWay}"
@@ -185,13 +184,12 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                    <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
+                    <Stepper Value="{Binding Data.Damage, Mode=TwoWay}"
+                        ValueChanged="Damage_OnStepperValueChanged"
+                        />
 
                 </StackLayout>
-                
-            </StackLayout>
+         
             
         </StackLayout>
         
