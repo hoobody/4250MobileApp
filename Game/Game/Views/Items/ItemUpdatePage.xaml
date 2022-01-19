@@ -26,7 +26,9 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
+                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
+                       HorizontalOptions="Center"
+                       FontSize="Medium"/>
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
