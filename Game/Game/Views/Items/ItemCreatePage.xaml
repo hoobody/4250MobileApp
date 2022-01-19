@@ -144,31 +144,36 @@
 
                 </StackLayout>
 
-                <StackLayout 
-                    Style="{StaticResource HorizontalStack}" 
-                             HorizontalOptions="CenterAndExpand"
-                             Spacing="25">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
 
-                    <Label 
+                <Label Grid.Column="0"
                         Text="Value"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Label 
+                    <Label Grid.Column="1"
                         Text="{Binding Data.Value}" 
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         BackgroundColor="#505050"
-                        WidthRequest="45"
-                        HeightRequest="45"
+                        WidthRequest="35"
+                        HeightRequest="35"
                         FontAttributes="Bold"
                         x:Name="ValueValue"
                         Style="{StaticResource ValueStyle}"/>
 
-                    <Stepper 
+                    <Stepper Grid.Column="2"
                             Value="{Binding Data.Value, Mode=TwoWay}"
                             ValueChanged="Value_OnStepperValueChanged"/>
 
-                </StackLayout>
+                </Grid>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" 
                              HorizontalOptions="CenterAndExpand">
