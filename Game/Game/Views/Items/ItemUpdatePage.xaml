@@ -32,8 +32,7 @@
 
                     <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                        HorizontalOptions="Center"
-                       FontSize="Medium"
-                />
+                       FontSize="Medium"/>
 
                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
@@ -133,18 +132,6 @@
                             </StackLayout>
 
                         </StackLayout>
-
-                    </StackLayout>
-
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-
-                        <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
-
-                        <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
 
                     </StackLayout>
 
