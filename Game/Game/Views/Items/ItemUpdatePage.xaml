@@ -136,7 +136,7 @@
 
                     </StackLayout>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
                         <Image 
                             Source="{Binding Data.ImageURI}"
@@ -156,7 +156,7 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="75"/>
-                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="40"/>
                             <ColumnDefinition Width="75"/>
                         </Grid.ColumnDefinitions>
 
@@ -169,7 +169,7 @@
                         x:Name="RangeValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
@@ -188,7 +188,7 @@
                         x:Name="ValueValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
@@ -207,7 +207,7 @@
                         x:Name="DamageValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
