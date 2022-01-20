@@ -38,8 +38,9 @@
                 <StackLayout BackgroundColor="#7b7b7b"
                                  WidthRequest="300">
 
-                    <StackLayout Orientation="Horizontal"
-                        Padding="5,10">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                        HeightRequest="40"
+                        Spacing="5">
 
                         <Label Text="Name: "
                             FontSize="16"
@@ -51,6 +52,8 @@
                             FontSize="Small"
                             AutoSize="TextChanges"
                             MaxLength="25"
+                            BackgroundColor="#505050"
+                            Style="{StaticResource EntryStyle}"
                         />    
 
                     </StackLayout>
