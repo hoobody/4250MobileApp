@@ -61,7 +61,7 @@
                                    FontSize="16"
                                    Style="{StaticResource LabelStyle}"/>
 
-                            <Editor Text="{Binding Data.Name}" 
+                            <Editor Text="{Binding Data.Description}" 
                                     d:Text="Item Description"
                                     FontSize="Small"
                                     WidthRequest="200"
