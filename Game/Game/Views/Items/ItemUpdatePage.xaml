@@ -23,8 +23,10 @@
     <ContentPage.Content>
 
         <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+            <Grid>
+            <StackLayout Style="{StaticResource VerticalStack}"
+                         HorizontalOptions="Center">
+
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                        HorizontalOptions="Center"
@@ -32,33 +34,43 @@
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    <StackLayout BackgroundColor="#7b7b7b"
+                                 WidthRequest="300">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="5,10">
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+                            <Label Text="Name: "
+                                   FontSize="16"
+                                   Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                            <Editor Text="{Binding Data.Name}" 
+                                    d:Text="Item Description"
+                                    FontSize="Small"
+                                    AutoSize="TextChanges"
+                                    MaxLength="25"/>    
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>
+                    </StackLayout>
 
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        <StackLayout Orientation = "Horizontal"
+                                     Padding="5,7">
+
+                            <Label Text="Description: "
+                                   VerticalOptions="Start"
+                                   HeightRequest="37"
+                                   FontSize="16"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Editor Text="{Binding Data.Name}" 
+                                    d:Text="Item Description"
+                                    FontSize="Small"
+                                    WidthRequest="200"
+                                    AutoSize="TextChanges"
+                                    MaxLength="50"/>
+
+                    </StackLayout>
+
+                </StackLayout>
 
                     <Label Grid.Row="2" Grid.Column="0"
                         Text="Location" 
@@ -82,18 +94,17 @@
                         Text="Image" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
-                        <Image 
+                    <Image 
                             Source="{Binding Data.ImageURI}"
                             Style="{StaticResource ImageSmallStyle}"/>
 
-                        <Entry 
+                    <Entry 
                             Text="{Binding Data.ImageURI}" 
                             Style="{StaticResource EntryStyle}"/>
 
-                    </StackLayout>
-                </Grid>
+                </StackLayout>
 
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
 
@@ -158,6 +169,7 @@
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
