@@ -57,8 +57,8 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
-                            Spacing="5">
+                        Padding="7,5"
+                        Spacing="5">
 
                 <Label Text="Description: "
                         VerticalOptions="Start"
@@ -163,9 +163,9 @@
             <Stepper Grid.Column="2" Grid.Row="0"  
                     Value="{Binding Data.Range, Mode=TwoWay}"
                     ValueChanged="Range_OnStepperValueChanged"
-                     Minimum="0"
-                     Maximum="10"
-                     Increment="1"/>
+                    Minimum="0"
+                    Maximum="10"
+                    Increment="1"/>
 
             <Label Grid.Column="0" Grid.Row="1"
                     Text="Value"
@@ -185,9 +185,9 @@
             <Stepper Grid.Column="2" Grid.Row="1"
                     Value="{Binding Data.Value, Mode=TwoWay}"
                     ValueChanged="Value_OnStepperValueChanged"
-                     Minimum="0"
-                     Maximum="100"
-                     Increment="1"/>
+                    Minimum="0"
+                    Maximum="100"
+                    Increment="1"/>
 
             <Label Grid.Column="0" Grid.Row="2"
                     Text="Damage" 
@@ -206,7 +206,10 @@
 
             <Stepper Grid.Column="2" Grid.Row="2"
                     Value="{Binding Data.Damage, Mode=TwoWay}"
-                    ValueChanged="Damage_OnStepperValueChanged"/>
+                    ValueChanged="Damage_OnStepperValueChanged"
+                    Minimum="0"
+                    Maximum="100"
+                    Increment="1"/>
             
         </Grid>
 
