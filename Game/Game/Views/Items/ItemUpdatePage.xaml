@@ -31,10 +31,14 @@
 
 
                     <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
-                       HorizontalOptions="Center"
-                       FontSize="Medium"/>
+                                 HorizontalOptions="Center"
+                                 FontSize="Medium"/>
 
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
+                                    HorizontalOptions="CenterAndExpand"
+                                    BackgroundColor="Transparent"
+                                    WidthRequest="150"
+                                    HeightRequest="150"/>
 
                     <StackLayout BackgroundColor="#696969"
                                  WidthRequest="350">
