@@ -24,13 +24,16 @@
     <Grid>
 
         <StackLayout Style="{StaticResource VerticalStack}"
-            HorizontalOptions="Center"
-            WidthRequest="300"
-            Spacing="10">
+                            HorizontalOptions="Center"
+                            WidthRequest="300"
+                            Spacing="10">   
 
-                <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="150"
+                       HeightRequest="150"/>
 
             <StackLayout BackgroundColor="#7b7b7b">
 
