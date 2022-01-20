@@ -161,63 +161,63 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Column="0" Grid.Row="0"
-                        Text="Range" 
-                        Style="{StaticResource LabelStyle}"/>
+                                Text="Range" 
+                                Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Column="1" Grid.Row="0"
-                        Text="{Binding Data.Range}" 
-                        x:Name="RangeValue"
-                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center"
-                        BackgroundColor="#36454F"
-                        WidthRequest="35"
-                        HeightRequest="35"
-                        FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"/>
+                                Text="{Binding Data.Range}" 
+                                x:Name="RangeValue"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                BackgroundColor="#36454F"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                FontAttributes="Bold"
+                                Style="{StaticResource ValueStyle}"/>
 
                         <Stepper Grid.Column="2" Grid.Row="0"  
-                        Value="{Binding Data.Range, Mode=TwoWay}"
-                        ValueChanged="Range_OnStepperValueChanged"/>
+                                Value="{Binding Data.Range, Mode=TwoWay}"
+                                ValueChanged="Range_OnStepperValueChanged"/>
 
                         <Label Grid.Column="0" Grid.Row="1"
-                        Text="Value"
-                        Style="{StaticResource LabelStyle}"/>
+                                Text="Value"
+                                Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Column="1" Grid.Row="1"
-                        Text="{Binding Data.Value}" 
-                        x:Name="ValueValue"
-                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center"
-                        BackgroundColor="#36454F"
-                        WidthRequest="35"
-                        HeightRequest="35"
-                        FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"/>
+                                Text="{Binding Data.Value}" 
+                                x:Name="ValueValue"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                BackgroundColor="#36454F"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                FontAttributes="Bold"
+                                Style="{StaticResource ValueStyle}"/>
 
                         <Stepper Grid.Column="2" Grid.Row="1"
-                        Value="{Binding Data.Value, Mode=TwoWay}"
-                        ValueChanged="Value_OnStepperValueChanged"/>
+                                Value="{Binding Data.Value, Mode=TwoWay}"
+                                ValueChanged="Value_OnStepperValueChanged"/>
 
                         <Label Grid.Column="0" Grid.Row="2"
-                        Text="Damage" 
-                        Style="{StaticResource LabelStyle}"/>
+                                Text="Damage" 
+                                Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Column="1" Grid.Row="2"
-                        Text="{Binding Data.Damage}" 
-                        x:Name="DamageValue"
-                        HorizontalTextAlignment="Center"
-                        VerticalTextAlignment="Center"
-                        BackgroundColor="#36454F"
-                        WidthRequest="35"
-                        HeightRequest="35"
-                        FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"/>
+                                Text="{Binding Data.Damage}" 
+                                x:Name="DamageValue"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                BackgroundColor="#36454F"
+                                WidthRequest="35"
+                                HeightRequest="35"
+                                FontAttributes="Bold"
+                                Style="{StaticResource ValueStyle}"/>
 
                         <Stepper Grid.Column="2" Grid.Row="2"
-                        Value="{Binding Data.Damage, Mode=TwoWay}"
-                        ValueChanged="Damage_OnStepperValueChanged"/>
+                                Value="{Binding Data.Damage, Mode=TwoWay}"
+                                ValueChanged="Damage_OnStepperValueChanged"/>
                     </Grid>
-                    
+
                 </StackLayout>
             </Grid>
         </ScrollView>
