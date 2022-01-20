@@ -69,7 +69,17 @@
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center">
-                
+
+                <Button 
+                    Text="Cancel" 
+                    Clicked="Cancel_Clicked" 
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    BorderWidth="2" 
+                    HeightRequest="35"
+                    BorderColor="black">
+                </Button>
+
                 <Button 
                     Text="Delete" 
                     Clicked="Delete_Clicked" 
@@ -81,16 +91,6 @@
                     BorderColor="black">
                 </Button>
 
-                <Button 
-                    Text="Cancel" 
-                    Clicked="Cancel_Clicked" 
-                    HorizontalOptions="Center"
-                    FontSize="Medium"
-                    BorderWidth="2" 
-                    HeightRequest="35"
-                    BorderColor="black">
-                </Button>
-                
             </StackLayout>
             
         </StackLayout>
