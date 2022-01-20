@@ -99,15 +99,15 @@
                             HorizontalOptions="Center"
                             HeightRequest="37"
                             Style="{StaticResource LabelStyle}"/>
-                        
+
                         <Label 
                             Text="{Binding Data.Location}" 
                             HorizontalOptions="Center"
                             FontAttributes="Bold"
                             Style="{StaticResource ValueStyle}"/>
-                        
+
                     </StackLayout>
-                    
+
                 </StackLayout>
 
 
@@ -118,90 +118,82 @@
                                     HorizontalOptions="Center" 
                                     HeightRequest="70"
                                     WidthRequest="156">
-                        
-                    <Label 
+
+                        <Label 
                         Text="Attribute : " 
                         HorizontalOptions="Center"
                         HeightRequest="37"
                         Style="{StaticResource LabelStyle}"/>
-                        
-                    <Label 
+
+                        <Label 
                         Text="{Binding Data.Attribute}" 
                         HorizontalOptions="Center"
                         FontAttributes="Bold"
                         Style="{StaticResource ValueStyle}"/>
-                        
+
                     </StackLayout>
-                    
+
                 </StackLayout>
 
             </StackLayout>
 
-            <StackLayout Orientation ="Horizontal"
-                            HorizontalOptions="CenterAndExpand">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
 
+                <Label Grid.Column="0" Grid.Row="0"
+                        Text="Range" 
+                        Style="{StaticResource LabelStyle}"/>
 
-                <Label 
-                    Text="Range"
-                    FontSize="20"
-                    HeightRequest="43"
-                    WidthRequest="104"
-                    Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Column="1" Grid.Row="0"
+                        Text="{Binding Data.Range}" 
+                        x:Name="RangeValue"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#36454F"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"/>
 
-                <Label       
-                    WidthRequest="45"
-                    HeightRequest="45"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="RosyBrown"
-                    FontAttributes ="Bold"
-                    Text="{Binding Data.Range}" 
-                    Style="{StaticResource ValueStyle}"/>
+                <Label Grid.Column="0" Grid.Row="1"
+                        Text="Value"
+                        Style="{StaticResource LabelStyle}"/>
 
-            </StackLayout>
+                <Label Grid.Column="1" Grid.Row="1"
+                        Text="{Binding Data.Value}" 
+                        x:Name="ValueValue"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#36454F"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"/>
 
-            <StackLayout HorizontalOptions="CenterAndExpand"
-                            Orientation="Horizontal">
+                <Label Grid.Column="0" Grid.Row="2"
+                        Text="Damage" 
+                        Style="{StaticResource LabelStyle}"/>
 
-                <Label 
-                    Text="Value" 
-                    FontSize="20"
-                    HeightRequest="43"
-                    WidthRequest="104"
-                    Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Column="1" Grid.Row="2"
+                        Text="{Binding Data.Damage}" 
+                        x:Name="DamageValue"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        BackgroundColor="#36454F"
+                        WidthRequest="35"
+                        HeightRequest="35"
+                        FontAttributes="Bold"
+                        Style="{StaticResource ValueStyle}"/>
 
-                <Label 
-                    WidthRequest="45"
-                    HeightRequest="45"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="RosyBrown"
-                    FontAttributes ="Bold"
-                    Text="{Binding Data.Value}" 
-                    Style="{StaticResource ValueStyle}"/>
-
-            </StackLayout>
-
-            <StackLayout HorizontalOptions="CenterAndExpand"
-                            Orientation="Horizontal">
-                <Label 
-                    Text="Damage" 
-                    FontSize="20"
-                    HeightRequest="43"
-                    WidthRequest="102"
-                    Style="{StaticResource LabelStyle}"/>
-
-                <Label 
-                    WidthRequest="45"
-                    HeightRequest="45"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="RosyBrown"
-                    FontAttributes="Bold"
-                    Text="{Binding Data.Damage}" 
-                    Style="{StaticResource ValueStyle}"/>
-                    
-            </StackLayout>
+            </Grid>
 
         </StackLayout>
             
