@@ -18,7 +18,7 @@
         <StackLayout 
             Style="{StaticResource VerticalStack}"
             HorizontalOptions="Center"
-            WidthRequest="300"
+            WidthRequest="350"
             Spacing="10">
               
             <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
@@ -34,26 +34,27 @@
                     
             </StackLayout>
 
-            <StackLayout BackgroundColor="#7b7b7b">
+            <StackLayout BackgroundColor="#696969">
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                            HeightRequest="40"
-                                            Spacing="5">
+                                    Padding="7,5"
+                                    Spacing="5">
 
                     <Label 
                                     Text=" Name :" 
                                     FontSize="16"
                                     Style="{StaticResource LabelStyle}"/>
                     <Label 
-                                    BackgroundColor="#505050"
+                                    BackgroundColor="#808080"
+                        HeightRequest="30"
                                     Text="{Binding Data.Name}" 
                                     Style="{StaticResource ValueStyle}"/>
 
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                            HeightRequest="25"
-                                            Spacing="5">
+                                    Padding="7,5"
+                                    Spacing="5">
 
                     <Label 
                                     Text=" Description : "
@@ -61,7 +62,8 @@
                                     Style="{StaticResource LabelStyle}"/>
 
                     <Label 
-                                    BackgroundColor="#505050"
+                                    BackgroundColor="#808080"
+                        HeightRequest="30"
                                     Text="{Binding Data.Description}" 
                                     Style="{StaticResource ValueStyle}"/>
 
@@ -70,19 +72,19 @@
             </StackLayout>
 
             <StackLayout Style ="{StaticResource HorizontalStack}" 
-                        BackgroundColor="#7b7b7b"
-                        HeightRequest="85"
-                        Spacing="-10"
-                        WidthRequest="300">
+                        BackgroundColor="#696969"
+                        Padding="7,5"
+                        WidthRequest="350"
+                        Spacing="7">
 
-                <StackLayout WidthRequest="160">
-                    
-                    <StackLayout BackgroundColor="DimGray" 
+                <StackLayout Padding="5">
+
+                    <StackLayout BackgroundColor="#808080" 
                                     Style="{StaticResource VerticalStack}" 
                                     VerticalOptions="CenterAndExpand" 
                                     HorizontalOptions="Center" 
                                     HeightRequest="70"
-                                    WidthRequest="140">
+                                    WidthRequest="156">
 
                         <Label 
                             Text="Location : " 
@@ -101,14 +103,13 @@
                 </StackLayout>
 
 
-                <StackLayout WidthRequest="160">
-                    
-                    <StackLayout BackgroundColor="DimGray" 
+                <StackLayout Padding="5">
+
+                    <StackLayout BackgroundColor="#808080" 
                                     Style="{StaticResource VerticalStack}" 
-                                    VerticalOptions="CenterAndExpand" 
                                     HorizontalOptions="Center" 
                                     HeightRequest="70"
-                                    WidthRequest="140">
+                                    WidthRequest="156">
                         
                     <Label 
                         Text="Attribute : " 
