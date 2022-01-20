@@ -45,12 +45,12 @@
                                      Spacing="5">
 
                             <Label Text="Name: "
-                                FontSize="16"
+                                FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
                             <Editor Text="{Binding Data.Name}" 
                                 d:Text="Item Description"
-                                FontSize="Small"
+                                FontSize="15"
                                 WidthRequest="284"
                                 AutoSize="TextChanges"
                                 MaxLength="25"
@@ -66,12 +66,12 @@
                             <Label Text="Description: "
                                 VerticalOptions="Start"
                                 HeightRequest="37"
-                                FontSize="16"
+                                FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
                             <Editor Text="{Binding Data.Description}" 
                                 d:Text="Item Description"
-                                FontSize="Small"
+                                FontSize="15"
                                 WidthRequest="245"
                                 AutoSize="TextChanges"
                                 MaxLength="50"
