@@ -118,14 +118,14 @@
                                 WidthRequest="156">
 
                     <Label Text="Attribute" 
-                                    HorizontalOptions="Center"
-                                    HeightRequest="37"
-                                    Style="{StaticResource LabelStyle}"/>
+                                HorizontalOptions="Center"
+                                HeightRequest="37"
+                                Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="3" Grid.Column="1"
-                                    ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                                    SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="AttributePicker"/>
+                                ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                                SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                x:Name="AttributePicker"/>
 
                 </StackLayout>
 
@@ -162,7 +162,10 @@
 
             <Stepper Grid.Column="2" Grid.Row="0"  
                     Value="{Binding Data.Range, Mode=TwoWay}"
-                    ValueChanged="Range_OnStepperValueChanged"/>
+                    ValueChanged="Range_OnStepperValueChanged"
+                     Minimum="0"
+                     Maximum="10"
+                     Increment="1"/>
 
             <Label Grid.Column="0" Grid.Row="1"
                     Text="Value"
