@@ -13,9 +13,12 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                     HorizontalOptions="Center"
+                     WidthRequest="275">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Item Index" Style="{StaticResource HeaderStyle}"
+                   HorizontalOptions="Center"/>
 
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
@@ -25,48 +28,76 @@
                     ItemSelected="OnItemSelected"
                     HasUnevenRows="true"
                     Margin="5,0,5,0"
-                    RowHeight="80"
-                    >
+                    RowHeight="100">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
+                            <Grid ColumnSpacing="5" RowSpacing="1" Margin="5"
+                                  BackgroundColor="#343434">
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="15"/>
+                                    <RowDefinition Height="10"/>
                                 </Grid.RowDefinitions>
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                                <Image  Grid.Column="0" Grid.Row="1" Grid.RowSpan="3"
                                         Source="{Binding ImageURI}"
+                                        WidthRequest="75"
+                                        HeightRequest="75"
                                         Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"/>
+                                        VerticalOptions="CenterAndExpand"
+                                        BackgroundColor="#525252"/>
 
-                                <Label Grid.Column="1" Grid.Row="0"
+                                <Label Grid.Column="2" Grid.Row="0"
                                        Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                                       Style="{StaticResource ListStyle}"
+                                       FontAttributes="Bold"/>
 
-                                <StackLayout Grid.Column="1" Grid.Row="1"
-                                    Orientation="Horizontal">
+                                <Label Grid.Column="2" Grid.Row="1"
+                                       Text="{Binding Description}" 
+                                       FontAttributes="Italic"
+                                       Style="{StaticResource ListStyle}"
+                                       FontSize="12"/>
+
+                                <StackLayout Grid.Column="2" Grid.Row="2"
+                                             Orientation="Horizontal">
+
+                                    <Label 
+                                       Text="Range = " 
+                                       Style="{StaticResource ListStyle}"
+                                        FontSize="13"/>
+
+                                    <Label Text="{Binding Range}" 
+                                        Style="{StaticResource ListStyle}"
+                                           FontSize="13"/>
+
+                                </StackLayout>
+                                
+                                <StackLayout Grid.Column="2" Grid.Row="3"
+                                             Orientation="Horizontal">
+
+                                    <Label 
+                                       Text="{Binding Attribute}"
+                                       Style="{StaticResource ListStyle}"
+                                        FontSize="13"/>
                                     
                                     <Label 
-                                       Text="{Binding Attribute}" 
-                                       Style="{StaticResource ListStyle}"/>
-
-                                    <Label Text="{Binding Value}" 
-                                        Style="{StaticResource ListStyle}"/>
-                                
-                                </StackLayout>
-
-                                <Label Grid.Column="1" Grid.Row="2"
-                                       Text="{Binding Description}" 
+                                       Text="= "
                                        Style="{StaticResource ListStyle}"
-                                       FontSize="Micro"/>
+                                        FontSize="13"/>
+                                    
+                                    <Label Text="{Binding Value}" 
+                                           Style="{StaticResource ListStyle}"
+                                           FontSize="13"/>
+
+                                </StackLayout>
 
                             </Grid>
                         </ViewCell>
