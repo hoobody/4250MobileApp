@@ -58,8 +58,9 @@
 
                     </StackLayout>
 
-                    <StackLayout Orientation = "Horizontal"
-                        Padding="5,7">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                        HeightRequest="40"
+                        Spacing="5">
 
                         <Label Text="Description: "
                             VerticalOptions="Start"
@@ -74,6 +75,8 @@
                             WidthRequest="200"
                             AutoSize="TextChanges"
                             MaxLength="50"
+                            BackgroundColor="#505050"
+                            Style="{StaticResource EntryStyle}"
                         />
 
                     </StackLayout>
