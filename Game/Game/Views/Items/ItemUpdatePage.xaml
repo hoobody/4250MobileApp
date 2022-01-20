@@ -30,69 +30,79 @@
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                        HorizontalOptions="Center"
-                       FontSize="Medium"/>
+                       FontSize="Medium"
+                />
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                    <StackLayout BackgroundColor="#7b7b7b"
+                <StackLayout BackgroundColor="#7b7b7b"
                                  WidthRequest="300">
 
-                        <StackLayout Orientation="Horizontal"
-                                     Padding="5,10">
+                    <StackLayout Orientation="Horizontal"
+                        Padding="5,10">
 
-                            <Label Text="Name: "
-                                   FontSize="16"
-                                   Style="{StaticResource LabelStyle}"/>
+                        <Label Text="Name: "
+                            FontSize="16"
+                            Style="{StaticResource LabelStyle}"
+                        />
 
-                            <Editor Text="{Binding Data.Name}" 
-                                    d:Text="Item Description"
-                                    FontSize="Small"
-                                    AutoSize="TextChanges"
-                                    MaxLength="25"/>    
+                        <Editor Text="{Binding Data.Name}" 
+                            d:Text="Item Description"
+                            FontSize="Small"
+                            AutoSize="TextChanges"
+                            MaxLength="25"
+                        />    
 
                     </StackLayout>
 
-                        <StackLayout Orientation = "Horizontal"
-                                     Padding="5,7">
+                    <StackLayout Orientation = "Horizontal"
+                        Padding="5,7">
 
-                            <Label Text="Description: "
-                                   VerticalOptions="Start"
-                                   HeightRequest="37"
-                                   FontSize="16"
-                                   Style="{StaticResource LabelStyle}"/>
+                        <Label Text="Description: "
+                            VerticalOptions="Start"
+                            HeightRequest="37"
+                            FontSize="16"
+                            Style="{StaticResource LabelStyle}"
+                        />
 
-                            <Editor Text="{Binding Data.Description}" 
-                                    d:Text="Item Description"
-                                    FontSize="Small"
-                                    WidthRequest="200"
-                                    AutoSize="TextChanges"
-                                    MaxLength="50"/>
+                        <Editor Text="{Binding Data.Description}" 
+                            d:Text="Item Description"
+                            FontSize="Small"
+                            WidthRequest="200"
+                            AutoSize="TextChanges"
+                            MaxLength="50"
+                        />
 
                     </StackLayout>
 
                 </StackLayout>
 
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Location" 
-                        Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Row="2" Grid.Column="0"
+                    Text="Location" 
+                    Style="{StaticResource LabelStyle}"
+                />
 
-                    <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"/>
+                <Picker Grid.Row="2" Grid.Column="1"
+                    ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                    x:Name="LocationPicker"
+                />
 
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Attribute" 
-                        Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Row="3" Grid.Column="0"
+                    Text="Attribute" 
+                    Style="{StaticResource LabelStyle}"
+                />
 
-                    <Picker Grid.Row="3" Grid.Column="1"
-                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="AttributePicker"/>
+                <Picker Grid.Row="3" Grid.Column="1"
+                    ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                    SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                    x:Name="AttributePicker"
+                />
 
-                    <Label Grid.Row="4" Grid.Column="0"
-                        Text="Image" 
-                        Style="{StaticResource LabelStyle}"/>
+                <Label Grid.Row="4" Grid.Column="0"
+                    Text="Image" 
+                    Style="{StaticResource LabelStyle}"
+                />
 
                 <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
