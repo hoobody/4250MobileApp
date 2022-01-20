@@ -35,51 +35,47 @@
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                <StackLayout BackgroundColor="#7b7b7b"
+                    <StackLayout BackgroundColor="#696969"
                                  WidthRequest="300">
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                        HeightRequest="40"
-                        Spacing="5">
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     Padding="7,5"
+                                     Spacing="5">
 
-                        <Label Text="Name: "
-                            FontSize="16"
-                            Style="{StaticResource LabelStyle}"
-                        />
+                            <Label Text="Name: "
+                                FontSize="16"
+                                Style="{StaticResource LabelStyle}"/>
 
-                        <Editor Text="{Binding Data.Name}" 
-                            d:Text="Item Description"
-                            FontSize="Small"
-                            AutoSize="TextChanges"
-                            MaxLength="25"
-                            BackgroundColor="#505050"
-                            Style="{StaticResource EntryStyle}"
-                        />    
+                            <Editor Text="{Binding Data.Name}" 
+                                d:Text="Item Description"
+                                FontSize="Small"
+                                WidthRequest="230"
+                                AutoSize="TextChanges"
+                                MaxLength="25"
+                                BackgroundColor="#36454F"
+                                Style="{StaticResource EntryStyle}"/>    
 
-                    </StackLayout>
+                        </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                        HeightRequest="40"
-                        Spacing="5">
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                            Padding="7,5">
 
-                        <Label Text="Description: "
-                            VerticalOptions="Start"
-                            HeightRequest="37"
-                            FontSize="16"
-                            Style="{StaticResource LabelStyle}"
-                        />
+                            <Label Text="Description: "
+                                VerticalOptions="Start"
+                                HeightRequest="37"
+                                FontSize="16"
+                                Style="{StaticResource LabelStyle}"/>
 
-                        <Editor Text="{Binding Data.Description}" 
-                            d:Text="Item Description"
-                            FontSize="Small"
-                            WidthRequest="200"
-                            AutoSize="TextChanges"
-                            MaxLength="50"
-                            BackgroundColor="#505050"
-                            Style="{StaticResource EntryStyle}"
-                        />
+                            <Editor Text="{Binding Data.Description}" 
+                                d:Text="Item Description"
+                                FontSize="Small"
+                                WidthRequest="200"
+                                AutoSize="TextChanges"
+                                MaxLength="50"
+                                BackgroundColor="#36454F"
+                                Style="{StaticResource EntryStyle}"/>
 
-                    </StackLayout>
+                        </StackLayout>
 
                 </StackLayout>
 
