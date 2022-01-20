@@ -25,99 +25,109 @@
 
         <StackLayout Style="{StaticResource VerticalStack}"
                             HorizontalOptions="Center"
-                            WidthRequest="300"
-                            Spacing="10">   
+                            WidthRequest="350"
+                            Spacing="5">   
 
-            <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Create Page" Style="{StaticResource HeaderStyle}"
+                   HorizontalOptions="Center"/>
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
-                       HorizontalOptions="CenterAndExpand"
-                       WidthRequest="150"
-                       HeightRequest="150"/>
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
+                   HorizontalOptions="CenterAndExpand"
+                   WidthRequest="150"
+                   HeightRequest="150"/>
 
-            <StackLayout BackgroundColor="#7b7b7b">
+            <StackLayout BackgroundColor="#696969"
+                         WidthRequest="350">
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                        HeightRequest="40"
-                        Spacing="5">
+                             Padding="7,5"
+                             Spacing="5">
 
-                    <Label Text="Name"
-                        FontSize="16"
-                        Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Name: "
+                           FontSize="15"
+                           Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Text="{Binding Data.Name}" 
-                        BackgroundColor="#505050"
-                        Style="{StaticResource EntryStyle}"/>
+                    <Editor Text="{Binding Data.Name}" 
+                            d:Text="Item Name"
+                            FontSize="15"
+                            WidthRequest="284"
+                            AutoSize="TextChanges"
+                            MaxLength="25"
+                            BackgroundColor="#36454F"
+                            Style="{StaticResource EntryStyle}"/>
 
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                        HeightRequest="40"
-                        Spacing="5">
+                             Padding="7,5"
+                             Spacing="5">
 
-                    <Label Text="Description" 
-                        FontSize="16"
-                        Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Description: "
+                           VerticalOptions="Start"
+                           HeightRequest="37"
+                           FontSize="15"
+                           Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Text="{Binding Data.Description}" 
-                        BackgroundColor="#505050"
-                        Style="{StaticResource EntryStyle}"/>
+                    <Editor Text="{Binding Data.Description}" 
+                            d:Text="Item Description"
+                            FontSize="15"
+                            WidthRequest="245"
+                            AutoSize="TextChanges"
+                            MaxLength="25"
+                            BackgroundColor="#36454F"
+                            Style="{StaticResource EntryStyle}"/>
 
                 </StackLayout>
 
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}"
-                         BackgroundColor="#7b7b7b"
-                         HeightRequest="85"
-                         Spacing="-10"
-                         WidthRequest="300">
+                                 BackgroundColor="#696969"
+                                 Padding="7,5"
+                                 Spacing="7"
+                                 WidthRequest="350">
 
-                <StackLayout WidthRequest="160">
+                <StackLayout Padding="5">
 
-                    <StackLayout BackgroundColor="DimGray"
+                    <StackLayout BackgroundColor="#808080"
                                  Style="{StaticResource VerticalStack}"
                                  VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="Center"
                                  HeightRequest="70"
-                                 WidthRequest="140">
+                                 WidthRequest="156">
 
                         <Label Text="Location" 
-                            HorizontalOptions="Center"
-                            HeightRequest="37"
-                            Style="{StaticResource LabelStyle}"/>
+                                       HorizontalOptions="Center"
+                                       HeightRequest="37"
+                                       Style="{StaticResource LabelStyle}"/>
 
-                        <Picker ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
-                            SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                            x:Name="LocationPicker"
-                            HorizontalOptions="Center"
-                            FontSize="Small"
-                            BackgroundColor="RosyBrown"/>
+                        <Picker Grid.Row="2" Grid.Column="1"
+                                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                        x:Name="LocationPicker"/>
 
                     </StackLayout>
 
                 </StackLayout>
 
-                <StackLayout WidthRequest="160">
+                <StackLayout Padding="5">
 
-                    <StackLayout BackgroundColor="DimGray"
+                    <StackLayout BackgroundColor="#808080"
                                  Style="{StaticResource VerticalStack}"
                                  VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="Center"
                                  HeightRequest="70"
-                                 WidthRequest="140">
+                                 WidthRequest="156">
 
                         <Label Text="Attribute" 
-                            HorizontalOptions="Center"
-                            HeightRequest="37"
-                            Style="{StaticResource LabelStyle}"/>
+                                       HorizontalOptions="Center"
+                                       HeightRequest="37"
+                                       Style="{StaticResource LabelStyle}"/>
 
-                        <Picker ItemsSource="{x:Static local_enum:AttributeEnumHelper.GetListCharacter}" 
-                            SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                            x:Name="AttributePicker"
-                            HorizontalOptions="Center"
-                            FontSize="Small"
-                            BackgroundColor="RosyBrown"/>
+                        <Picker Grid.Row="3" Grid.Column="1"
+                                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                        x:Name="AttributePicker"/>
 
                     </StackLayout>
 
@@ -133,7 +143,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="75"/>
-                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="45"/>
                     <ColumnDefinition Width="75"/>
                 </Grid.ColumnDefinitions>
 
@@ -146,7 +156,7 @@
                         x:Name="RangeValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
@@ -165,7 +175,7 @@
                         x:Name="ValueValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
@@ -184,7 +194,7 @@
                         x:Name="DamageValue"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
-                        BackgroundColor="#505050"
+                        BackgroundColor="#36454F"
                         WidthRequest="35"
                         HeightRequest="35"
                         FontAttributes="Bold"
