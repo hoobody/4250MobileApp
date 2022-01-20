@@ -25,7 +25,9 @@
         <ScrollView>
             <Grid>
             <StackLayout Style="{StaticResource VerticalStack}"
-                         HorizontalOptions="Center">
+                         HorizontalOptions="Center"
+                         Spacing="5"
+                         WidthRequest="350">
 
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
@@ -36,7 +38,7 @@
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
                     <StackLayout BackgroundColor="#696969"
-                                 WidthRequest="300">
+                                 WidthRequest="350">
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
                                      Padding="7,5"
@@ -49,7 +51,7 @@
                             <Editor Text="{Binding Data.Name}" 
                                 d:Text="Item Description"
                                 FontSize="Small"
-                                WidthRequest="230"
+                                WidthRequest="284"
                                 AutoSize="TextChanges"
                                 MaxLength="25"
                                 BackgroundColor="#36454F"
@@ -58,7 +60,8 @@
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5">
+                            Padding="7,5"
+                                     Spacing="5">
 
                             <Label Text="Description: "
                                 VerticalOptions="Start"
@@ -69,7 +72,7 @@
                             <Editor Text="{Binding Data.Description}" 
                                 d:Text="Item Description"
                                 FontSize="Small"
-                                WidthRequest="200"
+                                WidthRequest="245"
                                 AutoSize="TextChanges"
                                 MaxLength="50"
                                 BackgroundColor="#36454F"
@@ -79,34 +82,61 @@
 
                 </StackLayout>
 
-                <Label Grid.Row="2" Grid.Column="0"
-                    Text="Location" 
-                    Style="{StaticResource LabelStyle}"
-                />
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                         BackgroundColor="#7b7b7b"
+                         HeightRequest="85"
+                         Spacing="-10"
+                         WidthRequest="350">
 
-                <Picker Grid.Row="2" Grid.Column="1"
-                    ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
-                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                    x:Name="LocationPicker"
-                />
+                        <StackLayout WidthRequest="160">
 
-                <Label Grid.Row="3" Grid.Column="0"
-                    Text="Attribute" 
-                    Style="{StaticResource LabelStyle}"
-                />
+                            <StackLayout BackgroundColor="DimGray"
+                                 Style="{StaticResource VerticalStack}"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Center"
+                                 HeightRequest="70"
+                                 WidthRequest="140">
 
-                <Picker Grid.Row="3" Grid.Column="1"
-                    ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                    SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                    x:Name="AttributePicker"
-                />
+                                <Label Text="Location" 
+                            HorizontalOptions="Center"
+                            HeightRequest="37"
+                            Style="{StaticResource LabelStyle}"/>
 
-                <Label Grid.Row="4" Grid.Column="0"
-                    Text="Image" 
-                    Style="{StaticResource LabelStyle}"
-                />
+                                <Picker Grid.Row="2" Grid.Column="1"
+                                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                        x:Name="LocationPicker"/>
 
-                <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                            </StackLayout>
+
+                        </StackLayout>
+
+                        <StackLayout WidthRequest="160">
+
+                            <StackLayout BackgroundColor="DimGray"
+                                 Style="{StaticResource VerticalStack}"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="Center"
+                                 HeightRequest="70"
+                                 WidthRequest="140">
+
+                                <Label Text="Attribute" 
+                            HorizontalOptions="Center"
+                            HeightRequest="37"
+                            Style="{StaticResource LabelStyle}"/>
+
+                                <Picker Grid.Row="3" Grid.Column="1"
+                                        ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                        x:Name="AttributePicker"/>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+                
+                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
 
                     <Image 
                             Source="{Binding Data.ImageURI}"
