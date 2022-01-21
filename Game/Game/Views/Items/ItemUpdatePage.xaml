@@ -50,14 +50,14 @@
                                 FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
-                            <Editor Text="{Binding Data.Name}" 
-                                d:Text="Item Description"
-                                FontSize="15"
-                                WidthRequest="284"
-                                AutoSize="TextChanges"
-                                MaxLength="25"
-                                BackgroundColor="#36454F"
-                                Style="{StaticResource EntryStyle}"/>
+                        <Frame WidthRequest="280">
+                            <Entry  Text="{Binding Data.Name}" 
+                                    d:Text="Item Name"
+                                    FontSize="15"
+                                    MaxLength="36"
+                                    BackgroundColor="#36454F"/>
+                        </Frame>
+                            
 
                         </StackLayout>
 
@@ -71,16 +71,15 @@
                                 FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
-                            <Editor Text="{Binding Data.Description}" 
-                                d:Text="Item Description"
-                                FontSize="15"
-                                WidthRequest="245"
-                                AutoSize="TextChanges"
-                                MaxLength="50"
-                                BackgroundColor="#36454F"
-                                Style="{StaticResource EntryStyle}"/>
+                        <Frame WidthRequest="245">
+                            <Entry  Text="{Binding Data.Description}" 
+                                    d:Text="Item Description"
+                                    FontSize="15"
+                                    MaxLength="31"
+                                    BackgroundColor="#36454F"/>
+                        </Frame>
 
-                        </StackLayout>
+                    </StackLayout>
 
                     </StackLayout>
 
