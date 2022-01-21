@@ -32,14 +32,27 @@
                     <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                         HorizontalOptions="Center"
                         FontSize="Medium"/>
+                <StackLayout 
+                                Style="{StaticResource HorizontalStack}"
+                                HorizontalOptions="CenterAndExpand">
 
-                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
-                        HorizontalOptions="CenterAndExpand"
-                        BackgroundColor="Transparent"
-                        WidthRequest="150"
-                        HeightRequest="150"/>
+                    <Button 
+                                x:Name="LeftArrowButton"
+                                Text="&lt;"
+                                Clicked="LeftArrow_Clicked"
+                                />
 
-                    <StackLayout BackgroundColor="#696969"
+                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+
+                    <Button 
+                                x:Name="RightArrowButton"
+                                Text="&gt;"
+                                Clicked="RightArrow_Clicked"
+                                />
+
+                </StackLayout>
+
+                <StackLayout BackgroundColor="#696969"
                         WidthRequest="350">
 
                         <StackLayout Style="{StaticResource HorizontalStack}"

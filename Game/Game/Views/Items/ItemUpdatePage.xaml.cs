@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
+using Game.GameRules;
 
 namespace Game.Views
 {
@@ -17,6 +21,9 @@ namespace Game.Views
     {
         // View Model for Item
         public readonly GenericViewModel<ItemModel> ViewModel;
+
+        // Current count of the Images in the Item Image List
+        public int ImageListCount = RandomPlayerHelper.ItemImageList.Count;
 
         // Empty Constructor for Tests
         public ItemUpdatePage(bool UnitTest) { }
@@ -93,5 +100,96 @@ namespace Game.Views
         {
             DamageValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        /// <summary>
+        /// Shift Image to the Left
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void LeftArrow_Clicked(object sender, EventArgs e)
+        {
+            _ = ChangeImageByIncrement(-1);
+        }
+
+        /// <summary>
+        /// Shift Image to the Right
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void RightArrow_Clicked(object sender, EventArgs e)
+        {
+            _ = ChangeImageByIncrement(1);
+        }
+
+        /// <summary>
+        /// Move the Image left or Right
+        /// </summary>
+        /// <param name="increment"></param>
+        public int ChangeImageByIncrement(int increment)
+        {
+            // Find the Index for the current Image
+            var ImageIndexCurrent = RandomPlayerHelper.ItemImageList.IndexOf(ViewModel.Data.ImageURI);
+
+            // Amount to move
+            var indexNew = ImageIndexCurrent + increment;
+
+            if (indexNew >= ImageListCount)
+            {
+                indexNew = ImageListCount - 1;
+            }
+
+            if (indexNew <= 0)
+            {
+                indexNew = 0;
+            }
+
+            // Increment or Decrement to change the to a different image
+            ViewModel.Data.ImageURI = RandomPlayerHelper.ItemImageList.ElementAt(indexNew);
+
+            _ = UpdatePageBindingContext();
+
+            return indexNew;
+        }
+
+        /// <summary>
+        /// Redo the Binding to cause a refresh
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdatePageBindingContext()
+        {
+            // Clear the Binding and reset it
+            BindingContext = null;
+            BindingContext = ViewModel;
+
+            _ = EnableImageArrowButtons();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Enable True of False the Image Arrows
+        /// Based on the image in the list
+        /// </summary>
+        /// <returns></returns>
+        public bool EnableImageArrowButtons()
+        {
+            LeftArrowButton.IsEnabled = true;
+            RightArrowButton.IsEnabled = true;
+
+            var ImageIndexCurrent = RandomPlayerHelper.ItemImageList.IndexOf(ViewModel.Data.ImageURI);
+
+            if (ImageIndexCurrent < 1)
+            {
+                LeftArrowButton.IsEnabled = false;
+            }
+
+            if (ImageIndexCurrent >= ImageListCount - 1)
+            {
+                RightArrowButton.IsEnabled = false;
+            }
+
+            return true;
+        }
+
     }
 }
