@@ -124,5 +124,26 @@ namespace Game.Views
                 readyToSubmit = true;
             }
         }
+
+        /// <summary>
+        /// Catch changes in description text and prevent submitting if box is empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Description_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (DescriptionEntry.Text.Length < 1)
+            {
+                DescriptionEntry.Text = "PLEASE ENTER A DESCRIPTION";
+                DescriptionEntry.TextColor = Color.Red;
+                readyToSubmit = false;
+            }
+
+            if (DescriptionEntry.Text.Length > 0 && !readyToSubmit && DescriptionEntry.Text != "PLEASE ENTER A DESCRIPTION")
+            {
+                DescriptionEntry.TextColor = Color.White;
+                readyToSubmit = true;
+            }
+        }
     }
 }

@@ -70,6 +70,8 @@
 
                 <Editor Text="{Binding Data.Description}" 
                         d:Text="Item Description"
+                        x:Name="DescriptionEntry"
+                        TextChanged="Description_onTextChange"
                         FontSize="15"
                         WidthRequest="245"
                         AutoSize="TextChanges"
