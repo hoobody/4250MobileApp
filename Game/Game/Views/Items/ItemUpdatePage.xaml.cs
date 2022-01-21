@@ -125,7 +125,7 @@ namespace Game.Views
 
             if (NameEntry.Text.Length > 0 && !readyToSubmit && NameEntry.Text != "PLEASE ENTER A NAME")
             {
-                NameEntry.TextColor = Color.Black;
+                NameEntry.TextColor = Color.White;
                 readyToSubmit = true;
             }
         }
@@ -146,7 +146,7 @@ namespace Game.Views
 
             if (DescriptionEntry.Text.Length > 0 && !readyToSubmit && DescriptionEntry.Text != "PLEASE ENTER A DESCRIPTION")
             {
-                DescriptionEntry.TextColor = Color.Black;
+                DescriptionEntry.TextColor = Color.White;
                 readyToSubmit = true;
             }
         }
