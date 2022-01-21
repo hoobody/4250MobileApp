@@ -54,14 +54,18 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            //ensures code doesn't execute of item isn't properly filled out
+            if (readyToSubmit)
             {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+                // If the image in the data box is empty, use the default one..
+                if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+                {
+                    ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+                }
 
-            MessagingCenter.Send(this, "Update", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+                MessagingCenter.Send(this, "Update", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
         }
 
         /// <summary>
@@ -200,9 +204,20 @@ namespace Game.Views
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        public void Name_NameTextChanged(object sender, ValueChangedEventArgs e)
+        public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
+            if (NameEntry.Text.Length < 1)
+            {
+                NameEntry.Text = "PLEASE ENTER A NAME";
+                NameEntry.TextColor = Color.Red;
+                readyToSubmit = false;
+            }
 
+            if (NameEntry.Text.Length > 0 && !readyToSubmit && NameEntry.Text != "PLEASE ENTER A NAME")
+            {
+                NameEntry.TextColor = Color.Black;
+                readyToSubmit = true;
+            }
         }
 
     }

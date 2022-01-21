@@ -66,6 +66,8 @@
                         <Frame WidthRequest="280">
                             <Entry  Text="{Binding Data.Name}" 
                                     d:Text="Item Name"
+                                    x:Name="NameEntry" 
+                                    TextChanged="Name_onTextChange"
                                     FontSize="15"
                                     MaxLength="25"
                                     BackgroundColor="#36454F"/>
