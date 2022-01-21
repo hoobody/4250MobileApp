@@ -191,5 +191,16 @@ namespace Game.Views
             return true;
         }
 
+        /// <summary>
+        /// Function to catch changes in the text box and prevent submission of an empty field
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        public void Name_NameTextChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
+
     }
 }
