@@ -57,6 +57,7 @@
                                     TextChanged="Name_onTextChange"
                                     FontSize="15"
                                     MaxLength="25"
+                                    TextColor="White"
                                     BackgroundColor="#36454F"/>
                         </Frame>
                             
@@ -80,6 +81,7 @@
                                     TextChanged="Description_onTextChange"
                                     FontSize="15"
                                     MaxLength="30"
+                                    TextColor="White"
                                     BackgroundColor="#36454F"/>
                         </Frame>
 
