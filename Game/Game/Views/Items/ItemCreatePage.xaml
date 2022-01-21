@@ -54,6 +54,7 @@
                         AutoSize="TextChanges"
                         MaxLength="25"
                         BackgroundColor="#36454F"
+                        TextColor="White"
                         Style="{StaticResource EntryStyle}"/>
 
             </StackLayout>
@@ -77,6 +78,7 @@
                         AutoSize="TextChanges"
                         MaxLength="25"
                         BackgroundColor="#36454F"
+                        TextColor="White"
                         Style="{StaticResource EntryStyle}"/>
 
             </StackLayout>
