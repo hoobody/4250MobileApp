@@ -45,17 +45,15 @@
                         FontSize="15"
                         Style="{StaticResource LabelStyle}"/>
 
-                <Editor Text="{Binding Data.Name}" 
-                        d:Text="Item Name"
-                        x:Name="NameEntry"
-                        TextChanged="Name_onTextChange"
-                        FontSize="15"
-                        WidthRequest="284"
-                        AutoSize="TextChanges"
-                        MaxLength="25"
-                        BackgroundColor="#36454F"
-                        TextColor="White"
-                        Style="{StaticResource EntryStyle}"/>
+                <Frame WidthRequest="280">
+                    <Entry  Text="{Binding Data.Name}" 
+                            d:Text="Item Name"
+                            x:Name="NameEntry" 
+                            TextChanged="Name_onTextChange"
+                            FontSize="15"
+                            MaxLength="25"
+                            BackgroundColor="#36454F"/>
+                </Frame>
 
             </StackLayout>
 
@@ -69,18 +67,15 @@
                         FontSize="15"
                         Style="{StaticResource LabelStyle}"/>
 
-                <Editor Text="{Binding Data.Description}" 
-                        d:Text="Item Description"
-                        x:Name="DescriptionEntry"
-                        TextChanged="Description_onTextChange"
-                        FontSize="15"
-                        WidthRequest="245"
-                        AutoSize="TextChanges"
-                        MaxLength="25"
-                        BackgroundColor="#36454F"
-                        TextColor="White"
-                        Style="{StaticResource EntryStyle}"/>
-
+                <Frame WidthRequest="245">
+                    <Entry  Text="{Binding Data.Description}" 
+                            d:Text="Item Description"
+                            x:Name="DescriptionEntry" 
+                            TextChanged="Description_onTextChange"
+                            FontSize="15"
+                            MaxLength="30"
+                            BackgroundColor="#36454F"/>
+                </Frame>
             </StackLayout>
 
         </StackLayout>
