@@ -50,19 +50,21 @@
                                 FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
-                        <Frame WidthRequest="280">
-                            <Entry  Text="{Binding Data.Name}" 
-                                    d:Text="Item Name"
-                                    x:Name="NameEntry" 
-                                    TextChanged="Name_onTextChange"
-                                    FontSize="15"
-                                    MaxLength="25"
-                                    TextColor="White"
-                                    BackgroundColor="#36454F"/>
-                        </Frame>
-                            
+                        <Frame WidthRequest="280"
+                            x:Name="NameFrame">
 
-                        </StackLayout>
+                            <Entry  Text="{Binding Data.Name}" 
+                                d:Text="Item Name"
+                                x:Name="NameEntry" 
+                                TextChanged="Name_onTextChange"
+                                FontSize="15"
+                                MaxLength="25"
+                                TextColor="White"
+                                BackgroundColor="#36454F"/>
+                            
+                        </Frame>
+
+                    </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
                             Padding="7,5"
@@ -74,15 +76,18 @@
                                 FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
-                        <Frame WidthRequest="245">
+                        <Frame WidthRequest="245"
+                               x:Name="DescriptionFrame">
+                            
                             <Entry  Text="{Binding Data.Description}" 
-                                    d:Text="Item Description"
-                                    x:Name="DescriptionEntry" 
-                                    TextChanged="Description_onTextChange"
-                                    FontSize="15"
-                                    MaxLength="30"
-                                    TextColor="White"
-                                    BackgroundColor="#36454F"/>
+                                d:Text="Item Description"
+                                x:Name="DescriptionEntry" 
+                                TextChanged="Description_onTextChange"
+                                FontSize="15"
+                                MaxLength="30"
+                                TextColor="White"
+                                BackgroundColor="#36454F"/>
+                            
                         </Frame>
 
                     </StackLayout>
