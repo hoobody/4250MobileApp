@@ -34,43 +34,51 @@
         <StackLayout BackgroundColor="#696969">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
-                Padding="7,5"
+                Padding="7,7"
                 Spacing="5">
 
-                <Label 
-                    Text=" Name: " 
-                    FontSize="15"
-                    Style="{StaticResource LabelStyle}"/>
+                <Label Text="Name: "
+                       FontSize="15"
+                       Style="{StaticResource LabelStyle}"/>
 
-                <Editor Text="{Binding Data.Name}" 
-                    d:Text="Item Name"
-                    FontSize="15"
-                    WidthRequest="284"
-                    AutoSize="TextChanges"
-                    MaxLength="25"
-                    BackgroundColor="#36454F"
-                    IsReadOnly="True"/>
+                <Frame WidthRequest="280"
+                           CornerRadius="0"
+                           HeightRequest="30"
+                           Padding="5,0,0,0"
+                           BorderColor="Black"
+                           BackgroundColor="#36454F">
+                    <Label Text="{Binding Data.Name}"
+                           Style="{StaticResource LabelStyle}"
+                           FontSize="15"
+                           HeightRequest="40"/>
+                </Frame>
+
 
             </StackLayout>
 
             <StackLayout Style="{StaticResource HorizontalStack}"
-                Padding="7,5"
-                Spacing="5">
+                         Padding="7,0"
+                         Spacing="5">
 
-                <Label 
-                    Text=" Description: "
-                    FontSize="15"
-                    Style="{StaticResource LabelStyle}"/>
+                <Label Text="Description: "
+                                VerticalOptions="Start"
+                                HeightRequest="37"
+                                FontSize="15"
+                                Style="{StaticResource LabelStyle}"/>
 
-                <Editor Text="{Binding Data.Description}" 
-                    d:Text="Item Description"
-                    FontSize="15"
-                    WidthRequest="247"
-                    AutoSize="TextChanges"
-                    MaxLength="50"
-                    BackgroundColor="#36454F"
-                    IsReadOnly="True"/>
+                <Frame WidthRequest="245"
+                           HeightRequest="30"
+                           CornerRadius="0"
+                           Padding="5,0,0,0"
+                           BorderColor="Black"
+                           BackgroundColor="#36454F">
 
+                    <Label Text="{Binding Data.Description}"
+                               Style="{StaticResource LabelStyle}"
+                               FontSize="15"
+                               HeightRequest="40"/>
+
+                </Frame>
 
             </StackLayout>
 
@@ -78,7 +86,7 @@
 
         <StackLayout Style ="{StaticResource HorizontalStack}" 
             BackgroundColor="#696969"
-            Padding="7,5"
+            Padding="7,0"
             WidthRequest="350"
             Spacing="7">
 
