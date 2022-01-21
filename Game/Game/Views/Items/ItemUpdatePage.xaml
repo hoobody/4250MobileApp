@@ -54,7 +54,7 @@
                             <Entry  Text="{Binding Data.Name}" 
                                     d:Text="Item Name"
                                     FontSize="15"
-                                    MaxLength="15"
+                                    MaxLength="25"
                                     BackgroundColor="#36454F"/>
                         </Frame>
                             
@@ -75,7 +75,7 @@
                             <Entry  Text="{Binding Data.Description}" 
                                     d:Text="Item Description"
                                     FontSize="15"
-                                    MaxLength="20"
+                                    MaxLength="30"
                                     BackgroundColor="#36454F"/>
                         </Frame>
 
