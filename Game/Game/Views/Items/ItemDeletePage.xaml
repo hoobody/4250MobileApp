@@ -15,7 +15,7 @@
     <Grid>
         <StackLayout Style="{StaticResource VerticalStack}"
                      HorizontalOptions="CenterAndExpand"
-                     WidthRequest="300"
+                     WidthRequest="350"
                      Spacing="10">
 
             <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"
@@ -28,36 +28,55 @@
                            HeightRequest="150"/>
 
 
-            <StackLayout>
+            <StackLayout BackgroundColor="#696969"
+                        WidthRequest="350">
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HeightRequest="40"
-                                 Spacing="5">
+                            Padding="7,5"
+                            Spacing="5">
 
-                    <Label 
-                            Text=" Name :" 
-                            FontSize="16"
-                            Style="{StaticResource LabelStyle}"/>
-                    <Label 
-                            BackgroundColor="#838383"
-                            Text="{Binding Data.Name}" 
-                            Style="{StaticResource ValueStyle}"/>
+                    <Label Text="Name: "
+                                FontSize="15"
+                                Style="{StaticResource LabelStyle}"/>
+
+                    <Frame WidthRequest="280"
+                           CornerRadius="0"
+                           HeightRequest="30"
+                           Padding="5,0,0,0"
+                           BorderColor="Black"
+                           BackgroundColor="#36454F">
+                        <Label Text="{Binding Data.Name}"
+                               Style="{StaticResource LabelStyle}"
+                               FontSize="15"
+                               HeightRequest="40"/>
+                    </Frame>
+
 
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HeightRequest="25"
-                                 Spacing="5">
+                            Padding="7,5"
+                            Spacing="5">
 
-                    <Label 
-                            Text=" Description : "
-                            FontSize="16"
-                            Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Description: "
+                                VerticalOptions="Start"
+                                HeightRequest="37"
+                                FontSize="15"
+                                Style="{StaticResource LabelStyle}"/>
 
-                    <Label 
-                            BackgroundColor="#838383"
-                            Text="{Binding Data.Description}" 
-                            Style="{StaticResource ValueStyle}"/>
+                    <Frame WidthRequest="245"
+                           HeightRequest="30"
+                           CornerRadius="0"
+                           Padding="5,0,0,0"
+                           BorderColor="Black"
+                           BackgroundColor="#36454F">
+                        
+                        <Label Text="{Binding Data.Description}"
+                               Style="{StaticResource LabelStyle}"
+                               FontSize="15"
+                               HeightRequest="40"/>
+                        
+                    </Frame>
 
                 </StackLayout>
 
