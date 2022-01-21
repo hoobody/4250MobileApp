@@ -45,7 +45,9 @@
                         FontSize="15"
                         Style="{StaticResource LabelStyle}"/>
 
-                <Frame WidthRequest="280">
+                <Frame WidthRequest="280"
+                       x:Name="NameFrame">
+
                     <Entry  Text="{Binding Data.Name}" 
                             d:Text="Item Name"
                             x:Name="NameEntry" 
@@ -53,6 +55,7 @@
                             FontSize="15"
                             MaxLength="25"
                             BackgroundColor="#36454F"/>
+                    
                 </Frame>
 
             </StackLayout>
@@ -67,7 +70,9 @@
                         FontSize="15"
                         Style="{StaticResource LabelStyle}"/>
 
-                <Frame WidthRequest="245">
+                <Frame WidthRequest="245"
+                       x:Name="DescriptionFrame">
+                    
                     <Entry  Text="{Binding Data.Description}" 
                             d:Text="Item Description"
                             x:Name="DescriptionEntry" 
@@ -75,7 +80,9 @@
                             FontSize="15"
                             MaxLength="30"
                             BackgroundColor="#36454F"/>
+                    
                 </Frame>
+                
             </StackLayout>
 
         </StackLayout>
