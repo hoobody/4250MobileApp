@@ -25,6 +25,9 @@ namespace Game.Views
         // Current count of the Images in the Item Image List
         public int ImageListCount = RandomPlayerHelper.ItemImageList.Count;
 
+        //track if page is ready to submit the updates
+        public bool readyToSubmit { get; set; } = false;
+
         // Empty Constructor for Tests
         public ItemUpdatePage(bool UnitTest) { }
 
