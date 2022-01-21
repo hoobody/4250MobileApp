@@ -113,7 +113,6 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (NameEntry.Text.Length == 0)
