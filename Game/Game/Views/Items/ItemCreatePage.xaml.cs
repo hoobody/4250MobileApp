@@ -19,6 +19,9 @@ namespace Game.Views
         // The item to create
         public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
 
+        //track if page is ready to submit the updates
+        public bool readyToSubmit { get; set; } = false;
+
         // Empty Constructor for UTs
         public ItemCreatePage(bool UnitTest) { }
 
@@ -47,14 +50,18 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            //prevent submission if something is wrong
+            if (readyToSubmit)
             {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+                // If the image in the data box is empty, use the default one..
+                if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+                {
+                    ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+                }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
         }
 
         /// <summary>
