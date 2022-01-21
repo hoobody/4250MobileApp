@@ -47,6 +47,8 @@
 
                 <Editor Text="{Binding Data.Name}" 
                         d:Text="Item Name"
+                        x:Name="NameEntry"
+                        TextChanged="Name_onTextChange"
                         FontSize="15"
                         WidthRequest="284"
                         AutoSize="TextChanges"

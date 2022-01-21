@@ -103,5 +103,26 @@ namespace Game.Views
         {
             DamageValue.Text = String.Format("{0}", e.NewValue);
         }
+
+        /// <summary>
+        /// Catch changes in the text box and prevent submission of an empty field
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Name_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (NameEntry.Text.Length < 1)
+            {
+                NameEntry.Text = "PLEASE ENTER A NAME";
+                NameEntry.TextColor = Color.Red;
+                readyToSubmit = false;
+            }
+
+            if (NameEntry.Text.Length > 0 && !readyToSubmit && NameEntry.Text != "PLEASE ENTER A NAME")
+            {
+                NameEntry.TextColor = Color.Black;
+                readyToSubmit = true;
+            }
+        }
     }
 }
