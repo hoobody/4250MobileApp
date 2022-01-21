@@ -116,16 +116,15 @@ namespace Game.Views
 
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (NameEntry.Text.Length < 1)
+            if (NameEntry.Text.Length == 0)
             {
-                NameEntry.Text = "PLEASE ENTER A NAME";
-                NameEntry.TextColor = Color.Red;
+                NameEntry.BackgroundColor = Color.FromHex("848884");
                 readyToSubmit = false;
             }
 
-            if (NameEntry.Text.Length > 0 && !readyToSubmit && NameEntry.Text != "PLEASE ENTER A NAME")
+            if (NameEntry.Text.Length != 0)
             {
-                NameEntry.TextColor = Color.White;
+                NameEntry.BackgroundColor = Color.FromHex("36454F");
                 readyToSubmit = true;
             }
         }
@@ -137,16 +136,15 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Description_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (DescriptionEntry.Text.Length < 1)
+            if (DescriptionEntry.Text.Length == 0)
             {
-                DescriptionEntry.Text = "PLEASE ENTER A DESCRIPTION";
-                DescriptionEntry.TextColor = Color.Red;
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
                 readyToSubmit = false;
             }
 
-            if (DescriptionEntry.Text.Length > 0 && !readyToSubmit && DescriptionEntry.Text != "PLEASE ENTER A DESCRIPTION")
+            if (DescriptionEntry.Text.Length != 0)
             {
-                DescriptionEntry.TextColor = Color.White;
+                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 readyToSubmit = true;
             }
         }
