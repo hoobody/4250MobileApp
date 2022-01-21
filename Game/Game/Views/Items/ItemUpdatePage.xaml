@@ -22,8 +22,8 @@
 
     <ContentPage.Content>
 
-        <ScrollView>
-            <Grid>
+        <ScrollView HorizontalOptions="Center">
+            
                 <StackLayout Style="{StaticResource VerticalStack}"
                     HorizontalOptions="Center"
                     Spacing="5"
@@ -212,7 +212,7 @@
                     </Grid>
 
                 </StackLayout>
-            </Grid>
+            
         </ScrollView>
         
     </ContentPage.Content>
