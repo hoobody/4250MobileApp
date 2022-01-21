@@ -15,7 +15,7 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource VerticalStack}"
                      HorizontalOptions="Center"
-                     WidthRequest="275">
+                     WidthRequest="350">
 
             <Label Text="Item Index" Style="{StaticResource HeaderStyle}"
                    HorizontalOptions="Center"/>
