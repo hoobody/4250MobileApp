@@ -32,7 +32,7 @@
                         WidthRequest="350">
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
+                            Padding="7,7"
                             Spacing="5">
 
                     <Label Text="Name: "
