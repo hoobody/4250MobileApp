@@ -25,9 +25,6 @@ namespace Game.Views
         // Current count of the Images in the Item Image List
         public int ImageListCount = RandomPlayerHelper.ItemImageList.Count;
 
-        //track if page is ready to submit the updates
-        public bool readyToSubmit { get; set; } = false;
-
         // Empty Constructor for Tests
         public ItemUpdatePage(bool UnitTest) { }
 
@@ -55,7 +52,7 @@ namespace Game.Views
         public async void Save_Clicked(object sender, EventArgs e)
         {
             //ensures code doesn't execute of item isn't properly filled out
-            if (readyToSubmit)
+            if (readyToSubmit())
             {
                 // If the image in the data box is empty, use the default one..
                 if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
@@ -109,43 +106,47 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch changes in the text box and prevent submission of an empty field
+        /// Catch changes in the name text box and changes the color if empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (NameEntry.Text.Length == 0)
-            {
                 NameEntry.BackgroundColor = Color.FromHex("848884");
-                readyToSubmit = false;
-            }
 
             if (NameEntry.Text.Length != 0)
-            {
                 NameEntry.BackgroundColor = Color.FromHex("36454F");
-                readyToSubmit = true;
-            }
         }
 
         /// <summary>
-        /// Catch changes in description text and prevent submitting if box is empty
+        /// Catch changes in description text and changes the color of the box if empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Description_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (DescriptionEntry.Text.Length == 0)
-            {
                 DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                readyToSubmit = false;
-            }
 
             if (DescriptionEntry.Text.Length != 0)
-            {
                 DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                readyToSubmit = true;
-            }
+        }
+
+        /// <summary>
+        /// Prevents submission if name or description is emtpy
+        /// </summary>
+        /// <returns></returns>
+        public bool readyToSubmit()
+        {
+            if (NameEntry.Text.Length == 0 )
+                return false;
+
+            if (DescriptionEntry.Text.Length == 0)
+                return false;
+
+            return true;
         }
 
     }
