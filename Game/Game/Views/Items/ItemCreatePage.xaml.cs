@@ -19,9 +19,6 @@ namespace Game.Views
         // The item to create
         public GenericViewModel<ItemModel> ViewModel = new GenericViewModel<ItemModel>();
 
-        //track if page is ready to submit the updates
-        public bool readyToSubmit { get; set; } = false;
-
         // Empty Constructor for UTs
         public ItemCreatePage(bool UnitTest) { }
 
@@ -55,7 +52,7 @@ namespace Game.Views
         public async void Save_Clicked(object sender, EventArgs e)
         {
             //prevent submission if something is wrong
-            if (readyToSubmit)
+            if (readyToSubmit())
             {
                 // If the image in the data box is empty, use the default one..
                 if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
@@ -118,13 +115,13 @@ namespace Game.Views
             if (NameEntry.Text.Length == 0)
             {
                 NameEntry.BackgroundColor = Color.FromHex("848884");
-                readyToSubmit = false;
+                
             }
 
             if (NameEntry.Text.Length != 0)
             {
                 NameEntry.BackgroundColor = Color.FromHex("36454F");
-                readyToSubmit = true;
+                
             }
         }
 
@@ -138,14 +135,29 @@ namespace Game.Views
             if (DescriptionEntry.Text.Length == 0)
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                readyToSubmit = false;
+                
             }
 
             if (DescriptionEntry.Text.Length != 0)
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                readyToSubmit = true;
+                
             }
+        }
+
+        /// <summary>
+        /// Prevents submission if name or description is emtpy
+        /// </summary>
+        /// <returns></returns>
+        public bool readyToSubmit()
+        {
+            if (NameEntry.Text.Length == 0)
+                return false;
+
+            if (DescriptionEntry.Text.Length == 0)
+                return false;
+
+            return true;
         }
     }
 }
