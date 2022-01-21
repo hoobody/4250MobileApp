@@ -199,7 +199,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Function to catch changes in the text box and prevent submission of an empty field
+        /// Catch changes in the text box and prevent submission of an empty field
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -216,6 +216,27 @@ namespace Game.Views
             if (NameEntry.Text.Length > 0 && !readyToSubmit && NameEntry.Text != "PLEASE ENTER A NAME")
             {
                 NameEntry.TextColor = Color.Black;
+                readyToSubmit = true;
+            }
+        }
+
+        /// <summary>
+        /// Catch changes in description text and prevent submitting if box is empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Description_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (DescriptionEntry.Text.Length < 1)
+            {
+                DescriptionEntry.Text = "PLEASE ENTER A DESCRIPTION";
+                DescriptionEntry.TextColor = Color.Red;
+                readyToSubmit = false;
+            }
+
+            if (DescriptionEntry.Text.Length > 0 && !readyToSubmit && DescriptionEntry.Text != "PLEASE ENTER A DESCRIPTION")
+            {
+                DescriptionEntry.TextColor = Color.Black;
                 readyToSubmit = true;
             }
         }

@@ -89,6 +89,8 @@
                         <Frame WidthRequest="245">
                             <Entry  Text="{Binding Data.Description}" 
                                     d:Text="Item Description"
+                                    x:Name="DescriptionEntry" 
+                                    TextChanged="Description_onTextChange"
                                     FontSize="15"
                                     MaxLength="30"
                                     BackgroundColor="#36454F"/>
