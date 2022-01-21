@@ -183,7 +183,10 @@
 
                         <Stepper Grid.Column="2" Grid.Row="0"  
                                 Value="{Binding Data.Range, Mode=TwoWay}"
-                                ValueChanged="Range_OnStepperValueChanged"/>
+                                ValueChanged="Range_OnStepperValueChanged"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"/>
 
                         <Label Grid.Column="0" Grid.Row="1"
                                 Text="Value"
@@ -202,7 +205,10 @@
 
                         <Stepper Grid.Column="2" Grid.Row="1"
                                 Value="{Binding Data.Value, Mode=TwoWay}"
-                                ValueChanged="Value_OnStepperValueChanged"/>
+                                ValueChanged="Value_OnStepperValueChanged"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Increment="1"/>
 
                         <Label Grid.Column="0" Grid.Row="2"
                                 Text="Damage" 
