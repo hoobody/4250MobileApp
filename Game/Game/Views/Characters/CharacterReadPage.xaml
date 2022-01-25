@@ -270,6 +270,16 @@
                         </Grid>
                     </StackLayout>
 
+                    <Frame Background="#36454F"
+                           WidthRequest="500"
+                           HeightRequest="40">
+                        <Label Text="Items Equipped"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="20"
+                               Style="{StaticResource LabelStyle}"/>
+                    </Frame>
+                    
                     <FlexLayout 
                         Margin="5"
                         Wrap="Wrap"
