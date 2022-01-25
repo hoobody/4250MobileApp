@@ -10,7 +10,7 @@
     <ScrollView
       Padding="10,10,10,10"
       VerticalOptions="Start"
-      HorizontalOptions="FillAndExpand"
+      HorizontalOptions="CenterAndExpand"
       Orientation="Vertical">
 
         <StackLayout Style="{StaticResource VerticalStack}">
