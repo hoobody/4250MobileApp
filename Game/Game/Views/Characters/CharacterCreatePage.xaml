@@ -61,15 +61,30 @@
                                     <StackLayout Style="{StaticResource VerticalStack}">
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
+                                            
                                             <Label  Text="Name" 
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                     Style="{StaticResource EntryStyle}"/>
+                                            
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}">
+
+                                            <Label  Grid.Row="1" Grid.Column="0"
+                                                    Text="Description" 
+                                                    Style="{StaticResource LabelStyle}"/>
+
+                                            <Entry  Grid.Row="1" Grid.Column="1"
+                                                    Text="{Binding Data.Description, Mode=TwoWay}" 
+                                                    Style="{StaticResource EntryStyle}"/>
+
                                         </StackLayout>
 
                                     </StackLayout>
-                                    
+
+
                                 </StackLayout>
 
                             </StackLayout>
@@ -103,13 +118,7 @@
                                                     Source="d10.png"
                                                     Clicked="RollDice_Clicked"/>
 
-                                <Label  Grid.Row="1" Grid.Column="0"
-                                        Text="Description" 
-                                        Style="{StaticResource LabelStyle}"/>
-
-                                <Entry  Grid.Row="1" Grid.Column="1"
-                                        Text="{Binding Data.Description, Mode=TwoWay}" 
-                                        Style="{StaticResource EntryStyle}"/>
+                                
 
                                 <Label  Grid.Row="2" Grid.Column="0"
                                         Text="Image" 
