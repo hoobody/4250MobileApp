@@ -112,13 +112,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (NameEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(NameEntry.Text) || string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = Color.FromHex("848884");
                 NameFrame.BorderColor = Color.Red;
             }
 
-            if (NameEntry.Text.Length != 0)
+            if (!string.IsNullOrEmpty(NameEntry.Text) || !string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = Color.FromHex("36454F");
                 NameFrame.BorderColor = Color.FromHex("#696969");
@@ -132,13 +132,13 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Description_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (DescriptionEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(DescriptionEntry.Text) || string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("848884");
                 DescriptionFrame.BorderColor = Color.Red;
             }
 
-            if (DescriptionEntry.Text.Length != 0)
+            if (!string.IsNullOrEmpty(DescriptionEntry.Text) || !string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 DescriptionFrame.BorderColor = Color.FromHex("#696969");
