@@ -22,20 +22,43 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        <AbsoluteLayout HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand">
 
-            <StackLayout Style="{StaticResource VerticalStack}"
-                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                    AbsoluteLayout.LayoutFlags="All">
+            <StackLayout    Style="{StaticResource VerticalStack}"
+                            AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                            AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView>
                     
 
-                    <StackLayout Style="{StaticResource VerticalStack}">
-                        
-                    
+                    <StackLayout Style="{StaticResource VerticalStack}"
+                                 HorizontalOptions="CenterAndExpand">
+
+                        <Frame BorderColor="Black"
+                               CornerRadius="5"
+                               Padding="10">
+
+                            <StackLayout    Style="{StaticResource VerticalStack}"
+                                            HorizontalOptions="Center"
+                                            WidthRequest="150">
+
+                                <StackLayout Style="{StaticResource HorizontalStack}"
+                                             Spacing="15">
+
+                                    <Label  Text="Class" 
+                                            Style="{StaticResource LabelStyle}"/>
+
+                                    <Picker x:Name="ClassPicker"/>
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </Frame>
+
+
+
 
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
                                      Spacing="10">
