@@ -35,7 +35,9 @@
                 <StackLayout  Style="{StaticResource HorizontalStack}"
                               HorizontalOptions="CenterAndExpand">
 
-                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"
+                           WidthRequest="150"
+                           HeightRequest="150"/>
 
                 </StackLayout>
 
