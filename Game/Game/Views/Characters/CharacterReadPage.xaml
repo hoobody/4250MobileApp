@@ -19,20 +19,21 @@
 
         <StackLayout Style="{StaticResource VerticalStack}"
                      HorizontalOptions="CenterAndExpand"
-                     WidthRequest="500"
+                     WidthRequest="475"
                      AbsoluteLayout.LayoutBounds="1,1,1,1" 
                      AbsoluteLayout.LayoutFlags="All">
 
             <ScrollView x:Name="ScrollView">
-                <StackLayout Style="{StaticResource VerticalStack}">
-                    
+                <StackLayout Style="{StaticResource VerticalStack}"
+                             Spacing="10">
+
                     <Label Text="Read Page" Style="{StaticResource HeaderStyle}"
                                HorizontalOptions="Center"/>
-                    
+
                     <Frame HeightRequest="210"
-                           WidthRequest="380"
+                           WidthRequest="400"
                            BorderColor="Black">
-                        
+
                         <StackLayout Style="{StaticResource HorizontalStack}"
                                      WidthRequest="350"
                                      HorizontalOptions="Center"
@@ -59,7 +60,7 @@
 
                             <StackLayout Style="{StaticResource VerticalStack}"
                                          VerticalOptions="Center"
-                                         WidthRequest="215">
+                                         WidthRequest="250">
                                 <StackLayout Style="{StaticResource VerticalStack}"
                                              VerticalOptions="Center"
                                              HeightRequest="40"
@@ -69,28 +70,30 @@
                                            VerticalOptions="Start"/>
                                 </StackLayout>
                                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                         HorizontalOptions="Start">
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
 
                                     <Label 
-                                        Text="Class/Rank : " 
+                                        Text="Class/Rank:" 
                                         Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
-                                           WidthRequest="128"
+                                           WidthRequest="140"
                                            Padding="3">
                                         <Label 
                                             Text="{Binding Data.Name}" 
                                             Style="{StaticResource ValueStyle}"/>
                                     </Frame>
-                                    
+
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                             HorizontalOptions="Start">
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
                                     <Label 
-                                    Text="CodeName: : " 
+                                    Text="CodeName:" 
                                     Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
-                                           WidthRequest="125"
+                                           WidthRequest="140"
                                            Padding="3">
                                         <Label 
                                             Text="{Binding Data.Level}" 
@@ -99,12 +102,13 @@
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                         HorizontalOptions="Start">
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
                                     <Label 
-                                    Text="Description : " 
+                                    Text="Description: " 
                                     Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
-                                           WidthRequest="125"
+                                           WidthRequest="140"
                                            Padding="3">
                                         <Label 
                                             Text="{Binding Data.Description  }" 
@@ -121,7 +125,7 @@
 
                                            ScaleY="2"
                                            ScaleX="1"/>
-                                    
+
                                     <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="End">
                                         <Label 
@@ -137,13 +141,136 @@
                                         </Frame>
                                     </StackLayout>
                                 </StackLayout>
+                            </StackLayout>
+
                         </StackLayout>
-                        
-                        </StackLayout>
-                        
+
                     </Frame>
-                    
-                <FlexLayout 
+
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                 WidthRequest="375"
+                                 HorizontalOptions="Center">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0"
+                                    Text="Health"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider Grid.Column="1" Grid.Row="0"
+                                    x:Name="HealthSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    Background="#36454F" 
+                                    ThumbColor="#36454F"
+                                    MinimumTrackColor="Black"
+                                    Maximum="100" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetMaxHealthTotal}"
+                                    IsEnabled="False">
+                            </Slider>
+
+                            <Frame Grid.Column="2" Grid.Row="0"
+                                   BackgroundColor="#36454F"
+                                   WidthRequest="50"
+                                   HeightRequest="30">
+                                <Label Text="{Binding Data.GetMaxHealthTotal}"
+                                       Style="{StaticResource LabelStyle}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+
+                            <Label Grid.Column="0" Grid.Row="1"
+                                   Text="Damage"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider Grid.Column="1" Grid.Row="1"
+                                    x:Name="DamageSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    Background="#36454F" 
+                                    ThumbColor="#36454F"
+                                    MinimumTrackColor="Black"
+                                    Maximum="100" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetAttackTotal}"
+                                    IsEnabled="False">
+                            </Slider>
+
+                            <Frame Grid.Column="2" Grid.Row="1"
+                                   BackgroundColor="#36454F"
+                                   WidthRequest="50"
+                                   HeightRequest="30">
+                                <Label Text="{Binding Data.GetAttackTotal}"
+                                       Style="{StaticResource LabelStyle}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+
+                            <Label Grid.Column="0" Grid.Row="2"
+                                   Text="Defense"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider Grid.Column="1" Grid.Row="2"
+                                    x:Name="DefenseSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    Background="#36454F" 
+                                    ThumbColor="#36454F"
+                                    MinimumTrackColor="Black"
+                                    Maximum="100" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetDefenseTotal}"
+                                    IsEnabled="False">
+                            </Slider>
+
+                            <Frame Grid.Column="2" Grid.Row="2"
+                                   BackgroundColor="#36454F"
+                                   WidthRequest="50"
+                                   HeightRequest="30">
+                                <Label Text="{Binding Data.GetDefenseTotal}"
+                                       Style="{StaticResource LabelStyle}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+
+                            <Label Grid.Column="0" Grid.Row="3"
+                                   Text="Speed"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider Grid.Column="1" Grid.Row="3"
+                                    x:Name="SpeedSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    Background="#36454F" 
+                                    ThumbColor="#36454F"
+                                    MinimumTrackColor="Black"
+                                    Maximum="100" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetSpeedTotal}"
+                                    IsEnabled="False">
+                            </Slider>
+
+                            <Frame Grid.Column="2" Grid.Row="3"
+                                   BackgroundColor="#36454F"
+                                   WidthRequest="50"
+                                   HeightRequest="30">
+                                <Label Text="{Binding Data.GetSpeedTotal}"
+                                       Style="{StaticResource LabelStyle}"
+                                       HorizontalOptions="Center"/>
+                            </Frame>
+                            
+                        </Grid>
+                    </StackLayout>
+
+                    <FlexLayout 
                         Margin="5"
                         Wrap="Wrap"
                         JustifyContent="SpaceAround"
