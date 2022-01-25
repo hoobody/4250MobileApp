@@ -368,7 +368,7 @@ namespace Game.Views
         /// <summary>
         /// Setup the Dice Animation
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender"></param>   
         /// <param name="e"></param>
         public bool DiceAnimationHandeler()
         {

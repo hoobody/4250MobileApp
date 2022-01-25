@@ -40,8 +40,7 @@
                                Padding="10">
 
                             <StackLayout    Style="{StaticResource VerticalStack}"
-                                            HorizontalOptions="Center"
-                                            WidthRequest="150">
+                                            HorizontalOptions="Center">
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                              Spacing="15">
@@ -59,13 +58,16 @@
                                            Style="{StaticResource ImageLargeStyle}" 
                                            HorizontalOptions="CenterAndExpand"/>
 
-                                    <!--ImageButton    x:Name="RollDice"
-                                                    Style="{StaticResource ImageLargeStyle}"
-                                                    Source="d10.png"
-                                                    Clicked="RollDice_Clicked"/-->
-
                                     <StackLayout Style="{StaticResource VerticalStack}">
-                                        
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}">
+                                            <Label  Text="Name" 
+                                                    Style="{StaticResource LabelStyle}"/>
+
+                                            <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
+                                                    Style="{StaticResource EntryStyle}"/>
+                                        </StackLayout>
+
                                     </StackLayout>
                                     
                                 </StackLayout>
@@ -96,13 +98,10 @@
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label  Grid.Row="0" Grid.Column="0"
-                                        Text="Name" 
-                                        Style="{StaticResource LabelStyle}"/>
-
-                                <Entry  Grid.Row="0" Grid.Column="1"
-                                        Text="{Binding Data.Name, Mode=TwoWay}" 
-                                        Style="{StaticResource EntryStyle}"/>
+                                <ImageButton    x:Name="RollDice"
+                                                    Style="{StaticResource ImageLargeStyle}"
+                                                    Source="d10.png"
+                                                    Clicked="RollDice_Clicked"/>
 
                                 <Label  Grid.Row="1" Grid.Column="0"
                                         Text="Description" 
