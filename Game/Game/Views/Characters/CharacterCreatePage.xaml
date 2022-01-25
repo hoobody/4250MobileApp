@@ -53,6 +53,23 @@
 
                                 </StackLayout>
 
+                                <StackLayout Style="{StaticResource HorizontalStack}">
+
+                                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" 
+                                           Style="{StaticResource ImageLargeStyle}" 
+                                           HorizontalOptions="CenterAndExpand"/>
+
+                                    <!--ImageButton    x:Name="RollDice"
+                                                    Style="{StaticResource ImageLargeStyle}"
+                                                    Source="d10.png"
+                                                    Clicked="RollDice_Clicked"/-->
+
+                                    <StackLayout Style="{StaticResource VerticalStack}">
+                                        
+                                    </StackLayout>
+                                    
+                                </StackLayout>
+
                             </StackLayout>
 
                         </Frame>
@@ -66,19 +83,7 @@
                             <Label Text="Create Page" 
                                    Style="{StaticResource HeaderStyle}"/>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
-                            
-                                <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" 
-                                       Style="{StaticResource ImageLargeStyle}" 
-                                       HorizontalOptions="CenterAndExpand"/>
-
-                                <ImageButton 
-                                    x:Name="RollDice"
-                                    Style="{StaticResource ImageLargeStyle}"
-                                    Source="d10.png"
-                                    Clicked="RollDice_Clicked"/>
-                            
-                            </StackLayout>
+                          
 
                             <Grid   RowSpacing="1"
                                     ColumnSpacing="2"
