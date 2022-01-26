@@ -25,9 +25,11 @@
         <AbsoluteLayout HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand">
 
-            <StackLayout    Style="{StaticResource VerticalStack}"
-                            AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                            AbsoluteLayout.LayoutFlags="All">
+            <StackLayout Style="{StaticResource VerticalStack}"
+                     HorizontalOptions="CenterAndExpand"
+                     WidthRequest="475"
+                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                     AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView>
                     
@@ -35,6 +37,9 @@
                     <StackLayout Style="{StaticResource VerticalStack}"
                                  HorizontalOptions="CenterAndExpand">
 
+                        <Label Text="Read Page" Style="{StaticResource HeaderStyle}"
+                               HorizontalOptions="Center"/>
+                        
                         <Frame BorderColor="Black"
                                CornerRadius="5"
                                Padding="10">
