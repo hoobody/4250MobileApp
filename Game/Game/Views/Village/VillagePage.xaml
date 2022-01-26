@@ -7,7 +7,6 @@
 
 
     <StackLayout Style="{StaticResource VerticalStack}"
-                 Spacing="75"
                  HorizontalOptions="CenterAndExpand"
                  VerticalOptions="CenterAndExpand">
         
@@ -25,7 +24,7 @@
         </StackLayout>
 
         <StackLayout  Style="{StaticResource HorizontalStack}"
-                      Spacing="250">
+                      Spacing="75">
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
