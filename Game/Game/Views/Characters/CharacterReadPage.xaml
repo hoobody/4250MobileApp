@@ -196,11 +196,11 @@
 
                             <Slider Grid.Column="1" Grid.Row="1"
                                     x:Name="DamageSlider" 
-                                    WidthRequest="250" 
+                                    WidthRequest="100" 
                                     HeightRequest="36"  
                                     ThumbColor="Transparent"
                                     MinimumTrackColor="Black"
-                                    Maximum="100" 
+                                    Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetAttackTotal}"
                                     IsEnabled="False">
@@ -225,7 +225,7 @@
                                     HeightRequest="36"  
                                     ThumbColor="Transparent"
                                     MinimumTrackColor="Black"
-                                    Maximum="100" 
+                                    Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetDefenseTotal}"
                                     IsEnabled="False">
@@ -250,7 +250,7 @@
                                     HeightRequest="36"  
                                     ThumbColor="Transparent"
                                     MinimumTrackColor="Black"
-                                    Maximum="100" 
+                                    Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetSpeedTotal}"
                                     IsEnabled="False">
