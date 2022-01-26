@@ -41,7 +41,7 @@
                                      Spacing="10">
 
                             <StackLayout Style="{StaticResource VerticalStack}"
-                                         Spacing="20"
+                                         Spacing="10"
                                          WidthRequest="125">
 
                                 <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
