@@ -13,21 +13,27 @@
       HorizontalOptions="CenterAndExpand"
       Orientation="Vertical">
 
-        <StackLayout Style="{StaticResource VerticalStack}">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                     Spacing="10">
+            
+            <Image Source="d20_2.png" Style="{StaticResource ImageMediumStyle}"/>
 
-            <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
+            <Frame WidthRequest="350"
+                   HeightRequest="200">
+                <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
-                <Image Source="d20_2.png" Style="{StaticResource ImageMediumStyle}"/>
-                <Label Text="Trijecta" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Jesse McQuillan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Jonathan Doan" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Jacob Charbonneau" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-            </StackLayout>
+                    <Label Text="Trijecta" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Spacing="5">
+                        <Label Text="Jesse McQuillan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                        <Label Text="Jonathan Doan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                        <Label Text="Jacob Charbonneau" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        <!--Database Settings Frame-->
 
-            <!--Database Settings Frame-->
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}"
+                         HorizontalOptions="Center">
 
                 <Label
                         Text="Database Settings"
@@ -41,8 +47,9 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalStack}"
-                        x:Name="DatabaseSettingsFrame"
-                        IsVisible="False">
+                         HorizontalOptions="Center"
+                         x:Name="DatabaseSettingsFrame"
+                         IsVisible="False">
 
                 <!--Database Settings-->
                 <StackLayout Style="{StaticResource HorizontalStack}"
@@ -76,7 +83,8 @@
             </StackLayout>
 
             <!--Debug Settings Frame-->
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}"
+                         HorizontalOptions="Center">
 
                 <Label
                     Text="Debug Settings"
@@ -90,7 +98,8 @@
                     IsToggled="False"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False">
+            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False"
+                         HorizontalOptions="Center">
 
                 <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0">
 
