@@ -96,7 +96,7 @@
                                            WidthRequest="140"
                                            Padding="3">
                                         <Label 
-                                            Text="{Binding Data.Level}" 
+                                            Text="{Binding Data.Description}" 
                                             Style="{StaticResource ValueStyle}"/>
                                     </Frame>
                                 </StackLayout>
@@ -111,7 +111,7 @@
                                            WidthRequest="140"
                                            Padding="3">
                                         <Label 
-                                            Text="{Binding Data.Description  }" 
+                                            Text="{Binding Data.Level  }" 
                                             Style="{StaticResource ValueStyle}"/>
                                     </Frame>
                                 </StackLayout>
