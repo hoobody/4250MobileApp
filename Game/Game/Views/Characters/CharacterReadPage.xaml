@@ -105,15 +105,13 @@
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="Start"
                                              Spacing="3">
-                                    <Label 
-                                    Text="Description: " 
-                                    Style="{StaticResource LabelStyle}"/>
+                                    <Label Text="Description: " 
+                                           Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
                                            WidthRequest="140"
                                            Padding="3">
-                                        <Label 
-                                            Text="{Binding Data.Level  }" 
-                                            Style="{StaticResource ValueStyle}"/>
+                                        <Label Text="{Binding Data.Level  }" 
+                                               Style="{StaticResource ValueStyle}"/>
                                     </Frame>
                                 </StackLayout>
 
@@ -124,7 +122,6 @@
                                     <Label Text="█║█ ║▌║█║▌│║▌║▌█║"
                                            TextColor="Black"
                                            VerticalOptions="Center"
-
                                            ScaleY="1.75"
                                            ScaleX="1"/>
 

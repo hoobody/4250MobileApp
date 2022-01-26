@@ -15,15 +15,15 @@
 
 
     <StackLayout Orientation="Vertical"
-                     HorizontalOptions="CenterAndExpand"
-                     WidthRequest="475">
+                 HorizontalOptions="CenterAndExpand"
+                 WidthRequest="475">
 
         <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"
-                   HorizontalOptions="Center"/>
+               HorizontalOptions="Center"/>
 
         <Frame HeightRequest="210"
-                   WidthRequest="400"
-                   BorderColor="Black">
+               WidthRequest="400"
+               BorderColor="Black">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
                          WidthRequest="350"
@@ -32,13 +32,13 @@
                          Spacing="10">
 
                 <StackLayout Style="{StaticResource VerticalStack}"
-                             Spacing="20"
+                             Spacing="10"
                              WidthRequest="125">
 
-                    <Label Text="Name" Style="{StaticResource HeaderStyle}"
-                            HorizontalOptions="Center"
-                            FontSize="Medium"
-                            FontAttributes="Bold"/>
+                    <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
+                           HorizontalOptions="Center"
+                           FontSize="Medium"
+                           FontAttributes="Bold"/>
 
                     <Frame BackgroundColor="#36454F"
                            BorderColor="Black"
@@ -50,45 +50,43 @@
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource VerticalStack}"
-                                VerticalOptions="Center"
-                                WidthRequest="250">
+                             VerticalOptions="Center"
+                             WidthRequest="250"
+                             Spacing="10">
+
                     <StackLayout Style="{StaticResource VerticalStack}"
-                                    VerticalOptions="Center"
-                                    HeightRequest="40"
-                                    WidthRequest="215">
+                                 VerticalOptions="Center"
+                                 HeightRequest="25"
+                                 WidthRequest="215">
                         <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Start"/>
+                               HorizontalOptions="Center"
+                               VerticalOptions="Start"/>
                     </StackLayout>
                     <StackLayout Style="{StaticResource HorizontalStack}"
-                                        HorizontalOptions="Start"
-                                        Spacing="3">
+                                 HorizontalOptions="Start"
+                                 Spacing="3">
 
-                        <Label 
-                                Text="Class/Rank:" 
-                                Style="{StaticResource LabelStyle}"/>
+                        <Label Text="Class/Rank:" 
+                               Style="{StaticResource LabelStyle}"/>
                         <Frame BackgroundColor="#36454F"
-                                    WidthRequest="140"
-                                    Padding="3">
-                            <Label 
-                                    Text="{Binding Data.Name}" 
-                                    Style="{StaticResource ValueStyle}"/>
+                               WidthRequest="142"
+                               Padding="3">
+                            <Label Text="{Binding Data.Name}" 
+                                   Style="{StaticResource ValueStyle}"/>
                         </Frame>
 
                     </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}"
-                            HorizontalOptions="Start"
-                            Spacing="3">
-                        <Label 
-                                Text="CodeName:" 
-                                Style="{StaticResource LabelStyle}"/>
+                                 HorizontalOptions="Start"
+                                 Spacing="3">
+                        <Label Text="CodeName:" 
+                               Style="{StaticResource LabelStyle}"/>
                         <Frame BackgroundColor="#36454F"
-                                WidthRequest="140"
-                                Padding="3">
-                            <Label 
-                                Text="{Binding Data.Level}" 
-                                Style="{StaticResource ValueStyle}"/>
+                               WidthRequest="143"
+                               Padding="3">
+                            <Label Text="{Binding Data.Description}" 
+                                   Style="{StaticResource ValueStyle}"/>
                         </Frame>
                     </StackLayout>
 
@@ -98,11 +96,10 @@
                         <Label Text="Description: " 
                                Style="{StaticResource LabelStyle}"/>
                         <Frame BackgroundColor="#36454F"
-                                    WidthRequest="140"
-                                    Padding="3">
-                            <Label 
-                                Text="{Binding Data.Description  }" 
-                                Style="{StaticResource ValueStyle}"/>
+                               WidthRequest="140"
+                               Padding="3">
+                            <Label Text="{Binding Data.Level  }" 
+                                   Style="{StaticResource ValueStyle}"/>
                         </Frame>
                     </StackLayout>
 
@@ -111,23 +108,21 @@
                                  Spacing="7">
 
                         <Label Text="█║█ ║▌║█║▌│║▌║▌█║"
-                            TextColor="Black"
-                            VerticalOptions="Center"
-                            ScaleY="2"
-                            ScaleX="1"/>
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               ScaleY="1.75"
+                               ScaleX="1"/>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
-                                    HorizontalOptions="End">
-                            <Label 
-                            Text="Level : " 
-                            Style="{StaticResource LabelStyle}"/>
+                                     HorizontalOptions="End">
+                            <Label Text="Level : " 
+                                   Style="{StaticResource LabelStyle}"/>
                             <Frame BackgroundColor="#36454F"
-                                    WidthRequest="25"
-                                    Padding="3">
-                                <Label 
-                                    Text="{Binding Data.Level  }" 
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource ValueStyle}"/>
+                                   WidthRequest="25"
+                                   Padding="3">
+                                <Label Text="{Binding Data.Level  }" 
+                                       HorizontalOptions="Center"
+                                       Style="{StaticResource ValueStyle}"/>   
                             </Frame>
                         </StackLayout>
                     </StackLayout>
@@ -141,7 +136,8 @@
                 HorizontalOptions="Center" 
                 Padding="20">
 
-            <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+            <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"
+                   HorizontalOptions="Center"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}"
                          Spacing="10">
