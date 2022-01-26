@@ -44,7 +44,7 @@
                                          Spacing="20"
                                          WidthRequest="125">
 
-                                <Label Text="Name" Style="{StaticResource HeaderStyle}"
+                                <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
                                            HorizontalOptions="Center"
                                            FontSize="Medium"
                                            FontAttributes="Bold"/>
@@ -60,10 +60,11 @@
 
                             <StackLayout Style="{StaticResource VerticalStack}"
                                          VerticalOptions="Center"
-                                         WidthRequest="250">
+                                         WidthRequest="250"
+                                         Spacing="10">
                                 <StackLayout Style="{StaticResource VerticalStack}"
                                              VerticalOptions="Center"
-                                             HeightRequest="40"
+                                             HeightRequest="25"
                                              WidthRequest="215">
                                     <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
                                            HorizontalOptions="Center"
@@ -77,7 +78,7 @@
                                         Text="Class/Rank:" 
                                         Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
-                                           WidthRequest="140"
+                                           WidthRequest="142"
                                            Padding="3">
                                         <Label 
                                             Text="{Binding Data.Name}" 
@@ -93,7 +94,7 @@
                                     Text="CodeName:" 
                                     Style="{StaticResource LabelStyle}"/>
                                     <Frame BackgroundColor="#36454F"
-                                           WidthRequest="140"
+                                           WidthRequest="143"
                                            Padding="3">
                                         <Label 
                                             Text="{Binding Data.Description}" 
@@ -124,7 +125,7 @@
                                            TextColor="Black"
                                            VerticalOptions="Center"
 
-                                           ScaleY="2"
+                                           ScaleY="1.75"
                                            ScaleX="1"/>
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
@@ -171,8 +172,7 @@
                             <Slider Grid.Column="1" Grid.Row="0"
                                     x:Name="HealthSlider" 
                                     WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    Background="#36454F" 
+                                    HeightRequest="36"   
                                     ThumbColor="#36454F"
                                     MinimumTrackColor="Black"
                                     Maximum="100" 
@@ -198,7 +198,6 @@
                                     x:Name="DamageSlider" 
                                     WidthRequest="250" 
                                     HeightRequest="36"  
-                                    Background="#36454F" 
                                     ThumbColor="#36454F"
                                     MinimumTrackColor="Black"
                                     Maximum="100" 
@@ -224,7 +223,6 @@
                                     x:Name="DefenseSlider" 
                                     WidthRequest="250" 
                                     HeightRequest="36"  
-                                    Background="#36454F" 
                                     ThumbColor="#36454F"
                                     MinimumTrackColor="Black"
                                     Maximum="100" 
@@ -250,7 +248,6 @@
                                     x:Name="SpeedSlider" 
                                     WidthRequest="250" 
                                     HeightRequest="36"  
-                                    Background="#36454F" 
                                     ThumbColor="#36454F"
                                     MinimumTrackColor="Black"
                                     Maximum="100" 
