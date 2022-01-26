@@ -176,7 +176,7 @@
                                     Maximum="100" 
                                     Minimum="0"
                                     Value="{Binding Data.GetMaxHealthTotal}"
-                                    IsEnabled="False">
+                                    InputTransparent="True">
                             </Slider>
 
                             <Frame Grid.Column="2" Grid.Row="0"
@@ -202,7 +202,7 @@
                                     Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetAttackTotal}"
-                                    IsEnabled="False">
+                                    InputTransparent="True">
                             </Slider>
 
                             <Frame Grid.Column="2" Grid.Row="1"
@@ -228,7 +228,7 @@
                                     Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetDefenseTotal}"
-                                    IsEnabled="False">
+                                    InputTransparent="True">
                             </Slider>
 
                             <Frame Grid.Column="2" Grid.Row="2"
@@ -254,7 +254,7 @@
                                     Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.GetSpeedTotal}"
-                                    IsEnabled="False">
+                                    InputTransparent="True">
                             </Slider>
 
                             <Frame Grid.Column="2" Grid.Row="3"
