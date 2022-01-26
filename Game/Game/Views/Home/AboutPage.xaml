@@ -20,15 +20,24 @@
 
             <Frame WidthRequest="350"
                    HeightRequest="200">
+                
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
                     <Label Text="Trijecta" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand" Spacing="5">
+                    
+                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Spacing="5">
+                        
                         <Label Text="Jesse McQuillan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                         <Label Text="Jonathan Doan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                         <Label Text="Jacob Charbonneau" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                        <Label x:Name="CurrentDateTimeLabel" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+
                     </StackLayout>
+
+                    
+
                 </StackLayout>
+                
             </Frame>
         <!--Database Settings Frame-->
 
