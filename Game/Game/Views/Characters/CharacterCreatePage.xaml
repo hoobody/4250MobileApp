@@ -218,6 +218,17 @@
                                     Value="{Binding Data.GetMaxHealthTotal}"
                                     InputTransparent="True"/>
 
+                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="50"
+                                           HeightRequest="30">
+
+                                <Label Text="{Binding Data.GetHealthTotal}"
+                                               x:Name="HealthLabel"
+                                               Style="{StaticResource LabelStyle}"
+                                               HorizontalOptions="Center"/>
+
+                            </Frame>
+
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"

@@ -102,6 +102,8 @@ namespace Game.Views
 
             // Show the Result
             HealthSlider.Value = ViewModel.Data.MaxHealth;
+
+            HealthLabel.Text = ViewModel.Data.MaxHealth.ToString();
         }
 
         /// <summary>
