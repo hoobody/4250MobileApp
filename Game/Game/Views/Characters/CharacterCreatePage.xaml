@@ -95,7 +95,7 @@
 
                                         <Label  Text="Class/Rank:" 
                                                 Style="{StaticResource LabelStyle}"/>
-                                        
+
                                         <Frame BackgroundColor="#36454F"
                                                WidthRequest="142"
                                                Padding="3">
@@ -104,24 +104,23 @@
 
                                         </Frame>
 
-                                        <StackLayout Style="{StaticResource HorizontalStack}">
+                                    </StackLayout>
 
-                                            <Label  Text="Description" 
+                                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                                     HorizontalOptions="Start"
+                                                     Spacing="3">
+
+                                        <Label  Text="Description: " 
                                                     Style="{StaticResource LabelStyle}"/>
+
+                                        <Frame BackgroundColor="#36454F"
+                                                   WidthRequest="140"
+                                                   Padding="3">
 
                                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                                     Style="{StaticResource EntryStyle}"/>
 
-                                        </StackLayout>
-
-                                        <StackLayout Style="{StaticResource HorizontalStack}">
-
-                                            <Label  Text="Codename" 
-                                                    Style="{StaticResource LabelStyle}"/>
-
-                                            <Entry/>
-
-                                        </StackLayout>
+                                        </Frame>
 
                                     </StackLayout>
 

@@ -70,6 +70,7 @@
                                            HorizontalOptions="Center"
                                            VerticalOptions="Start"/>
                                 </StackLayout>
+                                
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="Start"
                                              Spacing="3">
