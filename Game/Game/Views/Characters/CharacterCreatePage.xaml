@@ -237,6 +237,17 @@
                                     Value="{Binding Data.Attack, Mode=TwoWay}"
                                     ValueChanged="Attack_OnSliderValueChanged"/>
 
+                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="50"
+                                           HeightRequest="30">
+
+                                <Label Text="{Binding Data.GetAttackTotal}"
+                                               x:Name="AttackLabel"
+                                               Style="{StaticResource LabelStyle}"
+                                               HorizontalOptions="Center"/>
+
+                            </Frame>
+
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
