@@ -137,6 +137,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="battleboard.png" />
     <Content Include="d10.png" />
+    <Content Include="d10_50x50.png" />
     <Content Include="d20_2.png" />
     <Content Include="dungeon_door.png" />
     <Content Include="elf1.png" />
