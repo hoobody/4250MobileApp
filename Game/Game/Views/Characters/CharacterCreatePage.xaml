@@ -321,11 +321,23 @@
 
                         </StackLayout>
 
+                        <Frame Background="#36454F"
+                               WidthRequest="500"
+                               HeightRequest="40">
+                            
+                            <Label Text="Equip yourself Agent"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontSize="20"
+                                   Style="{StaticResource LabelStyle}"/>
+                            
+                        </Frame>
+
                         <FlexLayout Padding="5"
-                                        Wrap="Wrap"
-                                        JustifyContent="SpaceAround"
-                                        AlignContent="SpaceAround"
-                                        x:Name="ItemBox">
+                                    Wrap="Wrap"
+                                    JustifyContent="SpaceAround"
+                                    AlignContent="SpaceAround"
+                                    x:Name="ItemBox">
 
                         </FlexLayout>
 
