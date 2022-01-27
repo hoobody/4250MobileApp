@@ -137,7 +137,9 @@
                                                    WidthRequest="143"
                                                    Padding="3">
                                                 
-                                                <Entry  Style="{StaticResource EntryStyle}"
+                                                <Entry  Text="{Binding Data.CodeName, Mode=TwoWay}"
+                                                <Entry  Text="{Binding Data.CodeName, Mode=TwoWay}"
+                                                        Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>
                                             
