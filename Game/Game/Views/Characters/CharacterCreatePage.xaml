@@ -54,6 +54,18 @@
                                          Spacing="10"
                                          WidthRequest="125">
 
+                                    <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
+                                           HorizontalOptions="Center"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"/>
+
+                                    <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
+                                                    Style="{StaticResource EntryStyle}"/>
+
+
+
+
+
                                     <Label  Text="Class" 
                                             Style="{StaticResource LabelStyle}"/>
 
@@ -69,15 +81,7 @@
 
                                     <StackLayout Style="{StaticResource VerticalStack}">
 
-                                        <StackLayout Style="{StaticResource HorizontalStack}">
-                                            
-                                            <Label  Text="Name" 
-                                                    Style="{StaticResource LabelStyle}"/>
-
-                                            <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                                                    Style="{StaticResource EntryStyle}"/>
-                                            
-                                        </StackLayout>
+                                    
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
 
