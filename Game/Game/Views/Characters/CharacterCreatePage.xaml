@@ -62,7 +62,8 @@
                                         <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                 Style="{StaticResource EntryStyle}"
                                                 WidthRequest="100"
-                                                FontSize="13"/>
+                                                FontSize="15"
+                                                MaxLength="9"/>
 
                                     </StackLayout>
                                     
@@ -118,7 +119,8 @@
 
                                                 <Picker x:Name="JobPicker"
                                                         ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
-                                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
+                                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                                        FontSize="15"/>
 
                                             </Frame>
 
@@ -135,7 +137,9 @@
                                                    WidthRequest="143"
                                                    Padding="3">
                                                 
-                                                <Entry  Style="{StaticResource EntryStyle}"/>
+                                                <Entry  Style="{StaticResource EntryStyle}"
+                                                        FontSize="15"
+                                                        MaxLength="15"/>
                                             
                                             </Frame>
                                         
@@ -153,7 +157,9 @@
                                                     Padding="3">
 
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
-                                                        Style="{StaticResource EntryStyle}"/>
+                                                        Style="{StaticResource EntryStyle}"
+                                                        FontSize="15"
+                                                        MaxLength="15"/>
 
                                             </Frame>
 
