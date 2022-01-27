@@ -110,18 +110,19 @@ namespace Game.Models
             ExperienceTotal = LevelTableHelper.LevelDetailsList[Level - 1].Experience + 1;
 
             // TODO: Mike, Refactor this, so it is in a helper, and call it on level up as well.
+            //TODO: Add other classes
             switch (Job)
             {
-                case CharacterJobEnum.Cleric:
+                case CharacterJobEnum.Assassin:
 
-                    foreach (var item in AbilityEnumHelper.GetListCleric)
+                    foreach (var item in AbilityEnumHelper.GetListAssassin)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }
                     break;
 
-                case CharacterJobEnum.Fighter:
-                    foreach (var item in AbilityEnumHelper.GetListFighter)
+                case CharacterJobEnum.Spy:
+                    foreach (var item in AbilityEnumHelper.GetListSpy)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }

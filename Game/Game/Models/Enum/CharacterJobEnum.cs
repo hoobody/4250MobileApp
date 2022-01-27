@@ -14,10 +14,22 @@ namespace Game.Models
         Unknown = 0,
 
         // Fighters hit hard and have fight abilities
-        Fighter = 10,
+        Assassin = 10,
 
         // Clerics defend well and have buff abilities
-        Cleric = 12,
+        Spy = 15,
+
+        Hacker = 20,
+        
+        SpecialAgent = 25,
+
+        Saboteur = 30,
+
+        SurveillanceOfficer = 35,
+
+        Detective = 40,
+        
+        Double0 = 45,
 
     }
 
@@ -38,12 +50,35 @@ namespace Game.Models
 
             switch (value)
             {
-                case CharacterJobEnum.Fighter:
-                    Message = "Fighter";
+                case CharacterJobEnum.Assassin:
+                    Message = "Assassin";
                     break;
 
-                case CharacterJobEnum.Cleric:
-                    Message = "Cleric";
+                case CharacterJobEnum.Spy:
+                    Message = "Spy";
+                    break;
+
+                case CharacterJobEnum.Hacker:
+                    Message = "Hacker";
+                    break;
+
+                case CharacterJobEnum.SpecialAgent:
+                    Message = "SpecialAgent";
+                    break;
+
+                case CharacterJobEnum.Saboteur:
+                    Message = "Saboteur";
+                    break;
+
+                case CharacterJobEnum.SurveillanceOfficer:
+                    Message = "SurveillanceOfficer";
+                    break;
+                case CharacterJobEnum.Detective:
+                    Message = "Detective";
+                    break;
+
+                case CharacterJobEnum.Double0:
+                    Message = "Double0";
                     break;
 
                 case CharacterJobEnum.Unknown:

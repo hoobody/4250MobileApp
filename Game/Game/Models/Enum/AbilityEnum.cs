@@ -108,6 +108,7 @@ namespace Game.Models
     /// <summary>
     /// Helper for the Ability Enum Class
     /// </summary>
+    /// TODO: Add get lists for other classes
     public static class AbilityEnumHelper
     {
         /// <summary>
@@ -126,7 +127,7 @@ namespace Game.Models
         /// <summary>
         /// Returns a list of strings of the enum for Fighter
         /// </summary>
-        public static List<string> GetListFighter
+        public static List<string> GetListAssassin
         {
             get
             {
@@ -144,7 +145,7 @@ namespace Game.Models
         /// <summary>
         /// Returns a list of strings of the enum for Cleric
         /// </summary>
-        public static List<string> GetListCleric
+        public static List<string> GetListSpy
         {
             get
             {

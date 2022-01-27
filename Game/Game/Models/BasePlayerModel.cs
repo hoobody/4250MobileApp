@@ -189,11 +189,29 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
+                    case CharacterJobEnum.Assassin:
+                        result = +5;
+                        break;
+                    case CharacterJobEnum.Detective:
+                        result = +1;
+                        break;
+                    case CharacterJobEnum.Double0:
+                        result = +3;
+                        break;
+                    case CharacterJobEnum.Hacker:
+                        result = -3;
+                        break;
+                    case CharacterJobEnum.Saboteur:
                         result = -1;
                         break;
-                    case CharacterJobEnum.Fighter:
+                    case CharacterJobEnum.SpecialAgent:
                         result = +2;
+                        break;
+                    case CharacterJobEnum.Spy:
+                        result = +1;
+                        break;
+                    case CharacterJobEnum.SurveillanceOfficer:
+                        //No Bonus
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
@@ -232,11 +250,29 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
+                    case CharacterJobEnum.Assassin:
+                        result = -3;
+                        break;
+                    case CharacterJobEnum.Detective:
+                        result = +3;
+                        break;
+                    case CharacterJobEnum.Double0:
+                        result = -1;
+                        break;
+                    case CharacterJobEnum.Hacker:
                         result = +2;
                         break;
-                    case CharacterJobEnum.Fighter:
-                        result = -1;
+                    case CharacterJobEnum.Saboteur:
+                        result = +1;
+                        break;
+                    case CharacterJobEnum.SpecialAgent:
+                        result = +2;
+                        break;
+                    case CharacterJobEnum.Spy:
+                        //No Bonus
+                        break;
+                    case CharacterJobEnum.SurveillanceOfficer:
+                        result = +2;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
@@ -272,11 +308,29 @@ namespace Game.Models
 
                 switch (Job)
                 {
-                    case CharacterJobEnum.Cleric:
-                        result = 0;
+                    case CharacterJobEnum.Assassin:
+                        //No Bonus
                         break;
-                    case CharacterJobEnum.Fighter:
+                    case CharacterJobEnum.Detective:
+                        result = -1;
+                        break;
+                    case CharacterJobEnum.Double0:
+                        result = +2;
+                        break;
+                    case CharacterJobEnum.Hacker:
+                        result = +4;
+                        break;
+                    case CharacterJobEnum.Saboteur:
+                        result = +2;
+                        break;
+                    case CharacterJobEnum.SpecialAgent:
+                        result = +2;
+                        break;
+                    case CharacterJobEnum.Spy:
                         result = +1;
+                        break;
+                    case CharacterJobEnum.SurveillanceOfficer:
+                        result = +3;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
