@@ -165,7 +165,7 @@
                                                      HorizontalOptions="CenterAndExpand"
                                                      Spacing="5">
 
-                                            <Label Text="║█║▌║█║▌│║▌█║"
+                                            <Label Text="║█║▌║█║▌│║▌│█║"
                                                    TextColor="Black"
                                                    VerticalOptions="Center"
                                                    ScaleY="1.75"
@@ -351,9 +351,7 @@
                                     Wrap="Wrap"
                                     JustifyContent="SpaceAround"
                                     AlignContent="SpaceAround"
-                                    x:Name="ItemBox">
-
-                        </FlexLayout>
+                                    x:Name="ItemBox"/>
 
                     </StackLayout>
 
