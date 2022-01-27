@@ -275,6 +275,17 @@
                                     Value="{Binding Data.GetSpeedTotal}"
                                     ValueChanged="Speed_OnSliderValueChanged"/>
 
+                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="50"
+                                           HeightRequest="30">
+
+                                <Label Text="{Binding Data.GetSpeedTotal}"
+                                               x:Name="SpeedLabel"
+                                               Style="{StaticResource LabelStyle}"
+                                               HorizontalOptions="Center"/>
+
+                            </Frame>
+
                         </StackLayout>
 
 
@@ -332,7 +343,6 @@
                                             Padding="0,0,10,0"
                                             HorizontalOptions="End"
                                             HorizontalTextAlignment="End"/>
-
 
                                 </StackLayout>
                             </StackLayout>

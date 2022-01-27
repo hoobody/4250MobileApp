@@ -158,7 +158,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Speed_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
+            SpeedLabel.Text = String.Format("{0}", e.NewValue);
         }
 
 
