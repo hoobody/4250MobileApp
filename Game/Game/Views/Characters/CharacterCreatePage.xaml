@@ -82,12 +82,19 @@
                                          VerticalOptions="Center"
                                          WidthRequest="250"
                                          Spacing="10">
+                                    
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                              VerticalOptions="Center"
                                              HeightRequest="25"
                                              WidthRequest="215">
 
+                                        <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Start"/>
 
+                                    </StackLayout>
+                                    
+                                    </StackLayout>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
 
