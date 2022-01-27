@@ -70,9 +70,9 @@
 
                                     </StackLayout>
                                     
-                                    <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                               HorizontalOptions="Center"
-                                               VerticalOptions="Start"/>
+                                    <Label  Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Start"/>
 
                                 </StackLayout>
 
@@ -113,14 +113,16 @@
                                                      HorizontalOptions="Start"
                                                      Spacing="3">
 
-                                            <Label  Text="Class/Rank:" 
+                                            <Label  Text="Job:" 
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame BackgroundColor="#36454F"
                                                    WidthRequest="142"
                                                    Padding="3">
 
-                                                <Picker x:Name="ClassPicker"/>
+                                                <Picker x:Name="JobPicker"
+                                                        ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
+                                                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
 
                                             </Frame>
 
