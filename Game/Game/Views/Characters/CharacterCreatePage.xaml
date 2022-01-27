@@ -39,10 +39,11 @@
 
                         <Label Text="Read Page" Style="{StaticResource HeaderStyle}"
                                HorizontalOptions="Center"/>
+
+                        <Frame HeightRequest="210"
+                           WidthRequest="400"
+                           BorderColor="Black">
                         
-                        <Frame BorderColor="Black"
-                               CornerRadius="5"
-                               Padding="10">
 
                             <StackLayout    Style="{StaticResource VerticalStack}"
                                             HorizontalOptions="Center">
@@ -102,7 +103,7 @@
 
                             </StackLayout>
 
-                        </Frame>
+                        </>
 
 
 
