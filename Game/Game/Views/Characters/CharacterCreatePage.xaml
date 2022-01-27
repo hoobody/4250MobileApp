@@ -256,6 +256,17 @@
                                 Value="{Binding Data.GetDefenseTotal}"
                                 ValueChanged="Defense_OnSliderValueChanged"/>
 
+                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="50"
+                                           HeightRequest="30">
+
+                                <Label Text="{Binding Data.GetDefenseTotal}"
+                                               x:Name="DefenseLabel"
+                                               Style="{StaticResource LabelStyle}"
+                                               HorizontalOptions="Center"/>
+
+                            </Frame>
+                            
                         </StackLayout>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
