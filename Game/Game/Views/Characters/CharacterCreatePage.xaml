@@ -54,14 +54,18 @@
                                              Spacing="10"
                                              WidthRequest="125">
 
-                                    <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
-                                           HorizontalOptions="Center"
-                                           FontSize="Medium"
-                                           FontAttributes="Bold"/>
+                                    <StackLayout Style="{StaticResource HorizontalStack}">
+                                        
+                                        <Label Text="Name" Style="{StaticResource HeaderStyle}"
+                                               HorizontalOptions="Center"
+                                               FontSize="Medium"
+                                               FontAttributes="Bold"/>
 
-                                    <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                                            Style="{StaticResource EntryStyle}"/>
-
+                                        <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
+                                                Style="{StaticResource EntryStyle}"/>
+                                        
+                                    </StackLayout>
+                                    
                                     <Frame BackgroundColor="#36454F"
                                            BorderColor="Black"
                                            WidthRequest="125"
