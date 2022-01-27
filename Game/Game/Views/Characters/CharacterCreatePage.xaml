@@ -105,7 +105,7 @@
                                                WidthRequest="142"
                                                Padding="3">
                                             
-                                            <Entry  Style="{StaticResource ValueStyle}"/>
+                                            <Entry/>
                                             
                                         </Frame>
 
@@ -124,7 +124,7 @@
                                             <Label  Text="Codename" 
                                                     Style="{StaticResource LabelStyle}"/>
 
-                                            <Entry  Style="{StaticResource EntryStyle}"/>
+                                            <Entry/>
 
                                         </StackLayout>
 
