@@ -162,10 +162,10 @@
                                         </StackLayout>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
-                                                     HorizontalOptions="End"
-                                                     Spacing="7">
+                                                     HorizontalOptions="CenterAndExpand"
+                                                     Spacing="5">
 
-                                            <Label Text="█║█ ║▌║█║▌│║▌║▌█║"
+                                            <Label Text="║█║▌║█║▌│║▌█║"
                                                    TextColor="Black"
                                                    VerticalOptions="Center"
                                                    ScaleY="1.75"
@@ -173,17 +173,19 @@
 
                                             <StackLayout    Style="{StaticResource HorizontalStack}"
                                                             HorizontalOptions="End">
-                                                <Label  Text="Level : " 
+                                                
+                                                <Label  Text="Level: " 
                                                         Style="{StaticResource LabelStyle}"/>
                                             
                                                 <Frame BackgroundColor="#36454F"
-                                                       WidthRequest="25"
                                                        Padding="3">
-                                                
-                                                    <Label Text="{Binding Data.Level  }" 
-                                                            HorizontalOptions="Center"
-                                                            Style="{StaticResource ValueStyle}"/>
-                                                
+
+                                                    <Picker SelectedItem="{Binding SelectedItemProperty}" 
+                                                            SelectedIndexChanged="Level_Changed"
+                                                            x:Name="LevelPicker"
+                                                            MinimumWidthRequest="20"/>
+
+
                                                 </Frame>
                                             
                                             </StackLayout>
@@ -198,6 +200,16 @@
                             </StackLayout>
 
                         </Frame>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+
+                            <Slider Value="{Binding Data}"
+                                    x:Name="L"/>
+
+                        </StackLayout>
+                        
+                        
+
 
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
                                      Spacing="10">
