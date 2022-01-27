@@ -78,11 +78,16 @@
 
                                 </StackLayout>
 
-                                <StackLayout Style="{StaticResource HorizontalStack}">
+                                <StackLayout Style="{StaticResource VerticalStack}"
+                                         VerticalOptions="Center"
+                                         WidthRequest="250"
+                                         Spacing="10">
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                             VerticalOptions="Center"
+                                             HeightRequest="25"
+                                             WidthRequest="215">
 
-                                    <StackLayout Style="{StaticResource VerticalStack}">
 
-                                    
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
 
