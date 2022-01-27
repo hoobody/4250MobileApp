@@ -234,7 +234,8 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.Attack, Mode=TwoWay}"/>
+                                    Value="{Binding Data.Attack, Mode=TwoWay}"
+                                    ValueChanged="Attack_OnSliderValueChanged"/>
 
                         </StackLayout>
 
@@ -252,13 +253,33 @@
                                 MaximumTrackColor="DimGray"
                                 Maximum="10" 
                                 Minimum="0"
-                                Value="{Binding Data.GetDefenseTotal}"/>
+                                Value="{Binding Data.GetDefenseTotal}"
+                                ValueChanged="Defense_OnSliderValueChanged"/>
+
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Speed"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider x:Name="SpeedSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    ThumbColor="Black"
+                                    MinimumTrackColor="#36454F"
+                                    MaximumTrackColor="DimGray"
+                                    Maximum="10" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetSpeedTotal}"
+                                    ValueChanged="Speed_OnSliderValueChanged"/>
 
                         </StackLayout>
 
 
-                        
-                        
+
+
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
                                      Spacing="10">
 
@@ -280,8 +301,6 @@
                                             HorizontalOptions="End"
                                             HorizontalTextAlignment="End"/>
 
-                                    <Stepper    Value="{Binding Data.Attack, Mode=TwoWay}"
-                                                ValueChanged="Attack_OnStepperValueChanged"/>
 
                                 </StackLayout>
 
@@ -298,8 +317,6 @@
                                             HorizontalOptions="End"
                                             HorizontalTextAlignment="End"/>
 
-                                    <Stepper    Value="{Binding Data.Defense, Mode=TwoWay}"
-                                                ValueChanged="Defense_OnStepperValueChanged"/>
 
                                 </StackLayout>
 
@@ -316,8 +333,6 @@
                                             HorizontalOptions="End"
                                             HorizontalTextAlignment="End"/>
 
-                                    <Stepper    Value="{Binding Data.Speed, Mode=TwoWay}"
-                                                ValueChanged="Speed_OnStepperValueChanged"/>
 
                                 </StackLayout>
                             </StackLayout>
