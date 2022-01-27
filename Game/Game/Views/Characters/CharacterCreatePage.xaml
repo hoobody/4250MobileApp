@@ -71,11 +71,6 @@
 
                                     </Frame>
 
-                                    <Label  Text="Class" 
-                                            Style="{StaticResource LabelStyle}"/>
-
-                                    <Picker x:Name="ClassPicker"/>
-
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource VerticalStack}"
@@ -104,9 +99,9 @@
                                         <Frame BackgroundColor="#36454F"
                                                WidthRequest="142"
                                                Padding="3">
-                                            
-                                            <Entry/>
-                                            
+
+                                            <Picker x:Name="ClassPicker"/>
+
                                         </Frame>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
