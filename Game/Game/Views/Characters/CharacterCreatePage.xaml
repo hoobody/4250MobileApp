@@ -202,11 +202,10 @@
                         </Frame>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="Center">
+                                     HorizontalOptions="CenterAndExpand">
 
-                            <Label  Grid.Row="4" Grid.Column="0"
-                                        Text="Max Health" 
-                                        Style="{StaticResource LabelStyle}"/>
+                            <Label  Text="Max Health" 
+                                    Style="{StaticResource LabelStyle}"/>
 
                             <Slider x:Name="HealthSlider" 
                                     WidthRequest="250" 
@@ -222,8 +221,26 @@
                             </Slider>
 
                         </StackLayout>
-                        
-                        
+
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Attack"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                            <Slider x:Name="AttackSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    ThumbColor="Transparent"
+                                    MinimumTrackColor="#36454F"
+                                    MaximumTrackColor="DimGray"
+                                    Maximum="10" 
+                                    Minimum="0"
+                                    Value="{Binding Data.Attack, Mode=TwoWay}">
+                                
+                            </Slider>
+
+                        </StackLayout>
 
 
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
