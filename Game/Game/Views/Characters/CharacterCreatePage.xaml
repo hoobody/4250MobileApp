@@ -201,10 +201,25 @@
 
                         </Frame>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     HorizontalOptions="Center">
 
-                            <Slider Value="{Binding Data}"
-                                    x:Name="L"/>
+                            <Label  Grid.Row="4" Grid.Column="0"
+                                        Text="Max Health" 
+                                        Style="{StaticResource LabelStyle}"/>
+
+                            <Slider x:Name="HealthSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"   
+                                    ThumbColor="Transparent"
+                                    MinimumTrackColor="#36454F"
+                                    MaximumTrackColor="DimGray"
+                                    Maximum="100" 
+                                    Minimum="0"
+                                    Value="{Binding Data.GetMaxHealthTotal}"
+                                    InputTransparent="True">
+                                
+                            </Slider>
 
                         </StackLayout>
                         
@@ -214,27 +229,7 @@
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
                                      Spacing="10">
 
-                            <Grid   RowSpacing="1"
-                                    ColumnSpacing="2"
-                                    VerticalOptions="Center">
-
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label  Grid.Row="4" Grid.Column="0"
-                                        Text="Max Health" 
-                                        Style="{StaticResource LabelStyle}"/>
-
-                                <Label  Grid.Row="4" Grid.Column="1"
-                                        x:Name="MaxHealthValue"
-                                        Text="{Binding Data.MaxHealth, StringFormat= '{0:G} hp'}" 
-                                        Style="{StaticResource ValueStyle}"/>
                             
-                            </Grid>
 
                             <StackLayout Style="{StaticResource VerticalStack}" 
                                          HorizontalOptions="FillAndExpand">
