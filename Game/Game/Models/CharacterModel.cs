@@ -9,6 +9,8 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
+        public string CodeName { get; set; } = "";
+
         /// <summary>
         /// Default character
         /// 
@@ -24,6 +26,7 @@ namespace Game.Models
             ImageURI = "knight.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
+            CodeName = "Agent";
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
@@ -53,6 +56,7 @@ namespace Game.Models
             PlayerType = newData.PlayerType;
             Guid = newData.Guid;
             Name = newData.Name;
+            CodeName = newData.CodeName;
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
@@ -91,6 +95,7 @@ namespace Game.Models
         {
             var myReturn = string.Empty;
             myReturn += Name;
+            myReturn += " , " + CodeName;
             myReturn += " , " + Description;
             myReturn += " , a " + Job.ToMessage();
             myReturn += " , Level : " + Level.ToString();
