@@ -62,7 +62,12 @@
                                     <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                     Style="{StaticResource EntryStyle}"/>
 
-
+                                    <Frame BackgroundColor="#36454F"
+                                       BorderColor="Black"
+                                       WidthRequest="125"
+                                       HeightRequest="125">
+                                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                    </Frame>
 
 
 
@@ -74,10 +79,6 @@
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource HorizontalStack}">
-
-                                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" 
-                                           Style="{StaticResource ImageLargeStyle}" 
-                                           HorizontalOptions="CenterAndExpand"/>
 
                                     <StackLayout Style="{StaticResource VerticalStack}">
 
