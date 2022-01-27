@@ -40,7 +40,7 @@
                         <Label Text="Read Page" Style="{StaticResource HeaderStyle}"
                                HorizontalOptions="Center"/>
 
-                        <Frame HeightRequest="260"
+                        <Frame HeightRequest="240"
                                WidthRequest="400"
                                BorderColor="Black"
                                Margin="0,0,0,0">
@@ -54,10 +54,10 @@
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="CenterAndExpand"
-                                             Spacing="50">
+                                             Spacing="25">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
-                                                 VerticalOptions="Center">
+                                                 VerticalOptions="CenterAndExpand">
                                         
                                         <Label Text="Name" Style="{StaticResource HeaderStyle}"
                                                 HorizontalOptions="Center"
@@ -65,7 +65,8 @@
                                                 FontAttributes="Bold"/>
 
                                         <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                                                Style="{StaticResource EntryStyle}"/>
+                                                Style="{StaticResource EntryStyle}"
+                                                WidthRequest="100"/>
 
                                     </StackLayout>
                                     
@@ -80,19 +81,28 @@
                                              WidthRequest="350"
                                              VerticalOptions="Center">
 
+
+                                    <StackLayout    Style="{StaticResource VerticalStack}"
+                                                    VerticalOptions="CenterAndExpand"
+                                                    Spacing="10">
+
+                                        <Frame BackgroundColor="#36454F"
+                                               BorderColor="Black"
+                                               WidthRequest="125"
+                                               HeightRequest="125"
+                                               VerticalOptions="Center">
+
+                                            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
+                                        </Frame>
                                     
-                                    
-                                    <Frame BackgroundColor="#36454F"
-                                           BorderColor="Black"
-                                           WidthRequest="125"
-                                           HeightRequest="125"
-                                           VerticalOptions="Center">
+                                        <ImageButton    x:Name="RollDice"
+                                                        Style="{StaticResource ImageSmallStyle}"
+                                                        Source="d10_50x50.png"
+                                                        Clicked="RollDice_Clicked"/>
 
-                                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                    </StackLayout>
 
-                                    </Frame>
-
-                                
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                                  VerticalOptions="Center"
@@ -211,11 +221,7 @@
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
 
-                                <ImageButton    x:Name="RollDice"
-                                                    Style="{StaticResource ImageLargeStyle}"
-                                                    Source="d10.png"
-                                                    Clicked="RollDice_Clicked"/>
-
+                                
                                 
 
                                 <Label  Grid.Row="2" Grid.Column="0"
