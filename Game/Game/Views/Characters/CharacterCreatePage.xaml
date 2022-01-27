@@ -202,123 +202,137 @@
                         </Frame>
 
                         <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="CenterAndExpand">
+                                     WidthRequest="375"
+                                     HorizontalOptions="Center">
 
-                            <Label  Text="Max Health" 
-                                    Style="{StaticResource LabelStyle}"/>
+                            <Grid ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
 
-                            <Slider x:Name="HealthSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"   
-                                    ThumbColor="Transparent"
-                                    MinimumTrackColor="#36454F"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="100" 
-                                    Minimum="0"
-                                    Value="{Binding Data.GetMaxHealthTotal}"
-                                    InputTransparent="True"/>
 
-                            <Frame BackgroundColor="#36454F"
-                                           WidthRequest="50"
-                                           HeightRequest="30">
+                                <Label  Grid.Column="0" Grid.Row="0"
+                                        Text="Health" 
+                                        Style="{StaticResource LabelStyle}"/>
 
-                                <Label Text="{Binding Data.GetHealthTotal}"
-                                               x:Name="HealthLabel"
-                                               Style="{StaticResource LabelStyle}"
-                                               HorizontalOptions="Center"/>
+                                <Slider Grid.Column="1" Grid.Row="0"
+                                        x:Name="HealthSlider" 
+                                        WidthRequest="250" 
+                                        HeightRequest="36"   
+                                        ThumbColor="Transparent"
+                                        MinimumTrackColor="#36454F"
+                                        MaximumTrackColor="DimGray"
+                                        Maximum="100" 
+                                        Minimum="0"
+                                        Value="{Binding Data.GetMaxHealthTotal}"
+                                        InputTransparent="True"/>
 
-                            </Frame>
+                                <Frame  Grid.Column="2" Grid.Row="0"
+                                        BackgroundColor="#36454F"
+                                        WidthRequest="50"
+                                        HeightRequest="30">
 
-                        </StackLayout>
+                                    <Label  Text="{Binding Data.GetHealthTotal}"
+                                            x:Name="HealthLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="CenterAndExpand">
+                                </Frame>
 
-                            <Label Text="Attack"
-                                   Style="{StaticResource LabelStyle}"/>
+                                <Label  Grid.Column="0" Grid.Row="1" 
+                                        Text="Attack"
+                                        Style="{StaticResource LabelStyle}"/>
 
-                            <Slider x:Name="AttackSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="#36454F"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
-                                    Value="{Binding Data.Attack, Mode=TwoWay}"
-                                    ValueChanged="Attack_OnSliderValueChanged"/>
+                                <Slider Grid.Column="1" Grid.Row="1" 
+                                        x:Name="AttackSlider" 
+                                        WidthRequest="250" 
+                                        HeightRequest="36"  
+                                        ThumbColor="Black"
+                                        MinimumTrackColor="#36454F"
+                                        MaximumTrackColor="DimGray"
+                                        Maximum="10" 
+                                        Minimum="0"
+                                        Value="{Binding Data.Attack, Mode=TwoWay}"
+                                        ValueChanged="Attack_OnSliderValueChanged"/>
 
-                            <Frame BackgroundColor="#36454F"
-                                           WidthRequest="50"
-                                           HeightRequest="30">
+                                <Frame  Grid.Column="2" Grid.Row="1"
+                                        BackgroundColor="#36454F"
+                                        WidthRequest="50"
+                                        HeightRequest="30">
 
-                                <Label Text="{Binding Data.GetAttackTotal}"
-                                               x:Name="AttackLabel"
-                                               Style="{StaticResource LabelStyle}"
-                                               HorizontalOptions="Center"/>
+                                    <Label  Text="{Binding Data.GetAttackTotal}"
+                                            x:Name="AttackLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
 
-                            </Frame>
+                                </Frame>
 
-                        </StackLayout>
+                                <Label  Grid.Column="0" Grid.Row="2"
+                                        Text="Defense"
+                                        Style="{StaticResource LabelStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="CenterAndExpand">
+                                <Slider Grid.Column="1" Grid.Row="2"
+                                        x:Name="DefenseSlider" 
+                                        WidthRequest="250" 
+                                        HeightRequest="36"  
+                                        ThumbColor="Black"
+                                        MinimumTrackColor="#36454F"
+                                        MaximumTrackColor="DimGray"
+                                        Maximum="10" 
+                                        Minimum="0"
+                                        Value="{Binding Data.GetDefenseTotal}"
+                                        ValueChanged="Defense_OnSliderValueChanged"/>
+
+                                <Frame  Grid.Column="2" Grid.Row="2"
+                                        BackgroundColor="#36454F"
+                                        WidthRequest="50"
+                                        HeightRequest="30">
+
+                                    <Label  Text="{Binding Data.GetDefenseTotal}"
+                                            x:Name="DefenseLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
+
+                                </Frame>
+
+                                <Label  Grid.Column="0" Grid.Row="3"
+                                        Text="Speed"
+                                        Style="{StaticResource LabelStyle}"/>
+
+                                <Slider Grid.Column="1" Grid.Row="3"
+                                        x:Name="SpeedSlider" 
+                                        WidthRequest="250" 
+                                        HeightRequest="36"  
+                                        ThumbColor="Black"
+                                        MinimumTrackColor="#36454F"
+                                        MaximumTrackColor="DimGray"
+                                        Maximum="10" 
+                                        Minimum="0"
+                                        Value="{Binding Data.GetSpeedTotal}"
+                                        ValueChanged="Speed_OnSliderValueChanged"/>
+
+                                <Frame  Grid.Column="2" Grid.Row="3"
+                                        BackgroundColor="#36454F"
+                                        WidthRequest="50"
+                                        HeightRequest="30">
+
+                                    <Label  Text="{Binding Data.GetSpeedTotal}"
+                                            x:Name="SpeedLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
+
+                                </Frame>
+
+                            </Grid>
                             
-                            <Label  Text="Defense"
-                                Style="{StaticResource LabelStyle}"/>
-
-                            <Slider x:Name="DefenseSlider" 
-                                WidthRequest="250" 
-                                HeightRequest="36"  
-                                ThumbColor="Black"
-                                MinimumTrackColor="#36454F"
-                                MaximumTrackColor="DimGray"
-                                Maximum="10" 
-                                Minimum="0"
-                                Value="{Binding Data.GetDefenseTotal}"
-                                ValueChanged="Defense_OnSliderValueChanged"/>
-
-                            <Frame BackgroundColor="#36454F"
-                                           WidthRequest="50"
-                                           HeightRequest="30">
-
-                                <Label Text="{Binding Data.GetDefenseTotal}"
-                                               x:Name="DefenseLabel"
-                                               Style="{StaticResource LabelStyle}"
-                                               HorizontalOptions="Center"/>
-
-                            </Frame>
-                            
-                        </StackLayout>
-
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="CenterAndExpand">
-
-                            <Label Text="Speed"
-                                   Style="{StaticResource LabelStyle}"/>
-
-                            <Slider x:Name="SpeedSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="#36454F"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
-                                    Value="{Binding Data.GetSpeedTotal}"
-                                    ValueChanged="Speed_OnSliderValueChanged"/>
-
-                            <Frame BackgroundColor="#36454F"
-                                           WidthRequest="50"
-                                           HeightRequest="30">
-
-                                <Label Text="{Binding Data.GetSpeedTotal}"
-                                               x:Name="SpeedLabel"
-                                               Style="{StaticResource LabelStyle}"
-                                               HorizontalOptions="Center"/>
-
-                            </Frame>
-
                         </StackLayout>
 
                         <Frame Background="#36454F"
