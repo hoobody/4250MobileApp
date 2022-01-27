@@ -31,11 +31,11 @@
                      AbsoluteLayout.LayoutBounds="1,1,1,1" 
                      AbsoluteLayout.LayoutFlags="All">
 
-                <ScrollView>
+                <ScrollView x:Name="ScrollView">
                     
 
                     <StackLayout Style="{StaticResource VerticalStack}"
-                                 HorizontalOptions="CenterAndExpand">
+                                 Spacing="10">
 
                         <Label Text="Read Page" Style="{StaticResource HeaderStyle}"
                                HorizontalOptions="Center"/>
