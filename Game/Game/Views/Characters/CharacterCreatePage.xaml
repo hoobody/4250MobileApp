@@ -216,9 +216,7 @@
                                     Maximum="100" 
                                     Minimum="0"
                                     Value="{Binding Data.GetMaxHealthTotal}"
-                                    InputTransparent="True">
-                                
-                            </Slider>
+                                    InputTransparent="True"/>
 
                         </StackLayout>
 
@@ -231,18 +229,36 @@
                             <Slider x:Name="AttackSlider" 
                                     WidthRequest="250" 
                                     HeightRequest="36"  
-                                    ThumbColor="Transparent"
+                                    ThumbColor="Black"
                                     MinimumTrackColor="#36454F"
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.Attack, Mode=TwoWay}">
-                                
-                            </Slider>
+                                    Value="{Binding Data.Attack, Mode=TwoWay}"/>
+
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     HorizontalOptions="CenterAndExpand">
+                            
+                            <Label  Text="Defense"
+                                Style="{StaticResource LabelStyle}"/>
+
+                            <Slider x:Name="DefenseSlider" 
+                                WidthRequest="250" 
+                                HeightRequest="36"  
+                                ThumbColor="Black"
+                                MinimumTrackColor="#36454F"
+                                MaximumTrackColor="DimGray"
+                                Maximum="10" 
+                                Minimum="0"
+                                Value="{Binding Data.GetDefenseTotal}"/>
 
                         </StackLayout>
 
 
+                        
+                        
                         <StackLayout Style="{StaticResource OuterBoxStack}" 
                                      Spacing="10">
 
