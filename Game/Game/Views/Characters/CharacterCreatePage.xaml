@@ -41,16 +41,18 @@
                                HorizontalOptions="Center"/>
 
                         <Frame HeightRequest="210"
-                           WidthRequest="400"
-                           BorderColor="Black">
-                        
+                               WidthRequest="400"
+                               BorderColor="Black">
 
-                            <StackLayout    Style="{StaticResource VerticalStack}"
-                                            HorizontalOptions="Center">
+                            <StackLayout Style="{StaticResource HorizontalStack}"
+                                     WidthRequest="350"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Spacing="10">
 
-                                <StackLayout Style="{StaticResource HorizontalStack}"
-                                             Spacing="15"
-                                             HorizontalOptions="CenterAndExpand">
+                                <StackLayout Style="{StaticResource VerticalStack}"
+                                         Spacing="10"
+                                         WidthRequest="125">
 
                                     <Label  Text="Class" 
                                             Style="{StaticResource LabelStyle}"/>
@@ -103,7 +105,7 @@
 
                             </StackLayout>
 
-                        </>
+                        </Frame>
 
 
 
