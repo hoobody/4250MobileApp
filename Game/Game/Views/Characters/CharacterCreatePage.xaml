@@ -26,10 +26,10 @@
                         VerticalOptions="FillAndExpand">
 
             <StackLayout Style="{StaticResource VerticalStack}"
-                     HorizontalOptions="CenterAndExpand"
-                     WidthRequest="475"
-                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                     AbsoluteLayout.LayoutFlags="All">
+                         HorizontalOptions="CenterAndExpand"
+                         WidthRequest="475"
+                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                         AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView x:Name="ScrollView">
                     
@@ -45,14 +45,14 @@
                                BorderColor="Black">
 
                             <StackLayout Style="{StaticResource HorizontalStack}"
-                                     WidthRequest="350"
-                                     HorizontalOptions="Center"
-                                     VerticalOptions="Center"
-                                     Spacing="10">
+                                         WidthRequest="350"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Spacing="10">
 
                                 <StackLayout Style="{StaticResource VerticalStack}"
-                                         Spacing="10"
-                                         WidthRequest="125">
+                                             Spacing="10"
+                                             WidthRequest="125">
 
                                     <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
                                            HorizontalOptions="Center"
@@ -60,16 +60,16 @@
                                            FontAttributes="Bold"/>
 
                                     <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                                                    Style="{StaticResource EntryStyle}"/>
+                                            Style="{StaticResource EntryStyle}"/>
 
                                     <Frame BackgroundColor="#36454F"
-                                       BorderColor="Black"
-                                       WidthRequest="125"
-                                       HeightRequest="125">
+                                           BorderColor="Black"
+                                           WidthRequest="125"
+                                           HeightRequest="125">
+
                                         <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
                                     </Frame>
-
-
 
                                     <Label  Text="Class" 
                                             Style="{StaticResource LabelStyle}"/>
@@ -79,22 +79,35 @@
                                 </StackLayout>
 
                                 <StackLayout Style="{StaticResource VerticalStack}"
-                                         VerticalOptions="Center"
-                                         WidthRequest="250"
-                                         Spacing="10">
+                                             VerticalOptions="Center"
+                                             WidthRequest="250"
+                                             Spacing="10">
                                     
                                     <StackLayout Style="{StaticResource VerticalStack}"
-                                             VerticalOptions="Center"
-                                             HeightRequest="25"
-                                             WidthRequest="215">
+                                                 VerticalOptions="Center"
+                                                 HeightRequest="25"
+                                                 WidthRequest="215">
 
                                         <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Start"/>
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Start"/>
 
                                     </StackLayout>
-                                    
-                                    </StackLayout>
+
+                                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
+
+                                        <Label  Text="Class/Rank:" 
+                                                Style="{StaticResource LabelStyle}"/>
+                                        
+                                        <Frame BackgroundColor="#36454F"
+                                               WidthRequest="142"
+                                               Padding="3">
+                                            
+                                            <Entry  Style="{StaticResource ValueStyle}"/>
+                                            
+                                        </Frame>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}">
 
