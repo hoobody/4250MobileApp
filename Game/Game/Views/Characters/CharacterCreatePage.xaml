@@ -53,20 +53,16 @@
                                          Margin="5,5,5,5">
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                             HorizontalOptions="CenterAndExpand"
+                                             HorizontalOptions="Start"
                                              Spacing="25">
 
-                                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                                 VerticalOptions="CenterAndExpand">
-                                        
-                                        <Label Text="Name" Style="{StaticResource HeaderStyle}"
-                                                HorizontalOptions="Center"
-                                                FontSize="Small"
-                                                FontAttributes="Bold"/>
+                                    <StackLayout Style="{StaticResource HorizontalStack}">
+                                       
 
                                         <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                 Style="{StaticResource EntryStyle}"
-                                                WidthRequest="100"/>
+                                                WidthRequest="100"
+                                                FontSize="13"/>
 
                                     </StackLayout>
                                     
