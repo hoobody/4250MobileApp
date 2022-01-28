@@ -21,7 +21,7 @@
                         Clicked="VillageButton_Clicked"/>
 
                     <Label 
-                        Text="Village"
+                        Text="Headquaters"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -33,7 +33,7 @@
                         Clicked="DungeonButton_Clicked"/>
 
                     <Label 
-                        Text="Dungeon"
+                        Text="Mission"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
