@@ -126,14 +126,18 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            //prevent submission if something is wrong
+            if (readyToSubmit())
             {
-                ViewModel.Data.ImageURI = new CharacterModel().ImageURI;
-            }
+                // If the image in the data box is empty, use the default one..
+                if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+                {
+                    ViewModel.Data.ImageURI = new CharacterModel().ImageURI;
+                }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
         }
 
         /// <summary>
@@ -414,5 +418,24 @@ namespace Game.Views
 
             return true;
         }
+
+        /// <summary>
+        /// Returns true if all required fields are filled out
+        /// </summary>
+        /// <returns></returns>
+        public bool readyToSubmit()
+        {
+            if (NameEntry.Text.Length == 0)
+                return false;
+
+            if (DescriptionEntry.Text.Length == 0)
+                return false;
+
+            if (CodeNameEntry.Text.Length == 0)
+                return false;
+
+            return true;
+        }
+
     }
 }
