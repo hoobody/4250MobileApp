@@ -95,7 +95,9 @@ namespace Game.Views
             ViewModel.Data.MaxHealth = RandomPlayerHelper.GetHealth(ViewModel.Data.Level);
 
             // Show the Result
-            MaxHealthValue.Text = ViewModel.Data.MaxHealth.ToString();
+            HealthSlider.Value = ViewModel.Data.MaxHealth;
+
+            HealthLabel.Text = ViewModel.Data.MaxHealth.ToString();
         }
 
         /// <summary>
