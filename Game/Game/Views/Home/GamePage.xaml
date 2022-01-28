@@ -41,28 +41,33 @@
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                             HorizontalOptions="Start"
+                             Spacing="3">
+                    
+                    <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="VillageButton_Clicked"/>
+                        <ImageButton
+                            Source="item.png"
+                            Style="{StaticResource ImageLargeStyle}"
+                            Clicked="VillageButton_Clicked"/>
 
-                    <Label 
-                        Text="Headquaters"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+                        <Label 
+                            Text="Headquaters"
+                            Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                    <StackLayout Style="{StaticResource CardImageTextBox}">
 
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="AutobattleButton_Clicked"/>
+                        <ImageButton
+                            Source="item.png"
+                            Style="{StaticResource ImageLargeStyle}"
+                            Clicked="AutobattleButton_Clicked"/>
 
-                    <Label 
-                        Text="Auto Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
+                        <Label 
+                            Text="Auto Battle"
+                            Style="{StaticResource CenterMessageStyle}"/>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
