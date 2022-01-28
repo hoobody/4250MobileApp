@@ -176,7 +176,7 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="100" 
                                     Minimum="0"
-                                    Value="{Binding Data.GetMaxHealthTotal}"
+                                    Value="{Binding Data.Health}"
                                     InputTransparent="True">
                             </Slider>
 
@@ -184,7 +184,7 @@
                                    BackgroundColor="#36454F"
                                    WidthRequest="50"
                                    HeightRequest="30">
-                                <Label Text="{Binding Data.GetMaxHealthTotal}"
+                                <Label Text="{Binding Data.Health}"
                                        Style="{StaticResource LabelStyle}"
                                        HorizontalOptions="Center"/>
                             </Frame>
@@ -202,7 +202,7 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.GetAttackTotal}"
+                                    Value="{Binding Data.Attack}"
                                     InputTransparent="True">
                             </Slider>
 
@@ -210,7 +210,7 @@
                                    BackgroundColor="#36454F"
                                    WidthRequest="50"
                                    HeightRequest="30">
-                                <Label Text="{Binding Data.GetAttackTotal}"
+                                <Label Text="{Binding Data.Attack}"
                                        Style="{StaticResource LabelStyle}"
                                        HorizontalOptions="Center"/>
                             </Frame>
@@ -228,7 +228,7 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.GetDefenseTotal}"
+                                    Value="{Binding Data.Defense}"
                                     InputTransparent="True">
                             </Slider>
 
@@ -236,7 +236,7 @@
                                    BackgroundColor="#36454F"
                                    WidthRequest="50"
                                    HeightRequest="30">
-                                <Label Text="{Binding Data.GetDefenseTotal}"
+                                <Label Text="{Binding Data.Defense}"
                                        Style="{StaticResource LabelStyle}"
                                        HorizontalOptions="Center"/>
                             </Frame>
@@ -254,7 +254,7 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.GetSpeedTotal}"
+                                    Value="{Binding Data.Speed}"
                                     InputTransparent="True">
                             </Slider>
 
@@ -262,7 +262,7 @@
                                    BackgroundColor="#36454F"
                                    WidthRequest="50"
                                    HeightRequest="30">
-                                <Label Text="{Binding Data.GetSpeedTotal}"
+                                <Label Text="{Binding Data.Speed}"
                                        Style="{StaticResource LabelStyle}"
                                        HorizontalOptions="Center"/>
                             </Frame>
