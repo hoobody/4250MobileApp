@@ -149,6 +149,7 @@
     <Content Include="elf7.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="mainmenu.png" />
     <Content Include="silenced_pistol.png" />
     <Content Include="hat1.png" />
     <Content Include="hat2.png" />

@@ -272,5 +272,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\d10_50x50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\mainmenu.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
