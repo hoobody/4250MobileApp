@@ -47,5 +47,15 @@ namespace Game.Views
         {
             await Navigation.PushAsync(new AutoBattlePage());
         }
+
+        /// <summary>
+        /// Back to the main menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void MainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
     }
 }

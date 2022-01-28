@@ -4,6 +4,10 @@
              x:Class="Game.Views.GamePage"
              >
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Main Menu" Clicked="MainMenu_Clicked" IconImageSource="mainmenu.png"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
 
         <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
