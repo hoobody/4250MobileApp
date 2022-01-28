@@ -277,7 +277,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Attack, Mode=TwoWay}"
+                                    <Label  Text="{Binding Data.Attack}"
                                             x:Name="AttackLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -305,7 +305,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Defense, Mode=TwoWay}"
+                                    <Label  Text="{Binding Data.Defense}"
                                             x:Name="DefenseLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -333,7 +333,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Speed, Mode=TwoWay}"
+                                    <Label  Text="{Binding Data.Speed}"
                                             x:Name="SpeedLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
