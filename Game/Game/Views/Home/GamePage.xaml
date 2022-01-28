@@ -10,12 +10,24 @@
     
     <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
+        <ScrollView VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
 
-            <FlexLayout x:Name="flexLayout"
-                        Wrap="Wrap"
-                        JustifyContent="SpaceAround"
-                        AlignContent="SpaceAround">
+            <StackLayout VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                            Spacing="100">
+
+                <StackLayout Style="{StaticResource VerticalStack}"
+                    VerticalOptions="Center"
+                    HeightRequest="25"
+                    WidthRequest="215">
+
+                    <Label Text="Where to next, agent"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                           FontSize="Large"/>
+
+                </StackLayout>
 
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
@@ -52,7 +64,7 @@
                         Text="Auto Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
-            </FlexLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
