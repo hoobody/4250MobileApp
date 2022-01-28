@@ -63,7 +63,11 @@ namespace Game.Views
 
             // This resets the Picker to -1 index, need to reset it back
             ViewModel.Data.Level = level;
-            LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
+            LevelPicker.SelectedIndex = this.ViewModel.Data.Level - 1;
+
+            AttackLabel.Text = this.ViewModel.Data.Attack.ToString();
+            DefenseLabel.Text = this.ViewModel.Data.Defense.ToString();
+            SpeedLabel.Text = this.ViewModel.Data.Speed.ToString();
 
             ManageHealth();
 
