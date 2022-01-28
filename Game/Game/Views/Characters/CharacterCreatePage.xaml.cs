@@ -134,7 +134,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Attack
+        /// Catch the change to the Slider for Attack
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -144,7 +144,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Defense
+        /// Catch the change to the Slider for Defense
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -154,7 +154,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Speed
+        /// Catch the change to the Slider for Speed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
