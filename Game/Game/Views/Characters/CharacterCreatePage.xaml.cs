@@ -75,6 +75,10 @@ namespace Game.Views
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
+            //Should set picker to most current value. Not working for some reason
+            //Set Job Picker to the new job
+            //JobPicker.SelectedItem = ViewModel.Data.Job;
+
             ManageHealth();
 
             AddItemsToDisplay();
@@ -344,10 +348,13 @@ namespace Game.Views
         /// <returns></returns>
         public bool RandomizeCharacter()
         {
-            // Randomize Name
+            // Randomize Name & Job
             ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
             ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
             ViewModel.Data.CodeName = RandomPlayerHelper.GetCharacterCodeName();
+            string randomJob = RandomPlayerHelper.GetCharacterJob();
+            ViewModel.Data.Job = CharacterJobEnumHelper.ConvertStringToEnum(randomJob);
+           
 
             // Randomize the Attributes
             ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
