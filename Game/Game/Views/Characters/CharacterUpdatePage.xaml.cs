@@ -132,33 +132,33 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Attack
+        /// Catch the change to the Slider for Attack
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Attack_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackValue.Text = String.Format("{0}", e.NewValue);
+            AttackLabel.Text = String.Format("{0}", e.NewValue);
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Defense
+        /// Catch the change to the Slider for Defense
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Defense_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseValue.Text = String.Format("{0}", e.NewValue);
+            DefenseLabel.Text = String.Format("{0}", e.NewValue);
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Speed
+        /// Catch the change to the Slider for Speed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void Speed_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedValue.Text = String.Format("{0}", e.NewValue);
+            SpeedLabel.Text = String.Format("{0}", e.NewValue);
         }
 
         /// <summary>
