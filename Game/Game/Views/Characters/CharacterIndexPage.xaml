@@ -13,62 +13,144 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                     HorizontalOptions="Center"
+                     WidthRequest="450">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Character Index" Style="{StaticResource HeaderStyle}"
+                HorizontalOptions="Center"
+                   />
 
             <ListView x:Name="CharactersListView" 
-                    ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80"
-                    >
+                ItemsSource="{Binding Dataset}"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected"
+                HasUnevenRows="true"
+                Margin="5,0,5,0"
+                RowHeight="220"
+                      HorizontalOptions="Center">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+                            <Frame HeightRequest="210"
+                                WidthRequest="400"
+                                BorderColor="Black">
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                        Source="{Binding ImageURI}"
-                                        Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"/>
+                                <StackLayout Style="{StaticResource HorizontalStack}"
+                                     WidthRequest="350"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"
+                                     Spacing="10">
 
-                                <Label Grid.Column="1" Grid.Row="0"
-                                       Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                         Spacing="10"
+                                         WidthRequest="125">
 
-                                <StackLayout Grid.Column="1" Grid.Row="1"
-                                    Orientation="Horizontal">
-                                    
-                                    <Label 
-                                       Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
-                                       Style="{StaticResource ListStyle}"/>
+                                        <Label Text="{Binding Name}" Style="{StaticResource HeaderStyle}"
+                                           HorizontalOptions="Center"
+                                           FontSize="Medium"
+                                           FontAttributes="Bold"/>
 
-                                    <Label Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                        Style="{StaticResource ListStyle}"/>
-                                
+                                        <Frame BackgroundColor="#36454F"
+                                       BorderColor="Black"
+                                       WidthRequest="125"
+                                       HeightRequest="125">
+                                            <Image Source="{Binding ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                        </Frame>
+
+                                    </StackLayout>
+
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                         VerticalOptions="Center"
+                                         WidthRequest="250"
+                                         Spacing="10">
+                                        <StackLayout Style="{StaticResource VerticalStack}"
+                                             VerticalOptions="Center"
+                                             HeightRequest="25"
+                                             WidthRequest="215">
+                                            <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Start"/>
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
+
+                                            <Label 
+                                        Text="Class/Rank:" 
+                                        Style="{StaticResource LabelStyle}"/>
+                                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="142"
+                                           Padding="3">
+                                                <Label 
+                                            Text="{Binding Job}" 
+                                            Style="{StaticResource ValueStyle}"/>
+                                            </Frame>
+
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
+                                            <Label 
+                                                Text="CodeName:" 
+                                                Style="{StaticResource LabelStyle}"/>
+                                            
+                                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="143"
+                                           Padding="3">
+                                                <Label 
+                                            Text="{Binding CodeName}" 
+                                            Style="{StaticResource ValueStyle}"/>
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="Start"
+                                             Spacing="3">
+                                            <Label Text="Description: " 
+                                           Style="{StaticResource LabelStyle}"/>
+                                            <Frame BackgroundColor="#36454F"
+                                           WidthRequest="140"
+                                           Padding="3">
+                                                <Label Text="{Binding Description  }" 
+                                               Style="{StaticResource ValueStyle}"/>
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="End"
+                                             Spacing="7">
+
+                                            <Label Text="█║█ ║▌║█║▌│║▌"
+                                           TextColor="Black"
+                                           VerticalOptions="Center"
+                                           ScaleY="1.75"
+                                           ScaleX="1"/>
+
+                                            <StackLayout Style="{StaticResource HorizontalStack}"
+                                             HorizontalOptions="End">
+                                                <Label 
+                                        Text="Level : " 
+                                        Style="{StaticResource LabelStyle}"/>
+                                                <Frame BackgroundColor="#36454F"
+                                               WidthRequest="25"
+                                               Padding="3">
+                                                    <Label 
+                                                Text="{Binding Level  }" 
+                                                HorizontalOptions="Center"
+                                                Style="{StaticResource ValueStyle}"/>
+                                                </Frame>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+
                                 </StackLayout>
-
-                                <Label Grid.Column="1" Grid.Row="2"
-                                       Text="{Binding Description}" 
-                                       Style="{StaticResource ListStyle}"
-                                       FontSize="Micro"/>
-
-                            </Grid>
+                            </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
