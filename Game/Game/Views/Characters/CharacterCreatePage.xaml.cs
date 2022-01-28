@@ -343,6 +343,7 @@ namespace Game.Views
             // Randomize Name
             ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
             ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
+            ViewModel.Data.CodeName = RandomPlayerHelper.GetCharacterCodeName();
 
             // Randomize the Attributes
             ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
