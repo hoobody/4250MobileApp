@@ -274,7 +274,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetAttackTotal}"
+                                    <Label  Text="{Binding Data.Attack}"
                                             x:Name="AttackLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -302,7 +302,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetDefenseTotal}"
+                                    <Label  Text="{Binding Data.Defense}"
                                             x:Name="DefenseLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -330,7 +330,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetSpeedTotal}"
+                                    <Label  Text="{Binding Data.Speed}"
                                             x:Name="SpeedLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
