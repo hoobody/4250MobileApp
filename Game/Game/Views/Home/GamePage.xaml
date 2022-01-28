@@ -34,10 +34,10 @@
                     <ImageButton
                         Source="item.png"
                         Style="{StaticResource ImageLargeStyle}"
-                        Clicked="VillageButton_Clicked"/>
+                        Clicked="DungeonButton_Clicked"/>
 
                     <Label 
-                        Text="Headquaters"
+                        Text="Mission"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
@@ -46,10 +46,10 @@
                     <ImageButton
                         Source="item.png"
                         Style="{StaticResource ImageLargeStyle}"
-                        Clicked="DungeonButton_Clicked"/>
+                        Clicked="VillageButton_Clicked"/>
 
                     <Label 
-                        Text="Mission"
+                        Text="Headquaters"
                         Style="{StaticResource CenterMessageStyle}"/>
                 </StackLayout>
 
