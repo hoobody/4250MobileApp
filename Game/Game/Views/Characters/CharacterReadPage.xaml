@@ -82,7 +82,7 @@
                                            WidthRequest="142"
                                            Padding="3">
                                         <Label 
-                                            Text="{Binding Data.Name}" 
+                                            Text="{Binding Data.Job}" 
                                             Style="{StaticResource ValueStyle}"/>
                                     </Frame>
 
@@ -98,7 +98,7 @@
                                            WidthRequest="143"
                                            Padding="3">
                                         <Label 
-                                            Text="{Binding Data.Description}" 
+                                            Text="{Binding Data.CodeName}" 
                                             Style="{StaticResource ValueStyle}"/>
                                     </Frame>
                                 </StackLayout>
@@ -111,7 +111,7 @@
                                     <Frame BackgroundColor="#36454F"
                                            WidthRequest="140"
                                            Padding="3">
-                                        <Label Text="{Binding Data.Level  }" 
+                                        <Label Text="{Binding Data.Description  }" 
                                                Style="{StaticResource ValueStyle}"/>
                                     </Frame>
                                 </StackLayout>
