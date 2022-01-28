@@ -24,16 +24,17 @@
 
         <ScrollView HorizontalOptions="Center">
             
-                <StackLayout Style="{StaticResource VerticalStack}"
-                    HorizontalOptions="Center"
-                    Spacing="5"
-                    WidthRequest="350">
+            <StackLayout Style="{StaticResource VerticalStack}"
+                HorizontalOptions="Center"
+                Spacing="5"
+                WidthRequest="350">
 
-                    <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
-                        HorizontalOptions="Center"
-                        FontSize="Medium"/>
+                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"/>
+                
                 <StackLayout  Style="{StaticResource HorizontalStack}"
-                              HorizontalOptions="CenterAndExpand">
+                    HorizontalOptions="CenterAndExpand">
 
                     <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"
                            WidthRequest="150"
@@ -44,13 +45,13 @@
                 <StackLayout BackgroundColor="#696969"
                         WidthRequest="350">
 
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
-                            Spacing="5">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                        Padding="7,5"
+                        Spacing="5">
 
-                            <Label Text="Name: "
-                                FontSize="15"
-                                Style="{StaticResource LabelStyle}"/>
+                        <Label Text="Name: "
+                            FontSize="15"
+                            Style="{StaticResource LabelStyle}"/>
 
                         <Frame WidthRequest="280"
                             x:Name="NameFrame">
@@ -68,18 +69,18 @@
 
                     </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
-                            Spacing="5">
+                    <StackLayout Style="{StaticResource HorizontalStack}"
+                        Padding="7,5"
+                        Spacing="5">
 
-                            <Label Text="Description: "
-                                VerticalOptions="Start"
-                                HeightRequest="37"
-                                FontSize="15"
-                                Style="{StaticResource LabelStyle}"/>
+                        <Label Text="Description: "
+                            VerticalOptions="Start"
+                            HeightRequest="37"
+                            FontSize="15"
+                            Style="{StaticResource LabelStyle}"/>
 
                         <Frame WidthRequest="245"
-                               x:Name="DescriptionFrame">
+                            x:Name="DescriptionFrame">
                             
                             <Entry  Text="{Binding Data.Description}" 
                                 d:Text="Item Description"
@@ -94,38 +95,38 @@
 
                     </StackLayout>
 
-                    </StackLayout>
+                </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                        BackgroundColor="#696969"
-                        Padding="7,5"
-                        Spacing="7"
-                        WidthRequest="350">
+                <StackLayout Style="{StaticResource HorizontalStack}"
+                    BackgroundColor="#696969"
+                    Padding="7,5"
+                    Spacing="7"
+                    WidthRequest="350">
 
-                        <StackLayout Padding="5">
+                    <StackLayout Padding="5">
 
-                            <StackLayout BackgroundColor="#808080"
-                                 Style="{StaticResource VerticalStack}"
-                                 VerticalOptions="CenterAndExpand"
-                                 HorizontalOptions="Center"
-                                 HeightRequest="70"
-                                 WidthRequest="156">
+                        <StackLayout BackgroundColor="#808080"
+                            Style="{StaticResource VerticalStack}"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
+                            HeightRequest="70"
+                            WidthRequest="156">
 
-                                <Label Text="Location" 
-                                    HorizontalOptions="Center"
-                                    HeightRequest="37"
-                                    Style="{StaticResource LabelStyle}"/>
+                            <Label Text="Location" 
+                                HorizontalOptions="Center"
+                                HeightRequest="37"
+                                Style="{StaticResource LabelStyle}"/>
 
-                                <Picker Grid.Row="2" Grid.Column="1"
-                                    ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
-                                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="LocationPicker"/>
-
-                            </StackLayout>
+                            <Picker Grid.Row="2" Grid.Column="1"
+                                ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                                SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                x:Name="LocationPicker"/>
 
                         </StackLayout>
 
-                        <StackLayout Padding="5">
+                    </StackLayout>
+
+                    <StackLayout Padding="5">
 
                             <StackLayout BackgroundColor="#808080"
                                 Style="{StaticResource VerticalStack}"
