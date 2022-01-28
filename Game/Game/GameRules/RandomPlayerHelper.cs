@@ -128,6 +128,23 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Get CodeName
+        /// 
+        /// Return a Random Name
+        /// </summary>
+        /// <returns></returns>
+        public static string GetCharacterCodeName()
+        {
+
+            List<String> CodeNameList = new List<String> { "Roquefort", "Camembert", "Cotija", "Chèvre", "Feta", "Mozzarella", "Emmental", "Cheddar", "Gouda", "Taleggio", "Parmigiano", "Manchego", "HouseMouse", "Fondue", "Colby", "Swiss", "Stilton", "Mascarpone", "Pecorino", "Blue", "Beaufort", "Provolone", "Kraft", "Velveeta", "Cheezit", "Havarti", "Brie", "American" };
+
+            var result = CodeNameList.ElementAt(DiceHelper.RollDice(1, CodeNameList.Count()) - 1);
+
+            return result;
+        }
+
+
+        /// <summary>
         /// Get Description
         /// 
         /// Return a random description
