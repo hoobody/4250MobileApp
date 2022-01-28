@@ -176,7 +176,7 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="100" 
                                     Minimum="0"
-                                    Value="{Binding Data.Health}"
+                                    Value="{Binding Data.MaxHealth}"
                                     InputTransparent="True">
                             </Slider>
 
@@ -184,7 +184,7 @@
                                    BackgroundColor="#36454F"
                                    WidthRequest="50"
                                    HeightRequest="30">
-                                <Label Text="{Binding Data.Health}"
+                                <Label Text="{Binding Data.MaxHealth}"
                                        Style="{StaticResource LabelStyle}"
                                        HorizontalOptions="Center"/>
                             </Frame>
