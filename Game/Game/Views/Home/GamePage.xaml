@@ -15,19 +15,12 @@
 
             <StackLayout VerticalOptions="Center"
                             HorizontalOptions="Center"
-                            Spacing="100">
+                            Spacing="50">
 
-                <StackLayout Style="{StaticResource VerticalStack}"
+                <Label Text="  Where to&#10; next, Agent"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    HeightRequest="25"
-                    WidthRequest="215">
-
-                    <Label Text="Where to next, agent"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"
-                           FontSize="Large"/>
-
-                </StackLayout>
+                    FontSize="Large"/>
 
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
@@ -39,7 +32,7 @@
                     <Label 
                         Text="Mission"
                         Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
                              HorizontalOptions="Start"
