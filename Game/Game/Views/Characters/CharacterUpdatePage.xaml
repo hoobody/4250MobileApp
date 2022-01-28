@@ -60,6 +60,7 @@
 
 
                                         <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
+                                                x:Name="NameEntry"
                                                 Style="{StaticResource EntryStyle}"
                                                 WidthRequest="100"
                                                 FontSize="15"
@@ -138,6 +139,7 @@
                                                    Padding="3">
 
                                                 <Entry  Text="{Binding Data.CodeName, Mode=TwoWay}"
+                                                        x:Name="CodeNameEntry"
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>
@@ -158,6 +160,7 @@
                                                     Padding="3">
 
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
+                                                        x:Name="DescriptionEntry"
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>
