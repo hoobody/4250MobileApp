@@ -71,6 +71,11 @@ namespace Game.Views
             BindingContext = null;
             BindingContext = this.ViewModel;
 
+            //Set stat labels on refresh
+            AttackLabel.Text = this.ViewModel.Data.Attack.ToString();
+            DefenseLabel.Text = this.ViewModel.Data.Defense.ToString();
+            SpeedLabel.Text = this.ViewModel.Data.Speed.ToString();
+
             // This resets the Picker to -1 index, need to reset it back
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
