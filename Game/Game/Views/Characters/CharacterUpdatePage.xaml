@@ -188,7 +188,7 @@
                                                 <Frame BackgroundColor="#36454F"
                                                        Padding="3">
 
-                                                    <Picker SelectedItem="{Binding SelectedItemProperty}" 
+                                                    <Picker SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                                                             SelectedIndexChanged="Level_Changed"
                                                             x:Name="LevelPicker"
                                                             MinimumWidthRequest="20"/>
@@ -240,7 +240,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="100" 
                                         Minimum="0"
-                                        Value="{Binding Data.GetMaxHealthTotal}"
+                                        Value="{Binding Data.MaxHealth, Mode=TwoWay}"
                                         InputTransparent="True"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="0"
@@ -248,7 +248,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetHealthTotal}"
+                                    <Label  Text="{Binding Data.MaxHealth, Mode=TwoWay}"
                                             x:Name="HealthLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -276,7 +276,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetAttackTotal}"
+                                    <Label  Text="{Binding Data.Attack}"
                                             x:Name="AttackLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -304,7 +304,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetDefenseTotal}"
+                                    <Label  Text="{Binding Data.Defense}"
                                             x:Name="DefenseLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -332,7 +332,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetSpeedTotal}"
+                                    <Label  Text="{Binding Data.Speed}"
                                             x:Name="SpeedLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
