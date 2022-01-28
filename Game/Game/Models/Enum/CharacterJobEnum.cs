@@ -97,8 +97,7 @@ namespace Game.Models
     {
 
         /// <summary>
-        ///  Gets the list of locations a character can use
-        ///  Removes Finger for example, and allows for left and right finger
+        ///  Gets the list of jobs a character can have
         /// </summary>
         public static List<string> GetJobList
         {
@@ -113,6 +112,16 @@ namespace Game.Models
 
                 return myReturn;
             }
+        }
+
+        /// <summary>
+        /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CharacterJobEnum ConvertStringToEnum(string value)
+        {
+            return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
         }
 
     }
