@@ -52,6 +52,10 @@ namespace Game.Views
             // LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
             _ = UpdatePageBindingContext();
+
+            //Give picker a default value
+            LevelPicker.SelectedIndex = 0;
+            JobPicker.SelectedIndex = 0;
         }
 
         /// <summary>

@@ -120,7 +120,8 @@
                                                 <Picker x:Name="JobPicker"
                                                         ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
                                                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                        FontSize="15"/>
+                                                        FontSize="15"
+                                                        />
 
                                             </Frame>
 
