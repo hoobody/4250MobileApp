@@ -208,10 +208,10 @@ namespace Game.Models
                         result = +2;
                         break;
                     case CharacterJobEnum.Spy:
-                        result = +1;
+                        result = +2;
                         break;
                     case CharacterJobEnum.SurveillanceOfficer:
-                        //No Bonus
+                        result = -2;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
@@ -260,10 +260,10 @@ namespace Game.Models
                         result = -1;
                         break;
                     case CharacterJobEnum.Hacker:
-                        result = +2;
+                        result = +4;
                         break;
                     case CharacterJobEnum.Saboteur:
-                        result = +1;
+                        result = +2;
                         break;
                     case CharacterJobEnum.SpecialAgent:
                         result = +2;
@@ -272,7 +272,7 @@ namespace Game.Models
                         //No Bonus
                         break;
                     case CharacterJobEnum.SurveillanceOfficer:
-                        result = +2;
+                        result = -1;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
@@ -318,7 +318,7 @@ namespace Game.Models
                         result = +2;
                         break;
                     case CharacterJobEnum.Hacker:
-                        result = +4;
+                        result = +2;
                         break;
                     case CharacterJobEnum.Saboteur:
                         result = +2;
@@ -327,10 +327,10 @@ namespace Game.Models
                         result = +2;
                         break;
                     case CharacterJobEnum.Spy:
-                        result = +1;
+                        result = +2;
                         break;
                     case CharacterJobEnum.SurveillanceOfficer:
-                        result = +3;
+                        result = +5;
                         break;
                     case CharacterJobEnum.Unknown:
                     default:
