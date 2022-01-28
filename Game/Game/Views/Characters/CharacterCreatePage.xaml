@@ -189,7 +189,7 @@
                                                 <Frame BackgroundColor="#36454F"
                                                        Padding="3">
 
-                                                    <Picker SelectedItem="{Binding SelectedItemProperty}" 
+                                                    <Picker SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                                                             SelectedIndexChanged="Level_Changed"
                                                             x:Name="LevelPicker"
                                                             MinimumWidthRequest="20"/>
@@ -241,7 +241,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="100" 
                                         Minimum="0"
-                                        Value="{Binding Data.GetMaxHealthTotal}"
+                                        Value="{Binding Data.Health, Mode=TwoWay}"
                                         InputTransparent="True"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="0"
@@ -249,7 +249,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.GetHealthTotal}"
+                                    <Label  Text="{Binding Data.Health}"
                                             x:Name="HealthLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -277,7 +277,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Attack}"
+                                    <Label  Text="{Binding Data.Attack, Mode=TwoWay}"
                                             x:Name="AttackLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -297,7 +297,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
-                                        Value="{Binding Data.Defense}"
+                                        Value="{Binding Data.Defense, Mode=TwoWay}"
                                         ValueChanged="Defense_OnSliderValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="2"
@@ -305,7 +305,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Defense}"
+                                    <Label  Text="{Binding Data.Defense, Mode=TwoWay}"
                                             x:Name="DefenseLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
@@ -325,7 +325,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
-                                        Value="{Binding Data.Speed}"
+                                        Value="{Binding Data.Speed, Mode=TwoWay}"
                                         ValueChanged="Speed_OnSliderValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="3"
@@ -333,7 +333,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Speed}"
+                                    <Label  Text="{Binding Data.Speed, Mode=TwoWay}"
                                             x:Name="SpeedLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
