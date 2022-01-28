@@ -241,7 +241,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="100" 
                                         Minimum="0"
-                                        Value="{Binding Data.Health, Mode=TwoWay}"
+                                        Value="{Binding Data.MaxHealth, Mode=TwoWay}"
                                         InputTransparent="True"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="0"
@@ -249,7 +249,7 @@
                                         WidthRequest="50"
                                         HeightRequest="30">
 
-                                    <Label  Text="{Binding Data.Health}"
+                                    <Label  Text="{Binding Data.MaxHealth}"
                                             x:Name="HealthLabel"
                                             Style="{StaticResource LabelStyle}"
                                             HorizontalOptions="Center"/>
