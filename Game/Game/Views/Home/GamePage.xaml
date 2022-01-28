@@ -36,7 +36,7 @@
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
                              HorizontalOptions="Start"
-                             Spacing="3">
+                             Spacing="200">
                     
                     <StackLayout Style="{StaticResource CardImageTextBox}">
 
