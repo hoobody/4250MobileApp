@@ -65,6 +65,10 @@ namespace Game.Views
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = this.ViewModel.Data.Level - 1;
 
+            //Update job picker
+            JobPicker.SelectedItem = this.ViewModel.Data.Job;
+
+            //Update stat labels
             AttackLabel.Text = this.ViewModel.Data.Attack.ToString();
             DefenseLabel.Text = this.ViewModel.Data.Defense.ToString();
             SpeedLabel.Text = this.ViewModel.Data.Speed.ToString();
