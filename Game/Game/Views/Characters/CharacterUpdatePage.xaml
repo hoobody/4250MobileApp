@@ -120,8 +120,7 @@
                                                 <Picker x:Name="JobPicker"
                                                         ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
                                                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                        FontSize="15"
-                                                        />
+                                                        FontSize="15"/>
 
                                             </Frame>
 
@@ -294,7 +293,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
-                                        Value="{Binding Data.GetDefenseTotal}"
+                                        Value="{Binding Data.Defense, Mode=TwoWay}"
                                         ValueChanged="Defense_OnSliderValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="2"
@@ -322,7 +321,7 @@
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
-                                        Value="{Binding Data.GetSpeedTotal}"
+                                        Value="{Binding Data.Speed, Mode=TwoWay}"
                                         ValueChanged="Speed_OnSliderValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="3"
