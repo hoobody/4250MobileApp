@@ -70,7 +70,7 @@
                                                 FontSize="15"
                                                 MaxLength="9"/>
                                         </Frame>
-                                        
+
                                     </StackLayout>
 
                                     <Label  Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
@@ -91,8 +91,8 @@
 
                                         <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                BorderColor="Black"
-                                               WidthRequest="125"
-                                               HeightRequest="125"
+                                               MinimumWidthRequest="125"
+                                               MinimumHeightRequest="125"
                                                VerticalOptions="Center">
 
                                             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
@@ -109,6 +109,7 @@
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                                  VerticalOptions="Center"
+                                                 HorizontalOptions="End"
                                                  WidthRequest="250"
                                                  Spacing="5">
 
@@ -183,13 +184,14 @@
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                      HorizontalOptions="CenterAndExpand"
-                                                     Spacing="7">
+                                                     Spacing="5">
 
-                                            <Label Text="║█║▌║█║▌│║▌│█║"
+                                            <Label Text="║█║▌║█║▌│║▌│█"
                                                    TextColor="Black"
                                                    VerticalOptions="Center"
                                                    ScaleY="1.75"
-                                                   ScaleX="1"/>
+                                                   ScaleX="1"
+                                                   MinimumWidthRequest="100"/>
 
                                             <StackLayout    Style="{StaticResource HorizontalStack}"
                                                             HorizontalOptions="End">
@@ -203,7 +205,8 @@
                                                     <Picker SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                                                             SelectedIndexChanged="Level_Changed"
                                                             x:Name="LevelPicker"
-                                                            MinimumWidthRequest="70"/>
+                                                            MinimumWidthRequest="70"
+                                                            FontSize="15"/>
 
 
                                                 </Frame>
