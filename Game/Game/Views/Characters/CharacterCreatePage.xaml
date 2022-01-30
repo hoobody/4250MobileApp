@@ -40,8 +40,8 @@
                         <Label Text="Create Page" Style="{StaticResource HeaderStyle}"
                                HorizontalOptions="Center"/>
 
-                        <Frame HeightRequest="240"
-                               WidthRequest="400"
+                        <Frame HeightRequest="230"
+                               WidthRequest="450"
                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                BorderColor="Black"
                                Margin="0,0,0,0">
@@ -55,25 +55,24 @@
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="Start"
-                                             Spacing="25">
+                                             Spacing="50">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}">
 
                                         <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                x:Name="NameFrame">
-
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                 x:Name="NameEntry"
                                                 d:Text="Name"
                                                 TextChanged="Name_onTextChange"
                                                 Style="{StaticResource EntryStyle}"
-                                                WidthRequest="100"
+                                                WidthRequest="105"
                                                 FontSize="15"
                                                 MaxLength="9"/>
                                         </Frame>
                                         
                                     </StackLayout>
-                                    
+
                                     <Label  Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
                                             HorizontalOptions="Center"
                                             VerticalOptions="Start"/>
@@ -92,14 +91,14 @@
 
                                         <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                BorderColor="Black"
-                                               WidthRequest="125"
-                                               HeightRequest="125"
+                                               MinimumWidthRequest="125"
+                                               MinimumHeightRequest="125"
                                                VerticalOptions="Center">
 
                                             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
                                         </Frame>
-                                    
+
                                         <ImageButton    x:Name="RollDice"
                                                         Style="{StaticResource ImageSmallStyle}"
                                                         Source="d10_50x50.png"
@@ -110,6 +109,7 @@
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                                  VerticalOptions="Center"
+                                                 HorizontalOptions="End"
                                                  WidthRequest="250"
                                                  Spacing="5">
 
@@ -121,14 +121,13 @@
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                   WidthRequest="142"
+                                                   WidthRequest="200"
                                                    Padding="3">
 
                                                 <Picker x:Name="JobPicker"
                                                         ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
                                                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                        FontSize="15"
-                                                        />
+                                                        FontSize="15"/>
 
                                             </Frame>
 
@@ -137,15 +136,15 @@
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                      HorizontalOptions="Start"
                                                      Spacing="3">
-                                        
+
                                             <Label  Text="CodeName:" 
                                                     Style="{StaticResource LabelStyle}"/>
-                                            
+
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                   WidthRequest="143"
+                                                   WidthRequest="150"
                                                    Padding="3"
                                                    x:Name="CodenameFrame">
-                                                
+
                                                 <Entry  Text="{Binding Data.CodeName, Mode=TwoWay}"
                                                         x:Name="CodenameEntry"
                                                         d:Text="Codename"
@@ -153,30 +152,31 @@
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>
-                                            
+
                                             </Frame>
-                                        
+
                                         </StackLayout>
 
                                         <StackLayout    Style="{StaticResource HorizontalStack}"
                                                         HorizontalOptions="Start"
-                                                        Spacing="3">
+                                                        Spacing="10">
 
-                                            <Label  Text="Description: " 
+                                            <Label  Text="Desc: " 
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="140"
-                                                    Padding="3"
+                                                    WidthRequest="180"
+                                                    Padding="3"   
+                                                    HorizontalOptions="End"
                                                     x:Name="DescFrame">
 
-                                                <Entry  Text="{Binding Data.Description, Mode=TwoWay}"
+                                                <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                                         x:Name="DescriptionEntry"
                                                         d:Text="Description"
                                                         TextChanged="Description_onTextChange"
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
-                                                        MaxLength="15"/>
+                                                        MaxLength="20"/>
 
                                             </Frame>
 
@@ -186,29 +186,31 @@
                                                      HorizontalOptions="CenterAndExpand"
                                                      Spacing="5">
 
-                                            <Label Text="║█║▌║█║▌│║▌│█║"
+                                            <Label Text="║█║▌║█║▌│║▌│█"
                                                    TextColor="Black"
                                                    VerticalOptions="Center"
                                                    ScaleY="1.75"
-                                                   ScaleX="1"/>
+                                                   ScaleX="1"
+                                                   MinimumWidthRequest="100"/>
 
                                             <StackLayout    Style="{StaticResource HorizontalStack}"
                                                             HorizontalOptions="End">
-                                                
+
                                                 <Label  Text="Level: " 
                                                         Style="{StaticResource LabelStyle}"/>
-                                            
+
                                                 <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                        Padding="3">
 
                                                     <Picker SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                                                             SelectedIndexChanged="Level_Changed"
                                                             x:Name="LevelPicker"
-                                                            MinimumWidthRequest="20"/>
+                                                            MinimumWidthRequest="70"
+                                                            FontSize="15"/>
 
 
                                                 </Frame>
-                                            
+
                                             </StackLayout>
 
                                         </StackLayout>
