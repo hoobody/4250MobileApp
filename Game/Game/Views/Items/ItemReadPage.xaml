@@ -31,7 +31,7 @@
                     
         </StackLayout>
 
-        <StackLayout BackgroundColor="#696969">
+        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
                 Padding="7,7"
@@ -46,7 +46,7 @@
                            HeightRequest="30"
                            Padding="5,0,0,0"
                            BorderColor="Black"
-                           BackgroundColor="#36454F">
+                           BackgroundColor="{StaticResource PrimaryBackgroundColor}">
                     <Label Text="{Binding Data.Name}"
                            Style="{StaticResource LabelStyle}"
                            FontSize="15"
@@ -71,7 +71,7 @@
                            CornerRadius="0"
                            Padding="5,0,0,0"
                            BorderColor="Black"
-                           BackgroundColor="#36454F">
+                           BackgroundColor="{StaticResource PrimaryBackgroundColor}">
 
                     <Label Text="{Binding Data.Description}"
                                Style="{StaticResource LabelStyle}"
@@ -85,14 +85,14 @@
         </StackLayout>
 
         <StackLayout Style ="{StaticResource HorizontalStack}" 
-            BackgroundColor="#696969"
+            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
             Padding="7,0"
             WidthRequest="350"
             Spacing="7">
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="#808080" 
+                <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}" 
                     Style="{StaticResource VerticalStack}" 
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="Center" 
@@ -117,7 +117,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="#808080" 
+                <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}" 
                     Style="{StaticResource VerticalStack}" 
                     HorizontalOptions="Center" 
                     HeightRequest="70"
