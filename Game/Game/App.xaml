@@ -28,7 +28,7 @@
 
             <Color x:Key="PrimaryBackgroundColor">#36454F</Color>
             <Color x:Key="SecondaryBackgroundColor">#696969</Color>
-            <Color x:Key="TriciaryBackgroundColor">#696969</Color>
+            <Color x:Key="TriciaryBackgroundColor">#808080</Color>
             <Color x:Key="LightBackgroundColor">#36454F</Color>
 
             <Color x:Key="PrimaryTextColor">#f0f8ff</Color>
