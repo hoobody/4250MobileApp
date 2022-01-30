@@ -269,7 +269,7 @@
                                         Maximum="10" 
                                         Minimum="0"
                                         Value="{Binding Data.Attack, Mode=TwoWay}"
-                                        ValueChanged="Attack_OnSliderValueChanged"/>
+                                        ValueChanged="Attack_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="1"
                                         BackgroundColor="#36454F"
@@ -297,7 +297,7 @@
                                         Maximum="10" 
                                         Minimum="0"
                                         Value="{Binding Data.Defense, Mode=TwoWay}"
-                                        ValueChanged="Defense_OnSliderValueChanged"/>
+                                        ValueChanged="Defense_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="2"
                                         BackgroundColor="#36454F"
@@ -325,7 +325,7 @@
                                         Maximum="10" 
                                         Minimum="0"
                                         Value="{Binding Data.Speed, Mode=TwoWay}"
-                                        ValueChanged="Speed_OnSliderValueChanged"/>
+                                        ValueChanged="Speed_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="3"
                                         BackgroundColor="#36454F"
