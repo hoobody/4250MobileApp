@@ -160,13 +160,7 @@
             <Label Grid.Column="1" Grid.Row="0"
                     Text="{Binding Data.Range}" 
                     x:Name="RangeValue"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="#36454F"
-                    WidthRequest="35"
-                    HeightRequest="35"
-                    FontAttributes="Bold"
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource StepperValueLabel}"/>
 
             <Stepper Grid.Column="2" Grid.Row="0"  
                     Value="{Binding Data.Range, Mode=TwoWay}"
@@ -182,13 +176,7 @@
             <Label Grid.Column="1" Grid.Row="1"
                     Text="{Binding Data.Value}" 
                     x:Name="ValueValue"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="#36454F"
-                    WidthRequest="35"
-                    HeightRequest="35"
-                    FontAttributes="Bold"
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource StepperValueLabel}"/>
 
             <Stepper Grid.Column="2" Grid.Row="1"
                     Value="{Binding Data.Value, Mode=TwoWay}"
@@ -204,13 +192,7 @@
             <Label Grid.Column="1" Grid.Row="2"
                     Text="{Binding Data.Damage}" 
                     x:Name="DamageValue"
-                    HorizontalTextAlignment="Center"
-                    VerticalTextAlignment="Center"
-                    BackgroundColor="#36454F"
-                    WidthRequest="35"
-                    HeightRequest="35"
-                    FontAttributes="Bold"
-                    Style="{StaticResource ValueStyle}"/>
+                    Style="{StaticResource StepperValueLabel}"/>
 
             <Stepper Grid.Column="2" Grid.Row="2"
                     Value="{Binding Data.Damage, Mode=TwoWay}"
