@@ -35,6 +35,12 @@ namespace Game.Models
 
         Cleric = 60,
 
+        Wizard = 62,
+
+        Archer = 63,
+
+        Knight = 66,
+
     }
 
     /// <summary>
@@ -92,6 +98,19 @@ namespace Game.Models
                 case CharacterJobEnum.Fighter:
                     Message = "Fighter";
                     break;
+
+                case CharacterJobEnum.Wizard:
+                    Message = "Wizard";
+                    break;
+
+                case CharacterJobEnum.Archer:
+                    Message = "Archer";
+                    break;
+
+                case CharacterJobEnum.Knight:
+                    Message = "Knight";
+                    break;
+
                 case CharacterJobEnum.Unknown:
                 default:
                     break;
