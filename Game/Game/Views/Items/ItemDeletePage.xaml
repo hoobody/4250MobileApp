@@ -22,11 +22,13 @@
                    HorizontalOptions="Center"
                    FontSize="Medium"/>
 
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
+            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                   BorderColor="Black">
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
                            HorizontalOptions="Center"
                            WidthRequest="150"
                            HeightRequest="150"/>
-
+            </Frame>
 
             <StackLayout BackgroundColor="#696969"
                         WidthRequest="350">
