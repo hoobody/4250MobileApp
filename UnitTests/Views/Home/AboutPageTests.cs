@@ -68,7 +68,7 @@ namespace UnitTests.Views
             ((Switch)page.FindByName("DataSourceValue")).IsToggled = true;
             ((Switch)page.FindByName("DataSourceValue")).IsToggled = false;
 
-            ((Label)page.FindByName("CurrentDateTime")).Text = "test";
+            ((Label)page.FindByName("CurrentDateTimeLabel")).Text = "test";
 
             ((StackLayout)page.FindByName("DatabaseSettingsFrame")).IsVisible = false;
             ((StackLayout)page.FindByName("DebugSettingsFrame")).IsVisible = false;
@@ -79,7 +79,7 @@ namespace UnitTests.Views
             Assert.IsNotNull((StackLayout)page.FindByName("DebugSettingsFrame"));
             Assert.IsNotNull(((StackLayout)page.FindByName("DatabaseSettingsFrame")));
 
-            Assert.IsNotNull((Label)page.FindByName("CurrentDateTime"));
+            Assert.IsNotNull((Label)page.FindByName("CurrentDateTimeLabel"));
 
             Assert.IsNotNull((Switch)page.FindByName("DatabaseSettingsSwitch"));
             Assert.IsNotNull((Switch)page.FindByName("DataSourceValue"));
