@@ -42,6 +42,7 @@
 
                         <Frame HeightRequest="230"
                                WidthRequest="400"
+                               BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                BorderColor="Black"
                                Margin="0,0,0,0">
 
