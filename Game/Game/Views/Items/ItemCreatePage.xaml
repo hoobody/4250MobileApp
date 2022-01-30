@@ -29,11 +29,14 @@
         <Label Text="Create Page" Style="{StaticResource HeaderStyle}"
                 HorizontalOptions="Center"/>
 
-        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
+        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+               BorderColor="Black">
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
                 HorizontalOptions="CenterAndExpand"
                 WidthRequest="150"
                 HeightRequest="150"/>
-
+        </Frame>
+        
         <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                         WidthRequest="350">
 
