@@ -82,13 +82,13 @@
                                              Spacing="3">
 
                                             <Label 
-                                        Text="Class/Rank:" 
+                                        Text="Job:" 
                                         Style="{StaticResource LabelStyle}"/>
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                            WidthRequest="142"
                                            Padding="3">
                                                 <Label 
-                                            Text="{Binding Data.Job}" 
+                                            Text="{Binding Job}" 
                                             Style="{StaticResource ValueStyle}"/>
                                             </Frame>
 
