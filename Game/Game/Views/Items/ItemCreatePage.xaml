@@ -54,7 +54,7 @@
                             TextChanged="Name_onTextChange"
                             FontSize="15"
                             MaxLength="25"
-                            BackgroundColor="#36454F"/>
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
                     
                 </Frame>
 
@@ -79,7 +79,7 @@
                             TextChanged="Description_onTextChange"
                             FontSize="15"
                             MaxLength="30"
-                            BackgroundColor="#36454F"/>
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
                     
                 </Frame>
                 
@@ -95,7 +95,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="#808080"
+                <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
                                 Style="{StaticResource VerticalStack}"
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
