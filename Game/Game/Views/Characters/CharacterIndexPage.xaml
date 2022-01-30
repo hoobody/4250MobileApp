@@ -54,7 +54,7 @@
                                            FontSize="Medium"
                                            FontAttributes="Bold"/>
 
-                                        <Frame BackgroundColor="#36454F"
+                                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                        BorderColor="Black"
                                        WidthRequest="125"
                                        HeightRequest="125">
@@ -83,7 +83,7 @@
                                             <Label 
                                         Text="Class/Rank:" 
                                         Style="{StaticResource LabelStyle}"/>
-                                            <Frame BackgroundColor="#36454F"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                            WidthRequest="142"
                                            Padding="3">
                                                 <Label 
@@ -100,7 +100,7 @@
                                                 Text="CodeName:" 
                                                 Style="{StaticResource LabelStyle}"/>
                                             
-                                            <Frame BackgroundColor="#36454F"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                            WidthRequest="143"
                                            Padding="3">
                                                 <Label 
@@ -114,7 +114,7 @@
                                              Spacing="3">
                                             <Label Text="Description: " 
                                            Style="{StaticResource LabelStyle}"/>
-                                            <Frame BackgroundColor="#36454F"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                            WidthRequest="140"
                                            Padding="3">
                                                 <Label Text="{Binding Description  }" 
@@ -137,7 +137,7 @@
                                                 <Label 
                                         Text="Level : " 
                                         Style="{StaticResource LabelStyle}"/>
-                                                <Frame BackgroundColor="#36454F"
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                WidthRequest="25"
                                                Padding="3">
                                                     <Label 
