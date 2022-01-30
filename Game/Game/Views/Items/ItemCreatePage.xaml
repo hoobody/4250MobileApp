@@ -34,7 +34,7 @@
                 WidthRequest="150"
                 HeightRequest="150"/>
 
-        <StackLayout BackgroundColor="#696969"
+        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                         WidthRequest="350">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
