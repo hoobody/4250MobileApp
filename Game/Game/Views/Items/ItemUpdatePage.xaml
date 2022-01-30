@@ -42,7 +42,7 @@
 
                 </StackLayout>
 
-                <StackLayout BackgroundColor="#696969"
+                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                         WidthRequest="350">
 
                     <StackLayout Style="{StaticResource HorizontalStack}"
@@ -62,8 +62,7 @@
                                 TextChanged="Name_onTextChange"
                                 FontSize="15"
                                 MaxLength="25"
-                                TextColor="White"
-                                BackgroundColor="#36454F"/>
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
                             
                         </Frame>
 
@@ -89,7 +88,7 @@
                                 FontSize="15"
                                 MaxLength="30"
                                 TextColor="White"
-                                BackgroundColor="#36454F"/>
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
                             
                         </Frame>
 
@@ -98,14 +97,14 @@
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource HorizontalStack}"
-                    BackgroundColor="#696969"
+                    BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                     Padding="7,5"
                     Spacing="7"
                     WidthRequest="350">
 
                     <StackLayout Padding="5">
 
-                        <StackLayout BackgroundColor="#808080"
+                        <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
                             Style="{StaticResource VerticalStack}"
                             VerticalOptions="CenterAndExpand"
                             HorizontalOptions="Center"
@@ -128,7 +127,7 @@
 
                     <StackLayout Padding="5">
 
-                            <StackLayout BackgroundColor="#808080"
+                            <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
                                 Style="{StaticResource VerticalStack}"
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
