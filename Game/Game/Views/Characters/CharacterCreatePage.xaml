@@ -58,15 +58,20 @@
                                              Spacing="25">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}">
-                                       
 
-                                        <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
+                                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                               x:Name="NameFrame">
+
+                                            <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                                 x:Name="NameEntry"
+                                                d:Text="Name"
+                                                TextChanged="Name_onTextChange"
                                                 Style="{StaticResource EntryStyle}"
                                                 WidthRequest="100"
                                                 FontSize="15"
                                                 MaxLength="9"/>
-
+                                        </Frame>
+                                        
                                     </StackLayout>
                                     
                                     <Label  Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
@@ -138,10 +143,13 @@
                                             
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                    WidthRequest="143"
-                                                   Padding="3">
+                                                   Padding="3"
+                                                   x:Name="CodenameFrame">
                                                 
                                                 <Entry  Text="{Binding Data.CodeName, Mode=TwoWay}"
-                                                        x:Name="CodeNameEntry"
+                                                        x:Name="CodenameEntry"
+                                                        d:Text="Codename"
+                                                        TextChanged="Codename_onTextChange"
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>
@@ -159,10 +167,13 @@
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                     WidthRequest="140"
-                                                    Padding="3">
+                                                    Padding="3"
+                                                    x:Name="DescFrame">
 
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}"
                                                         x:Name="DescriptionEntry"
+                                                        d:Text="Description"
+                                                        TextChanged="Description_onTextChange"
                                                         Style="{StaticResource EntryStyle}"
                                                         FontSize="15"
                                                         MaxLength="15"/>

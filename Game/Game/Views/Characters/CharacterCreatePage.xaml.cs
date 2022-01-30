@@ -433,7 +433,7 @@ namespace Game.Views
             {
                 return false;
             }
-            if (CodeNameEntry.Text.Length == 0)
+            if (CodenameEntry.Text.Length == 0)
                {
                 return false;
             }
@@ -441,5 +441,92 @@ namespace Game.Views
             return true;
         }
 
+        /// <summary>
+        /// Catch changes in the name text box and changes the color if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        public void Name_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("848884");
+                NameFrame.BorderColor = Color.Red;
+            }
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("848884");
+                NameFrame.BorderColor = Color.Red;
+            }
+            if (!string.IsNullOrEmpty(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("36454F");
+                NameFrame.BorderColor = Color.FromHex("#696969");
+            }
+            if (!string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("36454F");
+                NameFrame.BorderColor = Color.FromHex("#696969");
+            }
+        }
+
+        /// <summary>
+        /// Catch changes in description text and changes the color of the box if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Description_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
+                DescFrame.BorderColor = Color.Red;
+            }
+            if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
+                DescFrame.BorderColor = Color.Red;
+            }
+            if (!string.IsNullOrEmpty(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
+                DescFrame.BorderColor = Color.FromHex("#696969");
+            }
+            if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
+                DescFrame.BorderColor = Color.FromHex("#696969");
+            }
+        }
+
+        /// <summary>
+        /// Catch changes in codename text and changes the color of the box if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Codename_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(CodenameEntry.Text))
+            {
+                CodenameEntry.BackgroundColor = Color.FromHex("848884");
+                CodenameFrame.BorderColor = Color.Red;
+            }
+            if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
+            {
+                CodenameEntry.BackgroundColor = Color.FromHex("848884");
+                CodenameFrame.BorderColor = Color.Red;
+            }
+            if (!string.IsNullOrEmpty(CodenameEntry.Text))
+            {
+                CodenameEntry.BackgroundColor = Color.FromHex("36454F");
+                CodenameFrame.BorderColor = Color.FromHex("#696969");
+            }
+            if (!string.IsNullOrWhiteSpace(CodenameEntry.Text))
+            {
+                CodenameEntry.BackgroundColor = Color.FromHex("36454F");
+                CodenameFrame.BorderColor = Color.FromHex("#696969");
+            }
+        }
     }
 }
