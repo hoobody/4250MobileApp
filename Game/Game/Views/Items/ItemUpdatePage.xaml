@@ -32,16 +32,19 @@
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                     HorizontalOptions="Center"
                     FontSize="Medium"/>
-                
-                <StackLayout  Style="{StaticResource HorizontalStack}"
+
+                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                       BorderColor="Black">
+                    <StackLayout  Style="{StaticResource HorizontalStack}"
                     HorizontalOptions="CenterAndExpand">
 
-                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"
+                        <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"
                            WidthRequest="150"
                            HeightRequest="150"/>
 
-                </StackLayout>
-
+                    </StackLayout>
+                </Frame>
+                
                 <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                         WidthRequest="350">
 
