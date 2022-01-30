@@ -37,7 +37,8 @@
                         <ViewCell>
                             <Frame HeightRequest="210"
                                 WidthRequest="400"
-                                BorderColor="Black">
+                                BorderColor="Black"
+                                BackgroundColor="{StaticResource SecondaryBackgroundColor}">
 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
                                      WidthRequest="350"
