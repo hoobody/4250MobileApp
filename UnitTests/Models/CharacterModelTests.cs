@@ -280,7 +280,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(0, result);
+            Assert.AreEqual(1, result);
         }
 
         [Test]
@@ -295,7 +295,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(3, result);
+            Assert.AreEqual(4, result);
         }
 
         [Test]
@@ -310,7 +310,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }
         [Test]
         public void CharacterModel_GetAttack_Default_Should_Pass()
