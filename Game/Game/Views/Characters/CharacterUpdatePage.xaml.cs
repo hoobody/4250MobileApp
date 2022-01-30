@@ -66,7 +66,7 @@ namespace Game.Views
             LevelPicker.SelectedIndex = this.ViewModel.Data.Level - 1;
 
             //Update job picker
-            JobPicker.SelectedItem = this.ViewModel.Data.Job;
+            JobPicker.SelectedItem = this.ViewModel.Data.Job.ToString();
 
             //Update stat labels
             AttackLabel.Text = this.ViewModel.Data.Attack.ToString();
@@ -411,18 +411,19 @@ namespace Game.Views
         /// <returns></returns>
         public bool CheckIfReadyToSubmit()
         {
-            if (NameEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(NameEntry.Text))
             {
                 return false;
             }
-            if (DescriptionEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 return false;
             }
-            if (CodenameEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(CodenameEntry.Text))
             {
                 return false;
             }
+
             return true;
         }
         /// <summary>
