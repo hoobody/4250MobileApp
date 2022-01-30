@@ -84,7 +84,7 @@
                                                     VerticalOptions="CenterAndExpand"
                                                     Spacing="10">
 
-                                        <Frame BackgroundColor="#36454F"
+                                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                BorderColor="Black"
                                                WidthRequest="125"
                                                HeightRequest="125"
@@ -114,7 +114,7 @@
                                             <Label  Text="Job:" 
                                                     Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame BackgroundColor="#36454F"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                    WidthRequest="142"
                                                    Padding="3">
 
@@ -134,7 +134,7 @@
                                             <Label  Text="CodeName:" 
                                                     Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame BackgroundColor="#36454F"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                    WidthRequest="143"
                                                    Padding="3">
 
@@ -155,7 +155,7 @@
                                             <Label  Text="Description: " 
                                                     Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame  BackgroundColor="#36454F"
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                     WidthRequest="140"
                                                     Padding="3">
 
@@ -166,7 +166,7 @@
                                                         MaxLength="15"/>
 
                                             </Frame>
-
+{StaticResource PrimaryBackgroundColor}
                                         </StackLayout>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
@@ -185,7 +185,7 @@
                                                 <Label  Text="Level: " 
                                                         Style="{StaticResource LabelStyle}"/>
 
-                                                <Frame BackgroundColor="#36454F"
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                        Padding="3">
 
                                                     <Picker SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
@@ -236,7 +236,7 @@
                                         WidthRequest="250" 
                                         HeightRequest="36"   
                                         ThumbColor="Transparent"
-                                        MinimumTrackColor="#36454F"
+                                        MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
                                         MaximumTrackColor="DimGray"
                                         Maximum="100" 
                                         Minimum="0"
@@ -244,7 +244,7 @@
                                         InputTransparent="True"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="0"
-                                        BackgroundColor="#36454F"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="50"
                                         HeightRequest="30">
 
@@ -264,7 +264,7 @@
                                         WidthRequest="250" 
                                         HeightRequest="36"  
                                         ThumbColor="Black"
-                                        MinimumTrackColor="#36454F"
+                                        MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
@@ -272,7 +272,7 @@
                                         ValueChanged="Attack_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="1"
-                                        BackgroundColor="#36454F"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="50"
                                         HeightRequest="30">
 
@@ -292,7 +292,7 @@
                                         WidthRequest="250" 
                                         HeightRequest="36"  
                                         ThumbColor="Black"
-                                        MinimumTrackColor="#36454F"
+                                        MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
@@ -300,7 +300,7 @@
                                         ValueChanged="Defense_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="2"
-                                        BackgroundColor="#36454F"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="50"
                                         HeightRequest="30">
 
@@ -320,7 +320,7 @@
                                         WidthRequest="250" 
                                         HeightRequest="36"  
                                         ThumbColor="Black"
-                                        MinimumTrackColor="#36454F"
+                                        MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
                                         MaximumTrackColor="DimGray"
                                         Maximum="10" 
                                         Minimum="0"
@@ -328,7 +328,7 @@
                                         ValueChanged="Speed_OnStepperValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="3"
-                                        BackgroundColor="#36454F"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="50"
                                         HeightRequest="30">
 
@@ -343,7 +343,7 @@
 
                         </StackLayout>
                         
-                        <Frame Background="#36454F"
+                        <Frame Background="{StaticResource PrimaryBackgroundColor}"
                                WidthRequest="500"
                                HeightRequest="40">
 
