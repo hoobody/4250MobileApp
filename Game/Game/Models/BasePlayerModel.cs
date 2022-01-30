@@ -332,6 +332,12 @@ namespace Game.Models
                     case CharacterJobEnum.SurveillanceOfficer:
                         result = +5;
                         break;
+                    case CharacterJobEnum.Fighter:
+                        result = +2;
+                        break;
+                    case CharacterJobEnum.Cleric:
+                        result = +1;
+                        break;
                     case CharacterJobEnum.Unknown:
                     default:
                         break;
