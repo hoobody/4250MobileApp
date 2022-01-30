@@ -23,6 +23,7 @@
 
         <Frame HeightRequest="210"
                WidthRequest="400"
+               BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                BorderColor="Black">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
