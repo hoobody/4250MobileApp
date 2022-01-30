@@ -59,7 +59,7 @@
                         <Frame WidthRequest="280"
                             x:Name="NameFrame">
 
-                            <Entry  Text="{Binding Data.Name}" 
+                            <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                 d:Text="Item Name"
                                 x:Name="NameEntry" 
                                 TextChanged="Name_onTextChange"
@@ -84,7 +84,7 @@
                         <Frame WidthRequest="245"
                             x:Name="DescriptionFrame">
                             
-                            <Entry  Text="{Binding Data.Description}" 
+                            <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
                                 TextChanged="Description_onTextChange"
