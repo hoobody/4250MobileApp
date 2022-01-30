@@ -113,16 +113,16 @@ namespace Game.Models
             //TODO: Add other classes
             switch (Job)
             {
-                case CharacterJobEnum.Assassin:
+                case CharacterJobEnum.Fighter:
 
-                    foreach (var item in AbilityEnumHelper.GetListAssassin)
+                    foreach (var item in AbilityEnumHelper.GetListFighter)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }
                     break;
 
-                case CharacterJobEnum.Spy:
-                    foreach (var item in AbilityEnumHelper.GetListSpy)
+                case CharacterJobEnum.Cleric:
+                    foreach (var item in AbilityEnumHelper.GetListCleric)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }

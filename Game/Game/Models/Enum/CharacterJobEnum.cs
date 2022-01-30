@@ -31,6 +31,10 @@ namespace Game.Models
         
         Double0 = 45,
 
+        Fighter = 55,
+
+        Cleric = 60,
+
     }
 
     /// <summary>
@@ -81,6 +85,13 @@ namespace Game.Models
                     Message = "Double0";
                     break;
 
+                case CharacterJobEnum.Cleric:
+                    Message = "Cleric";
+                    break;
+
+                case CharacterJobEnum.Fighter:
+                    Message = "Fighter";
+                    break;
                 case CharacterJobEnum.Unknown:
                 default:
                     break;

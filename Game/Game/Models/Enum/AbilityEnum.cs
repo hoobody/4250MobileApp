@@ -127,7 +127,7 @@ namespace Game.Models
         /// <summary>
         /// Returns a list of strings of the enum for Fighter
         /// </summary>
-        public static List<string> GetListAssassin
+        public static List<string> GetListFighter
         {
             get
             {
@@ -145,7 +145,7 @@ namespace Game.Models
         /// <summary>
         /// Returns a list of strings of the enum for Cleric
         /// </summary>
-        public static List<string> GetListSpy
+        public static List<string> GetListCleric
         {
             get
             {
