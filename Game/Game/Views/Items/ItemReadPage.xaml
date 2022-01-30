@@ -22,15 +22,18 @@
             FontSize="Medium"
             HorizontalOptions="Center"/>
 
-        <StackLayout>
+        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+               BorderColor="Black">
+            <StackLayout>
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
                 HorizontalOptions="Center"
                 BackgroundColor="Transparent"
                 WidthRequest="150"
                 HeightRequest="150"/>
-                    
-        </StackLayout>
 
+            </StackLayout>
+        </Frame>
+        
         <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
