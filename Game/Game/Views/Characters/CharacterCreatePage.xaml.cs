@@ -157,7 +157,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Attack_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackLabel.Text = String.Format("{0}", Math.Round(e.NewValue));
+            AttackLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Defense_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseLabel.Text = String.Format("{0}", Math.Round(e.NewValue));
+            DefenseLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Speed_OnSliderValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedLabel.Text = String.Format("{0}", Math.Round(e.NewValue));
+            SpeedLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
         }
 
 
