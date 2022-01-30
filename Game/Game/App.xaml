@@ -26,7 +26,7 @@
             <Color x:Key="ViewBackgroundColor">#36454F</Color>
             <Color x:Key="NavigationBarColor">#E5E4E2</Color>
 
-            <Color x:Key="PrimaryBackgroundColor">#696969</Color>
+            <Color x:Key="PrimaryBackgroundColor">#36454F</Color>
             <Color x:Key="SecondaryBackgroundColor">#696969</Color>
             <Color x:Key="TriciaryBackgroundColor">#696969</Color>
             <Color x:Key="LightBackgroundColor">#36454F</Color>
@@ -188,7 +188,18 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
+
+            <Style TargetType="Label" 
+                x:Key="StepperValueLabel"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="WidthRequest" Value="35"/>
+                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
