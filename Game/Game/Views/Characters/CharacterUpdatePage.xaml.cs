@@ -115,7 +115,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            if (readyToSubmit())
+            if (CheckIfReadyToSubmit())
             { 
                 // If the image in the data box is empty, use the default one..
                 if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
@@ -409,7 +409,7 @@ namespace Game.Views
         /// Returns true if all required fields are filled out
         /// </summary>
         /// <returns></returns>
-        public bool readyToSubmit()
+        public bool CheckIfReadyToSubmit()
         {
             if (NameEntry.Text.Length == 0)
             {
