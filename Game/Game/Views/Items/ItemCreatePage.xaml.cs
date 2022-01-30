@@ -106,19 +106,29 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch changes in the text box and prevent submission of an empty field
+        /// Catch changes in the name text box and changes the color if empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(NameEntry.Text) || string.IsNullOrWhiteSpace(NameEntry.Text))
+            if (string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
+                NameEntry.BackgroundColor = Color.FromHex("848884");
                 NameFrame.BorderColor = Color.Red;
             }
-
-            if (!string.IsNullOrEmpty(NameEntry.Text) || !string.IsNullOrWhiteSpace(NameEntry.Text))
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("848884");
+                NameFrame.BorderColor = Color.Red;
+            }
+            if (!string.IsNullOrEmpty(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = Color.FromHex("36454F");
+                NameFrame.BorderColor = Color.FromHex("#696969");
+            }
+            if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = Color.FromHex("36454F");
                 NameFrame.BorderColor = Color.FromHex("#696969");
@@ -126,19 +136,28 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch changes in description text and prevent submitting if box is empty
+        /// Catch changes in description text and changes the color of the box if empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void Description_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(DescriptionEntry.Text) || string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("848884");
                 DescriptionFrame.BorderColor = Color.Red;
             }
-
-            if (!string.IsNullOrEmpty(DescriptionEntry.Text) || !string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
+                DescriptionFrame.BorderColor = Color.Red;
+            }
+            if (!string.IsNullOrEmpty(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
+                DescriptionFrame.BorderColor = Color.FromHex("#696969");
+            }
+            if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 DescriptionFrame.BorderColor = Color.FromHex("#696969");
