@@ -114,7 +114,7 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(NameEntry.Text) || string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = "{Style ErrorInput}";
+                NameEntry.BackgroundColor = Color.FromHex("36454F");
                 NameFrame.BorderColor = Color.Red;
             }
 
