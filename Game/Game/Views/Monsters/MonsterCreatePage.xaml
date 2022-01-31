@@ -213,6 +213,20 @@
                                         Minimum="0"
                                         Value="{Binding Data.Attack, Mode=TwoWay}"/>
 
+                            <Frame  Grid.Column="2" Grid.Row="1"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                        WidthRequest="50"
+                                        HeightRequest="30">
+
+                                <Label  Text="{Binding Data.Attack}"
+                                            x:Name="AttackLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
+
+                            </Frame>
+                            
+                            
+
                         </Grid>
 
                     </StackLayout>
