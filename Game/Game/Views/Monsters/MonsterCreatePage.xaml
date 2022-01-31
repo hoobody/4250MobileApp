@@ -224,8 +224,10 @@
                                             HorizontalOptions="Center"/>
 
                             </Frame>
-                            
-                            
+
+                            <Label  Grid.Column="0" Grid.Row="2"
+                                        Text="Defense"
+                                        Style="{StaticResource LabelStyle}"/>
 
                         </Grid>
 
