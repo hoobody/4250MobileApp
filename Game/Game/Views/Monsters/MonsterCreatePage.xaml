@@ -268,7 +268,18 @@
                                     Maximum="10" 
                                     Minimum="0"
                                     Value="{Binding Data.Speed, Mode=TwoWay}"/>
-                            
+
+                            <Frame  Grid.Column="2" Grid.Row="3"
+                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                    WidthRequest="50"
+                                    HeightRequest="30">
+
+                                <Label  Text="{Binding Data.Speed}"
+                                        x:Name="SpeedLabel"
+                                        Style="{StaticResource LabelStyle}"
+                                        HorizontalOptions="Center"/>
+
+                            </Frame>
 
                         </Grid>
 
