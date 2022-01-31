@@ -61,14 +61,20 @@
                                 </Frame>
 
                                 <Label Text="{Binding Data.Name}"
+                                       x:Name="NameLabelUnderImage"
                                        HorizontalOptions="Center"
                                        VerticalOptions="Center"/>
 
                             </StackLayout>
 
-                            <StackLayout Style="{StaticResource VerticalStack}">
+                            <StackLayout Style="{StaticResource VerticalStack}"
+                                         Padding="20,20,20,20">
+
+                                <Image  Source="danger_stamp_small.png"
+                                        HorizontalOptions="Center"/>
 
                                 
+
 
                             </StackLayout>
 
