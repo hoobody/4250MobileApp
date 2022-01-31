@@ -477,7 +477,7 @@
             <!-- Entry -->
             <Style TargetType="Entry"
                 x:Key="EntryStyle">
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
