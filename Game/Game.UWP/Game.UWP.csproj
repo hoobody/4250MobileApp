@@ -139,6 +139,8 @@
     <Content Include="d10.png" />
     <Content Include="d10_50x50.png" />
     <Content Include="d20_2.png" />
+    <Content Include="danger_stamp_extrasmall.png" />
+    <Content Include="danger_stamp_small.png" />
     <Content Include="dungeon_door.png" />
     <Content Include="elf1.png" />
     <Content Include="elf2.png" />

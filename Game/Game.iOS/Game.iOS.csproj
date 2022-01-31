@@ -319,4 +319,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\mainmenu.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\danger_stamp_extrasmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\danger_stamp_small.png" />
+  </ItemGroup>
 </Project>
