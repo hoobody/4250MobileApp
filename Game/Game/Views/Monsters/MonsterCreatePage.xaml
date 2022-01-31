@@ -198,6 +198,10 @@
 
                             </Frame>
 
+                            <Label  Grid.Column="0" Grid.Row="1" 
+                                        Text="Attack"
+                                        Style="{StaticResource LabelStyle}"/>
+
                         </Grid>
 
                     </StackLayout>
