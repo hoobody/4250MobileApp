@@ -73,7 +73,28 @@
                                 <Image  Source="danger_stamp_small.png"
                                         HorizontalOptions="Center"/>
 
-                                
+                                <StackLayout Style="{StaticResource HorizontalStack}"
+                                                     HorizontalOptions="Start"
+                                                     Spacing="3">
+
+                                    <Label  Text="Name:" 
+                                            Style="{StaticResource LabelStyle}"/>
+
+                                    <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                   WidthRequest="150"
+                                                   Padding="3"
+                                                   x:Name="CodenameFrame">
+
+                                        <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
+                                                        x:Name="Name"
+                                                        d:Text="NameLabel"
+                                                        Style="{StaticResource EntryStyle}"
+                                                        FontSize="15"
+                                                        MaxLength="15"/>
+
+                                    </Frame>
+
+                                </StackLayout>
 
 
                             </StackLayout>
@@ -81,10 +102,13 @@
                         </StackLayout>
                         
                     </StackLayout>
+                    
                 </ScrollView>
+                
             </StackLayout>
 
         </AbsoluteLayout>
 
     </ContentPage.Content>
+    
 </ContentPage>
