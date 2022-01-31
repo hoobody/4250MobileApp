@@ -36,10 +36,15 @@
 
                         <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}">
 
 
-                            <StackLayout Style="{StaticResource VerticalStack}">
+                            <StackLayout Style="{StaticResource VerticalStack}"
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                         Padding="20,20,20,20"
+                                         Spacing="15">
 
                                 <Frame BorderColor="Black"
                                            BackgroundColor="White"
@@ -55,10 +60,15 @@
 
                                 </Frame>
 
+                                <Label Text="{Binding Data.Name}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"/>
+
                             </StackLayout>
 
                             <StackLayout Style="{StaticResource VerticalStack}">
 
+                                
 
                             </StackLayout>
 
