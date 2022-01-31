@@ -188,6 +188,15 @@
                                         Value="{Binding Data.MaxHealth, Mode=TwoWay}"
                                         InputTransparent="True"/>
 
+                            <Frame  Grid.Column="2" Grid.Row="0"
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}">
+
+                                <Label  Text="{Binding Data.MaxHealth}"
+                                            x:Name="HealthLabel"
+                                            Style="{StaticResource LabelStyle}"
+                                            HorizontalOptions="Center"/>
+
+                            </Frame>
 
                         </Grid>
 
