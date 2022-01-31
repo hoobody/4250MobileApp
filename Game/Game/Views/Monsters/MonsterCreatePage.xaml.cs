@@ -123,8 +123,17 @@ namespace Game.Views
         /// <returns></returns>
         public bool CheckIfReadyToSubmit()
         {
+            if (NameEntry.Text.Length == 0)
+            {
+                return false;
+            }
+            if (DescriptionEntry.Text.Length == 0)
+            {
+                return false;
+            }
             return true;
         }
+    }
 
 
     }
