@@ -97,7 +97,8 @@
                                                     x:Name="NameEntry"
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
-                                                    MaxLength="15"/>
+                                                    MaxLength="15"
+                                                    TextChanged="Name_onTextChange"/>
 
                                         </Frame>
 
