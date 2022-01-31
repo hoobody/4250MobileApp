@@ -119,6 +119,27 @@
 
                                 </StackLayout>
 
+                                <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                HorizontalOptions="Start"
+                                                Spacing="3">
+
+                                    <Label  Text="Job:" 
+                                            Style="{StaticResource LabelStyle}"/>
+
+                                    <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                            WidthRequest="150"
+                                            Padding="3"
+                                            x:Name="JobFrame">
+
+                                        <Picker x:Name="JobPicker"
+                                                ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
+                                                SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                                Style="{StaticResource PickerStyle}"/>
+
+                                    </Frame>
+
+                                </StackLayout>
+
 
                             </StackLayout>
 
