@@ -325,4 +325,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\danger_stamp_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\paperclip_small.png" />
+  </ItemGroup>
 </Project>
