@@ -111,6 +111,20 @@ namespace Game.Views
         //    return true;
         //}
 
+        public bool CheckIfReadyToSubmit()
+        {
+            if (NameEntry.Text.Length == 0)
+            {
+                return false;
+            }
+            if (DescriptionEntry.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(NameEntry.Text))
