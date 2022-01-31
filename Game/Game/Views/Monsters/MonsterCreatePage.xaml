@@ -283,6 +283,18 @@
 
                         </Grid>
 
+                        <Frame Background="{StaticResource PrimaryBackgroundColor}"
+                               WidthRequest="500"
+                               HeightRequest="40">
+
+                            <Label Text="Items equipped"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   FontSize="20"
+                                   Style="{StaticResource LabelStyle}"/>
+
+                        </Frame>
+
                     </StackLayout>
                     
                 </ScrollView>
