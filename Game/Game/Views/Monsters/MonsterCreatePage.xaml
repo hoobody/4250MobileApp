@@ -169,10 +169,12 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            
-                            
-                            
-                            
+
+                            <Label  Grid.Column="0" Grid.Row="0"
+                                        Text="Health" 
+                                        Style="{StaticResource LabelStyle}"/>
+
+
                         </Grid>
 
                     </StackLayout>
