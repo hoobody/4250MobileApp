@@ -257,7 +257,19 @@
                             <Label  Grid.Column="0" Grid.Row="3"
                                     Text="Speed"
                                     Style="{StaticResource LabelStyle}"/>
+
+                            <Slider Grid.Column="1" Grid.Row="3"
+                                    x:Name="SpeedSlider" 
+                                    WidthRequest="250" 
+                                    HeightRequest="36"  
+                                    ThumbColor="Black"
+                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
+                                    MaximumTrackColor="DimGray"
+                                    Maximum="10" 
+                                    Minimum="0"
+                                    Value="{Binding Data.Speed, Mode=TwoWay}"/>
                             
+
                         </Grid>
 
                     </StackLayout>
