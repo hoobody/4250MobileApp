@@ -111,6 +111,10 @@ namespace Game.Views
         //    return true;
         //}
 
+        /// <summary>
+        /// Returns true if all required fields are filled out
+        /// </summary>
+        /// <returns></returns>
         public bool CheckIfReadyToSubmit()
         {
             if (NameEntry.Text.Length == 0)
@@ -124,7 +128,11 @@ namespace Game.Views
             return true;
         }
 
-
+        /// <summary>
+        /// Catch changes in the name text box and changes the color if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(NameEntry.Text))
