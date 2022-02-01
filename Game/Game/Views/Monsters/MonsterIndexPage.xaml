@@ -120,6 +120,18 @@
                                                 
                                             </StackLayout>
 
+                                            <Label  Text="Job:" 
+                                                    Style="{StaticResource LabelStyle}"/>
+                                                
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                   WidthRequest="142"
+                                                   Padding="3">
+                                                
+                                                    <Label  Text="{Binding Data.Job}" 
+                                                            Style="{StaticResource ValueStyle}"/>
+                                                
+                                            </Frame>
+
                                         </StackLayout>
 
                                     </StackLayout>
