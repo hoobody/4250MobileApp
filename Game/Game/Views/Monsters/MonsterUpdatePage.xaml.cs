@@ -168,5 +168,17 @@ namespace Game.Views
             AttackSlider.Value = updatedValue;
             AttackLabel.Text = updatedValue.ToString();
         }
+
+        /// <summary>
+        /// Set the attack slider to integer increments and update a corresponding label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DefenseSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var updatedValue = Math.Round(e.NewValue);
+            DefenseSlider.Value = updatedValue;
+            DefenseLabel.Text = updatedValue.ToString();
+        }
     }
 }
