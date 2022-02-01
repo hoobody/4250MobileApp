@@ -61,29 +61,14 @@
 
                                         <Frame  BorderColor="Black"
                                                 BackgroundColor="White"
-                                                Padding="10,10,10,15">
-                                            <Grid RowSpacing="10"
-                                                  HorizontalOptions="Center">
-
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition Height="auto"/>
-                                                </Grid.RowDefinitions>
-
-                                                <Frame  BackgroundColor="Black"
+                                                Padding="10,10,10,30">
+                                            <Frame  BackgroundColor="Black"
                                                         Padding="10,10,10,10"
                                                         CornerRadius="0">
 
-                                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-                                                </Frame>
-                                                <Label Grid.Row="1"
-                                                       Text="{Binding Data.Name}"
-                                                       TextColor="Black"
-                                                       HorizontalOptions="Center"
-                                                       VerticalOptions="Center"
-                                                       FontAttributes="Bold"
-                                                       FontSize="20"/>
-                                            </Grid>
+                                            </Frame>
                                         </Frame>
 
                                     </StackLayout>
