@@ -220,6 +220,11 @@ namespace Game.Views
             DefenseLabel.Text = updatedValue.ToString();
         }
 
+        /// <summary>
+        /// Set the speed slider to integer increments and update a corresponding label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             var updatedValue = Math.Round(e.NewValue);
