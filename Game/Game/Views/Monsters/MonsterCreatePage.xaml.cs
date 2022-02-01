@@ -172,7 +172,16 @@ namespace Game.Views
         /// <param name="e"></param>
         private void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
+                DescriptionFrame.BorderColor = Color.Red;
+            }
+            if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
+                DescriptionFrame.BorderColor = Color.Red;
+            }
         }
     }
 }
