@@ -28,7 +28,7 @@
                         ItemSelected="OnItemSelected"
                         HasUnevenRows="true"
                         Margin="5,0,5,0"
-                        RowHeight="230"
+                        RowHeight="240"
                         HorizontalOptions="Center"
                         VerticalScrollBarVisibility="Never"
                         >
