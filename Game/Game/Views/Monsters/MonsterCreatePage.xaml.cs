@@ -219,5 +219,12 @@ namespace Game.Views
             DefenseSlider.Value = updatedValue;
             DefenseLabel.Text = updatedValue.ToString();
         }
+
+        private void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var updatedValue = Math.Round(e.NewValue);
+            SpeedSlider.Value = updatedValue;
+            SpeedLabel.Text = updatedValue.ToString();
+        }
     }
 }
