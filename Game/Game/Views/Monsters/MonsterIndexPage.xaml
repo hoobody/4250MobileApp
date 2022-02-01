@@ -61,13 +61,13 @@
                                                         Padding="10,10,10,10"
                                                         CornerRadius="0">
 
-                                                    <Image Source="item_small.png"/>
+                                                    <Image Source="{Binding ImageURI}"/>
 
                                                 </Frame>
 
                                             </Frame>
 
-                                            <Label Text="{Binding Data.Name}"
+                                            <Label Text="{Binding Name}"
                                                    x:Name="NameLabelUnderImage"
                                                    HorizontalOptions="Center"
                                                    VerticalOptions="Center"
@@ -95,7 +95,7 @@
                                                        WidthRequest="143"
                                                        Padding="3">
 
-                                                    <Label  Text="{Binding Data.Name}" 
+                                                    <Label  Text="{Binding Name}" 
                                                             Style="{StaticResource ValueStyle}"/>
 
                                                 </Frame>
@@ -113,7 +113,7 @@
                                                        WidthRequest="140"
                                                        Padding="3">
                                                     
-                                                    <Label  Text="{Binding Data.Description  }" 
+                                                    <Label  Text="{Binding Description  }" 
                                                             Style="{StaticResource ValueStyle}"/>
                                                     
                                                 </Frame>
@@ -127,7 +127,7 @@
                                                    WidthRequest="142"
                                                    Padding="3">
                                                 
-                                                    <Label  Text="{Binding Data.Job}" 
+                                                    <Label  Text="{Binding Job}" 
                                                             Style="{StaticResource ValueStyle}"/>
                                                 
                                             </Frame>
