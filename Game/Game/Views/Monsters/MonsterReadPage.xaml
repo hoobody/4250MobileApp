@@ -35,7 +35,7 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}"
                                  Spacing="10"
-                                 WidthRequest="500">
+                                 WidthRequest="450">
 
                         <Label  Text="Read Page" Style="{StaticResource HeaderStyle}"
                                 HorizontalOptions="Center"/>
@@ -43,13 +43,13 @@
                         <!-- Used to place an image on top of a stacklayout-->
                         <Grid>
 
-                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                            <Frame BackgroundColor="Wheat"
 
                                    Padding="10,10,10,10">
                                 
                                 <StackLayout Style="{StaticResource HorizontalStack}"
-                                             Background="{StaticResource SecondaryBackgroundColor}"
-                                             WidthRequest="475"
+                                             Background="{StaticResource Paper}"
+                                             WidthRequest="450"
                                              HorizontalOptions="Center">
 
 
