@@ -31,6 +31,8 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            const int sliderIncrement = 1;
+
             data.Data = new MonsterModel();
             this.ViewModel = data;
 
@@ -192,6 +194,18 @@ namespace Game.Views
                 DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 DescriptionFrame.BorderColor = Color.FromHex("#696969");
             }
+        }
+
+        /// <summary>
+        /// Catch the change to the Slider for Attack
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var updatedValue = Math.Round(e.NewValue);
+            AttackSlider.Value = updatedValue;
+            AttackLabel.Text = updatedValue.ToString();
         }
     }
 }
