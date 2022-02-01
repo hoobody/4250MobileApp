@@ -31,20 +31,28 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+                            <Grid>
 
-                                <Label Grid.Column="1" Grid.Row="0"
-                                       Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                                <StackLayout Style="{StaticResource HorizontalStack}"
+                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                         HorizontalOptions="Center">
+
+
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center"
+                                             Padding="20,20,20,20"
+                                             Spacing="15">
+
+                                    </StackLayout>
+
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                             Padding="5,5,5,5">
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
 
                             </Grid>
                         </ViewCell>
