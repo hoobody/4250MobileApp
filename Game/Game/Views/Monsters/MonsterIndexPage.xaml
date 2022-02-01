@@ -58,6 +58,11 @@
 
                                         </Frame>
 
+                                        <Label Text="{Binding Data.Name}"
+                                           x:Name="NameLabelUnderImage"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"/>
+
                                     </StackLayout>
 
                                     <StackLayout    Style="{StaticResource VerticalStack}"
