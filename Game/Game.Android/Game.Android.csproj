@@ -284,5 +284,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\paperclip_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\item_small.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

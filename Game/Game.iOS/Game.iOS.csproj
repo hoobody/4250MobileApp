@@ -328,4 +328,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\paperclip_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\item_small.png" />
+  </ItemGroup>
 </Project>
