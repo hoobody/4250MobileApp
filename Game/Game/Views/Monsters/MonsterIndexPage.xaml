@@ -17,7 +17,7 @@
                      HorizontalOptions="Center"
                      WidthRequest="420">
 
-            <Label  Text="Create Page" Style="{StaticResource HeaderStyle}"
+            <Label  Text="Index Page" Style="{StaticResource HeaderStyle}"
                     HorizontalOptions="Center"/>
 
             <ListView   x:Name="MonstersListView" 
@@ -133,6 +133,13 @@
                                             </Frame>
 
                                         </StackLayout>
+
+                                    </StackLayout>
+
+                                    <StackLayout HorizontalOptions="Center"
+                                         Margin="0,-11,-325,0">
+
+                                        <Image Source="paperclip_small.png" />
 
                                     </StackLayout>
 
