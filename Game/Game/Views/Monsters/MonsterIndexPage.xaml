@@ -13,9 +13,12 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <StackLayout Style="{StaticResource VerticalStack}"
+                     HorizontalOptions="Center"
+                     WidthRequest="420">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label  Text="Create Page" Style="{StaticResource HeaderStyle}"
+                    HorizontalOptions="Center"/>
 
             <ListView   x:Name="MonstersListView" 
                         ItemsSource="{Binding Dataset}"
@@ -34,9 +37,10 @@
                             <Frame  HeightRequest="210"
                                     WidthRequest="400"
                                     BorderColor="Black"
-                                    BackgroundColor="{StaticResource SecondaryBackgroundColor}">
+                                    BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                                    HorizontalOptions="Center">
 
-                                <Grid>
+                                <Grid HorizontalOptions="Center">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
                                                  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -96,6 +100,24 @@
 
                                                 </Frame>
 
+                                            </StackLayout>
+
+                                            <StackLayout Style="{StaticResource HorizontalStack}"
+                                                         HorizontalOptions="Start"
+                                                         Spacing="3">
+                                                
+                                                <Label  Text="Description: " 
+                                                        Style="{StaticResource LabelStyle}"/>
+                                                
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                       WidthRequest="140"
+                                                       Padding="3">
+                                                    
+                                                    <Label  Text="{Binding Data.Description  }" 
+                                                            Style="{StaticResource ValueStyle}"/>
+                                                    
+                                                </Frame>
+                                                
                                             </StackLayout>
 
                                         </StackLayout>
