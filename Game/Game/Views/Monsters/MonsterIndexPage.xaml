@@ -17,91 +17,105 @@
 
             <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
 
-            <ListView x:Name="MonstersListView" 
-                    ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80"
-                    >
-                
+            <ListView   x:Name="MonstersListView" 
+                        ItemsSource="{Binding Dataset}"
+                        IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                        RefreshCommand="{Binding LoadItemsCommand}"
+                        CachingStrategy="RecycleElement"
+                        ItemSelected="OnItemSelected"
+                        HasUnevenRows="true"
+                        Margin="5,0,5,0"
+                        RowHeight="220"
+                        HorizontalOptions="Center">
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <Frame  HeightRequest="210"
+                                    WidthRequest="400"
+                                    BorderColor="Black"
+                                    BackgroundColor="{StaticResource SecondaryBackgroundColor}">
 
-                                <StackLayout Style="{StaticResource HorizontalStack}"
-                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                         HorizontalOptions="Center">
+                                <Grid>
+
+                                    <StackLayout Style="{StaticResource HorizontalStack}"
+                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                 HorizontalOptions="Center">
 
 
-                                    <StackLayout Style="{StaticResource VerticalStack}"
-                                             HorizontalOptions="Start"
-                                             VerticalOptions="Center"
-                                             Padding="20,20,20,20"
-                                             Spacing="15">
+                                        <StackLayout Style="{StaticResource VerticalStack}"
+                                                     HorizontalOptions="Start"
+                                                     VerticalOptions="Center"
+                                                     Padding="10,10,10,10"
+                                                     Spacing="15">
 
-                                        <Frame  BorderColor="Black"
-                                            BackgroundColor="White"
-                                            Padding="10,10,10,50">
+                                            <Frame  BorderColor="Black"
+                                                    BackgroundColor="White"
+                                                    Padding="10,10,10,50">
 
-                                            <Frame  BackgroundColor="Black"
-                                                Padding="10,10,10,10"
-                                                CornerRadius="0">
+                                                <Frame  BackgroundColor="Black"
+                                                        Padding="10,10,10,10"
+                                                        CornerRadius="0">
 
-                                                <Image Source="item.png"/>
+                                                    <Image Source="item_small.png"/>
+
+                                                </Frame>
 
                                             </Frame>
 
-                                        </Frame>
+                                            <Label Text="{Binding Data.Name}"
+                                                   x:Name="NameLabelUnderImage"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   Style="{StaticResource LabelStyle}"/>
 
-                                        <Label Text="{Binding Data.Name}"
-                                           x:Name="NameLabelUnderImage"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"/>
+                                        </StackLayout>
 
-                                    </StackLayout>
+                                        <StackLayout    Style="{StaticResource VerticalStack}"
+                                                        Padding="5,5,5,5"
+                                                        HorizontalOptions="End"
+                                                        VerticalOptions="Center">
 
-                                    <StackLayout    Style="{StaticResource VerticalStack}"
-                                                    Padding="5,5,5,5"
-                                                    HorizontalOptions="End"
-                                                    VerticalOptions="Center">
+                                            <Image  Source="danger_stamp_small.png"
+                                                    HorizontalOptions="Center"
+                                                    Margin="0,0,0,0"/>
 
-                                        <Image  Source="danger_stamp_small.png"
-                                            HorizontalOptions="Center"
-                                            Margin="0,0,0,20"/>
+                                            <StackLayout Style="{StaticResource HorizontalStack}"
+                                                         HorizontalOptions="Start"
+                                                         Spacing="3">
 
-                                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                                     HorizontalOptions="Start"
-                                                     Spacing="3">
-                                            
                                                 <Label  Text="Name:" 
                                                         Style="{StaticResource LabelStyle}"/>
-                                            
+
                                                 <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                        WidthRequest="143"
                                                        Padding="3">
-                                                    
+
                                                     <Label  Text="{Binding Data.Name}" 
                                                             Style="{StaticResource ValueStyle}"/>
-                                                    
+
                                                 </Frame>
-                                            
+
+                                            </StackLayout>
+
                                         </StackLayout>
 
                                     </StackLayout>
 
-                                </StackLayout>
-
-
-                            </Grid>
+                                </Grid>
+                                
+                            </Frame>
+                            
                         </ViewCell>
+                        
                     </DataTemplate>
+                    
                 </ListView.ItemTemplate>
+                
             </ListView>
+            
         </StackLayout>
+        
     </ContentPage.Content>
+    
 </ContentPage>
