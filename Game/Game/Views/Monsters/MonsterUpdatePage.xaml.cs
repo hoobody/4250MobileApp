@@ -156,5 +156,17 @@ namespace Game.Views
                 NameFrame.BorderColor = Color.FromHex("#696969");
             }
         }
+
+        /// <summary>
+        /// Set the attack slider to integer increments and update a corresponding label
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            var updatedValue = Math.Round(e.NewValue);
+            AttackSlider.Value = updatedValue;
+            AttackLabel.Text = updatedValue.ToString();
+        }
     }
 }

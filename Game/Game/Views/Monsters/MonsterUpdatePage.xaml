@@ -217,7 +217,8 @@
                                     MaximumTrackColor="DimGray"
                                     Maximum="10" 
                                     Minimum="0"
-                                    Value="{Binding Data.Attack, Mode=TwoWay}"/>
+                                    Value="{Binding Data.Attack, Mode=TwoWay}"
+                                    ValueChanged="AttackSlider_ValueChanged"/>
 
                             <Frame  Grid.Column="2" Grid.Row="1"
                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}"
