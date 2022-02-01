@@ -38,15 +38,17 @@
                         <ViewCell>
                             
                             <Frame  HeightRequest="220"
-                                    WidthRequest="400">
+                                    WidthRequest="375"
+                                    BackgroundColor="Wheat">
 
                                 <Grid HorizontalOptions="Center">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
-                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                 BackgroundColor="{StaticResource Paper}"
                                                  HorizontalOptions="Center"
-                                                 Spacing="10">
-
+                                                 Padding="5,5,5,5"
+                                                 Margin="0,5,0,0"
+                                                 WidthRequest="350">
 
                                         <StackLayout Style="{StaticResource VerticalStack}"
                                                      HorizontalOptions="Start"
@@ -62,7 +64,9 @@
                                                         Padding="10,10,10,10"
                                                         CornerRadius="0">
 
-                                                    <Image Source="{Binding ImageURI}"/>
+                                                    <Image Source="{Binding ImageURI}"
+                                                           WidthRequest="125"
+                                                           HeightRequest="125"/>
 
                                                 </Frame>
 
