@@ -74,6 +74,24 @@
                                             HorizontalOptions="Center"
                                             Margin="0,0,0,20"/>
 
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                                     HorizontalOptions="Start"
+                                                     Spacing="3">
+                                            
+                                                <Label  Text="Name:" 
+                                                        Style="{StaticResource LabelStyle}"/>
+                                            
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                       WidthRequest="143"
+                                                       Padding="3">
+                                                    
+                                                    <Label  Text="{Binding Data.Name}" 
+                                                            Style="{StaticResource ValueStyle}"/>
+                                                    
+                                                </Frame>
+                                            
+                                        </StackLayout>
+
                                     </StackLayout>
 
                                 </StackLayout>
