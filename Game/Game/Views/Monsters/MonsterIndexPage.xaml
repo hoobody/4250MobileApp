@@ -28,34 +28,35 @@
                         ItemSelected="OnItemSelected"
                         HasUnevenRows="true"
                         Margin="5,0,5,0"
-                        RowHeight="220"
-                        HorizontalOptions="Center">
+                        RowHeight="230"
+                        HorizontalOptions="Center"
+                        VerticalScrollBarVisibility="Never"
+                        >
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame  HeightRequest="210"
-                                    WidthRequest="400"
-                                    BorderColor="Black"
-                                    BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                    HorizontalOptions="Center">
+                            
+                            <Frame  HeightRequest="220"
+                                    WidthRequest="400">
 
                                 <Grid HorizontalOptions="Center">
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
                                                  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                 HorizontalOptions="Center">
+                                                 HorizontalOptions="Center"
+                                                 Spacing="10">
 
 
                                         <StackLayout Style="{StaticResource VerticalStack}"
                                                      HorizontalOptions="Start"
                                                      VerticalOptions="Center"
                                                      Padding="10,10,10,10"
-                                                     Spacing="15">
+                                                     Spacing="10">
 
                                             <Frame  BorderColor="Black"
                                                     BackgroundColor="White"
-                                                    Padding="10,10,10,50">
+                                                    Padding="10,10,10,25">
 
                                                 <Frame  BackgroundColor="Black"
                                                         Padding="10,10,10,10"
@@ -67,36 +68,27 @@
 
                                             </Frame>
 
-                                            <Label Text="{Binding Name}"
-                                                   x:Name="NameLabelUnderImage"
-                                                   HorizontalOptions="Center"
-                                                   VerticalOptions="Center"
-                                                   Style="{StaticResource LabelStyle}"/>
-
                                         </StackLayout>
 
                                         <StackLayout    Style="{StaticResource VerticalStack}"
-                                                        Padding="5,5,5,5"
                                                         HorizontalOptions="End"
-                                                        VerticalOptions="Center">
+                                                        Spacing="5">
 
                                             <Image  Source="danger_stamp_small.png"
                                                     HorizontalOptions="Center"
-                                                    Margin="0,0,0,0"/>
+                                                    HeightRequest="100"/>
 
                                             <StackLayout Style="{StaticResource HorizontalStack}"
                                                          HorizontalOptions="Start"
-                                                         Spacing="3">
+                                                         Spacing="10">
 
-                                                <Label  Text="Name:" 
-                                                        Style="{StaticResource LabelStyle}"/>
-
-                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
                                                        WidthRequest="143"
                                                        Padding="3">
 
                                                     <Label  Text="{Binding Name}" 
-                                                            Style="{StaticResource ValueStyle}"/>
+                                                            Style="{StaticResource ValueStyle}"
+                                                            FontAttributes="Bold"/>
 
                                                 </Frame>
 
@@ -105,33 +97,40 @@
                                             <StackLayout Style="{StaticResource HorizontalStack}"
                                                          HorizontalOptions="Start"
                                                          Spacing="3">
-                                                
-                                                <Label  Text="Description: " 
-                                                        Style="{StaticResource LabelStyle}"/>
-                                                
-                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                       WidthRequest="140"
+
+                                                <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
+                                                       WidthRequest="143"
                                                        Padding="3">
-                                                    
-                                                    <Label  Text="{Binding Description  }" 
-                                                            Style="{StaticResource ValueStyle}"/>
-                                                    
+
+                                                    <Label  Text="{Binding Description}" 
+                                                            Style="{StaticResource ValueStyle}"
+                                                            FontAttributes="Italic"/>
+
                                                 </Frame>
-                                                
+
                                             </StackLayout>
 
-                                            <Label  Text="Job:" 
-                                                    Style="{StaticResource LabelStyle}"/>
-                                                
-                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                            <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
                                                    WidthRequest="142"
                                                    Padding="3">
                                                 
-                                                    <Label  Text="{Binding Job}" 
-                                                            Style="{StaticResource ValueStyle}"/>
+                                                <StackLayout Style="{StaticResource HorizontalStack}"
+                                                            HorizontalOptions="Start"
+                                                            Spacing="5">
+
+                                                <Label  Text="Job: " 
+                                                        Style="{StaticResource ValueStyle}"
+                                                        FontAttributes="Bold"/>
+
+                                                <Label  Text="{Binding Job}" 
+                                                        Style="{StaticResource LabelStyle}"/>
+
+                                                
+                                                
+                                                </StackLayout>
                                                 
                                             </Frame>
-
+                                            
                                         </StackLayout>
 
                                     </StackLayout>
