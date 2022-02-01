@@ -164,6 +164,15 @@ namespace Game.Views
             }
         }
 
+      
+        /// <summary>
+        /// Catch changes in description text and changes the color of the box if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }

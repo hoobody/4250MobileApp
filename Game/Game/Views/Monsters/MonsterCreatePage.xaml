@@ -120,7 +120,8 @@
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Description"
                                                     Style="{StaticResource EntryStyle}"
-                                                    MaxLength="15"/>
+                                                    MaxLength="15"
+                                                    TextChanged="DescriptionEntry_TextChanged"/>
 
                                         </Frame>
 
