@@ -340,7 +340,7 @@
                                         Maximum="10" 
                                         Minimum="0"
                                         Value="{Binding Data.Speed, Mode=TwoWay}"
-                                        ValueChanged="Speed_OnStepperValueChanged"/>
+                                        ValueChanged="SpeedSlider_ValueChanged"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="3"
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"

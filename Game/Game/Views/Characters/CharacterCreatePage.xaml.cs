@@ -180,9 +180,11 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Speed_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            SpeedLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
+            var newSpdValue = Math.Round(e.NewValue);
+            SpeedLabel.Text = newSpdValue.ToString();
+            SpeedSlider.Value = newSpdValue;
         }
 
 
