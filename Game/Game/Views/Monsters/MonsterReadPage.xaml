@@ -153,19 +153,11 @@
 
                                             </Frame>
                                         </StackLayout>
-                                        
-                                        
-                                        <Frame BackgroundColor="White" 
-                                               BorderColor="Black"
-                                               WidthRequest="45"
-                                               HeightRequest="53"
-                                               Margin="10,18,140,0"
-                                               Padding="3,3,3,3"
-                                               Rotation="-25">
-                                            <Frame BackgroundColor="Black"
-                                                       HeightRequest="35"
-                                                       WidthRequest="35"
-                                                       Margin="0,5,0,0">
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="-25"
+                                               Margin="10,18,140,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
                                                 <Label Text=""/>
                                             </Frame>
                                         </Frame>
