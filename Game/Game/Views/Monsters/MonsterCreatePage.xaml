@@ -76,7 +76,7 @@
 											   WidthRequest ="150"
 											   HeightRequest ="40">
 
-                                            <Entry  Text="{Binding Data.Difficulty, Mode=TwoWay}"
+                                            <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
                                                     x:Name="NameEntry"
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
