@@ -28,7 +28,7 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             // Default to unknown, which is no special job
-            Job = CharacterJobEnum.Unknown;
+            MonsterJob = MonsterJobEnum.Unknown;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Game.Models
             Feet = newData.Feet;
             UniqueItem = newData.UniqueItem;
 
-            Job = newData.Job;
+            MonsterJob = newData.MonsterJob;
 
             return true;
         }
@@ -92,7 +92,7 @@ namespace Game.Models
         {
             var myReturn = Name;
             myReturn += " , " + Description;
-            myReturn += " , a " + Job.ToMessage();
+            myReturn += " , a " + MonsterJob.ToMessage();
             myReturn += " , Level : " + Level.ToString();
             myReturn += " , Difficulty : " + Difficulty.ToString();
             myReturn += " , Total Experience : " + ExperienceTotal;

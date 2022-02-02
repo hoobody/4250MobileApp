@@ -177,9 +177,9 @@ namespace Game.Models
 
             Difficulty = data.Difficulty;
 
-            Job = data.Job;
+            MonsterJob = data.MonsterJob;
 
-            // Give the copy a differet quid, so it can be used in the battles as a copy
+            // Give the copy a different quid, so it can be used in the battles as a copy
             Guid = System.Guid.NewGuid().ToString();
 
             // Set amount to give to be 1 below max for that level.
@@ -198,7 +198,7 @@ namespace Game.Models
             var myReturn = string.Empty;
             myReturn += Name;
             myReturn += " , " + Description;
-            myReturn += " , a " + Job.ToMessage();
+            myReturn += " , a " + MonsterJob.ToMessage();
             myReturn += " , Level : " + Level.ToString();
 
             if (PlayerType == PlayerTypeEnum.Character)
