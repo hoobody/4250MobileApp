@@ -34,8 +34,7 @@
                 <ScrollView>
 
                     <StackLayout Style="{StaticResource VerticalStack}"
-                                 Spacing="10"
-                                 WidthRequest="450">
+                                 Spacing="10">
 
                         <Label  Text="Read Page" Style="{StaticResource HeaderStyle}"
                                 HorizontalOptions="Center"/>
@@ -44,33 +43,44 @@
                         <Grid>
 
                             <Frame BackgroundColor="Wheat"
+                                    Padding="10,10,10,10">
 
-                                   Padding="10,10,10,10">
-                                
-                                <StackLayout Style="{StaticResource HorizontalStack}"
-                                             Background="{StaticResource Paper}"
-                                             WidthRequest="450"
-                                             HorizontalOptions="Center">
+                                <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                BackgroundColor="{StaticResource Paper}"
+                                                WidthRequest="450"
+                                                HorizontalOptions="Center">
 
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
-                                                 HorizontalOptions="Center"
-                                                 VerticalOptions="Center"
-                                                 Padding="20,20,20,20"
-                                                 Spacing="15">
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    Padding="20,20,20,20"
+                                                    Spacing="15">
 
                                         <Frame  BorderColor="Black"
-                                                BackgroundColor="White"
-                                                Padding="10,10,10,30">
-                                            <Frame  BackgroundColor="Black"
-                                                        Padding="10,10,10,10"
-                                                        CornerRadius="0">
+                                            BackgroundColor="White"
+                                            Padding="10,10,10,50">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                            <Frame  BackgroundColor="Black"
+                                                Padding="10,10,10,10"
+                                                CornerRadius="0">
+
+                                                <Image Source="item.png"/>
 
                                             </Frame>
+
                                         </Frame>
 
+                                        <Frame BorderColor ="Black"
+											   WidthRequest ="150"
+											   HeightRequest ="40">
+
+                                            <Label Text="{Binding Data.Name}"
+                                                    x:Name="NameLabel"
+                                                    Style="{StaticResource EntryStyle}"
+                                                    HorizontalOptions="Center"/>
+
+                                        </Frame>
                                     </StackLayout>
 
 
@@ -93,7 +103,7 @@
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="190"
+                                                    WidthRequest="160"
                                                     Padding="3">
 
                                                 <Label  Text="{Binding Data.Name}"
@@ -105,14 +115,14 @@
 
                                         <StackLayout    Style="{StaticResource HorizontalStack}"
                                                         HorizontalOptions="Start"
-                                                        Spacing="3">
+                                                        Spacing="5">
 
-                                            <Label  Text="Description:" 
+                                            <Label  Text="Desc:" 
                                                     TextColor="Black"
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="155"
+                                                    WidthRequest="160"
                                                     Padding="3">
 
                                                 <Label  Text="{Binding Data.Description}"
@@ -133,7 +143,7 @@
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="210"
+                                                    WidthRequest="175"
                                                     Padding="3"
                                                     x:Name="JobFrame">
 
@@ -142,9 +152,23 @@
                                                     Style="{StaticResource PickerStyle}"/>
 
                                             </Frame>
-
                                         </StackLayout>
-
+                                        
+                                        
+                                        <Frame BackgroundColor="White" 
+                                               BorderColor="Black"
+                                               WidthRequest="45"
+                                               HeightRequest="53"
+                                               Margin="10,18,140,0"
+                                               Padding="3,3,3,3"
+                                               Rotation="-25">
+                                            <Frame BackgroundColor="Black"
+                                                       HeightRequest="35"
+                                                       WidthRequest="35"
+                                                       Margin="0,5,0,0">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
 
                                     </StackLayout>
 
