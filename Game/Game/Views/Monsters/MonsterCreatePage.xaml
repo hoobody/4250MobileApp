@@ -152,8 +152,8 @@
                                                 x:Name="JobFrame">
 
                                                 <Picker x:Name="JobPicker"
-                                                ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}" 
-                                                SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                                ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
+                                                SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"/>
 
                                             </Frame>
