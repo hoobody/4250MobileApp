@@ -166,6 +166,39 @@
                             </StackLayout>
 
                         </Grid>
+
+                        <StackLayout 
+                            HorizontalOptions="Center" 
+                            Padding="20">
+
+                            <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"
+                                HorizontalOptions="Center"/>
+
+                            <StackLayout Style="{StaticResource HorizontalStack}"
+                                Spacing="10">
+                                <Button 
+                                    Text="Cancel" 
+                                    Clicked="Cancel_Clicked" 
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    FontSize="Medium"
+                                    BorderWidth="2"
+                                    HeightRequest="35"
+                                    BorderColor="black">
+                                </Button>
+
+                                <Button 
+                                    Text="Delete" 
+                                    Clicked="Delete_Clicked" 
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    FontSize="Medium"
+                                    BorderWidth="2"
+                                    HeightRequest="35"
+                                    BorderColor="black">
+                                </Button>
+                            </StackLayout>
+                        </StackLayout>
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
