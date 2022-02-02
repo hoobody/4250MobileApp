@@ -12,12 +12,163 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+    <ContentPage.Content>
+        <AbsoluteLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
-            
-        </StackLayout>
-    </ScrollView>
+            <StackLayout Style="{StaticResource VerticalStack}"
+                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                    AbsoluteLayout.LayoutFlags="All"
+                    HorizontalOptions="Center">
+
+                <ScrollView>
+
+                    <StackLayout Style="{StaticResource VerticalStack}"
+                                 Spacing="10">
+
+                        <Label  Text="Delete Page" Style="{StaticResource HeaderStyle}"
+                                HorizontalOptions="Center"/>
+
+
+                        <!-- Used to place an image on top of a stacklayout-->
+                        <Grid>
+
+                            <Frame BackgroundColor="Wheat"
+                                    Padding="10,10,10,10">
+
+                                <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                BackgroundColor="{StaticResource Paper}"
+                                                WidthRequest="450"
+                                                HorizontalOptions="Center">
+
+
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    Padding="20,20,20,20"
+                                                    Spacing="15">
+
+                                        <Frame  BorderColor="Black"
+                                            BackgroundColor="White"
+                                            Padding="10,10,10,50">
+
+                                            <Frame  BackgroundColor="Black"
+                                                Padding="10,10,10,10"
+                                                CornerRadius="0">
+
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
+                                            </Frame>
+
+                                        </Frame>
+
+                                        <Frame BorderColor ="Black"
+											   WidthRequest ="150"
+											   HeightRequest ="40">
+
+                                            <Label Text="{Binding Data.Name}"
+                                                    x:Name="NameLabel"
+                                                    Style="{StaticResource EntryStyle}"
+                                                    HorizontalOptions="Center"/>
+
+                                        </Frame>
+                                    </StackLayout>
+
+
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                                 Padding="5,5,5,5"
+                                                 Spacing="10">
+
+                                        <Image  Source="danger_stamp_small.png"
+                                                ScaleY="1.5"
+                                                ScaleX="1.5"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Margin="0,0,0,20"/>
+
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                                         HorizontalOptions="Start"
+                                                         Spacing="5">
+
+                                            <Label  Text="Name:" 
+                                                    TextColor="Black"
+                                                    Style="{StaticResource LabelStyle}"/>
+
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                    WidthRequest="160"
+                                                    Padding="3">
+
+                                                <Label  Text="{Binding Data.Name}"
+                                                        Style="{StaticResource EntryStyle}"/>
+
+                                            </Frame>
+
+                                        </StackLayout>
+
+                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                        HorizontalOptions="Start"
+                                                        Spacing="5">
+
+                                            <Label  Text="Desc:" 
+                                                    TextColor="Black"
+                                                    Style="{StaticResource LabelStyle}"/>
+
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                    WidthRequest="160"
+                                                    Padding="3">
+
+                                                <Label  Text="{Binding Data.Description}"
+                                                        x:Name="DescriptionEntry"
+                                                        d:Text="Description"
+                                                        Style="{StaticResource EntryStyle}"/>
+
+                                            </Frame>
+
+                                        </StackLayout>
+
+                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                        HorizontalOptions="Start"
+                                                        Spacing="3">
+
+                                            <Label  Text="Job:" 
+                                                    TextColor="Black"
+                                                    Style="{StaticResource LabelStyle}"/>
+
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                    WidthRequest="175"
+                                                    Padding="3"
+                                                    x:Name="JobFrame">
+
+                                                <Label
+                                                    Text="{Binding Data.MonsterJob}" 
+                                                    Style="{StaticResource PickerStyle}"/>
+
+                                            </Frame>
+                                        </StackLayout>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="-25"
+                                               Margin="10,18,140,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout HorizontalOptions="Center"
+                                         Margin="0,-12,-375,0">
+
+                                <Image Source="paperclip_small.png" />
+
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
 </ContentPage>
