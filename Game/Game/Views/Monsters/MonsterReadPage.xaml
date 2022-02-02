@@ -138,7 +138,7 @@
                                                     x:Name="JobFrame">
 
                                                 <Label
-                                                    Text="{Binding Data.Job}" 
+                                                    Text="{Binding Data.MonsterJob}" 
                                                     Style="{StaticResource PickerStyle}"/>
 
                                             </Frame>
