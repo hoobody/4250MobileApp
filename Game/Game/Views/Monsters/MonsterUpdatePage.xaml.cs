@@ -59,7 +59,7 @@ namespace Game.Views
 
             // To update the picker values
             DifficultyPicker.SelectedItem = this.ViewModel.Data.Difficulty.ToString();
-            JobPicker.SelectedItem = this.ViewModel.Data.Job.ToString();
+            JobPicker.SelectedItem = this.ViewModel.Data.MonsterJob.ToString();
 
             AddItemsToDisplay();
 
