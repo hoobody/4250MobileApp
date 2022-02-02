@@ -124,7 +124,7 @@
                                                         Style="{StaticResource ValueStyle}"
                                                         FontAttributes="Bold"/>
 
-                                                <Label  Text="{Binding Job}" 
+                                                <Label  Text="{Binding MonsterJob}" 
                                                         Style="{StaticResource LabelStyle}"/>
 
                                                 
