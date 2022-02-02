@@ -157,9 +157,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            var newAttackValue = Math.Round(e.NewValue);
-            AttackLabel.Text = newAttackValue.ToString();
-            AttackSlider.Value = newAttackValue;
+            var newAtkValue = Math.Round(e.NewValue);
+            AttackLabel.Text = newAtkValue.ToString();
+            AttackSlider.Value = newAtkValue;
 
         }
 
@@ -168,9 +168,11 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Defense_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void DefenseSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            DefenseLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
+            var newDefValue = Math.Round(e.NewValue);
+            DefenseLabel.Text = newDefValue.ToString();
+            DefenseSlider.Value = newDefValue;
         }
 
         /// <summary>
