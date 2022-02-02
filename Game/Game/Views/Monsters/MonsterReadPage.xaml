@@ -65,7 +65,7 @@
                                                 Padding="10,10,10,10"
                                                 CornerRadius="0">
 
-                                                <Image Source="item.png"/>
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
                                             </Frame>
 
