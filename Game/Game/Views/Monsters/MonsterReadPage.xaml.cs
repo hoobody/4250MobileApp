@@ -45,13 +45,8 @@ namespace Game.Views
                 _ = ItemBox.Children.Remove(data);
             }
 
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Head));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Necklass));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.PrimaryHand));
             ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.OffHand));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.RightFinger));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.LeftFinger));
-            ItemBox.Children.Add(GetItemToDisplay(ItemLocationEnum.Feet));
         }
 
         /// <summary>
