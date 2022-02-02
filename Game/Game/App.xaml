@@ -440,7 +440,7 @@
                 <Setter Property="BorderColor" Value="{StaticResource PrimaryBackgroundColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
             </Style>
-
+			
             <Style TargetType="Frame"
                 x:Key="PlayerBattleOuterFrame">
                 <Setter Property="HeightRequest" Value="112" />
@@ -452,6 +452,23 @@
                 <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
 
+			<Style TargetType="Frame"
+							x:Key="PhotoBack">
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderColor" Value="Black" />
+				<Setter Property="WidthRequest" Value="45" />
+				<Setter Property="HeightRequest" Value="53" />
+				<Setter Property="Padding" Value="3,3,3,3" />
+			</Style>
+
+			<Style TargetType="Frame"
+							x:Key="PhotoFront">
+				<Setter Property="BackgroundColor" Value="Black" />
+				<Setter Property="WidthRequest" Value="35" />
+				<Setter Property="HeightRequest" Value="35" />
+				<Setter Property="Margin" Value="0,5,0,0" />
+			</Style>
+			
             <Style TargetType="Frame"
                 x:Key="BattleMapFrame">
                 <Setter Property="HeightRequest" Value="60" />
@@ -476,7 +493,7 @@
                 <Setter Property="VerticalOptions" Value="Fill" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
-            
+            			
             <!-- Entry -->
             <Style TargetType="Entry"
                 x:Key="EntryStyle">
