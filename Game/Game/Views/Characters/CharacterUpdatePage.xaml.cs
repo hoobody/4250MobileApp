@@ -149,9 +149,11 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void Attack_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        public void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            AttackLabel.Text = string.Format("{0}", Math.Round(e.NewValue));
+            var newAtkValue = Math.Round(e.NewValue);
+            AttackLabel.Text = newAtkValue.ToString();
+            AttackSlider.Value = newAtkValue;
         }
 
         /// <summary>
