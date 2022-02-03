@@ -9,6 +9,9 @@ namespace Game.Models
     /// </summary>
     public class MonsterModel : BasePlayerModel<MonsterModel>
     {
+       //tracks if the monster is a boss or not. Dependant on what job they are
+        public bool IsABoss { get; set; } = false;
+
         /// <summary>
         /// Set Type to Monster
         /// 
@@ -26,9 +29,11 @@ namespace Game.Models
             ImageURI = "troll.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
+            
 
             // Default to unknown, which is no special job
             MonsterJob = MonsterJobEnum.Unknown;
+            IsABoss = false;
         }
 
         /// <summary>
@@ -101,5 +106,6 @@ namespace Game.Models
 
             return myReturn;
         }
+
     }
 }
