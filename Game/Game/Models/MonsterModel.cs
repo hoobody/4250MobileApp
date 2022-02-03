@@ -33,7 +33,7 @@ namespace Game.Models
 
             // Default to unknown, which is no special job
             MonsterJob = MonsterJobEnum.Unknown;
-            IsABoss = false;
+            IsABoss = CharacterIsBoss(MonsterJob);
         }
 
         /// <summary>
@@ -85,6 +85,7 @@ namespace Game.Models
             UniqueItem = newData.UniqueItem;
 
             MonsterJob = newData.MonsterJob;
+            IsABoss = newData.IsABoss;
 
             return true;
         }
@@ -105,6 +106,31 @@ namespace Game.Models
             myReturn += " , Damage : " + GetDamageTotalString;
 
             return myReturn;
+        }
+
+        /// <summary>
+        /// Checks if a character is a boss based on their job
+        /// </summary>
+        /// <param name="monsterJob"></param>
+        /// <returns></returns>
+        public bool CharacterIsBoss(MonsterJobEnum monsterJob)
+        {
+            bool isBoss = false;
+
+            switch (monsterJob)
+            {
+                case MonsterJobEnum.Mastermind:
+                    isBoss = true;
+                    break;
+                case MonsterJobEnum.Godfather:
+                    isBoss = true;
+                    break;
+                default:
+                    break;
+            }
+
+            return isBoss;
+
         }
 
     }
