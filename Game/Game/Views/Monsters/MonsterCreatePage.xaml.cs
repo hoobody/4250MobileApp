@@ -35,8 +35,6 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            const int sliderIncrement = 1;
-
             data.Data = new MonsterModel();
             this.ViewModel = data;
 
