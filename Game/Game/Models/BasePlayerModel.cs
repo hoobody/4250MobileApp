@@ -136,6 +136,7 @@ namespace Game.Models
         // The Job for the Player
         public CharacterJobEnum Job { get; set; } = CharacterJobEnum.Unknown;
 
+        //The Job for the monsters
         public MonsterJobEnum MonsterJob { get; set; } = MonsterJobEnum.Unknown;
 
         #endregion PlayerAttributes
