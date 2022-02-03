@@ -82,7 +82,7 @@ namespace Game.Views
 
             //Should set picker to most current value. Not working for some reason
             //Set Job Picker to the new job
-            //JobPicker.SelectedItem = ViewModel.Data.Job;
+            JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
 
             ManageHealth();
 
@@ -368,8 +368,7 @@ namespace Game.Views
             ViewModel.Data.Name = RandomPlayerHelper.GetCharacterName();
             ViewModel.Data.Description = RandomPlayerHelper.GetCharacterDescription();
             ViewModel.Data.CodeName = RandomPlayerHelper.GetCharacterCodeName();
-            string randomJob = RandomPlayerHelper.GetCharacterJob();
-            ViewModel.Data.Job = CharacterJobEnumHelper.ConvertStringToEnum(randomJob);
+            ViewModel.Data.Job = CharacterJobEnumHelper.ConvertStringToEnum(RandomPlayerHelper.GetCharacterJob());
            
 
             // Randomize the Attributes
