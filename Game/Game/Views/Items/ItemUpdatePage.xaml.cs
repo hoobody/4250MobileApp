@@ -174,15 +174,15 @@ namespace Game.Views
             {
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                return false;
+            }
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 return false;
             }
-            if(AttributePicker.SelectedIndex == 0)
-            {
-                return false;
-            }
-            if (LocationPicker.SelectedIndex == 0)
+            if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 return false;
             }

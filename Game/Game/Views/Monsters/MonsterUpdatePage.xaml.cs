@@ -82,6 +82,7 @@ namespace Game.Views
                     ViewModel.Data.ImageURI = new MonsterModel().ImageURI;
                 }
 
+
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
 
                 _ = await Navigation.PopModalAsync();
@@ -138,6 +139,11 @@ namespace Game.Views
             {
                 return false;
             }
+            if (JobPicker.SelectedIndex == 0)
+            {
+                return false;
+            }
+
             return true;
         }
 
