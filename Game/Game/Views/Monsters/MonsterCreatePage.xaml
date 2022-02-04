@@ -91,15 +91,18 @@
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                              Padding="5,5,5,5">
 
-                                        <Image x:Name="StampImage" 
-                                            HorizontalOptions="Center"
-                                            Margin="0,0,0,20"/>
+                                        <Image  x:Name="StampImage" 
+                                                HorizontalOptions="Center"
+                                                ScaleY="1"
+                                                ScaleX="1"
+                                                Margin="0,0,0,20"/>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
                                             <Label  Text="Difficulty:" 
+                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -121,6 +124,7 @@
                                                     Spacing="3">
 
                                             <Label  Text="Desc:" 
+                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -144,6 +148,7 @@
                                                     Spacing="3">
 
                                             <Label  Text="Job:" 
+                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -155,13 +160,43 @@
                                                 ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
                                                 SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"
-                                                 SelectedIndexChanged="JobPicker_SelectedIndexChanged"/>
+                                                SelectedIndexChanged="JobPicker_SelectedIndexChanged"/>
 
                                             </Frame>
 
                                         </StackLayout>
+                                        
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                                Rotation="-25"
+                                                Margin="-20,20,120,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
 
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                                Rotation="10"
+                                                Margin="-15,-60,30,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
 
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                                Rotation="-15"
+                                                Margin="-40,-65,-95,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                                Rotation="5"
+                                                Margin="-10,-50,-165,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
                                     </StackLayout>
 
                                 </StackLayout>
