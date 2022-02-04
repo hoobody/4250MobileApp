@@ -40,6 +40,8 @@ namespace Game.Views
 
             this.ViewModel.Title = "Create";
 
+            JobPicker.SelectedIndex = 0;
+
             _ = UpdatePageBindingContext();
         }
 
@@ -134,6 +136,10 @@ namespace Game.Views
                 return false;
             }
             if (DescriptionEntry.Text.Length == 0)
+            {
+                return false;
+            }
+            if(JobPicker.SelectedIndex == 0)
             {
                 return false;
             }
