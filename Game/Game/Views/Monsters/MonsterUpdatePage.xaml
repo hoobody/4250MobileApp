@@ -92,8 +92,8 @@
                                              Padding="5,5,5,5">
 
                                         <Image  Source="danger_stamp_small.png"
-                                                ScaleY="1.5"
-                                                ScaleX="1.5"
+                                                ScaleY="1"
+                                                ScaleX="1"
                                                 HorizontalOptions="CenterAndExpand"
                                                 Margin="0,0,0,20"/>
 
