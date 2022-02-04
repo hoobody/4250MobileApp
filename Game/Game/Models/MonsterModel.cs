@@ -9,9 +9,6 @@ namespace Game.Models
     /// </summary>
     public class MonsterModel : BasePlayerModel<MonsterModel>
     {
-       //tracks if the monster is a boss or not. Dependant on what job they are
-        public bool IsABoss { get; set; } = false;
-
         /// <summary>
         /// Set Type to Monster
         /// 
@@ -33,7 +30,6 @@ namespace Game.Models
 
             // Default to unknown, which is no special job
             MonsterJob = MonsterJobEnum.Unknown;
-            IsABoss = CharacterIsBoss(MonsterJob);
         }
 
         /// <summary>
@@ -85,8 +81,6 @@ namespace Game.Models
             UniqueItem = newData.UniqueItem;
 
             MonsterJob = newData.MonsterJob;
-            IsABoss = newData.IsABoss;
-
             return true;
         }
 
@@ -113,11 +107,11 @@ namespace Game.Models
         /// </summary>
         /// <param name="monsterJob"></param>
         /// <returns></returns>
-        public bool CharacterIsBoss(MonsterJobEnum monsterJob)
+        public bool IsMonsterBoss()
         {
             bool isBoss = false;
 
-            switch (monsterJob)
+            switch (MonsterJob)
             {
                 case MonsterJobEnum.Mastermind:
                     isBoss = true;
@@ -130,7 +124,7 @@ namespace Game.Models
             }
 
             return isBoss;
-
+                
         }
 
     }
