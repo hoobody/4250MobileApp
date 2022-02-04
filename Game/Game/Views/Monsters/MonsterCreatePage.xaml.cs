@@ -383,5 +383,19 @@ namespace Game.Views
             return ItemStack;
         }
 
+
+        private void JobPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ViewModel.Data.IsMonsterBoss())
+            {
+                StampImage.Source = "danger_stamp_medium.png";
+                return;
+            }
+
+            StampImage.Source = "caution_stamp_small.png";
+
+        }
+
     }
+
 }
