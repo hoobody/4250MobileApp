@@ -186,14 +186,6 @@ namespace Game.Views
             {
                 return false;
             }
-            if (AttributePicker.SelectedIndex == 0)
-            {
-                return false;
-            }
-            if (LocationPicker.SelectedIndex == 0)
-            {
-                return false;
-            }
             return true;
         }
     }
