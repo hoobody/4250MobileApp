@@ -170,11 +170,27 @@ namespace Game.Views
         /// <returns></returns>
         public bool CheckIfReadyToSubmit()
         {
-            if (NameEntry.Text.Length == 0)
+            if (string.IsNullOrEmpty(NameEntry.Text))
             {
                 return false;
             }
-            if (DescriptionEntry.Text.Length == 0)
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                return false;
+            }
+            if (string.IsNullOrEmpty(DescriptionEntry.Text))
+            {
+                return false;
+            }
+            if(string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                return false;
+            }
+            if (AttributePicker.SelectedIndex == 0)
+            {
+                return false;
+            }
+            if (LocationPicker.SelectedIndex == 0)
             {
                 return false;
             }
