@@ -289,6 +289,7 @@ namespace Game.GameRules
             var result = new MonsterModel(MonsterIndexViewModel.Instance.Dataset.ElementAt(rnd - 1))
             {
                 Level = DiceHelper.RollDice(1, MaxLevel),
+                
 
                 // Randomize Name
                 Name = GetMonsterName(),
@@ -320,8 +321,16 @@ namespace Game.GameRules
                 result.MaxHealth = MaxHealthAdjusted;
             }
 
+            int newLevel = result.Level;
+            //level up monster one level if monster is a boss
+            if (result.IsMonsterBoss())
+            {
+                newLevel++;
+            }
+
             // Level up to the new level
-            _ = result.LevelUpToValue(result.Level);
+            _ = result.LevelUpToValue(newLevel);
+            
 
             // Set ExperienceRemaining so Monsters can both use this method
             result.ExperienceRemaining = LevelTableHelper.LevelDetailsList[result.Level + 1].Experience;
