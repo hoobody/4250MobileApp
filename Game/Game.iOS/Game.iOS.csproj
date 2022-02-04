@@ -331,4 +331,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\item_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\caution_stamp_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\caution_stamp_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\danger_stamp_medium.png" />
+  </ItemGroup>
 </Project>

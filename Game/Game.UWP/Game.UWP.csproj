@@ -136,10 +136,13 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="battleboard.png" />
+    <Content Include="caution_stamp_medium.png" />
+    <Content Include="caution_stamp_small.png" />
     <Content Include="d10.png" />
     <Content Include="d10_50x50.png" />
     <Content Include="d20_2.png" />
     <Content Include="danger_stamp_extrasmall.png" />
+    <Content Include="danger_stamp_medium.png" />
     <Content Include="danger_stamp_small.png" />
     <Content Include="dungeon_door.png" />
     <Content Include="elf1.png" />
