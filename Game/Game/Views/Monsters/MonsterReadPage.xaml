@@ -156,7 +156,7 @@
 
                                         <Frame Style="{StaticResource PhotoBack}"
                                                Rotation="-25"
-                                               Margin="10,18,140,0">
+                                               Margin="10,5,140,0">
                                             <Frame Style="{StaticResource PhotoFront}">
                                                 <Label Text=""/>
                                             </Frame>
@@ -173,6 +173,14 @@
                                         <Frame Style="{StaticResource PhotoBack}"
                                                Rotation="-15"
                                                Margin="-20,-80,-95,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="5"
+                                               Margin="10,-60,-165,0">
                                             <Frame Style="{StaticResource PhotoFront}">
                                                 <Label Text=""/>
                                             </Frame>
@@ -305,8 +313,8 @@
                         <FlexLayout 
                                 Margin="5"
                                 Wrap="Wrap"
-                                JustifyContent="SpaceAround"
-                                AlignContent="SpaceAround"
+                                JustifyContent="Center"
+                                AlignContent="SpaceEvenly"
                                 x:Name="ItemBox">
                         </FlexLayout>
                         
