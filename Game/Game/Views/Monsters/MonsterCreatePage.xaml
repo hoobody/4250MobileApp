@@ -154,7 +154,8 @@
                                                 <Picker x:Name="JobPicker"
                                                 ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
                                                 SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                Style="{StaticResource PickerStyle}"/>
+                                                Style="{StaticResource PickerStyle}"
+                                                 SelectedIndexChanged="JobPicker_SelectedIndexChanged"/>
 
                                             </Frame>
 
