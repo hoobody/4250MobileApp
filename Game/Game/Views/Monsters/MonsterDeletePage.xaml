@@ -90,15 +90,15 @@
                                                          HorizontalOptions="Start"
                                                          Spacing="5">
 
-                                            <Label  Text="Name:" 
+                                            <Label  Text="Difficulty:" 
                                                     TextColor="Black"
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="160"
+                                                    WidthRequest="130"
                                                     Padding="3">
 
-                                                <Label  Text="{Binding Data.Name}"
+                                                <Label  Text="{Binding Data.Difficulty}"
                                                         Style="{StaticResource EntryStyle}"/>
 
                                             </Frame>
@@ -148,7 +148,31 @@
 
                                         <Frame Style="{StaticResource PhotoBack}"
                                                Rotation="-25"
-                                               Margin="10,18,140,0">
+                                               Margin="10,5,140,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="10"
+                                               Margin="10,-60,40,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="-15"
+                                               Margin="-20,-80,-95,0">
+                                            <Frame Style="{StaticResource PhotoFront}">
+                                                <Label Text=""/>
+                                            </Frame>
+                                        </Frame>
+
+                                        <Frame Style="{StaticResource PhotoBack}"
+                                               Rotation="5"
+                                               Margin="10,-60,-165,0">
                                             <Frame Style="{StaticResource PhotoFront}">
                                                 <Label Text=""/>
                                             </Frame>
