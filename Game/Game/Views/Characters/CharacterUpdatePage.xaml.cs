@@ -421,11 +421,23 @@ namespace Game.Views
             {
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                return false;
+            }
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 return false;
             }
+            if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
+            {
+                return false;
+            }
             if (string.IsNullOrEmpty(CodenameEntry.Text))
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
                 return false;
             }
