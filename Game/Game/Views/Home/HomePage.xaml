@@ -26,12 +26,14 @@
 
                     <Label  Text="Welcome Agent"
                             Style="{StaticResource CenterMessageStyle}"
+                            FontFamily="OCRFont"
                             FontSize="Micro"
                             LineBreakMode="WordWrap"
                             MaxLines="5"/>
 
                     <Button Text="Begin"
                             FontSize="Medium"
+                            FontFamily="OCRFont"
                             Clicked="GameButton_Clicked"
                             WidthRequest="100"
                             HeightRequest="50"/>
