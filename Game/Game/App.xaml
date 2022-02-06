@@ -31,6 +31,7 @@
             <Color x:Key="TriciaryBackgroundColor">#808080</Color>
             <Color x:Key="LightBackgroundColor">#36454F</Color>
             <Color x:Key="BackgroundTextColor">Black</Color>
+            <Color x:Key="BlackTextColor">Black</Color>
 
 			<Color x:Key="Paper">#c4c4c4</Color>
 
@@ -95,6 +96,7 @@
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="FontSize" Value="Small" />
+                <Setter Property="TextColor" Value="{StaticResource BlackTextColor}" />
                 <Setter Property="LineBreakMode" Value="NoWrap" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Start" />
