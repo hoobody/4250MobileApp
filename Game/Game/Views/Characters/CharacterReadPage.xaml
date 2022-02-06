@@ -121,11 +121,7 @@
                                              HorizontalOptions="End"
                                              Spacing="7">
 
-                                    <Label Text="█║█ ║▌║█║▌│║▌║▌█"
-                                           TextColor="Black"
-                                           VerticalOptions="Center"
-                                           ScaleY="1.75"
-                                           ScaleX="1"/>
+                                    <Label Style="{StaticResource Barcode}"/>
 
                                     <StackLayout Style="{StaticResource HorizontalStack}"
                                              HorizontalOptions="End">

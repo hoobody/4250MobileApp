@@ -187,7 +187,7 @@
                                                      Spacing="5">
 
                                             <Label Text="║█║▌║█║▌│║▌│█"
-                                                   TextColor="Black"
+                                                   
                                                    VerticalOptions="Center"
                                                    ScaleY="1.75"
                                                    ScaleX="1"
