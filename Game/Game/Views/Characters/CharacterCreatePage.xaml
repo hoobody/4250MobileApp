@@ -187,11 +187,7 @@
                                                      Spacing="5">
 
                                             <Label Text="║█║▌║█║▌│║▌│█"
-                                                   
-                                                   VerticalOptions="Center"
-                                                   ScaleY="1.75"
-                                                   ScaleX="1"
-                                                   MinimumWidthRequest="100"/>
+                                                   Style="{StaticResource Barcode}"/>
 
                                             <StackLayout    Style="{StaticResource HorizontalStack}"
                                                             HorizontalOptions="End">
