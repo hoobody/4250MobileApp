@@ -78,15 +78,11 @@
 
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                    BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                    Padding="7,5"
-                    Spacing="7"
-                    WidthRequest="350">
+                <StackLayout Style="{StaticResource ItemPickerOuterBox}">
 
                     <StackLayout Padding="5">
 
-                        <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
+                        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                             Style="{StaticResource VerticalStack}"
                             VerticalOptions="CenterAndExpand"
                             HorizontalOptions="Center"
@@ -101,7 +97,8 @@
                             <Picker Grid.Row="2" Grid.Column="1"
                                 ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
                                 SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                x:Name="LocationPicker"/>
+                                x:Name="LocationPicker"
+                                Style="{StaticResource PickerStyle}"/>
 
                         </StackLayout>
 
@@ -109,7 +106,7 @@
 
                     <StackLayout Padding="5">
 
-                            <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
+                            <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                 Style="{StaticResource VerticalStack}"
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
@@ -124,7 +121,8 @@
                                 <Picker Grid.Row="3" Grid.Column="1"
                                     ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                                     SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="AttributePicker"/>
+                                    x:Name="AttributePicker"
+                                    Style="{StaticResource PickerStyle}"/>
 
                             </StackLayout>
 
