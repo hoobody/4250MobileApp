@@ -103,6 +103,7 @@
                 <Setter Property="HorizontalTextAlignment" Value="Start"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="OCRFont"/>
             </Style>
 
             <Style TargetType="Label"
@@ -303,6 +304,7 @@
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="FontFamily" Value="OCRFont"/>
                 <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
@@ -522,6 +524,7 @@
                 <Setter Property="VerticalOptions" Value="StartAndExpand" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="FontFamily" Value="OCRFont"/>
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
                 <Setter Property="AutoSize" Value="TextChanges" />
@@ -544,6 +547,7 @@
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="TitleColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="FontFamily" Value="OCRFont"/>
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
             </Style>
