@@ -482,7 +482,13 @@
 				<Setter Property="HeightRequest" Value="35" />
 				<Setter Property="Margin" Value="0,5,0,0" />
 			</Style>
-			
+
+            <Style TargetType="Frame"
+				 x:Key="ItemPictureFrame">
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="BorderColor" Value="Black" />
+            </Style>
+
             <Style TargetType="Frame"
                 x:Key="BattleMapFrame">
                 <Setter Property="HeightRequest" Value="60" />
