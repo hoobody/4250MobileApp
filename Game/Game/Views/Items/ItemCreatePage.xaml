@@ -54,9 +54,8 @@
                                 d:Text="Item Name"
                                 x:Name="NameEntry" 
                                 TextChanged="Name_onTextChange"
-                                FontSize="15"
                                 MaxLength="25"
-                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
+                                Style="{StaticResource EntryStyle}"/>
                     
                 </Frame>
 
@@ -79,9 +78,8 @@
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
                                 TextChanged="Description_onTextChange"
-                                FontSize="15"
                                 MaxLength="30"
-                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
+                                Style="{StaticResource EntryStyle}"/>
                     
                 </Frame>
                 
