@@ -96,7 +96,6 @@
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="FontSize" Value="Small" />
-                <Setter Property="TextColor" Value="{StaticResource BlackTextColor}" />
                 <Setter Property="LineBreakMode" Value="NoWrap" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Start" />
