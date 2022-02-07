@@ -22,19 +22,18 @@
     </ContentPage.Resources>
 
     <StackLayout Style="{StaticResource VerticalStack}"
-                        HorizontalOptions="Center"
-                        WidthRequest="350"
-                        Spacing="5">
+                HorizontalOptions="Center"
+                WidthRequest="350"
+                Spacing="5"
+                BackgroundColor="{StaticResource PrimaryBackgroundColor}">
 
         <Label Text="Create Page" Style="{StaticResource HeaderStyle}"
                 HorizontalOptions="Center"/>
 
-        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+        <Frame BackgroundColor="{StaticResource TriciaryBackgroundColor}"
                BorderColor="Black">
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" 
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="150"
-                HeightRequest="150"/>
+                HorizontalOptions="CenterAndExpand"/>
         </Frame>
         
         <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
@@ -52,12 +51,12 @@
                        x:Name="NameFrame">
 
                     <Entry  Text="{Binding Data.Name}" 
-                            d:Text="Item Name"
-                            x:Name="NameEntry" 
-                            TextChanged="Name_onTextChange"
-                            FontSize="15"
-                            MaxLength="25"
-                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
+                                d:Text="Item Name"
+                                x:Name="NameEntry" 
+                                TextChanged="Name_onTextChange"
+                                FontSize="15"
+                                MaxLength="25"
+                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
                     
                 </Frame>
 
@@ -77,12 +76,12 @@
                        x:Name="DescriptionFrame">
                     
                     <Entry  Text="{Binding Data.Description}" 
-                            d:Text="Item Description"
-                            x:Name="DescriptionEntry" 
-                            TextChanged="Description_onTextChange"
-                            FontSize="15"
-                            MaxLength="30"
-                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
+                                d:Text="Item Description"
+                                x:Name="DescriptionEntry" 
+                                TextChanged="Description_onTextChange"
+                                FontSize="15"
+                                MaxLength="30"
+                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
                     
                 </Frame>
                 
@@ -98,7 +97,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
+                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                 Style="{StaticResource VerticalStack}"
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
@@ -111,9 +110,10 @@
                                     Style="{StaticResource LabelStyle}"/>
 
                     <Picker Grid.Row="2" Grid.Column="1"
-                                    ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
-                                    SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                    x:Name="LocationPicker"/>
+                                ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                                SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                x:Name="LocationPicker"
+                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
 
                 </StackLayout>
 
@@ -121,7 +121,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="{StaticResource TriciaryBackgroundColor}"
+                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                 Style="{StaticResource VerticalStack}"
                                 VerticalOptions="CenterAndExpand"
                                 HorizontalOptions="Center"
@@ -136,7 +136,8 @@
                     <Picker Grid.Row="3" Grid.Column="1"
                                 ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                                 SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                x:Name="AttributePicker"/>
+                                x:Name="AttributePicker"
+                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
 
                 </StackLayout>
 
@@ -170,7 +171,8 @@
                     ValueChanged="Range_OnStepperValueChanged"
                     Minimum="0"
                     Maximum="10"
-                    Increment="1"/>
+                    Increment="1"
+                    BackgroundColor="{StaticResource ViewBackgroundColor}"/>
 
             <Label Grid.Column="0" Grid.Row="1"
                     Text="Value"
@@ -186,7 +188,8 @@
                     ValueChanged="Value_OnStepperValueChanged"
                     Minimum="0"
                     Maximum="100"
-                    Increment="1"/>
+                    Increment="1"
+                    BackgroundColor="{StaticResource ViewBackgroundColor}"/>
 
             <Label Grid.Column="0" Grid.Row="2"
                     Text="Damage" 
@@ -202,7 +205,8 @@
                     ValueChanged="Damage_OnStepperValueChanged"
                     Minimum="0"
                     Maximum="100"
-                    Increment="1"/>
+                    Increment="1"
+                    BackgroundColor="{StaticResource ViewBackgroundColor}"/>
             
         </Grid>
 
