@@ -364,7 +364,16 @@
                 <Setter Property="MinimumWidthRequest" Value="60" />
                 <Setter Property="Spacing" Value="1" />
             </Style>
-            
+
+            <Style TargetType="StackLayout"
+                x:Key="ItemPickerOuterBox"
+                BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="Padding" Value="7,5" />
+                <Setter Property="Spacing" Value="7" />
+                <Setter Property="WidthRequest" Value="350" />
+            </Style>
+
             <Style TargetType="StackLayout"
                 x:Key="PlayerInfoBox"
                 BasedOn="{StaticResource CardImageTextBox}">
@@ -443,7 +452,7 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
             </Style>
-
+            
             <!-- Frame -->
             <Style TargetType="Frame">
                 <Setter Property="Margin" Value="0" />
