@@ -43,20 +43,16 @@
                         Spacing="5">
 
                         <Label Text="Name: "
-                            FontSize="15"
                             Style="{StaticResource LabelStyle}"/>
 
                         <Frame WidthRequest="280"
                             x:Name="NameFrame">
-
                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                 d:Text="Item Name"
                                 x:Name="NameEntry" 
                                 TextChanged="Name_onTextChange"
-                                FontSize="15"
                                 MaxLength="25"
-                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
-                            
+                                Style="{StaticResource EntryStyle}"/>
                         </Frame>
 
                     </StackLayout>
@@ -66,23 +62,16 @@
                         Spacing="5">
 
                         <Label Text="Description: "
-                            VerticalOptions="Start"
-                            HeightRequest="37"
-                            FontSize="15"
                             Style="{StaticResource LabelStyle}"/>
 
                         <Frame WidthRequest="245"
                             x:Name="DescriptionFrame">
-                            
                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
                                 TextChanged="Description_onTextChange"
-                                FontSize="15"
                                 MaxLength="30"
-                                TextColor="White"
-                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"/>
-                            
+                                Style="{StaticResource EntryStyle}"/>
                         </Frame>
 
                     </StackLayout>
