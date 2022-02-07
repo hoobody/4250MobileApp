@@ -60,8 +60,6 @@
                         Spacing="5">
                 
                 <Label Text="Description: "
-                        VerticalOptions="Start"
-                        HeightRequest="37"
                         Style="{StaticResource LabelStyle}"/>
                 
                 <Frame WidthRequest="245"
