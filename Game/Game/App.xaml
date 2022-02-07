@@ -567,7 +567,7 @@
                 <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="FontFamily" Value="OCRFont"/>
                 <Setter Property="FontAttributes" Value="None" />
-                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
             </Style>
 
         </ResourceDictionary>
