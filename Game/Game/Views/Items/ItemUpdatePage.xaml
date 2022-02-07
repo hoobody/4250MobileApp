@@ -23,26 +23,16 @@
     <ContentPage.Content>
 
         <ScrollView HorizontalOptions="Center">
-            
-            <StackLayout Style="{StaticResource VerticalStack}"
-                HorizontalOptions="Center"
-                Spacing="5"
-                WidthRequest="350">
+
+            <StackLayout Style="{StaticResource OuterBoxStack}">
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
                     HorizontalOptions="Center"
                     FontSize="Medium"/>
 
-                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                       BorderColor="Black">
-                    <StackLayout  Style="{StaticResource HorizontalStack}"
-                    HorizontalOptions="CenterAndExpand">
-
-                        <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"
-                           WidthRequest="150"
-                           HeightRequest="150"/>
-
-                    </StackLayout>
+                <Frame Style="{StaticResource ItemPictureFrame}">
+                    <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" 
+                            Style="{StaticResource ImageLargeStyle}"/>
                 </Frame>
                 
                 <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
