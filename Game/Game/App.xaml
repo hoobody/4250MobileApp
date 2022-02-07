@@ -120,7 +120,6 @@
 
             <Style TargetType="Label"
                    x:Key="Barcode">
-                <Setter Property="Text" Value="█║█ ║▌║█║▌│║▌║▌█"/>
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="ScaleY" Value="1.75"/>
