@@ -333,6 +333,9 @@
             <Style TargetType="StackLayout"
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="Spacing" Value="5" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -463,16 +466,16 @@
                 <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
 
-			<Style TargetType="Frame"
-							x:Key="PhotoBack">
-				<Setter Property="BackgroundColor" Value="White" />
-				<Setter Property="BorderColor" Value="Black" />
-				<Setter Property="WidthRequest" Value="45" />
-				<Setter Property="HeightRequest" Value="53" />
-				<Setter Property="Padding" Value="3,3,3,3" />
-			</Style>
-
-			<Style TargetType="Frame"
+            <Style TargetType="Frame"
+				 x:Key="PhotoBack">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="WidthRequest" Value="45" />
+                <Setter Property="HeightRequest" Value="53" />
+                <Setter Property="Padding" Value="3,3,3,3" />
+            </Style>
+            
+            <Style TargetType="Frame"
 							x:Key="PhotoFront">
 				<Setter Property="BackgroundColor" Value="Black" />
 				<Setter Property="WidthRequest" Value="35" />
@@ -530,11 +533,12 @@
             </Style>
 
             <!-- Stepper -->
-            <Style TargetType="Stepper">
+            <Style TargetType="Stepper"
+                x:Key="StepperStyle">
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="0" />
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
                 <Setter Property="Minimum" Value="0" />
                 <Setter Property="Maximum" Value="9" />
                 <Setter Property="Increment" Value="1" />
