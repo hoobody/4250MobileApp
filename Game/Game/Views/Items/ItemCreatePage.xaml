@@ -41,12 +41,11 @@
                             Spacing="5">
                 
                 <Label Text="Name: "
-                        FontSize="15"
                         Style="{StaticResource LabelStyle}"/>
                 
                 <Frame WidthRequest="280"
                        x:Name="NameFrame">
-                    <Entry  Text="{Binding Data.Name}" 
+                    <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                         d:Text="Item Name"
                         x:Name="NameEntry" 
                         TextChanged="Name_onTextChange"
