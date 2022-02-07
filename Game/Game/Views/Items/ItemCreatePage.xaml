@@ -76,11 +76,7 @@
 
         </StackLayout>
 
-        <StackLayout Style="{StaticResource HorizontalStack}"
-            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-            Padding="7,5"
-            Spacing="7"
-            WidthRequest="350">
+        <StackLayout Style="{StaticResource ItemPickerOuterBox}">
 
             <StackLayout Padding="5">
 
@@ -96,11 +92,10 @@
                         HeightRequest="37"
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="2" Grid.Column="1"
-                        ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                    <Picker ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"
-                        BackgroundColor="{StaticResource ViewBackgroundColor}"/>
+                        Style="{StaticResource PickerStyle}"/>
 
                 </StackLayout>
 
@@ -109,22 +104,21 @@
             <StackLayout Padding="5">
 
                 <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                Style="{StaticResource VerticalStack}"
-                                VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="Center"
-                                HeightRequest="70"
-                                WidthRequest="156">
+                    Style="{StaticResource VerticalStack}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    HeightRequest="70"
+                    WidthRequest="156">
 
                     <Label Text="Attribute" 
-                                HorizontalOptions="Center"
-                                HeightRequest="37"
-                                Style="{StaticResource LabelStyle}"/>
+                        HorizontalOptions="Center"
+                        HeightRequest="37"
+                        Style="{StaticResource LabelStyle}"/>
 
-                    <Picker Grid.Row="3" Grid.Column="1"
-                                ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
-                                SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                x:Name="AttributePicker"
-                                BackgroundColor="{StaticResource ViewBackgroundColor}"/>
+                    <Picker ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                        SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="AttributePicker"
+                        Style="{StaticResource PickerStyle}"/>
 
                 </StackLayout>
 
