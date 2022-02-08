@@ -71,7 +71,7 @@
 
         <StackLayout Style="{StaticResource ItemPickerOuterBox}">
 
-            <StackLayout Padding="5">
+            <StackLayout Style="{StaticResource PaddedBox}">
 
                 <StackLayout Style="{StaticResource PickerBox}">
 
@@ -87,7 +87,7 @@
 
             </StackLayout>
 
-            <StackLayout Padding="5">
+            <StackLayout Style="{StaticResource PaddedBox}">
 
                 <StackLayout Style="{StaticResource PickerBox}">
 
