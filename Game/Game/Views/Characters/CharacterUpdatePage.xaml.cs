@@ -444,36 +444,35 @@ namespace Game.Views
 
             return true;
         }
+
         /// <summary>
         /// Catch changes in the name text box and changes the color if empty
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
-                NameFrame.BorderColor = Color.Red;
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
-                NameFrame.BorderColor = Color.Red;
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (!string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
-                NameFrame.BorderColor = Color.FromHex("#696969");
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
-                NameFrame.BorderColor = Color.FromHex("#696969");
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
-
         /// <summary>
         /// Catch changes in description text and changes the color of the box if empty
         /// </summary>
@@ -483,23 +482,23 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                DescFrame.BorderColor = Color.Red;
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                DescFrame.BorderColor = Color.Red;
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (!string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                DescFrame.BorderColor = Color.FromHex("#696969");
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                DescFrame.BorderColor = Color.FromHex("#696969");
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
 
@@ -512,23 +511,23 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = Color.FromHex("848884");
-                CodenameFrame.BorderColor = Color.Red;
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = Color.FromHex("848884");
-                CodenameFrame.BorderColor = Color.Red;
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (!string.IsNullOrEmpty(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = Color.FromHex("36454F");
-                CodenameFrame.BorderColor = Color.FromHex("#696969");
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                CodenameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = Color.FromHex("36454F");
-                CodenameFrame.BorderColor = Color.FromHex("#696969");
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                CodenameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
     }
