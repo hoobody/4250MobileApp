@@ -15,66 +15,39 @@
     <StackLayout 
         Style="{StaticResource OuterBoxStack}">
               
-        <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
-            FontSize="Medium"
-            HorizontalOptions="Center"/>
+        <Label Text="Details Page" Style="{StaticResource HeaderStyle}"/>
 
-        <Frame BackgroundColor="{StaticResource TriciaryBackgroundColor}"
-               BorderColor="Black">
+        <Frame Style="{StaticResource ItemPictureFrame}">
             <StackLayout>
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
-                HorizontalOptions="Center"
-                BackgroundColor="Transparent"/>
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             </StackLayout>
         </Frame>
-        
-        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}">
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                Padding="7,7"
-                Spacing="5">
+        <StackLayout Style="{StaticResource ItemLabelOuterBox}">
+
+            <StackLayout Style="{StaticResource EntryBox}">
 
                 <Label Text="Name: "
-                       FontSize="15"
-                       Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource LabelStyle}"/>
 
-                <Frame WidthRequest="280"
-                           CornerRadius="0"
-                           HeightRequest="30"
-                           Padding="5,0,0,0"
-                           BorderColor="Black"
-                           BackgroundColor="{StaticResource TriciaryBackgroundColor}">
+                <Frame Style="{StaticResource LabelFrame}">
                     <Label Text="{Binding Data.Name}"
-                           Style="{StaticResource LabelStyle}"
-                           FontSize="15"
-                           HeightRequest="40"/>
+                        Style="{StaticResource LabelStyle}"/>
                 </Frame>
 
 
             </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                         Padding="7,0"
-                         Spacing="5">
+            <StackLayout Style="{StaticResource EntryBox}">
 
                 <Label Text="Description: "
-                                VerticalOptions="Start"
-                                HeightRequest="37"
-                                FontSize="15"
-                                Style="{StaticResource LabelStyle}"/>
+                    Style="{StaticResource LabelStyle}"/>
 
-                <Frame WidthRequest="245"
-                           HeightRequest="30"
-                           CornerRadius="0"
-                           Padding="5,0,0,0"
-                           BorderColor="Black"
-                           BackgroundColor="{StaticResource TriciaryBackgroundColor}">
+                <Frame Style="{StaticResource LabelFrame}">
 
                     <Label Text="{Binding Data.Description}"
-                               Style="{StaticResource LabelStyle}"
-                               FontSize="15"
-                               HeightRequest="40"/>
+                        Style="{StaticResource LabelStyle}"/>
 
                 </Frame>
 

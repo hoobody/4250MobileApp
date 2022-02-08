@@ -540,6 +540,17 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="LabelFrame">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="Padding" Value="5,0,0,0" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="CornerRadius" Value="0" />
+                
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="BattleMapFrame">
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="WidthRequest" Value="60" />
