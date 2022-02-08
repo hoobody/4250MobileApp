@@ -25,7 +25,7 @@
             <Color x:Key="PageBackgroundColor">#becedc</Color>
             <Color x:Key="ViewBackgroundColor">#6393b7</Color>
             <Color x:Key="NavigationBarColor">#86888c</Color>
-
+            
             <Color x:Key="PrimaryBackgroundColor">#becedc</Color>
             <Color x:Key="SecondaryBackgroundColor">#86888c</Color>
             <Color x:Key="TriciaryBackgroundColor">#69b3ac</Color>
@@ -34,7 +34,7 @@
 
             <Color x:Key="EntryColor">#6393b7</Color>
             <Color x:Key="BlackTextColor">Black</Color>
-			<Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
+            <Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
 			<Color x:Key="BorderColor">Black</Color>
 			<Color x:Key="MaxThumbColor">DimGray</Color>
 			<Color x:Key="MinThumbColor">#f3cf69</Color>
@@ -342,16 +342,16 @@
             <Style TargetType="Button"
                    x:Key="ButtonStyle">
                 <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="FontFamily" Value="OCRFont"/>
                 <Setter Property="BorderColor" Value="{StaticResource BlackTextColor}"/>
                 <Setter Property="BorderWidth" Value="2" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="FontSize" Value="Small"/>
                 <Setter Property="Padding" Value="1"/>
-                <Setter Property="Margin" Value="0,5,0,5"/>
-                <Setter Property="HeightRequest" Value="35"/>
+                <Setter Property="Margin" Value="5,5,5,5"/>
+                <Setter Property="HeightRequest" Value="40"/>
+                <Setter Property="WidthRequest" Value="100"/>
             </Style>
 
             <!-- Stack Layouts -->
