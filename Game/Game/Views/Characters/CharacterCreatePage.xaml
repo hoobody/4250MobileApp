@@ -28,30 +28,20 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
 
             <StackLayout
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
-                AbsoluteLayout.LayoutFlags="All"
-                HorizontalOptions="CenterAndExpand"
-                Style="{StaticResource VerticalStack}"
-                WidthRequest="475">
+                AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView x:Name="ScrollView">
 
-                    <StackLayout Spacing="5" Style="{StaticResource VerticalStack}">
+                    <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                        <Label
-                            HorizontalOptions="Center"
-                            Style="{StaticResource HeaderStyle}"
+                        <Label Style="{StaticResource HeaderStyle}"
                             Text="Create Page" />
 
-                        <Frame
-                            Margin="5,5,5,5"
-                            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                            BorderColor="{StaticResource BorderColor}"
-                            HeightRequest="250"
-                            WidthRequest="450">
+                        <Frame Style="{StaticResource CharacterInfoFrame}">
 
                             <StackLayout
                                 HorizontalOptions="Center"

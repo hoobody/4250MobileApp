@@ -605,6 +605,14 @@
             </Style>
 
             <Style TargetType="Frame"
+				 x:Key="CharacterInfoFrame">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
+                <Setter Property="HeightRequest" Value="250"/>
+                <Setter Property="WidthRequest" Value="450"/>
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="LabelFrame">
                 <Setter Property="HeightRequest" Value="30" />
                 <Setter Property="WidthRequest" Value="280" />
