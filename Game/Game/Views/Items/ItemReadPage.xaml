@@ -71,11 +71,9 @@
 
             </StackLayout>
 
-            <StackLayout Style="{StaticResource PaddedBox}"
-                         VerticalOptions="Center">
+            <StackLayout Style="{StaticResource PaddedBox}">
 
-                <StackLayout Style="{StaticResource ItemLabelBox}"
-                             VerticalOptions="CenterAndExpand">
+                <StackLayout Style="{StaticResource ItemLabelBox}">
 
                     <Label Text="Attribute :" 
                         Style="{StaticResource PickerLabel}"/>
