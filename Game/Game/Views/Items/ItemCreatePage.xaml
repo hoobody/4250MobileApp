@@ -24,20 +24,16 @@
     <StackLayout Style="{StaticResource OuterBoxStack}">
 
         <Label Text="Create Page" 
-            Style="{StaticResource HeaderStyle}"
-            HorizontalOptions="Center"/>
+            Style="{StaticResource HeaderStyle}"/>
 
         <Frame Style="{StaticResource ItemPictureFrame}">
             <Image Source="{Binding Data.ImageURI}" 
-                Style="{StaticResource ImageLargeStyle}" 
-                HorizontalOptions="CenterAndExpand"/>
+                Style="{StaticResource ImageLargeStyle}"/>
         </Frame>
         
         <StackLayout Style="{StaticResource ItemLabelOuterBox}">
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
-                            Spacing="5">
+            <StackLayout Style="{StaticResource EntryBox}">
                 
                 <Label Text="Name: "
                         Style="{StaticResource LabelStyle}"/>

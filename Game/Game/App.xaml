@@ -124,6 +124,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="Label"
@@ -375,11 +376,11 @@
 
             <Style TargetType="StackLayout"
                 x:Key="ItemLabelOuterBox"
-                BasedOn="{StaticResource VerticallStack}">
+                BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="WidthRequest" Value="350" />
             </Style>
-            
+
             <Style TargetType="StackLayout"
                 x:Key="ItemPickerOuterBox"
                 BasedOn="{StaticResource HorizontalStack}">
@@ -388,10 +389,13 @@
                 <Setter Property="Spacing" Value="7" />
                 <Setter Property="WidthRequest" Value="350" />
             </Style>
-            
-            
-            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                        WidthRequest="350"
+
+            <Style TargetType="StackLayout"
+                x:Key="EntryBox"
+                BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="Padding" Value="7,5" />
+                <Setter Property="Spacing" Value="5" />
+            </Style>
 
             <Style TargetType="StackLayout"
                 x:Key="PlayerInfoBox"
