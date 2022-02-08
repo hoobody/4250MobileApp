@@ -164,17 +164,16 @@
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="180"
+                                                    WidthRequest="190"
                                                     Padding="3"   
-                                                    HorizontalOptions="End"
                                                     x:Name="DescFrame">
 
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                                         x:Name="DescriptionEntry"
-                                                        d:Text="Description"
+                                                        d:Text="Desc: "
                                                         TextChanged="Description_onTextChange"
                                                         Style="{StaticResource EntryStyle}"
-                                                        FontSize="15"
+                                                        FontSize="14"
                                                         MaxLength="20"/>
 
                                             </Frame>
@@ -243,7 +242,8 @@
 
                                 <Slider Grid.Column="1" Grid.Row="0"
                                         x:Name="HealthSlider" 
-                                        Style="{StaticResource LabelStyle}"
+                                        Style="{StaticResource SliderStyle}"
+                                        Maximum="100"
                                         Value="{Binding Data.MaxHealth, Mode=TwoWay}"/>
 
                                 <Frame  Grid.Column="2" Grid.Row="0"
@@ -264,8 +264,9 @@
 
                                 <Slider Grid.Column="1" Grid.Row="1" 
                                         x:Name="AttackSlider" 
-                                        Style="{StaticResource LabelStyle}"
+                                        Style="{StaticResource SliderStyle}"
                                         InputTransparent="False"
+                                        Maximum="10"
                                         Value="{Binding Data.Attack, Mode=TwoWay}"
                                         ValueChanged="AttackSlider_ValueChanged"/>
 
@@ -287,8 +288,9 @@
 
                                 <Slider Grid.Column="1" Grid.Row="2"
                                         x:Name="DefenseSlider" 
-                                        Style="{StaticResource LabelStyle}"
+                                        Style="{StaticResource SliderStyle}"
                                         InputTransparent="False"
+                                        Maximum="10"
                                         Value="{Binding Data.Defense, Mode=TwoWay}"
                                         ValueChanged="DefenseSlider_ValueChanged"/>
 
@@ -310,8 +312,9 @@
 
                                 <Slider Grid.Column="1" Grid.Row="3"
                                         x:Name="SpeedSlider" 
-                                        Style="{StaticResource LabelStyle}"
+                                        Style="{StaticResource SliderStyle}"
                                         InputTransparent="False"
+                                        Maximum="10"
                                         Value="{Binding Data.Speed, Mode=TwoWay}"
                                         ValueChanged="SpeedSlider_ValueChanged"/>
 
