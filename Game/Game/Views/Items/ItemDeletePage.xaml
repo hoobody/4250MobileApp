@@ -14,10 +14,7 @@
     </ContentPage.ToolbarItems>
 
     <Grid>
-        <StackLayout Style="{StaticResource VerticalStack}"
-                     HorizontalOptions="CenterAndExpand"
-                     WidthRequest="350"
-                     Spacing="10">
+        <StackLayout Style="{StaticResource OuterBoxStack}">
 
             <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"
                    HorizontalOptions="Center"

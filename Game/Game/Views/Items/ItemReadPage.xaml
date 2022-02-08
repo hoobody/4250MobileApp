@@ -13,11 +13,7 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout 
-        Style="{StaticResource VerticalStack}"
-        HorizontalOptions="Center"
-        WidthRequest="350"
-        Spacing="10"
-        BackgroundColor="{StaticResource PageBackgroundColor}">
+        Style="{StaticResource OuterBoxStack}">
               
         <Label Text="Details Page" Style="{StaticResource HeaderStyle}"
             FontSize="Medium"

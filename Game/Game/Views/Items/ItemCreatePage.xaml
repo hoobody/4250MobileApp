@@ -33,8 +33,7 @@
                 HorizontalOptions="CenterAndExpand"/>
         </Frame>
         
-        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                        WidthRequest="350">
+        <StackLayout Style="{StaticResource ItemLabelOuterBox}">
 
             <StackLayout Style="{StaticResource HorizontalStack}"
                             Padding="7,5"
