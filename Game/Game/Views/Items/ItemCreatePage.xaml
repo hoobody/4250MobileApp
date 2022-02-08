@@ -50,9 +50,7 @@
                 
             </StackLayout>
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                        Padding="7,5"
-                        Spacing="5">
+            <StackLayout Style="{StaticResource EntryBox}">
                 
                 <Label Text="Description: "
                         Style="{StaticResource LabelStyle}"/>
@@ -75,12 +73,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                    Style="{StaticResource VerticalStack}"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    HeightRequest="70"
-                    WidthRequest="156">
+                <StackLayout Style="{StaticResource PickerBox}">
 
                     <Label Text="Location" 
                         HorizontalOptions="Center"
@@ -98,12 +91,7 @@
 
             <StackLayout Padding="5">
 
-                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                    Style="{StaticResource VerticalStack}"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    HeightRequest="70"
-                    WidthRequest="156">
+                <StackLayout Style="{StaticResource PickerBox}">
 
                     <Label Text="Attribute" 
                         HorizontalOptions="Center"
