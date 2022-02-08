@@ -172,7 +172,7 @@
                                             <Frame
                                                 x:Name="DescFrame"
                                                 Padding="3"
-                                                WidthRequest="190">
+                                                WidthRequest="180">
 
                                                 <Entry
                                                     x:Name="DescriptionEntry"
