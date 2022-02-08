@@ -128,6 +128,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="TitleStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="Label"
                    x:Key="Barcode">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
@@ -253,8 +259,8 @@
             <Style TargetType="Image"
                 x:Key="ImageMediumStyle"
                 BasedOn="{StaticResource ImageLargeStyle}">
-                <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="WidthRequest" Value="50" />
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="WidthRequest" Value="75" />
             </Style>
 
             <Style TargetType="Image"
