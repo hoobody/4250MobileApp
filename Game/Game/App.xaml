@@ -572,6 +572,7 @@
                 <Setter Property="BorderColor" Value="Black" />
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="Frame"
@@ -612,6 +613,7 @@
                 <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
@@ -665,7 +667,14 @@
 				<Setter Property="ThumbColor" Value="Transparent"/>
 				<Setter Property="WidthRequest" Value="250"/>
 			</Style>
-			
+
+            <!-- ListView -->
+            <Style TargetType="ListView"
+				   x:Key="ListView">
+                <Setter Property="Margin" Value="5,0,5,0"/>
+                <Setter Property="RowHeight" Value="120"/>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
