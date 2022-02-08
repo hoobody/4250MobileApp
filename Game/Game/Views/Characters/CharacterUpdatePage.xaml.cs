@@ -67,6 +67,10 @@ namespace Game.Views
 
             //Update job picker
             JobPicker.SelectedItem = this.ViewModel.Data.Job.ToString();
+            if (JobPicker.SelectedItem == CharacterJobEnum.Unknown.ToString())
+            {
+                JobPicker.SelectedIndex = 0;
+            }
 
             //Update stat labels
             AttackLabel.Text = this.ViewModel.Data.Attack.ToString();
