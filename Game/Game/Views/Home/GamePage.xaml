@@ -1,65 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.GamePage"
-             >
+<ContentPage
+    x:Class="Game.Views.GamePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Main Menu" Clicked="MainMenu_Clicked" IconImageSource="mainmenu.png"/>
+        <ToolbarItem
+            Clicked="MainMenu_Clicked"
+            IconImageSource="mainmenu.png"
+            Text="Main Menu" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
 
-        <ScrollView VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
+        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-            <StackLayout VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            Spacing="50">
+            <StackLayout
+                HorizontalOptions="Center"
+                Spacing="50"
+                VerticalOptions="Center">
 
-                <Label Text="  Where to&#10; next, Agent"
+                <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontSize="Large"/>
+                    Text="  Where to&#10; next, Agent"
+                    VerticalOptions="Center" />
 
                 <StackLayout Style="{StaticResource CardImageTextBox}">
 
                     <ImageButton
+                        Clicked="DungeonButton_Clicked"
                         Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="DungeonButton_Clicked"/>
+                        Style="{StaticResource ImageLargeStyle}" />
 
-                    <Label 
-                        Text="Mission"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                 </StackLayout>
+                    <Label Style="{StaticResource CenterMessageStyle}" Text="Mission" />
+                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                             HorizontalOptions="Start"
-                             Spacing="200">
-                    
-                    <StackLayout Style="{StaticResource CardImageTextBox}">
+                <StackLayout
+                    HorizontalOptions="Start"
+                    Spacing="100"
+                    Style="{StaticResource HorizontalStack}">
+
+                    <StackLayout Style="{StaticResource VerticalStack}">
 
                         <ImageButton
+                            Clicked="VillageButton_Clicked"
                             Source="item.png"
-                            Style="{StaticResource ImageLargeStyle}"
-                            Clicked="VillageButton_Clicked"/>
+                            Style="{StaticResource ImageLargeStyle}" />
 
-                        <Label 
-                            Text="Headquaters"
-                            Style="{StaticResource CenterMessageStyle}"/>
+                        <Label Style="{StaticResource CenterMessageStyle}" Text="Headquarters" />
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource CardImageTextBox}">
+                    <StackLayout Style="{StaticResource VerticalStack}">
 
                         <ImageButton
+                            Clicked="AutobattleButton_Clicked"
                             Source="item.png"
-                            Style="{StaticResource ImageLargeStyle}"
-                            Clicked="AutobattleButton_Clicked"/>
+                            Style="{StaticResource ImageLargeStyle}" />
 
-                        <Label 
-                            Text="Auto Battle"
-                            Style="{StaticResource CenterMessageStyle}"/>
+                        <Label Style="{StaticResource CenterMessageStyle}" Text="Auto Battle" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
