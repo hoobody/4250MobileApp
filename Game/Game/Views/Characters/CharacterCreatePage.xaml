@@ -43,7 +43,7 @@
                         <Frame HeightRequest="230"
                                WidthRequest="450"
                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                               BorderColor="Black"
+                               BorderColor="{StaticResource BorderColor}"
                                Margin="0,0,0,0">
 
                             <StackLayout Style="{StaticResource VerticalStack}"
@@ -90,7 +90,7 @@
                                                     Spacing="10">
 
                                         <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                               BorderColor="Black"
+                                               BorderColor="{StaticResource BorderColor}"
                                                MinimumWidthRequest="125"
                                                MinimumHeightRequest="125"
                                                VerticalOptions="Center">
