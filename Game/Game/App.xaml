@@ -375,14 +375,19 @@
             </Style>
 
             <Style TargetType="StackLayout"
-                x:Key="ItemImageBox"
-                BasedOn="{StaticResource CardImageTextBox}">
+                x:Key="ItemImageBox">
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="WidthRequest" Value="60" />
                 <Setter Property="Spacing" Value="1" />
             </Style>
 
-
+            <Style TargetType="StackLayout"
+                x:Key="ItemCardStack" >
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="5,15,5,5" />
+            </Style>
+            
             <Style TargetType="StackLayout"
                 x:Key="ItemImageLabelBox"
                 BasedOn="{StaticResource CardImageTextBox}">
