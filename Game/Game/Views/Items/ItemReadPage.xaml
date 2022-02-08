@@ -44,7 +44,8 @@
                 <Label Text="Description: "
                     Style="{StaticResource LabelStyle}"/>
 
-                <Frame Style="{StaticResource LabelFrame}">
+                <Frame Style="{StaticResource LabelFrame}"
+                       WidthRequest="220">
 
                     <Label Text="{Binding Data.Description}"
                         Style="{StaticResource LabelStyle}"/>

@@ -58,7 +58,8 @@
                             Style="{StaticResource LabelStyle}"/>
 
                         <Frame x:Name="DescriptionFrame"
-                               Style="{StaticResource EntryFrame}">
+                               Style="{StaticResource EntryFrame}"
+                               WidthRequest="220">
                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
