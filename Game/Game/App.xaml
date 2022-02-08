@@ -134,6 +134,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="TinyDescriptionStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontAttributes" Value="Italic" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+
+            <Style TargetType="Label"
                    x:Key="Barcode">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
