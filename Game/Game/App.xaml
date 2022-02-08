@@ -339,17 +339,19 @@
             </Style>
 
             <!-- Button -->
-            <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+            <Style TargetType="Button"
+                   x:Key="ButtonStyle">
+                <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="FontFamily" Value="OCRFont"/>
-                <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource BlackTextColor}"/>
+                <Setter Property="BorderWidth" Value="2" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontSize" Value="Medium"/>
                 <Setter Property="Padding" Value="1"/>
                 <Setter Property="Margin" Value="0,5,0,5"/>
-                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="HeightRequest" Value="35"/>
             </Style>
 
             <!-- Stack Layouts -->
@@ -414,6 +416,14 @@
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="WidthRequest" Value="375" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="DeleteMessageBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="Margin" Value="0,20,0,0" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
             <Style TargetType="StackLayout"
