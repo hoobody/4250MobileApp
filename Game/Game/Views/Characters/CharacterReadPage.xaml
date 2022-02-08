@@ -39,20 +39,20 @@
                     <Frame
                         BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                         BorderColor="{StaticResource BorderColor}"
-                        HeightRequest="210"
-                        WidthRequest="425">
+                        HeightRequest="230"
+                        WidthRequest="500">
 
                         <StackLayout
                             HorizontalOptions="Center"
                             Spacing="10"
                             Style="{StaticResource HorizontalStack}"
                             VerticalOptions="Center"
-                            WidthRequest="380">
+                            WidthRequest="400">
 
                             <StackLayout
                                 Spacing="10"
                                 Style="{StaticResource VerticalStack}"
-                                WidthRequest="125">
+                                WidthRequest="150">
 
                                 <Label
                                     FontAttributes="Bold"
@@ -64,8 +64,8 @@
                                 <Frame
                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                     BorderColor="{StaticResource BorderColor}"
-                                    HeightRequest="125"
-                                    WidthRequest="125">
+                                    HeightRequest="150"
+                                    WidthRequest="150">
                                     <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
                                 </Frame>
 
