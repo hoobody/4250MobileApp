@@ -129,7 +129,7 @@
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="170">
+                                                WidthRequest="173">
                                                 <Label Style="{StaticResource ValueStyle}" Text="{Binding Description}" FontSize="12"/>
                                             </Frame>
                                         </StackLayout>
