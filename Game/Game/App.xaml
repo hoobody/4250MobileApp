@@ -32,7 +32,7 @@
             <Color x:Key="LightBackgroundColor">#fef4cf</Color>
             <Color x:Key="BackgroundTextColor">Black</Color>
 
-			<Color x:Key="EntryColor">#69b3ac</Color>
+            <Color x:Key="EntryColor">#6393b7</Color>
             <Color x:Key="BlackTextColor">Black</Color>
 			<Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
 			<Color x:Key="BorderColor">Black</Color>
