@@ -16,73 +16,42 @@
     <Grid>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"
-                   HorizontalOptions="Center"
-                   FontSize="Medium"/>
+            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
 
-            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                   BorderColor="Black">
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"
-                           HorizontalOptions="Center"
-                           WidthRequest="150"
-                           HeightRequest="150"/>
+            <Frame Style="{StaticResource ItemPictureFrame}">
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
             </Frame>
 
-            <StackLayout BackgroundColor="#696969"
-                        WidthRequest="350">
+            <StackLayout Style="{StaticResource ItemLabelOuterBox}">
 
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,7"
-                            Spacing="5">
+                <StackLayout Style="{StaticResource EntryBox}">
 
                     <Label Text="Name: "
-                                FontSize="15"
-                                Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource LabelStyle}"/>
 
-                    <Frame WidthRequest="280"
-                           CornerRadius="0"
-                           HeightRequest="30"
-                           Padding="5,0,0,0"
-                           BorderColor="Black"
-                           BackgroundColor="#36454F">
+                    <Frame Style="{StaticResource LabelFrame}">
                         <Label Text="{Binding Data.Name}"
-                               Style="{StaticResource LabelStyle}"
-                               FontSize="15"
-                               HeightRequest="40"/>
+                               Style="{StaticResource LabelStyle}"/>
                     </Frame>
 
 
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}"
-                            Padding="7,5"
-                            Spacing="5">
+                <StackLayout Style="{StaticResource EntryBox}">
 
                     <Label Text="Description: "
-                                VerticalOptions="Start"
-                                HeightRequest="37"
-                                FontSize="15"
                                 Style="{StaticResource LabelStyle}"/>
 
-                    <Frame WidthRequest="245"
-                           HeightRequest="30"
-                           CornerRadius="0"
-                           Padding="5,0,0,0"
-                           BorderColor="Black"
-                           BackgroundColor="#36454F">
-                        
+                    <Frame Style="{StaticResource LabelFrame}">
                         <Label Text="{Binding Data.Description}"
-                               Style="{StaticResource LabelStyle}"
-                               FontSize="15"
-                               HeightRequest="40"/>
-                        
+                               Style="{StaticResource LabelStyle}"/>
                     </Frame>
 
                 </StackLayout>
 
             </StackLayout>
             
-            <StackLayout HorizontalOptions="Center">
+            <StackLayout Style="{StaticResource DeleteMessageBox}">
                 <Label Text="Are You Sure?" Style="{StaticResource MessageStyle}"/>
             </StackLayout>
 
@@ -91,24 +60,14 @@
 
                 <Button 
                     Text="Cancel" 
-                    Clicked="Cancel_Clicked" 
-                    HorizontalOptions="Center"
-                    FontSize="Medium"
-                    BorderWidth="2" 
-                    HeightRequest="35"
-                    BorderColor="black">
-                </Button>
+                    Clicked="Cancel_Clicked"
+                    Style="{StaticResource ButtonStyle}"/>
+
 
                 <Button 
                     Text="Delete" 
-                    Clicked="Delete_Clicked" 
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontSize="Medium"
-                    BorderWidth="2" 
-                    HeightRequest="35"
-                    BorderColor="black">
-                </Button>
+                    Clicked="Delete_Clicked"
+                    Style="{StaticResource ButtonStyle}"/>
 
             </StackLayout>
             
