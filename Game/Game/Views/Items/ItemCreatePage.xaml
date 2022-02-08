@@ -76,9 +76,7 @@
                 <StackLayout Style="{StaticResource PickerBox}">
 
                     <Label Text="Location" 
-                        HorizontalOptions="Center"
-                        HeightRequest="37"
-                        Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource PickerLabel}"/>
 
                     <Picker ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
@@ -93,10 +91,8 @@
 
                 <StackLayout Style="{StaticResource PickerBox}">
 
-                    <Label Text="Attribute" 
-                        HorizontalOptions="Center"
-                        HeightRequest="37"
-                        Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Attribute"
+                        Style="{StaticResource PickerLabel}"/>
 
                     <Picker ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
