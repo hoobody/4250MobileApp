@@ -334,7 +334,8 @@
                             
                         </StackLayout>
 
-                        <Frame Background="{StaticResource PrimaryBackgroundColor}"
+                        <Frame Background="{StaticResource SecondaryBackgroundColor}"
+                               BorderColor="{StaticResource BorderColor}"
                                WidthRequest="500"
                                HeightRequest="40">
                             
