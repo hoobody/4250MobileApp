@@ -551,7 +551,7 @@
             </Style>
             
             <Style TargetType="Frame"
-							x:Key="PhotoFront">
+				x:Key="PhotoFront">
 				<Setter Property="BackgroundColor" Value="Black" />
 				<Setter Property="WidthRequest" Value="35" />
 				<Setter Property="HeightRequest" Value="35" />
@@ -572,7 +572,13 @@
                 <Setter Property="BorderColor" Value="Black" />
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="CornerRadius" Value="0" />
-                
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="EntryFrame">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="280" />
+                <Setter Property="CornerRadius" Value="0" />
             </Style>
 
             <Style TargetType="Frame"
