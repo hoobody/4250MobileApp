@@ -86,11 +86,7 @@
 
         </StackLayout>
 
-        <StackLayout Style ="{StaticResource HorizontalStack}" 
-            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-            Padding="7,0"
-            WidthRequest="350"
-            Spacing="7">
+        <StackLayout Style ="{StaticResource ItemPickerOuterBox}">
 
             <StackLayout Padding="5">
 
