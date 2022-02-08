@@ -31,6 +31,8 @@
             <Color x:Key="TriciaryBackgroundColor">#69b3ac</Color>
             <Color x:Key="LightBackgroundColor">#fef4cf</Color>
             <Color x:Key="BackgroundTextColor">Black</Color>
+
+			<Color x:Key="EntryColor">#69b3ac</Color>
             <Color x:Key="BlackTextColor">Black</Color>
 			<Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
 			<Color x:Key="BorderColor">Black</Color>
@@ -38,7 +40,9 @@
 			<Color x:Key="MinThumbColor">#f3cf69</Color>
 			
 			<Color x:Key="Paper">#c4c4c4</Color>
-
+			<Color x:Key="Error">Red</Color>
+			
+			
 			<Color x:Key="PrimaryTextColor">#0f3852</Color>
             <Color x:Key="SecondaryTextColor">#0f3852</Color>
             <Color x:Key="TriciaryTextColor"> #dd7539</Color>
@@ -534,7 +538,7 @@
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
-                <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
