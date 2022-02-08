@@ -101,7 +101,7 @@
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="142">
+                                                WidthRequest="180">
                                                 <Label Style="{StaticResource ValueStyle}" Text="{Binding Job}" />
                                             </Frame>
 
@@ -111,13 +111,13 @@
                                             HorizontalOptions="Start"
                                             Spacing="3"
                                             Style="{StaticResource HorizontalStack}">
-                                            <Label Style="{StaticResource LabelStyle}" Text="CodeName:" />
+                                            <Label Style="{StaticResource LabelStyle}" Text="CodeName:" FontSize="13" />
 
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="143">
-                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding CodeName}" />
+                                                WidthRequest="140">
+                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding CodeName}" FontSize="13"/>
                                             </Frame>
                                         </StackLayout>
 
@@ -125,12 +125,12 @@
                                             HorizontalOptions="Start"
                                             Spacing="3"
                                             Style="{StaticResource HorizontalStack}">
-                                            <Label Style="{StaticResource LabelStyle}" Text="Desc: " />
+                                            <Label Style="{StaticResource LabelStyle}" Text="Desc: " FontSize="13" />
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="140">
-                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding Description}" />
+                                                WidthRequest="170">
+                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding Description}" FontSize="12"/>
                                             </Frame>
                                         </StackLayout>
 
@@ -141,8 +141,8 @@
 
                                             <Label Style="{StaticResource Barcode}" Text="█║█ ║▌║█║▌║▌█│║▌" />
 
-                                            <StackLayout HorizontalOptions="End" Style="{StaticResource HorizontalStack}">
-                                                <Label Style="{StaticResource LabelStyle}" Text="LVL:"/>
+                                            <StackLayout HorizontalOptions="End" Style="{StaticResource HorizontalStack}" Margin="0,10,0,0">
+                                                <Label Style="{StaticResource LabelStyle}" Text="LVL:" FontSize="12"/>
                                                 <Frame
                                                     Padding="3"
                                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}"
