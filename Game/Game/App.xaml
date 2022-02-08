@@ -451,7 +451,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="HeightRequest" Value="70" />
-                <Setter Property="WidthRequest" Value="156" />
+                <Setter Property="WidthRequest" Value="150" />
             </Style>
 
             <Style TargetType="StackLayout"
