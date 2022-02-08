@@ -375,7 +375,7 @@
 
             <Style TargetType="StackLayout"
                 x:Key="ItemLabelOuterBox"
-                BasedOn="{StaticResource HorizontalStack}">
+                BasedOn="{StaticResource VerticallStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="WidthRequest" Value="350" />
             </Style>
