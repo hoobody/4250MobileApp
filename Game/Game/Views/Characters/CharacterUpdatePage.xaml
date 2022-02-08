@@ -178,7 +178,7 @@
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Desc: "
                                                     FontSize="14"
-                                                    MaxLength="22"
+                                                    MaxLength="19"
                                                     Style="{StaticResource EntryStyle}"
                                                     Text="{Binding Data.Description, Mode=TwoWay}"
                                                     TextChanged="Description_onTextChange" />
