@@ -57,49 +57,32 @@
 
         <StackLayout Style ="{StaticResource ItemPickerOuterBox}">
 
-            <StackLayout Padding="5">
+            <StackLayout Style="{StaticResource PaddedBox}">
 
-                <StackLayout Style="{StaticResource VerticalStack}" 
-                    BackgroundColor="{StaticResource TriciaryBackgroundColor}"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="Center" 
-                    HeightRequest="70"
-                    WidthRequest="156">
+                <StackLayout Style="{StaticResource ItemLabelBox}">
 
-                    <Label 
-                        Text="Location : " 
-                        HorizontalOptions="Center"
-                        HeightRequest="37"
-                        Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Location :" 
+                        Style="{StaticResource PickerLabel}"/>
 
-                    <Label 
-                        Text="{Binding Data.Location}" 
-                        HorizontalOptions="Center"
-                        FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"
-                        BackgroundColor="{StaticResource TriciaryBackgroundColor}"/>
+                    <Label Text="{Binding Data.Location}" 
+                        Style="{StaticResource PickerValueLabel}"/>
 
                 </StackLayout>
 
             </StackLayout>
 
-            <StackLayout Padding="5">
+            <StackLayout Style="{StaticResource PaddedBox}"
+                         VerticalOptions="Center">
 
-                <StackLayout Style="{StaticResource VerticalStack}" 
-                    BackgroundColor="{StaticResource TriciaryBackgroundColor}"
-                    HorizontalOptions="Center" 
-                    HeightRequest="70"
-                    WidthRequest="156">
+                <StackLayout Style="{StaticResource ItemLabelBox}"
+                             VerticalOptions="CenterAndExpand">
 
-                    <Label Text="Attribute : " 
-                        HorizontalOptions="Center"
-                        HeightRequest="37"
-                        Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Attribute :" 
+                        Style="{StaticResource PickerLabel}"/>
+                            
 
                     <Label Text="{Binding Data.Attribute}" 
-                        HorizontalOptions="Center"
-                        FontAttributes="Bold"
-                        Style="{StaticResource ValueStyle}"/>
+                        Style="{StaticResource PickerValueLabel}"/>
 
                 </StackLayout>
 
