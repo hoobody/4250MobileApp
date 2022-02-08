@@ -374,6 +374,13 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="ItemLabelOuterBox"
+                BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="WidthRequest" Value="350" />
+            </Style>
+            
+            <Style TargetType="StackLayout"
                 x:Key="ItemPickerOuterBox"
                 BasedOn="{StaticResource HorizontalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
@@ -381,6 +388,10 @@
                 <Setter Property="Spacing" Value="7" />
                 <Setter Property="WidthRequest" Value="350" />
             </Style>
+            
+            
+            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                        WidthRequest="350"
 
             <Style TargetType="StackLayout"
                 x:Key="PlayerInfoBox"
