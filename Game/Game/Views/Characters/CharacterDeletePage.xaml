@@ -170,25 +170,9 @@
                 Text="Really delete this?" />
 
             <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
-                <Button
-                    BorderColor="black"
-                    BorderWidth="2"
-                    Clicked="Cancel_Clicked"
-                    FontSize="Medium"
-                    HeightRequest="35"
-                    HorizontalOptions="Center"
-                    Text="Cancel"
-                    VerticalOptions="Center" />
+                <Button Clicked="Cancel_Clicked" Style="{StaticResource ButtonStyle}" Text="Cancel"/>
 
-                <Button
-                    BorderColor="black"
-                    BorderWidth="2"
-                    Clicked="Delete_Clicked"
-                    FontSize="Medium"
-                    HeightRequest="35"
-                    HorizontalOptions="Center"
-                    Text="Delete"
-                    VerticalOptions="Center" />
+                <Button Clicked="Delete_Clicked" Text="Delete" Style="{StaticResource ButtonStyle}"/>
             </StackLayout>
         </StackLayout>
     </StackLayout>
