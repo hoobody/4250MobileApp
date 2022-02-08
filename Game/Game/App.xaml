@@ -373,7 +373,7 @@
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="WidthRequest" Value="375" />
                 <Setter Property="Spacing" Value="5" />
             </Style>
 
@@ -413,7 +413,7 @@
                 x:Key="ItemLabelOuterBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="WidthRequest" Value="375" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -422,7 +422,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="Padding" Value="7,5" />
                 <Setter Property="Spacing" Value="7" />
-                <Setter Property="WidthRequest" Value="350" />
+                <Setter Property="WidthRequest" Value="375" />
             </Style>
             
 
@@ -437,11 +437,12 @@
                 x:Key="PickerBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HeightRequest" Value="70" />
-                <Setter Property="WidthRequest" Value="156" />
+                <Setter Property="WidthRequest" Value="150" />
             </Style>
+            
 
             <Style TargetType="StackLayout"
                 x:Key="ItemLabelBox"
@@ -535,6 +536,8 @@
             <Style TargetType="StackLayout"
                 x:Key="PaddedBox">
                 <Setter Property="Padding" Value="5"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
             
             <!-- Frame -->
@@ -637,6 +640,7 @@
             <Style TargetType="Entry"
                 x:Key="EntryStyle">
                 <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="FontFamily" Value="OCRFont" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="VerticalTextAlignment" Value="Center" />

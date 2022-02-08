@@ -37,9 +37,9 @@
                 
                 <Label Text="Name: "
                         Style="{StaticResource LabelStyle}"/>
-                
-                <Frame WidthRequest="280"
-                       x:Name="NameFrame">
+
+                <Frame Style="{StaticResource EntryFrame}"
+                    x:Name="NameFrame">
                     <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                         d:Text="Item Name"
                         x:Name="NameEntry" 
@@ -54,9 +54,10 @@
                 
                 <Label Text="Description: "
                         Style="{StaticResource LabelStyle}"/>
-                
-                <Frame WidthRequest="245"
-                       x:Name="DescriptionFrame">
+
+                <Frame Style="{StaticResource EntryFrame}"
+                    x:Name="DescriptionFrame"
+                       WidthRequest="220">
                     <Entry  Text="{Binding Data.Description}" 
                         d:Text="Item Description"
                         x:Name="DescriptionEntry" 
