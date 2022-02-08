@@ -375,7 +375,7 @@
                 x:Key="OuterBoxStack"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="WidthRequest" Value="375" />
+                <Setter Property="WidthRequest" Value="450" />
                 <Setter Property="Spacing" Value="5" />
             </Style>
 
@@ -415,7 +415,8 @@
                 x:Key="ItemLabelOuterBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
-                <Setter Property="WidthRequest" Value="375" />
+                <Setter Property="WidthRequest" Value="450" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -432,7 +433,8 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="Padding" Value="7,5" />
                 <Setter Property="Spacing" Value="7" />
-                <Setter Property="WidthRequest" Value="375" />
+                <Setter Property="WidthRequest" Value="450" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
             
 
@@ -475,6 +477,13 @@
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="Margin" Value="0" />
             </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="CharacterInfoBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="Spacing" Value="5" />
+            </Style>
+
 
             <Style TargetType="StackLayout"
                 x:Key="PlayerBattleDisplayBox"
@@ -705,14 +714,32 @@
 				<Setter Property="Minimum" Value="0"/>
 				<Setter Property="MinimumTrackColor" Value="{StaticResource MinThumbColor}"/>
 				<Setter Property="ThumbColor" Value="Transparent"/>
-				<Setter Property="WidthRequest" Value="250"/>
-			</Style>
+                <Setter Property="WidthRequest" Value="250"/>
+            </Style>
+
+            <Style TargetType="Slider"
+				   x:Key="ViewOnlySlider">
+                <Setter Property="HeightRequest" Value="36"/>
+                <Setter Property="InputTransparent" Value="True"/>
+                <Setter Property="MaximumTrackColor" Value="{StaticResource MaxThumbColor}"/>
+                <Setter Property="Minimum" Value="0"/>
+                <Setter Property="MinimumTrackColor" Value="{StaticResource MinThumbColor}"/>
+                <Setter Property="ThumbColor" Value="Transparent"/>
+                <Setter Property="WidthRequest" Value="250"/>
+            </Style>
 
             <!-- ListView -->
             <Style TargetType="ListView"
 				   x:Key="ListView">
                 <Setter Property="Margin" Value="5,0,5,0"/>
                 <Setter Property="RowHeight" Value="120"/>
+            </Style>
+
+            <!-- AbsoluteLayout -->
+            <Style TargetType="AbsoluteLayout"
+				   x:Key="AbsoluteStyle">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
         </ResourceDictionary>
