@@ -33,6 +33,9 @@
             <Color x:Key="BackgroundTextColor">Black</Color>
             <Color x:Key="BlackTextColor">Black</Color>
 			<Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
+			<Color x:Key="BorderColor">Black</Color>
+			<Color x:Key="MaxThumbColor">DimGray</Color>
+			<Color x:Key="MinThumbColor">#f3cf69</Color>
 			
 			<Color x:Key="Paper">#c4c4c4</Color>
 
@@ -571,6 +574,19 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
             </Style>
 
+
+			<!-- Slider -->
+			<Style TargetType="Slider"
+				   x:Key="SliderStyle">
+				<Setter Property="HeightRequest" Value="36"/>
+				<Setter Property="InputTransparent" Value="True"/>
+				<Setter Property="MaximumTrackColor" Value="{StaticResource MaxThumbColor}"/>
+				<Setter Property="Minimum" Value="0"/>
+				<Setter Property="MinimumTrackColor" Value="{StaticResource MinThumbColor}"/>
+				<Setter Property="ThumbColor" Value="Transparent"/>
+				<Setter Property="WidthRequest" Value="250"/>
+			</Style>
+			
         </ResourceDictionary>
     </Application.Resources>
 </Application>
