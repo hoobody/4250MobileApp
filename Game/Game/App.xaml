@@ -583,6 +583,14 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="ItemListFrame">
+                <Setter Property="Margin" Value="5,5,5,5" />
+                <Setter Property="HorizontalOptions" Value="Fill" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="BattleMapFrame">
                 <Setter Property="HeightRequest" Value="60" />
                 <Setter Property="WidthRequest" Value="60" />
