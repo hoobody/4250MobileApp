@@ -26,27 +26,22 @@
 
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"
-                    HorizontalOptions="Center"
-                    FontSize="Medium"/>
+                <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
 
                 <Frame Style="{StaticResource ItemPictureFrame}">
                     <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" 
                             Style="{StaticResource ImageLargeStyle}"/>
                 </Frame>
                 
-                <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                        WidthRequest="350">
+                <StackLayout Style="{StaticResource ItemLabelOuterBox}">
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                        Padding="7,5"
-                        Spacing="5">
+                    <StackLayout Style="{StaticResource EntryBox}">
 
                         <Label Text="Name: "
                             Style="{StaticResource LabelStyle}"/>
 
-                        <Frame WidthRequest="280"
-                            x:Name="NameFrame">
+                        <Frame x:Name="NameFrame"
+                               Style="{StaticResource EntryFrame}">
                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                 d:Text="Item Name"
                                 x:Name="NameEntry" 
@@ -57,15 +52,13 @@
 
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                        Padding="7,5"
-                        Spacing="5">
+                    <StackLayout Style="{StaticResource EntryBox}">
 
                         <Label Text="Description: "
                             Style="{StaticResource LabelStyle}"/>
 
-                        <Frame WidthRequest="245"
-                            x:Name="DescriptionFrame">
+                        <Frame x:Name="DescriptionFrame"
+                               Style="{StaticResource EntryFrame}">
                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
@@ -80,22 +73,14 @@
 
                 <StackLayout Style="{StaticResource ItemPickerOuterBox}">
 
-                    <StackLayout Padding="5">
+                    <StackLayout Style="{StaticResource PaddedBox}">
 
-                        <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                            Style="{StaticResource VerticalStack}"
-                            VerticalOptions="CenterAndExpand"
-                            HorizontalOptions="Center"
-                            HeightRequest="70"
-                            WidthRequest="156">
+                        <StackLayout Style="{StaticResource PickerBox}">
 
                             <Label Text="Location" 
-                                HorizontalOptions="Center"
-                                HeightRequest="37"
-                                Style="{StaticResource LabelStyle}"/>
+                                Style="{StaticResource PickerLabel}"/>
 
-                            <Picker Grid.Row="2" Grid.Column="1"
-                                ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
+                            <Picker ItemsSource="{x:Static local:ItemLocationEnumHelper.GetListCharacter}" 
                                 SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                 x:Name="LocationPicker"
                                 Style="{StaticResource PickerStyle}"/>
@@ -104,22 +89,14 @@
 
                     </StackLayout>
 
-                    <StackLayout Padding="5">
+                    <StackLayout Style="{StaticResource PaddedBox}">
 
-                            <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                Style="{StaticResource VerticalStack}"
-                                VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="Center"
-                                HeightRequest="70"
-                                WidthRequest="156">
+                            <StackLayout Style="{StaticResource PickerBox}">
 
-                                <Label Text="Attribute" 
-                                    HorizontalOptions="Center"
-                                    HeightRequest="37"
-                                    Style="{StaticResource LabelStyle}"/>
+                                <Label Text="Attribute"
+                                    Style="{StaticResource PickerLabel}"/>
 
-                                <Picker Grid.Row="3" Grid.Column="1"
-                                    ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
+                                <Picker ItemsSource="{x:Static local:AttributeEnumHelper.GetListCharacter}" 
                                     SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                     x:Name="AttributePicker"
                                     Style="{StaticResource PickerStyle}"/>
@@ -150,42 +127,47 @@
                                 Text="{Binding Data.Range}" 
                                 x:Name="RangeValue"/>
 
-                        <Stepper Grid.Column="2" Grid.Row="0"  
-                                Value="{Binding Data.Range, Mode=TwoWay}"
-                                ValueChanged="Range_OnStepperValueChanged"
-                                 Minimum="0"
-                                 Maximum="10"
-                                 Increment="1"/>
+                    <Stepper Grid.Column="2" Grid.Row="0"  
+                            Value="{Binding Data.Range, Mode=TwoWay}"
+                            ValueChanged="Range_OnStepperValueChanged"
+                            Minimum="0"
+                            Maximum="10"
+                            Increment="1"
+                            Style="{StaticResource StepperStyle}"/>
 
-                        <Label Grid.Column="0" Grid.Row="1"
-                                Text="Value"
-                                Style="{StaticResource LabelStyle}"/>
+                    <Label Grid.Column="0" Grid.Row="1"
+                            Text="Value"
+                            Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Column="1" Grid.Row="1" Style="{StaticResource StepperValueLabel}"
-                                Text="{Binding Data.Value}" 
-                                x:Name="ValueValue"/>
+                            Text="{Binding Data.Value}" 
+                            x:Name="ValueValue"/>
 
                         <Stepper Grid.Column="2" Grid.Row="1"
-                                Value="{Binding Data.Value, Mode=TwoWay}"
-                                ValueChanged="Value_OnStepperValueChanged"
-                                 Minimum="0"
-                                 Maximum="100"
-                                 Increment="1"/>
-
+                            Value="{Binding Data.Value, Mode=TwoWay}"
+                            ValueChanged="Value_OnStepperValueChanged"
+                            Minimum="0"
+                            Maximum="100"
+                            Increment="1"
+                            Style="{StaticResource StepperStyle}"/>
+                    
                         <Label Grid.Column="0" Grid.Row="2"
-                                Text="Damage" 
-                                Style="{StaticResource LabelStyle}"/>
+                            Text="Damage" 
+                            Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Column="1" Grid.Row="2" Style="{StaticResource StepperValueLabel}"
-                                Text="{Binding Data.Damage}" 
-                                x:Name="DamageValue"/>
+                            Text="{Binding Data.Damage}" 
+                            x:Name="DamageValue"/>
 
                         <Stepper Grid.Column="2" Grid.Row="2"
-                                Value="{Binding Data.Damage, Mode=TwoWay}"
-                                ValueChanged="Damage_OnStepperValueChanged"
-                                Minimum="0"
-                                Maximum="100"
-                                Increment="1"/>
+                            Value="{Binding Data.Damage, Mode=TwoWay}"
+                            ValueChanged="Damage_OnStepperValueChanged"
+                            Minimum="0"
+                            Maximum="100"
+                            Increment="1"
+                            Style="{StaticResource StepperStyle}"/>
+        
+                    
                     </Grid>
 
                 </StackLayout>
