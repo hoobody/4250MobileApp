@@ -274,6 +274,7 @@
                                 x:Name="SpeedSlider"
                                 Grid.Row="3"
                                 Grid.Column="1"
+                                Maximum="10"
                                 Style="{StaticResource SliderStyle}"
                                 Value="{Binding Data.Speed}" />
 
