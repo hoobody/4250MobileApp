@@ -1,165 +1,193 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Game.Views.CharacterDeletePage"
-             Title="{Binding Title}">
-    
+<ContentPage
+    x:Class="Game.Views.CharacterDeletePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+        <ToolbarItem
+            Clicked="Cancel_Clicked"
+            IconImageSource="icon_cancel.png"
+            Text="Cancel" />
+        <ToolbarItem
+            Clicked="Delete_Clicked"
+            IconImageSource="icon_delete.png"
+            Text="Delete" />
     </ContentPage.ToolbarItems>
 
 
 
-    <StackLayout Orientation="Vertical"
-                 HorizontalOptions="CenterAndExpand"
-                 WidthRequest="475">
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        Orientation="Vertical"
+        WidthRequest="475">
 
-        <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"
-               HorizontalOptions="Center"/>
+        <Label
+            HorizontalOptions="Center"
+            Style="{StaticResource HeaderStyle}"
+            Text="Delete Page" />
 
-        <Frame HeightRequest="210"
-               WidthRequest="400"
-               BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-               BorderColor="Black">
+        <Frame
+            BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+            BorderColor="{StaticResource BorderColor}"
+            HeightRequest="210"
+            WidthRequest="425">
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                         WidthRequest="350"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"
-                         Spacing="10">
+            <StackLayout
+                HorizontalOptions="Center"
+                Spacing="10"
+                Style="{StaticResource HorizontalStack}"
+                VerticalOptions="Center"
+                WidthRequest="380">
 
-                <StackLayout Style="{StaticResource VerticalStack}"
-                             Spacing="10"
-                             WidthRequest="125">
+                <StackLayout
+                    Spacing="10"
+                    Style="{StaticResource VerticalStack}"
+                    WidthRequest="125">
 
-                    <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"
-                           HorizontalOptions="Center"
-                           FontSize="Medium"
-                           FontAttributes="Bold"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource HeaderStyle}"
+                        Text="{Binding Data.Name}" />
 
-                    <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                           BorderColor="Black"
-                           WidthRequest="125"
-                           HeightRequest="125">
-                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                    <Frame
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        BorderColor="{StaticResource BorderColor}"
+                        HeightRequest="125"
+                        WidthRequest="125">
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
                     </Frame>
 
                 </StackLayout>
 
-                <StackLayout Style="{StaticResource VerticalStack}"
-                             VerticalOptions="Center"
-                             WidthRequest="250"
-                             Spacing="10">
-
-                    <StackLayout Style="{StaticResource VerticalStack}"
-                                 VerticalOptions="Center"
-                                 HeightRequest="25"
-                                 WidthRequest="215">
-                        <Label Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Start"/>
+                <StackLayout
+                    Spacing="10"
+                    Style="{StaticResource VerticalStack}"
+                    VerticalOptions="Center"
+                    WidthRequest="250">
+                    <StackLayout
+                        HeightRequest="25"
+                        Style="{StaticResource VerticalStack}"
+                        VerticalOptions="Center"
+                        WidthRequest="215">
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
+                            VerticalOptions="Start" />
                     </StackLayout>
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HorizontalOptions="Start"
-                                 Spacing="3">
 
-                        <Label Text="Class/Rank:" 
-                               Style="{StaticResource LabelStyle}"/>
-                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                               WidthRequest="142"
-                               Padding="3">
-                            <Label Text="{Binding Data.Name}" 
-                                   Style="{StaticResource ValueStyle}"/>
+                    <StackLayout
+                        HorizontalOptions="Start"
+                        Spacing="3"
+                        Style="{StaticResource HorizontalStack}">
+
+                        <Label Style="{StaticResource LabelStyle}" Text="Job:" />
+                        <Frame
+                            Padding="3"
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                            WidthRequest="190">
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}" />
                         </Frame>
 
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HorizontalOptions="Start"
-                                 Spacing="3">
-                        <Label Text="CodeName:" 
-                               Style="{StaticResource LabelStyle}"/>
-                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                               WidthRequest="143"
-                               Padding="3">
-                            <Label Text="{Binding Data.Description}" 
-                                   Style="{StaticResource ValueStyle}"/>
+                    <StackLayout
+                        HorizontalOptions="Start"
+                        Spacing="3"
+                        Style="{StaticResource HorizontalStack}">
+                        <Label
+                            FontSize="14"
+                            Style="{StaticResource LabelStyle}"
+                            Text="CodeName:" />
+                        <Frame
+                            Padding="3"
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                            WidthRequest="147">
+                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.CodeName}" />
                         </Frame>
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HorizontalOptions="Start"
-                                 Spacing="3">
-                        <Label Text="Description: " 
-                               Style="{StaticResource LabelStyle}"/>
-                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                               WidthRequest="140"
-                               Padding="3">
-                            <Label Text="{Binding Data.Level  }" 
-                                   Style="{StaticResource ValueStyle}"/>
+                    <StackLayout
+                        HorizontalOptions="Start"
+                        Spacing="3"
+                        Style="{StaticResource HorizontalStack}">
+                        <Label
+                            FontSize="14"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Desc: " />
+                        <Frame
+                            Padding="3"
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                            WidthRequest="190">
+                            <Label
+                                FontSize="13"
+                                Style="{StaticResource ValueStyle}"
+                                Text="{Binding Data.Description}" />
                         </Frame>
                     </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}"
-                                 HorizontalOptions="End"
-                                 Spacing="7">
+                    <StackLayout
+                        HorizontalOptions="End"
+                        Spacing="7"
+                        Style="{StaticResource HorizontalStack}">
 
-                        <Label Text="█║█ ║▌║█║▌│║▌║▌█║"
-                               Style="{StaticResource Barcode}"/>
+                        <Label Style="{StaticResource Barcode}" Text="█║▌ █║║█║▌█║█║▌│║▌" />
 
-                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                     HorizontalOptions="End">
-                            <Label Text="Level : " 
-                                   Style="{StaticResource LabelStyle}"/>
-                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                   WidthRequest="25"
-                                   Padding="3">
-                                <Label Text="{Binding Data.Level  }" 
-                                       HorizontalOptions="Center"
-                                       Style="{StaticResource ValueStyle}"/>   
+                        <StackLayout
+                            Margin="0,10,0,0"
+                            HorizontalOptions="End"
+                            Style="{StaticResource HorizontalStack}">
+                            <Label Style="{StaticResource LabelStyle}" Text="LVL: " />
+                            <Frame
+                                Padding="3"
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                WidthRequest="25">
+                                <Label
+                                    HorizontalOptions="Center"
+                                    MinimumWidthRequest="70"
+                                    Style="{StaticResource ValueStyle}"
+                                    Text="{Binding Data.Level}"
+                                    VerticalOptions="Center" />
                             </Frame>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
-
             </StackLayout>
-
         </Frame>
 
-        <StackLayout 
-                HorizontalOptions="Center" 
-                Padding="20">
+        <StackLayout Padding="20" HorizontalOptions="Center">
 
-            <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"
-                   HorizontalOptions="Center"/>
+            <Label
+                HorizontalOptions="Center"
+                Style="{StaticResource MessageStyle}"
+                Text="Really delete this?" />
 
-            <StackLayout Style="{StaticResource HorizontalStack}"
-                         Spacing="10">
-                <Button 
-                    Text="Cancel" 
-                    Clicked="Cancel_Clicked" 
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontSize="Medium"
+            <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
+                <Button
+                    BorderColor="black"
                     BorderWidth="2"
-                    HeightRequest="35"
-                    BorderColor="black">
-                </Button>
-
-                <Button 
-                    Text="Delete" 
-                    Clicked="Delete_Clicked" 
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
+                    Clicked="Cancel_Clicked"
                     FontSize="Medium"
-                    BorderWidth="2"
                     HeightRequest="35"
-                    BorderColor="black">
-                </Button>
+                    HorizontalOptions="Center"
+                    Text="Cancel"
+                    VerticalOptions="Center" />
+
+                <Button
+                    BorderColor="black"
+                    BorderWidth="2"
+                    Clicked="Delete_Clicked"
+                    FontSize="Medium"
+                    HeightRequest="35"
+                    HorizontalOptions="Center"
+                    Text="Delete"
+                    VerticalOptions="Center" />
             </StackLayout>
         </StackLayout>
     </StackLayout>
