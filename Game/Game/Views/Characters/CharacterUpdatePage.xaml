@@ -38,7 +38,7 @@
                         <Label
                             HorizontalOptions="Center"
                             Style="{StaticResource HeaderStyle}"
-                            Text="Create Page" />
+                            Text="Update Page" />
 
                         <Frame
                             Margin="5,5,5,5"
@@ -155,7 +155,7 @@
                                                     x:Name="CodenameEntry"
                                                     d:Text="Codename"
                                                     FontSize="14"
-                                                    MaxLength="1"
+                                                    MaxLength="16"
                                                     Style="{StaticResource EntryStyle}"
                                                     Text="{Binding Data.CodeName, Mode=TwoWay}"
                                                     TextChanged="Codename_onTextChange" />
@@ -178,7 +178,7 @@
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Desc: "
                                                     FontSize="14"
-                                                    MaxLength="20"
+                                                    MaxLength="22"
                                                     Style="{StaticResource EntryStyle}"
                                                     Text="{Binding Data.Description, Mode=TwoWay}"
                                                     TextChanged="Description_onTextChange" />
