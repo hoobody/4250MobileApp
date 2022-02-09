@@ -163,6 +163,8 @@ namespace Game.Views
         {
             NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
             NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+            NameEntry.Placeholder = "Name";
+            NameEntry.PlaceholderColor = (Color)Application.Current.Resources["WhiteTextColor"];
 
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
@@ -186,6 +188,8 @@ namespace Game.Views
         {
             DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
             DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+            DescriptionEntry.Placeholder = "Description";
+            DescriptionEntry.PlaceholderColor = (Color)Application.Current.Resources["WhiteTextColor"];
 
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
