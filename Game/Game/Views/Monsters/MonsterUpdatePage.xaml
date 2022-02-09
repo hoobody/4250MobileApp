@@ -33,7 +33,7 @@
 
                 <ScrollView>
 
-                    <StackLayout Style="{StaticResource OuterBoxStack}" 
+                    <StackLayout Style="{StaticResource VerticalStack}" 
                                  Spacing="10">
 
                         <Label  Text="Update Page" Style="{StaticResource HeaderStyle}"
@@ -42,13 +42,11 @@
                         <!-- Used to place an image on top of a stacklayout-->
                         <Grid>
 
-                            <Frame BackgroundColor="Wheat"
-
-                                   Padding="10,10,10,10">
+                            <Frame BackgroundColor="{StaticResource Manilla}" Padding="10,10,10,10">
 
                                 <StackLayout    Style="{StaticResource HorizontalStack}"
                                                 BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="450"
+                                                WidthRequest="500"
                                                 HorizontalOptions="Center">
 
 
@@ -58,11 +56,11 @@
                                                     Padding="20,20,20,20"
                                                     Spacing="15">
 
-                                        <Frame  BorderColor="Black"
-                                            BackgroundColor="White"
+                                        <Frame  BorderColor="{StaticResource BorderColor}"
+                                            BackgroundColor="{StaticResource Frame}"
                                             Padding="10,10,10,50">
 
-                                            <Frame  BackgroundColor="Black"
+                                            <Frame  BackgroundColor="{StaticResource FrameInside}"
                                                 Padding="10,10,10,10"
                                                 CornerRadius="0">
 
@@ -72,7 +70,7 @@
 
                                         </Frame>
 
-                                        <Frame BorderColor ="Black"
+                                        <Frame BorderColor ="{StaticResource BorderColor}"
 											   WidthRequest ="150"
 											   HeightRequest ="40">
 
@@ -89,7 +87,7 @@
                                     </StackLayout>
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
-                                             Padding="5,5,5,5">
+                                             Padding="5,5,5,5" Spacing="10">
 
                                         <Image  Source="danger_stamp_small.png"
                                                 ScaleY="1"
@@ -99,21 +97,23 @@
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
-                                                    Spacing="3">
+                                                    Spacing="7">
 
                                             <Label  Text="Difficulty:"
-                                                    TextColor="Black"
-                                                Style="{StaticResource LabelStyle}"/>
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="129"
+                                                WidthRequest="130"
                                                 Padding="3"
                                                 x:Name="NameFrame">
 
                                                 <Picker x:Name="DifficultyPicker"
                                                 ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
                                                 SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                Style="{StaticResource PickerStyle}"/>
+                                                Style="{StaticResource PickerStyle}"
+                                                        FontSize="14"/>
 
                                             </Frame>
 
@@ -125,10 +125,11 @@
 
                                             <Label  Text="Desc:" 
                                                     TextColor="Black"
-                                                Style="{StaticResource LabelStyle}"/>
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="156"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="195"
                                                 Padding="3"
                                                 x:Name="DescriptionFrame">
 
@@ -137,7 +138,8 @@
                                                     d:Text="Description"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="15"
-                                                    TextChanged="DescriptionEntry_TextChanged"/>
+                                                    TextChanged="DescriptionEntry_TextChanged"
+                                                    FontSize="13"/>
 
                                             </Frame>
 
@@ -148,55 +150,61 @@
                                                     Spacing="3">
 
                                             <Label  Text="Job:" 
-                                                    TextColor="Black"
-                                                Style="{StaticResource LabelStyle}"/>
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="164"
+                                                WidthRequest="205"
                                                 Padding="3"
                                                 x:Name="JobFrame">
 
                                                 <Picker x:Name="JobPicker"
                                                 ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
                                                 SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                Style="{StaticResource PickerStyle}"/>
+                                                Style="{StaticResource PickerStyle}"
+                                                        FontSize="13"/>
 
                                             </Frame>
 
                                         </StackLayout>
-                                        
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="-25"
-                                               Margin="10,10,140,0">
+
+                                        <Frame
+                                            Margin="10,5,140,0"
+                                            Rotation="-25"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="map.jpg"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="10"
-                                               Margin="10,-60,40,0">
+                                        <Frame
+                                            Margin="10,-60,40,0"
+                                            Rotation="10"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="{Binding Data.ImageURI}"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="-15"
-                                               Margin="-20,-65,-95,0">
+                                        <Frame
+                                            Margin="-20,-80,-95,0"
+                                            Rotation="-15"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="crime_scene.jpg"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="5"
-                                               Margin="10,-50,-165,0">
+                                        <Frame
+                                            Margin="10,-60,-165,0"
+                                            Rotation="5"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="village.png"/>
                                             </Frame>
                                         </Frame>
-                                        
+
                                     </StackLayout>
 
                                 </StackLayout>
@@ -216,7 +224,7 @@
                               HorizontalOptions="Center">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="80"/>
                                 <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
@@ -230,15 +238,10 @@
                                     Text="Attack"
                                     Style="{StaticResource LabelStyle}"/>
 
-                            <Slider Grid.Column="1" Grid.Row="0" 
+                            <Slider Grid.Column="1" Grid.Row="0"                                     
+                                    Maximum="10"                 
                                     x:Name="AttackSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
+                                    Style="{StaticResource SliderStyle}"
                                     Value="{Binding Data.Attack, Mode=TwoWay}"
                                     ValueChanged="AttackSlider_ValueChanged"/>
 
@@ -259,14 +262,9 @@
                                     Style="{StaticResource LabelStyle}"/>
 
                             <Slider Grid.Column="1" Grid.Row="1"
+                                    Style="{StaticResource SliderStyle}"
                                     x:Name="DefenseSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
                                     Maximum="10" 
-                                    Minimum="0"
                                     Value="{Binding Data.Defense, Mode=TwoWay}"
                                     ValueChanged="DefenseSlider_ValueChanged"/>
 
@@ -288,13 +286,8 @@
 
                             <Slider Grid.Column="1" Grid.Row="2"
                                     x:Name="SpeedSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
+                                    Style="{StaticResource SliderStyle}"
                                     Maximum="10" 
-                                    Minimum="0"
                                     Value="{Binding Data.Speed, Mode=TwoWay}"
                                     ValueChanged="SpeedSlider_ValueChanged"/>
 
