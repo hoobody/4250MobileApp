@@ -364,4 +364,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\fancy-hat.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\multi-vision-goggles.png" />
+  </ItemGroup>
 </Project>
