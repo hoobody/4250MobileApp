@@ -24,7 +24,7 @@
         </StackLayout>
 
         <StackLayout  Style="{StaticResource HorizontalStack}"
-                      Spacing="75">
+                      Spacing="100">
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
