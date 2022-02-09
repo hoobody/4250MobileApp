@@ -43,6 +43,7 @@ namespace Game.Views
         public void AddItemsToDisplay()
         {
             var FlexList = ItemBox.Children.ToList();
+
             foreach (var data in FlexList)
             {
                 _ = ItemBox.Children.Remove(data);

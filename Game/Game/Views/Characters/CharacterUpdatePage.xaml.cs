@@ -279,6 +279,7 @@ namespace Game.Views
         public void AddItemsToDisplay()
         {
             var FlexList = ItemBox.Children.ToList();
+
             foreach (var data in FlexList)
             {
                 _ = ItemBox.Children.Remove(data);
@@ -435,22 +436,27 @@ namespace Game.Views
             {
                 return false;
             }
+
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 return false;
             }
+
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 return false;
             }
+
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 return false;
             }
+
             if (string.IsNullOrEmpty(CodenameEntry.Text))
             {
                 return false;
             }
+
             if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
                 return false;
@@ -476,6 +482,7 @@ namespace Game.Views
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
+
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
@@ -499,6 +506,7 @@ namespace Game.Views
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
+
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
@@ -523,6 +531,7 @@ namespace Game.Views
                 CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
+
             if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
                 CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
