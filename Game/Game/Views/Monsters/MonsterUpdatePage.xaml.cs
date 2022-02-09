@@ -179,13 +179,13 @@ namespace Game.Views
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
-                NameEntry.Placeholder = "Description";
+                NameEntry.Placeholder = "Name";
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
-                NameEntry.Placeholder = "Description";
+                NameEntry.Placeholder = "Name";
             }
         }
 
