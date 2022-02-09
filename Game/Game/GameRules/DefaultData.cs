@@ -35,6 +35,116 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.OffHand,
                     Attribute = AttributeEnum.Attack},
 
+                new ItemModel {
+                    Name = "Tommy Gun",
+                    Description = "Tommy lent you it",
+                    ImageURI = "item.png",
+                    Range = 4,
+                    Damage = 6,
+                    Value = 6,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Attack},
+
+                new ItemModel {
+                    Name = "Lazer Ring",
+                    Description = "Excelent distraction tool",
+                    ImageURI = "item.png",
+                    Range = 1,
+                    Damage = 1,
+                    Value = 1,
+                    Location = ItemLocationEnum.Finger,
+                    Attribute = AttributeEnum.Attack},
+
+                new ItemModel {
+                    Name = "Speedy Shoes",
+                    Description = "Gotta go fast",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 4,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Speed},
+
+                new ItemModel {
+                    Name = "Armored Boots",
+                    Description = "These boots have been reinforced",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 2,
+                    Location = ItemLocationEnum.Feet,
+                    Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Trench Coat",
+                    Description = "Some say you can stack 3 mice inside and pass off as a cat",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 2,
+                    Location = ItemLocationEnum.Necklass,
+                    Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Stealth Suit",
+                    Description = "Hard to focus when looking directly at it",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 8,
+                    Location = ItemLocationEnum.Necklass,
+                    Attribute = AttributeEnum.Speed},
+
+                new ItemModel {
+                    Name = "Hat",
+                    Description = "This is a fancy hat  ",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 1,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Defense},
+
+                new ItemModel {
+                    Name = "Multi-Vision Goggles",
+                    Description = "Night, infrared, and heat vision. Sam Fisher would be proud ",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 6,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Speed},
+
+                new ItemModel {
+                    Name = "Spy watch",
+                    Description = "What the cool spy kids wear these days",
+                    ImageURI = "item.png",
+                    Range = 0,
+                    Damage = 0,
+                    Value = 3,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.Speed},
+
+                new ItemModel {
+                    Name = "Exploding Pen",
+                    Description = "Click 3 times and then run fast",
+                    ImageURI = "item.png",
+                    Range = 1,
+                    Damage = 2,
+                    Value = 2,
+                    Location = ItemLocationEnum.OffHand,
+                    Attribute = AttributeEnum.Attack},
+
+                new ItemModel {
+                    Name = "Brass Knuckles",
+                    Description = "Brass. Knuckles.",
+                    ImageURI = "item.png",
+                    Range = 1,
+                    Damage = 2,
+                    Value = 2,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.Attack},
+
                 //new ItemModel {
                 //    Name = "Dagger",
                 //    Description = "watch out",
