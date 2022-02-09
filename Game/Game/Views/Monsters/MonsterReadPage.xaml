@@ -190,7 +190,7 @@
                                             Rotation="-25"
                                             Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text="" />
+                                                <Image Source="map.jpg"/>
                                             </Frame>
                                         </Frame>
 
@@ -199,7 +199,7 @@
                                             Rotation="10"
                                             Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text="" />
+                                                <Image Source="{Binding Data.ImageURI}"/>
                                             </Frame>
                                         </Frame>
 
@@ -208,7 +208,7 @@
                                             Rotation="-15"
                                             Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text="" />
+                                                <Image Source="crime_scene.jpg"/>
                                             </Frame>
                                         </Frame>
 
@@ -217,7 +217,7 @@
                                             Rotation="5"
                                             Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text="" />
+                                                <Image Source="village.png"/>
                                             </Frame>
                                         </Frame>
 
