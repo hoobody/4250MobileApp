@@ -43,7 +43,7 @@
                         <ViewCell>
                             <Frame
                                 BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                BorderColor="Black"
+                                BorderColor="{StaticResource BorderColor}"
                                 HeightRequest="210"
                                 WidthRequest="400">
 
@@ -68,7 +68,7 @@
 
                                         <Frame
                                             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                            BorderColor="Black"
+                                            BorderColor="{StaticResource BorderColor}"
                                             HeightRequest="125"
                                             WidthRequest="125">
                                             <Image Source="{Binding ImageURI}" Style="{StaticResource ImageLargeStyle}" />
