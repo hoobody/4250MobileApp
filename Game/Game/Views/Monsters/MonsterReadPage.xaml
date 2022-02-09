@@ -186,7 +186,7 @@
                                         </StackLayout>
 
                                         <Frame
-                                            Margin="10,5,140,0"
+                                            Margin="10,25,140,0"
                                             Rotation="-25"
                                             Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
