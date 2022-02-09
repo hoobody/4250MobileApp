@@ -109,71 +109,71 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterCreatePage(ViewModel);
-            var oldAttack = 0.0;
-            var newAttack = 1.0;
+        //    page = new CharacterCreatePage(ViewModel);
+        //    var oldAttack = 0.0;
+        //    var newAttack = 1.0;
 
-            var args = new ValueChangedEventArgs(oldAttack, newAttack);
+        //    var args = new ValueChangedEventArgs(oldAttack, newAttack);
 
-            // Act
-            page.Attack_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Attack_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
-        {
-            // ArSpeed
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        //{
+        //    // ArSpeed
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterCreatePage(ViewModel);
-            var oldSpeed = 0.0;
-            var newSpeed = 1.0;
+        //    page = new CharacterCreatePage(ViewModel);
+        //    var oldSpeed = 0.0;
+        //    var newSpeed = 1.0;
 
-            var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
+        //    var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
 
-            // Act
-            page.Speed_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Speed_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterCreatePage(ViewModel);
-            var oldDefense = 0.0;
-            var newDefense = 1.0;
+        //    page = new CharacterCreatePage(ViewModel);
+        //    var oldDefense = 0.0;
+        //    var newDefense = 1.0;
 
-            var args = new ValueChangedEventArgs(oldDefense, newDefense);
+        //    var args = new ValueChangedEventArgs(oldDefense, newDefense);
 
-            // Act
-            page.Defense_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Defense_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         [Test]
         public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()

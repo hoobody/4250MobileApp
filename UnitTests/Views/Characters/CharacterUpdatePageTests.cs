@@ -109,71 +109,71 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterUpdatePage(ViewModel);
-            var oldValue = 0.0;
-            var newValue = 1.0;
+        //    page = new CharacterUpdatePage(ViewModel);
+        //    var oldValue = 0.0;
+        //    var newValue = 1.0;
 
-            var args = new ValueChangedEventArgs(oldValue, newValue);
+        //    var args = new ValueChangedEventArgs(oldValue, newValue);
 
-            // Act
-            page.Attack_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Attack_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterUpdatePage_Defense_OnStepperValueChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterUpdatePage(ViewModel);
-            var oldRange = 0.0;
-            var newRange = 1.0;
+        //    page = new CharacterUpdatePage(ViewModel);
+        //    var oldRange = 0.0;
+        //    var newRange = 1.0;
 
-            var args = new ValueChangedEventArgs(oldRange, newRange);
+        //    var args = new ValueChangedEventArgs(oldRange, newRange);
 
-            // Act
-            page.Defense_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Defense_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
-        [Test]
-        public void CharacterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
-        {
-            // Arrange
-            var data = new CharacterModel();
-            var ViewModel = new GenericViewModel<CharacterModel>(data);
+        //[Test]
+        //public void CharacterUpdatePage_Speed_OnStepperDamageChanged_Default_Should_Pass()
+        //{
+        //    // Arrange
+        //    var data = new CharacterModel();
+        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-            page = new CharacterUpdatePage(ViewModel);
-            var oldDamage = 0.0;
-            var newDamage = 1.0;
+        //    page = new CharacterUpdatePage(ViewModel);
+        //    var oldDamage = 0.0;
+        //    var newDamage = 1.0;
 
-            var args = new ValueChangedEventArgs(oldDamage, newDamage);
+        //    var args = new ValueChangedEventArgs(oldDamage, newDamage);
 
-            // Act
-            page.Speed_OnStepperValueChanged(null, args);
+        //    // Act
+        //    page.Speed_OnStepperValueChanged(null, args);
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.IsTrue(true); // Got to here, so it happened...
+        //}
 
         [Test]
         public void CharacterUpdatePage_Level_Changed_Default_Should_Pass()
