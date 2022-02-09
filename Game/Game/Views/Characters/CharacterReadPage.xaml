@@ -50,23 +50,17 @@
                             WidthRequest="380">
 
                             <StackLayout
-                                Spacing="10"
+                                Spacing="20"
                                 Style="{StaticResource VerticalStack}"
                                 WidthRequest="150"
-                                Margin="0,15,0,0">
+                                Margin="0,5,0,0">
 
-                                <Frame
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    BorderColor="{StaticResource BorderColor}"
-                                    HeightRequest="35"
-                                    WidthRequest="100">
-                                    <Label
+                                <Label
                                         FontAttributes="Bold"
-                                        FontSize="Small"
+                                        FontSize="Medium"
                                         HorizontalOptions="Center"
                                         Style="{StaticResource HeaderStyle}"
                                         Text="{Binding Data.Name}" />
-                                </Frame>
 
                                 <Frame
                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -103,7 +97,7 @@
                                     <Frame
                                         Padding="3"
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                        WidthRequest="150">
+                                        WidthRequest="165">
                                         <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}" />
                                     </Frame>
 
@@ -117,7 +111,8 @@
                                         Padding="3"
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="198">
-                                        <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.CodeName}" />
+                                        <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.CodeName}" 
+                                               FontSize="13"/>
                                     </Frame>
                                 </StackLayout>
 
@@ -130,7 +125,7 @@
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="199">
                                         <Label
-                                            FontSize="15"
+                                            FontSize="13"
                                             Style="{StaticResource ValueStyle}"
                                             Text="{Binding Data.Description}" />
                                     </Frame>
