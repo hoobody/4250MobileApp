@@ -84,13 +84,14 @@
                                                          HorizontalOptions="Start"
                                                          Spacing="10">
 
-                                                <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                        WidthRequest="143"
                                                        Padding="3">
 
                                                     <Label  Text="{Binding Name}" 
                                                             Style="{StaticResource ValueStyle}"
-                                                            FontAttributes="Bold"/>
+                                                            FontAttributes="Bold"
+                                                            FontSize="14"/>
 
                                                 </Frame>
 
@@ -100,19 +101,20 @@
                                                          HorizontalOptions="Start"
                                                          Spacing="3">
 
-                                                <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
+                                                <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                        WidthRequest="143"
                                                        Padding="3">
 
                                                     <Label  Text="{Binding Description}" 
                                                             Style="{StaticResource ValueStyle}"
-                                                            FontAttributes="Italic"/>
+                                                            FontAttributes="Italic"
+                                                            FontSize="12"/>
 
                                                 </Frame>
 
                                             </StackLayout>
 
-                                            <Frame BackgroundColor="{StaticResource BackgroundTextColor}"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                    WidthRequest="142"
                                                    Padding="3">
                                                 
@@ -122,10 +124,11 @@
 
                                                 <Label  Text="Job: " 
                                                         Style="{StaticResource ValueStyle}"
-                                                        FontAttributes="Bold"/>
+                                                        FontAttributes="Bold" FontSize="14"/>
 
                                                 <Label  Text="{Binding MonsterJob}" 
-                                                        Style="{StaticResource LabelStyle}"/>
+                                                        Style="{StaticResource LabelStyle}"
+                                                        FontSize="13"/>
 
                                                 
                                                 
