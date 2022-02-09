@@ -447,6 +447,12 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="MonsterEntryBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="Spacing" Value="5" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="PickerBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
