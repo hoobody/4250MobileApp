@@ -121,11 +121,6 @@
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
-                                            <Label  Text="Desc:" 
-                                                    TextColor="Black"
-                                                Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
-
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                 WidthRequest="195"
                                                 Padding="3"
