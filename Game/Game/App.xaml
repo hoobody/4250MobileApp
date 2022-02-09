@@ -42,9 +42,10 @@
             <Color x:Key="Manilla">#FFF5DEB3</Color>
             <Color x:Key="Paper">#c4c4c4</Color>
 			<Color x:Key="Error">Red</Color>
-			
-			
-			<Color x:Key="PrimaryTextColor">#0f3852</Color>
+            <Color x:Key="Frame">White  </Color>
+            <Color x:Key="FrameInside">Black  </Color>
+
+            <Color x:Key="PrimaryTextColor">#0f3852</Color>
             <Color x:Key="SecondaryTextColor">#0f3852</Color>
             <Color x:Key="TriciaryTextColor"> #dd7539</Color>
 
