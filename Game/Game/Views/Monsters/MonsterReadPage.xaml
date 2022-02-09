@@ -1,194 +1,223 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             xmlns:local="using:Game.Models"
-             xmlns:local_helpers="clr-namespace:Game.Helpers"
-             xmlns:local_enum="clr-namespace:Game.Models"
-             x:Class="Game.Views.MonsterReadPage"
-             Title="{Binding Title}">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Game.Views.MonsterReadPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="using:Game.Models"
+    xmlns:local_enum="clr-namespace:Game.Models"
+    xmlns:local_helpers="clr-namespace:Game.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+        <ToolbarItem
+            Clicked="Update_Clicked"
+            IconImageSource="icon_edit.png"
+            Text="Update" />
+        <ToolbarItem
+            Clicked="Delete_Clicked"
+            IconImageSource="icon_delete.png"
+            Text="Delete" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:StringEnumConverter x:Key="StringEnum" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-            <StackLayout Style="{StaticResource VerticalStack}"
-                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                    AbsoluteLayout.LayoutFlags="All"
-                    HorizontalOptions="Center">
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalOptions="Center"
+                Style="{StaticResource VerticalStack}">
 
                 <ScrollView>
 
-                    <StackLayout Style="{StaticResource VerticalStack}"
-                                 Spacing="10">
+                    <StackLayout Spacing="10" Style="{StaticResource VerticalStack}">
 
-                        <Label  Text="Read Page" Style="{StaticResource HeaderStyle}"
-                                HorizontalOptions="Center"/>
+                        <Label
+                            HorizontalOptions="Center"
+                            Style="{StaticResource HeaderStyle}"
+                            Text="Read Page" />
 
-                        <!-- Used to place an image on top of a stacklayout-->
+                        <!--  Used to place an image on top of a stacklayout  -->
                         <Grid>
 
-                            <Frame BackgroundColor="{StaticResource Manilla}"
-                                    Padding="10,10,10,10">
+                            <Frame Padding="10,10,10,10" BackgroundColor="{StaticResource Manilla}">
 
-                                <StackLayout    Style="{StaticResource HorizontalStack}"
-                                                BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="500"
-                                                HorizontalOptions="Center">
+                                <StackLayout
+                                    BackgroundColor="{StaticResource Paper}"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource HorizontalStack}"
+                                    WidthRequest="500">
 
 
-                                    <StackLayout Style="{StaticResource VerticalStack}"
-                                                    HorizontalOptions="Center"
-                                                    VerticalOptions="Center"
-                                                    Padding="20,20,20,20"
-                                                    Spacing="15">
+                                    <StackLayout
+                                        Padding="20,20,20,20"
+                                        HorizontalOptions="Center"
+                                        Spacing="15"
+                                        Style="{StaticResource VerticalStack}"
+                                        VerticalOptions="Center">
 
-                                        <Frame  BorderColor="{StaticResource BorderColor}"
+                                        <Frame
+                                            Padding="10,10,10,50"
                                             BackgroundColor="{StaticResource Frame}"
-                                            Padding="10,10,10,50">
+                                            BorderColor="{StaticResource BorderColor}">
 
-                                            <Frame  BackgroundColor="{StaticResource FrameInside}"
+                                            <Frame
                                                 Padding="10,10,10,10"
+                                                BackgroundColor="{StaticResource FrameInside}"
                                                 CornerRadius="0">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
 
                                             </Frame>
 
                                         </Frame>
 
-                                        <Frame BorderColor ="{StaticResource BorderColor}"
-											   WidthRequest ="150"
-											   HeightRequest ="40">
+                                        <Frame
+                                            BorderColor="{StaticResource BorderColor}"
+                                            HeightRequest="40"
+                                            WidthRequest="150">
 
-                                            <Label Text="{Binding Data.Name}"
-                                                    x:Name="NameLabel"
-                                                    Style="{StaticResource LabelStyle}"
-                                                    HorizontalOptions="Center"/>
+                                            <Label
+                                                x:Name="NameLabel"
+                                                HorizontalOptions="Center"
+                                                Style="{StaticResource LabelStyle}"
+                                                Text="{Binding Data.Name}" />
 
                                         </Frame>
                                     </StackLayout>
 
 
-                                    <StackLayout Style="{StaticResource VerticalStack}"
-                                                 Padding="5,5,5,5"
-                                                 Spacing="10">
-                                    
-                                        <Image  Source="danger_stamp_small.png"
-                                                ScaleY="1.5"
-                                                ScaleX="1.5"
-                                                HorizontalOptions="CenterAndExpand"
-                                                Margin="0,0,0,20"/>
-                                    
-                                        <StackLayout Style="{StaticResource HorizontalStack}"
-                                                         HorizontalOptions="Start"
-                                                         Spacing="5">
+                                    <StackLayout
+                                        Padding="5,5,5,5"
+                                        Spacing="10"
+                                        Style="{StaticResource VerticalStack}">
 
-                                            <Label  Text="Difficulty:" 
-                                                    TextColor="{StaticResource BlackTextColor}"
-                                                    Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                        <Image
+                                            Margin="0,0,0,20"
+                                            HorizontalOptions="CenterAndExpand"
+                                            ScaleX="1.5"
+                                            ScaleY="1.5"
+                                            Source="danger_stamp_small.png" />
 
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="130"
-                                                    Padding="3">
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Spacing="5"
+                                            Style="{StaticResource HorizontalStack}">
 
-                                                <Label  Text="{Binding Data.Difficulty}"
-                                                        Style="{StaticResource LabelStyle}"
-                                                        FontSize="14"/>
+                                            <Label
+                                                FontSize="14"
+                                                Style="{StaticResource LabelStyle}"
+                                                Text="Difficulty:"
+                                                TextColor="{StaticResource BlackTextColor}" />
 
-                                            </Frame>
-
-                                        </StackLayout>
-
-                                        <StackLayout    Style="{StaticResource HorizontalStack}"
-                                                        HorizontalOptions="Start"
-                                                        Spacing="5">
-
-                                            <Label  Text="Desc:" 
-                                                    TextColor="{StaticResource BlackTextColor}"
-                                                    Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
-
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="190"
-                                                    Padding="3">
-
-                                                <Label  Text="{Binding Data.Description}"
-                                                        x:Name="DescriptionEntry"
-                                                        d:Text="Description"
-                                                        Style="{StaticResource LabelStyle}"
-                                                        FontSize="13"/>
-
-                                            </Frame>
-
-                                        </StackLayout>
-
-                                        <StackLayout    Style="{StaticResource HorizontalStack}"
-                                                        HorizontalOptions="Start"
-                                                        Spacing="3">
-
-                                            <Label  Text="Job:" 
-                                                    TextColor="{StaticResource BlackTextColor}"
-                                                    Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
-
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="200"
-                                                    Padding="3"
-                                                    x:Name="JobFrame">
+                                            <Frame
+                                                Padding="3"
+                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="130">
 
                                                 <Label
-                                                    Text="{Binding Data.MonsterJob}" 
+                                                    FontSize="14"
                                                     Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                                    Text="{Binding Data.Difficulty}" />
+
+                                            </Frame>
+
+                                        </StackLayout>
+
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Spacing="5"
+                                            Style="{StaticResource HorizontalStack}">
+
+                                            <Label
+                                                FontSize="14"
+                                                Style="{StaticResource LabelStyle}"
+                                                Text="Desc:"
+                                                TextColor="{StaticResource BlackTextColor}" />
+
+                                            <Frame
+                                                Padding="3"
+                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="190">
+
+                                                <Label
+                                                    x:Name="DescriptionEntry"
+                                                    d:Text="Description"
+                                                    FontSize="13"
+                                                    Style="{StaticResource LabelStyle}"
+                                                    Text="{Binding Data.Description}" />
+
+                                            </Frame>
+
+                                        </StackLayout>
+
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Spacing="3"
+                                            Style="{StaticResource HorizontalStack}">
+
+                                            <Label
+                                                FontSize="14"
+                                                Style="{StaticResource LabelStyle}"
+                                                Text="Job:"
+                                                TextColor="{StaticResource BlackTextColor}" />
+
+                                            <Frame
+                                                x:Name="JobFrame"
+                                                Padding="3"
+                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="200">
+
+                                                <Label
+                                                    FontSize="14"
+                                                    Style="{StaticResource LabelStyle}"
+                                                    Text="{Binding Data.MonsterJob}" />
 
                                             </Frame>
                                         </StackLayout>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="-25"
-                                               Margin="10,5,140,0">
+                                        <Frame
+                                            Margin="10,5,140,0"
+                                            Rotation="-25"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Label Text="" />
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="10"
-                                               Margin="10,-60,40,0">
+                                        <Frame
+                                            Margin="10,-60,40,0"
+                                            Rotation="10"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Label Text="" />
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="-15"
-                                               Margin="-20,-80,-95,0">
+                                        <Frame
+                                            Margin="-20,-80,-95,0"
+                                            Rotation="-15"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Label Text="" />
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                               Rotation="5"
-                                               Margin="10,-60,-165,0">
+                                        <Frame
+                                            Margin="10,-60,-165,0"
+                                            Rotation="5"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Label Text="" />
                                             </Frame>
                                         </Frame>
 
@@ -196,8 +225,7 @@
 
                                 </StackLayout>
                             </Frame>
-                            <StackLayout HorizontalOptions="Center"
-                                         Margin="0,-12,-375,0">
+                            <StackLayout Margin="0,-12,-375,0" HorizontalOptions="Center">
 
                                 <Image Source="paperclip_small.png" />
 
@@ -205,154 +233,158 @@
 
                         </Grid>
 
-                        <Grid ColumnSpacing="10"
-                              HorizontalOptions="Center">
+                        <Grid ColumnSpacing="10" HorizontalOptions="Center">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
-                                <ColumnDefinition Width="250"/>
-                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="250" />
+                                <ColumnDefinition Width="50" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
 
-                            <Label  Grid.Column="0" Grid.Row="0" 
-                                    Text="Attack"
-                                    Style="{StaticResource LabelStyle}"/>
+                            <Label
+                                Grid.Row="0" Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Attack" />
 
-                            <Slider Grid.Column="1" Grid.Row="0" 
-                                    x:Name="AttackSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Transparent"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
-                                    Value="{Binding Data.Attack}"
-                                    InputTransparent="True"/>
+                            <Slider
+                                x:Name="AttackSlider"
+                                Grid.Row="0" Grid.Column="1"
+                                Maximum="10"
+                                Style="{StaticResource ViewOnlySlider}"
+                                Value="{Binding Data.Attack}" />
 
-                            <Frame  Grid.Column="2" Grid.Row="0"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    WidthRequest="50"
-                                    HeightRequest="30">
+                            <Frame
+                                Grid.Row="0" Grid.Column="2"
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                HeightRequest="30"
+                                WidthRequest="50">
 
-                                <Label  Text="{Binding Data.Attack}"
-                                        x:Name="AttackLabel"
-                                        Style="{StaticResource LabelStyle}"
-                                        HorizontalOptions="Center"/>
+                                <Label
+                                    x:Name="AttackLabel"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding Data.Attack}" />
                             </Frame>
 
-                            <Label  Grid.Column="0" Grid.Row="1"
-                                    Text="Defense"
-                                    Style="{StaticResource LabelStyle}"/>
+                            <Label
+                                Grid.Row="1" Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Defense" />
 
-                            <Slider Grid.Column="1" Grid.Row="1"
-                                    x:Name="DefenseSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Transparent"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
-                                    Value="{Binding Data.Defense}"
-                                    InputTransparent="True"/>
+                            <Slider
+                                x:Name="DefenseSlider"
+                                Grid.Row="1" Grid.Column="1"
+                                Style="{StaticResource ViewOnlySlider}"
+                                Maximum="10"                               
+                                Value="{Binding Data.Defense}" />
 
-                            <Frame  Grid.Column="2" Grid.Row="1"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    WidthRequest="50"
-                                    HeightRequest="30">
+                            <Frame
+                                Grid.Row="1" Grid.Column="2"
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                HeightRequest="30"
+                                WidthRequest="50">
 
-                                <Label  Text="{Binding Data.Defense}"
-                                        x:Name="DefenseLabel"
-                                        Style="{StaticResource LabelStyle}"
-                                        HorizontalOptions="Center"/>
+                                <Label
+                                    x:Name="DefenseLabel"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding Data.Defense}" />
 
                             </Frame>
 
-                            <Label  Grid.Column="0" Grid.Row="2"
-                                    Text="Speed"
-                                    Style="{StaticResource LabelStyle}"/>
+                            <Label
+                                Grid.Row="2" Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Speed" />
 
-                            <Slider Grid.Column="1" Grid.Row="2"
-                                    x:Name="SpeedSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Transparent"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
-                                    Value="{Binding Data.Speed}"
-                                    InputTransparent="True"/>
+                            <Slider
+                                x:Name="SpeedSlider"
+                                Grid.Row="2" Grid.Column="1"
+                                Maximum="10"
+                                Style="{StaticResource ViewOnlySlider}"
+                                Value="{Binding Data.Speed}" />
 
-                            <Frame  Grid.Column="2" Grid.Row="2"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    WidthRequest="50"
-                                    HeightRequest="30">
+                            <Frame
+                                Grid.Row="2" Grid.Column="2"
+                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                HeightRequest="30"
+                                WidthRequest="50">
 
-                                <Label  Text="{Binding Data.Speed}"
-                                        x:Name="SpeedLabel"
-                                        Style="{StaticResource LabelStyle}"
-                                        HorizontalOptions="Center"/>
+                                <Label
+                                    x:Name="SpeedLabel"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="{Binding Data.Speed}" />
 
                             </Frame>
 
                         </Grid>
 
-                        <Frame Background="{StaticResource PrimaryBackgroundColor}"
-                               WidthRequest="500"
-                               HeightRequest="40">
+                        <Frame
+                            Background="{StaticResource PrimaryBackgroundColor}"
+                            HeightRequest="40"
+                            WidthRequest="500">
 
-                            <Label Text="Items equipped"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   FontSize="20"
-                                   Style="{StaticResource LabelStyle}"/>
+                            <Label
+                                FontSize="20"
+                                HorizontalOptions="Center"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Items equipped"
+                                VerticalOptions="Center" />
 
                         </Frame>
-                        
-                        <FlexLayout 
-                                Margin="5"
-                                Wrap="Wrap"
-                                JustifyContent="Center"
-                                AlignContent="SpaceEvenly"
-                                x:Name="ItemBox">
-                        </FlexLayout>
-                        
+
+                        <FlexLayout
+                            x:Name="ItemBox"
+                            Margin="5"
+                            AlignContent="SpaceEvenly"
+                            JustifyContent="Center"
+                            Wrap="Wrap" />
+
                     </StackLayout>
 
                 </ScrollView>
 
             </StackLayout>
-            <!--The Item Popup-->
-            <StackLayout x:Name="PopupLoadingView" 
-                 BackgroundColor="{StaticResource PageBackgroundColor}" 
-                 IsVisible="false" 
-                 AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
-                 AbsoluteLayout.LayoutFlags="All">
+            <!--  The Item Popup  -->
+            <StackLayout
+                x:Name="PopupLoadingView"
+                AbsoluteLayout.LayoutBounds=".5, .5,.5,.5"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="{StaticResource PageBackgroundColor}"
+                IsVisible="false">
 
-                <StackLayout 
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                WidthRequest="300"
-                HeightRequest="300"
-                >
+                <StackLayout
+                    HeightRequest="300"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="300">
 
-                    <Frame 
-                    BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
-                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
-                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}"/>
+                    <Frame Padding="1" BorderColor="{StaticResource TriciaryTextColor}">
+                        <StackLayout
+                            Padding="2"
+                            HorizontalOptions="CenterAndExpand"
+                            Style="{StaticResource VerticalStack}">
+                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}" />
 
-                            <Label x:Name="PopupItemName" Style="{StaticResource PopupItemTextStyle} " MaxLines="2" LineBreakMode="WordWrap" />
-                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                            <Label
+                                x:Name="PopupItemName"
+                                LineBreakMode="WordWrap"
+                                MaxLines="2"
+                                Style="{StaticResource PopupItemTextStyle}" />
+                            <Label
+                                x:Name="PopupItemDescription"
+                                LineBreakMode="WordWrap"
+                                MaxLines="2"
+                                Style="{StaticResource PopupItemTextStyle}" />
 
                             <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label Text="Location : " Style="{StaticResource LabelStyle}" />
+                                <Label Style="{StaticResource LabelStyle}" Text="Location : " />
                                 <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
@@ -361,16 +393,17 @@
                                 <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
-                            <Button x:Name="PopupCloseButton" 
-                                Clicked="ClosePopup_Clicked" 
-                                Text="Close"/>
+                            <Button
+                                x:Name="PopupCloseButton"
+                                Clicked="ClosePopup_Clicked"
+                                Text="Close" />
                         </StackLayout>
                     </Frame>
-                    
+
                 </StackLayout>
-                
+
             </StackLayout>
-            
+
         </AbsoluteLayout>
 
     </ContentPage.Content>
