@@ -113,8 +113,8 @@ namespace Game.Views
 
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            if (string.IsNullOrEmpty(NameEntry.Text))
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+            
+            NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
             NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
 
             if (string.IsNullOrEmpty(NameEntry.Text))
