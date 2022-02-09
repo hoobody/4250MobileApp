@@ -22,130 +22,186 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}"
+        <AbsoluteLayout
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
         >
 
-            <StackLayout Style="{StaticResource OuterBoxStack}"
+            <StackLayout Style="{StaticResource VerticalStack}"
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
                     AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView>
 
-                    <StackLayout>
+                    <StackLayout Style="{StaticResource VerticalStack}" 
+                                 Spacing="10">
 
-                        <Label  Text="Create Page" 
-                            Style="{StaticResource HeaderStyle}"/>
+                        <Label  Text="Create Page" Style="{StaticResource HeaderStyle}"
+                                HorizontalOptions="Center"/>
 
                         <!-- Used to place an image on top of a stacklayout-->
                         <Grid>
 
-                            <Frame Style="{StaticResource ManillaFolderFrame}">
+                            <Frame BackgroundColor="{StaticResource Manilla}" Padding="10,10,10,10">
 
-                                <StackLayout Style="{StaticResource PaperBox}">
+                                <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                BackgroundColor="{StaticResource Paper}"
+                                                WidthRequest="500"
+                                                HorizontalOptions="Center">
 
-                                    <StackLayout Style="{StaticResource MonsterCardLeftBox}">
 
-                                        <Frame  Style="{StaticResource PoloroidOuterFrame}" >
-                                            <Frame  Style="{StaticResource PoloroidInnerFrame}" >
-                                                <Image Source="item.png"
-                                                       Style="{StaticResource ImageLargeStyle}"/>
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    Padding="20,20,20,20"
+                                                    Spacing="15">
+
+                                        <Frame  BorderColor="{StaticResource BorderColor}"
+                                            BackgroundColor="{StaticResource Frame}"
+                                            Padding="10,10,10,50">
+
+                                            <Frame  BackgroundColor="{StaticResource FrameInside}"
+                                                Padding="10,10,10,10"
+                                                CornerRadius="0">
+
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
                                             </Frame>
+
                                         </Frame>
 
-                                        <Frame Style="{StaticResource EntryFrame}">
+                                        <Frame BorderColor ="{StaticResource BorderColor}"
+											   WidthRequest ="150"
+											   HeightRequest ="40">
+
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
                                                     x:Name="NameEntry"
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
-                                                    MaxLength="15"
+                                                    MaxLength="12"
+                                                    WidthRequest="140"
+                                                    HorizontalOptions="Center"
                                                     TextChanged="Name_onTextChange"/>
+
                                         </Frame>
                                     </StackLayout>
 
-                                    <StackLayout Style="{StaticResource MonsterCardRightBox}">
+                                    <StackLayout Style="{StaticResource VerticalStack}"
+                                             Padding="5,5,5,5" Spacing="10">
 
                                         <Image  x:Name="StampImage" 
                                                 Style="{StaticResource ImageSmallStyle}"/>
 
-                                        <StackLayout Style="{StaticResource MonsterEntryBox}">
+                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                                    HorizontalOptions="Start"
+                                                    Spacing="7">
 
-                                            <Label  Text="Difficulty:" 
-                                                Style="{StaticResource LabelStyle}"/>
+                                            <Label  Text="Difficulty:"
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
-                                            <Frame  Style="{StaticResource EntryFrame}"
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="130"
+                                                Padding="3"
                                                 x:Name="NameFrame">
+
                                                 <Picker x:Name="DifficultyPicker"
-                                                ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
-                                                SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                Style="{StaticResource PickerStyle}"/>
+                                                        ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
+                                                        SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                                        Style="{StaticResource PickerStyle}"
+                                                        FontSize="14"/>
+
                                             </Frame>
 
                                         </StackLayout>
 
-                                        <StackLayout Style="{StaticResource MonsterEntryBox}">
+                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                    HorizontalOptions="Start"
+                                                    Spacing="3">
 
-                                            <Label  Text="Description:" 
-                                                Style="{StaticResource LabelStyle}"/>
+                                            <Label  Text="Desc:" 
+                                                    TextColor="Black"
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
-                                            <Frame Style="{StaticResource EntryFrame}"
+                                            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="195"
+                                                Padding="3"
                                                 x:Name="DescriptionFrame">
+
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}"
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Description"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="15"
-                                                    TextChanged="DescriptionEntry_TextChanged"/>
+                                                    TextChanged="DescriptionEntry_TextChanged"
+                                                    FontSize="13"/>
+
                                             </Frame>
 
                                         </StackLayout>
 
-                                        <StackLayout    Style="{StaticResource MonsterEntryBox}">
+                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                                    HorizontalOptions="Start"
+                                                    Spacing="3">
 
                                             <Label  Text="Job:" 
-                                                Style="{StaticResource LabelStyle}"/>
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
-                                            <Frame Style="{StaticResource PickerFrame}"
+                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                                WidthRequest="205"
+                                                Padding="3"
                                                 x:Name="JobFrame">
+
                                                 <Picker x:Name="JobPicker"
                                                 ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
                                                 SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"
-                                                SelectedIndexChanged="JobPicker_SelectedIndexChanged"/>
+                                                        FontSize="13"/>
+
                                             </Frame>
 
                                         </StackLayout>
-                                        
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                                Rotation="-25"
-                                                Margin="-20,20,120,0">
+
+                                        <Frame
+                                            Margin="10,20,140,0"
+                                            Rotation="-25"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="map.jpg"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                                Rotation="10"
-                                                Margin="-15,-60,30,0">
+                                        <Frame
+                                            Margin="10,-60,40,0"
+                                            Rotation="10"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="{Binding Data.ImageURI}"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                                Rotation="-15"
-                                                Margin="-40,-65,-95,0">
+                                        <Frame
+                                            Margin="-20,-80,-95,0"
+                                            Rotation="-15"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="crime_scene.jpg"/>
                                             </Frame>
                                         </Frame>
 
-                                        <Frame Style="{StaticResource PhotoBack}"
-                                                Rotation="5"
-                                                Margin="-10,-50,-165,0">
+                                        <Frame
+                                            Margin="10,-60,-165,0"
+                                            Rotation="5"
+                                            Style="{StaticResource PhotoBack}">
                                             <Frame Style="{StaticResource PhotoFront}">
-                                                <Label Text=""/>
+                                                <Image Source="village.png"/>
                                             </Frame>
                                         </Frame>
+
                                     </StackLayout>
 
                                 </StackLayout>
@@ -165,7 +221,7 @@
                               HorizontalOptions="Center">
 
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="80"/>
                                 <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="50"/>
                             </Grid.ColumnDefinitions>
@@ -179,15 +235,10 @@
                                     Text="Attack"
                                     Style="{StaticResource LabelStyle}"/>
 
-                            <Slider Grid.Column="1" Grid.Row="0" 
+                            <Slider Grid.Column="1" Grid.Row="0"                                     
+                                    Maximum="10"                 
                                     x:Name="AttackSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
-                                    Maximum="10" 
-                                    Minimum="0"
+                                    Style="{StaticResource SliderStyle}"
                                     Value="{Binding Data.Attack, Mode=TwoWay}"
                                     ValueChanged="AttackSlider_ValueChanged"/>
 
@@ -208,14 +259,9 @@
                                     Style="{StaticResource LabelStyle}"/>
 
                             <Slider Grid.Column="1" Grid.Row="1"
+                                    Style="{StaticResource SliderStyle}"
                                     x:Name="DefenseSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
                                     Maximum="10" 
-                                    Minimum="0"
                                     Value="{Binding Data.Defense, Mode=TwoWay}"
                                     ValueChanged="DefenseSlider_ValueChanged"/>
 
@@ -237,13 +283,8 @@
 
                             <Slider Grid.Column="1" Grid.Row="2"
                                     x:Name="SpeedSlider" 
-                                    WidthRequest="250" 
-                                    HeightRequest="36"  
-                                    ThumbColor="Black"
-                                    MinimumTrackColor="{StaticResource PrimaryBackgroundColor}"
-                                    MaximumTrackColor="DimGray"
+                                    Style="{StaticResource SliderStyle}"
                                     Maximum="10" 
-                                    Minimum="0"
                                     Value="{Binding Data.Speed, Mode=TwoWay}"
                                     ValueChanged="SpeedSlider_ValueChanged"/>
 
