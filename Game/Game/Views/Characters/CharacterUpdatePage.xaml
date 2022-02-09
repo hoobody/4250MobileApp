@@ -170,7 +170,7 @@
                                             <Label Style="{StaticResource LabelStyle}" Text="Desc: " FontSize="14" />
 
                                             <Frame
-                                                x:Name="DescFrame"
+                                                x:Name="DescriptionFrame"
                                                 Padding="3"
                                                 WidthRequest="180">
 
