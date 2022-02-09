@@ -121,7 +121,7 @@
                                                     Spacing="3">
 
                                             <Label  Text="Desc:" 
-                                                    TextColor="Black"
+                                                    TextColor="{StaticResource BlackTextColor}"
                                                 Style="{StaticResource LabelStyle}"
                                                     FontSize="14"/>
 
