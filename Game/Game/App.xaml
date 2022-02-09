@@ -258,8 +258,8 @@
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="GameLogoStyle">
-                <Setter Property="HeightRequest" Value="500" />
-                <Setter Property="WidthRequest" Value="500" />
+                <Setter Property="HeightRequest" Value="300" />
+                <Setter Property="WidthRequest" Value="400" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
