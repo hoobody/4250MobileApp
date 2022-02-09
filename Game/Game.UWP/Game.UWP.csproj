@@ -155,6 +155,7 @@
     <Content Include="elf7.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="stealth-suit.png" />
     <Content Include="item_small.png" />
     <Content Include="lazer-ring.png" />
     <Content Include="mainmenu.png" />
