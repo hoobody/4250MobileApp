@@ -161,22 +161,18 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
                 NameFrame.BorderColor = Color.Red;
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
                 NameFrame.BorderColor = Color.Red;
             }
             if (!string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
                 NameFrame.BorderColor = Color.FromHex("#696969");
             }
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
                 NameFrame.BorderColor = Color.FromHex("#696969");
             }
         }
@@ -191,22 +187,18 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
                 DescriptionFrame.BorderColor = Color.Red;
             }
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
                 DescriptionFrame.BorderColor = Color.Red;
             }
             if (!string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 DescriptionFrame.BorderColor = Color.FromHex("#696969");
             }
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
                 DescriptionFrame.BorderColor = Color.FromHex("#696969");
             }
         }
