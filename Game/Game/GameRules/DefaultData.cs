@@ -26,9 +26,9 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Silenced Pistol",
-                    Description = "You can never be too quiet",
-                    ImageURI = "silenced_pistol.png",
+                    Name = "Stinky Cheese Gun",
+                    Description = "The smell alone can kill",
+                    ImageURI = "stinky-gun.png",
                     Range = 5,
                     Damage = 3,
                     Value = 3,
