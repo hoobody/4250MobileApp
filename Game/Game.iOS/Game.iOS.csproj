@@ -340,4 +340,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\danger_stamp_medium.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sniper-item.png" />
+  </ItemGroup>
 </Project>

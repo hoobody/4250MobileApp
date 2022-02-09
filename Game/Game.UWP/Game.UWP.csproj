@@ -181,6 +181,7 @@
     <Content Include="shield2.png" />
     <Content Include="shield3.png" />
     <Content Include="shield4.png" />
+    <Content Include="sniper-item.png" />
     <Content Include="sniper.png" />
     <Content Include="sword1.png" />
     <Content Include="sword10.png" />
