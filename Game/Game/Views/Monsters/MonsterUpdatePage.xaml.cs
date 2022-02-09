@@ -160,23 +160,23 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
-                NameFrame.BorderColor = Color.Red;
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("848884");
-                NameFrame.BorderColor = Color.Red;
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (!string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
-                NameFrame.BorderColor = Color.FromHex("#696969");
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = Color.FromHex("36454F");
-                NameFrame.BorderColor = Color.FromHex("#696969");
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
 
@@ -189,23 +189,23 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                DescriptionFrame.BorderColor = Color.Red;
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("848884");
-                DescriptionFrame.BorderColor = Color.Red;
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
             if (!string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                DescriptionFrame.BorderColor = Color.FromHex("#696969");
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = Color.FromHex("36454F");
-                DescriptionFrame.BorderColor = Color.FromHex("#696969");
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
 
