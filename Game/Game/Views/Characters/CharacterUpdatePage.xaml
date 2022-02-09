@@ -1,212 +1,197 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             xmlns:local="using:Game.Models"
-             xmlns:local_helpers="clr-namespace:Game.Helpers"
-             xmlns:local_enum="clr-namespace:Game.Models"
-             x:Class="Game.Views.CharacterUpdatePage"
-             Title="{Binding Title}">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Game.Views.CharacterUpdatePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="using:Game.Models"
+    xmlns:local_enum="clr-namespace:Game.Models"
+    xmlns:local_helpers="clr-namespace:Game.Helpers"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
+        <ToolbarItem
+            Clicked="Cancel_Clicked"
+            IconImageSource="icon_cancel.png"
+            Text="Cancel" />
+        <ToolbarItem
+            Clicked="Save_Clicked"
+            IconImageSource="icon_save.png"
+            Text="Save" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+            <local_helpers:StringEnumConverter x:Key="StringEnum" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <AbsoluteLayout  Style="{StaticResource AbsoluteStyle}">
 
             <StackLayout
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 HorizontalOptions="CenterAndExpand"
                 Style="{StaticResource VerticalStack}"
-                WidthRequest="475">
+                WidthRequest="400">
 
                 <ScrollView x:Name="ScrollView">
 
-                    <StackLayout Spacing="5" Style="{StaticResource VerticalStack}">
+                    <StackLayout Spacing="10" Style="{StaticResource VerticalStack}">
 
-                        <Label
-                            HorizontalOptions="Center"
-                            Style="{StaticResource HeaderStyle}"
-                            Text="Update Page" />
+                        <Label Style="{StaticResource HeaderStyle}" Text="Update Page" />
 
                         <Frame
-                            Margin="5,5,5,5"
                             BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                             BorderColor="{StaticResource BorderColor}"
-                            HeightRequest="250"
-                            WidthRequest="450">
+                            HeightRequest="230"
+                            WidthRequest="400">
 
                             <StackLayout
                                 HorizontalOptions="Center"
-                                Style="{StaticResource VerticalStack}"
+                                Spacing="5"
+                                Style="{StaticResource HorizontalStack}"
                                 VerticalOptions="Center"
-                                WidthRequest="400"
-                                Spacing="5">
+                                WidthRequest="400">
 
                                 <StackLayout
-                                    HorizontalOptions="Start"
-                                    Spacing="50"
-                                    Style="{StaticResource HorizontalStack}">
+                                    Margin="0,30,0,0"
+                                    Spacing="5"
+                                    Style="{StaticResource VerticalStack}"
+                                    WidthRequest="150">
 
-                                    <StackLayout Style="{StaticResource HorizontalStack}">
+                                    <Frame x:Name="NameFrame">
+                                        <Entry
+                                            x:Name="NameEntry"
+                                            d:Text="Name"
+                                            FontSize="15"
+                                            MaxLength="9"
+                                            Style="{StaticResource EntryStyle}"
+                                            Text="{Binding Data.Name, Mode=TwoWay}"
+                                            TextChanged="Name_onTextChange"
+                                            WidthRequest="100" />
+                                    </Frame>
 
-                                        <Frame x:Name="NameFrame">
-                                            <Entry
-                                                x:Name="NameEntry"
-                                                d:Text="Name"
-                                                FontSize="15"
-                                                MaxLength="9"
-                                                Style="{StaticResource EntryStyle}"
-                                                Text="{Binding Data.Name, Mode=TwoWay}"
-                                                TextChanged="Name_onTextChange"
-                                                WidthRequest="105" />
-                                        </Frame>
-                                    </StackLayout>
+                                    <Frame
+                                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                        BorderColor="{StaticResource BorderColor}"
+                                        HeightRequest="100"
+                                        WidthRequest="100">
+                                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}" />
+                                    </Frame>
 
-                                    <Label
-                                        Margin="45,10,0,0"
-                                        HorizontalOptions="Center"
-                                        Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                        VerticalOptions="Start" />
+                                    <ImageButton
+                                        x:Name="RollDice"
+                                        Clicked="RollDice_Clicked"
+                                        Source="d10_50x50.png"
+                                        Style="{StaticResource ImageSmallStyle}" />
+
                                 </StackLayout>
 
                                 <StackLayout
                                     Spacing="5"
-                                    Style="{StaticResource HorizontalStack}"
+                                    Style="{StaticResource VerticalStack}"
                                     VerticalOptions="Center"
-                                    WidthRequest="400">
-
+                                    WidthRequest="250">
                                     <StackLayout
-                                        Spacing="10"
+                                        HeightRequest="25"
                                         Style="{StaticResource VerticalStack}"
-                                        VerticalOptions="CenterAndExpand">
-
-                                        <Frame
-                                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                            BorderColor="{StaticResource BorderColor}"
-                                            MinimumHeightRequest="125"
-                                            MinimumWidthRequest="125"
-                                            VerticalOptions="Center">
-
-                                            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
-                                        </Frame>
-
-                                        <ImageButton
-                                            x:Name="RollDice"
-                                            Clicked="RollDice_Clicked"
-                                            Source="d10_50x50.png"
-                                            Style="{StaticResource ImageSmallStyle}" />
+                                        VerticalOptions="Center"
+                                        WidthRequest="215">
+                                        <Label
+                                            Margin="-10,0,0,0"
+                                            HorizontalOptions="Center"
+                                            Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
+                                            VerticalOptions="Start" />
                                     </StackLayout>
 
                                     <StackLayout
-                                        HorizontalOptions="End"
-                                        Spacing="5"
-                                        Style="{StaticResource VerticalStack}"
-                                        VerticalOptions="Center"
-                                        WidthRequest="250">
+                                        HorizontalOptions="Start"
+                                        Spacing="3"
+                                        Style="{StaticResource HorizontalStack}">
+
+                                        <Label Style="{StaticResource LabelStyle}" Text="Job:" />
+                                        <Frame
+                                            Padding="3"
+                                            BackgroundColor="{StaticResource EntryColor}"
+                                            WidthRequest="130">
+
+                                            <Picker
+                                                x:Name="JobPicker"
+                                                FontSize="13"
+                                                ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}"
+                                                SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
+                                        </Frame>
+
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="3"
+                                        Style="{StaticResource HorizontalStack}">
+
+                                        <Frame
+                                            x:Name="CodenameFrame"
+                                            Padding="3"
+                                            WidthRequest="180">
+
+                                            <Entry
+                                                x:Name="CodenameEntry"
+                                                d:Text="Codename"
+                                                FontSize="13"
+                                                MaxLength="16"
+                                                Style="{StaticResource EntryStyle}"
+                                                Text="{Binding Data.CodeName, Mode=TwoWay}"
+                                                TextChanged="Codename_onTextChange" />
+                                        </Frame>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="3"
+                                        Style="{StaticResource HorizontalStack}">
+                                        <Frame
+                                            x:Name="DescriptionFrame"
+                                            Padding="3"
+                                            WidthRequest="180">
+
+                                            <Entry
+                                                x:Name="DescriptionEntry"
+                                                d:Text="Desc: "
+                                                FontSize="13"
+                                                MaxLength="19"
+                                                Style="{StaticResource EntryStyle}"
+                                                Text="{Binding Data.Description, Mode=TwoWay}"
+                                                TextChanged="Description_onTextChange" />
+                                        </Frame>
+                                    </StackLayout>
+
+                                    <StackLayout
+                                        HorizontalOptions="Start"
+                                        Spacing="7"
+                                        Style="{StaticResource HorizontalStack}">
+
+                                        <Label Style="{StaticResource Barcode}" Text="║║█║▌█║█║▌│║▌" />
 
                                         <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="3"
+                                            Margin="0,10,0,0"
+                                            HorizontalOptions="End"
                                             Style="{StaticResource HorizontalStack}">
 
-                                            <Label Style="{StaticResource LabelStyle}" Text="Job:" />
+                                            <Label Style="{StaticResource LabelStyle}" Text="LVL: " />
 
-                                            <Frame
-                                                Padding="3"
-                                                BackgroundColor="{StaticResource EntryColor}"
-                                                WidthRequest="200">
+                                            <Frame Padding="3" BackgroundColor="{StaticResource EntryColor}">
 
                                                 <Picker
-                                                    x:Name="JobPicker"
-                                                    FontSize="15"
-                                                    ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}"
-                                                    SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
-                                            </Frame>
-                                        </StackLayout>
-
-                                        <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="3"
-                                            Style="{StaticResource HorizontalStack}">
-
-                                            <Label
-                                                FontSize="14"
-                                                Style="{StaticResource LabelStyle}"
-                                                Text="CodeName:" />
-
-                                            <Frame
-                                                x:Name="CodenameFrame"
-                                                Padding="3"
-                                                WidthRequest="150">
-
-                                                <Entry
-                                                    x:Name="CodenameEntry"
-                                                    d:Text="Codename"
+                                                    x:Name="LevelPicker"
                                                     FontSize="14"
-                                                    MaxLength="16"
-                                                    Style="{StaticResource EntryStyle}"
-                                                    Text="{Binding Data.CodeName, Mode=TwoWay}"
-                                                    TextChanged="Codename_onTextChange" />
+                                                    MinimumWidthRequest="70"
+                                                    SelectedIndexChanged="Level_Changed"
+                                                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" />
                                             </Frame>
-                                        </StackLayout>
-
-                                        <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="10"
-                                            Style="{StaticResource HorizontalStack}">
-
-                                            <Label Style="{StaticResource LabelStyle}" Text="Desc: " FontSize="14" />
-
-                                            <Frame
-                                                x:Name="DescriptionFrame"
-                                                Padding="3"
-                                                WidthRequest="180">
-
-                                                <Entry
-                                                    x:Name="DescriptionEntry"
-                                                    d:Text="Desc: "
-                                                    FontSize="14"
-                                                    MaxLength="19"
-                                                    Style="{StaticResource EntryStyle}"
-                                                    Text="{Binding Data.Description, Mode=TwoWay}"
-                                                    TextChanged="Description_onTextChange" />
-                                            </Frame>
-                                        </StackLayout>
-
-                                        <StackLayout
-                                            HorizontalOptions="CenterAndExpand"
-                                            Spacing="5"
-                                            Style="{StaticResource HorizontalStack}">
-
-                                            <Label Style="{StaticResource Barcode}" Text="║█║▌║█║▌│║▌│█" />
-
-                                            <StackLayout HorizontalOptions="End" Style="{StaticResource HorizontalStack}" 
-                                                         Margin="0,10,0,0">
-
-                                                <Label Style="{StaticResource LabelStyle}" Text="LVL: " />
-
-                                                <Frame Padding="3" BackgroundColor="{StaticResource EntryColor}">
-
-                                                    <Picker
-                                                        x:Name="LevelPicker"
-                                                        FontSize="14"
-                                                        MinimumWidthRequest="70"
-                                                        SelectedIndexChanged="Level_Changed"
-                                                        SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" />
-                                                </Frame>
-                                            </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
@@ -242,8 +227,8 @@
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     Maximum="100"
-                                    Style="{StaticResource SliderStyle}"
-                                    Value="{Binding Data.MaxHealth, Mode=TwoWay}" />
+                                    Style="{StaticResource ViewOnlySlider}"
+                                    Value="{Binding Data.MaxHealth}" />
 
                                 <Frame
                                     Grid.Row="0"
@@ -367,13 +352,15 @@
 
                         <FlexLayout
                             x:Name="ItemBox"
-                            Padding="5"
-                            AlignContent="SpaceAround"
-                            JustifyContent="SpaceAround"
+                            Margin="20,-50,0,0"
+                            AlignContent="SpaceEvenly"
+                            JustifyContent="SpaceEvenly"
+                            Scale=".75"
                             Wrap="Wrap" />
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
+
 
             <!--  The Item Popup  -->
             <StackLayout
@@ -384,7 +371,7 @@
                 IsVisible="false">
 
                 <StackLayout
-                    HeightRequest="300"
+                    HeightRequest="500"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
                     WidthRequest="300">
