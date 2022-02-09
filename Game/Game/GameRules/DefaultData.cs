@@ -97,8 +97,8 @@ namespace Game.GameRules
 
                 new ItemModel {
                     Name = "Hat",
-                    Description = "This is a fancy hat  ",
-                    ImageURI = "item.png",
+                    Description = "This is a fancy hat",
+                    ImageURI = "fancy-hat.png",
                     Range = 0,
                     Damage = 0,
                     Value = 1,
