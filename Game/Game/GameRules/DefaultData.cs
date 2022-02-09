@@ -115,25 +115,25 @@ namespace Game.GameRules
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Speed},
 
-                new ItemModel {
-                    Name = "Spy watch",
-                    Description = "What the cool spy kids wear these days",
-                    ImageURI = "item.png",
-                    Range = 0,
-                    Damage = 0,
-                    Value = 3,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Speed},
+                //new ItemModel {
+                //    Name = "Spy watch",
+                //    Description = "What the cool spy kids wear these days",
+                //    ImageURI = "item.png",
+                //    Range = 0,
+                //    Damage = 0,
+                //    Value = 3,
+                //    Location = ItemLocationEnum.OffHand,
+                //    Attribute = AttributeEnum.Speed},
 
-                new ItemModel {
-                    Name = "Exploding Pen",
-                    Description = "Click 3 times and then run fast",
-                    ImageURI = "item.png",
-                    Range = 1,
-                    Damage = 2,
-                    Value = 2,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack},
+                //new ItemModel {
+                //    Name = "Exploding Pen",
+                //    Description = "Click 3 times and then run fast",
+                //    ImageURI = "item.png",
+                //    Range = 1,
+                //    Damage = 2,
+                //    Value = 2,
+                //    Location = ItemLocationEnum.OffHand,
+                //    Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
                     Name = "Brass Knuckles",
