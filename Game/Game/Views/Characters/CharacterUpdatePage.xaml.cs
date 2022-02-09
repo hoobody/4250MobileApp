@@ -72,6 +72,8 @@ namespace Game.Views
 
             //Update job picker
             JobPicker.SelectedItem = this.ViewModel.Data.Job.ToString();
+
+            // If unknown
             if (JobPicker.SelectedItem == CharacterJobEnum.Unknown.ToString())
             {
                 JobPicker.SelectedIndex = 0;

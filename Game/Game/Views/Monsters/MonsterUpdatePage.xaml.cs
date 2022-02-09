@@ -66,6 +66,12 @@ namespace Game.Views
             DifficultyPicker.SelectedItem = this.ViewModel.Data.Difficulty.ToString();
             JobPicker.SelectedItem = this.ViewModel.Data.MonsterJob.ToString();
 
+            // If unknown
+            if (JobPicker.SelectedItem == CharacterJobEnum.Unknown.ToString())
+            {
+                JobPicker.SelectedIndex = 0;
+            }
+
             AddItemsToDisplay();
 
             return true;
