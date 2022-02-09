@@ -102,7 +102,8 @@
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                 WidthRequest="180">
-                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding Job}" />
+                                                <Label Style="{StaticResource ValueStyle}" Text="{Binding Job}"
+                                                       FontSize="14"/>
                                             </Frame>
 
                                         </StackLayout>
