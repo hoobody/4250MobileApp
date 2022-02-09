@@ -18,7 +18,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Sniper",
                     Description = "Range is your friend",
-                    ImageURI = "sniper.png",
+                    ImageURI = "sniper-item.png",
                     Range = 10,
                     Damage = 8,
                     Value = 8,
