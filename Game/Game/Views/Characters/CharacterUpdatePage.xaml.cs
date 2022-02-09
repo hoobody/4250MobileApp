@@ -28,12 +28,17 @@ namespace Game.Views
         // Empty Constructor for UTs
         public CharacterUpdatePage(bool UnitTest) { }
 
+        // Copy of character data in case of cancel
+        public CharacterModel CharacterCopy;
+
         /// <summary>
         /// Constructor for Create makes a new model
         /// </summary>
         public CharacterUpdatePage(GenericViewModel<CharacterModel> data)
         {
             InitializeComponent();
+
+            CharacterCopy = new CharacterModel(data.Data);
 
             BindingContext = this.ViewModel = data;
 
@@ -144,6 +149,9 @@ namespace Game.Views
             // Don't want to set the value on update constructor, only after save on the page
             // need to make sure that cancel from a save, actually cancels.
             // Make a copy of the object and work from that and then have that passed in to update
+
+            // Return to original state
+            ViewModel.Data.Update(CharacterCopy);
 
             _ = await Navigation.PopModalAsync();
         }
