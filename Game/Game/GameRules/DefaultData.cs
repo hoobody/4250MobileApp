@@ -48,7 +48,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Lazer Ring",
                     Description = "Excelent distraction tool",
-                    ImageURI = "item.png",
+                    ImageURI = "lazer-ring.png",
                     Range = 1,
                     Damage = 1,
                     Value = 1,
