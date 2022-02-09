@@ -310,7 +310,7 @@
                 <StackLayout    VerticalOptions="CenterAndExpand" 
                                 HorizontalOptions="CenterAndExpand"
                                 WidthRequest="300"
-                                HeightRequest="300">
+                                HeightRequest="500">
 
                     <Frame  BorderColor="{StaticResource TriciaryTextColor}" 
                             Padding="1">
