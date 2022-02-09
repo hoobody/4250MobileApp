@@ -288,7 +288,7 @@
 
                         </Frame>
 
-                        <FlexLayout Padding="5"
+                        <FlexLayout Scale=".75"
                                     Wrap="Wrap"
                                     JustifyContent="Center"
                                     AlignContent="SpaceEvenly"
