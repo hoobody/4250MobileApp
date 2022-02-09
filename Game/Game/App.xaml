@@ -685,7 +685,7 @@
 
             <Style TargetType="Frame"
                 x:Key="PickerFrame"
-                BasedOn="EntryFrame">
+                   BasedOn="{StaticResource EntryFrame}">
                 
             </Style>
 
