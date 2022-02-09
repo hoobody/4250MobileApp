@@ -194,7 +194,7 @@
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Maximum="100"
-                                Style="{StaticResource SliderStyle}"
+                                Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.MaxHealth}" />
 
                             <Frame
@@ -221,7 +221,7 @@
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Maximum="10"
-                                Style="{StaticResource SliderStyle}"
+                                Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Attack}" />
 
                             <Frame
@@ -248,7 +248,7 @@
                                 Grid.Row="2"
                                 Grid.Column="1"
                                 Maximum="10"
-                                Style="{StaticResource SliderStyle}"
+                                Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Defense}" />
 
                             <Frame
@@ -275,7 +275,7 @@
                                 Grid.Row="3"
                                 Grid.Column="1"
                                 Maximum="10"
-                                Style="{StaticResource SliderStyle}"
+                                Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Speed}" />
 
                             <Frame
