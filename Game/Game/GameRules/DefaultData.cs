@@ -138,7 +138,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Brass Knuckles",
                     Description = "Brass. Knuckles.",
-                    ImageURI = "item.png",
+                    ImageURI = "brass-knuckles.png",
                     Range = 1,
                     Damage = 2,
                     Value = 2,
