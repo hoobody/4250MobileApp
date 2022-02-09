@@ -381,14 +381,15 @@
                                 x:Name="PopupItemDescription"
                                 LineBreakMode="WordWrap"
                                 MaxLines="2"
+                                FontAttributes="Italic"
                                 Style="{StaticResource PopupItemTextStyle}" />
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
+                            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                                 <Label Style="{StaticResource LabelStyle}" Text="Location : " />
                                 <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
-                            <StackLayout Style="{StaticResource HorizontalStack}">
+                            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                                 <Label x:Name="PopupItemAttribute" Style="{StaticResource LabelStyle}" />
                                 <Label x:Name="PopupItemValue" Style="{StaticResource ValueStyle}" />
                             </StackLayout>
