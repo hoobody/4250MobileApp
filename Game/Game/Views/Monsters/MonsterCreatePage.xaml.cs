@@ -161,6 +161,9 @@ namespace Game.Views
 
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
+            NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+            NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
@@ -170,16 +173,6 @@ namespace Game.Views
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
-            }
-            if (!string.IsNullOrEmpty(NameEntry.Text))
-            {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                NameFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
-            }
-            if (!string.IsNullOrWhiteSpace(NameEntry.Text))
-            {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                NameFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
         }
 
@@ -191,6 +184,9 @@ namespace Game.Views
         /// <param name="e"></param>
         private void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
+            DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+            DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
@@ -200,16 +196,6 @@ namespace Game.Views
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
-            }
-            if (!string.IsNullOrEmpty(DescriptionEntry.Text))
-            {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                DescriptionFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
-            }
-            if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
-            {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                DescriptionFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
         }
 
