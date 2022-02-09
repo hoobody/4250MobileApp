@@ -67,68 +67,50 @@
                                         <Image  x:Name="StampImage" 
                                                 Style="{StaticResource ImageSmallStyle}"/>
 
-                                        <StackLayout Style="{StaticResource VerticalStack}"
-                                                    HorizontalOptions="Start"
-                                                    Spacing="3">
+                                        <StackLayout Style="{StaticResource MonsterEntryBox}">
 
                                             <Label  Text="Difficulty:" 
                                                 Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  Style="{StaticResource EntryFrame}"
                                                 x:Name="NameFrame">
-
                                                 <Picker x:Name="DifficultyPicker"
                                                 ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
                                                 SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"/>
-
                                             </Frame>
 
                                         </StackLayout>
 
-                                        <StackLayout    Style="{StaticResource VerticalStack}"
-                                                    HorizontalOptions="Start"
-                                                    Spacing="3">
+                                        <StackLayout Style="{StaticResource MonsterEntryBox}">
 
                                             <Label  Text="Description:" 
-                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="156"
-                                                Padding="3"
+                                            <Frame Style="{StaticResource EntryFrame}"
                                                 x:Name="DescriptionFrame">
-
                                                 <Entry  Text="{Binding Data.Description, Mode=TwoWay}"
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Description"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="15"
                                                     TextChanged="DescriptionEntry_TextChanged"/>
-
                                             </Frame>
 
                                         </StackLayout>
 
-                                        <StackLayout    Style="{StaticResource VerticalStack}"
-                                                    HorizontalOptions="Start"
-                                                    Spacing="3">
+                                        <StackLayout    Style="{StaticResource MonsterEntryBox}">
 
                                             <Label  Text="Job:" 
-                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="164"
-                                                Padding="3"
+                                            <Frame Style="{StaticResource PickerFrame}"
                                                 x:Name="JobFrame">
-
                                                 <Picker x:Name="JobPicker"
                                                 ItemsSource="{x:Static local:MonsterJobEnumHelper.GetJobList}" 
                                                 SelectedItem="{Binding Data.MonsterJob, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"
                                                 SelectedIndexChanged="JobPicker_SelectedIndexChanged"/>
-
                                             </Frame>
 
                                         </StackLayout>
