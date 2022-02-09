@@ -203,23 +203,13 @@
                                 <Button 
                                     Text="Cancel" 
                                     Clicked="Cancel_Clicked" 
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    FontSize="Medium"
-                                    BorderWidth="2"
-                                    HeightRequest="35"
-                                    BorderColor="black">
+                                    Style="{StaticResource ButtonStyle}">
                                 </Button>
 
                                 <Button 
                                     Text="Delete" 
                                     Clicked="Delete_Clicked" 
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Center"
-                                    FontSize="Medium"
-                                    BorderWidth="2"
-                                    HeightRequest="35"
-                                    BorderColor="black">
+                                    Style="{StaticResource ButtonStyle}">
                                 </Button>
                             </StackLayout>
                         </StackLayout>
