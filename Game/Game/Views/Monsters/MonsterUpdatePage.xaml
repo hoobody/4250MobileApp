@@ -46,7 +46,7 @@
 
                                 <StackLayout    Style="{StaticResource HorizontalStack}"
                                                 BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="500"
+                                                WidthRequest="380"
                                                 HorizontalOptions="Center">
 
 
@@ -54,24 +54,24 @@
                                                     HorizontalOptions="Center"
                                                     VerticalOptions="Center"
                                                     Padding="20,20,20,20"
-                                                    Spacing="15">
+                                                    Spacing="10">
 
                                         <Frame  BorderColor="{StaticResource BorderColor}"
                                             BackgroundColor="{StaticResource Frame}"
-                                            Padding="10,10,10,50">
+                                            Padding="10,10,10,30">
 
                                             <Frame  BackgroundColor="{StaticResource FrameInside}"
                                                 Padding="10,10,10,10"
                                                 CornerRadius="0">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}"/>
 
                                             </Frame>
 
                                         </Frame>
 
                                         <Frame BorderColor ="{StaticResource BorderColor}"
-											   WidthRequest ="150"
+											   WidthRequest ="110"
 											   HeightRequest ="40">
 
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
@@ -79,7 +79,8 @@
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="12"
-                                                    WidthRequest="140"
+                                                    WidthRequest="100"
+                                                    FontSize="13"
                                                     HorizontalOptions="Center"
                                                     TextChanged="Name_onTextChange"/>
 
@@ -88,10 +89,6 @@
 
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                              Padding="5,5,5,5" Spacing="10">
-
-                                        <Image  Source="danger_stamp_small.png"
-                                                HorizontalOptions="CenterAndExpand"
-                                                Margin="0,0,0,20"/>
 
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
