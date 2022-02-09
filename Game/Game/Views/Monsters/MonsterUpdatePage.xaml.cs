@@ -184,12 +184,12 @@ namespace Game.Views
             }
             if (!string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
@@ -213,12 +213,12 @@ namespace Game.Views
             }
             if (!string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
