@@ -113,7 +113,6 @@ namespace Game.Views
 
         public void Name_onTextChange(object sender, ValueChangedEventArgs e)
         {
-            
             NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
             NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
 
