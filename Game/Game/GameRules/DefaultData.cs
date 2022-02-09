@@ -108,7 +108,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Multi-Vision Goggles",
                     Description = "Night, infrared, and heat vision. Sam Fisher would be proud ",
-                    ImageURI = "item.png",
+                    ImageURI = "multi-vision-goggles.png",
                     Range = 0,
                     Damage = 0,
                     Value = 6,
