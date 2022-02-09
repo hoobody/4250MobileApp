@@ -18,8 +18,7 @@ namespace Game.Views
     [DesignTimeVisible(false)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterCreatePage : ContentPage
-    {
-    {
+    {  
         // The Monster to create
         public GenericViewModel<MonsterModel> ViewModel { get; set; }
 
