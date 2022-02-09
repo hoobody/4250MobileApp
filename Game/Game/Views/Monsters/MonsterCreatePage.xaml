@@ -22,92 +22,59 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
+        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}"
         >
 
-            <StackLayout Style="{StaticResource VerticalStack}"
+            <StackLayout Style="{StaticResource OuterBoxStack}"
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
                     AbsoluteLayout.LayoutFlags="All">
 
                 <ScrollView>
 
-                    <StackLayout Style="{StaticResource OuterBoxStack}" 
-                                 Spacing="10">
+                    <StackLayout>
 
-                        <Label  Text="Create Page" Style="{StaticResource HeaderStyle}"
-                                HorizontalOptions="Center"/>
+                        <Label  Text="Create Page" 
+                            Style="{StaticResource HeaderStyle}"/>
 
                         <!-- Used to place an image on top of a stacklayout-->
                         <Grid>
 
-                            <Frame BackgroundColor="Wheat"
+                            <Frame Style="{StaticResource ManillaFolderFrame}">
 
-                                   Padding="10,10,10,10">
+                                <StackLayout Style="{StaticResource PaperBox}">
 
-                                <StackLayout    Style="{StaticResource HorizontalStack}"
-                                                BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="450"
-                                                HorizontalOptions="Center">
+                                    <StackLayout Style="{StaticResource MonsterCardLeftBox}">
 
-
-                                    <StackLayout Style="{StaticResource VerticalStack}"
-                                                    HorizontalOptions="Center"
-                                                    VerticalOptions="Center"
-                                                    Padding="20,20,20,20"
-                                                    Spacing="15">
-
-                                        <Frame  BorderColor="Black"
-                                            BackgroundColor="White"
-                                            Padding="10,10,10,50">
-
-                                            <Frame  BackgroundColor="Black"
-                                                Padding="10,10,10,10"
-                                                CornerRadius="0">
-
-                                                <Image Source="item.png"/>
-
+                                        <Frame  Style="{StaticResource PoloroidOuterFrame}" >
+                                            <Frame  Style="{StaticResource PoloroidInnerFrame}" >
+                                                <Image Source="item.png"
+                                                       Style="{StaticResource ImageLargeStyle}"/>
                                             </Frame>
-
                                         </Frame>
 
-                                        <Frame BorderColor ="Black"
-											   WidthRequest ="150"
-											   HeightRequest ="40">
-
+                                        <Frame Style="{StaticResource EntryFrame}">
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
                                                     x:Name="NameEntry"
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="15"
-                                                    WidthRequest="140"
-                                                    HorizontalOptions="Center"
                                                     TextChanged="Name_onTextChange"/>
-
                                         </Frame>
                                     </StackLayout>
 
-                                    <StackLayout Style="{StaticResource VerticalStack}"
-                                             Padding="5,5,5,5">
+                                    <StackLayout Style="{StaticResource MonsterCardRightBox}">
 
                                         <Image  x:Name="StampImage" 
-                                                HorizontalOptions="Center"
-                                                ScaleY="1"
-                                                ScaleX="1"
-                                                Margin="0,0,0,20"/>
+                                                Style="{StaticResource ImageSmallStyle}"/>
 
-                                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                        <StackLayout Style="{StaticResource VerticalStack}"
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
                                             <Label  Text="Difficulty:" 
-                                                    TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
-                                            <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="129"
-                                                Padding="3"
+                                            <Frame  Style="{StaticResource EntryFrame}"
                                                 x:Name="NameFrame">
 
                                                 <Picker x:Name="DifficultyPicker"
@@ -119,11 +86,11 @@
 
                                         </StackLayout>
 
-                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                        <StackLayout    Style="{StaticResource VerticalStack}"
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
-                                            <Label  Text="Desc:" 
+                                            <Label  Text="Description:" 
                                                     TextColor="Black"
                                                 Style="{StaticResource LabelStyle}"/>
 
@@ -143,7 +110,7 @@
 
                                         </StackLayout>
 
-                                        <StackLayout    Style="{StaticResource HorizontalStack}"
+                                        <StackLayout    Style="{StaticResource VerticalStack}"
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
