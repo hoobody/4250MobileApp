@@ -28,12 +28,17 @@ namespace Game.Views
         // Empty Constructor for UTs
         public MonsterUpdatePage(bool UnitTest) { }
 
+        // Copy of Monster for cancel
+        public MonsterModel MonsterCopy;
+
         /// <summary>
         /// Constructor for Create makes a new model
         /// </summary>
         public MonsterUpdatePage(GenericViewModel<MonsterModel> data)
         {
             InitializeComponent();
+
+            MonsterCopy = new MonsterModel(data.Data);
 
             BindingContext = this.ViewModel = data;
 
@@ -96,6 +101,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            // Return to original state
+            ViewModel.Data.Update(MonsterCopy);
+
             _ = await Navigation.PopModalAsync();
         }
 
