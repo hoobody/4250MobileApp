@@ -290,7 +290,7 @@
 
                         <FlexLayout Scale=".75"
                                     Wrap="Wrap"
-                                    JustifyContent="Center"
+                                    JustifyContent="SpaceEvenly"
                                     AlignContent="SpaceEvenly"
                                     x:Name="ItemBox"/>
 
