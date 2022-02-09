@@ -15,8 +15,8 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     
                     <Image
-                         Source="item.png"
-                         Style="{StaticResource ImageLargeStyle}"/>
+                         Source="game-logo.png"
+                         Style="{StaticResource GameLogoStyle}"/>
                 
                 </StackLayout>
                 
