@@ -66,7 +66,7 @@
                                                 Style="{StaticResource EntryStyle}"
                                                 Text="{Binding Data.Name, Mode=TwoWay}"
                                                 TextChanged="Name_onTextChange"
-                                                WidthRequest="105" />
+                                                WidthRequest="100" />
                                         </Frame>
                                     </StackLayout>
 
@@ -91,11 +91,11 @@
                                         <Frame
                                             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                             BorderColor="{StaticResource BorderColor}"
-                                            MinimumHeightRequest="125"
-                                            MinimumWidthRequest="125"
+                                            MinimumHeightRequest="100"
+                                            MinimumWidthRequest="100"
                                             VerticalOptions="Center">
 
-                                            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}" />
                                         </Frame>
 
                                         <ImageButton
