@@ -47,7 +47,7 @@
 
                                 <StackLayout    Style="{StaticResource HorizontalStack}"
                                                 BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="450"
+                                                WidthRequest="500"
                                                 HorizontalOptions="Center">
 
 
@@ -57,11 +57,11 @@
                                                     Padding="20,20,20,20"
                                                     Spacing="15">
 
-                                        <Frame  BorderColor="Black"
-                                            BackgroundColor="White"
+                                        <Frame  BorderColor="{StaticResource BorderColor}"
+                                            BackgroundColor="{StaticResource Frame}"
                                             Padding="10,10,10,50">
 
-                                            <Frame  BackgroundColor="Black"
+                                            <Frame  BackgroundColor="{StaticResource FrameInside}"
                                                 Padding="10,10,10,10"
                                                 CornerRadius="0">
 
@@ -99,7 +99,7 @@
                                                          Spacing="5">
 
                                             <Label  Text="Difficulty:" 
-                                                    TextColor="Black"
+                                                    TextColor="{StaticResource BlackTextColor}"
                                                     Style="{StaticResource LabelStyle}"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
