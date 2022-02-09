@@ -89,7 +89,7 @@
                                                        Padding="3">
 
                                                     <Label  Text="{Binding Name}" 
-                                                            Style="{StaticResource ValueStyle}"
+                                                            Style="{StaticResource LabelStyle}"
                                                             FontAttributes="Bold"
                                                             FontSize="14"/>
 
