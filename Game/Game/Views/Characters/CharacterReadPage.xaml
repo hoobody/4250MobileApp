@@ -20,7 +20,6 @@
     </ContentPage.ToolbarItems>
 
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
         <StackLayout
             AbsoluteLayout.LayoutBounds="1,1,1,1"
             AbsoluteLayout.LayoutFlags="All"
@@ -98,7 +97,8 @@
                                         Padding="3"
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         WidthRequest="165">
-                                        <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}" />
+                                        <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}"
+                                               FontSize="13"/>
                                     </Frame>
 
                                 </StackLayout>
