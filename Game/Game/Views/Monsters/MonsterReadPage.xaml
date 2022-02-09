@@ -332,9 +332,9 @@
 
                         <FlexLayout
                             x:Name="ItemBox"
-                            Margin="5"
+                            Scale=".75"
                             AlignContent="SpaceEvenly"
-                            JustifyContent="Center"
+                            JustifyContent="SpaceEvenly"
                             Wrap="Wrap" />
 
                     </StackLayout>
@@ -345,18 +345,18 @@
             <!--  The Item Popup  -->
             <StackLayout
                 x:Name="PopupLoadingView"
-                AbsoluteLayout.LayoutBounds=".5, .5,.5,.5"
+                AbsoluteLayout.LayoutBounds=".5,.5,.5,.5"
                 AbsoluteLayout.LayoutFlags="All"
                 BackgroundColor="{StaticResource PageBackgroundColor}"
                 IsVisible="false">
 
                 <StackLayout
-                    HeightRequest="300"
+                    HeightRequest="500"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand"
                     WidthRequest="300">
 
-                    <Frame Padding="1" BorderColor="{StaticResource TriciaryTextColor}">
+                    <Frame Padding="5" BorderColor="{StaticResource TriciaryTextColor}">
                         <StackLayout
                             Padding="2"
                             HorizontalOptions="CenterAndExpand"
