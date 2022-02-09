@@ -498,8 +498,17 @@
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="Spacing" Value="5" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="MonsterCardRightBox"
+                BasedOn="{StaticResource VerticalStack}">
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="Spacing" Value="15" />
-                <Setter Property="Padding" Value="20,20,20,20" />
+                <Setter Property="Padding" Value="20" />
             </Style>
 
             <Style TargetType="StackLayout"
