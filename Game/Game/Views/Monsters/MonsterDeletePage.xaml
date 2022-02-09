@@ -1,39 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Game.Views.MonsterDeletePage"
-             Title="{Binding Title}"
-             BackgroundColor="{StaticResource DeleteBackgroundColor}">
-    
+<ContentPage
+    x:Class="Game.Views.MonsterDeletePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    BackgroundColor="{StaticResource DeleteBackgroundColor}"
+    mc:Ignorable="d">
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+        <ToolbarItem
+            Clicked="Cancel_Clicked"
+            IconImageSource="icon_cancel.png"
+            Text="Cancel" />
+        <ToolbarItem
+            Clicked="Delete_Clicked"
+            IconImageSource="icon_delete.png"
+            Text="Delete" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <AbsoluteLayout
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand">
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-            <StackLayout Style="{StaticResource VerticalStack}"
-                    AbsoluteLayout.LayoutBounds="1,1,1,1" 
-                    AbsoluteLayout.LayoutFlags="All"
-                    HorizontalOptions="Center">
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                HorizontalOptions="Center"
+                Style="{StaticResource VerticalStack}">
 
                 <ScrollView>
 
-                    <StackLayout Style="{StaticResource VerticalStack}"
-                                 Spacing="10"
-                                 HorizontalOptions="Center">
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Spacing="10"
+                        Style="{StaticResource VerticalStack}">
 
-                        <Label  Text="Delete Page" Style="{StaticResource HeaderStyle}"
-                                HorizontalOptions="Center"/>
+                        <Label
+                            HorizontalOptions="Center"
+                            Style="{StaticResource HeaderStyle}"
+                            Text="Delete Page" />
 
 
-                        <!-- Used to place an image on top of a stacklayout-->
+                        <!--  Used to place an image on top of a stacklayout  -->
                         <Grid>
 
                             <Frame Padding="10,10,10,10" BackgroundColor="{StaticResource Manilla}">
@@ -42,18 +51,18 @@
                                     BackgroundColor="{StaticResource Paper}"
                                     HorizontalOptions="Center"
                                     Style="{StaticResource HorizontalStack}"
-                                    WidthRequest="500">
+                                    WidthRequest="380">
 
 
                                     <StackLayout
                                         Padding="20,20,20,20"
                                         HorizontalOptions="Center"
-                                        Spacing="15"
+                                        Spacing="10"
                                         Style="{StaticResource VerticalStack}"
                                         VerticalOptions="Center">
 
                                         <Frame
-                                            Padding="10,10,10,50"
+                                            Padding="10,10,10,30"
                                             BackgroundColor="{StaticResource Frame}"
                                             BorderColor="{StaticResource BorderColor}">
 
@@ -62,7 +71,7 @@
                                                 BackgroundColor="{StaticResource FrameInside}"
                                                 CornerRadius="0">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}" />
 
                                             </Frame>
 
@@ -70,11 +79,12 @@
 
                                         <Frame
                                             BorderColor="{StaticResource BorderColor}"
-                                            HeightRequest="40"
-                                            WidthRequest="150">
+                                            HeightRequest="30"
+                                            WidthRequest="120">
 
                                             <Label
                                                 x:Name="NameLabel"
+                                                FontSize="13"
                                                 HorizontalOptions="Center"
                                                 Style="{StaticResource LabelStyle}"
                                                 Text="{Binding Data.Name}" />
@@ -85,15 +95,10 @@
 
                                     <StackLayout
                                         Padding="5,5,5,5"
-                                        Spacing="10"
+                                        Spacing="5"
                                         Style="{StaticResource VerticalStack}">
 
-                                        <Image
-                                            Margin="0,0,0,20"
-                                            HorizontalOptions="CenterAndExpand"
-                                            ScaleX="1.5"
-                                            ScaleY="1.5"
-                                            Source="danger_stamp_small.png" />
+                                        <Image HorizontalOptions="CenterAndExpand" Source="danger_stamp_small.png" />
 
                                         <StackLayout
                                             HorizontalOptions="Start"
@@ -109,7 +114,7 @@
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="130">
+                                                WidthRequest="90">
 
                                                 <Label
                                                     FontSize="14"
@@ -134,7 +139,7 @@
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="190">
+                                                WidthRequest="160">
 
                                                 <Label
                                                     x:Name="DescriptionEntry"
@@ -162,7 +167,7 @@
                                                 x:Name="JobFrame"
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="200">
+                                                WidthRequest="180">
 
                                                 <Label
                                                     FontSize="14"
@@ -171,75 +176,53 @@
 
                                             </Frame>
                                         </StackLayout>
-
-                                        <Frame
-                                            Margin="10,25,140,0"
-                                            Rotation="-25"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="map.jpg"/>
+                                        <StackLayout Spacing="15" Style="{StaticResource HorizontalStack}">
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="map.jpg" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="10,-60,40,0"
-                                            Rotation="10"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="{Binding Data.ImageURI}"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="{Binding Data.ImageURI}" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="-20,-80,-95,0"
-                                            Rotation="-15"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="crime_scene.jpg"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="village.png" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
-
-                                        <Frame
-                                            Margin="10,-60,-165,0"
-                                            Rotation="5"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="village.png"/>
-                                            </Frame>
-                                        </Frame>
-
+                                        </StackLayout>
                                     </StackLayout>
 
                                 </StackLayout>
                             </Frame>
-                            <StackLayout HorizontalOptions="Center"
-                                         Margin="0,-12,-375,0">
+                            <StackLayout Margin="0,-12,-350,0" HorizontalOptions="Center">
 
                                 <Image Source="paperclip_small.png" />
 
                             </StackLayout>
 
                         </Grid>
+                        <StackLayout HorizontalOptions="Center" Style="{StaticResource VerticalStack}">
 
-                        <StackLayout 
-                            HorizontalOptions="Center" Style="{StaticResource VerticalStack}">
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource MessageStyle}"
+                                Text="Really delete this?" />
 
-                            <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"
-                                   HorizontalOptions="Center"/>
+                            <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
+                                <Button
+                                    Clicked="Cancel_Clicked"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Text="Cancel" />
 
-                            <StackLayout Style="{StaticResource HorizontalStack}"
-                                Spacing="10">
-                                <Button 
-                                    Text="Cancel" 
-                                    Clicked="Cancel_Clicked" 
-                                    Style="{StaticResource ButtonStyle}">
-                                </Button>
-
-                                <Button 
-                                    Text="Delete" 
-                                    Clicked="Delete_Clicked" 
-                                    Style="{StaticResource ButtonStyle}">
-                                </Button>
+                                <Button
+                                    Clicked="Delete_Clicked"
+                                    Style="{StaticResource ButtonStyle}"
+                                    Text="Delete" />
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
