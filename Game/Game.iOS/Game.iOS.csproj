@@ -349,4 +349,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\game-logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\water-gun.png" />
+  </ItemGroup>
 </Project>

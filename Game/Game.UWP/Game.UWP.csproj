@@ -204,6 +204,7 @@
     <Content Include="troll5.png" />
     <Content Include="troll6.png" />
     <Content Include="village.png" />
+    <Content Include="water-gun.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
