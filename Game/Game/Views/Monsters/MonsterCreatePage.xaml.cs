@@ -382,7 +382,7 @@ namespace Game.Views
             return ItemStack;
         }
 
-
+        /*
         private void JobPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ViewModel.Data.IsMonsterBoss())
@@ -394,7 +394,7 @@ namespace Game.Views
             StampImage.Source = "caution_stamp_small.png";
 
         }
-
+        */
     }
 
 }

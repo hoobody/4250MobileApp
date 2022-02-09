@@ -46,7 +46,7 @@
 
                                 <StackLayout    Style="{StaticResource HorizontalStack}"
                                                 BackgroundColor="{StaticResource Paper}"
-                                                WidthRequest="500"
+                                                WidthRequest="380"
                                                 HorizontalOptions="Center">
 
 
@@ -54,24 +54,24 @@
                                                     HorizontalOptions="Center"
                                                     VerticalOptions="Center"
                                                     Padding="20,20,20,20"
-                                                    Spacing="15">
+                                                    Spacing="10">
 
                                         <Frame  BorderColor="{StaticResource BorderColor}"
                                             BackgroundColor="{StaticResource Frame}"
-                                            Padding="10,10,10,50">
+                                            Padding="10,10,10,30">
 
                                             <Frame  BackgroundColor="{StaticResource FrameInside}"
                                                 Padding="10,10,10,10"
                                                 CornerRadius="0">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}"/>
 
                                             </Frame>
 
                                         </Frame>
 
                                         <Frame BorderColor ="{StaticResource BorderColor}"
-											   WidthRequest ="150"
+											   WidthRequest ="110"
 											   HeightRequest ="40">
 
                                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}"
@@ -79,7 +79,8 @@
                                                     d:Text="Name"
                                                     Style="{StaticResource EntryStyle}"
                                                     MaxLength="12"
-                                                    WidthRequest="140"
+                                                    WidthRequest="100"
+                                                    FontSize="13"
                                                     HorizontalOptions="Center"
                                                     TextChanged="Name_onTextChange"/>
 
@@ -89,9 +90,6 @@
                                     <StackLayout Style="{StaticResource VerticalStack}"
                                              Padding="5,5,5,5" Spacing="10">
 
-                                        <Image  x:Name="StampImage" 
-                                                Style="{StaticResource ImageSmallStyle}"/>
-
                                         <StackLayout Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
                                                     Spacing="7">
@@ -99,18 +97,18 @@
                                             <Label  Text="Difficulty:"
                                                     TextColor="{StaticResource BlackTextColor}"
                                                 Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                                    FontSize="13"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="130"
+                                                WidthRequest="100"
                                                 Padding="3"
                                                 x:Name="NameFrame">
 
                                                 <Picker x:Name="DifficultyPicker"
-                                                        ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
-                                                        SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                        Style="{StaticResource PickerStyle}"
-                                                        FontSize="14"/>
+                                                ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
+                                                SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                                                Style="{StaticResource PickerStyle}"
+                                                        FontSize="13"/>
 
                                             </Frame>
 
@@ -120,13 +118,8 @@
                                                     HorizontalOptions="Start"
                                                     Spacing="3">
 
-                                            <Label  Text="Desc:" 
-                                                    TextColor="{StaticResource BlackTextColor}"
-                                                Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
-
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="195"
+                                                WidthRequest="210"
                                                 Padding="3"
                                                 x:Name="DescriptionFrame">
 
@@ -144,15 +137,15 @@
 
                                         <StackLayout    Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
-                                                    Spacing="3">
+                                                    Spacing="5">
 
                                             <Label  Text="Job:" 
                                                     TextColor="{StaticResource BlackTextColor}"
                                                 Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                                    FontSize="13"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="205"
+                                                WidthRequest="170"
                                                 Padding="3"
                                                 x:Name="JobFrame">
 
@@ -166,46 +159,27 @@
 
                                         </StackLayout>
 
-                                        <Frame
-                                            Margin="10,20,140,0"
-                                            Rotation="-25"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="map.jpg"/>
+                                        <StackLayout Spacing="15" Style="{StaticResource HorizontalStack}">
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="map.jpg" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="10,-60,40,0"
-                                            Rotation="10"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="{Binding Data.ImageURI}"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="{Binding Data.ImageURI}" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="-20,-80,-95,0"
-                                            Rotation="-15"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="crime_scene.jpg"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="village.png" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
-
-                                        <Frame
-                                            Margin="10,-60,-165,0"
-                                            Rotation="5"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="village.png"/>
-                                            </Frame>
-                                        </Frame>
-
+                                        </StackLayout>
                                     </StackLayout>
-
                                 </StackLayout>
-
                             </Frame>
 
                             <StackLayout HorizontalOptions="Center"
@@ -314,9 +288,9 @@
 
                         </Frame>
 
-                        <FlexLayout Padding="5"
+                        <FlexLayout Scale=".75"
                                     Wrap="Wrap"
-                                    JustifyContent="Center"
+                                    JustifyContent="SpaceEvenly"
                                     AlignContent="SpaceEvenly"
                                     x:Name="ItemBox"/>
 
