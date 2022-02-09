@@ -179,11 +179,15 @@ namespace Game.Views
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
+                NameEntry.Placeholder = "Description";
+                NameEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
+                NameEntry.Placeholder = "Description";
+                NameEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
         }
 
@@ -195,17 +199,21 @@ namespace Game.Views
         private void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
-            DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+            DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];            
 
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
+                DescriptionEntry.Placeholder = "Description";
+                DescriptionEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
+                DescriptionEntry.Placeholder = "Description";
+                DescriptionEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
         }
 

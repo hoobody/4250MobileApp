@@ -34,6 +34,7 @@
 
             <Color x:Key="EntryColor">#6393b7</Color>
             <Color x:Key="BlackTextColor">Black</Color>
+            <Color x:Key="WhiteTextColor">White</Color>
             <Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
 			<Color x:Key="BorderColor">Black</Color>
 			<Color x:Key="MaxThumbColor">DimGray</Color>
