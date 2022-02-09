@@ -510,6 +510,9 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Codename_onTextChange(object sender, ValueChangedEventArgs e)
         {
+            CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+            CodenameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+
             if (string.IsNullOrEmpty(CodenameEntry.Text))
             {
                 CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
@@ -519,16 +522,6 @@ namespace Game.Views
             {
                 CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
-            }
-            if (!string.IsNullOrEmpty(CodenameEntry.Text))
-            {
-                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                CodenameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
-            }
-            if (!string.IsNullOrWhiteSpace(CodenameEntry.Text))
-            {
-                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
-                CodenameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
             }
         }
     }
