@@ -100,10 +100,10 @@
                                             <Label  Text="Difficulty:"
                                                     TextColor="{StaticResource BlackTextColor}"
                                                 Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                                    FontSize="13"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="130"
+                                                WidthRequest="100"
                                                 Padding="3"
                                                 x:Name="NameFrame">
 
@@ -111,7 +111,7 @@
                                                 ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
                                                 SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                                                 Style="{StaticResource PickerStyle}"
-                                                        FontSize="14"/>
+                                                        FontSize="13"/>
 
                                             </Frame>
 
@@ -122,7 +122,7 @@
                                                     Spacing="3">
 
                                             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="195"
+                                                WidthRequest="210"
                                                 Padding="3"
                                                 x:Name="DescriptionFrame">
 
@@ -140,15 +140,15 @@
 
                                         <StackLayout    Style="{StaticResource HorizontalStack}"
                                                     HorizontalOptions="Start"
-                                                    Spacing="3">
+                                                    Spacing="5">
 
                                             <Label  Text="Job:" 
                                                     TextColor="{StaticResource BlackTextColor}"
                                                 Style="{StaticResource LabelStyle}"
-                                                    FontSize="14"/>
+                                                    FontSize="13"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="205"
+                                                WidthRequest="170"
                                                 Padding="3"
                                                 x:Name="JobFrame">
 
@@ -162,46 +162,27 @@
 
                                         </StackLayout>
 
-                                        <Frame
-                                            Margin="10,5,140,0"
-                                            Rotation="-25"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="map.jpg"/>
+                                        <StackLayout Spacing="15" Style="{StaticResource HorizontalStack}">
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="map.jpg" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="10,-60,40,0"
-                                            Rotation="10"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="{Binding Data.ImageURI}"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="{Binding Data.ImageURI}" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
 
-                                        <Frame
-                                            Margin="-20,-80,-95,0"
-                                            Rotation="-15"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="crime_scene.jpg"/>
+                                            <Frame Style="{StaticResource PhotoBack}">
+                                                <Frame Style="{StaticResource PhotoFront}">
+                                                    <Image Source="village.png" />
+                                                </Frame>
                                             </Frame>
-                                        </Frame>
-
-                                        <Frame
-                                            Margin="10,-60,-165,0"
-                                            Rotation="5"
-                                            Style="{StaticResource PhotoBack}">
-                                            <Frame Style="{StaticResource PhotoFront}">
-                                                <Image Source="village.png"/>
-                                            </Frame>
-                                        </Frame>
-
+                                        </StackLayout>
                                     </StackLayout>
-
                                 </StackLayout>
-
                             </Frame>
 
                             <StackLayout HorizontalOptions="Center"
