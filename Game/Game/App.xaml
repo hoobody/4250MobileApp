@@ -684,6 +684,12 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="PickerFrame"
+                BasedOn="EntryFrame">
+                
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="ItemListFrame">
                 <Setter Property="Margin" Value="5,5,5,5" />
                 <Setter Property="HorizontalOptions" Value="Fill" />
