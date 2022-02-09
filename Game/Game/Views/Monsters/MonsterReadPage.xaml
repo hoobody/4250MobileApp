@@ -42,7 +42,7 @@
                         <!-- Used to place an image on top of a stacklayout-->
                         <Grid>
 
-                            <Frame BackgroundColor="Wheat"
+                            <Frame BackgroundColor="{StaticResource Manilla}"
                                     Padding="10,10,10,10">
 
                                 <StackLayout    Style="{StaticResource HorizontalStack}"
@@ -71,7 +71,7 @@
 
                                         </Frame>
 
-                                        <Frame BorderColor ="Black"
+                                        <Frame BorderColor ="{StaticResource BorderColor}"
 											   WidthRequest ="150"
 											   HeightRequest ="40">
 
@@ -100,14 +100,16 @@
 
                                             <Label  Text="Difficulty:" 
                                                     TextColor="{StaticResource BlackTextColor}"
-                                                    Style="{StaticResource LabelStyle}"/>
+                                                    Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                                     WidthRequest="130"
                                                     Padding="3">
 
                                                 <Label  Text="{Binding Data.Difficulty}"
-                                                        Style="{StaticResource EntryStyle}"/>
+                                                        Style="{StaticResource LabelStyle}"
+                                                        FontSize="14"/>
 
                                             </Frame>
 
@@ -118,17 +120,19 @@
                                                         Spacing="5">
 
                                             <Label  Text="Desc:" 
-                                                    TextColor="Black"
-                                                    Style="{StaticResource LabelStyle}"/>
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                    Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="160"
+                                                    WidthRequest="190"
                                                     Padding="3">
 
                                                 <Label  Text="{Binding Data.Description}"
                                                         x:Name="DescriptionEntry"
                                                         d:Text="Description"
-                                                        Style="{StaticResource EntryStyle}"/>
+                                                        Style="{StaticResource LabelStyle}"
+                                                        FontSize="13"/>
 
                                             </Frame>
 
@@ -139,17 +143,19 @@
                                                         Spacing="3">
 
                                             <Label  Text="Job:" 
-                                                    TextColor="Black"
-                                                    Style="{StaticResource LabelStyle}"/>
+                                                    TextColor="{StaticResource BlackTextColor}"
+                                                    Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             <Frame  BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                    WidthRequest="175"
+                                                    WidthRequest="200"
                                                     Padding="3"
                                                     x:Name="JobFrame">
 
                                                 <Label
                                                     Text="{Binding Data.MonsterJob}" 
-                                                    Style="{StaticResource PickerStyle}"/>
+                                                    Style="{StaticResource LabelStyle}"
+                                                    FontSize="14"/>
 
                                             </Frame>
                                         </StackLayout>
