@@ -36,9 +36,9 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Tommy Gun",
-                    Description = "Tommy lent you it",
-                    ImageURI = "item.png",
+                    Name = "Water Gun",
+                    Description = "A potent liquid solution",
+                    ImageURI = "water-gun.png",
                     Range = 4,
                     Damage = 6,
                     Value = 6,
