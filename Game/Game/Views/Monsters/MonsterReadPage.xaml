@@ -77,7 +77,7 @@
 
                                             <Label Text="{Binding Data.Name}"
                                                     x:Name="NameLabel"
-                                                    Style="{StaticResource EntryStyle}"
+                                                    Style="{StaticResource LabelStyle}"
                                                     HorizontalOptions="Center"/>
 
                                         </Frame>
