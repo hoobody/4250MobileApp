@@ -308,5 +308,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\water-gun.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lazer-ring.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

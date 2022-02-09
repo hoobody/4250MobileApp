@@ -352,4 +352,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\water-gun.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lazer-ring.png" />
+  </ItemGroup>
 </Project>
