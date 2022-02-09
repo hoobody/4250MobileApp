@@ -180,14 +180,12 @@ namespace Game.Views
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
                 NameEntry.Placeholder = "Description";
-                NameEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
                 NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
                 NameEntry.Placeholder = "Description";
-                NameEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
         }
 
@@ -206,14 +204,12 @@ namespace Game.Views
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
                 DescriptionEntry.Placeholder = "Description";
-                DescriptionEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
                 DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
                 DescriptionEntry.Placeholder = "Description";
-                DescriptionEntry.TextColor = (Color)Application.Current.Resources["WhiteTextColor"];
             }
         }
 
