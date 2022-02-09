@@ -88,7 +88,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Stealth Suit",
                     Description = "Hard to focus when looking directly at it",
-                    ImageURI = "item.png",
+                    ImageURI = "stealth-suit.png",
                     Range = 0,
                     Damage = 0,
                     Value = 8,
