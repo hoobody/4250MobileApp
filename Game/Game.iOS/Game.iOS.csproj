@@ -355,4 +355,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\lazer-ring.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trench-coat.png" />
+  </ItemGroup>
 </Project>
