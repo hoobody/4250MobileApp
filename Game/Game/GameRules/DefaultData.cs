@@ -78,7 +78,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Trench Coat",
                     Description = "Some say you can stack 3 mice inside and pass off as a cat",
-                    ImageURI = "item.png",
+                    ImageURI = "trench-coat.png",
                     Range = 0,
                     Damage = 0,
                     Value = 2,
