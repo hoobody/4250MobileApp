@@ -40,9 +40,11 @@ namespace Game.Views
 
             this.ViewModel.Title = "Create";
 
-            JobPicker.SelectedIndex = 0;
-
             _ = UpdatePageBindingContext();
+
+            // Default values for a picker
+            JobPicker.SelectedIndex = 0;
+            DifficultyPicker.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -171,13 +173,13 @@ namespace Game.Views
             }
             if (!string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
-                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
-                NameFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                NameFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
         }
 
@@ -201,13 +203,13 @@ namespace Game.Views
             }
             if (!string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
-                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
             if (!string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
-                DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["EntryColor"];
+                DescriptionFrame.BorderColor =(Color)Application.Current.Resources["BorderColor"];
             }
         }
 
