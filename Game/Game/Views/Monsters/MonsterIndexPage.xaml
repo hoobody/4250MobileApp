@@ -37,7 +37,7 @@
                             
                             <Frame  HeightRequest="220"
                                     WidthRequest="375"
-                                    BackgroundColor="Wheat">
+                                    BackgroundColor="{StaticResource Manilla}">
 
                                 <Grid HorizontalOptions="Center">
 
