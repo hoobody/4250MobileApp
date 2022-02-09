@@ -64,9 +64,9 @@
                                 <Frame
                                     BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                     BorderColor="{StaticResource BorderColor}"
-                                    HeightRequest="150"
-                                    WidthRequest="150">
-                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                    HeightRequest="100"
+                                    WidthRequest="100">
+                                    <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}" />
                                 </Frame>
 
                             </StackLayout>
