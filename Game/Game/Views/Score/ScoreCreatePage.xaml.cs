@@ -37,20 +37,43 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Returns true if all required fields are filled out
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckIfReadyToSubmit()
+        {
+            if (string.IsNullOrEmpty(NameEntry.Text))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Save by calling for Create
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            //check for empty fields. If any are empty don't do anything
+            if (CheckIfReadyToSubmit())
             {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-            }
+                // If the image in the data box is empty, use the default one..
+                if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+                {
+                    ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+                }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
         }
 
         /// <summary>
@@ -61,6 +84,26 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// Catch changes in the name text box and changes the color if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Name_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+
+            if (string.IsNullOrEmpty(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+            }
+
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+            }
         }
     }
 }
