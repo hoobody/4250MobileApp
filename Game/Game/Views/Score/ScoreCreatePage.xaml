@@ -32,7 +32,7 @@
                 <Label Text="Add a Score" 
                        Style="{StaticResource HeaderStyle}"/>
 
-                <Grid ColumnSpacing="1">
+                <Grid Style="{StaticResource GridStyle}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20*" />
                         <ColumnDefinition Width="80*" />
@@ -44,7 +44,7 @@
                     </Grid.RowDefinitions>
 
                     <Frame Grid.Column="0" Grid.Row="0"
-                           Style="{StaticResource LabelFrame}">
+                           Style="{StaticResource GridCellFrame}">
                         <Label Style="{StaticResource LabelStyle}" 
                                Text="Name: "/>
                     </Frame>
@@ -60,7 +60,7 @@
                         TextChanged="Name_onTextChange"/>
 
                     <Frame Grid.Column="0" Grid.Row="1"
-                           Style="{StaticResource LabelFrame}">
+                           Style="{StaticResource GridCellFrame}">
                         <Label Style="{StaticResource LabelStyle}" 
                             Text="Rounds: " />
                     </Frame>
@@ -73,7 +73,7 @@
                         x:Name="RoundsEntry"/>
 
                     <Frame Grid.Column="0" Grid.Row="2"
-                           Style="{StaticResource LabelFrame}">
+                           Style="{StaticResource GridCellFrame}">
                         <Label Style="{StaticResource LabelStyle}" 
                             Text="Score: "/>
                     </Frame>

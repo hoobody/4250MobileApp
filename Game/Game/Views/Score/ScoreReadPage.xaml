@@ -28,62 +28,52 @@
             <Label Text="View Score Details" 
                        Style="{StaticResource HeaderStyle}"/>
 
-            <Grid ColumnSpacing="0"
-                  RowSpacing="0">
+            <Grid Style="{StaticResource GridStyle}">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20*" />
                     <ColumnDefinition Width="80*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
                 <Frame Grid.Column="0" Grid.Row="0"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
-                            Text="Name: "/>
-                    </StackLayout>
+                    Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
+                        Text="Name: "/>
                 </Frame>
 
                 <Frame Grid.Column="1" Grid.Row="0"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                       Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
                         Text="{Binding Data.Name}"/>
-                    </StackLayout>
                 </Frame>
 
                 <Frame Grid.Column="0" Grid.Row="1"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
-                            Text="Rounds: "/>
-                    </StackLayout>
+                    Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
+                        Text="Rounds: "/>
                 </Frame>
 
                 <Frame Grid.Column="1" Grid.Row="1"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                    Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
                         Text="{Binding Data.Rounds}"/>
-                    </StackLayout>
                 </Frame>
 
                 <Frame Grid.Column="0" Grid.Row="2"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
-                            Text="Score: "/>
-                    </StackLayout>
+                    Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
+                        Text="Score: "/>
                 </Frame>
 
                 <Frame Grid.Column="1" Grid.Row="2"
-                       Style="{StaticResource LabelFrame}">
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                    Style="{StaticResource GridCellFrame}">
+                    <Label Style="{StaticResource LabelStyle}" 
                         Text="{Binding Data.Score}"/>
-                    </StackLayout>
                 </Frame>
 
             </Grid>
