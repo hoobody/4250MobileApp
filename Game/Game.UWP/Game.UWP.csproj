@@ -177,6 +177,7 @@
     <Content Include="filler-hitman.png" />
     <Content Include="filler-mastermind.png" />
     <Content Include="filler-saboteur.png" />
+    <Content Include="filler-speed-shoes.png" />
     <Content Include="filler-spy.png" />
     <Content Include="filler-survey-officer.png" />
     <Content Include="headquarters-button.png" />
