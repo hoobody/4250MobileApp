@@ -82,7 +82,7 @@
                         Style="{StaticResource EntryStyle}" 
                         Placeholder="Score" 
                         Text="{Binding Data.Score, Mode=TwoWay}" 
-                        MaxLength="5"
+                        MaxLength="10"
                         x:Name="ScoreEntry"/>
 
                 </Grid>
