@@ -19,7 +19,10 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Style="{StaticResource OuterBoxStack}">
 
-            <Label Style="{StaticResource HeaderStyle}" Text="Score List Page" />
+            <Image Source="game-logo.png"
+                Style="{StaticResource GameLogoLgStyle}"/>
+            
+            <Label Style="{StaticResource HeaderStyle}" Text="High Scores!" />
 
             <Frame Style="{StaticResource HighScoresFrame}">
 
