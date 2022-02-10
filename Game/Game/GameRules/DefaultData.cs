@@ -379,14 +379,39 @@ namespace Game.GameRules
             var datalist = new List<ScoreModel>()
             {
                 new ScoreModel {
-                    Name = "First Score",
+                    Name = "Jesse",
                     Description = "Test Data",
+                    ScoreTotal=1000000,
+                    RoundCount=500,
                 },
 
                 new ScoreModel {
-                    Name = "Second Score",
+                    Name = "Caroline",
                     Description = "Test Data",
-                }
+                    ScoreTotal=900000,
+                    RoundCount=400,
+                },
+
+                new ScoreModel {
+                    Name = "Jacob",
+                    Description = "Test Data",
+                    ScoreTotal=600000,
+                    RoundCount=300,
+                },
+
+                new ScoreModel {
+                    Name = "Elizabeth",
+                    Description = "Test Data",
+                    ScoreTotal=400000,
+                    RoundCount=200,
+                },
+
+                new ScoreModel {
+                    Name = "Jonathan",
+                    Description = "Test Data",
+                    ScoreTotal=200000,
+                    RoundCount=100,
+                },
             };
 
             return datalist;
