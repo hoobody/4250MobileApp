@@ -33,14 +33,9 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
+                        Source="monsters-button.png"
+                        Style="{StaticResource GamePageButton}"
                         Clicked="MonstersButton_Clicked"/>
-
-                <Label 
-                        Text="Monsters"
-                        Style="{StaticResource CenterMessageStyle}"/>
-
             </StackLayout>
 
         </StackLayout>
