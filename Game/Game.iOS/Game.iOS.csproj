@@ -451,4 +451,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-henchman.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-hitman.png" />
+  </ItemGroup>
 </Project>

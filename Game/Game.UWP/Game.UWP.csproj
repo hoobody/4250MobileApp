@@ -174,6 +174,7 @@
     <Content Include="filler-guard.png" />
     <Content Include="filler-hacker.png" />
     <Content Include="filler-henchman.png" />
+    <Content Include="filler-hitman.png" />
     <Content Include="filler-mastermind.png" />
     <Content Include="filler-saboteur.png" />
     <Content Include="filler-spy.png" />
