@@ -439,4 +439,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-bounty-hunter.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-bodyguard.png" />
+  </ItemGroup>
 </Project>
