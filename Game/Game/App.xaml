@@ -139,6 +139,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="ScoreTitleStyle"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="TinyDescriptionStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontAttributes" Value="Italic" />

@@ -37,21 +37,19 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Column="0"
-                            Style="{StaticResource TitleStyle}"
+                            Style="{StaticResource ScoreTitleStyle}"
                             Text="Rank"/>
 
                         <Label Grid.Column="1"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource TitleStyle}"
+                            Style="{StaticResource ScoreTitleStyle}"
                             Text="Name" />
 
                         <Label Grid.Column="2"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource TitleStyle}"
+                            Style="{StaticResource ScoreTitleStyle}"
                             Text="Rounds" />
 
                         <Label Grid.Column="3"
-                            Style="{StaticResource TitleStyle}"
+                            Style="{StaticResource ScoreTitleStyle}"
                             Text="Score" />
                     </Grid>
 
