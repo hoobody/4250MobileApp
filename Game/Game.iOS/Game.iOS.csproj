@@ -442,4 +442,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-bodyguard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-mastermind.png" />
+  </ItemGroup>
 </Project>

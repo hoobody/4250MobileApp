@@ -398,5 +398,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\filler-bodyguard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\filler-mastermind.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
