@@ -68,7 +68,7 @@
                     <Entry Grid.Column="1" Grid.Row="1"
                         Style="{StaticResource EntryStyle}" 
                         Placeholder="Rounds" 
-                        Text="{Binding Data.Round, Mode=TwoWay}" 
+                        Text="{Binding Data.RoundCount, Mode=TwoWay}" 
                         MaxLength="5"
                         x:Name="RoundsEntry"/>
 
@@ -81,7 +81,7 @@
                     <Entry Grid.Column="1" Grid.Row="2"
                         Style="{StaticResource EntryStyle}" 
                         Placeholder="Score" 
-                        Text="{Binding Data.Score, Mode=TwoWay}" 
+                        Text="{Binding Data.ScoreTotal, Mode=TwoWay}" 
                         MaxLength="10"
                         x:Name="ScoreEntry"/>
 
