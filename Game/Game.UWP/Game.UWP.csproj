@@ -167,6 +167,7 @@
     <Content Include="filler-assassin.png" />
     <Content Include="filler-detective.png" />
     <Content Include="filler-doubleo.png" />
+    <Content Include="filler-hacker.png" />
     <Content Include="filler-survey-officer.png" />
     <Content Include="headquarters-button.png" />
     <Content Include="items-button.png" />
