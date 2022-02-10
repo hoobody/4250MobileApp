@@ -29,7 +29,7 @@
                     <Label Text="Name: "
                         Style="{StaticResource LabelStyle}"/>
 
-                    <Frame Style="{StaticResource LabelFrame}">
+                    <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
                         <Label Text="{Binding Data.Name}"
                                Style="{StaticResource LabelStyle}"/>
                     </Frame>
@@ -39,10 +39,10 @@
 
                 <StackLayout Style="{StaticResource EntryBox}">
 
-                    <Label Text="Description: "
+                    <Label Text="Desc: "
                                 Style="{StaticResource LabelStyle}"/>
 
-                    <Frame Style="{StaticResource LabelFrame}">
+                    <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
                         <Label Text="{Binding Data.Description}"
                                Style="{StaticResource LabelStyle}"/>
                     </Frame>
