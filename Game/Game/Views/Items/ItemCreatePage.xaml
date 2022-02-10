@@ -39,12 +39,14 @@
                         Style="{StaticResource LabelStyle}"/>
 
                 <Frame Style="{StaticResource EntryFrame}"
-                    x:Name="NameFrame">
+                    x:Name="NameFrame"
+                        WidthRequest="400">
                     <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                        d:Text="Item Name"
                         x:Name="NameEntry" 
                         TextChanged="Name_onTextChange"
                         MaxLength="25"
+                            Placeholder="Item Name"
+                            PlaceholderColor="{StaticResource WhiteTextColor}"
                         Style="{StaticResource EntryStyle}"/>
                 </Frame>
                 
@@ -52,15 +54,16 @@
 
             <StackLayout Style="{StaticResource EntryBox}">
                 
-                <Label Text="Description: "
+                <Label Text="Desc: "
                         Style="{StaticResource LabelStyle}"/>
 
                 <Frame Style="{StaticResource EntryFrame}"
                     x:Name="DescriptionFrame"
-                       WidthRequest="220">
+                       WidthRequest="400">
                     <Entry  Text="{Binding Data.Description}" 
-                        d:Text="Item Description"
                         x:Name="DescriptionEntry" 
+                            Placeholder="Item Description"
+                            PlaceholderColor="{StaticResource WhiteTextColor}"
                         TextChanged="Description_onTextChange"
                         MaxLength="30"
                         Style="{StaticResource EntryStyle}"/>
