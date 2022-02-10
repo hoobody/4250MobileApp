@@ -370,4 +370,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\brass-knuckles.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\begin-button.png" />
+  </ItemGroup>
 </Project>
