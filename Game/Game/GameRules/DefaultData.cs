@@ -568,6 +568,55 @@ namespace Game.GameRules
         {
             var datalist = new List<MonsterModel>()
             {
+                new MonsterModel {
+                    Name = "Baxter",
+                    Description = "Best guard this side of the milk bowl",
+                    ImageURI = "filler-bodyguard.png",
+                    MonsterJob = MonsterJobEnum.Bodyguard
+                },
+
+                new MonsterModel {
+                    Name = "Hubert",
+                    Description = "Don't let the name fool you",
+                    ImageURI = "filler-hitman.png",
+                    MonsterJob = MonsterJobEnum.Hitman
+                },
+
+                new MonsterModel {
+                    Name = "Whiskers",
+                    Description = "The big bad",
+                    ImageURI = "filler-godfather.png",
+                    MonsterJob = MonsterJobEnum.Godfather
+                },
+
+                new MonsterModel {
+                    Name = "Gary",
+                    Description = "Actually a nice guy",
+                    ImageURI = "filler-guard.png",
+                    MonsterJob = MonsterJobEnum.Guard
+                },
+
+                new MonsterModel {
+                    Name = "Henry",
+                    Description = "Does the job",
+                    ImageURI = "filler-henchman.png",
+                    MonsterJob = MonsterJobEnum.Henchman
+                },
+
+                new MonsterModel {
+                    Name = "Alfie",
+                    Description = "Line em up, knock em down",
+                    ImageURI = "filler-hitman.png",
+                    MonsterJob = MonsterJobEnum.Hitman
+                },
+
+                new MonsterModel {
+                    Name = "Fluffy",
+                    Description = "The one behind it all",
+                    ImageURI = "filler-mastermind.png",
+                    MonsterJob = MonsterJobEnum.Mastermind
+                },
+
                 //new MonsterModel {
                 //    Name = "Green Troll",
                 //    Description = "Big and Ugly",
