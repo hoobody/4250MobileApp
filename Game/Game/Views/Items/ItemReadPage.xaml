@@ -8,8 +8,8 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="edit-button.png"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="delete-button.png"/>
     </ContentPage.ToolbarItems>
 
     <StackLayout 
