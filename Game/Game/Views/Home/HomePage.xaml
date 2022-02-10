@@ -19,10 +19,10 @@
                          Style="{StaticResource GameLogoStyle}"/>
                 
                 </StackLayout>
-                
+
                 <StackLayout    Style="{StaticResource VerticalStack}"
                                 HorizontalOptions="Center" 
-                                Padding="70,5,70,0"> 
+                                Padding="70,5,70,0">
 
                     <Label  Text="Welcome Agent"
                             Style="{StaticResource CenterMessageStyle}"
@@ -31,15 +31,11 @@
                             LineBreakMode="WordWrap"
                             MaxLines="5"/>
 
-                    <Button Clicked="GameButton_Clicked"
-                            WidthRequest="175"
-                            HeightRequest="80"
-                            ImageSource="begin-button.png"/>
-                    
+                    <ImageButton Clicked="GameButton_Clicked"
+                                 Source="begin-button.png"
+                                 Style="{StaticResource GamePageButton}"/>
+
                 </StackLayout>
-
-                
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
