@@ -135,6 +135,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="autobattle-button.png" />
     <Content Include="battleboard.png" />
     <Content Include="begin-button.png" />
     <Content Include="brass-knuckles.png" />

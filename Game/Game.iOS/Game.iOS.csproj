@@ -379,4 +379,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\headquarters-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\autobattle-button.png" />
+  </ItemGroup>
 </Project>
