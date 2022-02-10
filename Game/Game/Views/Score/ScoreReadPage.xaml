@@ -61,7 +61,7 @@
                 <Frame Grid.Column="1" Grid.Row="1"
                     Style="{StaticResource GridCellFrame}">
                     <Label Style="{StaticResource LabelStyle}" 
-                        Text="{Binding Data.Rounds}"/>
+                        Text="{Binding Data.RoundCount}"/>
                 </Frame>
 
                 <Frame Grid.Column="0" Grid.Row="2"
@@ -73,7 +73,7 @@
                 <Frame Grid.Column="1" Grid.Row="2"
                     Style="{StaticResource GridCellFrame}">
                     <Label Style="{StaticResource LabelStyle}" 
-                        Text="{Binding Data.Score}"/>
+                        Text="{Binding Data.ScoreTotal}"/>
                 </Frame>
 
             </Grid>
