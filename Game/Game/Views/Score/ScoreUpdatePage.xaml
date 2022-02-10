@@ -70,6 +70,19 @@
                         MaxLength="5"
                         x:Name="RoundsEntry"/>
 
+                    <Frame Grid.Column="0" Grid.Row="2"
+                           Style="{StaticResource LabelFrame}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                            Text="Score: "/>
+                    </Frame>
+
+                    <Entry Grid.Column="1" Grid.Row="2"
+                        Style="{StaticResource EntryStyle}" 
+                        Placeholder="Score" 
+                        Text="{Binding Data.Score, Mode=TwoWay}" 
+                        MaxLength="10"
+                        x:Name="ScoreEntry"/>
+
                 </Grid>
 
             </StackLayout>
