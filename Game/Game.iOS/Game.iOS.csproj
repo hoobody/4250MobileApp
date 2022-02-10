@@ -412,4 +412,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-doubleo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-detective.png" />
+  </ItemGroup>
 </Project>

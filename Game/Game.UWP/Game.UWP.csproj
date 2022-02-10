@@ -164,6 +164,7 @@
     <Content Include="fancy-hat.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="filler-detective.png" />
     <Content Include="filler-doubleo.png" />
     <Content Include="headquarters-button.png" />
     <Content Include="items-button.png" />
