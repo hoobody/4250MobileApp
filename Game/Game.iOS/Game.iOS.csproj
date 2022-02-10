@@ -403,4 +403,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\delete-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit-button.png" />
+  </ItemGroup>
 </Project>
