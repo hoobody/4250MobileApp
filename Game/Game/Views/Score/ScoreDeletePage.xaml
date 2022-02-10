@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.ScoreDeletePage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource DeleteBackgroundColor}">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="cancel-button.png"/>
@@ -13,17 +14,19 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <StackLayout Style="{StaticResource DeleteScoreOuterBoxStack}">
 
-            
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
+            <Frame Style="{StaticResource DeleteMessageFrame}">
+                <StackLayout Style="{StaticResource DeleteMessageBox}" >
+                    <Label Text=" Are you sure you&#10; want to delete&#10; this score?"
+                           Style="{StaticResource TitleCenterStyle}"/>
+                </StackLayout>
+            </Frame>
 
-            
+
             <StackLayout 
                 HorizontalOptions="Center" 
                 Padding="20">
-
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
 
                 <StackLayout
                 HorizontalOptions="Center"
