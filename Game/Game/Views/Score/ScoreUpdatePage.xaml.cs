@@ -22,12 +22,15 @@ namespace Game.Views
         // Constructor for Unit Testing
         public ScoreUpdatePage(bool UnitTest) { }
 
+        public ScoreModel ScoreCopy;
         /// <summary>
         /// Constructor that takes and existing data Score
         /// </summary>
         public ScoreUpdatePage(GenericViewModel<ScoreModel> data)
         {
             InitializeComponent();
+
+            ScoreCopy = new ScoreModel(data.Data);
 
             BindingContext = this.ViewModel = data;
 
@@ -75,6 +78,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
+            ViewModel.Data.Update(ScoreCopy);
+
             _ = await Navigation.PopModalAsync();
         }
 
