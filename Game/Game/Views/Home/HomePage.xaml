@@ -31,12 +31,10 @@
                             LineBreakMode="WordWrap"
                             MaxLines="5"/>
 
-                    <Button Text="Begin"
-                            FontSize="Medium"
-                            FontFamily="OCRFont"
-                            Clicked="GameButton_Clicked"
-                            WidthRequest="100"
-                            HeightRequest="50"/>
+                    <Button Clicked="GameButton_Clicked"
+                            WidthRequest="175"
+                            HeightRequest="80"
+                            ImageSource="begin-button.png"/>
                     
                 </StackLayout>
 
