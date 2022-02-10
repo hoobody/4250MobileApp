@@ -418,4 +418,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-survey-officer.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-assassin.png" />
+  </ItemGroup>
 </Project>
