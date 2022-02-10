@@ -40,19 +40,19 @@
                         </Grid.RowDefinitions>
 
                         <Label Grid.Column="0"
-                            Style="{StaticResource ScoreTitleStyle}"
+                            Style="{StaticResource TitleStyle}"
                             Text="Rank"/>
 
                         <Label Grid.Column="1"
-                            Style="{StaticResource ScoreTitleStyle}"
+                            Style="{StaticResource TitleStyle}"
                             Text="Name" />
 
                         <Label Grid.Column="2"
-                            Style="{StaticResource ScoreTitleStyle}"
+                            Style="{StaticResource TitleStyle}"
                             Text="Rounds" />
 
                         <Label Grid.Column="3"
-                            Style="{StaticResource ScoreTitleStyle}"
+                            Style="{StaticResource TitleStyle}"
                             Text="Score" />
                     </Grid>
 
