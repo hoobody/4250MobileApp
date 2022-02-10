@@ -15,10 +15,10 @@ namespace Game.Models
         public string Id { get; set; } = System.Guid.NewGuid().ToString();
 
         // The Name of the Item 
-        public string Name { get; set; } = "This is an Item";
+        public string Name { get; set; } = "Name";
 
         // The Descirption of the Item
-        public string Description { get; set; } = "Item Description";
+        public string Description { get; set; } = "Description";
 
         // Guid, passed from the server
         public string Guid { get; set; } = "";
