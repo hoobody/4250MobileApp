@@ -781,13 +781,15 @@
             </Style>
 
             <!-- Grid -->
-            <Style TargetType="Grid">
-                <Setter Property="ColumnSpacing" Value="0" />
-                <Setter Property="RowSpacing" Value="0" />
+            <Style TargetType="Grid"
+                   x:Key="GridStyle">
+                <Setter Property="ColumnSpacing" Value="1" />
+                <Setter Property="RowSpacing" Value="1" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
             </Style>
             
+
             <Style TargetType="Grid"
                 x:Key="MapGridStyle">
                 <Setter Property="VerticalOptions" Value="Fill" />
