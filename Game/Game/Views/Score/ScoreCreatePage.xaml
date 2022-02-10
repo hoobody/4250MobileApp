@@ -29,39 +29,23 @@
 
                 <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
+                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
+                        <Label Style="{StaticResource LabelStyle}" Text="Name: " HorizontalOptions="Center"/>
+                    </Frame>
+                    <Entry Style="{StaticResource EntryStyle}" Placeholder="Name" PlaceholderColor="{StaticResource WhiteTextColor}"
+                           Text="{Binding Data.Name, Mode=TwoWay}" WidthRequest="280" MaxLength="17"
+                            x:Name="NameEntry"/>
+                </StackLayout>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Score" 
-                        Style="{StaticResource LabelStyle}"/>
-                    
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.ScoreTotal}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Score" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                </Grid>
+                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
+                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
+                        <Label Style="{StaticResource LabelStyle}" Text="Score: " HorizontalOptions="Center"/>
+                    </Frame>
+                    <Entry Style="{StaticResource EntryStyle}" Placeholder="Score" PlaceholderColor="{StaticResource WhiteTextColor}"
+                           Text="{Binding Data.Score, Mode=TwoWay}" WidthRequest="280" MaxLength="5"
+                           x:Name="ScoreEntry"/>
+                </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
