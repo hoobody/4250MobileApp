@@ -58,7 +58,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Speedy Shoes",
                     Description = "Gotta go fast",
-                    ImageURI = "item.png",
+                    ImageURI = "filler-speed-shoes.png",
                     Range = 0,
                     Damage = 0,
                     Value = 4,
@@ -68,7 +68,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Armored Boots",
                     Description = "These boots have been reinforced",
-                    ImageURI = "item.png",
+                    ImageURI = "filler-armor-shoes.png",
                     Range = 0,
                     Damage = 0,
                     Value = 2,
