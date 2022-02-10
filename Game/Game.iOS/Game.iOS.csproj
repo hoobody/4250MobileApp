@@ -391,4 +391,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\monsters-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scores-button.png" />
+  </ItemGroup>
 </Project>
