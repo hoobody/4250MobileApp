@@ -15,8 +15,11 @@
 
         <StackLayout Style="{StaticResource VerticalStack}"
                      Spacing="10">
-            
-            <Image Source="d20_2.png" Style="{StaticResource ImageMediumStyle}"/>
+
+            <Image Source="game-logo.png"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   BackgroundColor="Transparent"/>
 
             <Frame WidthRequest="350"
                    HeightRequest="200">
