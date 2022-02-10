@@ -51,31 +51,36 @@
                             WidthRequest="400">
 
                             <StackLayout
+                                Style="{StaticResource VerticalStack}"
+                                VerticalOptions="Center">
+
+                                <Frame x:Name="NameFrame">
+                                    <Entry
+                                        x:Name="NameEntry"
+                                        d:Text="Name"
+                                        FontSize="15"
+                                        MaxLength="20"
+                                        Style="{StaticResource EntryStyle}"
+                                        Text="{Binding Data.Name, Mode=TwoWay}"
+                                        TextChanged="Name_onTextChange"
+                                        WidthRequest="200" />
+                                </Frame>
+
+
+                                <StackLayout
                                 HorizontalOptions="Center"
                                 Spacing="5"
                                 Style="{StaticResource HorizontalStack}"
                                 VerticalOptions="Center"
                                 WidthRequest="400">
 
-                                <StackLayout
+                                    <StackLayout
                                     Margin="0,30,0,0"
                                     Spacing="5"
                                     Style="{StaticResource VerticalStack}"
                                     WidthRequest="150">
 
-                                    <Frame x:Name="NameFrame">
-                                        <Entry
-                                            x:Name="NameEntry"
-                                            d:Text="Name"
-                                            FontSize="15"
-                                            MaxLength="9"
-                                            Style="{StaticResource EntryStyle}"
-                                            Text="{Binding Data.Name, Mode=TwoWay}"
-                                            TextChanged="Name_onTextChange"
-                                            WidthRequest="100" />
-                                    </Frame>
-
-                                    <Frame
+                                        <Frame
                                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                         BorderColor="{StaticResource BorderColor}"
                                         HeightRequest="100"
@@ -91,24 +96,13 @@
 
                                 </StackLayout>
 
-                                <StackLayout
+                                    <StackLayout
                                     Spacing="5"
                                     Style="{StaticResource VerticalStack}"
                                     VerticalOptions="Center"
                                     WidthRequest="250">
-                                    <StackLayout
-                                        HeightRequest="25"
-                                        Style="{StaticResource VerticalStack}"
-                                        VerticalOptions="Center"
-                                        WidthRequest="215">
-                                        <Label
-                                            Margin="-10,0,0,0"
-                                            HorizontalOptions="Center"
-                                            Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                            VerticalOptions="Start" />
-                                    </StackLayout>
 
-                                    <StackLayout
+                                        <StackLayout
                                         HorizontalOptions="Start"
                                         Spacing="3"
                                         Style="{StaticResource HorizontalStack}">
@@ -195,6 +189,7 @@
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
+                            </StackLayout>
                             </StackLayout>
                         </Frame>
 
