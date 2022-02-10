@@ -16,7 +16,7 @@ namespace Game.Services
     public static class ItemService
     {
         // Return the Default Image URI for the Local Image for an ItemModel.
-        public static string DefaultImageURI = "icon_new.png";
+        public static string DefaultImageURI = "filler-item.png";
 
         #region ServerCalls
         public static async Task<List<ItemModel>> GetItemsFromServerGetAsync(int parameter = 100)
