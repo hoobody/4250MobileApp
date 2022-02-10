@@ -388,4 +388,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\items-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monsters-button.png" />
+  </ItemGroup>
 </Project>
