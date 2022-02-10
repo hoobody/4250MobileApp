@@ -49,33 +49,32 @@
                             HorizontalOptions="Center"
                             Style="{StaticResource TitleStyle}"
                             Text="Rounds" />
-                            
+
                         <Label Grid.Column="3"
                             Style="{StaticResource TitleStyle}"
                             Text="Score" />
                     </Grid>
 
-                        <ListView
+                    <ListView
+                            Style="{StaticResource ListView}"
                             x:Name="DataListView"
-                            Margin="5,0,5,0"
                             CachingStrategy="RecycleElement"
                             HasUnevenRows="true"
                             IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                             ItemSelected="OnItemSelected"
                             ItemsSource="{Binding Dataset}"
-                            RefreshCommand="{Binding LoadItemsCommand}"
-                            RowHeight="60">
+                            RefreshCommand="{Binding LoadItemsCommand}">
 
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
-                                    <ViewCell>
-                                    <StackLayout Style="{StaticResource VerticalStack}" Spacing="5">
-                                        <Frame
-                                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                <ViewCell>
+                                    <StackLayout Style="{StaticResource Spaced Box}">
+                                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                             BorderColor="{StaticResource BorderColor}"
                                             HeightRequest="55"
                                             WidthRequest="440">
+
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="200" />
@@ -85,20 +84,17 @@
                                                     <ColumnDefinition Width="auto" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <Label
-                                                    Grid.Column="0"
+                                                <Label Grid.Column="0"
                                                     HorizontalOptions="Center"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding Name}" />
 
-                                                <Label
-                                                    Grid.Column="2"
+                                                <Label Grid.Column="2"
                                                     HorizontalOptions="Center"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding RoundCount}" />
 
-                                                <Label
-                                                    Grid.Column="4"
+                                                <Label Grid.Column="4"
                                                     HorizontalOptions="Start"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding ScoreTotal}" />
@@ -107,14 +103,11 @@
                                         </Frame>
                                     </StackLayout>
                                 </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-
-                    </StackLayout>
-
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
             </Frame>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
