@@ -16,7 +16,7 @@
                     
                     <Image
                          Source="game-logo.png"
-                         Style="{StaticResource GameLogoStyle}"/>
+                         Style="{StaticResource GameLogoXLStyle}"/>
                 
                 </StackLayout>
 
