@@ -386,5 +386,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\filler-saboteur.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\filler-spy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
