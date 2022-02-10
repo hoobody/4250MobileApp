@@ -445,4 +445,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-mastermind.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-godfather.png" />
+  </ItemGroup>
 </Project>
