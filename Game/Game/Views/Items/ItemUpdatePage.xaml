@@ -44,7 +44,8 @@
                                Style="{StaticResource EntryFrame}"
                                WidthRequest="400">
                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
-                                d:Text="Item Name"
+                                Placeholder="Item Name"
+                                    PlaceholderColor="{StaticResource WhiteTextColor}"
                                 x:Name="NameEntry" 
                                 TextChanged="Name_onTextChange"
                                 MaxLength="25"
@@ -62,7 +63,8 @@
                                Style="{StaticResource EntryFrame}"
                                WidthRequest="400">
                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
-                                d:Text="Item Description"
+                                Placeholder="Item Description"
+                                    PlaceholderColor="{StaticResource WhiteTextColor}"
                                 x:Name="DescriptionEntry" 
                                 TextChanged="Description_onTextChange"
                                 MaxLength="30"
