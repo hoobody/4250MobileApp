@@ -12,7 +12,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="AddScore_Clicked"
-            IconImageSource="icon_add.png"
+            IconImageSource="create-button.png"
             Text="Add" />
     </ContentPage.ToolbarItems>
 
