@@ -24,28 +24,65 @@
     <ContentPage.Content>
 
         <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+            <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
+                <Image Source="game-logo.png"
+                    Style="{StaticResource GameLogoLgStyle}"/>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Name: " HorizontalOptions="Center"/>
+                <Label Text="Add a Score" 
+                       Style="{StaticResource HeaderStyle}"/>
+
+                <Grid ColumnSpacing="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame Grid.Column="0" Grid.Row="0"
+                           Style="{StaticResource LabelFrame}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                               Text="Name: "/>
                     </Frame>
-                    <Entry Style="{StaticResource EntryStyle}" Placeholder="Name" PlaceholderColor="{StaticResource WhiteTextColor}"
-                           Text="{Binding Data.Name, Mode=TwoWay}" WidthRequest="280" MaxLength="17"
-                            x:Name="NameEntry"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Score: " HorizontalOptions="Center"/>
+                    <Entry Grid.Column="1" Grid.Row="0"
+                        Style="{StaticResource EntryStyle}" 
+                        Placeholder="Name" 
+                        Text="{Binding Data.Name, Mode=TwoWay}" 
+                        MaxLength="17"
+                        x:Name="NameEntry"/>
+
+                    <Frame Grid.Column="0" Grid.Row="1"
+                           Style="{StaticResource LabelFrame}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                            Text="Score: " />
                     </Frame>
-                    <Entry Style="{StaticResource EntryStyle}" Placeholder="Score" PlaceholderColor="{StaticResource WhiteTextColor}"
-                           Text="{Binding Data.Score, Mode=TwoWay}" WidthRequest="280" MaxLength="5"
-                           x:Name="ScoreEntry"/>
-                </StackLayout>
+                    
+                    <Entry Grid.Column="1" Grid.Row="1"
+                        Style="{StaticResource EntryStyle}" 
+                        Placeholder="Rounds" 
+                        Text="{Binding Data.Round, Mode=TwoWay}" 
+                        MaxLength="5"
+                        x:Name="RoundsEntry"/>
+
+                    <Frame Grid.Column="0" Grid.Row="2"
+                           Style="{StaticResource LabelFrame}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                            Text="Score: "/>
+                    </Frame>
+
+                    <Entry Grid.Column="1" Grid.Row="2"
+                        Style="{StaticResource EntryStyle}" 
+                        Placeholder="Score" 
+                        Text="{Binding Data.Score, Mode=TwoWay}" 
+                        MaxLength="5"
+                        x:Name="ScoreEntry"/>
+
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
