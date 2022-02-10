@@ -41,23 +41,17 @@
                     Spacing="100"
                     Style="{StaticResource HorizontalStack}">
 
-                    <StackLayout Style="{StaticResource VerticalStack}">
 
-                        <ImageButton
-                            Clicked="VillageButton_Clicked"
-                            Source="headquarters-button.png"
-                            Style="{StaticResource GamePageButton}" />
-                    </StackLayout>
+                    <ImageButton
+                        Clicked="VillageButton_Clicked"
+                        Source="headquarters-button.png"
+                        Style="{StaticResource GamePageButton}" />
 
-                    <StackLayout Style="{StaticResource VerticalStack}">
+                    <ImageButton
+                        Clicked="AutobattleButton_Clicked"
+                        Source="autobattle-button.png"
+                        Style="{StaticResource GamePageButton}" />
 
-                        <ImageButton
-                            Clicked="AutobattleButton_Clicked"
-                            Source="item.png"
-                            Style="{StaticResource ImageLargeStyle}" />
-
-                        <Label Style="{StaticResource CenterMessageStyle}" Text="Auto Battle" />
-                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
