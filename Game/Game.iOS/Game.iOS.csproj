@@ -424,4 +424,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-hacker.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bigger-delete-button.png" />
+  </ItemGroup>
 </Project>
