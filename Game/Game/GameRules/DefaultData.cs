@@ -441,7 +441,10 @@ namespace Game.GameRules
                     Level = 6,
                     MaxHealth = 45,
                     ImageURI = "filler-doubleo.png",
-                    Job = CharacterJobEnum.Double0
+                    Job = CharacterJobEnum.Double0,
+                    Attack = 4,
+                    Defense = 1,
+                    Speed = 2,
                 },
 
                 new CharacterModel {
@@ -451,7 +454,10 @@ namespace Game.GameRules
                     Level = 4,
                     MaxHealth = 33,
                     ImageURI = "filler-detective.png",
-                    Job = CharacterJobEnum.Detective
+                    Job = CharacterJobEnum.Detective,
+                    Attack = 1,
+                    Defense = 3,
+                    Speed = 3,
                 },
 
                 new CharacterModel {
@@ -461,7 +467,10 @@ namespace Game.GameRules
                     Level = 2,
                     MaxHealth = 13,
                     ImageURI = "filler-survey-officer.png",
-                    Job = CharacterJobEnum.SurveillanceOfficer
+                    Job = CharacterJobEnum.SurveillanceOfficer,
+                    Attack = 2,
+                    Defense = 2,
+                    Speed = 2,
                 },
 
                 new CharacterModel {
@@ -471,7 +480,10 @@ namespace Game.GameRules
                     Level = 5,
                     MaxHealth = 39,
                     ImageURI = "filler-assassin.png",
-                    Job = CharacterJobEnum.Assassin
+                    Job = CharacterJobEnum.Assassin,
+                    Attack = 4,
+                    Defense = 0,
+                    Speed = 2,
                 },
 
                 new CharacterModel {
@@ -481,7 +493,10 @@ namespace Game.GameRules
                     Level = 3,
                     MaxHealth = 29,
                     ImageURI = "filler-hacker.png",
-                    Job = CharacterJobEnum.Hacker
+                    Job = CharacterJobEnum.Hacker,
+                    Attack = 0,
+                    Defense = 2,
+                    Speed = 4,
                 },
 
                 new CharacterModel {
@@ -491,7 +506,10 @@ namespace Game.GameRules
                     Level = 1,
                     MaxHealth = 7,
                     ImageURI = "filler-saboteur.png",
-                    Job = CharacterJobEnum.Saboteur
+                    Job = CharacterJobEnum.Saboteur,
+                    Attack = 2,
+                    Defense = 0,
+                    Speed = 3,
                 },
 
                 new CharacterModel {
@@ -501,7 +519,10 @@ namespace Game.GameRules
                     Level = 7,
                     MaxHealth = 50,
                     ImageURI = "filler-spy.png",
-                    Job = CharacterJobEnum.Spy
+                    Job = CharacterJobEnum.Spy,
+                    Attack = 3,
+                    Defense = 0,
+                    Speed = 2,
                 },
                 //new CharacterModel {
                 //    Name = "Mike",
