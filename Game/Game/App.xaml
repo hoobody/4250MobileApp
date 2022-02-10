@@ -35,6 +35,7 @@
             <Color x:Key="EntryColor">#6393b7</Color>
             <Color x:Key="BlackTextColor">Black</Color>
             <Color x:Key="WhiteTextColor">White</Color>
+            <Color x:Key="PlaceholderTextColor">White</Color>
             <Color x:Key="DeleteBackgroundColor">#f3cf69</Color>
 			<Color x:Key="BorderColor">Black</Color>
 			<Color x:Key="MaxThumbColor">DimGray</Color>
@@ -785,7 +786,7 @@
                 <Setter Property="VerticalTextAlignment" Value="Center" />
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource EntryColor}" />
-                <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderTextColor}" />
             </Style>
 
             <!-- Editor-->
