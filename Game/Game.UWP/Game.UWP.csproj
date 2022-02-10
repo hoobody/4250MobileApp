@@ -158,6 +158,7 @@
     <Content Include="fancy-hat.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
+    <Content Include="mission-button.png" />
     <Content Include="multi-vision-goggles.png" />
     <Content Include="stealth-suit.png" />
     <Content Include="item_small.png" />

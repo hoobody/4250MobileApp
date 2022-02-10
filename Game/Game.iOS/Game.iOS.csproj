@@ -373,4 +373,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\begin-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mission-button.png" />
+  </ItemGroup>
 </Project>
