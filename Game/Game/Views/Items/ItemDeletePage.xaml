@@ -9,8 +9,8 @@
              BackgroundColor="{StaticResource DeleteBackgroundColor}">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="cancel-button.png"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="delete-button.png"/>
     </ContentPage.ToolbarItems>
 
     <Grid>
