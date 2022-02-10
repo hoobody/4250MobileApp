@@ -463,4 +463,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\filler-item.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dice.png" />
+  </ItemGroup>
 </Project>
