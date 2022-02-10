@@ -39,25 +39,25 @@
                                 BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                 BorderColor="{StaticResource BorderColor}"
                                 HeightRequest="210"
-                                WidthRequest="400">
+                                WidthRequest="400" Padding="20,0,0,0">
 
                         <StackLayout
                                     Style="{StaticResource VerticalStack}"
-                                    VerticalOptions="Center">
+                                    VerticalOptions="Center" Spacing="10">
 
                             <Label
                                             FontAttributes="Bold"
-                                            FontSize="Medium"
+                                            FontSize="20"
                                             HorizontalOptions="Center"
                                             Style="{StaticResource HeaderStyle}"
-                                            Text="{Binding Data.Name}" />
+                                            Text="{Binding Data.Name}"/>
 
                             <StackLayout
                                         HorizontalOptions="Center"
                                         Spacing="10"
                                         Style="{StaticResource HorizontalStack}"
                                         VerticalOptions="Center"
-                                        WidthRequest="350">
+                                        WidthRequest="400">
 
                                 <StackLayout
                                         Spacing="10"
@@ -114,17 +114,17 @@
                                             HorizontalOptions="Start"
                                             Spacing="3"
                                             Style="{StaticResource HorizontalStack}">
-                                        <Label Style="{StaticResource LabelStyle}" Text="Desc: " FontSize="13" />
                                         <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="173">
-                                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Description}" FontSize="12"/>
+                                                WidthRequest="227">
+                                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Description}" FontSize="12"
+                                                   FontAttributes="Italic"/>
                                         </Frame>
                                     </StackLayout>
 
                                     <StackLayout
-                                            HorizontalOptions="End"
+                                            HorizontalOptions="Start"
                                             Spacing="7"
                                             Style="{StaticResource HorizontalStack}">
 
