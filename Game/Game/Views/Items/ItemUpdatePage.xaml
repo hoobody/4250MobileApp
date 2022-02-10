@@ -22,8 +22,6 @@
 
     <ContentPage.Content>
 
-        <ScrollView HorizontalOptions="Center">
-
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
                 <Label Text="Update Page" Style="{StaticResource HeaderStyle}"/>
@@ -175,9 +173,7 @@
                     </Grid>
 
                 </StackLayout>
-            
-        </ScrollView>
-        
+                  
     </ContentPage.Content>
     
 </ContentPage>
