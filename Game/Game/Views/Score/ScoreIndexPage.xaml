@@ -21,42 +21,38 @@
 
             <Label Style="{StaticResource HeaderStyle}" Text="Score List Page" />
 
-            <Frame
-                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                BorderColor="{StaticResource BorderColor}"
-                CornerRadius="5">
+            <Frame Style="{StaticResource HighScoresFrame}">
 
-                <StackLayout HorizontalOptions="Center" Style="{StaticResource VerticalStack}">
+                <StackLayout Style="{StaticResource PaddedBox}">
 
                     <Grid ColumnSpacing="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="200" />
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="140" />
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="15*" />
+                            <ColumnDefinition Width="35*" />
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="25*" />
                         </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                        <Label
-                            Grid.Column="0"
-                            Margin="5"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource ListStyle}"
-                            Text="Name"
-                            TextDecorations="Underline" />
+                        <Label Grid.Column="0"
+                            Style="{StaticResource TitleStyle}"
+                            Text="Rank"/>
 
-                        <Label
-                            Grid.Column="2"
+                        <Label Grid.Column="1"
                             HorizontalOptions="Center"
-                            Style="{StaticResource ListStyle}"
-                            Text="Rounds"
-                            TextDecorations="Underline" />
-                        <Label
-                            Grid.Column="3"
+                            Style="{StaticResource TitleStyle}"
+                            Text="Name" />
+
+                        <Label Grid.Column="2"
                             HorizontalOptions="Center"
-                            Style="{StaticResource ListStyle}"
-                            Text="Score"
-                            TextDecorations="Underline" />
+                            Style="{StaticResource TitleStyle}"
+                            Text="Rounds" />
+                            
+                        <Label Grid.Column="3"
+                            Style="{StaticResource TitleStyle}"
+                            Text="Score" />
                     </Grid>
 
                         <ListView

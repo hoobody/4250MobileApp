@@ -122,6 +122,8 @@
                 <Setter Property="FontSize" Value="Micro" />
             </Style>
 
+            
+
             <Style TargetType="Label"
                 x:Key="HeaderStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
@@ -725,7 +727,17 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
-            
+
+            <Style TargetType="Frame"
+                x:Key="HighScoresFrame">
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
             <!-- Grid -->
             <Style TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="0" />
