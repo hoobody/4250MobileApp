@@ -24,13 +24,10 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
+                        Source="items-button.png"
+                        Style="{StaticResource GamePageButton}"
                         Clicked="ItemsButton_Clicked"/>
 
-                <Label 
-                        Text="Items"
-                        Style="{StaticResource CenterMessageStyle}"/>
             </StackLayout>
             
             <StackLayout Style="{StaticResource CardImageTextBox}">
