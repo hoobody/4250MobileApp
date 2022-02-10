@@ -409,4 +409,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\save-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filler-doubleo.png" />
+  </ItemGroup>
 </Project>
