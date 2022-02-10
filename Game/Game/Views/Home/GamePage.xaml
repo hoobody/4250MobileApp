@@ -17,7 +17,7 @@
 
             <StackLayout
                 HorizontalOptions="Center"
-                Spacing="50"
+                Spacing="25"
                 VerticalOptions="Center">
 
                 <Label
@@ -38,7 +38,7 @@
 
                 <StackLayout
                     HorizontalOptions="Start"
-                    Spacing="100"
+                    Spacing="50"
                     Style="{StaticResource HorizontalStack}">
 
 
