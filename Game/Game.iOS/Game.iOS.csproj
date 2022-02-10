@@ -394,4 +394,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\scores-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cancel-button.png" />
+  </ItemGroup>
 </Project>

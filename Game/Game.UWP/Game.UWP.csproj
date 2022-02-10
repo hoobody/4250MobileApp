@@ -139,6 +139,7 @@
     <Content Include="battleboard.png" />
     <Content Include="begin-button.png" />
     <Content Include="brass-knuckles.png" />
+    <Content Include="cancel-button.png" />
     <Content Include="caution_stamp_medium.png" />
     <Content Include="caution_stamp_small.png" />
     <Content Include="characters-button.png" />
