@@ -18,14 +18,15 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Monster;
             Guid = Id;
-            Name = "Troll";
-            Description = "Angry Troll";
+            Name = "Cate";
+            Description = "Purrs and everything";
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
-            ImageURI = "troll.png";
+            ImageURI = "filler-bodyguard.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
+            MonsterJob = MonsterJobEnum.Unknown;
             
 
             // Default to unknown, which is no special job
