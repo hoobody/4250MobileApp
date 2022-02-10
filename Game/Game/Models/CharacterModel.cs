@@ -20,13 +20,13 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Elf";
-            Description = "Happy Elf";
+            Name = "Mister Mouse";
+            Description = "Happy Mouse";
             Level = 1;
-            ImageURI = "knight.png";
+            ImageURI = "filler-doubleo.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
-            CodeName = "Agent";
+            CodeName = "Cheese";
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
