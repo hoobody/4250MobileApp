@@ -427,6 +427,12 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="DeleteOuterBox"
+                BasedOn="{StaticResource OuterBoxStack}">
+                <Setter Property="Padding" Value="0,50,0,0" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="CardImageTextBox">
                 <Setter Property="Orientation" Value="Vertical" />
                 <Setter Property="HorizontalOptions" Value="Center" />
@@ -700,6 +706,13 @@
 				 x:Key="ItemPictureFrame">
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="BorderColor" Value="Black" />
+            </Style>
+
+            <Style TargetType="Frame"
+				 x:Key="DeleteMessageFrame">
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}"/>
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="20"/>
             </Style>
 
             <Style TargetType="Frame"
