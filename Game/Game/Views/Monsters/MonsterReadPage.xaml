@@ -189,7 +189,7 @@
 
                                             <Frame Style="{StaticResource PhotoBack}">
                                                 <Frame Style="{StaticResource PhotoFront}">
-                                                    <Image Source="village.png" />
+                                                    <Image Source="filler-item.png" />
                                                 </Frame>
                                             </Frame>
                                         </StackLayout>
