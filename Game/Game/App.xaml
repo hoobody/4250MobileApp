@@ -427,7 +427,7 @@
             </Style>
 
             <Style TargetType="StackLayout"
-                x:Key="DeleteOuterBox"
+                x:Key="DeleteScoreOuterBoxStack"
                 BasedOn="{StaticResource OuterBoxStack}">
                 <Setter Property="Padding" Value="0,50,0,0" />
             </Style>
