@@ -13,48 +13,12 @@
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+        <StackLayout Style="{StaticResource OuterBoxStack}">
 
+            
             <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
 
-            <StackLayout>
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Name: " HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Name}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="130" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Game Date:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.GameDate}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="140" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="AutoBattle:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.AutoBattle}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="80" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Score:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.ScoreTotal}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="200" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Number of Rounds:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.RoundCount}" />
-                </StackLayout>
-            </StackLayout>
-
+            
             <StackLayout 
                 HorizontalOptions="Center" 
                 Padding="20">
