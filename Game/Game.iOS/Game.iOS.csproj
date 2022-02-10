@@ -400,4 +400,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\create-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\delete-button.png" />
+  </ItemGroup>
 </Project>

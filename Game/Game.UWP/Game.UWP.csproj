@@ -151,6 +151,7 @@
     <Content Include="danger_stamp_extrasmall.png" />
     <Content Include="danger_stamp_medium.png" />
     <Content Include="danger_stamp_small.png" />
+    <Content Include="delete-button.png" />
     <Content Include="dungeon_door.png" />
     <Content Include="elf1.png" />
     <Content Include="elf2.png" />
