@@ -28,18 +28,32 @@
             <Label Text="View Score Details" 
                        Style="{StaticResource HeaderStyle}"/>
 
-            <Grid ColumnSpacing="1">
+            <Grid ColumnSpacing="0"
+                  RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20*" />
                     <ColumnDefinition Width="80*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                
-                
+
+                <Frame Grid.Column="0" Grid.Row="0"
+                       Style="{StaticResource LabelFrame}">
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                            Text="Name: "/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Column="1" Grid.Row="0"
+                       Style="{StaticResource LabelFrame}">
+                    <StackLayout Style="{StaticResource HorizontalStack}">
+                        <Label Style="{StaticResource LabelStyle}" 
+                        Text="{Binding Data.Name}"/>
+                     </StackLayout>
+                </Frame>
+
             </Grid>
 
             <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">

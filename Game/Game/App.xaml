@@ -398,7 +398,7 @@
                 x:Key="HorizontalStack">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="HorizontalOptions" Value="Start" />
-                <Setter Property="VerticalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
                 <Setter Property="Spacing" Value="1" />
@@ -712,7 +712,7 @@
                 <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
-
+            
             <Style TargetType="Frame"
                 x:Key="ManillaFolderFrame">
                 <Setter Property="Padding" Value="10" />
