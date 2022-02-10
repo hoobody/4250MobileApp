@@ -371,5 +371,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\filler-detective.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\filler-survey-officer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
