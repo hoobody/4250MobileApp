@@ -21,82 +21,104 @@
 
             <Label Style="{StaticResource HeaderStyle}" Text="Score List Page" />
 
+            <Frame
+                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                BorderColor="{StaticResource BorderColor}"
+                CornerRadius="5">
 
-            <StackLayout HorizontalOptions="Center" Style="{StaticResource VerticalStack}">
+                <StackLayout HorizontalOptions="Center" Style="{StaticResource VerticalStack}">
 
-                <Grid ColumnSpacing="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60" />
-                        <ColumnDefinition Width="115" />
-                        <ColumnDefinition Width="70" />
-                    </Grid.ColumnDefinitions>
+                    <Grid ColumnSpacing="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="140" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
 
-                    <Label Margin="5"
-                        Grid.Column="0"
-                        Style="{StaticResource ListStyle}"
-                        Text="Name" 
-                        TextDecorations="Underline"/>
-                    
-                    <Label
-                        Grid.Column="2"
-                        Style="{StaticResource ListStyle}"
-                        Text="Rounds" 
-                        TextDecorations="Underline"/>
-                    <Label
-                        Grid.Column="4"
-                        Style="{StaticResource ListStyle}"
-                        Text="Score" 
-                        TextDecorations="Underline"/>
-                </Grid>
+                        <Label
+                            Grid.Column="0"
+                            Margin="5"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource ListStyle}"
+                            Text="Name"
+                            TextDecorations="Underline" />
 
-                <ListView
-                    x:Name="DataListView"
-                    Margin="5,0,5,0"
-                    CachingStrategy="RecycleElement"
-                    HasUnevenRows="true"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    ItemSelected="OnItemSelected"
-                    ItemsSource="{Binding Dataset}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    RowHeight="80">
+                        <Label
+                            Grid.Column="2"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource ListStyle}"
+                            Text="Rounds"
+                            TextDecorations="Underline" />
+                        <Label
+                            Grid.Column="3"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource ListStyle}"
+                            Text="Score"
+                            TextDecorations="Underline" />
+                    </Grid>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
+                        <ListView
+                            x:Name="DataListView"
+                            Margin="5,0,5,0"
+                            CachingStrategy="RecycleElement"
+                            HasUnevenRows="true"
+                            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                            ItemSelected="OnItemSelected"
+                            ItemsSource="{Binding Dataset}"
+                            RefreshCommand="{Binding LoadItemsCommand}"
+                            RowHeight="60">
 
-                            <ViewCell>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
 
-                                <Grid ColumnSpacing="1" RowSpacing="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="50" />
-                                    </Grid.ColumnDefinitions>
+                                    <ViewCell>
+                                    <StackLayout Style="{StaticResource VerticalStack}" Spacing="5">
+                                        <Frame
+                                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                                            BorderColor="{StaticResource BorderColor}"
+                                            HeightRequest="55"
+                                            WidthRequest="440">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="200" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="145" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="auto" />
+                                                </Grid.ColumnDefinitions>
 
-                                    <Label
-                                        Grid.Column="0"
-                                        Style="{StaticResource ListStyle}"
-                                        Text="{Binding Name}" />
+                                                <Label
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource ListStyle}"
+                                                    Text="{Binding Name}" />
 
+                                                <Label
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="Center"
+                                                    Style="{StaticResource ListStyle}"
+                                                    Text="{Binding RoundCount}" />
 
+                                                <Label
+                                                    Grid.Column="4"
+                                                    HorizontalOptions="Start"
+                                                    Style="{StaticResource ListStyle}"
+                                                    Text="{Binding ScoreTotal}" />
 
-                                    <Label
-                                        Grid.Column="2"
-                                        Style="{StaticResource ListStyle}"
-                                        Text="{Binding RoundCount}" />
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
 
+                    </StackLayout>
 
+            </Frame>
 
-                                    <Label
-                                        Grid.Column="4"
-                                        Style="{StaticResource ListStyle}"
-                                        Text="{Binding ScoreTotal}" />
-
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
