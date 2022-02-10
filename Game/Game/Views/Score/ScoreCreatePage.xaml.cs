@@ -64,13 +64,7 @@ namespace Game.Views
         {
             //check for empty fields. If any are empty don't do anything
             if (CheckIfReadyToSubmit())
-            {
-                // If the image in the data box is empty, use the default one..
-                if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
-                {
-                    ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
-                }
-
+            {         
                 MessagingCenter.Send(this, "Create", ViewModel.Data);
                 _ = await Navigation.PopModalAsync();
             }
