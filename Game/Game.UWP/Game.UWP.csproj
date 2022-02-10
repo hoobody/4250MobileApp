@@ -169,6 +169,7 @@
     <Content Include="mission-button.png" />
     <Content Include="monsters-button.png" />
     <Content Include="multi-vision-goggles.png" />
+    <Content Include="save-button.png" />
     <Content Include="scores-button.png" />
     <Content Include="stealth-suit.png" />
     <Content Include="item_small.png" />

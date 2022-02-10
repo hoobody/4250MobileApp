@@ -406,4 +406,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\edit-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\save-button.png" />
+  </ItemGroup>
 </Project>
