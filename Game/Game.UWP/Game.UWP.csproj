@@ -166,6 +166,7 @@
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
     <Content Include="filler-assassin.png" />
+    <Content Include="filler-bounty-hunter.png" />
     <Content Include="filler-detective.png" />
     <Content Include="filler-doubleo.png" />
     <Content Include="filler-guard.png" />
