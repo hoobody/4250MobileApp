@@ -51,11 +51,13 @@
 
                     <Entry Grid.Column="1" Grid.Row="0"
                         Style="{StaticResource EntryStyle}" 
-                        PlaceholderColor="{StaticResource PlaceholderTextColor}"
+                        PlaceholderColor="{StaticResource WhiteTextColor}"
                         Placeholder="Name" 
+                        TextColor="{StaticResource WhiteTextColor}"
                         Text="{Binding Data.Name, Mode=TwoWay}" 
                         MaxLength="17"
-                        x:Name="NameEntry"/>
+                        x:Name="NameEntry"
+                        TextChanged="Name_onTextChange"/>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                            Style="{StaticResource LabelFrame}">

@@ -35,14 +35,37 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Returns true if all required fields are filled out
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckIfReadyToSubmit()
+        {
+            if (string.IsNullOrEmpty(NameEntry.Text))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Save calls to Update
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "Update", ViewModel.Data);
-            _ = await Navigation.PopModalAsync();
+            //check for empty fields. If any are empty don't do anything
+            if (CheckIfReadyToSubmit())
+            {
+                MessagingCenter.Send(this, "Update", ViewModel.Data);
+                _ = await Navigation.PopModalAsync();
+            }
         }
 
         /// <summary>
@@ -53,6 +76,26 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// Catch changes in the name text box and changes the color if empty
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Name_onTextChange(object sender, ValueChangedEventArgs e)
+        {
+            NameEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
+
+            if (string.IsNullOrEmpty(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+            }
+
+            if (string.IsNullOrWhiteSpace(NameEntry.Text))
+            {
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+            }
         }
     }
 }
