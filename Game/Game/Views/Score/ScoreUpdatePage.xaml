@@ -32,81 +32,10 @@
                 <Label Text="Update a Score" 
                        Style="{StaticResource HeaderStyle}"/>
 
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Name: " HorizontalOptions="Center"/>
-                    </Frame>
-                    <Entry Style="{StaticResource EntryStyle}" Placeholder="Name" PlaceholderColor="{StaticResource WhiteTextColor}"
-                           Text="{Binding Data.Name, Mode=TwoWay}" WidthRequest="280" MaxLength="17"/>
-                </StackLayout>
+                
 
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="130" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Game Date:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.GameDate}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="140" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="AutoBattle:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.AutoBattle}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="80" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Score:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.ScoreTotal}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="200" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Number of Rounds:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.RoundCount}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="190" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Number of Turns:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.TurnCount}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="300" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Number of Monsters Slain:" HorizontalOptions="Center"/>
-                    </Frame>
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.MonsterSlainNumber}" />
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
-                    <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="290" HeightRequest="25">
-                        <Label Style="{StaticResource LabelStyle}" Text="Total Experience Gained:" HorizontalOptions="Center"/>
-                    </Frame>
-
-                    <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.ExperienceGainedTotal}" />
-                </StackLayout>
-
-                <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="250" HeightRequest="25"
-                   HorizontalOptions="Start">
-                    <Label Style="{StaticResource LabelStyle}" Text="Characters at Death:" HorizontalOptions="Center"/>
-                </Frame>
-                <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.CharacterAtDeathList}" />
-
-                <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="200" HeightRequest="25"
-                   HorizontalOptions="Start">
-                    <Label Style="{StaticResource LabelStyle}" Text="Monsters Killed:" HorizontalOptions="Center"/>
-                </Frame>
-                <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.MonstersKilledList}" />
-
-                <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="180" HeightRequest="25"
-                   HorizontalOptions="Start">
-                    <Label Style="{StaticResource LabelStyle}" Text="Items Dropped:" HorizontalOptions="Center"/>
-                </Frame>
-                <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.ItemsDroppedList}" />
+                
+                
 
             </StackLayout>
         </ScrollView>
