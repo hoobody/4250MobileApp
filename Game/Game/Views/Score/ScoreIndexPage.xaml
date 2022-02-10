@@ -66,40 +66,37 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
 
-                                <ViewCell>
-                                    <StackLayout Style="{StaticResource Spaced Box}">
-                                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                            BorderColor="{StaticResource BorderColor}"
-                                            HeightRequest="55"
-                                            WidthRequest="440">
+                                <ViewCell Height="25" >
 
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="200" />
-                                                    <ColumnDefinition Width="auto" />
-                                                    <ColumnDefinition Width="145" />
-                                                    <ColumnDefinition Width="auto" />
-                                                    <ColumnDefinition Width="auto" />
-                                                </Grid.ColumnDefinitions>
 
-                                                <Label Grid.Column="0"
-                                                    HorizontalOptions="Center"
+                                    <Grid ColumnSpacing="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="15*" />
+                                            <ColumnDefinition Width="35*" />
+                                            <ColumnDefinition Width="25*" />
+                                            <ColumnDefinition Width="25*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Label Grid.Column="0"
+                                                    Style="{StaticResource ListStyle}"
+                                                    Text="#" />
+
+                                        <Label Grid.Column="1"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding Name}" />
 
-                                                <Label Grid.Column="2"
-                                                    HorizontalOptions="Center"
+                                        <Label Grid.Column="2"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding RoundCount}" />
 
-                                                <Label Grid.Column="4"
-                                                    HorizontalOptions="Start"
+                                        <Label Grid.Column="3"
                                                     Style="{StaticResource ListStyle}"
                                                     Text="{Binding ScoreTotal}" />
 
-                                            </Grid>
-                                        </Frame>
-                                    </StackLayout>
+                                    </Grid>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
