@@ -480,13 +480,13 @@ namespace Game.Views
 
             if (string.IsNullOrEmpty(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
 
             if (string.IsNullOrWhiteSpace(NameEntry.Text))
             {
-                NameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                NameEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 NameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
         }
@@ -504,13 +504,13 @@ namespace Game.Views
 
             if (string.IsNullOrEmpty(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
 
             if (string.IsNullOrWhiteSpace(DescriptionEntry.Text))
             {
-                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 DescriptionFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
         }
@@ -529,13 +529,13 @@ namespace Game.Views
 
             if (string.IsNullOrEmpty(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
 
             if (string.IsNullOrWhiteSpace(CodenameEntry.Text))
             {
-                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["SecondaryBackgroundColor"];
+                CodenameEntry.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
                 CodenameFrame.BorderColor = (Color)Application.Current.Resources["Error"];
             }
         }
