@@ -55,7 +55,7 @@
                                     BackgroundColor="{StaticResource Paper}"
                                     HorizontalOptions="Center"
                                     Style="{StaticResource HorizontalStack}"
-                                    WidthRequest="380">
+                                    WidthRequest="380" Spacing="-10">
 
 
                                     <StackLayout
@@ -118,7 +118,7 @@
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="90">
+                                                WidthRequest="95">
 
                                                 <Label
                                                     FontSize="14"
@@ -134,21 +134,15 @@
                                             Spacing="5"
                                             Style="{StaticResource HorizontalStack}">
 
-                                            <Label
-                                                FontSize="14"
-                                                Style="{StaticResource LabelStyle}"
-                                                Text="Desc:"
-                                                TextColor="{StaticResource BlackTextColor}" />
-
                                             <Frame
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="160">
+                                                WidthRequest="210">
 
                                                 <Label
                                                     x:Name="DescriptionEntry"
                                                     d:Text="Description"
-                                                    FontSize="13"
+                                                    FontSize="11"
                                                     Style="{StaticResource LabelStyle}"
                                                     Text="{Binding Data.Description}" />
 
@@ -171,10 +165,10 @@
                                                 x:Name="JobFrame"
                                                 Padding="3"
                                                 BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="180">
+                                                WidthRequest="165">
 
                                                 <Label
-                                                    FontSize="14"
+                                                    FontSize="13"
                                                     Style="{StaticResource LabelStyle}"
                                                     Text="{Binding Data.MonsterJob}" />
 
