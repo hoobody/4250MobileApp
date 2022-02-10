@@ -743,7 +743,7 @@
 
             <Style TargetType="Frame"
                 x:Key="HighScoresFrame">
-                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="CornerRadius" Value="5" />
                 <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="Padding" Value="10" />
