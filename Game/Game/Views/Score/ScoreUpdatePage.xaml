@@ -24,11 +24,13 @@
     <ContentPage.Content>
 
         <ScrollView>
-            <StackLayout
-            Spacing="10"
-            Style="{StaticResource VerticalStack}">
+            <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Style="{StaticResource HeaderStyle}" Text="Detail Page" Margin="130,0,0,0"/>
+                <Image Source="game-logo.png"
+                    Style="{StaticResource GameLogoLgStyle}"/>
+
+                <Label Text="Update a Score" 
+                       Style="{StaticResource HeaderStyle}"/>
 
                 <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10">
                     <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" WidthRequest="75" HeightRequest="25">
