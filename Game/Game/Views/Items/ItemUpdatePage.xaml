@@ -41,7 +41,8 @@
                             Style="{StaticResource LabelStyle}"/>
 
                         <Frame x:Name="NameFrame"
-                               Style="{StaticResource EntryFrame}">
+                               Style="{StaticResource EntryFrame}"
+                               WidthRequest="400">
                             <Entry  Text="{Binding Data.Name, Mode=TwoWay}" 
                                 d:Text="Item Name"
                                 x:Name="NameEntry" 
@@ -54,12 +55,12 @@
 
                     <StackLayout Style="{StaticResource EntryBox}">
 
-                        <Label Text="Description: "
+                        <Label Text="Desc: "
                             Style="{StaticResource LabelStyle}"/>
 
                         <Frame x:Name="DescriptionFrame"
                                Style="{StaticResource EntryFrame}"
-                               WidthRequest="220">
+                               WidthRequest="400">
                             <Entry  Text="{Binding Data.Description, Mode=TwoWay}" 
                                 d:Text="Item Description"
                                 x:Name="DescriptionEntry" 
