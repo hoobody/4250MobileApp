@@ -719,6 +719,17 @@
                 <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
+
+            <Style TargetType="Frame"
+                x:Key="GridCellFrame">
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            </Style>
+            
             
             <Style TargetType="Frame"
                 x:Key="ManillaFolderFrame">
