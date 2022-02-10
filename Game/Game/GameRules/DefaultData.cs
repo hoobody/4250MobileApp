@@ -415,7 +415,7 @@ namespace Game.GameRules
                     CodeName = "00Cheese",
                     Level = 6,
                     MaxHealth = 45,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-doubleo.png",
                     Job = CharacterJobEnum.Double0
                 },
 
@@ -425,7 +425,7 @@ namespace Game.GameRules
                     CodeName = "Swiss",
                     Level = 4,
                     MaxHealth = 33,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-detective.png",
                     Job = CharacterJobEnum.Detective
                 },
 
@@ -435,7 +435,7 @@ namespace Game.GameRules
                     CodeName = "Feta",
                     Level = 2,
                     MaxHealth = 13,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-survey-officer.png",
                     Job = CharacterJobEnum.SurveillanceOfficer
                 },
 
@@ -445,7 +445,7 @@ namespace Game.GameRules
                     CodeName = "Cheddar",
                     Level = 5,
                     MaxHealth = 39,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-assassin.png",
                     Job = CharacterJobEnum.Assassin
                 },
 
@@ -455,7 +455,7 @@ namespace Game.GameRules
                     CodeName = "Gouda",
                     Level = 3,
                     MaxHealth = 29,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-hacker.png",
                     Job = CharacterJobEnum.Hacker
                 },
 
@@ -465,7 +465,7 @@ namespace Game.GameRules
                     CodeName = "Parmesan",
                     Level = 1,
                     MaxHealth = 7,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-saboteur.png",
                     Job = CharacterJobEnum.Saboteur
                 },
 
@@ -475,7 +475,7 @@ namespace Game.GameRules
                     CodeName = "Mozzarella",
                     Level = 7,
                     MaxHealth = 50,
-                    ImageURI = "item.png",
+                    ImageURI = "filler-spy.png",
                     Job = CharacterJobEnum.Spy
                 },
                 //new CharacterModel {
