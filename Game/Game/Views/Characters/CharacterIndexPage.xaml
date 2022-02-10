@@ -48,23 +48,27 @@
                                 WidthRequest="400">
 
                                 <StackLayout
-                                    HorizontalOptions="Center"
-                                    Spacing="10"
-                                    Style="{StaticResource HorizontalStack}"
-                                    VerticalOptions="Center"
-                                    WidthRequest="350">
+                                    Style="{StaticResource VerticalStack}"
+                                    VerticalOptions="Center">
 
-                                    <StackLayout
-                                        Spacing="10"
-                                        Style="{StaticResource VerticalStack}"
-                                        WidthRequest="125">
-
-                                        <Label
+                                    <Label
                                             FontAttributes="Bold"
                                             FontSize="Medium"
                                             HorizontalOptions="Center"
                                             Style="{StaticResource HeaderStyle}"
                                             Text="{Binding Name}" />
+
+                                    <StackLayout
+                                        HorizontalOptions="Center"
+                                        Spacing="10"
+                                        Style="{StaticResource HorizontalStack}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="350">
+
+                                    <StackLayout
+                                        Spacing="10"
+                                        Style="{StaticResource VerticalStack}"
+                                        WidthRequest="125">
 
                                         <Frame
                                             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
@@ -81,16 +85,6 @@
                                         Style="{StaticResource VerticalStack}"
                                         VerticalOptions="Center"
                                         WidthRequest="250">
-                                        <StackLayout
-                                            HeightRequest="25"
-                                            Style="{StaticResource VerticalStack}"
-                                            VerticalOptions="Center"
-                                            WidthRequest="215">
-                                            <Label
-                                                HorizontalOptions="Center"
-                                                Text="┌( ͝° ͜ʖ͡°)=ε/̵͇̿̿/'̿'̿ ̿  (|°| ͜ʖ |°|)︻╦╤─"
-                                                VerticalOptions="Start" />
-                                        </StackLayout>
 
                                         <StackLayout
                                             HorizontalOptions="Start"
@@ -156,6 +150,7 @@
                                             </StackLayout>
                                         </StackLayout>
                                     </StackLayout>
+                                </StackLayout>
                                 </StackLayout>
                             </Frame>
                         </ViewCell>
