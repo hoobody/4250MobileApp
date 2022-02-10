@@ -12,11 +12,11 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="Cancel_Clicked"
-            IconImageSource="icon_cancel.png"
+            IconImageSource="cancel-button.png"
             Text="Cancel" />
         <ToolbarItem
             Clicked="Delete_Clicked"
-            IconImageSource="icon_delete.png"
+            IconImageSource="delete-button.png"
             Text="Delete" />
     </ContentPage.ToolbarItems>
 
