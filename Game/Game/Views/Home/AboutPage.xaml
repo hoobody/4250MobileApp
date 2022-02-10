@@ -29,7 +29,9 @@
                     <Label Text="Trijecta" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                     
                     <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Spacing="5">
-                        
+
+                        <Label Text="Elizabeth Martin," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                        <Label Text="Caroline Gratke," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                         <Label Text="Jesse McQuillan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                         <Label Text="Jonathan Doan," Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                         <Label Text="Jacob Charbonneau" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
