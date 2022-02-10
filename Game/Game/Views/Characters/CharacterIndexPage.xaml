@@ -48,12 +48,11 @@
                                 HeightRequest="210"
                                 WidthRequest="400" Padding="20,0,0,0">
 
-                                <StackLayout Style="{StaticResource VerticalStack}" VerticalOptions="Center">
+                                <StackLayout Style="{StaticResource VerticalStack}" 
+                                             VerticalOptions="Center"
+                                             Spacing="2">
                                     <Label
-                                        FontAttributes="Bold"
-                                        FontSize="20"
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource HeaderStyle}"
+                                        Style="{StaticResource NameTagNameLabel}"
                                         Text="{Binding Name}" />
                                     
                                     <StackLayout

@@ -134,6 +134,13 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="NameTagNameLabel"
+                BasedOn="{StaticResource LabelBaseStyle}">
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="TitleStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontAttributes" Value="Bold" />
