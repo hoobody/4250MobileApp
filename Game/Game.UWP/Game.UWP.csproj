@@ -143,6 +143,7 @@
     <Content Include="caution_stamp_medium.png" />
     <Content Include="caution_stamp_small.png" />
     <Content Include="characters-button.png" />
+    <Content Include="create-button.png" />
     <Content Include="crime_scene.jpg" />
     <Content Include="d10.png" />
     <Content Include="d10_50x50.png" />

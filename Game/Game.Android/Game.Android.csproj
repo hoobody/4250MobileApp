@@ -353,5 +353,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\cancel-button.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\create-button.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
