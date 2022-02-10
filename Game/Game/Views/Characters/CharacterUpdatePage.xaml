@@ -47,12 +47,13 @@
                         <Frame
                             BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                             BorderColor="{StaticResource BorderColor}"
-                            HeightRequest="230"
+                            HeightRequest="250"
                             WidthRequest="400">
 
                             <StackLayout
                                 Style="{StaticResource VerticalStack}"
-                                VerticalOptions="Center">
+                                VerticalOptions="Center"
+                                Spacing="10">
 
                                 <Frame x:Name="NameFrame">
                                     <Entry
@@ -63,7 +64,7 @@
                                         Style="{StaticResource EntryStyle}"
                                         Text="{Binding Data.Name, Mode=TwoWay}"
                                         TextChanged="Name_onTextChange"
-                                        WidthRequest="200" />
+                                        WidthRequest="250" />
                                 </Frame>
 
 
@@ -75,7 +76,7 @@
                                 WidthRequest="400">
 
                                     <StackLayout
-                                    Margin="0,30,0,0"
+                                    Margin="0,20,0,0"
                                     Spacing="5"
                                     Style="{StaticResource VerticalStack}"
                                     WidthRequest="150">
@@ -111,7 +112,7 @@
                                         <Frame
                                             Padding="3"
                                             BackgroundColor="{StaticResource EntryColor}"
-                                            WidthRequest="130">
+                                            WidthRequest="150">
 
                                             <Picker
                                                 x:Name="JobPicker"
@@ -130,7 +131,7 @@
                                         <Frame
                                             x:Name="CodenameFrame"
                                             Padding="3"
-                                            WidthRequest="180">
+                                            WidthRequest="200">
 
                                             <Entry
                                                 x:Name="CodenameEntry"
@@ -150,7 +151,7 @@
                                         <Frame
                                             x:Name="DescriptionFrame"
                                             Padding="3"
-                                            WidthRequest="180">
+                                            WidthRequest="200">
 
                                             <Entry
                                                 x:Name="DescriptionEntry"
