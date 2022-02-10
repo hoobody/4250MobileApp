@@ -409,6 +409,75 @@ namespace Game.GameRules
 
             var datalist = new List<CharacterModel>()
             {
+                new CharacterModel {
+                    Name = "James Boccini",
+                    Description = "The mouse who loved me",
+                    CodeName = "00Cheese",
+                    Level = 6,
+                    MaxHealth = 45,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Double0
+                },
+
+                new CharacterModel {
+                    Name = "Sherlock Holes",
+                    Description = "Indubitably",
+                    CodeName = "Swiss",
+                    Level = 4,
+                    MaxHealth = 33,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Detective
+                },
+
+                new CharacterModel {
+                    Name = "Feta vision",
+                    Description = "He's got his eyes on you",
+                    CodeName = "Feta",
+                    Level = 2,
+                    MaxHealth = 13,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.SurveillanceOfficer
+                },
+
+                new CharacterModel {
+                    Name = "Cheddar Kills-a-lot",
+                    Description = "It's in the name",
+                    CodeName = "Cheddar",
+                    Level = 5,
+                    MaxHealth = 39,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Assassin
+                },
+
+                new CharacterModel {
+                    Name = "Moonlight Gouda",
+                    Description = "There's always a backdoor",
+                    CodeName = "Gouda",
+                    Level = 3,
+                    MaxHealth = 29,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Hacker
+                },
+
+                new CharacterModel {
+                    Name = "Perry 'Problems' Parmesan",
+                    Description = "Always up to no good",
+                    CodeName = "Parmesan",
+                    Level = 1,
+                    MaxHealth = 7,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Saboteur
+                },
+
+                new CharacterModel {
+                    Name = "Agent Mozzarella",
+                    Description = "One of mice-kinds finest",
+                    CodeName = "Mozzarella",
+                    Level = 7,
+                    MaxHealth = 50,
+                    ImageURI = "item.png",
+                    Job = CharacterJobEnum.Spy
+                },
                 //new CharacterModel {
                 //    Name = "Mike",
                 //    Description = "Archer Wannabe",
