@@ -162,7 +162,7 @@
                                         <StackLayout Spacing="15" Style="{StaticResource HorizontalStack}">
                                             <Frame Style="{StaticResource PhotoBack}">
                                                 <Frame Style="{StaticResource PhotoFront}">
-                                                    <Image Source="map.jpg" />
+                                                    <Image Source="danger_stamp_small.png" />
                                                 </Frame>
                                             </Frame>
 
