@@ -17,7 +17,8 @@
         <StackLayout Style="{StaticResource DeleteScoreOuterBoxStack}">
 
             <Frame Style="{StaticResource DeleteMessageFrame}">
-                <StackLayout Style="{StaticResource DeleteMessageBox}" >
+                <StackLayout Style="{StaticResource DeleteMessageBox}" 
+                             BackgroundColor="{StaticResource TriciaryBackgroundColor}">
                     <Label Text=" Are you sure you&#10; want to delete&#10; this score?"
                            Style="{StaticResource TitleCenterStyle}"/>
                 </StackLayout>

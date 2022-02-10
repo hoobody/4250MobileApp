@@ -476,8 +476,10 @@
                 x:Key="DeleteMessageBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="Margin" Value="0,20,0,0" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}" />
+                <Setter Property="Padding" Value="5" />
             </Style>
 
             <Style TargetType="StackLayout"
