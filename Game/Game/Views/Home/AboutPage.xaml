@@ -16,7 +16,7 @@
         <StackLayout Style="{StaticResource VerticalStack}"
                      Spacing="10">
 
-            <Image Source="game-logo.png"
+            <Image Source="game_logo.png"
                    HeightRequest="150"
                    WidthRequest="150"
                    BackgroundColor="Transparent"/>

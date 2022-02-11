@@ -15,7 +15,7 @@
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     
                     <Image
-                         Source="game-logo.png"
+                         Source="game_logo.png"
                          Style="{StaticResource GameLogoXLStyle}"/>
                 
                 </StackLayout>
@@ -32,7 +32,7 @@
                             MaxLines="5"/>
 
                     <ImageButton Clicked="GameButton_Clicked"
-                                 Source="begin-button.png"
+                                 Source="begin_button.png"
                                  Style="{StaticResource GamePageButton}"/>
 
                 </StackLayout>

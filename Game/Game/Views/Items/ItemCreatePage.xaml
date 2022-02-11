@@ -11,8 +11,8 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="cancel-button.png"/>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="save-button.png"/>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="cancel_button.png"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="save_button.png"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>

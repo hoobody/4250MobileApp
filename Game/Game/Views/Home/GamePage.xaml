@@ -31,7 +31,7 @@
 
                     <ImageButton
                         Clicked="DungeonButton_Clicked"
-                        Source="mission-button.png"
+                        Source="mission_button.png"
                         Style="{StaticResource GamePageButton}"/>
 
                 </StackLayout>
@@ -44,12 +44,12 @@
 
                     <ImageButton
                         Clicked="VillageButton_Clicked"
-                        Source="headquarters-button.png"
+                        Source="headquarters_button.png"
                         Style="{StaticResource GamePageButton}" />
 
                     <ImageButton
                         Clicked="AutobattleButton_Clicked"
-                        Source="autobattle-button.png"
+                        Source="autobattle_button.png"
                         Style="{StaticResource GamePageButton}" />
 
                 </StackLayout>

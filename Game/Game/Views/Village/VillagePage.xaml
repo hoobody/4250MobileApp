@@ -13,7 +13,7 @@
         <StackLayout Style="{StaticResource CardImageTextBox}">
 
             <ImageButton
-                    Source="characters-button.png"
+                    Source="characters_button.png"
                     Style="{StaticResource GamePageButton}"
                     Clicked="CharactersButton_Clicked"/>
 
@@ -24,7 +24,7 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="items-button.png"
+                        Source="items_button.png"
                         Style="{StaticResource GamePageButton}"
                         Clicked="ItemsButton_Clicked"/>
 
@@ -33,7 +33,7 @@
             <StackLayout Style="{StaticResource CardImageTextBox}">
 
                 <ImageButton
-                        Source="monsters-button.png"
+                        Source="monsters_button.png"
                         Style="{StaticResource GamePageButton}"
                         Clicked="MonstersButton_Clicked"/>
             </StackLayout>
@@ -42,7 +42,7 @@
         <StackLayout Style="{StaticResource CardImageTextBox}">
 
             <ImageButton
-                Source="scores-button.png"
+                Source="scores_button.png"
                 Style="{StaticResource GamePageButton}"
                 Clicked="ScoresButton_Clicked"/>
             
