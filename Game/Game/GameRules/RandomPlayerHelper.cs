@@ -58,7 +58,8 @@ namespace Game.GameRules
         public static string GetMonsterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "filler_bodyguard.png", "filler_bounty_hunter.png", "filler_godfather.png", "filler_guard.png", "filler_henchman.png", "filler_hitman.png", "filler_mastermind.png" };
+            List<String> FirstNameList = new List<String> { "filler_bodyguard.png", "filler_bounty_hunter.png", "filler_godfather.png", 
+                "filler_guard.png", "filler_henchman.png", "filler_hitman.png", "filler_mastermind.png" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -72,7 +73,8 @@ namespace Game.GameRules
         public static string GetCharacterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "filler_assassin.png", "filler_detective.png", "filler_doubleo.png", "filler_hacker.png", "filler_saboteur.png", "filler_spy.png", "filler_survey_officer.png" };
+            List<String> FirstNameList = new List<String> { "filler_assassin.png", "filler_detective.png", "filler_doubleo.png", 
+                "filler_hacker.png", "filler_saboteur.png", "filler_spy.png", "filler_survey_officer.png" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -88,8 +90,8 @@ namespace Game.GameRules
         public static string GetMonsterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Bubbles", "Sir Pounce", "Lady Whiskers", "Taz", "Oreo", "Luna", "Paws", "Toby", "Nala", "Loki", "Doja",
-                "Simba", "Tiger", "Tigger", "Boots", "Peanut", "Bagheera"};
+            List<String> FirstNameList = new List<String> { "Bubbles", "Sir Pounce", "Lady Whiskers", "Taz", "Oreo", "Luna", "Paws", "Toby", "Nala", 
+                "Loki", "Doja", "Simba", "Tiger", "Tigger", "Boots", "Peanut", "Bagheera"};
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -121,7 +123,8 @@ namespace Game.GameRules
         public static string GetCharacterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Mike", "Doug", "Jea", "Sue", "Tim", "Daren", "Dani", "Mami", "Mari", "Ryu", "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
+            List<String> FirstNameList = new List<String> { "Mike", "Doug", "Jea", "Sue", "Tim", "Daren", "Dani", "Mami", "Mari", "Ryu", 
+                "Hucky", "Peanut", "Sumi", "Apple", "Ami", "Honami", "Sonomi", "Pat", "Sakue", "Isamu" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -137,7 +140,9 @@ namespace Game.GameRules
         public static string GetCharacterCodeName()
         {
 
-            List<String> CodeNameList = new List<String> { "Roquefort", "Camembert", "Cotija", "Chèvre", "Feta", "Mozzarella", "Emmental", "Cheddar", "Gouda", "Taleggio", "Parmigiano", "Manchego", "HouseMouse", "Fondue", "Colby", "Swiss", "Stilton", "Mascarpone", "Pecorino", "Blue", "Beaufort", "Provolone", "Kraft", "Velveeta", "Cheezit", "Havarti", "Brie", "American" };
+            List<String> CodeNameList = new List<String> { "Roquefort", "Camembert", "Cotija", "Chèvre", "Feta", "Mozzarella", "Emmental", 
+                "Cheddar", "Gouda", "Taleggio", "Parmigiano", "Manchego", "HouseMouse", "Fondue", "Colby", "Swiss", "Stilton", "Mascarpone", 
+                "Pecorino", "Blue", "Beaufort", "Provolone", "Kraft", "Velveeta", "Cheezit", "Havarti", "Brie", "American" };
 
             var result = CodeNameList.ElementAt(DiceHelper.RollDice(1, CodeNameList.Count()) - 1);
 
@@ -153,7 +158,8 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetCharacterDescription()
         {
-            List<String> StringList = new List<String> { "the terrible", "the awesome", "the lost", "the old", "the younger", "the quiet", "the loud", "the helpless", "the happy", "the sleepy", "the angry", "the clever" };
+            List<String> StringList = new List<String> { "the terrible", "the awesome", "the lost", "the old", "the younger", "the quiet", 
+                "the loud", "the helpless", "the happy", "the sleepy", "the angry", "the clever" };
 
             var result = StringList.ElementAt(DiceHelper.RollDice(1, StringList.Count()) - 1);
 
