@@ -87,7 +87,7 @@ namespace UnitTests.Models
             Assert.IsNotNull(result.Id);
             Assert.AreEqual(result.Id, result.Guid);
 
-            Assert.AreEqual("knight.png", result.ImageURI);
+            Assert.AreEqual("filler_doubleo.png", result.ImageURI);
             Assert.AreEqual(PlayerTypeEnum.Character, result.PlayerType);
 
             Assert.AreEqual(true, result.Alive);
@@ -161,7 +161,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert 
-            Assert.AreEqual(true, result.Contains("Elf"));
+            Assert.AreEqual(true, result.Contains("Mister Mouse"));
         }
 
         [Test]
@@ -280,7 +280,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(1, result);
+            Assert.AreEqual(2, result);
         }
 
         [Test]
@@ -414,7 +414,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result.Contains("Elf"));
+            Assert.AreEqual(true, result.Contains("Mister Mouse"));
         }
 
         [Test]
