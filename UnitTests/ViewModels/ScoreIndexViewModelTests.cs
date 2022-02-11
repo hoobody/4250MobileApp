@@ -237,7 +237,7 @@ namespace UnitTests.ViewModels
             // Reset
 
             // Assert
-            Assert.AreEqual(2, countAfter); // Count of 0 for the load was skipped
+            Assert.AreEqual(5, countAfter); // Count of 0 for the load was skipped
         }
     }
 }
