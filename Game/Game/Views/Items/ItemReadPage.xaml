@@ -1,135 +1,151 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="Game.Views.ItemReadPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="Game.Views.ItemReadPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="edit_button.png"/>
-        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="delete_button.png"/>
+        <ToolbarItem
+            Clicked="Update_Clicked"
+            IconImageSource="edit_button.png"
+            Text="Update" />
+        <ToolbarItem
+            Clicked="Delete_Clicked"
+            IconImageSource="delete_button.png"
+            Text="Delete" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout 
-        Style="{StaticResource OuterBoxStack}">
-              
-        <Label Text="Details Page" Style="{StaticResource HeaderStyle}"/>
+    <StackLayout Style="{StaticResource OuterBoxStack}">
 
-        <Frame Style="{StaticResource ItemPictureFrame}">
+        <Label
+            Margin="10"
+            Style="{StaticResource HeaderStyle}"
+            Text="Details Page" />
+        <Frame BackgroundColor="{StaticResource DeleteBackgroundColor}" BorderColor="{StaticResource BorderColor}">
             <StackLayout>
-            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                <Frame Margin="0,10,0,0" Style="{StaticResource ItemPictureFrame}">
+                    <StackLayout>
+                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
 
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout>
+
+                    <StackLayout Style="{StaticResource EntryBox}">
+
+                        <Label Style="{StaticResource LabelStyle}" Text="Name: " />
+
+                        <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
+                            <Label Style="{StaticResource LabelStyle}" Text="{Binding Data.Name}" />
+                        </Frame>
+
+
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource EntryBox}">
+
+                        <Label Style="{StaticResource LabelStyle}" Text="Desc: " />
+
+                        <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
+
+                            <Label Style="{StaticResource LabelStyle}" Text="{Binding Data.Description}" />
+
+                        </Frame>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource ItemPickerOuterBox}">
+
+                    <Frame Style="{StaticResource PaddedBox}">
+
+                        <StackLayout Style="{StaticResource ItemLabelBox}">
+
+                            <Label Style="{StaticResource PickerLabel}" Text="Location :" />
+
+                            <Label Style="{StaticResource PickerValueLabel}" Text="{Binding Data.Location}" />
+
+                        </StackLayout>
+
+                    </Frame>
+
+                    <Frame Style="{StaticResource PaddedBox}">
+
+                        <StackLayout Style="{StaticResource ItemLabelBox}">
+
+                            <Label Style="{StaticResource PickerLabel}" Text="Attribute :" />
+
+
+                            <Label Style="{StaticResource PickerValueLabel}" Text="{Binding Data.Attribute}" />
+
+                        </StackLayout>
+
+                    </Frame>
+
+                </StackLayout>
             </StackLayout>
         </Frame>
+        <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" BorderColor="{StaticResource BorderColor}">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="85" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
 
-        <StackLayout Style="{StaticResource ItemLabelOuterBox}">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Style="{StaticResource LabelStyle}"
+                    Text="Range:" />
 
-            <StackLayout Style="{StaticResource EntryBox}">
+                <Label
+                    x:Name="RangeValue"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Style="{StaticResource StepperValueLabel}"
+                    Text="{Binding Data.Range}" 
+                    BackgroundColor="{StaticResource TransparentColor}"/>
 
-                <Label Text="Name: "
-                    Style="{StaticResource LabelStyle}"/>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource LabelStyle}"
+                    Text="Value:" />
 
-                <Frame Style="{StaticResource LabelFrame}"
-                        WidthRequest="400">
-                    <Label Text="{Binding Data.Name}"
-                        Style="{StaticResource LabelStyle}"/>
-                </Frame>
+                <Label
+                    x:Name="ValueValue"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource StepperValueLabel}"
+                    Text="{Binding Data.Value}" 
+                    BackgroundColor="{StaticResource TransparentColor}"/>
 
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Style="{StaticResource LabelStyle}"
+                    Text="Damage:" />
 
-            </StackLayout>
+                <Label
+                    x:Name="DamageValue"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Style="{StaticResource StepperValueLabel}"
+                    Text="{Binding Data.Damage}" 
+                    BackgroundColor="{StaticResource TransparentColor}"/>
 
-            <StackLayout Style="{StaticResource EntryBox}">
-
-                <Label Text="Desc: "
-                    Style="{StaticResource LabelStyle}"/>
-
-                <Frame Style="{StaticResource LabelFrame}"
-                       WidthRequest="400">
-
-                    <Label Text="{Binding Data.Description}"
-                        Style="{StaticResource LabelStyle}"/>
-
-                </Frame>
-
-            </StackLayout>
-
-        </StackLayout>
-
-        <StackLayout Style ="{StaticResource ItemPickerOuterBox}">
-
-            <StackLayout Style="{StaticResource PaddedBox}">
-
-                <StackLayout Style="{StaticResource ItemLabelBox}">
-
-                    <Label Text="Location :" 
-                        Style="{StaticResource PickerLabel}"/>
-
-                    <Label Text="{Binding Data.Location}" 
-                        Style="{StaticResource PickerValueLabel}"/>
-
-                </StackLayout>
-
-            </StackLayout>
-
-            <StackLayout Style="{StaticResource PaddedBox}">
-
-                <StackLayout Style="{StaticResource ItemLabelBox}">
-
-                    <Label Text="Attribute :" 
-                        Style="{StaticResource PickerLabel}"/>
-                            
-
-                    <Label Text="{Binding Data.Attribute}" 
-                        Style="{StaticResource PickerValueLabel}"/>
-
-                </StackLayout>
-
-            </StackLayout>
-
-        </StackLayout>
-
-        <Grid HorizontalOptions="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="75"/>
-                <ColumnDefinition Width="30"/>
-            </Grid.ColumnDefinitions>
-
-            <Label Grid.Column="0" Grid.Row="0"
-                Text="Range" 
-                Style="{StaticResource LabelStyle}"/>
-
-            <Label Grid.Column="1" Grid.Row="0"
-                Text="{Binding Data.Range}" 
-                x:Name="RangeValue"
-                Style="{StaticResource StepperValueLabel}"/>
-
-            <Label Grid.Column="0" Grid.Row="1"
-                Text="Value"
-                Style="{StaticResource LabelStyle}"/>
-
-            <Label Grid.Column="1" Grid.Row="1"
-                Text="{Binding Data.Value}" 
-                x:Name="ValueValue"
-                Style="{StaticResource StepperValueLabel}"/>
-
-            <Label Grid.Column="0" Grid.Row="2"
-                Text="Damage" 
-                Style="{StaticResource LabelStyle}"/>
-
-            <Label Grid.Column="1" Grid.Row="2"
-                Text="{Binding Data.Damage}" 
-                x:Name="DamageValue"
-                Style="{StaticResource StepperValueLabel}"/>
-
-        </Grid>
-
+            </Grid>
+        </Frame>
     </StackLayout>
-
 </ContentPage>
