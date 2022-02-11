@@ -11,10 +11,9 @@ namespace Game.GameRules
 {
     public static class RandomPlayerHelper
     {
-        public static List<string> ItemImageList = new List<string> {"ring1.png", "ring2.png", "shield1.png", "shield2.png",
-                                                                     "shield3.png", "shield4.png", "sword1.png", "sword2.png",
-                                                                     "sword3.png", "sword4.png", "sword5.png", "sword6.png",
-                                                                     "sword7.png", "sword8.png", "sword9.png" };
+        public static List<string> ItemImageList = new List<string> {"sniper_item.png", "stinky_gun.png", "water_gun.png", "lazer_ring.png",
+                                                                     "filler_speed_shoes.png", "filler_armor_shoes.png", "trench_coat.png", "stealth_suit.png",
+                                                                     "fancy_hat.png", "multi_vision_goggles.png" };
         /// <summary>
         /// Get Health
         /// </summary>
