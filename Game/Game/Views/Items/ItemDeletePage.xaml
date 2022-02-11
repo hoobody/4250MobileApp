@@ -16,48 +16,76 @@
     <Grid>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center"
-                         Spacing="10">
-                <Label Text="Delete" Style="{StaticResource HeaderStyle}"/>
-                <Label Text="{Binding Data.Name}" Style="{StaticResource HeaderStyle}"/>
-            </StackLayout>
+            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}" BorderColor="{StaticResource BorderColor}">
+                <StackLayout>
+                    <Frame Margin="0,10,0,0" Style="{StaticResource ItemPictureFrame}">
+                        <StackLayout>
+                            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
 
-        <Frame Style="{StaticResource ItemPictureFrame}">
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout>
+
+                        <StackLayout Style="{StaticResource EntryBox}">
+
+                            <Label Style="{StaticResource LabelStyle}" Text="Name: " />
+
+                            <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
+                                <Label Style="{StaticResource LabelStyle}" Text="{Binding Data.Name}" />
+                            </Frame>
+
+
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource EntryBox}">
+
+                            <Label Style="{StaticResource LabelStyle}" Text="Desc: " />
+
+                            <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
+
+                                <Label Style="{StaticResource LabelStyle}" Text="{Binding Data.Description}" />
+
+                            </Frame>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource ItemPickerOuterBox}">
+
+                        <Frame Style="{StaticResource PaddedBox}">
+
+                            <StackLayout Style="{StaticResource ItemLabelBox}">
+
+                                <Label Style="{StaticResource PickerLabel}" Text="Location :" />
+
+                                <Label Style="{StaticResource PickerValueLabel}" Text="{Binding Data.Location}" />
+
+                            </StackLayout>
+
+                        </Frame>
+
+                        <Frame Style="{StaticResource PaddedBox}">
+
+                            <StackLayout Style="{StaticResource ItemLabelBox}">
+
+                                <Label Style="{StaticResource PickerLabel}" Text="Attribute :" />
+
+
+                                <Label Style="{StaticResource PickerValueLabel}" Text="{Binding Data.Attribute}" />
+
+                            </StackLayout>
+
+                        </Frame>
+
+                    </StackLayout>
+                </StackLayout>
             </Frame>
 
-            <StackLayout Style="{StaticResource ItemLabelOuterBox}">
-
-                <StackLayout Style="{StaticResource EntryBox}">
-
-                    <Label Text="Name: "
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
-                        <Label Text="{Binding Data.Name}"
-                               Style="{StaticResource LabelStyle}"/>
-                    </Frame>
-
-
-                </StackLayout>
-
-                <StackLayout Style="{StaticResource EntryBox}">
-
-                    <Label Text="Desc: "
-                                Style="{StaticResource LabelStyle}"/>
-
-                    <Frame Style="{StaticResource LabelFrame}" WidthRequest="400">
-                        <Label Text="{Binding Data.Description}"
-                               Style="{StaticResource LabelStyle}"/>
-                    </Frame>
-
-                </StackLayout>
-
-            </StackLayout>
-            
-            <StackLayout Style="{StaticResource DeleteMessageBox}">
+            <Frame Style="{StaticResource DeleteFrameBox}">
                 <Label Text="Are You Sure?" Style="{StaticResource MessageStyle}"/>
-            </StackLayout>
+            </Frame>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center">

@@ -744,8 +744,16 @@
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
             </Style>
-            
-            
+
+			<Style TargetType="Frame"
+	            x:Key="DeleteFrameBox">
+				<Setter Property="Margin" Value="0,20,0,0" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+				<Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
+				<Setter Property="BackgroundColor" Value="{StaticResource TransparentColor}" />
+				<Setter Property="Padding" Value="5" />
+			</Style>
             <Style TargetType="Frame"
                 x:Key="ManillaFolderFrame">
                 <Setter Property="Padding" Value="10" />
