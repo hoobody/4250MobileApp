@@ -14,11 +14,11 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="Update_Clicked"
-            IconImageSource="edit-button.png"
+            IconImageSource="edit_button.png"
             Text="Update" />
         <ToolbarItem
             Clicked="Delete_Clicked"
-            IconImageSource="delete-button.png"
+            IconImageSource="delete_button.png"
             Text="Delete" />
     </ContentPage.ToolbarItems>
 

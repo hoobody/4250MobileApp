@@ -12,14 +12,14 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem
             Clicked="AddScore_Clicked"
-            IconImageSource="create-button.png"
+            IconImageSource="create_button.png"
             Text="Add" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Style="{StaticResource OuterBoxStack}">
 
-            <Image Source="game-logo.png"
+            <Image Source="game_logo.png"
                 Style="{StaticResource GameLogoLgStyle}"/>
             
             <Label Style="{StaticResource HeaderStyle}" Text="High Scores!" />
