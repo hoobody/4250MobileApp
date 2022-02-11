@@ -80,7 +80,6 @@ namespace Game.Views
             ViewModel.Data.Level = level;
             LevelPicker.SelectedIndex = ViewModel.Data.Level - 1;
 
-            //Should set picker to most current value. Not working for some reason
             //Set Job Picker to the new job
             JobPicker.SelectedItem = ViewModel.Data.Job.ToString();
 
