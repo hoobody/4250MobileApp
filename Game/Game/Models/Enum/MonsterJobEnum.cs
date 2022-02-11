@@ -54,14 +54,6 @@ namespace Game.Models
                     Message = "Security Guard";
                     break;
 
-                case MonsterJobEnum.Dog:
-                    Message = "Guard Dog";
-                    break;
-
-                case MonsterJobEnum.Camera:
-                    Message = "Security Camera";
-                    break;
-
                 case MonsterJobEnum.Bodyguard:
                     Message = "Bodyguard";
                     break;
