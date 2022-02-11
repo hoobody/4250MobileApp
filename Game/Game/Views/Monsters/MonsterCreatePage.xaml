@@ -108,8 +108,7 @@
                                                 <Picker x:Name="DifficultyPicker"
                                                 ItemsSource="{x:Static local:DifficultyEnumHelper.GetListAll}" 
                                                 SelectedItem="{Binding Data.Difficulty, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                                                Style="{StaticResource PickerStyle}"
-                                                        FontSize="13"/>
+                                                Style="{StaticResource PickerStyle}" />
 
                                             </Frame>
 

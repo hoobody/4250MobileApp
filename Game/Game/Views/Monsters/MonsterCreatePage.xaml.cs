@@ -61,6 +61,8 @@ namespace Game.Views
             BindingContext = this.ViewModel;
 
             ViewModel.Data.Difficulty = difficulty;
+            JobPicker.SelectedItem = ViewModel.Data.MonsterJob.ToString();
+            DifficultyPicker.SelectedItem = ViewModel.Data.Difficulty.ToString();
 
             AddItemsToDisplay();
 
@@ -97,34 +99,33 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
-        ///// <summary>
-        ///// 
-        ///// Randomize the Monster
-        ///// Keep the Level the Same
-        ///// 
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool RandomizeMonster()
-        //{
-        //    // Randomize Name
-        //    ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
-        //    ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+        /// <summary>
+        /// Randomize the Monster
+        /// Keep the Level the Same
+        /// </summary>
+        /// <returns></returns>
+        public bool RandomizeMonster()
+        {
+            // Randomize Name
+            ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
+            ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+                ViewModel.Data.MonsterJob = MonsterJobEnumHelper.ConvertStringToEnum(RandomPlayerHelper.GetMonsterJob());
 
-        //    // Randomize the Attributes
-        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
+            // Randomize the Attributes
+            ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
+            ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
+            ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
 
-        //    ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
+            ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
 
-        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
+            ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
 
-        //    ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
+            ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
 
-        //    _ = UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
 
-        //    return true;
-        //}
+            return true;
+        }
 
 
         /// <summary>
@@ -393,6 +394,14 @@ namespace Game.Views
             return ItemStack;
         }
 
+        private void Randomize_Clicked(object sender, EventArgs e)
+        {
+           // _ = DiceDiceAnimationHandeler();
+
+            _ = RandomizeMonster();
+
+            return;
+        }
     }
 
 }
