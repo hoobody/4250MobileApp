@@ -77,7 +77,7 @@ namespace UnitTests.Helpers
             _ = DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual("Deg", result);
+            Assert.AreEqual("Sir Pounce", result);
         }
 
         [Test]
@@ -94,7 +94,7 @@ namespace UnitTests.Helpers
             _ = DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual("the Elf hater", result);
+            Assert.AreEqual("Yarn Thrower", result);
         }
 
         [Test]
@@ -193,7 +193,7 @@ namespace UnitTests.Helpers
             _ = DiceHelper.DisableForcedRolls();
 
             // Assert
-            Assert.AreEqual("filler_bounty-hunter.png", result);
+            Assert.AreEqual("filler_bounty_hunter.png", result);
         }
 
         [Test]
