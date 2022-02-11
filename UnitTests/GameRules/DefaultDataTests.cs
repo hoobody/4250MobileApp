@@ -64,7 +64,7 @@ namespace UnitTests.GameRules
             // Reset
 
             // Assert
-            Assert.AreEqual(2, result.Count);
+            Assert.AreEqual(5, result.Count);
         }
     }
 }
