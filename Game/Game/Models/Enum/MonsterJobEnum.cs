@@ -13,13 +13,7 @@ namespace Game.Models
         // Not specified
         Unknown = 0,
 
-        // Fighters hit hard and have fight abilities
         Guard = 73,
-
-        // Clerics defend well and have buff abilities
-        Dog = 76,
-
-        Camera = 79,
 
         Bodyguard = 82,
 
