@@ -280,7 +280,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(1, result);
         }
 
         [Test]
