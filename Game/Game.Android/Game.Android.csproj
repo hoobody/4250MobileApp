@@ -297,127 +297,127 @@
     <AndroidResource Include="Resources\drawable\danger_stamp_medium.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\sniper-item.png" />
+    <AndroidResource Include="Resources\drawable\sniper_item.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\stinky-gun.png" />
+    <AndroidResource Include="Resources\drawable\stinky_gun.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\game-logo.png" />
+    <AndroidResource Include="Resources\drawable\game_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\water-gun.png" />
+    <AndroidResource Include="Resources\drawable\water_gun.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\lazer-ring.png" />
+    <AndroidResource Include="Resources\drawable\lazer_ring.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\trench-coat.png" />
+    <AndroidResource Include="Resources\drawable\trench_coat.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\stealth-suit.png" />
+    <AndroidResource Include="Resources\drawable\stealth_suit.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\fancy-hat.png" />
+    <AndroidResource Include="Resources\drawable\fancy_hat.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\multi-vision-goggles.png" />
+    <AndroidResource Include="Resources\drawable\multi_vision_goggles.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\brass-knuckles.png" />
+    <AndroidResource Include="Resources\drawable\brass_knuckles.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\begin-button.png" />
+    <AndroidResource Include="Resources\drawable\begin_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\mission-button.png" />
+    <AndroidResource Include="Resources\drawable\mission_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\headquarters-button.png" />
+    <AndroidResource Include="Resources\drawable\headquarters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\autobattle-button.png" />
+    <AndroidResource Include="Resources\drawable\autobattle_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\characters-button.png" />
+    <AndroidResource Include="Resources\drawable\characters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\items-button.png" />
+    <AndroidResource Include="Resources\drawable\items_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monsters-button.png" />
+    <AndroidResource Include="Resources\drawable\monsters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\scores-button.png" />
+    <AndroidResource Include="Resources\drawable\scores_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\cancel-button.png" />
+    <AndroidResource Include="Resources\drawable\cancel_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\create-button.png" />
+    <AndroidResource Include="Resources\drawable\create_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\delete-button.png" />
+    <AndroidResource Include="Resources\drawable\delete_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\edit-button.png" />
+    <AndroidResource Include="Resources\drawable\edit_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\save-button.png" />
+    <AndroidResource Include="Resources\drawable\save_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-doubleo.png" />
+    <AndroidResource Include="Resources\drawable\filler_doubleo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-detective.png" />
+    <AndroidResource Include="Resources\drawable\filler_detective.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-survey-officer.png" />
+    <AndroidResource Include="Resources\drawable\filler_survey_officer.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-assassin.png" />
+    <AndroidResource Include="Resources\drawable\filler_assassin.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-hacker.png" />
+    <AndroidResource Include="Resources\drawable\filler_hacker.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\bigger-delete-button.png" />
+    <AndroidResource Include="Resources\drawable\bigger_delete_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-saboteur.png" />
+    <AndroidResource Include="Resources\drawable\filler_saboteur.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-spy.png" />
+    <AndroidResource Include="Resources\drawable\filler_spy.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-guard.png" />
+    <AndroidResource Include="Resources\drawable\filler_guard.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-bounty-hunter.png" />
+    <AndroidResource Include="Resources\drawable\filler_bounty_hunter.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-bodyguard.png" />
+    <AndroidResource Include="Resources\drawable\filler_bodyguard.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-mastermind.png" />
+    <AndroidResource Include="Resources\drawable\filler_mastermind.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-godfather.png" />
+    <AndroidResource Include="Resources\drawable\filler_godfather.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-henchman.png" />
+    <AndroidResource Include="Resources\drawable\filler_henchman.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-hitman.png" />
+    <AndroidResource Include="Resources\drawable\filler_hitman.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-speed-shoes.png" />
+    <AndroidResource Include="Resources\drawable\filler_speed_shoes.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-armor-shoes.png" />
+    <AndroidResource Include="Resources\drawable\filler_armor_shoes.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\filler-item.png" />
+    <AndroidResource Include="Resources\drawable\filler_item.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\dice.png" />

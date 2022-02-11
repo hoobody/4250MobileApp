@@ -341,127 +341,127 @@
     <BundleResource Include="Resources\danger_stamp_medium.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\sniper-item.png" />
+    <BundleResource Include="Resources\sniper_item.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\stinky-gun.png" />
+    <BundleResource Include="Resources\stinky_gun.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\game-logo.png" />
+    <BundleResource Include="Resources\game_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\water-gun.png" />
+    <BundleResource Include="Resources\water_gun.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\lazer-ring.png" />
+    <BundleResource Include="Resources\lazer_ring.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\trench-coat.png" />
+    <BundleResource Include="Resources\trench_coat.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\stealth-suit.png" />
+    <BundleResource Include="Resources\stealth_suit.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\fancy-hat.png" />
+    <BundleResource Include="Resources\fancy_hat.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\multi-vision-goggles.png" />
+    <BundleResource Include="Resources\multi_vision_goggles.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\brass-knuckles.png" />
+    <BundleResource Include="Resources\brass_knuckles.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\begin-button.png" />
+    <BundleResource Include="Resources\begin_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\mission-button.png" />
+    <BundleResource Include="Resources\mission_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\headquarters-button.png" />
+    <BundleResource Include="Resources\headquarters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\autobattle-button.png" />
+    <BundleResource Include="Resources\autobattle_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\characters-button.png" />
+    <BundleResource Include="Resources\characters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\items-button.png" />
+    <BundleResource Include="Resources\items_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monsters-button.png" />
+    <BundleResource Include="Resources\monsters_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\scores-button.png" />
+    <BundleResource Include="Resources\scores_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cancel-button.png" />
+    <BundleResource Include="Resources\cancel_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\create-button.png" />
+    <BundleResource Include="Resources\create_button.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\delete-button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\edit-button.png" />
+    <BundleResource Include="Resources\edit_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\save-button.png" />
+    <BundleResource Include="Resources\save_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-doubleo.png" />
+    <BundleResource Include="Resources\filler_doubleo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-detective.png" />
+    <BundleResource Include="Resources\filler_detective.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-survey-officer.png" />
+    <BundleResource Include="Resources\filler_survey_officer.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-assassin.png" />
+    <BundleResource Include="Resources\filler_assassin.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-hacker.png" />
+    <BundleResource Include="Resources\filler_hacker.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\bigger-delete-button.png" />
+    <BundleResource Include="Resources\bigger_delete_button.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-saboteur.png" />
+    <BundleResource Include="Resources\filler_saboteur.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-spy.png" />
+    <BundleResource Include="Resources\filler_spy.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-guard.png" />
+    <BundleResource Include="Resources\filler_guard.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-bounty-hunter.png" />
+    <BundleResource Include="Resources\filler_bounty_hunter.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-bodyguard.png" />
+    <BundleResource Include="Resources\filler_bodyguard.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-mastermind.png" />
+    <BundleResource Include="Resources\filler_mastermind.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-godfather.png" />
+    <BundleResource Include="Resources\filler_godfather.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-henchman.png" />
+    <BundleResource Include="Resources\filler_henchman.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-hitman.png" />
+    <BundleResource Include="Resources\filler_hitman.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-speed-shoes.png" />
+    <BundleResource Include="Resources\filler_speed_shoes.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-armor-shoes.png" />
+    <BundleResource Include="Resources\filler_armor_shoes.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\filler-item.png" />
+    <BundleResource Include="Resources\filler_item.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\dice.png" />
