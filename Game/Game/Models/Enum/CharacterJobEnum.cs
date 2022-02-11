@@ -31,15 +31,15 @@ namespace Game.Models
         
         Double0 = 45,
 
-        //Fighter = 55,
+        Fighter = 55,
 
-        //Cleric = 60,
+        Cleric = 60,
 
-        //Wizard = 62,
+        Wizard = 62,
 
-        //Archer = 63,
+        Archer = 63,
 
-        //Knight = 66,
+        Knight = 66,
 
     }
 
@@ -91,25 +91,25 @@ namespace Game.Models
                     Message = "Double0";
                     break;
 
-                //case CharacterJobEnum.Cleric:
-                //    Message = "Cleric";
-                //    break;
+                case CharacterJobEnum.Cleric:
+                    Message = "Cleric";
+                    break;
 
-                //case CharacterJobEnum.Fighter:
-                //    Message = "Fighter";
-                //    break;
+                case CharacterJobEnum.Fighter:
+                    Message = "Fighter";
+                    break;
 
-                //case CharacterJobEnum.Wizard:
-                //    Message = "Wizard";
-                //    break;
+                case CharacterJobEnum.Wizard:
+                    Message = "Wizard";
+                    break;
 
-                //case CharacterJobEnum.Archer:
-                //    Message = "Archer";
-                //    break;
+                case CharacterJobEnum.Archer:
+                    Message = "Archer";
+                    break;
 
-                //case CharacterJobEnum.Knight:
-                //    Message = "Knight";
-                //    break;
+                case CharacterJobEnum.Knight:
+                    Message = "Knight";
+                    break;
 
                 case CharacterJobEnum.Unknown:
                 default:
@@ -135,7 +135,12 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
                 var myReturn = myList.Where(a =>
-                                           a.ToString() != CharacterJobEnum.Unknown.ToString()
+                                           a.ToString() != CharacterJobEnum.Unknown.ToString() ||
+                                           a.ToString() != CharacterJobEnum.Fighter.ToString() ||
+                                           a.ToString() != CharacterJobEnum.Cleric.ToString() ||
+                                           a.ToString() != CharacterJobEnum.Wizard.ToString() ||
+                                           a.ToString() != CharacterJobEnum.Archer.ToString() ||
+                                           a.ToString() != CharacterJobEnum.Knight.ToString()
                                             )
                                             .OrderBy(a => a)
                                             .ToList();
