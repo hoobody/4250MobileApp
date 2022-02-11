@@ -58,7 +58,7 @@ namespace Game.GameRules
         public static string GetMonsterImage()
         {
 
-            List<String> FirstNameList = new List<String> { "filler_bodyguard.png", "filler_bounty-hunter.png", "filler_godfather.png", "filler_guard.png", "filler_henchman.png", "filler_hitman.png", "filler_mastermind.png" };
+            List<String> FirstNameList = new List<String> { "filler_bodyguard.png", "filler_bounty_hunter.png", "filler_godfather.png", "filler_guard.png", "filler_henchman.png", "filler_hitman.png", "filler_mastermind.png" };
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
@@ -88,7 +88,8 @@ namespace Game.GameRules
         public static string GetMonsterName()
         {
 
-            List<String> FirstNameList = new List<String> { "Arg", "Deg", "Ase", "Xes", "Zez", "Klk", "Oi", "Oni", "Tanu" };
+            List<String> FirstNameList = new List<String> { "Bubbles", "Sir Pounce", "Lady Whiskers", "Taz", "Oreo", "Luna", "Paws", "Toby", "Nala", "Loki", "Doja",
+                "Simba", "Tiger", "Tigger", "Boots", "Peanut", "Bagheera"};
 
             var result = FirstNameList.ElementAt(DiceHelper.RollDice(1, FirstNameList.Count()) - 1);
 
