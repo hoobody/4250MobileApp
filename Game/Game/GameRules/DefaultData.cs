@@ -466,7 +466,7 @@ namespace Game.GameRules
                     CodeName = "Feta",
                     Level = 2,
                     MaxHealth = 13,
-                    ImageURI = "filler_survey-officer.png",
+                    ImageURI = "filler_survey_officer.png",
                     Job = CharacterJobEnum.SurveillanceOfficer,
                     Attack = 2,
                     Defense = 2,
