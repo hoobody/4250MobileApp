@@ -114,8 +114,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Range}" 
-                    BackgroundColor="{StaticResource TransparentColor}"/>
+                    Text="{Binding Data.Range}"/>
 
                 <Label
                     Grid.Row="1"
@@ -128,8 +127,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Value}" 
-                    BackgroundColor="{StaticResource TransparentColor}"/>
+                    Text="{Binding Data.Value}" />
 
                 <Label
                     Grid.Row="2"
@@ -142,8 +140,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Damage}" 
-                    BackgroundColor="{StaticResource TransparentColor}"/>
+                    Text="{Binding Data.Damage}"/>
 
             </Grid>
         </Frame>
