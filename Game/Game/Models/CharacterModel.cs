@@ -23,7 +23,7 @@ namespace Game.Models
             Name = "Mister Mouse";
             Description = "Happy Mouse";
             Level = 1;
-            ImageURI = "filler-doubleo.png";
+            ImageURI = "filler_doubleo.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             CodeName = "Cheese";
