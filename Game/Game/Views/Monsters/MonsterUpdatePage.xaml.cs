@@ -67,7 +67,7 @@ namespace Game.Views
             JobPicker.SelectedItem = this.ViewModel.Data.MonsterJob.ToString();
 
             // If unknown
-            if (JobPicker.SelectedItem == MonsterJobEnum.Unknown.ToString())
+            if (JobPicker.SelectedItem.ToString() == MonsterJobEnum.Unknown.ToString())
             {
                 JobPicker.SelectedIndex = 0;
             }
