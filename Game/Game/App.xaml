@@ -244,7 +244,7 @@
                 <Setter Property="HorizontalOptions" Value="Fill" />
                 <Setter Property="Padding" Value="3" />
             </Style>
-
+			
             <Style TargetType="Label"
                 x:Key="GridValueStyle"
                 BasedOn="{StaticResource ValueStyle}">
@@ -266,7 +266,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource TransparentColor}"/>
                 <Setter Property="WidthRequest" Value="35"/>
                 <Setter Property="HeightRequest" Value="35"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -734,7 +734,7 @@
                 <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
-
+			
             <Style TargetType="Frame"
                 x:Key="GridCellFrame">
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
