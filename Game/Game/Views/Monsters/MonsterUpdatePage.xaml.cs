@@ -406,8 +406,6 @@ namespace Game.Views
 
         private void Randomize_Clicked(object sender, EventArgs e)
         {
-            // _ = DiceDiceAnimationHandeler();
-
             _ = RandomizeMonster();
 
             return;
