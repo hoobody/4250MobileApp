@@ -113,31 +113,32 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
-        ///// <summary>
-        ///// Randomize the Monster, keep the level the same
-        ///// </summary>
-        ///// <returns></returns>
-        //public bool RandomizeMonster()
-        //{
-        //    // Randomize Name
-        //    ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
-        //    ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+        /// <summary>
+        /// Randomize the Monster, keep the level the same
+        /// </summary>
+        /// <returns></returns>
+        public bool RandomizeMonster()
+        {
+            // Randomize Name
+            ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
+            ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
+            ViewModel.Data.MonsterJob = MonsterJobEnumHelper.ConvertStringToEnum(RandomPlayerHelper.GetMonsterJob());
 
-        //    // Randomize the Attributes
-        //    ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
-        //    ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
+            // Randomize the Attributes
+            ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
+            ViewModel.Data.Speed = RandomPlayerHelper.GetAbilityValue();
+            ViewModel.Data.Defense = RandomPlayerHelper.GetAbilityValue();
 
-        //    ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
+            ViewModel.Data.Difficulty = RandomPlayerHelper.GetMonsterDifficultyValue();
 
-        //    ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
+            ViewModel.Data.ImageURI = RandomPlayerHelper.GetMonsterImage();
 
-        //    ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
+            ViewModel.Data.UniqueItem = RandomPlayerHelper.GetMonsterUniqueItem();
 
-        //    _ = UpdatePageBindingContext();
+            _ = UpdatePageBindingContext();
 
-        //    return true;
-        //}
+            return true;
+        }
 
         /// <summary>
         /// Returns true if all required fields are filled out
@@ -403,5 +404,13 @@ namespace Game.Views
             return ItemStack;
         }
 
+        private void Randomize_Clicked(object sender, EventArgs e)
+        {
+            // _ = DiceDiceAnimationHandeler();
+
+            _ = RandomizeMonster();
+
+            return;
+        }
     }
 }
