@@ -165,6 +165,7 @@
                 <Setter Property="VerticalOptions" Value="Center"/>
                 <Setter Property="ScaleY" Value="1.75"/>
                 <Setter Property="ScaleX" Value="1"/>
+                <Setter Property="Text" Value="█║█ ║▌║█║▌║▌█│║▌" />
             </Style>
             
             <Style TargetType="Label"
@@ -208,7 +209,7 @@
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="FontSize" Value="12" />
             </Style>
-            
+
             <Style TargetType="Label"
                 x:Key="ValueStyleMicro"
                 BasedOn="{StaticResource ValueStyle}">
