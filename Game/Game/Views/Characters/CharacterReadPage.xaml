@@ -35,16 +35,10 @@
 
                     <Frame Style="{StaticResource CharacterCardFrame}">
 
-                        <StackLayout
-                                    Style="{StaticResource VerticalStack}"
-                                    VerticalOptions="Center" Spacing="10">
+                        <StackLayout Style="{StaticResource SpacedBox}">
 
-                            <Label
-                                            FontAttributes="Bold"
-                                            FontSize="20"
-                                            HorizontalOptions="Center"
-                                            Style="{StaticResource HeaderStyle}"
-                                            Text="{Binding Data.Name}"/>
+                            <Label Style="{StaticResource TitleCenterStyle}"
+                                Text="{Binding Data.Name}"/>
 
                             <StackLayout
                                         HorizontalOptions="Center"
