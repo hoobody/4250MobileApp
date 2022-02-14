@@ -124,127 +124,78 @@
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
 
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="0"
+                            <Label Grid.Row="0" Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
                                 Text="Health" />
 
-                            <Slider
+                            <Slider Grid.Row="0" Grid.Column="1"
                                 x:Name="HealthSlider"
-                                Grid.Row="0"
-                                Grid.Column="1"
                                 Maximum="100"
                                 Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.MaxHealth}" />
 
-                            <Frame
-                                Grid.Row="0"
-                                Grid.Column="2"
-                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                HeightRequest="30"
-                                WidthRequest="50">
+                            <Frame Grid.Row="0" Grid.Column="2"
+                                Style="{StaticResource ValueFrame}">
                                 <Label
-                                    Margin="0,5,0,0"
-                                    HorizontalOptions="Center"
                                     Style="{StaticResource LabelStyle}"
                                     Text="{Binding Data.MaxHealth}" />
                             </Frame>
 
-                            <Label
-                                Grid.Row="1"
-                                Grid.Column="0"
+                            <Label Grid.Row="1" Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
                                 Text="Damage" />
 
-                            <Slider
+                            <Slider Grid.Row="1" Grid.Column="1"
                                 x:Name="DamageSlider"
-                                Grid.Row="1"
-                                Grid.Column="1"
                                 Maximum="10"
                                 Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Attack}" />
 
-                            <Frame
-                                Grid.Row="1"
-                                Grid.Column="2"
-                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                HeightRequest="30"
-                                WidthRequest="50">
-                                <Label
-                                    Margin="0,5,0,0"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource LabelStyle}"
+                            <Frame Grid.Row="1" Grid.Column="2"
+                                Style="{StaticResource ValueFrame}">
+                                <Label Style="{StaticResource LabelStyle}"
                                     Text="{Binding Data.Attack}" />
                             </Frame>
 
-                            <Label
-                                Grid.Row="2"
-                                Grid.Column="0"
+                            <Label Grid.Row="2" Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
                                 Text="Defense" />
 
-                            <Slider
+                            <Slider Grid.Row="2" Grid.Column="1"
                                 x:Name="DefenseSlider"
-                                Grid.Row="2"
-                                Grid.Column="1"
                                 Maximum="10"
                                 Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Defense}" />
 
-                            <Frame
-                                Grid.Row="2"
-                                Grid.Column="2"
-                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                HeightRequest="30"
-                                WidthRequest="50">
-                                <Label
-                                    Margin="0,5,0,0"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource LabelStyle}"
+                            <Frame Grid.Row="2" Grid.Column="2"
+                                Style="{StaticResource ValueFrame}">
+                                <Label Style="{StaticResource LabelStyle}"
                                     Text="{Binding Data.Defense}" />
                             </Frame>
 
-                            <Label
-                                Grid.Row="3"
-                                Grid.Column="0"
+                            <Label Grid.Row="3" Grid.Column="0"
                                 Style="{StaticResource LabelStyle}"
                                 Text="Speed" />
 
-                            <Slider
+                            <Slider Grid.Row="3" Grid.Column="1"
                                 x:Name="SpeedSlider"
-                                Grid.Row="3"
-                                Grid.Column="1"
                                 Maximum="10"
                                 Style="{StaticResource ViewOnlySlider}"
                                 Value="{Binding Data.Speed}" />
 
-                            <Frame
-                                Grid.Row="3"
-                                Grid.Column="2"
-                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                HeightRequest="30"
-                                WidthRequest="50">
-                                <Label
-                                    Margin="0,5,0,0"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource LabelStyle}"
+                            <Frame Grid.Row="3" Grid.Column="2"
+                                Style="{StaticResource ValueFrame}">
+                                <Label Style="{StaticResource LabelStyle}"
                                     Text="{Binding Data.Speed}" />
                             </Frame>
 
                         </Grid>
                     </StackLayout>
 
-                    <Frame
-                        Background="{StaticResource SecondaryBackgroundColor}"
-                        HeightRequest="40"
-                        WidthRequest="500">
-                        <Label
-                            FontSize="20"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource LabelStyle}"
-                            Text="Items Equipped"
-                            VerticalOptions="Center" />
+                    <Frame Style="{StaticResource WideLabelFrame}"
+                        Background="{StaticResource SecondaryBackgroundColor}">
+                        <Label Text="Items Equipped"
+                            Style="{StaticResource Lebel}" />
                     </Frame>
 
                     <FlexLayout
