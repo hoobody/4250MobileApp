@@ -713,7 +713,7 @@
             </Style>
 
             <Style TargetType="StackLayout"
-                x:Key="TallStack">
+                x:Key="ButtonBox">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HeightRequest" Value="100" />
