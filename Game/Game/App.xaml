@@ -712,7 +712,15 @@
                 <Setter Property="HorizontalOptions" Value="StartAndExpand" />
             </Style>
 
-            <!-- Frame -->
+            <Style TargetType="StackLayout"
+                x:Key="TallStack">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="Padding" Value="0,35,0,35" />
+            </Style>
+
+                <!-- Frame -->
             <Style TargetType="Frame">
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
