@@ -6,11 +6,9 @@
              >
 
 
-    <StackLayout Style="{StaticResource VerticalStack}"
-                 HorizontalOptions="CenterAndExpand"
-                 VerticalOptions="CenterAndExpand">
+    <StackLayout Style="{StaticResource OuterBoxStack}">
         
-        <StackLayout Style="{StaticResource CardImageTextBox}">
+        <StackLayout Style="{StaticResource ButtonBox}">
 
             <ImageButton
                     Source="characters_button.png"
@@ -20,8 +18,8 @@
         </StackLayout>
 
         <StackLayout  Style="{StaticResource HorizontalStack}"
-                      Spacing="100">
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+                      Spacing="50">
+            <StackLayout Style="{StaticResource ButtonBox}">
 
                 <ImageButton
                         Source="items_button.png"
@@ -30,7 +28,7 @@
 
             </StackLayout>
             
-            <StackLayout Style="{StaticResource CardImageTextBox}">
+            <StackLayout Style="{StaticResource ButtonBox}">
 
                 <ImageButton
                         Source="monsters_button.png"
@@ -39,7 +37,7 @@
             </StackLayout>
 
         </StackLayout>
-        <StackLayout Style="{StaticResource CardImageTextBox}">
+        <StackLayout Style="{StaticResource ButtonBox}">
 
             <ImageButton
                 Source="scores_button.png"
