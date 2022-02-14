@@ -195,7 +195,7 @@
                     <Frame Style="{StaticResource WideLabelFrame}"
                         Background="{StaticResource SecondaryBackgroundColor}">
                         <Label Text="Items Equipped"
-                            Style="{StaticResource Lebel}" />
+                            Style="{StaticResource LabelCenterStyle}" />
                     </Frame>
 
                     <FlexLayout

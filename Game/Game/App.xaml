@@ -176,6 +176,12 @@
             </Style>
 
             <Style TargetType="Label"
+                x:Key="LabelCenterStyle"
+                BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="Label"
                 x:Key="LabelStyleXS"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="FontSize" Value="12" />
