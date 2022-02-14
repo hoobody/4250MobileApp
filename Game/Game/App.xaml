@@ -704,7 +704,7 @@
             </Style>
 
             <Style TargetType="Frame"
-				 x:Key="ItemPictureFrame">
+				 x:Key="ImageFrame">
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="BorderColor" Value="Black" />
             </Style>
