@@ -333,8 +333,8 @@
             <Style TargetType="Image"
                 x:Key="GamePageButton"
                 BasedOn="{StaticResource ImageLargeStyle}">
-                <Setter Property="HeightRequest" Value="45" />
-                <Setter Property="WidthRequest" Value="140" />
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="WidthRequest" Value="210" />
                 <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
