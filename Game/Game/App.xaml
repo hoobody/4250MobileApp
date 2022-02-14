@@ -293,7 +293,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <Style TargetType="Image"
@@ -303,7 +303,7 @@
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="VerticalOptions" Value="Center"/>
-            <Setter Property="Aspect" Value="AspectFill" />
+            <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <Style TargetType="Image"
@@ -313,7 +313,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="Aspect" Value="AspectFill" />
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <Style TargetType="Image"
@@ -333,8 +333,9 @@
             <Style TargetType="Image"
                 x:Key="GamePageButton"
                 BasedOn="{StaticResource ImageLargeStyle}">
-                <Setter Property="HeightRequest" Value="75" />
-                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="45" />
+                <Setter Property="WidthRequest" Value="140" />
+                <Setter Property="Aspect" Value="AspectFit" />
             </Style>
 
             <Style TargetType="Image"
