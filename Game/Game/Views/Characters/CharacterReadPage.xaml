@@ -40,24 +40,17 @@
                             <Label Style="{StaticResource TitleCenterStyle}"
                                 Text="{Binding Data.Name}"/>
 
-                            <StackLayout
-                                        HorizontalOptions="Center"
-                                        Spacing="10"
-                                        Style="{StaticResource HorizontalStack}"
-                                        VerticalOptions="Center"
-                                        WidthRequest="400">
+                            <StackLayout Style="{StaticResource CharacterCardInnerBox}">
 
-                                <StackLayout
-                                        Spacing="10"
-                                        Style="{StaticResource VerticalStack}"
-                                        WidthRequest="125">
+                                <StackLayout Style="{StaticResource CharacterCardLeftBox}">
 
                                     <Frame
                                             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                             BorderColor="{StaticResource BorderColor}"
                                             HeightRequest="125"
                                             WidthRequest="125">
-                                        <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
+                                        <Image Source="{Binding Data.ImageURI}" 
+                                               Style="{StaticResource ImageLargeStyle}" />
                                     </Frame>
 
                                 </StackLayout>
