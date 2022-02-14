@@ -53,16 +53,11 @@
 
                                 <StackLayout Style="{StaticResource CharacterCardRightBox}">
 
-                                    <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="3"
-                                            Style="{StaticResource HorizontalStack}">
+                                    <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                        <Label Style="{StaticResource LabelStyle}" Text="Job:" />
-                                        <Frame
-                                                Padding="3"
-                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="180">
+                                        <Label Style="{StaticResource LabelStyle}" 
+                                               Text="Job:" />
+                                        <Frame Style="{StaticResource CharacterCardLabelFrame}">
                                             <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}"
                                                        FontSize="14"/>
                                         </Frame>
