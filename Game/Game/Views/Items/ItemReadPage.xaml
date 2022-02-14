@@ -27,7 +27,7 @@
             Text="Details Page" />
         <Frame BackgroundColor="{StaticResource DeleteBackgroundColor}" BorderColor="{StaticResource BorderColor}">
             <StackLayout>
-                <Frame Margin="0,10,0,0" Style="{StaticResource ItemPictureFrame}">
+                <Frame Margin="0,10,0,0" Style="{StaticResource ImageFrame}">
                     <StackLayout>
                         <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" />
 
