@@ -718,11 +718,12 @@
             </Style>
 
             <Style TargetType="Frame"
-				 x:Key="CharacterInfoFrame">
+				 x:Key="CharacterCardFrame">
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}"/>
                 <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
-                <Setter Property="HeightRequest" Value="250"/>
-                <Setter Property="WidthRequest" Value="450"/>
+                <Setter Property="HeightRequest" Value="210"/>
+                <Setter Property="WidthRequest" Value="400"/>
+                <Setter Property="Padding" Value="20,0,0,0" />
             </Style>
 
             <Style TargetType="Frame"
