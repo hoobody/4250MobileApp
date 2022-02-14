@@ -30,16 +30,10 @@
             <ScrollView x:Name="ScrollView">
                 <StackLayout Spacing="10" Style="{StaticResource VerticalStack}">
 
-                    <Label
-                        HorizontalOptions="Center"
-                        Style="{StaticResource HeaderStyle}"
+                    <Label Style="{StaticResource HeaderStyle}"
                         Text="Read Page" />
 
-                    <Frame
-                                BackgroundColor="{StaticResource SecondaryBackgroundColor}"
-                                BorderColor="{StaticResource BorderColor}"
-                                HeightRequest="210"
-                                WidthRequest="400" Padding="20,0,0,0">
+                    <Frame Style="{StaticResource CharacterCardFrame}">
 
                         <StackLayout
                                     Style="{StaticResource VerticalStack}"
