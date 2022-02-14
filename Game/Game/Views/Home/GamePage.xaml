@@ -27,7 +27,7 @@
                     Text="  Where to&#10; next, Agent"
                     VerticalOptions="Center" />
 
-                <StackLayout Style="{StaticResource TallStack}">
+                <StackLayout Style="{StaticResource ButtonBox}">
 
                     <ImageButton
                         Clicked="DungeonButton_Clicked"
