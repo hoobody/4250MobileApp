@@ -275,8 +275,8 @@
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="GameLogoXLStyle">
-                <Setter Property="HeightRequest" Value="300" />
-                <Setter Property="WidthRequest" Value="400" />
+                <Setter Property="HeightRequest" Value="240" />
+                <Setter Property="WidthRequest" Value="380" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
@@ -286,7 +286,7 @@
             <Style TargetType="Image"
                 x:Key="GameLogoLgStyle">
             <Setter Property="HeightRequest" Value="180" />
-            <Setter Property="WidthRequest" Value="240" />
+            <Setter Property="WidthRequest" Value="285" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="VerticalOptions" Value="Center"/>
