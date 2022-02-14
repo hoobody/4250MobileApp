@@ -206,7 +206,7 @@
 
             <Style TargetType="Label"
                 x:Key="ValueStyleXS"
-                BasedOn="{StaticResource LabelStyle}">
+                BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="FontSize" Value="12" />
             </Style>
 
@@ -579,6 +579,13 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="LevelLabelBox"
+                   BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="Margin" Value="0,10,0,0" />
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="PaperBox"
                 BasedOn="{StaticResource HorizontalStack}" >
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
@@ -789,6 +796,13 @@
                 BasedOn="{StaticResource CharacterCardLabelFrame}">
                 <Setter Property="WidthRequest" Value="250" />
             </Style>
+
+            <Style TargetType="Frame"
+                x:Key="CharacterCardLabelFrameThin"
+                BasedOn="{StaticResource CharacterCardLabelFrame}">
+                <Setter Property="WidthRequest" Value="25" />
+            </Style>
+
 
             <Style TargetType="Frame"
                 x:Key="GridCellFrame">
