@@ -586,6 +586,14 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="SliderBox"
+                   BasedOn="{StaticResource HorizontalStack}">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="370" />
+            </Style>
+            
+            
+            <Style TargetType="StackLayout"
                 x:Key="PaperBox"
                 BasedOn="{StaticResource HorizontalStack}" >
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />

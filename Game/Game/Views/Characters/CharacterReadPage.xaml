@@ -109,10 +109,8 @@
                         </StackLayout>
                     </Frame>
 
-                    <StackLayout
-                        HorizontalOptions="Center"
-                        Style="{StaticResource HorizontalStack}"
-                        WidthRequest="370">
+                    <StackLayout Style="{StaticResource SliderBox}">
+
                         <Grid ColumnSpacing="10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="80" />
