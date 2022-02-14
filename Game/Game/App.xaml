@@ -280,7 +280,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="Aspect" Value="Fill" />
+                <Setter Property="Aspect" Value="AspectFill" />
             </Style>
 
             <Style TargetType="Image"
@@ -290,7 +290,7 @@
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="HorizontalOptions" Value="Center" />
             <Setter Property="VerticalOptions" Value="Center"/>
-            <Setter Property="Aspect" Value="Fill" />
+            <Setter Property="Aspect" Value="AspectFill" />
             </Style>
 
             <Style TargetType="Image"
@@ -300,7 +300,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="Aspect" Value="Fill" />
+                <Setter Property="Aspect" Value="AspectFill" />
             </Style>
 
             <Style TargetType="Image"
@@ -555,6 +555,13 @@
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="Spacing" Value="10" />
                 <Setter Property="WidthRequest" Value="125" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="StackLayout"
+                x:Key="CharacterCardRightBox"
+                BasedOn="{StaticResource CharacterCardLeftBox}">
+                <Setter Property="WidthRequest" Value="250" />
             </Style>
 
             <Style TargetType="StackLayout"
