@@ -51,11 +51,7 @@
 
                                 </StackLayout>
 
-                                <StackLayout
-                                        Spacing="10"
-                                        Style="{StaticResource VerticalStack}"
-                                        VerticalOptions="Center"
-                                        WidthRequest="250">
+                                <StackLayout Style="{StaticResource CharacterCardRightBox}">
 
                                     <StackLayout
                                             HorizontalOptions="Start"
