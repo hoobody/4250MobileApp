@@ -1011,6 +1011,16 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <!-- FlexLayout -->
+            <Style TargetType="FlexLayout"
+				   x:Key="ItemBox">
+                <Setter Property="Margin" Value="20,-50,0,0" />
+                <Setter Property="Scale" Value=".75" />
+                <Setter Property="AlignContent" Value="SpaceEvenly" />
+                <Setter Property="JustifyContent" Value="SpaceEvenly" />
+                <Setter Property="Wrap" Value="Wrap" />
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
