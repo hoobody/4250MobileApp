@@ -76,18 +76,14 @@
 
                                     <StackLayout Style="{StaticResource CharacterCardLabelBox}">
                                         <Frame Style="{StaticResource CharacterCardLabelFrameWide}">
-                                            <Label Style="{StaticResource ValueStyleXS}" 
-                                                   Text="{Binding Data.Description}" 
-                                                   FontAttributes="Italic"/>
+                                            <Label Style="{StaticResource TinyDescriptionStyle}" 
+                                                   Text="{Binding Data.Description}" />
                                         </Frame>
                                     </StackLayout>
 
-                                    <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="7"
-                                            Style="{StaticResource HorizontalStack}">
+                                    <StackLayout Style="{StaticResource SpacedBox}">
 
-                                        <Label Style="{StaticResource Barcode}" Text="█║█ ║▌║█║▌║▌█│║▌" />
+                                        <Label Style="{StaticResource Barcode}" />
 
                                         <StackLayout HorizontalOptions="End" Style="{StaticResource HorizontalStack}" Margin="0,10,0,0">
                                             <Label Style="{StaticResource LabelStyle}" Text="LVL:" FontSize="12"/>
