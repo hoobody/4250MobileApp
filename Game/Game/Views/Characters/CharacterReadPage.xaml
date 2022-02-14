@@ -136,8 +136,7 @@
 
                             <Frame Grid.Row="0" Grid.Column="2"
                                 Style="{StaticResource ValueFrame}">
-                                <Label
-                                    Style="{StaticResource LabelStyle}"
+                                <Label Style="{StaticResource LabelCenterStyle}"
                                     Text="{Binding Data.MaxHealth}" />
                             </Frame>
 
@@ -153,7 +152,7 @@
 
                             <Frame Grid.Row="1" Grid.Column="2"
                                 Style="{StaticResource ValueFrame}">
-                                <Label Style="{StaticResource LabelStyle}"
+                                <Label Style="{StaticResource LabelCenterStyle}"
                                     Text="{Binding Data.Attack}" />
                             </Frame>
 
@@ -169,7 +168,7 @@
 
                             <Frame Grid.Row="2" Grid.Column="2"
                                 Style="{StaticResource ValueFrame}">
-                                <Label Style="{StaticResource LabelStyle}"
+                                <Label Style="{StaticResource LabelCenterStyle}"
                                     Text="{Binding Data.Defense}" />
                             </Frame>
 
@@ -185,7 +184,7 @@
 
                             <Frame Grid.Row="3" Grid.Column="2"
                                 Style="{StaticResource ValueFrame}">
-                                <Label Style="{StaticResource LabelStyle}"
+                                <Label Style="{StaticResource LabelCenterStyle}"
                                     Text="{Binding Data.Speed}" />
                             </Frame>
 
