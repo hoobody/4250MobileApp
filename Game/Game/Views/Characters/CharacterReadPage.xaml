@@ -44,11 +44,7 @@
 
                                 <StackLayout Style="{StaticResource CharacterCardLeftBox}">
 
-                                    <Frame
-                                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                            BorderColor="{StaticResource BorderColor}"
-                                            HeightRequest="125"
-                                            WidthRequest="125">
+                                    <Frame Style="{StaticResource ImageFrame}">
                                         <Image Source="{Binding Data.ImageURI}" 
                                                Style="{StaticResource ImageLargeStyle}" />
                                     </Frame>
