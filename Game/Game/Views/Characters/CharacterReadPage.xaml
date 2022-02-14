@@ -55,38 +55,29 @@
 
                                     <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                        <Label Style="{StaticResource LabelStyle}" 
+                                        <Label Style="{StaticResource LabelStyleXS}" 
                                                Text="Job:" />
                                         <Frame Style="{StaticResource CharacterCardLabelFrame}">
-                                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Job}"
-                                                       FontSize="14"/>
+                                            <Label Style="{StaticResource ValueStyleXS}" 
+                                                   Text="{Binding Data.Job}"/>
                                         </Frame>
 
                                     </StackLayout>
 
-                                    <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="3"
-                                            Style="{StaticResource HorizontalStack}">
-                                        <Label Style="{StaticResource LabelStyle}" Text="CodeName:" FontSize="13" />
+                                    <StackLayout Style="{StaticResource CharacterCardLabelBox}">
+                                        <Label Style="{StaticResource LabelStyleXS}" 
+                                               Text="CodeName:"/>
 
-                                        <Frame
-                                                Padding="3"
-                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="140">
-                                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.CodeName}" FontSize="13"/>
+                                        <Frame Style="{StaticResource CharacterCardLabelFrame}">
+                                            <Label Style="{StaticResource ValueStyleXS}" 
+                                                   Text="{Binding Data.CodeName}"/>
                                         </Frame>
                                     </StackLayout>
 
-                                    <StackLayout
-                                            HorizontalOptions="Start"
-                                            Spacing="3"
-                                            Style="{StaticResource HorizontalStack}">
-                                        <Frame
-                                                Padding="3"
-                                                BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                                WidthRequest="227">
-                                            <Label Style="{StaticResource ValueStyle}" Text="{Binding Data.Description}" FontSize="12"
+                                    <StackLayout Style="{StaticResource CharacterCardLabelBox}">
+                                        <Frame Style="{StaticResource CharacterCardLabelFrameWide}">
+                                            <Label Style="{StaticResource ValueStyleXS}" 
+                                                   Text="{Binding Data.Description}" 
                                                    FontAttributes="Italic"/>
                                         </Frame>
                                     </StackLayout>
