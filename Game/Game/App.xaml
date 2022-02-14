@@ -888,7 +888,14 @@
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="0" />
             </Style>
-            
+
+            <Style TargetType="Grid"
+                   x:Key="WideGridStyle">
+                <Setter Property="ColumnSpacing" Value="10" />
+                <Setter Property="RowSpacing" Value="1" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="1" />
+            </Style>
 
             <Style TargetType="Grid"
                 x:Key="MapGridStyle">
