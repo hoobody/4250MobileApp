@@ -392,5 +392,23 @@ namespace UnitTests.Helpers
             Assert.AreEqual("Spy", result);
         }
 
+        [Test]
+        public void RandomPlayerHelper_GetMonsterJob_Should_Return_Godfather()
+        {
+            // Arrange
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
+
+            // Act
+            var result = RandomPlayerHelper.GetMonsterJob();
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual("Godfather", result);
+        }
+
+
     }
 }
