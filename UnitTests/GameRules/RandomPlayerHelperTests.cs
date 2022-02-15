@@ -374,5 +374,23 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(PlayerTypeEnum.Monster, result.PlayerType);
         }
+
+        [Test]
+        public void RandomPlayerHelper_GetCharacterJob_Should_Return_Spy()
+        {
+            // Arrange
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(11);
+
+            // Act
+            var result = RandomPlayerHelper.GetCharacterJob();
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual("Spy", result);
+        }
+
     }
 }
