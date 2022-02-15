@@ -189,11 +189,6 @@ namespace Game.GameRules
             //Get all the jobs
             var JobList = MonsterJobEnumHelper.GetJobList;
 
-            if (JobList.Count == 0)
-            {
-                return null;
-            }
-
             //return a random item from the list
             var result = JobList.ElementAt(DiceHelper.RollDice(1, JobList.Count()) - 1);
             return result;
