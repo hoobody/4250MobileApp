@@ -17,14 +17,9 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout
-            HorizontalOptions="Center"
-            Style="{StaticResource VerticalStack}"
-            WidthRequest="450">
+        <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label
-                HorizontalOptions="Center"
-                Style="{StaticResource HeaderStyle}"
+            <Label Style="{StaticResource HeaderStyle}"
                 Text="Character Index" />
 
             <ListView
