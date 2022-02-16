@@ -123,33 +123,30 @@
                                             </Frame>
                                         </StackLayout>
 
-                                        <StackLayout
-                                        HorizontalOptions="Start"
-                                        Spacing="7"
-                                        Style="{StaticResource HorizontalStack}">
+                                        <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                        <Label Style="{StaticResource Barcode}" Text="║║█║▌█║█║▌│║▌" />
+                                            <Label Style="{StaticResource Barcode}" />
 
-                                        <StackLayout
-                                            Margin="0,10,0,0"
-                                            HorizontalOptions="End"
-                                            Style="{StaticResource HorizontalStack}">
+                                            <StackLayout Style="{StaticResource LevelLabelBox}">
 
-                                            <Label Style="{StaticResource LabelStyle}" Text="LVL: " />
+                                                <Label Style="{StaticResource LabelStyleXS}" 
+                                                       Text="LVL: " />
 
-                                            <Frame Padding="3" BackgroundColor="{StaticResource EntryColor}">
+                                                <Frame Style="{StaticResource CharacterCardEntryFrameThin}">
 
-                                                <Picker
-                                                    x:Name="LevelPicker"
-                                                    FontSize="14"
-                                                    MinimumWidthRequest="70"
-                                                    SelectedIndexChanged="Level_Changed"
-                                                    SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" />
-                                            </Frame>
+                                                    <Picker x:Name="LevelPicker"
+                                                        SelectedIndexChanged="Level_Changed"
+                                                        SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
+                                                        Style="{StaticResource CharacterPickerStyle}"/>
+
+                                                </Frame>
+
+                                            </StackLayout>
+
                                         </StackLayout>
+
                                     </StackLayout>
                                 </StackLayout>
-                            </StackLayout>
                             </StackLayout>
                         </Frame>
 
