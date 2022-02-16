@@ -146,5 +146,20 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Detective", result);
         }
+
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Double0_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Double0.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Double0", result);
+        }
     }
 }
