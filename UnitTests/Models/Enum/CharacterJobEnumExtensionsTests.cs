@@ -130,7 +130,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("SuveillanceOfficer", result);
+            Assert.AreEqual("SurveillanceOfficer", result);
         }
 
         [Test]
