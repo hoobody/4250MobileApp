@@ -249,19 +249,13 @@
                             </Grid>
                         </StackLayout>
 
-                        <Frame
-                            Background="{StaticResource SecondaryBackgroundColor}"
-                            BorderColor="{StaticResource BorderColor}"
-                            HeightRequest="40"
-                            WidthRequest="500">
 
-                            <Label
-                                FontSize="20"
-                                HorizontalOptions="Center"
-                                Style="{StaticResource LabelStyle}"
-                                Text="Equip yourself Agent"
-                                VerticalOptions="Center" />
+                        <Frame Style="{StaticResource WideLabelFrame}">
+                            <Label Text="Equip yourself Agent"
+                                Style="{StaticResource LabelCenterStyle}" />
                         </Frame>
+                        
+                        
 
                         <FlexLayout
                             x:Name="ItemBox"
