@@ -152,16 +152,13 @@
                             </StackLayout>
                         </Frame>
 
-                        <StackLayout
-                            HorizontalOptions="Center"
-                            Style="{StaticResource HorizontalStack}"
-                            WidthRequest="375">
+                        <StackLayout Style="{StaticResource SliderBox}">
 
-                            <Grid ColumnSpacing="10">
+                            <Grid Style="{StaticResource WideGridStyle}">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="250" />
-                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="25*" />
+                                    <ColumnDefinition Width="65*" />
+                                    <ColumnDefinition Width="10*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
