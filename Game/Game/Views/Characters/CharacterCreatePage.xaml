@@ -225,37 +225,27 @@
                                         x:Name="DefenseLabel"/>
                                 </Frame>
 
-                                
-                                
-                                <Label
-                                    Grid.Row="3"
-                                    Grid.Column="0"
+
+
+                                <Label Grid.Row="3" Grid.Column="0"
                                     Style="{StaticResource LabelStyle}"
                                     Text="Speed" />
 
-                                <Slider
+                                <Slider Grid.Row="3" Grid.Column="1"
                                     x:Name="SpeedSlider"
-                                    Grid.Row="3"
-                                    Grid.Column="1"
-                                    InputTransparent="False"
                                     Maximum="10"
                                     Style="{StaticResource SliderStyle}"
                                     ValueChanged="SpeedSlider_ValueChanged"
                                     Value="{Binding Data.Speed, Mode=TwoWay}" />
 
-                                <Frame
-                                    Grid.Row="3"
-                                    Grid.Column="2"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    HeightRequest="30"
-                                    WidthRequest="50">
+                                <Frame Grid.Row="3" Grid.Column="2"
+                                    Style="{StaticResource ValueFrame}">
 
-                                    <Label
-                                        x:Name="SpeedLabel"
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding Data.Speed}" />
+                                    <Label Style="{StaticResource LabelCenterStyle}"
+                                    Text="{Binding Data.Speed}" 
+                                    x:Name="SpeedLabel"/>
                                 </Frame>
+                                
                             </Grid>
                         </StackLayout>
 
