@@ -119,5 +119,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Bounty Hunter", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Godfather_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.Godfather.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Godfather", result);
+        }
     }
 }
