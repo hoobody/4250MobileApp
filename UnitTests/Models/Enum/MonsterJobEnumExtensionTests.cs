@@ -22,7 +22,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MonsterJobEnumExtensionsTests_Fighter_Default_Should_Pass()
+        public void MonsterJobEnumExtensionsTests_Bodyguard_Default_Should_Pass()
         {
             // Arrange
 
@@ -36,7 +36,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MonsterJobEnumExtensionsTests_Cleric_Default_Should_Pass()
+        public void MonsterJobEnumExtensionsTests_Mercenary_Default_Should_Pass()
         {
             // Arrange
 
@@ -47,6 +47,20 @@ namespace UnitTests.Models
 
             // Assert
             Assert.AreEqual("Mercenary", result);
+        }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Guard_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.Guard.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Security Guard", result);
         }
     }
 }
