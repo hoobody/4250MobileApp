@@ -1423,6 +1423,16 @@ namespace UnitTests.Models
             // Should equal the same since Defense is set to 1
             Assert.AreEqual(data.GetDefenseJobBonus, data.GetDefense() - 1);
         }
+
+        [Test]
+        public void BasePlayerModel_BuffDefenseJobBonus_Spy_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Spy;
+
+            // Should equal the same since Defense is set to 1
+            Assert.AreEqual(data.GetDefenseJobBonus, data.GetDefense() - 1);
+        }
         [Test]
         public void BasePlayerModel_BuffHealth_Default_Should_Pass()
         {
