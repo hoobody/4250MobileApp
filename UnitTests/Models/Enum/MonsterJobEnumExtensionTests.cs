@@ -75,7 +75,21 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("Security Henchman", result);
+            Assert.AreEqual("Henchman", result);
+        }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_RightHandMan_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.RightHandMan.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Right Hand Man", result);
         }
     }
 }
