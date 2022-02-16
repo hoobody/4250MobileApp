@@ -1010,6 +1010,14 @@
 				   x:Key="ListView">
                 <Setter Property="Margin" Value="5,0,5,0"/>
                 <Setter Property="RowHeight" Value="120"/>
+                <Setter Property="HorizontalOptions" Value="Center" />
+                
+            </Style>
+
+            <Style TargetType="ListView"
+				   x:Key="CharacterListView"
+                   BasedOn="{StaticResource ListView}">
+                <Setter Property="RowHeight" Value="220"/>
             </Style>
 
             <!-- AbsoluteLayout -->

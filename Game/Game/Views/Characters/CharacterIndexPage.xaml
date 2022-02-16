@@ -24,15 +24,13 @@
 
             <ListView
                 x:Name="CharactersListView"
-                Margin="5,0,5,0"
                 CachingStrategy="RecycleElement"
                 HasUnevenRows="true"
-                HorizontalOptions="Center"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 ItemSelected="OnItemSelected"
                 ItemsSource="{Binding Dataset}"
                 RefreshCommand="{Binding LoadItemsCommand}"
-                RowHeight="220">
+                Style="{StaticResource CharacterListView}">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>
