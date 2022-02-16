@@ -104,5 +104,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("SpecialAgent", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Saboteur_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Saboteur.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Saboteur", result);
+        }
     }
 }
