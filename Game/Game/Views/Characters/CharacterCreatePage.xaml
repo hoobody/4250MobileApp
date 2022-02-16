@@ -254,16 +254,12 @@
                             <Label Text="Equip yourself Agent"
                                 Style="{StaticResource LabelCenterStyle}" />
                         </Frame>
-                        
-                        
 
-                        <FlexLayout
-                            x:Name="ItemBox"
-                            Margin="20,-50,0,0"
-                            Scale=".75"
-                            AlignContent="SpaceEvenly"
-                            JustifyContent="SpaceEvenly"
-                            Wrap="Wrap" />
+
+
+                        <FlexLayout x:Name="ItemBox"
+                                Style="{StaticResource ItemBox}" />
+                        
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
