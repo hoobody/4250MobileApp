@@ -30,16 +30,16 @@
     <ContentPage.Content>
         <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
 
-            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"
-                         HorizontalOptions="CenterAndExpand"
-                            Style="{StaticResource VerticalStack}"
-                            WidthRequest="400">
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                    AbsoluteLayout.LayoutFlags="All"
+                    Style="{StaticResource OuterBoxStack}">
 
                 <ScrollView x:Name="ScrollView">
 
-                    <StackLayout Style="{StaticResource VerticalStack}" Spacing="10">
+                    <StackLayout Style="{StaticResource SpacedBox}">
 
-                        <Label Style="{StaticResource HeaderStyle}" Text="Create Page" />
+                        <Label Style="{StaticResource HeaderStyle}" 
+                               Text="Create Page" />
 
                         <Frame
                             BackgroundColor="{StaticResource SecondaryBackgroundColor}"
