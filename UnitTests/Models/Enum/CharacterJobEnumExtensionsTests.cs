@@ -118,5 +118,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Saboteur", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_SurveillanceOfficer_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.SurveillanceOfficer.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("SuveillanceOfficer", result);
+        }
     }
 }
