@@ -48,5 +48,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Cleric", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Assassin_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Assassin.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Player", result);
+        }
     }
 }
