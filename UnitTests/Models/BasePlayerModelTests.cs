@@ -1169,8 +1169,8 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
             data.Job = CharacterJobEnum.SurveillanceOfficer;
 
-            // Should equal the same since Speed is set to 0
-            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+            // Should equal the same since Speed is set to 1
+            Assert.AreEqual(data.GetSpeedJobBonus, data.GetSpeed() - 1);
         }
 
         [Test]
