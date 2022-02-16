@@ -103,17 +103,13 @@
             </StackLayout>
         </Frame>
 
-        <StackLayout Padding="20" HorizontalOptions="Center">
+        <StackLayout Style="{StaticResource PaddedBox}">
 
-            <Label
-                HorizontalOptions="Center"
-                Style="{StaticResource MessageStyle}"
+            <Label Style="{StaticResource TitleCenterStyle}"
                 Text="Really delete this?" />
 
-            <StackLayout
-                HorizontalOptions="Center"
-                Spacing="10"
-                Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalSpacedBox}">
+                
                 <Button
                     Clicked="Cancel_Clicked"
                     Style="{StaticResource ButtonStyle}"
@@ -123,7 +119,10 @@
                     Clicked="Delete_Clicked"
                     Style="{StaticResource ButtonStyle}"
                     Text="Delete" />
+                
             </StackLayout>
+            
         </StackLayout>
+        
     </StackLayout>
 </ContentPage>
