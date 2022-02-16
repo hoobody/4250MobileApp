@@ -135,7 +135,7 @@ namespace UnitTests.Models
         }
 
         [Test]
-        public void MonsterJobEnumExtensionsTests_MasterMind_Default_Should_Pass()
+        public void MonsterJobEnumExtensionsTests_Mastermind_Default_Should_Pass()
         {
             // Arrange
 
@@ -145,7 +145,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("MasterMind", result);
+            Assert.AreEqual("Mastermind", result);
         }
     }
 }
