@@ -47,12 +47,10 @@
                             Text="Create Page" />
 
                         <Frame Style="{StaticResource CharacterCardFrame}">
-                            <StackLayout
-                                Style="{StaticResource VerticalStack}"
-                                VerticalOptions="Center"
-                                Spacing="10">
+                            <StackLayout Style="{StaticResource LightlySpacedBox}">
 
-                                <Frame x:Name="NameFrame">
+                                <Frame Style="{StaticResource CharacterCardEntryFrame}"
+                                    x:Name="NameFrame">
                                     <Entry
                                         x:Name="NameEntry"
                                         d:Text="Name"
