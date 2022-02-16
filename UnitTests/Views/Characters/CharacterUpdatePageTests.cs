@@ -367,10 +367,28 @@ namespace UnitTests.Views
         public void CharacterUpdatePage_CheckifReadyToSubmit_Valid_All_But_CodeName_With_Whitespace_Should_Pass()
         {
             // Arrange
-            var CodenameEntryNoWS = page.FindByName("CodenameEntry");
-            ((Entry)CodenameEntryNoWS).Text = " ";
+            var CodenameEntry = page.FindByName("CodenameEntry");
+            ((Entry)CodenameEntry).Text = " ";
 
             page.Codename_onTextChange(null, null);
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterUpdatePage_CheckifReadyToSubmit_Valid_All_But_Name_With_Whitespace_Should_Pass()
+        {
+            // Arrange
+            var NameEntry = page.FindByName("NameEntry");
+            ((Entry)NameEntry).Text = " ";
+
+            page.Name_onTextChange(null, null);
 
             // Act
             page.Save_Clicked(null, null);
