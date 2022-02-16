@@ -62,5 +62,20 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Security Guard", result);
         }
+
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Henchman_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.Henchman.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Security Henchman", result);
+        }
     }
 }
