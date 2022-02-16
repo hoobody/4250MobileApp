@@ -87,48 +87,43 @@
 
                                         </StackLayout>
 
-                                    <StackLayout
-                                        HorizontalOptions="Start"
-                                        Spacing="3"
-                                        Style="{StaticResource HorizontalStack}">
+                                        <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                        <Frame
-                                            x:Name="CodenameFrame"
-                                            Padding="3"
-                                            WidthRequest="200">
+                                            <Label Style="{StaticResource LabelStyleXS}" 
+                                                   Text="Codename:" />
 
-                                            <Entry
-                                                x:Name="CodenameEntry"
-                                                d:Text="Codename"
-                                                FontSize="13"
-                                                MaxLength="16"
-                                                Style="{StaticResource EntryStyle}"
-                                                Text="{Binding Data.CodeName, Mode=TwoWay}"
-                                                TextChanged="Codename_onTextChange" />
-                                        </Frame>
-                                    </StackLayout>
+                                            <Frame Style="{StaticResource CharacterCardEntryFrame}"
+                                                x:Name="CodenameFrame">
 
-                                    <StackLayout
-                                        HorizontalOptions="Start"
-                                        Spacing="3"
-                                        Style="{StaticResource HorizontalStack}">
-                                        <Frame
-                                            x:Name="DescriptionFrame"
-                                            Padding="3"
-                                            WidthRequest="200">
+                                                <Entry x:Name="CodenameEntry"
+                                                    d:Text="Codename"
+                                                    MaxLength="16"
+                                                    Style="{StaticResource CharacterEntryStyle}"
+                                                    Text="{Binding Data.CodeName, Mode=TwoWay}"
+                                                    TextChanged="Codename_onTextChange" />
+                                            </Frame>
 
-                                            <Entry
+                                        </StackLayout>
+
+                                        <StackLayout Style="{StaticResource CharacterCardLabelBox}">
+
+                                            <Label Style="{StaticResource LabelStyleXS}" 
+                                                   Text="Description:" />
+
+                                            <Frame Style="{StaticResource CharacterCardEntryFrame}"
+                                                   x:Name="DescriptionFrame">
+
+                                                <Entry
                                                 x:Name="DescriptionEntry"
                                                 d:Text="Desc: "
-                                                FontSize="13"
                                                 MaxLength="19"
-                                                Style="{StaticResource EntryStyle}"
+                                                Style="{StaticResource CharacterEntryStyle}"
                                                 Text="{Binding Data.Description, Mode=TwoWay}"
                                                 TextChanged="Description_onTextChange" />
-                                        </Frame>
-                                    </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
 
-                                    <StackLayout
+                                        <StackLayout
                                         HorizontalOptions="Start"
                                         Spacing="7"
                                         Style="{StaticResource HorizontalStack}">
