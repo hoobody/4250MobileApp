@@ -184,36 +184,28 @@
                                            x:Name="HealthLabel"/>
                                 </Frame>
 
-                                <Label
-                                    Grid.Row="1"
-                                    Grid.Column="0"
+                                
+                                
+                                <Label Grid.Row="1" Grid.Column="0"
                                     Style="{StaticResource LabelStyle}"
                                     Text="Attack" />
 
-                                <Slider
+                                <Slider Grid.Row="1" Grid.Column="1"
                                     x:Name="AttackSlider"
-                                    Grid.Row="1"
-                                    Grid.Column="1"
-                                    InputTransparent="False"
                                     Maximum="10"
                                     Style="{StaticResource SliderStyle}"
                                     ValueChanged="AttackSlider_ValueChanged"
                                     Value="{Binding Data.Attack, Mode=TwoWay}" />
 
-                                <Frame
-                                    Grid.Row="1"
-                                    Grid.Column="2"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    HeightRequest="30"
-                                    WidthRequest="50">
-
-                                    <Label
-                                        x:Name="AttackLabel"
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding Data.Attack}" />
+                                <Frame Grid.Row="1" Grid.Column="2"
+                                    Style="{StaticResource ValueFrame}">
+                                    <Label Style="{StaticResource LabelCenterStyle}"
+                                        Text="{Binding Data.GetAttackTotal}" 
+                                        x:Name="AttackLabel"/>
                                 </Frame>
 
+                                
+                                
                                 <Label
                                     Grid.Row="2"
                                     Grid.Column="0"
@@ -238,12 +230,15 @@
                                     WidthRequest="50">
 
                                     <Label
-                                        x:Name="DefenseLabel"
+                                        
                                         HorizontalOptions="Center"
                                         Style="{StaticResource LabelStyle}"
-                                        Text="{Binding Data.Defense}" />
+                                        Text="{Binding Data.Defense}" 
+                                        x:Name="DefenseLabel"/>
                                 </Frame>
 
+                                
+                                
                                 <Label
                                     Grid.Row="3"
                                     Grid.Column="0"
