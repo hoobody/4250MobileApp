@@ -93,7 +93,7 @@
                                             <Label Style="{StaticResource LabelStyleXS}" 
                                                    Text="Codename:" />
 
-                                            <Frame Style="{StaticResource CharacterCardEntryFrame}"
+                                            <Frame Style="{StaticResource CharacterCardEntryFrameWide}"
                                                 x:Name="CodenameFrame">
 
                                                 <Entry x:Name="CodenameEntry"

@@ -44,7 +44,7 @@
                     <StackLayout Style="{StaticResource SpacedBox}">
 
                         <Label Style="{StaticResource HeaderStyle}" 
-                            Text="Create Page" />
+                            Text="Update Page" />
 
                         <Frame Style="{StaticResource CharacterCardFrame}">
                             <StackLayout Style="{StaticResource LightlySpacedBox}">
@@ -107,7 +107,7 @@
 
                                         <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                            <Frame Style="{StaticResource CharacterCardEntryFrame}"
+                                            <Frame Style="{StaticResource CharacterCardEntryFrameWide}"
                                                    x:Name="DescriptionFrame">
 
                                                 <Entry
