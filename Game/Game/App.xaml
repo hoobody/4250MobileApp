@@ -810,10 +810,10 @@
             <Style TargetType="Frame"
                 x:Key="ValueFrame">
                 <Setter Property="HeightRequest" Value="50" />
-                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="50" />
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}"/>
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
-                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
             </Style>
             
             <Style TargetType="Frame"
