@@ -855,6 +855,12 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="CharacterCardEntryFrameWide"
+                BasedOn="{StaticResource CharacterCardEntryFrame}">
+                <Setter Property="WidthRequest" Value="250" />
+            </Style>
+            
+            <Style TargetType="Frame"
                 x:Key="CharacterCardLabelFrameWide"
                 BasedOn="{StaticResource CharacterCardLabelFrame}">
                 <Setter Property="WidthRequest" Value="250" />
@@ -978,7 +984,13 @@
                 <Setter Property="FontFamily" Value="OCRFont" />
                 <Setter Property="HeightRequest" Value="30" />
             </Style>
-            
+
+            <Style TargetType="Entry"
+                x:Key="CharacterDescriptionEntryStyle"
+                   BasedOn="{StaticResource CharacterEntryStyle}">
+                <Setter Property="WidthRequest" Value="200" />
+            </Style>
+
             <!-- Editor-->
             <Style TargetType="Editor">
                 <Setter Property="FontSize" Value="Small" />
