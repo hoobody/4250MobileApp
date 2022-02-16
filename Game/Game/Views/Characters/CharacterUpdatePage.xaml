@@ -107,9 +107,6 @@
 
                                         <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                            <Label Style="{StaticResource LabelStyleXS}" 
-                                                   Text="Description:" />
-
                                             <Frame Style="{StaticResource CharacterCardEntryFrame}"
                                                    x:Name="DescriptionFrame">
 

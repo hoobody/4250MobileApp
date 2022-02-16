@@ -108,9 +108,6 @@
 
                                         <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                            <Label Style="{StaticResource LabelStyleXS}" 
-                                                   Text="Description:" />
-
                                             <Frame Style="{StaticResource CharacterCardEntryFrame}"
                                                    x:Name="DescriptionFrame">
     
@@ -136,7 +133,6 @@
                                                 <Frame Style="{StaticResource CharacterCardEntryFrameThin}">
 
                                                     <Picker x:Name="LevelPicker"
-                                                        MinimumWidthRequest="70"
                                                         SelectedIndexChanged="Level_Changed"
                                                         SelectedItem="{Binding SelectedItemProperty, Mode=TwoWay}" 
                                                         Style="{StaticResource CharacterPickerStyle}"/>
