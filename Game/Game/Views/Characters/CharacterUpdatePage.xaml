@@ -12,6 +12,10 @@
     mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Clicked="RollDice_Clicked"
+            IconImageSource="dice.png"
+            Text="Randomize"/>ve
         <ToolbarItem
             Clicked="Cancel_Clicked"
             IconImageSource="cancel_button.png"
