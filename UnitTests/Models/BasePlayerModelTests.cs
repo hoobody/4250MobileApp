@@ -1283,6 +1283,16 @@ namespace UnitTests.Models
             Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
         }
 
+
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_Double0_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Double0;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
         [Test]
         public void BasePlayerModel_BuffHealth_Default_Should_Pass()
         {
