@@ -99,18 +99,6 @@ namespace Game.Models
                     Message = "Fighter";
                     break;
 
-                case CharacterJobEnum.Wizard:
-                    Message = "Wizard";
-                    break;
-
-                case CharacterJobEnum.Archer:
-                    Message = "Archer";
-                    break;
-
-                case CharacterJobEnum.Knight:
-                    Message = "Knight";
-                    break;
-
                 case CharacterJobEnum.Unknown:
                 default:
                     break;
