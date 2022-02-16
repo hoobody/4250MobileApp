@@ -91,7 +91,7 @@
 
                                         <StackLayout Style="{StaticResource LevelLabelBox}">
                                             
-                                            <Label Style="{StaticResource ValueStyleXS}" 
+                                            <Label Style="{StaticResource LabelStyleXS}" 
                                                    Text="LVL: "/>
 
                                             <Frame Style="{StaticResource CharacterCardLabelFrameThin}">
