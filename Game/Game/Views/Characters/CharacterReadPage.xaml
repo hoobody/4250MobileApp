@@ -36,7 +36,7 @@
 
                         <StackLayout Style="{StaticResource SpacedBox}">
 
-                            <Label Style="{StaticResource TitleCenterStyle}"
+                            <Label Style="{StaticResource TitleStyle}"
                                 Text="{Binding Data.Name}"/>
 
                             <StackLayout Style="{StaticResource CharacterCardInnerBox}">
