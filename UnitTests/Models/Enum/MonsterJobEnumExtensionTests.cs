@@ -105,5 +105,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Hitman", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_BountyHunter_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.BountyHunter.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Bounty Hunter", result);
+        }
     }
 }
