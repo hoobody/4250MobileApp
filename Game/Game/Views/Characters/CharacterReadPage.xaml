@@ -19,16 +19,15 @@
             Text="Delete" />
     </ContentPage.ToolbarItems>
 
-    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+    <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
         <StackLayout
             AbsoluteLayout.LayoutBounds="1,1,1,1"
             AbsoluteLayout.LayoutFlags="All"
-            HorizontalOptions="CenterAndExpand"
-            Style="{StaticResource VerticalStack}"
-            WidthRequest="475">
+            Style="{StaticResource OuterBoxStack}">
 
             <ScrollView x:Name="ScrollView">
-                <StackLayout Spacing="10" Style="{StaticResource VerticalStack}">
+                
+                <StackLayout Style="{StaticResource SpacedBox}">
 
                     <Label Style="{StaticResource HeaderStyle}"
                         Text="Read Page" />
