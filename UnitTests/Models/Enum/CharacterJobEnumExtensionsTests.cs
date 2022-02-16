@@ -90,5 +90,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Hacker", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_SpecialAgent_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.SpecialAgent.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("SpecialAgent", result);
+        }
     }
 }
