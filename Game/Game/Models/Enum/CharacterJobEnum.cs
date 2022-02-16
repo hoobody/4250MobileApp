@@ -123,12 +123,7 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
                 var myReturn = myList.Where(a =>
-                                           a.ToString() != CharacterJobEnum.Unknown.ToString() ||
-                                           a.ToString() != CharacterJobEnum.Fighter.ToString() ||
-                                           a.ToString() != CharacterJobEnum.Cleric.ToString() ||
-                                           a.ToString() != CharacterJobEnum.Wizard.ToString() ||
-                                           a.ToString() != CharacterJobEnum.Archer.ToString() ||
-                                           a.ToString() != CharacterJobEnum.Knight.ToString()
+                                           a.ToString() != CharacterJobEnum.Unknown.ToString()                                       
                                             )
                                             .OrderBy(a => a)
                                             .ToList();
