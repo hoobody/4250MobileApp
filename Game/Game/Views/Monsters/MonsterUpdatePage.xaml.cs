@@ -122,7 +122,6 @@ namespace Game.Views
             // Randomize Name
             ViewModel.Data.Name = RandomPlayerHelper.GetMonsterName();
             ViewModel.Data.Description = RandomPlayerHelper.GetMonsterDescription();
-            ViewModel.Data.MonsterJob = MonsterJobEnumHelper.ConvertStringToEnum(RandomPlayerHelper.GetMonsterJob());
 
             // Randomize the Attributes
             ViewModel.Data.Attack = RandomPlayerHelper.GetAbilityValue();
