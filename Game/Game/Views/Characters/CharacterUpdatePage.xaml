@@ -74,25 +74,18 @@
 
                                     <StackLayout Style="{StaticResource CharacterCardRightBox}">
 
-                                        <StackLayout
-                                        HorizontalOptions="Start"
-                                        Spacing="3"
-                                        Style="{StaticResource HorizontalStack}">
+                                        <StackLayout Style="{StaticResource CharacterCardLabelBox}">
 
-                                        <Label Style="{StaticResource LabelStyle}" Text="Job:" />
-                                        <Frame
-                                            Padding="3"
-                                            BackgroundColor="{StaticResource EntryColor}"
-                                            WidthRequest="150">
+                                            <Label Style="{StaticResource LabelStyleXS}" Text="Job:" />
+                                            <Frame Style="{StaticResource CharacterCardEntryFrame}">
 
-                                            <Picker
-                                                x:Name="JobPicker"
-                                                FontSize="13"
-                                                ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}"
-                                                SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
-                                        </Frame>
+                                                <Picker Style="{StaticResource CharacterPickerStyle}"
+                                                    x:Name="JobPicker"
+                                                    ItemsSource="{x:Static local:CharacterJobEnumHelper.GetJobList}"
+                                                    SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" />
+                                            </Frame>
 
-                                    </StackLayout>
+                                        </StackLayout>
 
                                     <StackLayout
                                         HorizontalOptions="Start"
