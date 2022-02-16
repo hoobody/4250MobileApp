@@ -351,8 +351,6 @@ namespace UnitTests.Views
             // Arrange
             var CodenameEntryNoWS = page.FindByName("CodenameEntry");
             ((Entry)CodenameEntryNoWS).Text = "";
-            var CodenameEntryWithSpace = page.FindByName("CodenameEntry");
-            ((Entry)CodenameEntryWithSpace).Text = " ";
 
             page.Codename_onTextChange(null, null);
 
