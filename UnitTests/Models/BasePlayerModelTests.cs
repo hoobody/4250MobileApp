@@ -1169,8 +1169,8 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
             data.Job = CharacterJobEnum.SurveillanceOfficer;
 
-            // Should equal the same since Speed is set to 0
-            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+            // Should equal the same since Speed is set to 1
+            Assert.AreEqual(data.GetSpeedJobBonus, data.GetSpeed() - 1);
         }
 
         [Test]
@@ -1179,8 +1179,8 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
             data.Job = CharacterJobEnum.Assassin;
 
-            // Should equal the same since Speed is set to 0
-            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+            // Should equal the same since Speed is set to 1
+            Assert.AreEqual(data.GetSpeedJobBonus, data.GetSpeed() - 1);
         }
 
         [Test]
@@ -1189,8 +1189,8 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
             data.Job = CharacterJobEnum.Detective;
 
-            // Should equal the same since Speed is set to 0
-            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+            // Should equal the same since Speed is set to 1
+            Assert.AreEqual(data.GetSpeedJobBonus, data.GetSpeed() - 1);
         }
 
         [Test]
@@ -1199,8 +1199,8 @@ namespace UnitTests.Models
             var data = new BasePlayerModel<CharacterModel>();
             data.Job = CharacterJobEnum.Double0;
 
-            // Should equal the same since Speed is set to 0
-            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+            // Should equal the same since Speed is set to 1
+            Assert.AreEqual(data.GetSpeedJobBonus, data.GetSpeed() - 1);
         }
 
         [Test]
@@ -1273,6 +1273,56 @@ namespace UnitTests.Models
             Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
         }
 
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_Detective_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Detective;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
+
+
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_Double0_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Double0;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
+
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_Hacker_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Hacker;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
+
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_Saboteur_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Saboteur;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
+
+        [Test]
+        public void BasePlayerModel_BuffAttackJobBonus_SpecialAgent_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.SpecialAgent;
+
+            // Should equal the same since Attack is set to 1
+            Assert.AreEqual(data.GetAttackJobBonus, data.GetAttack() - 1);
+        }
         [Test]
         public void BasePlayerModel_BuffHealth_Default_Should_Pass()
         {
