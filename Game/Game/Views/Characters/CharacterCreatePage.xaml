@@ -204,36 +204,24 @@
                                         x:Name="AttackLabel"/>
                                 </Frame>
 
-                                
-                                
-                                <Label
-                                    Grid.Row="2"
-                                    Grid.Column="0"
+
+
+                                <Label Grid.Row="2" Grid.Column="0"
                                     Style="{StaticResource LabelStyle}"
                                     Text="Defense" />
 
-                                <Slider
+                                <Slider Grid.Row="2" Grid.Column="1"
                                     x:Name="DefenseSlider"
-                                    Grid.Row="2"
-                                    Grid.Column="1"
-                                    InputTransparent="False"
                                     Maximum="10"
                                     Style="{StaticResource SliderStyle}"
                                     ValueChanged="DefenseSlider_ValueChanged"
                                     Value="{Binding Data.Defense, Mode=TwoWay}" />
 
-                                <Frame
-                                    Grid.Row="2"
-                                    Grid.Column="2"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    HeightRequest="30"
-                                    WidthRequest="50">
+                                <Frame Grid.Row="2" Grid.Column="2"
+                                    Style="{StaticResource ValueFrame}">
 
-                                    <Label
-                                        
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding Data.Defense}" 
+                                    <Label Style="{StaticResource LabelCenterStyle}"
+                                        Text="{Binding Data.GetDefenseTotal}" 
                                         x:Name="DefenseLabel"/>
                                 </Frame>
 
