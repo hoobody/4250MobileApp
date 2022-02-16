@@ -1204,6 +1204,16 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void BasePlayerModel_BuffSpeedJobBonus_Hacker_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+            data.Job = CharacterJobEnum.Hacker;
+
+            // Should equal the same since Speed is set to 0
+            Assert.AreEqual(data.GetSpeedJobBonus, data.Speed + data.GetSpeedJobBonus);
+        }
+
+        [Test]
         public void BasePlayerModel_BuffHealth_Default_Should_Pass()
         {
             var data = new BasePlayerModel<CharacterModel>();
