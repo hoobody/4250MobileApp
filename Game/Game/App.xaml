@@ -706,6 +706,12 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="LightlySpacedBox"
+                BasedOn="{StaticResource SpacedBox}">
+                <Setter Property="Spacing" Value="2"/>
+            </Style>
+
+            <Style TargetType="StackLayout"
                 x:Key="HorizontalSpacedBox"
                    BasedOn="{StaticResource SpacedBox}">
                 <Setter Property="Orientation" Value="Horizontal" />
@@ -798,7 +804,7 @@
                 <Setter Property="BorderColor" Value="{StaticResource BorderColor}"/>
                 <Setter Property="HeightRequest" Value="210"/>
                 <Setter Property="WidthRequest" Value="400"/>
-                <Setter Property="Padding" Value="20,0,0,0" />
+                <Setter Property="Padding" Value="20,5,5,5" />
             </Style>
 
             <Style TargetType="Frame"
@@ -832,6 +838,20 @@
                 <Setter Property="CornerRadius" Value="3" />
                 <Setter Property="Padding" Value="3" />
                 <Setter Property="WidthRequest" Value="160" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="CharacterCardEntryFrame"
+                   BasedOn="{StaticResource CharacterCardLabelFrame}">
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="CharacterCardEntryFrameThin"
+                BasedOn="{StaticResource CharacterCardEntryFrame}">
+                <Setter Property="WidthRequest" Value="60" />
             </Style>
 
             <Style TargetType="Frame"
@@ -951,6 +971,14 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource PlaceholderTextColor}" />
             </Style>
 
+            <Style TargetType="Entry"
+                x:Key="CharacterEntryStyle"
+                   BasedOn="{StaticResource EntryStyle}">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontFamily" Value="OCRFont" />
+                <Setter Property="HeightRequest" Value="30" />
+            </Style>
+            
             <!-- Editor-->
             <Style TargetType="Editor">
                 <Setter Property="FontSize" Value="Small" />
@@ -987,8 +1015,15 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
             </Style>
 
+            <Style TargetType="Picker"
+                   x:Key="CharacterPickerStyle"
+                   BasedOn="{StaticResource PickerStyle}">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="BackgroundColor" Value="{StaticResource ViewBackgroundColor}" />
+            </Style>
 
-			<!-- Slider -->
+
+            <!-- Slider -->
 			<Style TargetType="Slider"
 				   x:Key="SliderStyle">
 				<Setter Property="HeightRequest" Value="36"/>
@@ -1023,7 +1058,7 @@
             <Style TargetType="ListView"
 				   x:Key="CharacterListView"
                    BasedOn="{StaticResource ListView}">
-                <Setter Property="RowHeight" Value="220"/>
+                <Setter Property="RowHeight" Value="230"/>
             </Style>
 
             <!-- AbsoluteLayout -->
