@@ -157,8 +157,8 @@
                             <Grid Style="{StaticResource WideGridStyle}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="25*" />
-                                    <ColumnDefinition Width="65*" />
-                                    <ColumnDefinition Width="10*" />
+                                    <ColumnDefinition Width="60*" />
+                                    <ColumnDefinition Width="15*" />
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*" />
@@ -167,32 +167,21 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
 
-                                <Label
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    Style="{StaticResource LabelStyle}"
-                                    Text="Health" />
+                                <Label Grid.Row="0" Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Health" />
 
-                                <Slider
-                                    x:Name="HealthSlider"
-                                    Grid.Row="0"
-                                    Grid.Column="1"
-                                    Maximum="100"
-                                    Style="{StaticResource ViewOnlySlider}"
-                                    Value="{Binding Data.MaxHealth}" />
+                                <Slider Grid.Row="0" Grid.Column="1"
+                                x:Name="HealthSlider"
+                                Maximum="100"
+                                Style="{StaticResource ViewOnlySlider}"
+                                Value="{Binding Data.MaxHealth}" />
 
-                                <Frame
-                                    Grid.Row="0"
-                                    Grid.Column="2"
-                                    BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                    HeightRequest="30"
-                                    WidthRequest="50">
-
-                                    <Label
-                                        x:Name="HealthLabel"
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource LabelStyle}"
-                                        Text="{Binding Data.MaxHealth}" />
+                                <Frame Grid.Row="0" Grid.Column="2"
+                                Style="{StaticResource ValueFrame}">
+                                    <Label Style="{StaticResource LabelCenterStyle}"
+                                    Text="{Binding Data.MaxHealth}" 
+                                           x:Name="HealthLabel"/>
                                 </Frame>
 
                                 <Label
