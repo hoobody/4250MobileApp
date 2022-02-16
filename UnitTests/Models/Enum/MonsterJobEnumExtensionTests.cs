@@ -91,5 +91,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Right Hand Man", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_Hitman_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.Hitman.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Hitman", result);
+        }
     }
 }
