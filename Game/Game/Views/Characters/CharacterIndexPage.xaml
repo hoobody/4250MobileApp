@@ -37,11 +37,8 @@
                         <ViewCell>
                             <Frame Style="{StaticResource CharacterCardFrame}" >
 
-                                <StackLayout Style="{StaticResource VerticalStack}" 
-                                             VerticalOptions="Center"
-                                             Spacing="2">
-                                    <Label
-                                        Style="{StaticResource NameTagNameLabel}"
+                                <StackLayout Style="{StaticResource SpacedBox}">
+                                    <Label Style="{StaticResource TitleStyle}"
                                         Text="{Binding Name}" />
                                     
                                     <StackLayout
