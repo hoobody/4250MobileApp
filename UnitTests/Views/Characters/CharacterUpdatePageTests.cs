@@ -344,5 +344,25 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterUpdatePage_CheckifReadyToSubmit_Valid_All_But_CodeName_Should_Pass()
+        {
+            // Arrange
+            var CodenameEntryNoWS = page.FindByName("CodenameEntry");
+            ((Entry)CodenameEntryNoWS).Text = "";
+            var CodenameEntryWithSpace = page.FindByName("CodenameEntry");
+            ((Entry)CodenameEntryWithSpace).Text = " ";
+
+            page.Codename_onTextChange(null, null);
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
