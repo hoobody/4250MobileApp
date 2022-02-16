@@ -51,15 +51,14 @@
 
                                 <Frame Style="{StaticResource CharacterCardEntryFrame}"
                                     x:Name="NameFrame">
+
                                     <Entry
-                                        x:Name="NameEntry"
-                                        d:Text="Name"
-                                        FontSize="15"
-                                        MaxLength="20"
-                                        Style="{StaticResource EntryStyle}"
-                                        Text="{Binding Data.Name, Mode=TwoWay}"
-                                        TextChanged="Name_onTextChange"
-                                        WidthRequest="250" />
+                                            x:Name="NameEntry"
+                                            d:Text="Name"
+                                            MaxLength="20"
+                                            Style="{StaticResource EntryStyle}"
+                                            Text="{Binding Data.Name, Mode=TwoWay}"
+                                            TextChanged="Name_onTextChange"/>
                                 </Frame>
 
 
