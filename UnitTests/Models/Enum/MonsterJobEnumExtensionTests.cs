@@ -133,5 +133,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Godfather", result);
         }
+
+        [Test]
+        public void MonsterJobEnumExtensionsTests_MasterMind_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = MonsterJobEnum.Mastermind.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("MasterMind", result);
+        }
     }
 }
