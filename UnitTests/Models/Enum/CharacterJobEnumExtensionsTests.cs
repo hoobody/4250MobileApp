@@ -62,5 +62,19 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("Assassin", result);
         }
+
+        [Test]
+        public void CharacterJobEnumExtensionsTests_Spy_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnum.Spy.ToMessage();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual("Spy", result);
+        }
     }
 }
