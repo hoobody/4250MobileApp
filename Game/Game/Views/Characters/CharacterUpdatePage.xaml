@@ -33,14 +33,11 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout  Style="{StaticResource AbsoluteStyle}">
+        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
 
-            <StackLayout
-                AbsoluteLayout.LayoutBounds="1,1,1,1"
-                AbsoluteLayout.LayoutFlags="All"
-                HorizontalOptions="CenterAndExpand"
-                Style="{StaticResource VerticalStack}"
-                WidthRequest="400">
+            <StackLayout AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                    AbsoluteLayout.LayoutFlags="All"
+                    Style="{StaticResource OuterBoxStack}">
 
                 <ScrollView x:Name="ScrollView">
 
