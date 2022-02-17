@@ -192,7 +192,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
+        public void DescriptionEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             DescriptionEntry.BackgroundColor = (Color)Application.Current.Resources["ViewBackgroundColor"];
             DescriptionFrame.BorderColor = (Color)Application.Current.Resources["BorderColor"];
