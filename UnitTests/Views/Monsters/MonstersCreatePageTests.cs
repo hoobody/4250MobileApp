@@ -181,7 +181,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
+        public void MonsterCreatePage_RollDice_Clicked_Default_Should_Pass()
         {
             // Arrange
             page.ViewModel.Data = new MonsterModel();
