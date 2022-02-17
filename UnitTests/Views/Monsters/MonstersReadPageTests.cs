@@ -7,6 +7,8 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace UnitTests.Views
 {
@@ -140,6 +142,28 @@ namespace UnitTests.Views
 
             // Assert
             Assert.AreEqual(2, itemBox.Children.Count); // Got to here, so it happened...
+        }
+
+        [Test]
+        public async Task MonsterReadPage_GetItemToDisplay_With_Item_Should_Pass()
+        {
+            // Arrange
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            _ = await ItemIndexViewModel.Instance.CreateAsync(new ItemModel { Location = ItemLocationEnum.PrimaryHand });
+
+            var monster = new MonsterModel();
+            monster.Head = ItemIndexViewModel.Instance.GetLocationItems(ItemLocationEnum.PrimaryHand).First().Id;
+            page.ViewModel.Data = monster;
+
+            // Act
+            var result = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
+
+            // Reset
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
+
+            // Assert
+            Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
         }
     }
 }
