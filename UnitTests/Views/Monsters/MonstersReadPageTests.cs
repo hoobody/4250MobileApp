@@ -120,5 +120,26 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+
+        [Test]
+        public void MonsterReadPage_AddItemsToDisplay_With_Data_Should_Remove_And_Pass()
+        {
+            // Arrange
+
+            // Put some data into the box so it can be removed
+            FlexLayout itemBox = (FlexLayout)page.Content.FindByName("ItemBox");
+
+            itemBox.Children.Add(new Label());
+            itemBox.Children.Add(new Label());
+
+            // Act
+            page.AddItemsToDisplay();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(2, itemBox.Children.Count); // Got to here, so it happened...
+        }
     }
 }
