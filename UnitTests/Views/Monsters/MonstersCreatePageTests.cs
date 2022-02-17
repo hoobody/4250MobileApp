@@ -179,5 +179,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data = new MonsterModel();
+
+            // Act
+            page.Randomize_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
