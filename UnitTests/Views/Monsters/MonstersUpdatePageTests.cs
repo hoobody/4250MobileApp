@@ -271,5 +271,71 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        {
+            //ArSpeed
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
+
+            page = new MonsterUpdatePage(ViewModel);
+            var oldAttack = 0.0;
+            var newAttack = 1.0;
+
+            var args = new ValueChangedEventArgs(oldAttack, newAttack);
+
+            //Act
+            page.AttackSlider_ValueChanged(null, args);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(true);  //Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        {
+            //ArSpeed
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
+
+            page = new MonsterUpdatePage(ViewModel);
+            var oldSpeed = 0.0;
+            var newSpeed = 1.0;
+
+            var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
+
+            //Act
+            page.SpeedSlider_ValueChanged(null, args);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(true); //Got to here, so it happened...
+        }
+
+        [Test]
+        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        {
+            //Arrange
+            var data = new MonsterModel();
+            var ViewModel = new GenericViewModel<MonsterModel>(data);
+
+            page = new MonsterUpdatePage(ViewModel);
+            var oldDefense = 0.0;
+            var newDefense = 1.0;
+
+            var args = new ValueChangedEventArgs(oldDefense, newDefense);
+
+            //Act
+            page.DefenseSlider_ValueChanged(null, args);
+
+            //Reset
+
+            //Assert
+            Assert.IsTrue(true); //Got to here, so it happened...
+        }
     }
 }
