@@ -109,27 +109,27 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        //[Test]
-        //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+        [Test]
+        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    var oldAttack = 0.0;
-        //    var newAttack = 1.0;
+            page = new CharacterCreatePage(ViewModel);
+            var oldAttack = 0.0;
+            var newAttack = 1.0;
 
-        //    var args = new ValueChangedEventArgs(oldAttack, newAttack);
+            var args = new ValueChangedEventArgs(oldAttack, newAttack);
 
-        //    // Act
-        //    page.Attack_OnStepperValueChanged(null, args);
+            // Act
+            page.AttackSlider_ValueChanged(null, args);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         //[Test]
         //public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
@@ -174,6 +174,7 @@ namespace UnitTests.Views
         //    // Assert
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
+
 
         [Test]
         public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
