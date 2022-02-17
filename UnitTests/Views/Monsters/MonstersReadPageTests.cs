@@ -184,5 +184,23 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
         }
+
+        [Test]
+        public void MonsterReadPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.PrimaryHand);
+            page.ViewModel.Data.PrimaryHand = item.Id;
+            var StackItem = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
+            var dataImage = StackItem.Children[0];
+
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
