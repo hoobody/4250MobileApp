@@ -165,5 +165,24 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
         }
+
+        [Test]
+        public async Task MonsterReadPage_GetItemToDisplay_With_NoItem_Should_Pass()
+        {
+            // Arrange
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            var item = new ItemModel { Location = ItemLocationEnum.PrimaryHand };
+            _ = await ItemIndexViewModel.Instance.CreateAsync(item);
+
+            // Act
+            var result = page.GetItemToDisplay(ItemLocationEnum.PrimaryHand);
+
+            // Reset
+            ItemIndexViewModel.Instance.Dataset.Clear();
+            _ = await ItemIndexViewModel.Instance.LoadDefaultDataAsync();
+
+            // Assert
+            Assert.AreEqual(2, result.Children.Count); // Got to here, so it happened...
+        }
     }
 }
