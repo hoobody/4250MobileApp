@@ -229,7 +229,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void DefenseSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        public void DefenseSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             var updatedValue = Math.Round(e.NewValue);
             DefenseSlider.Value = updatedValue;
