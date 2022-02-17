@@ -126,7 +126,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void MonsterCreatePage_CheckifReadyToSubmit_Valid_All_But_Name_With_Whitespace_Should_Pass()
+        {
+            // Arrange
+            var NameEntry = page.FindByName("NameEntry");
+            ((Entry)NameEntry).Text = " ";
 
+            page.Name_onTextChange(null, null);
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void MonsterCreatePage_CheckifReadyToSubmit_Valid_All_But_Description_With_Whitespace_Should_Pass()
