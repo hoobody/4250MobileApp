@@ -217,7 +217,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        public void AttackSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             var updatedValue = Math.Round(e.NewValue);
             AttackSlider.Value = updatedValue;
@@ -241,7 +241,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
+        public void SpeedSlider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             var updatedValue = Math.Round(e.NewValue);
             SpeedSlider.Value = updatedValue;
