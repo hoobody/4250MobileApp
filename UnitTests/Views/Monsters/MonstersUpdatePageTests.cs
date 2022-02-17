@@ -339,6 +339,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true); //Got to here, so it happened...
         }
 
+        [Test]
+        public void MonsterUpdatePage_Item_ShowPopup_Default_Should_Pass()
+        {
+            // Arrange
+
+            var item = page.GetItemToDisplay(ItemLocationEnum.Head);
+
+            // Act
+            var itemButton = item.Children.FirstOrDefault(m => m.GetType().Name.Equals("Button"));
+
+            _ = page.ShowPopup(ItemLocationEnum.Head);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void MonsterUpdatePage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
