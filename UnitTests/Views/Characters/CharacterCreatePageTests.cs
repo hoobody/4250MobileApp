@@ -228,6 +228,24 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void CharacterCreatePage_CheckifReadyToSubmit_Valid_All_But_Codename_With_Whitespace_Should_Pass()
+        {
+            // Arrange
+            var CodenameEntry = page.FindByName("CodenameEntry");
+            ((Entry)CodenameEntry).Text = " ";
+
+            page.Codename_onTextChange(null, null);
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
         [Test]
         public void CharacterCreatePage_RollDice_Clicked_Default_Should_Pass()
         {
