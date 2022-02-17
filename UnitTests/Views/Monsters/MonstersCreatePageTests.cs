@@ -7,6 +7,7 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
+using System.Linq;
 
 namespace UnitTests.Views
 {
@@ -293,5 +294,24 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void MonsterCreatePage_Item_ShowPopup_Default_Should_Pass()
+        {
+            // Arrange
+
+            var item = page.GetItemToDisplay(ItemLocationEnum.Head);
+
+            // Act
+            var itemButton = item.Children.FirstOrDefault(m => m.GetType().Name.Equals("Button"));
+
+            _ = page.ShowPopup(ItemLocationEnum.Head);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
