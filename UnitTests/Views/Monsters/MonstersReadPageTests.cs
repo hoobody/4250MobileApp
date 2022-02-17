@@ -92,5 +92,19 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void MonsterReadPage_ShowPopup_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            _ = page.ShowPopup(new ItemModel());
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
