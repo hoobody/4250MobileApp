@@ -7,6 +7,7 @@ using Game.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Mocks;
+using System.Linq;
 
 namespace UnitTests.Views
 {
@@ -273,7 +274,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
+        public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         {
             //ArSpeed
             var data = new MonsterModel();
@@ -295,7 +296,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        public void MonsterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
         {
             //ArSpeed
             var data = new MonsterModel();
@@ -317,7 +318,7 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        public void MonsterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
         {
             //Arrange
             var data = new MonsterModel();
@@ -336,6 +337,25 @@ namespace UnitTests.Views
 
             //Assert
             Assert.IsTrue(true); //Got to here, so it happened...
+        }
+
+
+        [Test]
+        public void MonsterUpdatePage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.Head);
+            page.ViewModel.Data.Head = item.Id;
+            var StackItem = page.GetItemToDisplay(ItemLocationEnum.Head);
+            var dataImage = StackItem.Children[0];
+
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
         }
     }
 }
