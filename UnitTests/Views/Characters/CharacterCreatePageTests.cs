@@ -108,7 +108,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-/*
+
         [Test]
         public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         {
@@ -130,50 +130,50 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-*/
-        //[Test]
-        //public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
-        //{
-        //    // ArSpeed
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    var oldSpeed = 0.0;
-        //    var newSpeed = 1.0;
+        [Test]
+        public void CharacterCreatePage_Speed_OnStepperValueChanged_Default_Should_Pass()
+        {
+            // ArSpeed
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
+            page = new CharacterCreatePage(ViewModel);
+            var oldSpeed = 0.0;
+            var newSpeed = 1.0;
 
-        //    // Act
-        //    page.Speed_OnStepperValueChanged(null, args);
+            var args = new ValueChangedEventArgs(oldSpeed, newSpeed);
 
-        //    // Reset
+            // Act
+            page.SpeedSlider_ValueChanged(null, args);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
 
-        //[Test]
-        //public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var data = new CharacterModel();
-        //    var ViewModel = new GenericViewModel<CharacterModel>(data);
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
-        //    page = new CharacterCreatePage(ViewModel);
-        //    var oldDefense = 0.0;
-        //    var newDefense = 1.0;
+        [Test]
+        public void CharacterCreatePage_Defense_OnStepperDefenseChanged_Default_Should_Pass()
+        {
+              // Arrange
+            var data = new CharacterModel();
+            var ViewModel = new GenericViewModel<CharacterModel>(data);
 
-        //    var args = new ValueChangedEventArgs(oldDefense, newDefense);
+            page = new CharacterCreatePage(ViewModel);
+            var oldDefense = 0.0;
+            var newDefense = 1.0;
 
-        //    // Act
-        //    page.Defense_OnStepperValueChanged(null, args);
+            var args = new ValueChangedEventArgs(oldDefense, newDefense);
 
-        //    // Reset
+            // Act
+            page.DefenseSlider_ValueChanged(null, args);
 
-        //    // Assert
-        //    Assert.IsTrue(true); // Got to here, so it happened...
-        //}
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void CharacterCreatePage_CheckifReadyToSubmit_Valid_All_But_Name_Should_Pass()
