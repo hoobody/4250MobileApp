@@ -397,7 +397,7 @@ namespace Game.Views
             return ItemStack;
         }
 
-        private void Randomize_Clicked(object sender, EventArgs e)
+        public void Randomize_Clicked(object sender, EventArgs e)
         {
             _ = RandomizeMonster();
 
