@@ -28,6 +28,7 @@
                     HorizontalOptions="CenterAndExpand"
                     VerticalTextAlignment="Center"
                     HorizontalTextAlignment="Center"
+                    Margin="0,30,0,0"
                     Style="{StaticResource ListStyle}"
                     />
 
