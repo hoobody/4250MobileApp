@@ -312,7 +312,34 @@ namespace UnitTests.ViewModels
         }
 
 
-        
+        [Test]
+        public async Task CharacterIndexViewModel_CreateUpdateAsync_Valid_Update_Should_Pass()
+        {
+            // Arrange
+            // Add items into the list Z ordered
+            var data = new ItemModel { Name = "test" };
+            ViewModel.Dataset = new ObservableCollection<ItemModel>();
+
+            _ = await ViewModel.SetDataSource(0);
+
+            _ = await ViewModel.CreateAsync(data);
+
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "z" });
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "m" });
+            _ = await ViewModel.CreateAsync(new ItemModel { Name = "a" });
+
+            _ = await ViewModel.CreateUpdateAsync(data);
+
+            data.Name = "Updated";
+
+            // Act
+            bool result = await ViewModel.CreateUpdateAsync(data);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);  // Update returned Pass
+        }
 
 
     }
