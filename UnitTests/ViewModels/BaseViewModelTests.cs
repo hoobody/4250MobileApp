@@ -313,7 +313,7 @@ namespace UnitTests.ViewModels
 
 
         [Test]
-        public async Task CharacterIndexViewModel_CreateUpdateAsync_Valid_Update_Should_Pass()
+        public async Task BaseViewModel_CreateUpdateAsync_Valid_Update_Should_Pass()
         {
             // Arrange
             // Add items into the list Z ordered
@@ -341,6 +341,18 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(true, result);  // Update returned Pass
         }
 
+        [Test]
+        public async Task BaseViewModel_CreateUpdateAsync_InValid_Null_Should_Fail()
+        {
+            // Arrange
 
+            // Act
+            var result = await ViewModel.CreateUpdateAsync(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);  // Update returned Pass
+        }
     }
 }
