@@ -6,16 +6,15 @@
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-            <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                <ImageButton
-                        Source="game_logo.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="AutobattleButton_Clicked"/>
+            <StackLayout Style="{StaticResource CardImageTextBox}" WidthRequest="200">
 
                 <Label 
                         Text="Begin Battle"
                         Style="{StaticResource CenterMessageStyle}"/>
+                <ImageButton
+                        Source="game_logo.png"
+                        Style="{StaticResource ImageLargeStyle}"
+                        Clicked="AutobattleButton_Clicked"/>
             </StackLayout>
 
             <StackLayout Style="{StaticResource CardImageTextBox}">
