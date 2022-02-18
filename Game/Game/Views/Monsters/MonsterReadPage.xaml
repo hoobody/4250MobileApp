@@ -29,13 +29,12 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
 
             <StackLayout
                 AbsoluteLayout.LayoutBounds="1,1,1,1"
                 AbsoluteLayout.LayoutFlags="All"
-                HorizontalOptions="Center"
-                Style="{StaticResource VerticalStack}">
+                Style="{StaticResource OuterBoxStack}">
 
                 <ScrollView>
 
