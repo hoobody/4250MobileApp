@@ -330,6 +330,14 @@
             </Style>
 
             <Style TargetType="Image"
+                x:Key="StampStyle"
+                BasedOn="{StaticResource ImageLargeStyle}">
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="Margin" Value="0,-5,0,0" />
+            </Style>
+
+            <Style TargetType="Image"
                 x:Key="ImageSmallStyle"
                 BasedOn="{StaticResource ImageLargeStyle}">
                 <Setter Property="HeightRequest" Value="30" />
@@ -616,12 +624,21 @@
             </Style>
 
             <Style TargetType="StackLayout"
+                x:Key="MonsterCardInnerBox"
+                BasedOn="{StaticResource VerticalStack}">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Spacing" Value="10" />
+            <Setter Property="Padding" Value="10" />
+            </Style>
+        
+            <Style TargetType="StackLayout"
                 x:Key="MonsterCardRightBox"
                 BasedOn="{StaticResource VerticalStack}">
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="Spacing" Value="15" />
-                <Setter Property="Padding" Value="20" />
+                <Setter Property="Spacing" Value="2" />
+                <Setter Property="Padding" Value="10,0,10,10" />
             </Style>
 
             <Style TargetType="StackLayout"
@@ -775,13 +792,13 @@
 				x:Key="PoloroidOuterFrame">
                 <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="BorderColor" Value="Black" />
-                <Setter Property="Padding" Value="10,10,10,50" />
+                <Setter Property="Padding" Value="10,10,10,30" />
             </Style>
 
             <Style TargetType="Frame"
 				x:Key="PoloroidInnerFrame">
                 <Setter Property="BackgroundColor" Value="Black" />
-                <Setter Property="Padding" Value="10,10,10,10" />
+                <Setter Property="Padding" Value="5" />
                 <Setter Property="CornerRadius" Value="0" />
             </Style>
 
@@ -824,6 +841,13 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
                 <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style TargetType="Frame"
+                x:Key="MonsterNameFrame"
+                BasedOn="{StaticResource LabelFrame}">
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="5" />
             </Style>
 
             <Style TargetType="Frame"

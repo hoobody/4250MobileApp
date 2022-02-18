@@ -48,58 +48,37 @@
 
                             <Frame Style="{StaticResource ManillaFolderFrame}">
 
-                                <StackLayout
-                                    BackgroundColor="{StaticResource Paper}"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource HorizontalStack}"
-                                    WidthRequest="380" Spacing="-10">
+                                <StackLayout Style="{StaticResource PaperBox}">
 
 
-                                    <StackLayout
-                                        Padding="20,20,20,20"
-                                        HorizontalOptions="Center"
-                                        Spacing="10"
-                                        Style="{StaticResource VerticalStack}"
-                                        VerticalOptions="Center">
+                                    <StackLayout Style="{StaticResource MonsterCardLeftBox}">
 
-                                        <Frame
-                                            Padding="10,10,10,30"
-                                            BackgroundColor="{StaticResource Frame}"
-                                            BorderColor="{StaticResource BorderColor}">
+                                        <Frame Style="{StaticResource PoloroidOuterFrame}">
 
-                                            <Frame
-                                                Padding="10,10,10,10"
-                                                BackgroundColor="{StaticResource FrameInside}"
-                                                CornerRadius="0">
+                                            <Frame Style="{StaticResource PoloroidInnerFrame}">
 
-                                                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageMediumStyle}" />
+                                                <Image Source="{Binding Data.ImageURI}" 
+                                                       Style="{StaticResource ImageMediumStyle}" />
 
                                             </Frame>
 
                                         </Frame>
 
-                                        <Frame
-                                            BorderColor="{StaticResource BorderColor}"
-                                            HeightRequest="30"
-                                            WidthRequest="120">
+                                        <Frame Style="{StaticResource MonsterNameFrame}">
 
                                             <Label
                                                 x:Name="NameLabel"
-                                                FontSize="13"
-                                                HorizontalOptions="Center"
-                                                Style="{StaticResource LabelStyle}"
+                                                Style="{StaticResource LabelCenterStyle}"
                                                 Text="{Binding Data.Name}" />
 
                                         </Frame>
                                     </StackLayout>
 
 
-                                    <StackLayout
-                                        Padding="5,5,5,5"
-                                        Spacing="5"
-                                        Style="{StaticResource VerticalStack}">
+                                    <StackLayout Style="{StaticResource MonsterCardRightBox}">
 
-                                        <Image HorizontalOptions="CenterAndExpand" Source="danger_stamp_small.png" />
+                                        <Image Style="{StaticResource StampStyle}"
+                                               Source="danger_stamp_small.png" />
 
                                         <StackLayout
                                             HorizontalOptions="Start"
