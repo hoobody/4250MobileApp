@@ -38,17 +38,15 @@
 
                 <ScrollView>
 
-                    <StackLayout Spacing="10" Style="{StaticResource VerticalStack}">
+                    <StackLayout Style="{StaticResource SpacedBox}">
 
-                        <Label
-                            HorizontalOptions="Center"
-                            Style="{StaticResource HeaderStyle}"
+                        <Label Style="{StaticResource HeaderStyle}"
                             Text="Read Page" />
 
                         <!--  Used to place an image on top of a stacklayout  -->
                         <Grid>
 
-                            <Frame Padding="10,10,10,10" BackgroundColor="{StaticResource Manilla}">
+                            <Frame Style="{StaticResource ManillaFolderFrame}">
 
                                 <StackLayout
                                     BackgroundColor="{StaticResource Paper}"
