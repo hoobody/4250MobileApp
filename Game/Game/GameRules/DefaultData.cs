@@ -26,8 +26,8 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack},
 
                 new ItemModel {
-                    Name = "Stinky Cheese Gun",
-                    Description = "The smell alone can kill",
+                    Name = "Silent Stinky Cheese Gun",
+                    Description = "Silent, but deadly",
                     ImageURI = "stinky_gun.png",
                     Range = 5,
                     Damage = 3,
@@ -47,7 +47,7 @@ namespace Game.GameRules
 
                 new ItemModel {
                     Name = "Lazer Ring",
-                    Description = "Excelent distraction tool",
+                    Description = "Excellent distraction tool",
                     ImageURI = "lazer_ring.png",
                     Range = 1,
                     Damage = 1,
