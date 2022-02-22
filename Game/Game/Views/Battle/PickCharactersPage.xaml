@@ -17,10 +17,27 @@
 
             <ScrollView Style="{StaticResource ScrollStyle}">
 
-                <StackLayout Style="{StaticResource PaddedBox}">
-                    
-                </StackLayout>
-                
+                <ListView x:Name="CharactersListView" 
+                    ItemsSource="{Binding DatabaseCharacterList}"
+                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    RefreshCommand="{Binding LoadItemsCommand}"
+                    CachingStrategy="RecycleElement"
+                    ItemSelected="OnDatabaseCharacterItemSelected"
+                    HasUnevenRows="true"
+                    Margin="5,0,5,0"
+                    RowHeight="80">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                
+                                
+                                
+                            </ViewCell>
+                        </DataTemplate> 
+                    </ListView.ItemTemplate>
+                </ListView>
+
             </ScrollView>
 
             <ImageButton x:Name="BeginBattleButton"
