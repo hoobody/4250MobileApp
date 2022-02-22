@@ -260,12 +260,12 @@
                 <Setter Property="FontSize" Value="Large" />
             </Style>
 
-            <Style
-                x:Key="CenterMessageStyle"
-                BasedOn="{StaticResource HeaderStyle}"
-                TargetType="Label">
+            <Style x:Key="CenterMessageStyle"
+                BasedOn="{StaticResource HeaderStyle}">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
             </Style>
 
             <Style
