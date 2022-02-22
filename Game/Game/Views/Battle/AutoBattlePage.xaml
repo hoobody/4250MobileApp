@@ -21,16 +21,7 @@
 
                 <Label 
                     x:Name="BattleMessageValue"
-                    Text=""
-                    LineBreakMode="WordWrap"
-                    MaxLines="10"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"
-                    Margin="0,30,0,0"
-                    Style="{StaticResource ListStyle}"
-                    />
+                    Style="{StaticResource AutoBattleLabel}"/>
 
                 <Image
                         x:Name="AutobattleImage"
