@@ -95,9 +95,12 @@
 
             <!--  Scroll View  -->
 
-            <Style TargetType="ScrollView">
-                <Setter Property="VerticalScrollBarVisibility" Value="Never" />
-                <Setter Property="HorizontalScrollBarVisibility" Value="Never" />
+            <Style TargetType="ScrollView"
+                   x:Key="ScrollStyle">
+                <Setter Property="VerticalScrollBarVisibility" Value="Default"/>
+                <Setter Property="HorizontalScrollBarVisibility" Value="Never"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
             <!--  Label  -->
