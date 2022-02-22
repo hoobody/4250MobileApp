@@ -11,7 +11,7 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+            <Label Text="Assemble the team..." Style="{StaticResource CenterMessageMedStyle}"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
