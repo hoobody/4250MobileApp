@@ -15,111 +15,18 @@
                 <Label Text="Assemble the team..." Style="{StaticResource CenterMessageMedStyle}"/>
             </Frame>
 
-            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+            <ScrollView Style="{StaticResource ScrollStyle}">
 
-                <StackLayout HorizontalOptions="Start">
-
-                    <Label Text="Characters" Style="{StaticResource CenterMessageStyle}"/>
-
-                    <ListView 
-                                x:Name="CharactersListView" 
-                                ItemsSource="{Binding DatabaseCharacterList}"
-                                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                                RefreshCommand="{Binding LoadItemsCommand}"
-                                CachingStrategy="RecycleElement"
-                                ItemSelected="OnDatabaseCharacterItemSelected"
-                                HasUnevenRows="true"
-                                Margin="5,0,5,0"
-                                RowHeight="80">
-
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid>
-
-                                        <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                                    Source="{Binding ImageURI}"
-                                                    Style="{StaticResource ImageMediumStyle}"/>
-
-                                        <Label Grid.Column="1" Grid.Row="0"
-                                                   Text="{Binding Name}" 
-                                                   Style="{StaticResource ListStyle}"
-                                                   FontAttributes="Bold"/>
-
-                                        <Label Grid.Column="1" Grid.Row="1"
-                                                   Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
-                                                   Style="{StaticResource ListStyle}"/>
-
-                                        <Label Grid.Column="1" Grid.Row="2"
-                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                                    Style="{StaticResource ListStyle}"/>
-
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                <StackLayout Style="{StaticResource PaddedBox}">
+                    
                 </StackLayout>
+                
+            </ScrollView>
 
-                <StackLayout HorizontalOptions="CenterAndExpand">
-
-                    <Label Text="Count" Style="{StaticResource CenterMessageStyle}"/>
-
-                    <Label Style="{StaticResource CenterMessageStyle}" 
-                            x:Name="PartyCountLabel"
-                            Text="0"/>
-
-                    <Button 
-                            x:Name="BeginBattleButton"
-                            Clicked="BattleButton_Clicked" 
-                            Text="Begin"
-                            IsEnabled="False"/>
-
-                </StackLayout>
-
-                <StackLayout HorizontalOptions="End">
-
-                    <Label Text="Party" Style="{StaticResource CenterMessageStyle}"/>
-
-                    <ListView 
-                                x:Name="PartyListView" 
-                                ItemsSource="{Binding PartyCharacterList}"
-                                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                                RefreshCommand="{Binding LoadItemsCommand}"
-                                CachingStrategy="RecycleElement"
-                                ItemSelected="OnPartyCharacterItemSelected"
-                                HasUnevenRows="true"
-                                Margin="5,0,5,0"
-                                RowHeight="80">
-
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    <Grid>
-                                        <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                                    Source="{Binding ImageURI}"
-                                                    Style="{StaticResource ImageMediumStyle}"/>
-
-                                        <Label Grid.Column="1" Grid.Row="0"
-                                                   Text="{Binding Name}" 
-                                                   Style="{StaticResource ListStyle}"
-                                                   FontAttributes="Bold"/>
-
-                                        <Label Grid.Column="1" Grid.Row="1"
-                                                   Text="{Binding Path=Level, StringFormat='Level {0:G}'}" 
-                                                   Style="{StaticResource ListStyle}"/>
-
-                                        <Label Grid.Column="1" Grid.Row="2"
-                                                    Text="{Binding Path=MaxHealth, StringFormat= '{0:G} hp'}" 
-                                                    Style="{StaticResource ListStyle}"/>
-
-                                    </Grid>
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>
-            </StackLayout>
+            <ImageButton x:Name="BeginBattleButton"
+                Clicked="BattleButton_Clicked"
+                IsEnabled="False"
+                Source="begin_button.png"/>
 
         </StackLayout>
     </ContentPage.Content>
