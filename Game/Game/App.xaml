@@ -275,6 +275,12 @@
                 <Setter Property="FontSize" Value="Large" />
             </Style>
 
+            <Style TargetType="Label"
+                x:Key="CenterMessageMedStyle"
+                BasedOn="{StaticResource CenterMessageStyle}">
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
             <Style
                 x:Key="GridLabelStyle"
                 BasedOn="{StaticResource LabelStyle}"
