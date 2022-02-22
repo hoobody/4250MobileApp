@@ -15,30 +15,35 @@
                 <Label Text="Assemble the team..." Style="{StaticResource CenterMessageMedStyle}"/>
             </Frame>
 
-            <ScrollView Style="{StaticResource ScrollStyle}">
-
-                <ListView x:Name="CharactersListView" 
+            <CollectionView x:Name="CharactersListView" 
                     ItemsSource="{Binding DatabaseCharacterList}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                    SelectionChanged="OnDatabaseCharacterItemSelected">
+                    
+                    <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
                     CachingStrategy="RecycleElement"
                     ItemSelected="OnDatabaseCharacterItemSelected"
                     HasUnevenRows="true"
                     Margin="5,0,5,0"
-                    RowHeight="80">
+                    RowHeight="80">-->
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                
-                                
-                                
-                            </ViewCell>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout>
+
+                                <Image Source="{Binding ImageURI}" />
+                                <Label Text="Name" />
+
+                        </StackLayout>
+
                         </DataTemplate> 
-                    </ListView.ItemTemplate>
-                </ListView>
-
-            </ScrollView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
             <ImageButton x:Name="BeginBattleButton"
                 Clicked="BattleButton_Clicked"
