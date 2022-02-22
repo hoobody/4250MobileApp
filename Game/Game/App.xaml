@@ -261,7 +261,8 @@
             </Style>
 
             <Style x:Key="CenterMessageStyle"
-                BasedOn="{StaticResource HeaderStyle}">
+                BasedOn="{StaticResource HeaderStyle}"
+                   TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -904,6 +905,17 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}" />
                 <Setter Property="CornerRadius" Value="0" />
                 <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+            
+            <Style TargetType="Frame"
+                x:Key="TitleFrame">
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}"/>
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="3" />
+                <Setter Property="HeightRequest" Value="40" />
             </Style>
 
             <Style
