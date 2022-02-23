@@ -34,7 +34,7 @@
 
         <Frame BackgroundColor="{StaticResource DeleteBackgroundColor}" BorderColor="{StaticResource BorderColor}">
             <StackLayout>
-                <StackLayout Style="{StaticResource ItemCreatePageStack}">
+                <StackLayout Style="{StaticResource ItemPageStack}">
                     <Frame Margin="0,10,20,0" Style="{StaticResource ImageFrame}">
                         <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}"/>
                     </Frame>
