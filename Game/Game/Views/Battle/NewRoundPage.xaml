@@ -61,21 +61,23 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <StackLayout MinimumWidthRequest="325">
-                    <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
+                <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
 
-               
-                    <FlexLayout
+                <FlexLayout
                         x:Name="MonsterListFrame"
                         AlignContent="Start"
                         JustifyContent="Start"
                         Wrap="NoWrap" Scale=".90"/>
-                </StackLayout>
-                
+
                 <StackLayout Padding="1" />
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin" />
 
+                <ImageButton
+                x:Name="BeginBattleButton"
+                Clicked="BeginButton_Clicked"
+                Source="begin_button.png" 
+                    Margin="0,-60,0,0"/>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
