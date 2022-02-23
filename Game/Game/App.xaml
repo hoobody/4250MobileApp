@@ -506,7 +506,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="Padding" Value="2" />
-                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource TransparentColor}" />
             </Style>
 
             <!--  Button  -->
