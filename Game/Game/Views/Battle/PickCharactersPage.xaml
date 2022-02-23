@@ -13,60 +13,18 @@
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
             <Frame Style="{StaticResource TitleFrame}">
-                <Label Text="Assemble the team..." Style="{StaticResource CenterMessageMedStyle}"/>
+                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Assemble the team..." />
             </Frame>
-            <ScrollView>
-            <CollectionView x:Name="CharactersListView" 
+            <ScrollView VerticalScrollBarVisibility="Never">
+                <CollectionView
+                    x:Name="CharactersListView"
                     ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
                     SelectionChanged="OnDatabaseCharacterItemSelected"
-                            SelectionMode="Single">
-                    
-                    <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnDatabaseCharacterItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80">-->
+                    SelectionMode="Single">
 
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="2" />
                     </CollectionView.ItemsLayout>
-                    
-                    <CollectionView.ItemTemplate>
-                    <DataTemplate>
-
-                            <Grid Style="{StaticResource GridStyle}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35*" />
-                                    <ColumnDefinition Width="65*" />
-                                </Grid.ColumnDefinitions>
-
-                                <Image Grid.Column="0"
-                                    Source="{Binding ImageURI}" 
-                                    Style="{StaticResource ImageSmallStyle}"/>
-                                
-                                <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-                                       Style="{StaticResource TinyTitleStyle}"/>
-
-                        </Grid>
-                        
-                    </DataTemplate> 
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </ScrollView>
-
-            <Frame Style="{StaticResource TitleFrame}">
-                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party"/>
-            </Frame>
-
-            <StackLayout>
-                <CollectionView
-                            x:Name="PartyListView"
-                            ItemsLayout="VerticalGrid,2"
-                            ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
-                            SelectionChanged="OnPartyCharacterItemSelected">
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -77,24 +35,64 @@
                                     <ColumnDefinition Width="65*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image Grid.Column="0"
-                                Source="{Binding ImageURI}" 
-                                Style="{StaticResource ImageSmallStyle}"/>
+                                <Image
+                                    Grid.Column="0"
+                                    Source="{Binding ImageURI}"
+                                    Style="{StaticResource ImageSmallStyle}" />
 
-                                <Label Grid.Column="1"
-                                    Text="{Binding Name}"
-                                    Style="{StaticResource TinyTitleStyle}"/>
+                                <Label
+                                    Grid.Column="1"
+                                    Style="{StaticResource TinyTitleStyle}"
+                                    Text="{Binding Name}" />
 
                             </Grid>
 
-                            </DataTemplate>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+            <Frame Style="{StaticResource TitleFrame}">
+                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party" />
+            </Frame>
+
+            <StackLayout>
+                <CollectionView
+                    x:Name="PartyListView"
+                    ItemsLayout="VerticalGrid,2"
+                    ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
+                    SelectionChanged="OnPartyCharacterItemSelected">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Grid Style="{StaticResource GridStyle}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="35*" />
+                                    <ColumnDefinition Width="65*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Grid.Column="0"
+                                    Source="{Binding ImageURI}"
+                                    Style="{StaticResource ImageSmallStyle}" />
+
+                                <Label
+                                    Grid.Column="1"
+                                    Style="{StaticResource TinyTitleStyle}"
+                                    Text="{Binding Name}" />
+
+                            </Grid>
+
+                        </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
-            <ImageButton x:Name="BeginBattleButton"
+            <ImageButton
+                x:Name="BeginBattleButton"
                 Clicked="BattleButton_Clicked"
                 IsEnabled="False"
-                Source="begin_button.png"/>
+                Source="begin_button.png" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
