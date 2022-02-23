@@ -247,7 +247,7 @@
 
 
                         <Frame Style="{StaticResource WideLabelFrame}">
-                            <Label Text="Equip yourself Agent"
+                            <Label Text="Equip yourself, Agent"
                                 Style="{StaticResource LabelCenterStyle}" />
                         </Frame>
 
