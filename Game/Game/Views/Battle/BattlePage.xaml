@@ -38,10 +38,10 @@
                         HorizontalOptions="CenterAndExpand">
 
                         <Label Style="{StaticResource MessageLargeStyle}" Text="Characters" TextDecorations="Underline"/>
-                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <Grid x:Name="CharacterBox" HorizontalOptions="CenterAndExpand"/>
 
                         <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" TextDecorations="Underline"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <Grid x:Name="MonsterBox" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
                 </StackLayout>
 
