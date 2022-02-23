@@ -91,23 +91,23 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
+                <ImageButton
+                    x:Name="BeginBattleButton"
+                    Clicked="BeginButton_Clicked"
+                    Source="begin_button.png" 
+                    HeightRequest="65"/>
+
                 <Label
                     Style="{StaticResource MessageLargeStyle}"
                     Text="Monsters"
                     TextDecorations="Underline" />
-
+                
                 <Grid
                     x:Name="MonsterListFrame"
                     RowSpacing="-35"
                     Scale=".85" />
 
                 <StackLayout Padding="1" />
-
-                <ImageButton
-                    x:Name="BeginBattleButton"
-                    Margin="0,-60,0,0"
-                    Clicked="BeginButton_Clicked"
-                    Source="begin_button.png" />
 
             </StackLayout>
         </ScrollView>
