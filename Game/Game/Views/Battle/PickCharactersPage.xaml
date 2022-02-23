@@ -37,8 +37,8 @@
 
                                 <Image
                                     Grid.Column="0"
-                                    Source="{Binding ImageURI}"
-                                    Style="{StaticResource ImageSmallStyle}" />
+                                    Source="{Binding HeadshotImageURI}"
+                                    Style="{StaticResource ImageMediumStyle}" />
 
                                 <Label
                                     Grid.Column="1"
