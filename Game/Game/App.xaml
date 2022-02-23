@@ -156,6 +156,13 @@
             </Style>
 
             <Style
+                x:Key="TinyTitleStyle"
+                BasedOn="{StaticResource TitleStyle}"
+                TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            
+            <Style
                 x:Key="TitleCenterStyle"
                 BasedOn="{StaticResource LabelBaseStyle}"
                 TargetType="Label">
