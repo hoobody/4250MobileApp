@@ -808,6 +808,12 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <Style x:Key="HorizontalPaddedBox" 
+                   TargetType="StackLayout"
+                   BasedOn="{StaticResource PaddedBox}">
+                <Setter Property="Orientation" Value="Horizontal" />
+            </Style>
+
             <Style x:Key="SpacedBox" TargetType="StackLayout">
                 <Setter Property="Spacing" Value="5" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
