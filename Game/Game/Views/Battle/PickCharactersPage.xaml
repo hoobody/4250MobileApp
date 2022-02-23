@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Name="BrowseItemsPage"
-             x:Class="Game.Views.PickCharactersPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="Game.Views.PickCharactersPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="BrowseItemsPage"
+    Title="{Binding Title}"
+    mc:Ignorable="d">
 
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
@@ -14,7 +15,7 @@
             <Frame Style="{StaticResource TitleFrame}">
                 <Label Text="Assemble the team..." Style="{StaticResource CenterMessageMedStyle}"/>
             </Frame>
-
+            <ScrollView>
             <CollectionView x:Name="CharactersListView" 
                     ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
                     SelectionChanged="OnDatabaseCharacterItemSelected">
@@ -53,12 +54,67 @@
                     </DataTemplate> 
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+            </ScrollView>
 
+            <Frame Style="{StaticResource TitleFrame}">
+                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party"/>
+            </Frame>
+
+            <StackLayout>
+                <CollectionView
+                            x:Name="PartyListView"
+                            Margin="5,0,5,-100"
+                            ItemsLayout="VerticalGrid,3"
+                            ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
+                            SelectionChanged="OnPartyCharacterItemSelected"
+                            Scale=".80">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                            Grid.Row="0"
+                                            Grid.RowSpan="3"
+                                            Grid.Column="0"
+                                            Source="{Binding ImageURI}"
+                                            Style="{StaticResource ImageMediumStyle}" />
+
+                                <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            Style="{StaticResource ListStyle}"
+                                            Text="{Binding Name}" />
+
+                                <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Style="{StaticResource ListStyle}"
+                                            Text="{Binding Path=Level, StringFormat='Level {0:G}'}" />
+
+                                <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            Style="{StaticResource ListStyle}"
+                                            Text="{Binding Path=MaxHealth, StringFormat='{0:G} hp'}" />
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
             <ImageButton x:Name="BeginBattleButton"
                 Clicked="BattleButton_Clicked"
                 IsEnabled="False"
                 Source="begin_button.png"/>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
