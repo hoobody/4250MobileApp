@@ -60,9 +60,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.SelectedItem as CharacterModel;
+            CharacterModel data = (args.CurrentSelection.FirstOrDefault() as CharacterModel);
             if (data == null)
             {
                 return;
@@ -85,9 +85,9 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
-        public void OnPartyCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
+        public void OnPartyCharacterItemSelected(object sender, SelectionChangedEventArgs args)
         {
-            CharacterModel data = args.SelectedItem as CharacterModel;
+            CharacterModel data = (args.CurrentSelection.FirstOrDefault() as CharacterModel);
             if (data == null)
             {
                 return;
@@ -155,9 +155,5 @@ namespace Game.Views
             }
         }
 
-        private void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
