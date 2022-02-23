@@ -15,7 +15,8 @@
             <Frame Style="{StaticResource TitleFrame}">
                 <Label Style="{StaticResource CenterMessageMedStyle}" Text="Assemble the team..." />
             </Frame>
-            <ScrollView VerticalScrollBarVisibility="Never">
+            <ScrollView VerticalScrollBarVisibility="Never"
+                        MinimumHeightRequest="200">
                 <CollectionView
                     x:Name="CharactersListView"
                     ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
@@ -25,7 +26,7 @@
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" 
                                          Span="2" 
-                                         VerticalItemSpacing="5"
+                                         VerticalItemSpacing="0"
                                          HorizontalItemSpacing="5"/>
                     </CollectionView.ItemsLayout>
 
@@ -70,22 +71,21 @@
             </Frame>
             <Grid BackgroundColor="Purple"
                   x:Name="SelectedCharacters"
-                  HorizontalOptions="CenterAndExpand"
-                  VerticalOptions="FillAndExpand">
+                  Style="{StaticResource GridStyle}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="33*" />
                     <ColumnDefinition Width="33*" />
                     <ColumnDefinition Width="33*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50*" />
-                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Image Grid.Row="0" Grid.Column="0"
                     Grid.RowSpan="2" Grid.ColumnSpan="3"
                     Source="character_select_cheese.png"
-                    Style="{StaticResource ImageXLStyle}"/>
+                    Style="{StaticResource CharacterSelecteCheese}"/>
 
                 <ImageButton Grid.Column="0" Grid.Row="0"
                              x:Name="SelectedCharacterZero"
