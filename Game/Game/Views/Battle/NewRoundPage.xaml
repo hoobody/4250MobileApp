@@ -9,9 +9,9 @@
 
             <StackLayout Style="{StaticResource VerticalStack}">
 
-                <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Beginning Round" />
+                <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Beginning Round" TextDecorations="Underline"/>
 
-                <Label Style="{StaticResource MessageLargeStyle}" Text="Characters" />
+                <Label Style="{StaticResource MessageLargeStyle}" Text="Characters" TextDecorations="Underline"/>
 
                 <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding PartyCharacterList, Mode=OneWay}" HeightRequest="250">
 
@@ -61,7 +61,7 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
+                <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" TextDecorations="Underline"/>
 
                 <FlexLayout
                         x:Name="MonsterListFrame"
