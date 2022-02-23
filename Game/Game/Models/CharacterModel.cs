@@ -30,7 +30,7 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             CodeName = "Cheese";
 
-            HeadshotImageURI = getHeadshotURI();
+            HeadshotImageURI = getHeadshotURI(ImageURI);
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
@@ -64,7 +64,7 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
-            HeadshotImageURI = getHeadshotURI();
+            HeadshotImageURI = getHeadshotURI(newData.ImageURI);
             // Difficulty = newData.Difficulty;
 
             Speed = newData.Speed;
@@ -113,9 +113,9 @@ namespace Game.Models
             return myReturn;
         }
 
-        public string getHeadshotURI ()
+        public string getHeadshotURI (string baseImageURI)
         {
-            return ImageURI.Replace(".png", "_headshot.png");
+            return baseImageURI.Replace(".png", "_headshot.png");
         }
     }
 }
