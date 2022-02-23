@@ -1,35 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.NewRoundPage">
+<ContentPage
+    x:Class="Game.Views.NewRoundPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ContentPage.Content>
-        <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
 
             <StackLayout Style="{StaticResource VerticalStack}">
 
-                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Beginning Round" />
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
+                <Label Style="{StaticResource MessageLargeStyle}" Text="Characters" />
 
-                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
+                <CollectionView ItemsLayout="VerticalGrid,2" ItemsSource="{Binding PartyCharacterList, Mode=OneWay}" HeightRequest="250">
 
-                <FlexLayout x:Name="PartyListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+                            <Grid Style="{StaticResource GridStyle}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="35*" />
+                                    <RowDefinition Height="35*" />
+                                    <RowDefinition Height="35*" />
+                                </Grid.RowDefinitions>
+                                <Image
+                                    Grid.Row="0"
+                                    Source="{Binding HeadshotImageURI}"
+                                    Style="{StaticResource ImageSmallStyle}" 
+                                    HorizontalOptions="Center"/>
+                                <StackLayout Grid.Row="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Lvl: " />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Level}" Margin="0,0,10,0"/>
+                                    
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="HP: " />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding MaxHealth}" />
+                                </StackLayout>
 
-                <FlexLayout x:Name="MonsterListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                                <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding CodeName}"/>
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="/"/>
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Job}" FontAttributes="Italic"/>
+                                </StackLayout>
+                                
+                                <StackLayout Grid.Row="3" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Atk: " />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Attack}" Margin="0,0,5,0"/>
 
-                <StackLayout Padding="1"></StackLayout>
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Def: " />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Defense}" Margin="0,0,5,0"/>
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
-                
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Spd: " />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Speed}" />
+                                </StackLayout>
+                                
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
+
+                <FlexLayout
+                    x:Name="MonsterListFrame"
+                    AlignContent="Start"
+                    JustifyContent="Start"
+                    Wrap="Wrap" />
+
+                <StackLayout Padding="1" />
+
+                <Button Clicked="BeginButton_Clicked" Text="Begin" />
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
