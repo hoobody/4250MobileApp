@@ -29,12 +29,9 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-
-
                             <StackLayout Style="{StaticResource HorizontalPaddedBox}">
                                 
-                                <Frame Grid.Column="0"
-                                           Style="{StaticResource ImageFrame}">
+                                <Frame Style="{StaticResource ImageFrameStart}">
                                     <Image Source="{Binding HeadshotImageURI}"
                                             Style="{StaticResource ImageMediumStyle}" />
                                 </Frame>

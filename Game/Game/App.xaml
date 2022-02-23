@@ -900,6 +900,14 @@
             <Style x:Key="ImageFrame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}" />
                 <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                
+            </Style>
+
+            <Style x:Key="ImageFrameStart" 
+                   TargetType="Frame"
+                   BasedOn="{StaticResource ImageFrame}">
+                <Setter Property="HorizontalOptions" Value="Start" />
             </Style>
 
             <Style x:Key="DeleteMessageFrame" TargetType="Frame">
