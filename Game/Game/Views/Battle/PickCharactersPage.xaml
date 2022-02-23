@@ -23,36 +23,40 @@
                     SelectionMode="Single">
 
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                        <GridItemsLayout Orientation="Vertical" 
+                                         Span="2" 
+                                         VerticalItemSpacing="5"
+                                         HorizontalItemSpacing="5"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
                             <StackLayout Style="{StaticResource HorizontalPaddedBox}">
-                                
+
                                 <Frame Style="{StaticResource ImageFrameStart}">
                                     <Image Source="{Binding HeadshotImageURI}"
-                                            Style="{StaticResource ImageMediumStyle}" />
+                                        Style="{StaticResource ImageMediumStyle}" />
                                 </Frame>
 
                                 <StackLayout Style="{StaticResource LightlySpacedBoxStart}">
-
-                                    <Label Style="{StaticResource TinyTitleStyle}"
-                                           Text="{Binding CodeName}"/>
+                                    
+                                    <Label Style="{StaticResource TitleStyle}"
+                                            Text="{Binding CodeName}"/>
+                                    <Label Style="{StaticResource TinyDescriptionStyle}"
+                                        Text="{Binding Description}"/>
 
                                     <StackLayout Style="{StaticResource HorizontalStack}">
 
                                         <Label Style="{StaticResource ValueStyleXS}"
-                                               Text="Level:" />
+                                            Text="Level:" />
 
                                         <Label Style="{StaticResource ValueStyleXS}"
-                                               Text="{Binding Level}"/>
-                                        
+                                            Text="{Binding Level}"/>
+
                                     </StackLayout>
 
                                 </StackLayout>
-
 
                             </StackLayout>
 
