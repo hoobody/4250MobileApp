@@ -36,7 +36,7 @@
                                             Style="{StaticResource ImageMediumStyle}" />
                                 </Frame>
 
-                                <StackLayout Style="{StaticResource LightlySpacedBox}">
+                                <StackLayout Style="{StaticResource LightlySpacedBoxStart}">
 
                                     <Label Style="{StaticResource TinyTitleStyle}"
                                         Text="{Binding Name}" />
