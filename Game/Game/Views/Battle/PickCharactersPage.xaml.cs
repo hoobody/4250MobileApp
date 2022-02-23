@@ -42,8 +42,6 @@ namespace Game.Views
         {
             InitializeComponent();
 
-
-
             BindingContext = ViewModel;
             //BindingContext = BattleEngineViewModel.Instance;
 
@@ -75,6 +73,7 @@ namespace Game.Views
             if (ViewModel.PartyCharacterList.Count() < ViewModel.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
                 ViewModel.PartyCharacterList.Add(data);
+                addSelectedCharacter(data);
             }
 
             UpdateNextButtonState();
@@ -152,6 +151,51 @@ namespace Game.Views
             {
                 data.CurrentHealth = data.GetMaxHealthTotal;
                 ViewModel.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            }
+        }
+
+        /// <summary>
+        /// Takes in a character model and updates the grid with the correct headshot image.
+        /// </summary>
+        /// <param name="data"></param>
+        public void addSelectedCharacter(CharacterModel data)
+        {
+
+            int location = ViewModel.PartyCharacterList.IndexOf(data);
+            switch (location)
+            {
+                case 0:
+                    SelectedCharacterZero.Source = data.HeadshotImageURI;
+                    SelectedCharacterZero.IsEnabled = true;
+                    SelectedCharacterZero.IsOpaque = true;
+                break;
+                case 1:
+                    SelectedCharacterOne.Source = data.HeadshotImageURI;
+                    SelectedCharacterOne.IsEnabled = true;
+                    SelectedCharacterOne.IsOpaque = true;
+                    break;
+                case 2:
+                    SelectedCharacterTwo.Source = data.HeadshotImageURI;
+                    SelectedCharacterTwo.IsEnabled = true;
+                    SelectedCharacterTwo.IsOpaque = true;
+                    break;
+                case 3:
+                    SelectedCharacterThree.Source = data.HeadshotImageURI;
+                    SelectedCharacterThree.IsEnabled = true;
+                    SelectedCharacterThree.IsOpaque = true;
+                    break;
+                case 4:
+                    SelectedCharacterFour.Source = data.HeadshotImageURI;
+                    SelectedCharacterFour.IsEnabled = true;
+                    SelectedCharacterFour.IsOpaque = true;
+                    break;
+                case 5:
+                    SelectedCharacterFive.Source = data.HeadshotImageURI;
+                    SelectedCharacterFive.IsEnabled = true;
+                    SelectedCharacterFive.IsOpaque = true;
+                    break;
+                default:
+                    break;
             }
         }
 
