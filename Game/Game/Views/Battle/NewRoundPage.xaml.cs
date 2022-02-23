@@ -59,20 +59,20 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 Source = data.ImageURI
             };
 
             // Add the Level
             var PlayerLevelLabel = new Label
             {
-                Text = "Level : " + data.Level,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Text = "Lvl: " + data.Level,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
                 LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
+                CharacterSpacing = 0,
                 LineHeight = 1,
                 MaxLines = 1,
             };
@@ -80,13 +80,13 @@ namespace Game.Views
             // Add the HP
             var PlayerHPLabel = new Label
             {
-                Text = "HP : " + data.GetCurrentHealthTotal,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Text = "HP: " + data.GetCurrentHealthTotal,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
                 LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
+                CharacterSpacing = 0,
                 LineHeight = 1,
                 MaxLines = 1,
             };
@@ -94,12 +94,12 @@ namespace Game.Views
             var PlayerNameLabel = new Label()
             {
                 Text = data.Name,
-                Style = (Style)Application.Current.Resources["ValueStyle"],
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
                 LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
+                CharacterSpacing = 0,
                 LineHeight = 1,
                 MaxLines = 1,
             };
