@@ -61,7 +61,8 @@
                     x:Name="PartyListView"
                     ItemsLayout="VerticalGrid,2"
                     ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
-                    SelectionChanged="OnPartyCharacterItemSelected">
+                    SelectionChanged="OnPartyCharacterItemSelected"
+                    SelectionMode="Single">
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
