@@ -39,7 +39,13 @@
                                             Style="{StaticResource ImageMediumStyle}" />
                                 </Frame>
 
-                               
+                                <StackLayout Style="{StaticResource LightlySpacedBox}">
+
+                                    <Label Style="{StaticResource TinyTitleStyle}"
+                                        Text="{Binding Name}" />
+
+                                </StackLayout>
+
 
                             </StackLayout>
 
