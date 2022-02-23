@@ -175,6 +175,7 @@
                 TargetType="Label">
                 <Setter Property="FontAttributes" Value="Italic" />
                 <Setter Property="FontSize" Value="12" />
+                <Setter Property="LineBreakMode" Value="TailTruncation" />
             </Style>
 
             <Style x:Key="Barcode" TargetType="Label">
@@ -812,6 +813,7 @@
                    TargetType="StackLayout"
                    BasedOn="{StaticResource PaddedBox}">
                 <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="WidthRequest" Value="75"/>
             </Style>
 
             <Style x:Key="SpacedBox" TargetType="StackLayout">
@@ -1128,7 +1130,8 @@
             </Style>
 
             <!--  Editor  -->
-            <Style TargetType="Editor">
+            <Style TargetType="Editor"
+                   x:Key="EditorStyle">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
                 <Setter Property="VerticalOptions" Value="StartAndExpand" />
@@ -1139,7 +1142,7 @@
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
                 <Setter Property="AutoSize" Value="TextChanges" />
             </Style>
-
+            
             <!--  Stepper  -->
             <Style x:Key="StepperStyle" TargetType="Stepper">
                 <Setter Property="HorizontalOptions" Value="Start" />
