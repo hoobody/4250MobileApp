@@ -498,7 +498,7 @@
                 <Setter Property="Orientation" Value="Vertical" />
             </Style>
 
-            <Style x:Key="ItemCreatePageStack" TargetType="StackLayout">
+            <Style x:Key="ItemPageStack" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
