@@ -63,63 +63,63 @@
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Style="{StaticResource StepperValueLabel}"
-                Text="{Binding Data.Range}" />
+                                Text="{Binding Data.Range}" />
 
                             <Stepper
-                Grid.Row="0"
-                Grid.Column="2"
-                Increment="1"
-                Maximum="10"
-                Minimum="0"
-                Style="{StaticResource StepperStyle}"
-                ValueChanged="Range_OnStepperValueChanged"
-                Value="{Binding Data.Range, Mode=TwoWay}" />
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Increment="1"
+                                Maximum="10"
+                                Minimum="0"
+                                Style="{StaticResource StepperStyle}"
+                                ValueChanged="Range_OnStepperValueChanged"
+                                Value="{Binding Data.Range, Mode=TwoWay}" />
 
                             <Label
-                Grid.Row="1"
-                Grid.Column="0"
-                Style="{StaticResource LabelStyle}"
-                Text="Value" />
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Value" />
 
                             <Label
-                x:Name="ValueValue"
-                Grid.Row="1"
-                Grid.Column="1"
-                Style="{StaticResource StepperValueLabel}"
-                Text="{Binding Data.Value}" />
+                                x:Name="ValueValue"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Style="{StaticResource StepperValueLabel}"
+                                Text="{Binding Data.Value}" />
 
                             <Stepper
-                Grid.Row="1"
-                Grid.Column="2"
-                Increment="1"
-                Maximum="100"
-                Minimum="0"
-                Style="{StaticResource StepperStyle}"
-                ValueChanged="Value_OnStepperValueChanged"
-                Value="{Binding Data.Value, Mode=TwoWay}" />
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Increment="1"
+                                Maximum="100"
+                                Minimum="0"
+                                Style="{StaticResource StepperStyle}"
+                                ValueChanged="Value_OnStepperValueChanged"
+                                Value="{Binding Data.Value, Mode=TwoWay}" />
 
                             <Label
-                Grid.Row="2"
-                Grid.Column="0"
-                Style="{StaticResource LabelStyle}"
-                Text="Damage" />
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Damage" />
 
                             <Label
-                x:Name="DamageValue"
-                Grid.Row="2"
-                Grid.Column="1"
-                Style="{StaticResource StepperValueLabel}"
-                Text="{Binding Data.Damage}" />
+                                x:Name="DamageValue"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Style="{StaticResource StepperValueLabel}"
+                                Text="{Binding Data.Damage}" />
 
                             <Stepper
-                Grid.Row="2"
-                Grid.Column="2"
-                Increment="1"
-                Maximum="100"
-                Minimum="0"
-                Style="{StaticResource StepperStyle}"
-                ValueChanged="Damage_OnStepperValueChanged"
-                Value="{Binding Data.Damage, Mode=TwoWay}" />
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Increment="1"
+                                Maximum="100"
+                                Minimum="0"
+                                Style="{StaticResource StepperStyle}"
+                                ValueChanged="Damage_OnStepperValueChanged"
+                                Value="{Binding Data.Damage, Mode=TwoWay}" />
 
                         </Grid>
                     </Frame>
