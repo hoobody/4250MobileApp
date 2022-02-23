@@ -135,8 +135,9 @@
                 BasedOn="{StaticResource LabelBaseStyle}"
                 TargetType="Label">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontSize" Value="Large" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontFamily" Value="SneakerFont" />
             </Style>
 
             <Style
