@@ -69,39 +69,51 @@
                 <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party" />
             </Frame>
 
-            <StackLayout>
-                <CollectionView
-                    x:Name="PartyListView"
-                    ItemsLayout="VerticalGrid,2"
-                    ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
-                    SelectionChanged="OnPartyCharacterItemSelected"
-                    SelectionMode="Single">
+            <Grid Style="{StaticResource GridStyle}"
+                  x:Name="SelectedCharacters">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="33*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50*" />
+                    <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                <ImageButton Grid.Column="0" Grid.Row="0"
+                             x:Name="SelectedCharacterZero"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
+                <ImageButton Grid.Column="1" Grid.Row="0"
+                             x:Name="SelectedCharacterOne"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
+                <ImageButton Grid.Column="2" Grid.Row="0"
+                             x:Name="SelectedCharacterTwo"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
+                <ImageButton Grid.Column="0" Grid.Row="1"
+                             x:Name="SelectedCharacterThree"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
+                <ImageButton Grid.Column="1" Grid.Row="1"
+                             x:Name="SelectedCharacterFour"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
+                <ImageButton Grid.Column="2" Grid.Row="1"
+                             x:Name="SelectedCharacterFive"
+                             Style="{StaticResource CharacterSelectedButton}"
+                             IsEnabled="False"
+                             IsOpaque="False"/>
 
-                            <Grid Style="{StaticResource GridStyle}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35*" />
-                                    <ColumnDefinition Width="65*" />
-                                </Grid.ColumnDefinitions>
+            </Grid>
 
-                                <Image
-                                    Grid.Column="0"
-                                    Source="{Binding ImageURI}"
-                                    Style="{StaticResource ImageSmallStyle}" />
-
-                                <Label
-                                    Grid.Column="1"
-                                    Style="{StaticResource TinyTitleStyle}"
-                                    Text="{Binding Name}" />
-
-                            </Grid>
-
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </StackLayout>
             <ImageButton
                 x:Name="BeginBattleButton"
                 Clicked="BattleButton_Clicked"
