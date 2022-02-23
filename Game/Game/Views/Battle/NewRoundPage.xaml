@@ -35,7 +35,7 @@
                                     <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Level}" Margin="0,0,10,0"/>
                                     
                                     <Label Style="{StaticResource TinyTitleStyle}" Text="HP: " />
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding MaxHealth}" />
+                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding GetCurrentHealthTotal}" />
                                 </StackLayout>
 
                                 <StackLayout Grid.Row="2" Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
@@ -61,14 +61,17 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
+                <StackLayout MinimumWidthRequest="325">
+                    <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" />
 
-                <FlexLayout
-                    x:Name="MonsterListFrame"
-                    AlignContent="Start"
-                    JustifyContent="Start"
-                    Wrap="Wrap" />
-
+               
+                    <FlexLayout
+                        x:Name="MonsterListFrame"
+                        AlignContent="Start"
+                        JustifyContent="Start"
+                        Wrap="NoWrap" Scale=".90"/>
+                </StackLayout>
+                
                 <StackLayout Padding="1" />
 
                 <Button Clicked="BeginButton_Clicked" Text="Begin" />
