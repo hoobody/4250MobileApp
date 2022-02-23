@@ -463,6 +463,15 @@
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
+            <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedButton">
+                <Setter Property="HeightRequest" Value="75" />
+                <Setter Property="WidthRequest" Value="75" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
             <!--  ImageButton  -->
             <Style x:Key="BattleToolbarStyle" TargetType="ImageButton">
                 <Setter Property="Aspect" Value="Fill" />
