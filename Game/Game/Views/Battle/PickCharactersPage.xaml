@@ -18,7 +18,8 @@
             <ScrollView>
             <CollectionView x:Name="CharactersListView" 
                     ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
-                    SelectionChanged="OnDatabaseCharacterItemSelected">
+                    SelectionChanged="OnDatabaseCharacterItemSelected"
+                            SelectionMode="Single">
                     
                     <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                     RefreshCommand="{Binding LoadItemsCommand}"
@@ -63,51 +64,30 @@
             <StackLayout>
                 <CollectionView
                             x:Name="PartyListView"
-                            Margin="5,0,5,-100"
-                            ItemsLayout="VerticalGrid,3"
+                            ItemsLayout="VerticalGrid,2"
                             ItemsSource="{Binding PartyCharacterList, Mode=OneWay}"
-                            SelectionChanged="OnPartyCharacterItemSelected"
-                            Scale=".80">
+                            SelectionChanged="OnPartyCharacterItemSelected">
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+
+                            <Grid Style="{StaticResource GridStyle}">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="35*" />
+                                    <ColumnDefinition Width="65*" />
                                 </Grid.ColumnDefinitions>
-                                <Image
-                                            Grid.Row="0"
-                                            Grid.RowSpan="3"
-                                            Grid.Column="0"
-                                            Source="{Binding ImageURI}"
-                                            Style="{StaticResource ImageMediumStyle}" />
 
-                                <Label
-                                            Grid.Row="0"
-                                            Grid.Column="1"
-                                            FontAttributes="Bold"
-                                            Style="{StaticResource ListStyle}"
-                                            Text="{Binding Name}" />
+                                <Image Grid.Column="0"
+                                Source="{Binding HeadshotImageURI}" 
+                                Style="{StaticResource ImageSmallStyle}"/>
 
-                                <Label
-                                            Grid.Row="1"
-                                            Grid.Column="1"
-                                            Style="{StaticResource ListStyle}"
-                                            Text="{Binding Path=Level, StringFormat='Level {0:G}'}" />
-
-                                <Label
-                                            Grid.Row="2"
-                                            Grid.Column="1"
-                                            Style="{StaticResource ListStyle}"
-                                            Text="{Binding Path=MaxHealth, StringFormat='{0:G} hp'}" />
+                                <Label Grid.Column="1"
+                                    Text="{Binding Name}"
+                                    Style="{StaticResource TinyTitleStyle}"/>
 
                             </Grid>
-                        </DataTemplate>
+
+                            </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
