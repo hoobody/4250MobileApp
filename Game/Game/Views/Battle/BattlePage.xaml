@@ -39,7 +39,15 @@
 
                         <Label Style="{StaticResource MessageLargeStyle}" Text="Characters" TextDecorations="Underline"/>
                         <Grid x:Name="CharacterBox" HorizontalOptions="CenterAndExpand"/>
+                        
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
+                            <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Next Attack" IsVisible="False"/>
+                            <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
+                            <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
+
+                        </StackLayout>
+                        
                         <Label Style="{StaticResource MessageLargeStyle}" Text="Monsters" TextDecorations="Underline"/>
                         <Grid x:Name="MonsterBox" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
@@ -83,13 +91,7 @@
                         </StackLayout>
                     </Frame>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
-                        <Button x:Name="AttackButton" Clicked="AttackButton_Clicked" Text="Next Attack" IsVisible="False"/>
-                        <Button x:Name="NextRoundButton" Clicked="NextRoundButton_Clicked" Text="Next Round" IsVisible="False"/>
-                        <Button x:Name="StartBattleButton" Clicked="StartButton_Clicked" Text="Start Battle" IsVisible="False"/>
-
-                    </StackLayout>
 
                     <StackLayout 
                             Style="{StaticResource VerticalStack}" 
