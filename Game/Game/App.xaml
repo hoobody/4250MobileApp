@@ -384,13 +384,16 @@
             </Style>
 
             <Style
-                x:Key="ImageXLStyle"
+                x:Key="CharacterSelecteCheese"
                 BasedOn="{StaticResource ImageLargeStyle}"
                 TargetType="Image">
-                <Setter Property="HeightRequest" Value="400" />
                 <Setter Property="WidthRequest" Value="400" />
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="Aspect" Value="AspectFill" />
             </Style>
-            
+
             <Style
                 x:Key="StampStyle"
                 BasedOn="{StaticResource ImageLargeStyle}"
