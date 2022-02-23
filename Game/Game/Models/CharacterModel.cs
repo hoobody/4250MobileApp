@@ -11,6 +11,8 @@ namespace Game.Models
     {
         public string CodeName { get; set; } = "";
 
+        public string HeadshotImageURI { get; set; } = "";
+
         /// <summary>
         /// Default character
         /// 
@@ -23,10 +25,12 @@ namespace Game.Models
             Name = "Mister Mouse";
             Description = "Happy Mouse";
             Level = 1;
-            ImageURI = "filler_doubleo.png";
+            ImageURI = "character_doubleo.png";
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             CodeName = "Cheese";
+
+            HeadshotImageURI = getHeadshotURI();
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
@@ -60,7 +64,7 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
-
+            HeadshotImageURI = getHeadshotURI()
             // Difficulty = newData.Difficulty;
 
             Speed = newData.Speed;
@@ -107,6 +111,11 @@ namespace Game.Models
             myReturn += " , Damage : " + GetDamageTotalString;
 
             return myReturn;
+        }
+
+        public string getHeadshotURI ()
+        {
+            return ImageURI.Replace(".png", "_headshot.png");
         }
     }
 }
