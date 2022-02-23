@@ -43,7 +43,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Image Grid.Column="0"
-                                    Source="{Binding HeadshotImageURI}" 
+                                    Source="{Binding ImageURI}" 
                                     Style="{StaticResource ImageSmallStyle}"/>
                                 
                                 <Label Grid.Column="1"
@@ -78,7 +78,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Image Grid.Column="0"
-                                Source="{Binding HeadshotImageURI}" 
+                                Source="{Binding ImageURI}" 
                                 Style="{StaticResource ImageSmallStyle}"/>
 
                                 <Label Grid.Column="1"
