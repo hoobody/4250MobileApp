@@ -29,25 +29,19 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
 
-                            <Grid Style="{StaticResource GridStyle}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35*" />
-                                    <ColumnDefinition Width="65*" />
-                                </Grid.ColumnDefinitions>
 
-                                <StackLayout>
-                                    <Frame Grid.Column="0"
+
+                            <StackLayout Style="{StaticResource HorizontalPaddedBox}">
+                                
+                                <Frame Grid.Column="0"
                                            Style="{StaticResource ImageFrame}">
-                                        <Image Source="{Binding HeadshotImageURI}"
+                                    <Image Source="{Binding HeadshotImageURI}"
                                             Style="{StaticResource ImageMediumStyle}" />
-                                    </Frame>
+                                </Frame>
 
-                                    <Label
-                                        Grid.Column="1"
-                                        Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Name}" />
-                                </StackLayout>
-                            </Grid>
+                               
+
+                            </StackLayout>
 
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
