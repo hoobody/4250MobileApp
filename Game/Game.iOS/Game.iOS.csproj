@@ -466,4 +466,52 @@
   <ItemGroup>
     <BundleResource Include="Resources\dice.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_assassin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_assassin_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_detective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_detective_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_doubleO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_doubleO_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_hacker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_hacker_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_mozhnogirl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_mozhnogirl_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_saboteur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_saboteur_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_spy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_spy_headshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_surveillanceofficer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_surveillanceofficer_headshot.png" />
+  </ItemGroup>
 </Project>
