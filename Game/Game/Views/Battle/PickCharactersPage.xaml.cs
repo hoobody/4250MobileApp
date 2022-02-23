@@ -27,6 +27,9 @@ namespace Game.Views
     public partial class PickCharactersPage : ContentPage
     {
 
+        // The view model, used for data binding
+         BattleEngineViewModel ViewModel = BattleEngineViewModel.Instance;
+
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
 
@@ -39,11 +42,15 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            BindingContext = BattleEngineViewModel.Instance;
+
+
+            BindingContext = ViewModel;
             //BindingContext = BattleEngineViewModel.Instance;
 
+            var DatabaseCharacterList = ViewModel.DatabaseCharacterList;
+
             // Clear the Database List and the Party List to start
-            BattleEngineViewModel.Instance.PartyCharacterList.Clear();
+            ViewModel.PartyCharacterList.Clear();
 
             UpdateNextButtonState();
         }
@@ -62,12 +69,12 @@ namespace Game.Views
             }
 
             // Manually deselect Character.
-            //CharactersListView.SelectedItem = null;
+            CharactersListView.SelectedItem = null;
 
             // Don't add more than the party max
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
+            if (ViewModel.PartyCharacterList.Count() < ViewModel.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
+                ViewModel.PartyCharacterList.Add(data);
             }
 
             UpdateNextButtonState();
@@ -90,7 +97,7 @@ namespace Game.Views
             //PartyListView.SelectedItem = null;
 
             // Remove the character from the list
-            _ = BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
+            _ = ViewModel.PartyCharacterList.Remove(data);
 
             UpdateNextButtonState();
         }
@@ -108,7 +115,7 @@ namespace Game.Views
             // If no characters disable Next button
             BeginBattleButton.IsEnabled = true;
 
-            var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
+            var currentCount = ViewModel.PartyCharacterList.Count();
             if (currentCount == 0)
             {
                 BeginBattleButton.IsEnabled = false;
@@ -138,14 +145,19 @@ namespace Game.Views
         public void CreateEngineCharacterList()
         {
             // Clear the currett list
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
+            ViewModel.Engine.EngineSettings.CharacterList.Clear();
 
             // Load the Characters into the Engine
-            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
+            foreach (var data in ViewModel.PartyCharacterList)
             {
                 data.CurrentHealth = data.GetMaxHealthTotal;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+                ViewModel.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
             }
+        }
+
+        private void OnDatabaseCharacterItemSelected(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
