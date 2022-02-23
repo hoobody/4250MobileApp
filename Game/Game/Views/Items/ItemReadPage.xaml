@@ -48,43 +48,43 @@
                             </Grid.ColumnDefinitions>
 
                             <Label
-                    Grid.Row="0"
-                    Grid.Column="0"
-                    Style="{StaticResource LabelStyle}"
-                    Text="Range:" />
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Range:" />
 
                             <Label
-                    x:Name="RangeValue"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Range}"/>
+                                x:Name="RangeValue"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Style="{StaticResource StepperValueLabel}"
+                                Text="{Binding Data.Range}"/>
 
                             <Label
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    Style="{StaticResource LabelStyle}"
-                    Text="Value:" />
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Value:" />
 
                             <Label
-                    x:Name="ValueValue"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Value}" />
+                                x:Name="ValueValue"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Style="{StaticResource StepperValueLabel}"
+                                Text="{Binding Data.Value}" />
 
                             <Label
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Style="{StaticResource LabelStyle}"
-                    Text="Damage:" />
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Style="{StaticResource LabelStyle}"
+                                Text="Damage:" />
 
                             <Label
-                    x:Name="DamageValue"
-                    Grid.Row="2"
-                    Grid.Column="1"
-                    Style="{StaticResource StepperValueLabel}"
-                    Text="{Binding Data.Damage}"/>
+                                x:Name="DamageValue"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Style="{StaticResource StepperValueLabel}"
+                                Text="{Binding Data.Damage}"/>
 
                         </Grid>
                     </Frame>
