@@ -68,9 +68,10 @@
             <Frame Style="{StaticResource TitleFrame}">
                 <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party" />
             </Frame>
-
-            <Grid Style="{StaticResource GridStyle}"
-                  x:Name="SelectedCharacters">
+            <Grid BackgroundColor="Purple"
+                  x:Name="SelectedCharacters"
+                  HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="FillAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="33*" />
                     <ColumnDefinition Width="33*" />
@@ -80,6 +81,11 @@
                     <RowDefinition Height="50*" />
                     <RowDefinition Height="50*" />
                 </Grid.RowDefinitions>
+
+                <Image Grid.Row="0" Grid.Column="0"
+                    Grid.RowSpan="2" Grid.ColumnSpan="3"
+                    Source="character_select_cheese.png"
+                    Style="{StaticResource ImageXLStyle}"/>
 
                 <ImageButton Grid.Column="0" Grid.Row="0"
                              x:Name="SelectedCharacterZero"
