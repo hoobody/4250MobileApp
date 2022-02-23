@@ -34,9 +34,95 @@
             <Label Style="{StaticResource HeaderStyle}" Text="Update Page" />
             <Frame BackgroundColor="{StaticResource DeleteBackgroundColor}" BorderColor="{StaticResource BorderColor}">
                 <StackLayout>
-                    <Frame Margin="0,10,0,0" Style="{StaticResource ImageFrame}">
-                        <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" />
-                    </Frame>
+                    <StackLayout Style="{StaticResource ItemPageStack}">
+                        <Frame Margin="0,10,20,0" Style="{StaticResource ImageFrame}">
+                            <Image Source="{Binding Data.ImageURI, Mode=TwoWay}" Style="{StaticResource ImageLargeStyle}" />
+                        </Frame>
+
+                        <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" BorderColor="{StaticResource BorderColor}" Margin="0,20,0,0">
+                            <Grid HorizontalOptions="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="40" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="40" />
+                                    <ColumnDefinition Width="55" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="Range" />
+
+                                <Label
+                                    x:Name="RangeValue"
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Style="{StaticResource StepperValueLabel}"
+                                    Text="{Binding Data.Range}" />
+
+                                <Stepper
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Increment="1"
+                                    Maximum="10"
+                                    Minimum="0"
+                                    Style="{StaticResource StepperStyle}"
+                                    ValueChanged="Range_OnStepperValueChanged"
+                                    Value="{Binding Data.Range, Mode=TwoWay}" />
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="Value" />
+
+                                <Label
+                                    x:Name="ValueValue"
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Style="{StaticResource StepperValueLabel}"
+                                    Text="{Binding Data.Value}" />
+
+                                <Stepper
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Increment="1"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    Style="{StaticResource StepperStyle}"
+                                    ValueChanged="Value_OnStepperValueChanged"
+                                    Value="{Binding Data.Value, Mode=TwoWay}" />
+
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Style="{StaticResource LabelStyle}"
+                                    Text="Damage" />
+
+                                <Label
+                                    x:Name="DamageValue"
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Style="{StaticResource StepperValueLabel}"
+                                    Text="{Binding Data.Damage}" />
+
+                                <Stepper
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    Increment="1"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    Style="{StaticResource StepperStyle}"
+                                    ValueChanged="Damage_OnStepperValueChanged"
+                                    Value="{Binding Data.Damage, Mode=TwoWay}" />
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
 
                     <StackLayout>
 
@@ -118,91 +204,6 @@
 
                     </StackLayout>
                 </StackLayout>
-            </Frame>
-            <Frame BackgroundColor="{StaticResource SecondaryBackgroundColor}" BorderColor="{StaticResource BorderColor}">
-                <Grid HorizontalOptions="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="40" />
-                        <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="75" />
-                        <ColumnDefinition Width="40" />
-                        <ColumnDefinition Width="55" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Range" />
-
-                    <Label
-                        x:Name="RangeValue"
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Style="{StaticResource StepperValueLabel}"
-                        Text="{Binding Data.Range}" />
-
-                    <Stepper
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        Increment="1"
-                        Maximum="10"
-                        Minimum="0"
-                        Style="{StaticResource StepperStyle}"
-                        ValueChanged="Range_OnStepperValueChanged"
-                        Value="{Binding Data.Range, Mode=TwoWay}" />
-
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Value" />
-
-                    <Label
-                        x:Name="ValueValue"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Style="{StaticResource StepperValueLabel}"
-                        Text="{Binding Data.Value}" />
-
-                    <Stepper
-                        Grid.Row="1"
-                        Grid.Column="2"
-                        Increment="1"
-                        Maximum="100"
-                        Minimum="0"
-                        Style="{StaticResource StepperStyle}"
-                        ValueChanged="Value_OnStepperValueChanged"
-                        Value="{Binding Data.Value, Mode=TwoWay}" />
-
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Style="{StaticResource LabelStyle}"
-                        Text="Damage" />
-
-                    <Label
-                        x:Name="DamageValue"
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Style="{StaticResource StepperValueLabel}"
-                        Text="{Binding Data.Damage}" />
-
-                    <Stepper
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        Increment="1"
-                        Maximum="100"
-                        Minimum="0"
-                        Style="{StaticResource StepperStyle}"
-                        ValueChanged="Damage_OnStepperValueChanged"
-                        Value="{Binding Data.Damage, Mode=TwoWay}" />
-
-
-                </Grid>
             </Frame>
         </StackLayout>
 
