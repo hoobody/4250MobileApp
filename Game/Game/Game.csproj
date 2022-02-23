@@ -12,10 +12,12 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\OCRFont.ttf" />
+    <None Remove="Resources\Fonts\Sneakers.ttf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\OCRFont.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Sneakers.ttf" />
   </ItemGroup>
 
   <ItemGroup>
