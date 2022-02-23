@@ -514,4 +514,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\character_surveillanceofficer_headshot.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_select_cheese.png" />
+  </ItemGroup>
 </Project>

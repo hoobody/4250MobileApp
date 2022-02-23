@@ -156,6 +156,7 @@
     <Content Include="character_mozhnogirl_headshot.png" />
     <Content Include="character_saboteur.png" />
     <Content Include="character_saboteur_headshot.png" />
+    <Content Include="character_select_cheese.png" />
     <Content Include="character_spy.png" />
     <Content Include="character_spy_headshot.png" />
     <Content Include="character_surveillanceofficer.png" />
