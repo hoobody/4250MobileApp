@@ -44,6 +44,15 @@
                                     <Label Style="{StaticResource TinyTitleStyle}"
                                         Text="{Binding Name}" />
 
+                                    <Label Style="{StaticResource TinyTitleStyle}"
+                                           Text="{Binding CodeName}"/>
+
+                                    <Label Style="{StaticResource TinyTitleStyle}"
+                                           Text="Level:" />
+
+                                    <Label Style="{StaticResource TinyTitleStyle}"
+                                           Text="{Binding Level}"/>
+
                                 </StackLayout>
 
 
