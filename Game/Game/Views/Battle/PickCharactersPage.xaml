@@ -16,7 +16,7 @@
             </Frame>
 
             <CollectionView x:Name="CharactersListView" 
-                    ItemsSource="{Binding DatabaseCharacterList}"
+                    ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
                     SelectionChanged="OnDatabaseCharacterItemSelected">
                     
                     <!--IsRefreshing="{Binding IsBusy, Mode=OneWay}"
