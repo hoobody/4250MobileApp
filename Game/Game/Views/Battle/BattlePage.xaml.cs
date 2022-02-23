@@ -70,7 +70,7 @@ namespace Game.Views
         /// </summary>
         public void DrawPlayerBoxes()
         {
-            int i = 0; // Counter
+            int i = 0, j = 0; // Counters
             var CharacterBoxList = CharacterBox.Children.ToList();
             foreach (var data in CharacterBoxList)
             {
@@ -80,8 +80,13 @@ namespace Game.Views
             // Draw the Characters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                CharacterBox.Children.Add(PlayerInfoDisplayBox(data),i%3,i%2);
+                CharacterBox.Children.Add(PlayerInfoDisplayBox(data),i % 3, j);
                 i++;
+
+                if (i == 3)
+                {
+                    j++;
+                }
             }
 
             var MonsterBoxList = MonsterBox.Children.ToList();
@@ -90,11 +95,21 @@ namespace Game.Views
                 _ = MonsterBox.Children.Remove(data);
             }
 
+            // Reset counters
+            i = 0;
+            j = 0;
+
             // Draw the Monsters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, i % 2);
+                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
                 i++;
+
+
+                if (i == 3)
+                {
+                    j++;
+                }
             }
 
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
