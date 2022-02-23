@@ -35,16 +35,18 @@
                                     <ColumnDefinition Width="65*" />
                                 </Grid.ColumnDefinitions>
 
-                                <Image
-                                    Grid.Column="0"
-                                    Source="{Binding HeadshotImageURI}"
-                                    Style="{StaticResource ImageMediumStyle}" />
+                                <StackLayout>
+                                    <Frame Grid.Column="0"
+                                           Style="{StaticResource ImageFrame}">
+                                        <Image Source="{Binding HeadshotImageURI}"
+                                            Style="{StaticResource ImageMediumStyle}" />
+                                    </Frame>
 
-                                <Label
-                                    Grid.Column="1"
-                                    Style="{StaticResource TinyTitleStyle}"
-                                    Text="{Binding Name}" />
-
+                                    <Label
+                                        Grid.Column="1"
+                                        Style="{StaticResource TinyTitleStyle}"
+                                        Text="{Binding Name}" />
+                                </StackLayout>
                             </Grid>
 
                         </DataTemplate>
