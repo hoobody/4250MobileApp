@@ -27,12 +27,12 @@
                 </Grid.ColumnDefinitions>
 
                 <Label 
-                    Grid.Row="0" Grid.Column="0"
+                    Grid.Row="0" Grid.Column="1"
                     Text="Battle Mode" 
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Picker 
-                    Grid.Row="0" Grid.Column="1"
+                    Grid.Row="0" Grid.Column="2"
                     HorizontalOptions="Start" 
                     VerticalOptions="Center"
                     FontSize="Micro"
