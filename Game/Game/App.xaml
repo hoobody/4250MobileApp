@@ -481,6 +481,9 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="IsEnabled" Value="False" />
+                <Setter Property="IsOpaque" Value="False"/>
+
             </Style>
 
             <!--  ImageButton  -->

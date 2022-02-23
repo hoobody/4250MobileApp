@@ -16,7 +16,8 @@
                 <Label Style="{StaticResource CenterMessageMedStyle}" Text="Assemble the team..." />
             </Frame>
             <ScrollView VerticalScrollBarVisibility="Never"
-                        MinimumHeightRequest="200">
+                        MinimumHeightRequest="200"
+                        Margin="0,0,0,5">
                 <CollectionView
                     x:Name="CharactersListView"
                     ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
@@ -66,9 +67,6 @@
                 </CollectionView>
             </ScrollView>
 
-            <Frame Style="{StaticResource TitleFrame}">
-                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Party" />
-            </Frame>
             <Grid BackgroundColor="Purple"
                   x:Name="SelectedCharacters"
                   Style="{StaticResource GridStyle}">
@@ -89,34 +87,22 @@
 
                 <ImageButton Grid.Column="0" Grid.Row="0"
                              x:Name="SelectedCharacterZero"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
                 <ImageButton Grid.Column="1" Grid.Row="0"
                              x:Name="SelectedCharacterOne"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
                 <ImageButton Grid.Column="2" Grid.Row="0"
                              x:Name="SelectedCharacterTwo"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
                 <ImageButton Grid.Column="0" Grid.Row="1"
                              x:Name="SelectedCharacterThree"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
                 <ImageButton Grid.Column="1" Grid.Row="1"
                              x:Name="SelectedCharacterFour"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
                 <ImageButton Grid.Column="2" Grid.Row="1"
                              x:Name="SelectedCharacterFive"
-                             Style="{StaticResource CharacterSelectedButton}"
-                             IsEnabled="False"
-                             IsOpaque="False"/>
+                             Style="{StaticResource CharacterSelectedButton}"/>
 
             </Grid>
 
