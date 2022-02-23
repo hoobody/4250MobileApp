@@ -39,17 +39,14 @@
                                 <StackLayout Style="{StaticResource LightlySpacedBoxStart}">
 
                                     <Label Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Name}" />
-
-                                    <Label Style="{StaticResource TinyTitleStyle}"
                                            Text="{Binding CodeName}"/>
 
                                     <StackLayout Style="{StaticResource HorizontalStack}">
-                                        
-                                        <Label Style="{StaticResource TinyTitleStyle}"
+
+                                        <Label Style="{StaticResource ValueStyleXS}"
                                                Text="Level:" />
 
-                                        <Label Style="{StaticResource TinyTitleStyle}"
+                                        <Label Style="{StaticResource ValueStyleXS}"
                                                Text="{Binding Level}"/>
                                         
                                     </StackLayout>
