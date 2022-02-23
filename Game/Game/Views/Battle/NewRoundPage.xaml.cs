@@ -22,14 +22,17 @@ namespace Game.Views
         /// </summary>
         public NewRoundPage()
         {
+
+            int i = 0;
             InitializeComponent();
 
             BindingContext = EngineViewModel;
 
             // Draw the Monsters
             foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
-            {
-                MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+            {           
+                MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data),i%3,i%2);
+                i++;
             }
 
         }
