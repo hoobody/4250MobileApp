@@ -172,46 +172,64 @@
                     </StackLayout>
 
 
+                    <Grid Style="{StaticResource WideGridStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25*" />
+                            <ColumnDefinition Width="65*" />
+                            <ColumnDefinition Width="10*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
+                        <Label Grid.Column="0" Grid.Row="0"
+                            Style="{StaticResource LabelStyleXSEnd}"
                             Text="Health: " />
-                    <Frame VerticalOptions="Center">
-                        <Slider Style="{StaticResource ViewOnlySliderThin}"
-                                x:Name="PopupHealthSlider" />
-                    </Frame>
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
-                               x:Name="PopupHealthLabel"/>
+
+                        <Slider Grid.Column="1" Grid.Row="0"
+                            Style="{StaticResource ViewOnlySlider}"
+                            x:Name="PopupHealthSlider" />
+                        <Label Grid.Column="2" Grid.Row="0"
+                            Style="{StaticResource LabelStyleXSEnd}"
+                            x:Name="PopupHealthLabel"/>
 
 
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
+                        <Label Grid.Column="0" Grid.Row="1"
+                            Style="{StaticResource LabelStyleXSEnd}"
                             Text="Attack: " />
-                    <Frame VerticalOptions="Center">
-                        <Slider Style="{StaticResource ViewOnlySliderThin}"
-                                x:Name="PopupAttackSlider" />
-                    </Frame>
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
-                               x:Name="PopupAttackLabel"/>
+                        <Slider Grid.Column="1" Grid.Row="1"
+                            Style="{StaticResource ViewOnlySlider}"
+                            x:Name="PopupAttackSlider" />
+                        <Label Grid.Column="2" Grid.Row="1"
+                            Style="{StaticResource LabelStyleXSEnd}"
+                            x:Name="PopupAttackLabel"/>
 
 
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
+                        <Label Grid.Column="0" Grid.Row="2"
+                               Style="{StaticResource LabelStyleXSEnd}"
                             Text="Defense: " />
-                    <Frame VerticalOptions="Center">
-                        <Slider Style="{StaticResource ViewOnlySliderThin}"
-                                x:Name="PopupDefenseSlider" />
-                    </Frame>
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
-                               x:Name="PopupDefenseLabel"/>
+                        <Slider Grid.Column="1" Grid.Row="2"
+                            Style="{StaticResource ViewOnlySlider}"
+                            x:Name="PopupDefenseSlider" />
+                        <Label Grid.Column="2" Grid.Row="2"
+                            Style="{StaticResource LabelStyleXSEnd}"
+                            x:Name="PopupDefenseLabel"/>
 
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
+                        <Label Grid.Column="0" Grid.Row="3"
+                            Style="{StaticResource LabelStyleXSEnd}"
                             Text="Speed: " />
-                    <Frame VerticalOptions="Center">
-                        <Slider Style="{StaticResource ViewOnlySliderThin}"
-                                x:Name="PopupSpeedSlider" />
-                    </Frame>
-                    <Label Style="{StaticResource LabelStyleXSEnd}"
-                               x:Name="PopupSpeedLabel"/>
+                        <Slider Grid.Column="1" Grid.Row="3"
+                            Style="{StaticResource ViewOnlySlider}"
+                            x:Name="PopupSpeedSlider" />
+                        <Label Grid.Column="2" Grid.Row="3"
+                            Style="{StaticResource LabelStyleXSEnd}"
+                            x:Name="PopupSpeedLabel"/>
 
-                    
+                    </Grid>
+
                 </StackLayout>
             </Frame>
         </AbsoluteLayout>
