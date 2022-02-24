@@ -185,7 +185,16 @@
                     </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
-
+                        
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                            Text="Attack: " />
+                        <Frame VerticalOptions="Center">
+                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                                x:Name="PopupAttackSlider" />
+                        </Frame>
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                               x:Name="PopupAttackLabel"/>
+                        
                     </StackLayout>
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
