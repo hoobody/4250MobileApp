@@ -1079,7 +1079,6 @@
                 <Setter Property="WidthRequest" Value="25" />
             </Style>
 
-
             <Style x:Key="GridCellFrame" TargetType="Frame">
                 <Setter Property="BackgroundColor" Value="{StaticResource TriciaryBackgroundColor}" />
                 <Setter Property="BorderColor" Value="{StaticResource TriciaryBackgroundColor}" />
@@ -1140,6 +1139,13 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
 
+            <Style x:Key="CharacterSelectedFrame" 
+                TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="{StaticResource TransparentColor}" />
+            </Style>
+            
+            
             <!--  Grid  -->
             <Style x:Key="GridStyle" TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="1" />

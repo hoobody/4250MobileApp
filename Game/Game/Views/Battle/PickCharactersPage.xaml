@@ -83,25 +83,20 @@
                     Style="{StaticResource CharacterSelecteCheese}"/>
 
 
-          
-                    
                 <Frame Grid.Column="0" Grid.Row="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
+                    Style="{StaticResource CharacterSelectedFrame}">
                     <ImageButton x:Name="SelectedCharacterZero"
                         Style="{StaticResource CharacterSelectedZero}"/>
                 </Frame>
 
                 <Frame Grid.Column="0" Grid.Row="0"
-                    BackgroundColor="Transparent"
-                        BorderColor="Transparent">
+                    Style="{StaticResource CharacterSelectedFrame}">
                     <ImageButton x:Name="SelectedCharacterOne"
                         Style="{StaticResource CharacterSelectedOne}"/>
                 </Frame>
 
                 <Frame Grid.Column="0" Grid.Row="0"
-                    BackgroundColor="Transparent"
-                    BorderColor="Transparent">
+                    Style="{StaticResource CharacterSelectedFrame}">
                     <ImageButton x:Name="SelectedCharacterTwo"
                                 Style="{StaticResource CharacterSelectedTwo}"/>
                 </Frame>
