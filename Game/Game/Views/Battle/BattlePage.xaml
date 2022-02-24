@@ -185,7 +185,7 @@
                                         <Label
                                             x:Name="BattleMessages"
                                             CharacterSpacing="1"
-                                            FontSize="Micro"
+                                            FontSize="12"
                                             HorizontalOptions="FillAndExpand"
                                             LineBreakMode="WordWrap"
                                             LineHeight="1"
@@ -198,14 +198,14 @@
 
                             </StackLayout>
                             <StackLayout
-                                Margin="0,-350,0,0"
-                                HorizontalOptions="CenterAndExpand"
+                                Margin="0,-370,0,0"
+                                HorizontalOptions="Center"
                                 Style="{StaticResource VerticalStack}">
                                 <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
                                     <Grid
                                         x:Name="BattleMonster"
                                         ColumnSpacing="25"
-                                        RowSpacing="25">
+                                        RowSpacing="25" Scale=".80" Margin="-17,0,0,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50" />
                                             <RowDefinition Height="50" />
@@ -226,7 +226,7 @@
 
                                 </StackLayout>
                                 <StackLayout
-                                    Margin="0,-125,0,0"
+                                    Margin="0,-155,0,0"
                                     HorizontalOptions="Center"
                                     Style="{StaticResource VerticalStack}"
                                     WidthRequest="100">
