@@ -137,6 +137,18 @@
 				<Setter Property="VerticalOptions" Value="Center" />
 				<Setter Property="VerticalTextAlignment" Value="Center" />
 			</Style>
+
+			<Style
+		        x:Key="BattleMessage"
+		        BasedOn="{StaticResource LabelStyle}"
+		        TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
+				<Setter Property="CharacterSpacing" Value="1" />
+				<Setter Property="FontSize" Value="12" />
+				<Setter Property="LineBreakMode" Value="WordWrap" />
+				<Setter Property="MaxLines" Value="3" />
+				<Setter Property="LineHeight" Value="1" />
+			</Style>
 			
             <Style
                 x:Key="HeaderStyle"
