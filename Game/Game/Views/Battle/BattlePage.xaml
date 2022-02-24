@@ -135,12 +135,8 @@
                                         <Label
                                             x:Name="BattlePlayerBoxVersus"
                                             Padding="0,5,0,0"
-                                            HorizontalOptions="Center"
-                                            HorizontalTextAlignment="Center"
-                                            Style="{StaticResource ValueStyleBattleMicro}"
-                                            Text="vs"
-                                            VerticalOptions="Center"
-                                            VerticalTextAlignment="Center" />
+                                            Style="{StaticResource BattleBoxVS}"
+                                            Text="vs" />
                                         <Image
                                             x:Name="AttackerAttack"
                                             Source="mapcell.png"
@@ -184,13 +180,7 @@
 
                                         <Label
                                             x:Name="BattleMessages"
-                                            CharacterSpacing="1"
-                                            FontSize="12"
-                                            HorizontalOptions="FillAndExpand"
-                                            LineBreakMode="WordWrap"
-                                            LineHeight="1"
-                                            MaxLines="3"
-                                            Style="{StaticResource LabelStyle}" />
+                                            Style="{StaticResource BattleMessage}" />
 
                                     </StackLayout>
                                 </StackLayout>
