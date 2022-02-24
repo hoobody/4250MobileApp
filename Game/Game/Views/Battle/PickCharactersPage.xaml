@@ -70,9 +70,7 @@
             <Grid x:Name="SelectedCharacters"
                 Style="{StaticResource GridStyle}">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="33*" />
-                    <ColumnDefinition Width="33*" />
-                    <ColumnDefinition Width="33*" />
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -80,19 +78,34 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.Row="0" Grid.Column="0"
-                    Grid.RowSpan="2" Grid.ColumnSpan="3"
+                    Grid.RowSpan="2"
                     Source="character_select_cheese.png"
                     Style="{StaticResource CharacterSelecteCheese}"/>
 
-                <ImageButton Grid.Column="0" Grid.Row="0"
-                             x:Name="SelectedCharacterZero"
-                             Style="{StaticResource CharacterSelectedOne}"/>
-                <ImageButton Grid.Column="1" Grid.Row="0"
-                             x:Name="SelectedCharacterOne"
-                             Style="{StaticResource CharacterSelectedTwo}"/>
-                <ImageButton Grid.Column="2" Grid.Row="0"
-                             x:Name="SelectedCharacterTwo"
-                             Style="{StaticResource CharacterSelectedButton}"/>
+
+          
+                    
+                <Frame Grid.Column="0" Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <ImageButton x:Name="SelectedCharacterZero"
+                        Style="{StaticResource CharacterSelectedZero}"/>
+                </Frame>
+
+                <Frame Grid.Column="0" Grid.Row="0"
+                    BackgroundColor="Transparent"
+                        BorderColor="Transparent">
+                    <ImageButton x:Name="SelectedCharacterOne"
+                        Style="{StaticResource CharacterSelectedOne}"/>
+                </Frame>
+
+                <Frame Grid.Column="0" Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    BorderColor="Transparent">
+                    <ImageButton x:Name="SelectedCharacterTwo"
+                                Style="{StaticResource CharacterSelectedTwo}"/>
+                </Frame>
+
                 <ImageButton Grid.Column="0" Grid.Row="1"
                              x:Name="SelectedCharacterThree"
                              Style="{StaticResource CharacterSelectedButton}"/>
