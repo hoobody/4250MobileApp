@@ -171,6 +171,7 @@
 
                     </StackLayout>
                     
+                    
                     <StackLayout Style="{StaticResource HorizontalStack}">
 
                         <Label Style="{StaticResource LabelStyleXSEnd}"
@@ -212,6 +213,15 @@
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
 
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                            Text="Speed: " />
+                        <Frame VerticalOptions="Center">
+                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                                x:Name="PopupSpeedSlider" />
+                        </Frame>
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                               x:Name="PopupSpeedLabel"/>
+                        
                     </StackLayout>
 
                 </StackLayout>
