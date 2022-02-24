@@ -58,21 +58,28 @@
                         VerticalOptions="Start">
 
                         <Label
+                            x:Name="CharacterTitle"
                             Style="{StaticResource MessageLargeStyle}"
                             Text="Characters"
-                            TextDecorations="Underline" />
+                            TextDecorations="Underline" IsVisible="True"/>
+
                         <Grid
-                            x:Name="CharacterBox"
-                            RowSpacing="125" />
+                            x:Name="CharacterBox">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="115"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
 
                         <ImageButton
                             x:Name="StartBattleButton"
-                            Margin="0,120,0,0"
+                            Margin="0,60,0,0"
                             Clicked="StartButton_Clicked"
                             HeightRequest="65"
                             Source="begin_button.png" />
 
                         <Label
+                            x:Name="MonsterTitle"
                             IsVisible="True"
                             Style="{StaticResource MessageLargeStyle}"
                             Text="Monsters"
@@ -80,8 +87,13 @@
                         
                         <Grid
                             x:Name="MonsterBox"
-                            IsVisible="True"
-                            RowSpacing="125"/>
+                            IsVisible="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="115"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                        
                     </StackLayout>
                 </StackLayout>
 
