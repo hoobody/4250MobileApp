@@ -154,8 +154,14 @@
                             <Label Style="{StaticResource LabelStyleXS}"
                                 x:Name="PopupNameLabel"/>
 
+                            <Label Style="{StaticResource TinyDescriptionStyle}"
+                                x:Name="PopupDescriptionLabel"/>
+
                         </StackLayout>
-                        
+
+                        <ImageButton Source="cancel_button.png" 
+                                     Style="{StaticResource SmallIconButton}"/>
+
                     </StackLayout>
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
