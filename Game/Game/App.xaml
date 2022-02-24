@@ -487,15 +487,21 @@
             </Style>
 
             <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedZero"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                <Setter Property="Margin" Value="0,40,231,0" />
+            </Style>
+
+            <Style TargetType="ImageButton"
                    x:Key="CharacterSelectedOne"
                    BasedOn="{StaticResource CharacterSelectedButton}">
-                <Setter Property="Margin" Value="0,0,-66,-80" />
+                <Setter Property="Margin" Value="0,75,43,0" />
             </Style>
 
             <Style TargetType="ImageButton"
                    x:Key="CharacterSelectedTwo"
                    BasedOn="{StaticResource CharacterSelectedButton}">
-                <Setter Property="Margin" Value="0,0,43,-151" />
+                <Setter Property="Margin" Value="208,75,0,0" />
             </Style>
 
             <!--  ImageButton  -->
