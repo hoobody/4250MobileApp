@@ -150,7 +150,10 @@
                         </Frame>
                         
                         <StackLayout Style="{StaticResource VerticalStack}">
-                            
+
+                            <Label Style="{StaticResource LabelStyleXS}"
+                                x:Name="PopupNameLabel"/>
+
                         </StackLayout>
                         
                     </StackLayout>
