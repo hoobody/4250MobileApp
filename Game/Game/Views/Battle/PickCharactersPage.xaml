@@ -137,6 +137,17 @@
             
             </StackLayout>
 
+            <StackLayout x:Name="PopupCharacterDetails"
+                AbsoluteLayout.LayoutBounds=".5, .5,.5,.5"
+                AbsoluteLayout.LayoutFlags="All"
+                Style="{StaticResource CharacterDetailsBox}">
+
+                <Frame Style="{StaticResource ImageFrame}">
+                    <Image Style="{StaticResource ImageLargeStyle}" 
+                        x:Name="CharacterDetailsPotrait"/>
+                </Frame>
+
+            </StackLayout>
 
         </AbsoluteLayout>
     </ContentPage.Content>
