@@ -71,13 +71,81 @@
                             </Grid.RowDefinitions>
                         </Grid>
 
+                        <Frame
+                        x:Name="BattlePlayerInfomationBox"
+                        IsVisible="False"
+                        Style="{StaticResource PlayerBattleOuterFrame}" Margin="0,50,0,0">
+
+                            <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
+
+                                <StackLayout
+                                x:Name="AttackerBox"
+                                HorizontalOptions="Start"
+                                Style="{StaticResource PlayerBattleInfoBox}">
+                                    <Image
+                                    x:Name="AttackerImage"
+                                    Source="knight.png"
+                                    Style="{StaticResource ImageBattleMediumStyle}" />
+                                    <Label
+                                    x:Name="AttackerName"
+                                    Style="{StaticResource ValueStyleBattleMicro}"
+                                    Text="" />
+                                    <Label
+                                    x:Name="AttackerHealth"
+                                    Style="{StaticResource ValueStyleBattleMicro}"
+                                    Text="" />
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label
+                                    x:Name="BattlePlayerBoxVersus"
+                                    Padding="0,5,0,0"
+                                    HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    Style="{StaticResource ValueStyleBattleMicro}"
+                                    Text="vs"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+                                    <Image
+                                    x:Name="AttackerAttack"
+                                    Source="mapcell.png"
+                                    Style="{StaticResource ImageSmallStyle}" />
+                                </StackLayout>
+
+                                <StackLayout
+                                x:Name="DefenderBox"
+                                HorizontalOptions="End"
+                                Style="{StaticResource PlayerBattleInfoBox}">
+                                    <Image
+                                    x:Name="DefenderImage"
+                                    Source="troll.png"
+                                    Style="{StaticResource ImageBattleMediumStyle}" />
+                                    <Label
+                                    x:Name="DefenderName"
+                                    Style="{StaticResource ValueStyleBattleMicro}"
+                                    Text="" />
+                                    <Label
+                                    x:Name="DefenderHealth"
+                                    Style="{StaticResource ValueStyleBattleMicro}"
+                                    Text="" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+
                         <ImageButton
                             x:Name="StartBattleButton"
                             Margin="0,60,0,0"
                             Clicked="StartButton_Clicked"
                             HeightRequest="65"
                             Source="begin_button.png" />
-
+                        
+                        <Button
+                            x:Name="NextRoundButton"
+                            Clicked="NextRoundButton_Clicked"
+                            IsVisible="False"
+                            Text="Next Round" 
+                            Margin="0,60,0,0"/>
+                        
                         <Label
                             x:Name="MonsterTitle"
                             IsVisible="True"
@@ -93,7 +161,25 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                         </Grid>
+
+
+                        <Button
+                            x:Name="MoveButton"
+                            IsVisible="False"
+                            Text="Move" />
                         
+                        
+                        <Button
+                            x:Name="AttackButton"
+                            Clicked="AttackButton_Clicked"
+                            IsVisible="False"
+                            Text="Next Attack" />
+
+                        <Button
+                            x:Name="AttributeButton"
+                            IsVisible="False"
+                            Text="Attribute" />
+                       
                     </StackLayout>
                 </StackLayout>
 
@@ -122,83 +208,7 @@
 
                 <!--  The Bottom of the Battle UI  Holds the Player to Player boxes, Buttons, and the Messages  -->
                 <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}">
-
-                    <Frame
-                        x:Name="BattlePlayerInfomationBox"
-                        IsVisible="False"
-                        Style="{StaticResource PlayerBattleOuterFrame}">
-
-                        <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
-
-                            <StackLayout
-                                x:Name="AttackerBox"
-                                HorizontalOptions="Start"
-                                Style="{StaticResource PlayerBattleInfoBox}">
-                                <Image
-                                    x:Name="AttackerImage"
-                                    Source="knight.png"
-                                    Style="{StaticResource ImageBattleMediumStyle}" />
-                                <Label
-                                    x:Name="AttackerName"
-                                    Style="{StaticResource ValueStyleBattleMicro}"
-                                    Text="" />
-                                <Label
-                                    x:Name="AttackerHealth"
-                                    Style="{StaticResource ValueStyleBattleMicro}"
-                                    Text="" />
-                            </StackLayout>
-
-                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                <Label
-                                    x:Name="BattlePlayerBoxVersus"
-                                    Padding="0,5,0,0"
-                                    HorizontalOptions="Center"
-                                    HorizontalTextAlignment="Center"
-                                    Style="{StaticResource ValueStyleBattleMicro}"
-                                    Text="vs"
-                                    VerticalOptions="Center"
-                                    VerticalTextAlignment="Center" />
-                                <Image
-                                    x:Name="AttackerAttack"
-                                    Source="mapcell.png"
-                                    Style="{StaticResource ImageSmallStyle}" />
-                            </StackLayout>
-
-                            <StackLayout
-                                x:Name="DefenderBox"
-                                HorizontalOptions="End"
-                                Style="{StaticResource PlayerBattleInfoBox}">
-                                <Image
-                                    x:Name="DefenderImage"
-                                    Source="troll.png"
-                                    Style="{StaticResource ImageBattleMediumStyle}" />
-                                <Label
-                                    x:Name="DefenderName"
-                                    Style="{StaticResource ValueStyleBattleMicro}"
-                                    Text="" />
-                                <Label
-                                    x:Name="DefenderHealth"
-                                    Style="{StaticResource ValueStyleBattleMicro}"
-                                    Text="" />
-                            </StackLayout>
-                        </StackLayout>
-                    </Frame>
-
-
-                    <StackLayout HorizontalOptions="CenterAndExpand" Style="{StaticResource HorizontalStack}">
-
-                        <Button
-                            x:Name="AttackButton"
-                            Clicked="AttackButton_Clicked"
-                            IsVisible="False"
-                            Text="Next Attack" />
-                        <Button
-                            x:Name="NextRoundButton"
-                            Clicked="NextRoundButton_Clicked"
-                            IsVisible="False"
-                            Text="Next Round" />
-
-                    </StackLayout>
+                 
 
                     <StackLayout
                         HeightRequest="100"
