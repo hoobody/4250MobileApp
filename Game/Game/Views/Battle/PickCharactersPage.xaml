@@ -76,8 +76,7 @@
                 </ScrollView>
 
                 <Grid x:Name="SelectedCharacters"
-                    Style="{StaticResource GridStyle}"
-                      BackgroundColor="OrangeRed">
+                    Style="{StaticResource GridStyle}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
