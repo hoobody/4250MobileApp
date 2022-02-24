@@ -542,6 +542,12 @@
                 <Setter Property="Margin" Value="298,-2,0,0" />
             </Style>
 
+            <Style TargetType="ImageButton"
+                   x:Key="SmallIconButton">
+                <Setter Property="HeightRequest" Value="25" />
+                <Setter Property="WidthRequest" Value="25" />
+            </Style>
+
             <!--  ImageButton  -->
             <Style x:Key="BattleToolbarStyle" TargetType="ImageButton">
                 <Setter Property="Aspect" Value="Fill" />
