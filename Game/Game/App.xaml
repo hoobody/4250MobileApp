@@ -504,6 +504,24 @@
                 <Setter Property="Margin" Value="208,75,0,0" />
             </Style>
 
+            <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedThree"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+
+            <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedFour"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+
+            <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedFive"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                <Setter Property="Margin" Value="0,0,0,0" />
+            </Style>
+
             <!--  ImageButton  -->
             <Style x:Key="BattleToolbarStyle" TargetType="ImageButton">
                 <Setter Property="Aspect" Value="Fill" />
