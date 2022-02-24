@@ -56,48 +56,53 @@
                         HorizontalOptions="CenterAndExpand"
                         IsVisible="true"
                         VerticalOptions="Start">
+                        <StackLayout>
+                            <Label
+                                x:Name="CharacterTitle"
+                                IsVisible="True"
+                                Style="{StaticResource MessageLargeStyle}"
+                                Text="Characters"
+                                TextDecorations="Underline" />
 
-                        <Label
-                            x:Name="CharacterTitle"
-                            IsVisible="True"
-                            Style="{StaticResource MessageLargeStyle}"
-                            Text="Characters"
-                            TextDecorations="Underline" />
+                            <Grid x:Name="CharacterBox" RowSpacing="-20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="115" />
+                                    <RowDefinition Height="75" />
+                                </Grid.RowDefinitions>
+                            </Grid>
 
-                        <Grid x:Name="CharacterBox" RowSpacing="-20">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="115" />
-                                <RowDefinition Height="75" />
-                            </Grid.RowDefinitions>
-                        </Grid>
+                            <ImageButton
+                                x:Name="StartBattleButton"
+                                Margin="0,20,0,0"
+                                Clicked="StartButton_Clicked"
+                                HeightRequest="65"
+                                Source="begin_button.png" />
 
-                        <ImageButton
-                            x:Name="StartBattleButton"
-                            Margin="0,20,0,0"
-                            Clicked="StartButton_Clicked"
-                            HeightRequest="65"
-                            Source="begin_button.png" />
+                            <Button
+                                x:Name="NextRoundButton"
+                                Margin="0,60,0,0"
+                                Clicked="NextRoundButton_Clicked"
+                                IsVisible="False"
+                                Text="Next Round" />
 
-                        <Button
-                            x:Name="NextRoundButton"
-                            Margin="0,60,0,0"
-                            Clicked="NextRoundButton_Clicked"
-                            IsVisible="False"
-                            Text="Next Round" />
+                            <Label
+                                x:Name="MonsterTitle"
+                                IsVisible="True"
+                                Style="{StaticResource MessageLargeStyle}"
+                                Text="Monsters"
+                                TextDecorations="Underline" />
 
-                        <Label
-                            x:Name="MonsterTitle"
-                            IsVisible="True"
-                            Style="{StaticResource MessageLargeStyle}"
-                            Text="Monsters"
-                            TextDecorations="Underline" />
-
-                        <Grid x:Name="MonsterBox" IsVisible="True" RowSpacing="-20">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="115" />
-                                <RowDefinition Height="75" />
-                            </Grid.RowDefinitions>
-                        </Grid>
+                            <Grid
+                                x:Name="MonsterBox"
+                                IsVisible="True"
+                                RowSpacing="-20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="115" />
+                                    <RowDefinition Height="75" />
+                                </Grid.RowDefinitions>
+                            </Grid>
+                        </StackLayout>
+                        
                         <StackLayout>
                             <Frame
                                 x:Name="BattlePlayerInfomationBox"
