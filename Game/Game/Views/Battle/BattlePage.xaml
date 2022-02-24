@@ -195,7 +195,7 @@
                                     <Grid
                                         x:Name="BattleMonster"
                                         ColumnSpacing="25"
-                                        RowSpacing="25" Scale=".75" Margin="0,0,0,0">
+                                        RowSpacing="25" Scale=".75" Margin="-20,0,0,0">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50" />
                                             <RowDefinition Height="50" />
@@ -205,12 +205,12 @@
                                             <RowDefinition Height="50" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
-                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="65" />
+                                            <ColumnDefinition Width="65" />
+                                            <ColumnDefinition Width="65" />
+                                            <ColumnDefinition Width="65" />
+                                            <ColumnDefinition Width="65" />
+                                            <ColumnDefinition Width="65" />
                                         </Grid.ColumnDefinitions>
                                     </Grid>
 
