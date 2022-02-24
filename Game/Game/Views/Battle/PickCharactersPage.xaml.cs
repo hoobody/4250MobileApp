@@ -167,32 +167,32 @@ namespace Game.Views
                 case 0:
                     SelectedCharacterZero.Source = data.HeadshotImageURI;
                     SelectedCharacterZero.IsEnabled = true;
-                    SelectedCharacterZero.IsOpaque = true;
+                    SelectedCharacterZero.IsVisible = true;
                 break;
                 case 1:
                     SelectedCharacterOne.Source = data.HeadshotImageURI;
                     SelectedCharacterOne.IsEnabled = true;
-                    SelectedCharacterOne.IsOpaque = true;
+                    SelectedCharacterOne.IsVisible = true;
                     break;
                 case 2:
                     SelectedCharacterTwo.Source = data.HeadshotImageURI;
                     SelectedCharacterTwo.IsEnabled = true;
-                    SelectedCharacterTwo.IsOpaque = true;
+                    SelectedCharacterTwo.IsVisible = true;
                     break;
                 case 3:
                     SelectedCharacterThree.Source = data.HeadshotImageURI;
                     SelectedCharacterThree.IsEnabled = true;
-                    SelectedCharacterThree.IsOpaque = true;
+                    SelectedCharacterThree.IsVisible = true;
                     break;
                 case 4:
                     SelectedCharacterFour.Source = data.HeadshotImageURI;
                     SelectedCharacterFour.IsEnabled = true;
-                    SelectedCharacterFour.IsOpaque = true;
+                    SelectedCharacterFour.IsVisible = true;
                     break;
                 case 5:
                     SelectedCharacterFive.Source = data.HeadshotImageURI;
                     SelectedCharacterFive.IsEnabled = true;
-                    SelectedCharacterFive.IsOpaque = true;
+                    SelectedCharacterFive.IsVisible = true;
                     break;
                 default:
                     break;
