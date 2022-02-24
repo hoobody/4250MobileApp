@@ -131,7 +131,8 @@ namespace Game.Views
             {
                 data = new PlayerInfoModel
                 {
-                    ImageURI = ""
+                    ImageURI = "",
+                    Name = "",
                 };
             }
 
@@ -142,12 +143,26 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
+            // Hookup the Label
+            var PlayerNameLabel = new Label()
+            {
+                Text = data.Name,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                CharacterSpacing = 0,
+                LineHeight = 1,
+                MaxLines = 3,
+            };
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
                 Style = (Style)Application.Current.Resources["PlayerBattleDisplayBox"],
                 Children = {
                     PlayerImage,
+                    PlayerNameLabel,
                 },
             };
 
