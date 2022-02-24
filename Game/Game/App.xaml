@@ -917,6 +917,13 @@
                 <Setter Property="Padding" Value="0,35,0,35" />
             </Style>
 
+            <Style x:Key="CharacterDetailsBox" 
+                   TargetType="StackLayout">
+                <Setter Property="Padding" Value="1" />
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="IsVisible" Value="False" />
+            </Style>
+
             <!--  Frame  -->
             <Style TargetType="Frame">
                 <Setter Property="Margin" Value="0" />
