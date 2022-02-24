@@ -150,17 +150,24 @@
                         </Frame>
                         
                         <StackLayout Style="{StaticResource VerticalStack}">
+                            
+                            <StackLayout Style="{StaticResource HorizontalStackEnd}">
+
+                                <ImageButton Source="cancel_button.png" 
+                                     Style="{StaticResource SmallIconButton}"/>
+                                <ImageButton Source="delete_button.png" 
+                                     Style="{StaticResource SmallIconButton}"/>
+
+                            </StackLayout>
 
                             <Label Style="{StaticResource LabelStyleXS}"
                                 x:Name="PopupNameLabel"/>
-
                             <Label Style="{StaticResource TinyDescriptionStyle}"
                                 x:Name="PopupDescriptionLabel"/>
 
                         </StackLayout>
 
-                        <ImageButton Source="cancel_button.png" 
-                                     Style="{StaticResource SmallIconButton}"/>
+                        
 
                     </StackLayout>
                     
