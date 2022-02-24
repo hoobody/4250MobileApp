@@ -13,6 +13,13 @@
             <Frame Padding="10,0,0,0" />
             <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Cats vs Mice" />
             <Frame Padding="10,0,0,0" />
+            
+            <Label
+                x:Name="BattleModeValue"
+                HorizontalTextAlignment="Center"
+                Style="{StaticResource ValueStyleMicro}"
+                Text="" />
+
             <ImageButton
                 Clicked="Setttings_Clicked"
                 Source="edit_button.png"
@@ -22,11 +29,6 @@
                 Source="cancel_button.png"
                 Style="{StaticResource BattleToolbarStyle}" />
             <Frame Padding="10,0,0,0" />
-            <Label
-                x:Name="BattleModeValue"
-                HorizontalTextAlignment="Center"
-                Style="{StaticResource ValueStyleMicro}"
-                Text="" />
         </StackLayout>
     </NavigationPage.TitleView>
 
