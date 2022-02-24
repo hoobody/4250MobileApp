@@ -199,6 +199,15 @@
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
 
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                            Text="Defense: " />
+                        <Frame VerticalOptions="Center">
+                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                                x:Name="PopupDefenseSlider" />
+                        </Frame>
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                               x:Name="PopupDefenseLabel"/>
+                        
                     </StackLayout>
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
