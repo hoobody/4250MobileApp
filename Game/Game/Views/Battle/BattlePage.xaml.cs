@@ -865,7 +865,6 @@ namespace Game.Views
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             ShowBattleMode();
-            await Navigation.PushModalAsync(new NewRoundPage());
         }
 
         /// <summary>
