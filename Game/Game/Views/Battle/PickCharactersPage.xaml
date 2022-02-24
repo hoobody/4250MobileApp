@@ -101,15 +101,26 @@
                                 Style="{StaticResource CharacterSelectedTwo}"/>
                 </Frame>
 
-                <ImageButton Grid.Column="0" Grid.Row="1"
+                <Frame Grid.Column="0" Grid.Row="1"
+                    Style="{StaticResource CharacterSelectedFrame}">
+                    <ImageButton Grid.Column="0" Grid.Row="1"
                              x:Name="SelectedCharacterThree"
                              Style="{StaticResource CharacterSelectedButton}"/>
-                <ImageButton Grid.Column="1" Grid.Row="1"
+                </Frame>
+
+                <Frame Grid.Column="0" Grid.Row="1"
+                    Style="{StaticResource CharacterSelectedFrame}">
+                    <ImageButton Grid.Column="1" Grid.Row="1"
                              x:Name="SelectedCharacterFour"
                              Style="{StaticResource CharacterSelectedButton}"/>
-                <ImageButton Grid.Column="2" Grid.Row="1"
+                </Frame>
+
+                <Frame Grid.Column="0" Grid.Row="1"
+                    Style="{StaticResource CharacterSelectedFrame}">
+                    <ImageButton Grid.Column="2" Grid.Row="1"
                              x:Name="SelectedCharacterFive"
                              Style="{StaticResource CharacterSelectedButton}"/>
+                </Frame>
 
             </Grid>
 
