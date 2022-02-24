@@ -104,8 +104,30 @@ namespace Game.Views
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
                 MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
+                switch (i)
+                {
+                    case 0:
+                        FirstMonster.Source = data.ImageURI;
+                        break;
+                    case 1:
+                        SecondMonster.Source = data.ImageURI;
+                        break;
+                    case 2:
+                        ThirdMonster.Source = data.ImageURI;
+                        break;
+                    case 3:
+                        FourthMonster.Source = data.ImageURI;
+                        break;
+                    case 4:
+                        FifthMonster.Source = data.ImageURI;
+                        break;
+                    case 5:
+                        SixthMonster.Source = data.ImageURI;
+                        break;
+                    default:
+                        break;
+                }
                 i++;
-
 
                 if (i == 3)
                 {
