@@ -134,8 +134,8 @@ namespace Game.Views
         {
             CreateEngineCharacterList();
 
-            await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
-            _ = await Navigation.PopAsync();
+            await Navigation.PushAsync(new NewRoundPage());
+            
         }
 
         /// <summary>
