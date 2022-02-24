@@ -965,6 +965,7 @@ namespace Game.Views
                     MonsterTitle.IsVisible = true;
                     CharacterTitle.IsVisible = true;
                     CharacterBox.Scale = 1;
+                    BattleMonster.IsVisible = false;
                     break;
 
                 case BattleStateEnum.NewRound:
@@ -978,6 +979,8 @@ namespace Game.Views
                     AttackButton.IsVisible = false;
                     MoveButton.IsVisible = false;
                     AttributeButton.IsVisible = false;
+                    MonsterBox.RowSpacing = -10;
+                    BattleMonster.IsVisible = false;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -999,7 +1002,8 @@ namespace Game.Views
                     AttributeButton.IsVisible = true;
                     MonsterTitle.IsVisible = false;
                     CharacterTitle.IsVisible = false;
-                    CharacterBox.Scale = .75;
+                    CharacterBox.Scale = .75;                 
+                    BattleMonster.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
