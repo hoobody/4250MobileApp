@@ -232,9 +232,9 @@
                                         Text="Next Attack" />
 
                                     <Button
-                                        x:Name="AttributeButton"
+                                        x:Name="AbilityButton"
                                         IsVisible="False"
-                                        Text="Attribute" />
+                                        Text="Ability" />
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>

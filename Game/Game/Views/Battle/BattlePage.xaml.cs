@@ -978,7 +978,7 @@ namespace Game.Views
                     CharacterBox.Scale = 1;
                     AttackButton.IsVisible = false;
                     MoveButton.IsVisible = false;
-                    AttributeButton.IsVisible = false;
+                    AbilityButton.IsVisible = false;
                     MonsterBox.RowSpacing = -10;
                     BattleMonster.IsVisible = false;
                     break;
@@ -999,7 +999,7 @@ namespace Game.Views
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
                     MoveButton.IsVisible = true;
-                    AttributeButton.IsVisible = true;
+                    AbilityButton.IsVisible = true;
                     MonsterTitle.IsVisible = false;
                     CharacterTitle.IsVisible = false;
                     CharacterBox.Scale = .75;                 
