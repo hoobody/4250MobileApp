@@ -128,8 +128,16 @@
                 <Setter Property="FontSize" Value="Micro" />
             </Style>
 
-
-
+			<Style
+                x:Key="BattleBoxVS"
+                BasedOn="{StaticResource ValueStyleBasedMicro}"
+                TargetType="Label">
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="VerticalTextAlignment" Value="Center" />
+			</Style>
+			
             <Style
                 x:Key="HeaderStyle"
                 BasedOn="{StaticResource LabelBaseStyle}"
