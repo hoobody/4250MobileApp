@@ -74,7 +74,7 @@
                         <Frame
                         x:Name="BattlePlayerInfomationBox"
                         IsVisible="False"
-                        Style="{StaticResource PlayerBattleOuterFrame}" Margin="0,50,0,0">
+                        Style="{StaticResource PlayerBattleOuterFrame}" Margin="0,30,0,0">
 
                             <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
 
