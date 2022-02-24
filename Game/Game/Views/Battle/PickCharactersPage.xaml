@@ -137,7 +137,7 @@
             
             </StackLayout>
             <Frame  x:Name="PopupCharacterDetails"
-                AbsoluteLayout.LayoutBounds=".5, .5, 1 , .5"
+                AbsoluteLayout.LayoutBounds=".35, .7, .6 , .35"
                 AbsoluteLayout.LayoutFlags="All"
                 Style="{StaticResource CharacterDetailsFrame}">
                 <StackLayout Style="{StaticResource VerticalStack}">
