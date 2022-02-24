@@ -502,7 +502,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="IsEnabled" Value="False" />
-                <Setter Property="IsOpaque" Value="False"/>
+                <Setter Property="IsVisible" Value="False"/>
 
             </Style>
 
@@ -1171,9 +1171,45 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="BorderColor" Value="{StaticResource TransparentColor}" />
             </Style>
-            
-            
-            <!--  Grid  -->
+
+           
+            <Style TargetType="Frame"
+                x:Key="CharacterSelectedFrameOne"
+                BasedOn="{StaticResource CharacterSelectedFrame}">
+                <Setter Property="Margin" Value="0,40,231,0" />
+            </Style>
+
+                    <!--<Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedOne"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                        <Setter Property="Margin" Value="0,75,43,0" />
+                    </Style>
+
+                    <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedTwo"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                        <Setter Property="Margin" Value="208,75,0,0" />
+                    </Style>
+
+                    <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedThree"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                        <Setter Property="Margin" Value="0,-4,175,0" />
+                    </Style>
+
+                    <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedFour"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                        <Setter Property="Margin" Value="84,-8,0,0" />
+                    </Style>
+
+                    <Style TargetType="ImageButton"
+                   x:Key="CharacterSelectedFive"
+                   BasedOn="{StaticResource CharacterSelectedButton}">
+                        <Setter Property="Margin" Value="298,-2,0,0" />
+                    </Style>-->
+
+                    <!--  Grid  -->
             <Style x:Key="GridStyle" TargetType="Grid">
                 <Setter Property="ColumnSpacing" Value="1" />
                 <Setter Property="RowSpacing" Value="1" />
