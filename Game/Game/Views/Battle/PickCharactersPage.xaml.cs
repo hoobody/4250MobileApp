@@ -198,6 +198,31 @@ namespace Game.Views
                     break;
             }
         }
+        private void SelectedCharacterZero_Clicked(object sender, EventArgs e)
+        {
+
+            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(0);
+
+            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
+            PopupNameLabel.Text = data.Name;
+            PopupDescriptionLabel.Text = data.Description;
+
+            PopupHealthSlider.Value = data.MaxHealth;
+            PopupHealthLabel.Text = data.MaxHealth.ToString();
+
+            PopupAttackSlider.Value = data.GetAttackTotal;
+            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
+
+            PopupDefenseSlider.Value = data.GetDefenseTotal;
+            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
+
+            PopupSpeedSlider.Value = data.GetSpeedTotal;
+            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
+
+            PopupCharacterDetails.IsVisible = true;
+
+        }
+
 
     }
 }
