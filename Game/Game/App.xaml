@@ -207,6 +207,13 @@
             </Style>
 
             <Style
+                x:Key="LabelStyleXSEnd"
+                BasedOn="{StaticResource LabelStyleXS}"
+                TargetType="Label">
+                <Setter Property="VerticalOptions" Value="End" />
+            </Style>
+
+            <Style
                 x:Key="PickerValueLabel"
                 BasedOn="{StaticResource LabelStyle}"
                 TargetType="Label">
@@ -1323,16 +1330,19 @@
                 <Setter Property="MinimumTrackColor" Value="{StaticResource MinThumbColor}" />
                 <Setter Property="ThumbColor" Value="Transparent" />
                 <Setter Property="WidthRequest" Value="250" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
-            <Style x:Key="ViewOnlySlider" TargetType="Slider">
-                <Setter Property="HeightRequest" Value="36" />
+            <Style x:Key="ViewOnlySlider" 
+                   TargetType="Slider"
+                   BasedOn="{StaticResource SliderStyle}">
                 <Setter Property="InputTransparent" Value="True" />
-                <Setter Property="MaximumTrackColor" Value="{StaticResource MaxThumbColor}" />
-                <Setter Property="Minimum" Value="0" />
-                <Setter Property="MinimumTrackColor" Value="{StaticResource MinThumbColor}" />
-                <Setter Property="ThumbColor" Value="Transparent" />
-                <Setter Property="WidthRequest" Value="250" />
+            </Style>
+
+            <Style x:Key="ViewOnlySliderThin" 
+                   TargetType="Slider"
+                   BasedOn="{StaticResource ViewOnlySlider}">
+                <Setter Property="WidthRequest" Value="180" />
             </Style>
 
             <!--  ListView  -->
