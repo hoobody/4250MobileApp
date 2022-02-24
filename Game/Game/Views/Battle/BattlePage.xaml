@@ -45,7 +45,10 @@
                 VerticalOptions="FillAndExpand">
 
                 <!--  The Top of the Battle UI Holds the List of Players  -->
-                <StackLayout x:Name="TopPlayerDisplay" VerticalOptions="Start">
+                <StackLayout
+                    x:Name="TopPlayerDisplay"
+                    Style="{StaticResource VerticalStack}"
+                    VerticalOptions="Start">
                     <StackLayout
                         x:Name="GamePlayersTopDisplay"
                         HorizontalOptions="CenterAndExpand"
@@ -59,20 +62,28 @@
                             TextDecorations="Underline" />
                         <Grid
                             x:Name="CharacterBox"
+                            ColumnSpacing="50"
                             HorizontalOptions="CenterAndExpand"
-                            RowSpacing="20" />
+                            RowSpacing="50" />
 
                         <ImageButton
                             x:Name="StartBattleButton"
+                            Margin="0,60,0,0"
                             Clicked="StartButton_Clicked"
                             HeightRequest="65"
                             Source="begin_button.png" />
 
                         <Label
+                            IsVisible="True"
                             Style="{StaticResource MessageLargeStyle}"
                             Text="Monsters"
                             TextDecorations="Underline" />
-                        <Grid x:Name="MonsterBox" HorizontalOptions="CenterAndExpand" />
+                        <Grid
+                            x:Name="MonsterBox"
+                            HorizontalOptions="CenterAndExpand"
+                            IsVisible="True"
+                            RowSpacing="50"
+                            ColumnSpacing="50"/>
                     </StackLayout>
                 </StackLayout>
 
