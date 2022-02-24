@@ -67,7 +67,7 @@
                         <Grid x:Name="CharacterBox">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="115" />
-                                <RowDefinition Height="100" />
+                                <RowDefinition Height="75" />
                             </Grid.RowDefinitions>
                         </Grid>
 
@@ -95,7 +95,7 @@
                         <Grid x:Name="MonsterBox" IsVisible="True">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="115" />
-                                <RowDefinition Height="100" />
+                                <RowDefinition Height="75" />
                             </Grid.RowDefinitions>
                         </Grid>
                         <StackLayout>
