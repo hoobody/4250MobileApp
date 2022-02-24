@@ -93,41 +93,48 @@ namespace Game.Views
             var MonsterBoxList = MonsterBox.Children.ToList();
             foreach (var data in MonsterBoxList)
             {
-                _ = MonsterBox.Children.Remove(data);
+                _ = MonsterBox.Children.Remove(data);              
+            }
+
+            var BattleMonsterList = BattleMonster.Children.ToList();
+            foreach (var data in BattleMonsterList)
+            {
+                _ = BattleMonster.Children.Remove(data);
             }
 
             // Reset counters
             i = 0;
             j = 0;
-
+            int c = 2, r = 2;
             // Draw the Monsters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
                 MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
-                switch (i)
+                BattleMonster.Children.Add(PlayerInfoDisplayBox(data),c,r);
+                i++;
+
+                switch (c)
                 {
-                    case 0:
-                        FirstMonster.Source = data.ImageURI;
-                        break;
-                    case 1:
-                        SecondMonster.Source = data.ImageURI;
-                        break;
                     case 2:
-                        ThirdMonster.Source = data.ImageURI;
+                        c = 3;
                         break;
                     case 3:
-                        FourthMonster.Source = data.ImageURI;
+                        c = 1;
+                        r = 3;
+                        break;
+                    case 1:
+                        c = 4;
                         break;
                     case 4:
-                        FifthMonster.Source = data.ImageURI;
+                        c = 0;
+                        r = 4;
                         break;
-                    case 5:
-                        SixthMonster.Source = data.ImageURI;
+                    case 0:
+                        c = 5;
                         break;
                     default:
                         break;
                 }
-                i++;
 
                 if (i == 3)
                 {
@@ -138,8 +145,11 @@ namespace Game.Views
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
             CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
 
-            // Add one black PlayerInfoDisplayBox to hold space incase the list is empty
+            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
             MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
+
+            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
+            BattleMonster.Children.Add(PlayerInfoDisplayBox(null));
 
         }
 
