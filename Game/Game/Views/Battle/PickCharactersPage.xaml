@@ -143,14 +143,14 @@
                 <StackLayout Style="{StaticResource VerticalStack}">
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
-                        
+
                         <Frame Style="{StaticResource ImageFrame}">
                             <Image Style="{StaticResource ImageMediumStyle}" 
                                 x:Name="CharacterDetailsPotrait"/>
                         </Frame>
-                        
+
                         <StackLayout Style="{StaticResource VerticalStack}">
-                            
+
                             <StackLayout Style="{StaticResource HorizontalStackEnd}">
 
                                 <ImageButton Source="cancel_button.png" 
@@ -167,66 +167,53 @@
 
                         </StackLayout>
 
-                        
+
 
                     </StackLayout>
-                    
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}">
 
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+
+
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                             Text="Health: " />
-                        <Frame VerticalOptions="Center">
-                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                    <Frame VerticalOptions="Center">
+                        <Slider Style="{StaticResource ViewOnlySliderThin}"
                                 x:Name="PopupHealthSlider" />
-                        </Frame>
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    </Frame>
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                                x:Name="PopupHealthLabel"/>
 
-                    </StackLayout>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}">
-                        
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                             Text="Attack: " />
-                        <Frame VerticalOptions="Center">
-                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                    <Frame VerticalOptions="Center">
+                        <Slider Style="{StaticResource ViewOnlySliderThin}"
                                 x:Name="PopupAttackSlider" />
-                        </Frame>
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    </Frame>
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                                x:Name="PopupAttackLabel"/>
-                        
-                    </StackLayout>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}">
 
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                             Text="Defense: " />
-                        <Frame VerticalOptions="Center">
-                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                    <Frame VerticalOptions="Center">
+                        <Slider Style="{StaticResource ViewOnlySliderThin}"
                                 x:Name="PopupDefenseSlider" />
-                        </Frame>
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    </Frame>
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                                x:Name="PopupDefenseLabel"/>
-                        
-                    </StackLayout>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}">
 
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                             Text="Speed: " />
-                        <Frame VerticalOptions="Center">
-                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                    <Frame VerticalOptions="Center">
+                        <Slider Style="{StaticResource ViewOnlySliderThin}"
                                 x:Name="PopupSpeedSlider" />
-                        </Frame>
-                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                    </Frame>
+                    <Label Style="{StaticResource LabelStyleXSEnd}"
                                x:Name="PopupSpeedLabel"/>
-                        
-                    </StackLayout>
 
+                    
                 </StackLayout>
             </Frame>
-
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
