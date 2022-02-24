@@ -584,11 +584,16 @@
                 <Setter Property="Spacing" Value="1" />
             </Style>
 
-            <Style
-                x:Key="VerticalStack"
+            <Style x:Key="VerticalStack"
                 BasedOn="{StaticResource HorizontalStack}"
                 TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Vertical" />
+            </Style>
+
+            <Style x:Key="HorizontalStackEnd"
+                BasedOn="{StaticResource HorizontalStack}"
+                TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="End" />
             </Style>
 
             <Style x:Key="ItemPageStack" TargetType="StackLayout">
@@ -1213,6 +1218,8 @@
                 <Setter Property="Padding" Value="1" />
                 <Setter Property="CornerRadius" Value="5"/>
                 <Setter Property="IsVisible" Value="False" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="5" />
             </Style>
 
             <!--  Grid  -->
