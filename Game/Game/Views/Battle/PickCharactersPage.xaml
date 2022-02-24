@@ -76,7 +76,8 @@
                 </ScrollView>
 
                 <Grid x:Name="SelectedCharacters"
-                    Style="{StaticResource GridStyle}">
+                    Style="{StaticResource GridStyle}"
+                      BackgroundColor="OrangeRed">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
@@ -90,41 +91,41 @@
                         Source="character_select_cheese.png"
                         Style="{StaticResource CharacterSelecteCheese}"/>
 
-
                     <Frame Grid.Column="0" Grid.Row="0"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameZero}">
                         <ImageButton x:Name="SelectedCharacterZero"
-                            Style="{StaticResource CharacterSelectedZero}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterZero_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="0"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameOne}">
                         <ImageButton x:Name="SelectedCharacterOne"
-                            Style="{StaticResource CharacterSelectedOne}"/>
+                            Style="{StaticResource CharacterSelectedButton}"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="0"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameTwo}">
                         <ImageButton x:Name="SelectedCharacterTwo"
-                            Style="{StaticResource CharacterSelectedTwo}"/>
+                            Style="{StaticResource CharacterSelectedButton}"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameThree}">
                         <ImageButton x:Name="SelectedCharacterThree"
-                            Style="{StaticResource CharacterSelectedThree}"/>
+                            Style="{StaticResource CharacterSelectedButton}"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameFour}">
                         <ImageButton x:Name="SelectedCharacterFour"
-                            Style="{StaticResource CharacterSelectedFour}"/>
+                            Style="{StaticResource CharacterSelectedButton}"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
-                        Style="{StaticResource CharacterSelectedFrame}">
+                        Style="{StaticResource CharacterSelectedFrameFive}">
                         <ImageButton x:Name="SelectedCharacterFive"
-                            Style="{StaticResource CharacterSelectedFive}"/>
+                            Style="{StaticResource CharacterSelectedButton}"/>
                     </Frame>
 
                 </Grid>
@@ -138,7 +139,7 @@
             </StackLayout>
 
             <StackLayout x:Name="PopupCharacterDetails"
-                AbsoluteLayout.LayoutBounds=".5, .5,.5,.5"
+                AbsoluteLayout.LayoutBounds=".5, .5, .5,.5"
                 AbsoluteLayout.LayoutFlags="All"
                 Style="{StaticResource CharacterDetailsBox}">
 
