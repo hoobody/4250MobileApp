@@ -136,18 +136,19 @@
                     Source="begin_button.png" />
             
             </StackLayout>
-
-            <StackLayout x:Name="PopupCharacterDetails"
-                AbsoluteLayout.LayoutBounds=".5, .5, .5,.5"
+            <Frame  x:Name="PopupCharacterDetails"
+                AbsoluteLayout.LayoutBounds=".5, .5, 1, 1"
                 AbsoluteLayout.LayoutFlags="All"
-                Style="{StaticResource CharacterDetailsBox}">
+                Style="{StaticResource CharacterDetailsFrame}">
+                <StackLayout>
 
-                <Frame Style="{StaticResource ImageFrame}">
-                    <Image Style="{StaticResource ImageLargeStyle}" 
-                        x:Name="CharacterDetailsPotrait"/>
-                </Frame>
+                    <Frame Style="{StaticResource ImageFrame}">
+                        <Image Style="{StaticResource ImageMediumStyle}" 
+                            x:Name="CharacterDetailsPotrait"/>
+                    </Frame>
 
-            </StackLayout>
+                </StackLayout>
+            </Frame>
 
         </AbsoluteLayout>
     </ContentPage.Content>
