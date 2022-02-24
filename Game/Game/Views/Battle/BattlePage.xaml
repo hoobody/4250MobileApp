@@ -55,7 +55,6 @@
                         x:Name="GamePlayersTopDisplay"
                         HorizontalOptions="CenterAndExpand"
                         IsVisible="true"
-                        Style="{StaticResource VerticalStack}"
                         VerticalOptions="Start">
 
                         <Label
@@ -64,13 +63,11 @@
                             TextDecorations="Underline" />
                         <Grid
                             x:Name="CharacterBox"
-                            ColumnSpacing="50"
-                            HorizontalOptions="CenterAndExpand"
-                            RowSpacing="50" />
+                            RowSpacing="125" />
 
                         <ImageButton
                             x:Name="StartBattleButton"
-                            Margin="0,60,0,0"
+                            Margin="0,120,0,0"
                             Clicked="StartButton_Clicked"
                             HeightRequest="65"
                             Source="begin_button.png" />
@@ -80,12 +77,11 @@
                             Style="{StaticResource MessageLargeStyle}"
                             Text="Monsters"
                             TextDecorations="Underline" />
+                        
                         <Grid
                             x:Name="MonsterBox"
-                            HorizontalOptions="CenterAndExpand"
                             IsVisible="True"
-                            RowSpacing="50"
-                            ColumnSpacing="50"/>
+                            RowSpacing="125"/>
                     </StackLayout>
                 </StackLayout>
 
