@@ -10,125 +10,134 @@
     mc:Ignorable="d">
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+        <AbsoluteLayout Style="{StaticResource AbsoluteStyle}">
+            
+        
+            <StackLayout Style="{StaticResource OuterBoxStack}"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All">
 
-            <Frame Style="{StaticResource TitleFrame}">
-                <Label Style="{StaticResource CenterMessageMedStyle}" Text="Assemble the team..." />
-            </Frame>
-            <ScrollView VerticalScrollBarVisibility="Never"
-                        MinimumHeightRequest="200"
-                        Margin="0,0,0,5">
-                <CollectionView
-                    x:Name="CharactersListView"
-                    ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
-                    SelectionChanged="OnDatabaseCharacterItemSelected"
-                    SelectionMode="Single">
+                <Frame Style="{StaticResource TitleFrame}">
+                    <Label Style="{StaticResource CenterMessageMedStyle}" 
+                        Text="Assemble the team..." />
+                </Frame>
+                
+                <ScrollView VerticalScrollBarVisibility="Never"
+                    MinimumHeightRequest="200"
+                    Margin="0,0,0,5">
 
-                    <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" 
-                                         Span="2" 
-                                         VerticalItemSpacing="0"
-                                         HorizontalItemSpacing="5"/>
-                    </CollectionView.ItemsLayout>
+                    <CollectionView
+                        x:Name="CharactersListView"
+                        ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
+                        SelectionChanged="OnDatabaseCharacterItemSelected"
+                        SelectionMode="Single">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" 
+                                Span="2" 
+                                VerticalItemSpacing="0"
+                                HorizontalItemSpacing="5"/>
+                            
+                        </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
 
-                            <StackLayout Style="{StaticResource HorizontalPaddedBox}">
+                                <StackLayout Style="{StaticResource HorizontalPaddedBox}">
 
-                                <Frame Style="{StaticResource ImageFrameStart}">
-                                    <Image Source="{Binding HeadshotImageURI}"
-                                        Style="{StaticResource ImageMediumStyle}" />
-                                </Frame>
+                                    <Frame Style="{StaticResource ImageFrameStart}">
+                                        <Image Source="{Binding HeadshotImageURI}"
+                                            Style="{StaticResource ImageMediumStyle}" />
+                                    </Frame>
 
-                                <StackLayout Style="{StaticResource LightlySpacedBoxStart}">
+                                    <StackLayout Style="{StaticResource LightlySpacedBoxStart}">
                                     
-                                    <Label Style="{StaticResource TitleStyle}"
+                                        <Label Style="{StaticResource TitleStyle}"
                                             Text="{Binding CodeName}"/>
-                                    <Label Style="{StaticResource TinyDescriptionStyle}"
-                                        Text="{Binding Description}"/>
+                                        <Label Style="{StaticResource TinyDescriptionStyle}"
+                                            Text="{Binding Description}"/>
 
-                                    <StackLayout Style="{StaticResource HorizontalStack}">
+                                        <StackLayout Style="{StaticResource HorizontalStack}">
 
-                                        <Label Style="{StaticResource ValueStyleXS}"
-                                            Text="Level:" />
+                                            <Label Style="{StaticResource ValueStyleXS}"
+                                                Text="Level:" />
 
-                                        <Label Style="{StaticResource ValueStyleXS}"
-                                            Text="{Binding Level}"/>
+                                            <Label Style="{StaticResource ValueStyleXS}"
+                                                Text="{Binding Level}"/>
+
+                                        </StackLayout>
 
                                     </StackLayout>
 
                                 </StackLayout>
 
-                            </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </ScrollView>
 
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </ScrollView>
+                <Grid x:Name="SelectedCharacters"
+                    Style="{StaticResource GridStyle}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-            <Grid x:Name="SelectedCharacters"
-                Style="{StaticResource GridStyle}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-
-                <Image Grid.Row="0" Grid.Column="0"
-                    Grid.RowSpan="2"
-                    Source="character_select_cheese.png"
-                    Style="{StaticResource CharacterSelecteCheese}"/>
+                    <Image Grid.Row="0" Grid.Column="0"
+                        Grid.RowSpan="2"
+                        Source="character_select_cheese.png"
+                        Style="{StaticResource CharacterSelecteCheese}"/>
 
 
-                <Frame Grid.Column="0" Grid.Row="0"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton x:Name="SelectedCharacterZero"
-                        Style="{StaticResource CharacterSelectedZero}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="0"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterZero"
+                            Style="{StaticResource CharacterSelectedZero}"/>
+                    </Frame>
 
-                <Frame Grid.Column="0" Grid.Row="0"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton x:Name="SelectedCharacterOne"
-                        Style="{StaticResource CharacterSelectedOne}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="0"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterOne"
+                            Style="{StaticResource CharacterSelectedOne}"/>
+                    </Frame>
 
-                <Frame Grid.Column="0" Grid.Row="0"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton x:Name="SelectedCharacterTwo"
-                                Style="{StaticResource CharacterSelectedTwo}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="0"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterTwo"
+                            Style="{StaticResource CharacterSelectedTwo}"/>
+                    </Frame>
 
-                <Frame Grid.Column="0" Grid.Row="1"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton Grid.Column="0" Grid.Row="1"
-                             x:Name="SelectedCharacterThree"
-                             Style="{StaticResource CharacterSelectedThree}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="1"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterThree"
+                            Style="{StaticResource CharacterSelectedThree}"/>
+                    </Frame>
 
-                <Frame Grid.Column="0" Grid.Row="1"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton Grid.Column="1" Grid.Row="1"
-                             x:Name="SelectedCharacterFour"
-                             Style="{StaticResource CharacterSelectedFour}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="1"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterFour"
+                            Style="{StaticResource CharacterSelectedFour}"/>
+                    </Frame>
 
-                <Frame Grid.Column="0" Grid.Row="1"
-                    Style="{StaticResource CharacterSelectedFrame}">
-                    <ImageButton Grid.Column="2" Grid.Row="1"
-                             x:Name="SelectedCharacterFive"
-                             Style="{StaticResource CharacterSelectedFive}"/>
-                </Frame>
+                    <Frame Grid.Column="0" Grid.Row="1"
+                        Style="{StaticResource CharacterSelectedFrame}">
+                        <ImageButton x:Name="SelectedCharacterFive"
+                            Style="{StaticResource CharacterSelectedFive}"/>
+                    </Frame>
 
-            </Grid>
+                </Grid>
 
-            <ImageButton
-                x:Name="BeginBattleButton"
-                Clicked="BattleButton_Clicked"
-                IsEnabled="False"
-                Source="begin_button.png" />
-        </StackLayout>
+                <ImageButton
+                    x:Name="BeginBattleButton"
+                    Clicked="BattleButton_Clicked"
+                    IsEnabled="False"
+                    Source="begin_button.png" />
+            
+            </StackLayout>
+
+
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
