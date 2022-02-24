@@ -192,48 +192,33 @@
 
 
                             </StackLayout>
-                            <StackLayout HorizontalOptions="CenterAndExpand" Style="{StaticResource VerticalStack}" Margin="0,-75,0,0">
+                            <StackLayout HorizontalOptions="CenterAndExpand" Style="{StaticResource VerticalStack}" Margin="0,-350,0,0">
                                 <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
-                                    <Image
-                                        Margin="0,0,0,10"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
-
-                                    <Image
-                                        Margin="0,-130,10,0"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
-
-                                    <Image
-                                        Margin="0,-190,5,0"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
-
-                                    <Image
-                                        Margin="5,-190,0,0"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
-
-
-                                    <Image
-                                        Margin="10,-130,0,0"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
-
-                                    <Image
-                                        Margin="0,0,0,10"
-                                        HeightRequest="50"
-                                        Source="icon_add.png"
-                                        WidthRequest="50" />
+                                    <Grid                                 
+                                        x:Name="BattleMonster"
+                                        RowSpacing="25"
+                                        ColumnSpacing="25">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="50" />
+                                            <ColumnDefinition Width="50" />
+                                        </Grid.ColumnDefinitions>
+                                    </Grid>
 
                                 </StackLayout>
                                 <StackLayout
-                                    Margin="0,-75,0,0"
+                                    Margin="0,-125,0,0"
                                     Style="{StaticResource VerticalStack}" HorizontalOptions="Center"
                                     WidthRequest="100">
                                     <Button
