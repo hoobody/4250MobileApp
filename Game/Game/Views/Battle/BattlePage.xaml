@@ -64,7 +64,7 @@
                             Text="Characters"
                             TextDecorations="Underline" />
 
-                        <Grid x:Name="CharacterBox">
+                        <Grid x:Name="CharacterBox" RowSpacing="-20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="115" />
                                 <RowDefinition Height="75" />
@@ -92,7 +92,7 @@
                             Text="Monsters"
                             TextDecorations="Underline" />
 
-                        <Grid x:Name="MonsterBox" IsVisible="True">
+                        <Grid x:Name="MonsterBox" IsVisible="True" RowSpacing="-20">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="115" />
                                 <RowDefinition Height="75" />
@@ -192,12 +192,15 @@
 
 
                             </StackLayout>
-                            <StackLayout HorizontalOptions="CenterAndExpand" Style="{StaticResource VerticalStack}" Margin="0,-350,0,0">
+                            <StackLayout
+                                Margin="0,-350,0,0"
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource VerticalStack}">
                                 <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
-                                    <Grid                                 
+                                    <Grid
                                         x:Name="BattleMonster"
-                                        RowSpacing="25"
-                                        ColumnSpacing="25">
+                                        ColumnSpacing="25"
+                                        RowSpacing="25">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50" />
                                             <RowDefinition Height="50" />
@@ -219,7 +222,8 @@
                                 </StackLayout>
                                 <StackLayout
                                     Margin="0,-125,0,0"
-                                    Style="{StaticResource VerticalStack}" HorizontalOptions="Center"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource VerticalStack}"
                                     WidthRequest="100">
                                     <Button
                                         x:Name="MoveButton"
