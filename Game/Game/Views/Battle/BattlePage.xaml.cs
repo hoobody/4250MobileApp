@@ -71,6 +71,7 @@ namespace Game.Views
         public void DrawPlayerBoxes()
         {
             int i = 0, j = 0; // Counters
+
             var CharacterBoxList = CharacterBox.Children.ToList();
             foreach (var data in CharacterBoxList)
             {
@@ -139,11 +140,10 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["PlayerBattleMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 Source = data.ImageURI
             };
 
-            // Hookup the Label
             var PlayerNameLabel = new Label()
             {
                 Text = data.Name,
@@ -154,12 +154,16 @@ namespace Game.Views
                 LineBreakMode = LineBreakMode.TailTruncation,
                 CharacterSpacing = 0,
                 LineHeight = 1,
-                MaxLines = 3,
+                MaxLines = 5,
             };
+
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
-                Style = (Style)Application.Current.Resources["PlayerBattleDisplayBox"],
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
@@ -886,6 +890,7 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
+            MonsterBox.IsVisible = false;
         }
 
         /// <summary>
@@ -924,12 +929,23 @@ namespace Game.Views
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
+                    MonsterBox.IsVisible = true;
+                    MonsterTitle.IsVisible = true;
+                    CharacterTitle.IsVisible = true;
+                    CharacterBox.Scale = 1;
                     break;
 
                 case BattleStateEnum.NewRound:
                     _ = UpdateMapGrid();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
+                    MonsterBox.IsVisible = true;
+                    MonsterTitle.IsVisible = true;
+                    CharacterTitle.IsVisible = true;
+                    CharacterBox.Scale = 1;
+                    AttackButton.IsVisible = false;
+                    MoveButton.IsVisible = false;
+                    AttributeButton.IsVisible = false;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -947,6 +963,11 @@ namespace Game.Views
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
+                    MoveButton.IsVisible = true;
+                    AttributeButton.IsVisible = true;
+                    MonsterTitle.IsVisible = false;
+                    CharacterTitle.IsVisible = false;
+                    CharacterBox.Scale = .75;
                     break;
 
                 // Based on the State disable buttons
