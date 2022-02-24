@@ -6,7 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="BrowseItemsPage"
-    Title="{Binding Title}"
+    Title="Character Selection"
     mc:Ignorable="d">
 
     <ContentPage.Content>
@@ -22,15 +22,14 @@
                         Text="Assemble the team..." />
                 </Frame>
                 
-                <ScrollView VerticalScrollBarVisibility="Never"
-                    MinimumHeightRequest="200"
-                    Margin="0,0,0,5">
+                <ScrollView Style="{StaticResource CharacterSelectionScroll}">
 
                     <CollectionView
                         x:Name="CharactersListView"
                         ItemsSource="{Binding DatabaseCharacterList, Mode=OneWay}"
                         SelectionChanged="OnDatabaseCharacterItemSelected"
                         SelectionMode="Single">
+                        
                         <CollectionView.ItemsLayout>
                             <GridItemsLayout Orientation="Vertical" 
                                 Span="2" 
@@ -136,6 +135,8 @@
                     Source="begin_button.png" />
             
             </StackLayout>
+            
+            <!--Popup for character details-->
             <Frame  x:Name="PopupCharacterDetails"
                 AbsoluteLayout.LayoutBounds=".35, .7, .6 , .35"
                 AbsoluteLayout.LayoutFlags="All"

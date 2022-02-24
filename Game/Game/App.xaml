@@ -103,6 +103,12 @@
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
             </Style>
 
+            <Style TargetType="ScrollView"
+                   x:Key="CharacterSelectionScroll"
+                   BasedOn="{StaticResource ScrollStyle}">
+                <Setter Property="Margin" Value="0,0,0,5"/>
+                <Setter Property="MinimumHeightRequest" Value="200"/>
+            </Style>
             <!--  Label  -->
 
             <Style
