@@ -1197,17 +1197,17 @@
                 <Setter Property="Margin" Value="0,-4,175,0" />
             </Style>
 
-                    <!--<Style TargetType="ImageButton"
-                   x:Key="CharacterSelectedFour"
-                   BasedOn="{StaticResource CharacterSelectedButton}">
-                        <Setter Property="Margin" Value="84,-8,0,0" />
-                    </Style>-->
+            <Style TargetType="Frame"
+                x:Key="CharacterSelectedFrameFour"
+                BasedOn="{StaticResource CharacterSelectedFrame}">
+                <Setter Property="Margin" Value="84,-8,0,0" />
+            </Style>
 
-                    <!--<Style TargetType="ImageButton"
-                   x:Key="CharacterSelectedFive"
-                   BasedOn="{StaticResource CharacterSelectedButton}">
-                        <Setter Property="Margin" Value="298,-2,0,0" />
-                    </Style>-->
+            <Style TargetType="Frame"
+                x:Key="CharacterSelectedFrameFive"
+                BasedOn="{StaticResource CharacterSelectedFrame}">
+                <Setter Property="Margin" Value="298,-2,0,0" />
+            </Style>
 
                     <!--  Grid  -->
             <Style x:Key="GridStyle" TargetType="Grid">
