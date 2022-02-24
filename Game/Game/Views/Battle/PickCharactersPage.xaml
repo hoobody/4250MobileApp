@@ -172,7 +172,16 @@
                     </StackLayout>
                     
                     <StackLayout Style="{StaticResource HorizontalStack}">
-                    
+
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                            Text="Health: " />
+                        <Frame VerticalOptions="Center">
+                            <Slider Style="{StaticResource ViewOnlySliderThin}"
+                                x:Name="PopupHealthSlider" />
+                        </Frame>
+                        <Label Style="{StaticResource LabelStyleXSEnd}"
+                               x:Name="PopupHealthLabel"/>
+
                     </StackLayout>
 
                     <StackLayout Style="{StaticResource HorizontalStack}">
