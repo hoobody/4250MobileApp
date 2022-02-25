@@ -20,8 +20,10 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            int roundCount = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount;
+
             // Update the Round Count
-            TotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
+            TotalRound.Text = "Round " + roundCount.ToString() + "Cleared!";
 
             // Update the Found Number
             TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();

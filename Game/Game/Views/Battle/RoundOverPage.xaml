@@ -10,7 +10,7 @@
         VerticalOptions="FillAndExpand"
         >
 
-            <StackLayout Style="{StaticResource VerticalStack}"
+            <StackLayout Style="{StaticResource OuterBoxStack}"
                     AbsoluteLayout.LayoutBounds="1,1,1,1" 
                     AbsoluteLayout.LayoutFlags="All">
 
@@ -18,16 +18,14 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}">
 
-                        <Label Text="Round Cleared" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
+                        <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label Text="Round : " Style="{StaticResource MessageStyle}"/>
-                            <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
-                        </StackLayout>
+                        <Image Source="game_logo.png"
+                               Style="{StaticResource GameLogoLgStyle}"/>
 
-                        <Label Text="Characters" Style="{StaticResource MessageStyle}"/>
+                        <Label Text="Party:" Style="{StaticResource MessageStyle}"/>
+                        
                         <FlexLayout x:Name="CharacterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
