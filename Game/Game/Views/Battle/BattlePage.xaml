@@ -282,8 +282,13 @@
                     Padding="10"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Thank you for Playing" />
+                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Game Over" />
+                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Thank you for Playing!" />
 
+                    <StackLayout Style="{StaticResource HorizontalStack}" Spacing="5" HorizontalOptions="Center">
+                        <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Score:" />
+                        <Label Style="{StaticResource CenterMessageLargeStyle}" Text="0" x:Name="TotalScore" />
+                    </StackLayout>
                     <Label
                         Padding="20"
                         HorizontalTextAlignment="Center"

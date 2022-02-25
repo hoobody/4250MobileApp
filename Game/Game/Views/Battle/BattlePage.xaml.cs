@@ -980,13 +980,14 @@ namespace Game.Views
                     AbilityButton.IsVisible = false;
                     MonsterBox.RowSpacing = -10;
                     CharacterGrid.IsVisible = false;
+                    CharacterBox.IsVisible = true;
                     break;
 
                 case BattleStateEnum.GameOver:
                     // Hide the Game Board
                     GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-
+                    TotalScore.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
                     // Show the Game Over Display
                     GameOverDisplay.IsVisible = true;
                     break;
