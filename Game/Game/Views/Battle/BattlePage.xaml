@@ -57,6 +57,9 @@
                         HorizontalOptions="CenterAndExpand"
                         IsVisible="true"
                         VerticalOptions="Start">
+
+                        <Image x:Name="Gem" Source="gem.png"  Style="{StaticResource ImageBattleSmallStyle}"/>
+
                         <StackLayout>
                             <Label
                                 x:Name="CharacterTitle"
@@ -197,7 +200,7 @@
                                         Margin="-20,0,0,0"
                                         ColumnSpacing="25"
                                         RowSpacing="25"
-                                        Scale=".75">
+                                        Scale=".9">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50" />
                                             <RowDefinition Height="50" />
