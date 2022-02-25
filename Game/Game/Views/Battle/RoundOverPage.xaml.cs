@@ -23,13 +23,13 @@ namespace Game.Views
             int roundCount = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount;
 
             // Update the Round Count
-            TotalRound.Text = "Round " + roundCount.ToString() + "Cleared!";
+            TotalRound.Text = "Round " + roundCount.ToString() + " Cleared!";
 
             // Update the Found Number
             TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
 
             // Update the Selected Number, this gets updated later when selected refresh happens
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
 
             DrawCharacterList();
 
@@ -66,10 +66,10 @@ namespace Game.Views
         public void DrawItemLists()
         {
             DrawDroppedItems();
-            DrawSelectedItems();
+            //DrawSelectedItems();
 
             // Only need to update the selected, the Dropped is set in the constructor
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
         }
 
         /// <summary>
@@ -93,20 +93,20 @@ namespace Game.Views
         /// <summary>
         /// Add the Dropped Items to the Display
         /// </summary>
-        public void DrawSelectedItems()
-        {
-            // Clear and Populate the Dropped Items
-            var FlexList = ItemListSelectedFrame.Children.ToList();
-            foreach (var data in FlexList)
-            {
-                _ = ItemListSelectedFrame.Children.Remove(data);
-            }
+        //public void DrawSelectedItems()
+        //{
+        //    // Clear and Populate the Dropped Items
+        //    var FlexList = ItemListSelectedFrame.Children.ToList();
+        //    foreach (var data in FlexList)
+        //    {
+        //        _ = ItemListSelectedFrame.Children.Remove(data);
+        //    }
 
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
-            {
-                ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
-            }
-        }
+        //    foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
+        //    {
+        //        ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
+        //    }
+        //}
 
         /// <summary>
         /// Look up the Item to Display
@@ -180,7 +180,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
                 Source = data.ImageURI
             };
 

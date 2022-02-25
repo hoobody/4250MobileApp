@@ -16,7 +16,7 @@
 
                 <ScrollView x:Name="ScrollView">
 
-                    <StackLayout Style="{StaticResource VerticalStack}">
+                    <StackLayout Style="{StaticResource SpacedBox}">
 
 
                         <Label Text="0" x:Name="TotalRound" Style="{StaticResource MessageStyle}"/>
@@ -24,14 +24,33 @@
                         <Image Source="game_logo.png"
                                Style="{StaticResource GameLogoLgStyle}"/>
 
-                        <Label Text="Party:" Style="{StaticResource MessageStyle}"/>
+                        <Label Text="Party:" Style="{StaticResource MessageStyle}"
+                               Margin="0,20,0,0"/>
                         
                         <FlexLayout x:Name="CharacterListFrame"
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                        <Label Text="Items Found" Style="{StaticResource MessageStyle}"/>
+
+                        <Grid Margin="0,30,0,0">
+                        
+                            <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                                         Padding="20">
+                                <Label Style="{StaticResource LabelCenterStyle}"
+                                    Text="Select an item to equip it, &#10; or press the Auto-Equip button"/>
+
+                            </StackLayout>
+
+                            <Frame Margin="0,-20,0,0"
+                                   BorderColor="Black"
+                                   Padding="5"
+                                   BackgroundColor="{StaticResource TriciaryBackgroundColor}">
+                                <Label Text="Items Found" Style="{StaticResource TitleCenterStyle}"/>
+                            </Frame>
+
+                        </Grid>
+                    
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
                             <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
@@ -41,20 +60,16 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                        <Button Clicked="AutoAssignButton_Clicked" Text="Assign Items"/>
+                        <StackLayout Style="{StaticResource HorizontalSpacedBox}">
+                            
+                            <ImageButton Source="autobattle_button.png"
+                                Clicked="AutoAssignButton_Clicked"/>
 
-                        <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
-                        <StackLayout Style="{StaticResource HorizontalStack}">
-                            <Label Text="Selected : " Style="{StaticResource LabelStyle}"/>
-                            <Label Text="0" x:Name="TotalSelected" Style="{StaticResource ValueStyle}"/>
+                            <ImageButton Source="begin_button.png"
+                                Clicked="CloseButton_Clicked"/>
+
                         </StackLayout>
-                        <FlexLayout x:Name="ItemListSelectedFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
-
-                        <Button Clicked="CloseButton_Clicked" Text="Close"/>
-
+                        
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
