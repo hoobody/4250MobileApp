@@ -109,17 +109,19 @@
                 Text="Really delete this?" />
 
             <StackLayout Style="{StaticResource HorizontalSpacedBox}">
-                
-                <Button
-                    Clicked="Cancel_Clicked"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="Cancel" />
 
-                <Button
-                    Clicked="Delete_Clicked"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="Delete" />
-                
+                <ImageButton
+                        Clicked="Cancel_Clicked"
+                        Source="cancel_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
+
+                <ImageButton
+                        Clicked="Delete_Clicked"
+                        Source="delete_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
+
             </StackLayout>
             
         </StackLayout>
