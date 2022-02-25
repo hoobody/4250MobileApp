@@ -19,17 +19,18 @@
                 VerticalOptions="Center">
                 
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="75" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Label 
                     Grid.Row="0" Grid.Column="1"
                     Text="Battle Mode" 
-                    Style="{DynamicResource LabelStyle}"/>
+                    Style="{DynamicResource LabelStyle}"
+                    HorizontalOptions="Start"/>
 
                 <Picker 
                     Grid.Row="0" Grid.Column="2"
@@ -55,7 +56,7 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="250"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
@@ -125,7 +126,7 @@
                     Toggled="AllowMonsterItems_Toggled"/>
             </Grid>
 
-            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="CenterAndExpand"/>
+            <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="Center"/>
 
         </StackLayout>
     </ContentPage.Content>
