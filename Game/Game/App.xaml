@@ -266,7 +266,8 @@
                 BasedOn="{StaticResource ValueStyleMicro}"
                 TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="LineBreakMode" Value="NoWrap" />
+                <Setter Property="LineBreakMode" Value="WordWrap" />
+                <Setter Property="MaxLines" Value="2" />
             </Style>
 
             <Style
@@ -374,7 +375,7 @@
 		        TargetType="Label">
 				<Setter Property="HorizontalOptions" Value="FillAndExpand" />
 				<Setter Property="CharacterSpacing" Value="1" />
-				<Setter Property="FontSize" Value="12" />
+				<Setter Property="FontSize" Value="Micro" />
 				<Setter Property="LineBreakMode" Value="WordWrap" />
 				<Setter Property="MaxLines" Value="3" />
 				<Setter Property="LineHeight" Value="1" />
@@ -982,7 +983,7 @@
             </Style>
 
             <Style x:Key="PlayerBattleOuterFrame" TargetType="Frame">
-                <Setter Property="HeightRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="175" />
                 <Setter Property="WidthRequest" Value="450" />
                 <Setter Property="Margin" Value="0" />
                 <Setter Property="Padding" Value="20" />
