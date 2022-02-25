@@ -220,7 +220,7 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
+       /* [Test]
         public void RoundOverPage_DrawSelectedItems_Valid_Should_Pass()
         {
             // Arrange
@@ -240,7 +240,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
         [Test]
         public void RoundOverPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
         {
