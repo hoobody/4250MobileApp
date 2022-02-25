@@ -267,7 +267,7 @@
                 TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
-                <Setter Property="MaxLines" Value="2" />
+                <Setter Property="MaxLines" Value="1" />
             </Style>
 
             <Style
