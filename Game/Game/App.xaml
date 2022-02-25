@@ -909,8 +909,8 @@
                 x:Key="BattleUIBottomBox"
                 BasedOn="{StaticResource VerticalStack}"
                 TargetType="StackLayout">
-                <Setter Property="HeightRequest" Value="250" />
-                <Setter Property="MinimumHeightRequest" Value="250" />
+                <Setter Property="HeightRequest" Value="300" />
+                <Setter Property="MinimumHeightRequest" Value="300" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="VerticalOptions" Value="EndAndExpand" />
             </Style>
