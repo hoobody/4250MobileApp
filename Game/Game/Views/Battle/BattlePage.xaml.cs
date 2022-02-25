@@ -924,6 +924,7 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
+            Gem.IsVisible = false;
         }
 
         /// <summary>
@@ -981,6 +982,7 @@ namespace Game.Views
                     MonsterBox.RowSpacing = -10;
                     CharacterGrid.IsVisible = false;
                     CharacterBox.IsVisible = true;
+                    Gem.IsVisible = false;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -1004,6 +1006,7 @@ namespace Game.Views
                     CharacterTitle.IsVisible = false;
                     CharacterBox.IsVisible = false;
                     CharacterGrid.IsVisible = true;
+                    Gem.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
