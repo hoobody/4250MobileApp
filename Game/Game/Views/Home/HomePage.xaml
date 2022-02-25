@@ -24,12 +24,13 @@
                                 HorizontalOptions="Center" 
                                 Padding="70,5,70,0">
 
-                    <Label  Text="Welcome Agent"
+                    <Label  Text="Welcome, Agent"
                             Style="{StaticResource CenterMessageStyle}"
                             FontFamily="OCRFont"
-                            FontSize="Micro"
+                            FontSize="Large"
                             LineBreakMode="WordWrap"
-                            MaxLines="5"/>
+                            MaxLines="5"
+                            Margin="10"/>
 
                     <ImageButton Clicked="GameButton_Clicked"
                                  Source="begin_button.png"
