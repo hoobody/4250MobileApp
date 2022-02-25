@@ -200,6 +200,7 @@
     <Content Include="filler_speed_shoes.png" />
     <Content Include="filler_spy.png" />
     <Content Include="filler_survey_officer.png" />
+    <Content Include="gem.png" />
     <Content Include="headquarters_button.png" />
     <Content Include="items_button.png" />
     <Content Include="mission_button.png" />
