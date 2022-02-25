@@ -187,7 +187,7 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="ScaleY" Value="1.75" />
                 <Setter Property="ScaleX" Value="1" />
-                <Setter Property="Text" Value="█║█ ║▌║█║▌║▌█│║▌" />
+                <Setter Property="Text" Value="█║█ ║▌║█║▌█│║▌" />
             </Style>
 
             <Style
