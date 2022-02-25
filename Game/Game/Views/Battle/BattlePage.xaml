@@ -295,7 +295,7 @@
                         LineBreakMode="WordWrap"
                         MaxLines="5"
                         Style="{StaticResource MessageStyle}"
-                        Text="Check your score, or click Exit and return soon" />
+                        Text="Click for more details, or click Exit and return soon" />
 
                     <Button
                         x:Name="ShowScoreButton"
