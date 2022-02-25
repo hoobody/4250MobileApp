@@ -16,7 +16,7 @@
 
                 <Label
                     Style="{StaticResource MessageLargeStyle}"
-                    Text="Characters"
+                    Text="Agents"
                     TextDecorations="Underline" />
 
                 <CollectionView
@@ -99,7 +99,7 @@
 
                 <Label
                     Style="{StaticResource MessageLargeStyle}"
-                    Text="Monsters"
+                    Text="Enemies"
                     TextDecorations="Underline" />
                 
                 <Grid
