@@ -180,7 +180,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageLargeStyle"],
                 Source = data.ImageURI
             };
 
@@ -188,7 +188,7 @@ namespace Game.Views
             var PlayerLevelLabel = new Label
             {
                 Text = "Level : " + data.Level,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                Style = (Style)Application.Current.Resources["ValueStyleXS"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
@@ -198,28 +198,15 @@ namespace Game.Views
                 MaxLines = 1,
             };
 
-            // Add the HP
-            var PlayerHPLabel = new Label
-            {
-                Text = "HP : " + data.GetCurrentHealthTotal,
-                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 1,
-                LineHeight = 1,
-                MaxLines = 1,
-            };
 
             var PlayerNameLabel = new Label()
             {
                 Text = data.Name,
-                Style = (Style)Application.Current.Resources["ValueStyle"],
-                HorizontalOptions = LayoutOptions.Center,
+                Style = (Style)Application.Current.Resources["ValueStyleMicro"],
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalTextAlignment = TextAlignment.Center,
                 Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
+                LineBreakMode = LineBreakMode.WordWrap,
                 CharacterSpacing = 1,
                 LineHeight = 1,
                 MaxLines = 1,
@@ -236,7 +223,6 @@ namespace Game.Views
                     PlayerImage,
                     PlayerNameLabel,
                     PlayerLevelLabel,
-                    PlayerHPLabel,
                 },
             };
 
