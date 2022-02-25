@@ -445,6 +445,15 @@
             </Style>
 
             <Style
+                x:Key="SquareButton"
+                BasedOn="{StaticResource ImageLargeStyle}"
+                TargetType="Image">
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="WidthRequest" Value="70" />
+                <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style
                 x:Key="GamePageButton"
                 BasedOn="{StaticResource ImageLargeStyle}"
                 TargetType="Image">
