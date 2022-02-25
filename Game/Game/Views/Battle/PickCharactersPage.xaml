@@ -99,31 +99,36 @@
                     <Frame Grid.Column="0" Grid.Row="0"
                         Style="{StaticResource CharacterSelectedFrameOne}">
                         <ImageButton x:Name="SelectedCharacterOne"
-                            Style="{StaticResource CharacterSelectedButton}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterOne_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="0"
                         Style="{StaticResource CharacterSelectedFrameTwo}">
                         <ImageButton x:Name="SelectedCharacterTwo"
-                            Style="{StaticResource CharacterSelectedButton}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterTwo_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameThree}">
                         <ImageButton x:Name="SelectedCharacterThree"
-                            Style="{StaticResource CharacterSelectedButton}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterThree_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameFour}">
                         <ImageButton x:Name="SelectedCharacterFour"
-                            Style="{StaticResource CharacterSelectedButton}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterFour_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameFive}">
                         <ImageButton x:Name="SelectedCharacterFive"
-                            Style="{StaticResource CharacterSelectedButton}"/>
+                            Style="{StaticResource CharacterSelectedButton}"
+                            Clicked="SelectedCharacterFive_Clicked"/>
                     </Frame>
 
                 </Grid>
