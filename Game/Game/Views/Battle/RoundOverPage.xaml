@@ -24,7 +24,7 @@
                         <Image Source="game_logo.png"
                                Style="{StaticResource GameLogoLgStyle}"/>
 
-                        <Label Text="Party:" Style="{StaticResource MessageStyle}"
+                        <Label Text="Agents:" Style="{StaticResource MessageStyle}"
                                Margin="0,20,0,0"/>
                         
                         <FlexLayout x:Name="CharacterListFrame"
