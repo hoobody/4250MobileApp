@@ -193,7 +193,7 @@
                                 Style="{StaticResource VerticalStack}">
                                 <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
                                     <Grid
-                                        x:Name="BattleMonster"
+                                        x:Name="CharacterGrid"
                                         ColumnSpacing="25"
                                         RowSpacing="25" Scale=".75" Margin="-20,0,0,0">
                                         <Grid.RowDefinitions>

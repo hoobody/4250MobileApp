@@ -71,6 +71,7 @@ namespace Game.Views
         public void DrawPlayerBoxes()
         {
             int i = 0, j = 0; // Counters
+            int c = 2, r = 2; // Grid Locations
 
             var CharacterBoxList = CharacterBox.Children.ToList();
             foreach (var data in CharacterBoxList)
@@ -78,39 +79,18 @@ namespace Game.Views
                 _ = CharacterBox.Children.Remove(data);
             }
 
+
+            var CharacterGridList = CharacterGrid.Children.ToList();
+            foreach (var data in CharacterGridList)
+            {
+                _ = CharacterGrid.Children.Remove(data);
+            }
+
             // Draw the Characters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
                 CharacterBox.Children.Add(PlayerInfoDisplayBox(data),i % 3, j);
-                i++;
-
-                if (i == 3)
-                {
-                    j++;
-                }
-            }
-
-            var MonsterBoxList = MonsterBox.Children.ToList();
-            foreach (var data in MonsterBoxList)
-            {
-                _ = MonsterBox.Children.Remove(data);              
-            }
-
-            var BattleMonsterList = BattleMonster.Children.ToList();
-            foreach (var data in BattleMonsterList)
-            {
-                _ = BattleMonster.Children.Remove(data);
-            }
-
-            // Reset counters
-            i = 0;
-            j = 0;
-            int c = 2, r = 2;
-            // Draw the Monsters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-            {
-                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
-                BattleMonster.Children.Add(PlayerInfoDisplayBox(data),c,r);
+                CharacterGrid.Children.Add(PlayerInfoDisplayBox(data), c, r);
                 i++;
 
                 switch (c)
@@ -142,6 +122,28 @@ namespace Game.Views
                 }
             }
 
+            var MonsterBoxList = MonsterBox.Children.ToList();
+            foreach (var data in MonsterBoxList)
+            {
+                _ = MonsterBox.Children.Remove(data);              
+            }
+
+            // Reset counters
+            i = 0;
+            j = 0;
+
+            // Draw the Monsters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            {
+                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
+                i++;
+
+                if (i == 3)
+                {
+                    j++;
+                }
+            }
+
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
             CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
 
@@ -149,7 +151,7 @@ namespace Game.Views
             MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
 
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            BattleMonster.Children.Add(PlayerInfoDisplayBox(null));
+            CharacterGrid.Children.Add(PlayerInfoDisplayBox(null));
 
         }
 
@@ -963,7 +965,7 @@ namespace Game.Views
                     MonsterTitle.IsVisible = true;
                     CharacterTitle.IsVisible = true;
                     CharacterBox.Scale = 1;
-                    BattleMonster.IsVisible = false;
+                    CharacterGrid.IsVisible = false;
                     break;
 
                 case BattleStateEnum.NewRound:
@@ -977,7 +979,7 @@ namespace Game.Views
                     MoveButton.IsVisible = false;
                     AbilityButton.IsVisible = false;
                     MonsterBox.RowSpacing = -10;
-                    BattleMonster.IsVisible = false;
+                    CharacterGrid.IsVisible = false;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -1000,7 +1002,7 @@ namespace Game.Views
                     MonsterTitle.IsVisible = false;
                     CharacterTitle.IsVisible = false;
                     CharacterBox.IsVisible = false;
-                    BattleMonster.IsVisible = true;
+                    CharacterGrid.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
