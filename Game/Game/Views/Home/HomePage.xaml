@@ -10,7 +10,7 @@
             
             <StackLayout    VerticalOptions="Center"
                             HorizontalOptions="Center"
-                            Spacing="100">
+                            Spacing="80">
 
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                     
