@@ -7,6 +7,7 @@
     <NavigationPage.TitleView>
         <!--  Menu Bar  -->
         <StackLayout
+            Spacing="5"
             HorizontalOptions="StartAndExpand"
             Style="{StaticResource HorizontalStack}"
             VerticalOptions="StartAndExpand">
@@ -110,7 +111,7 @@
                                 IsVisible="False"
                                 Style="{StaticResource PlayerBattleOuterFrame}">
                                 <StackLayout>
-                                    <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
+                                    <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}" Spacing="50">
 
                                         <StackLayout
                                             x:Name="AttackerBox"
@@ -118,7 +119,7 @@
                                             Style="{StaticResource PlayerBattleInfoBox}">
                                             <Image
                                                 x:Name="AttackerImage"
-                                                Source="knight.png"
+                                                Source=""
                                                 Style="{StaticResource ImageBattleMediumStyle}" />
                                             <Label
                                                 x:Name="AttackerName"
@@ -145,10 +146,10 @@
                                         <StackLayout
                                             x:Name="DefenderBox"
                                             HorizontalOptions="End"
-                                            Style="{StaticResource PlayerBattleInfoBox}">
+                                            Style="{StaticResource PlayerBattleInfoBox}" MinimumWidthRequest="150">
                                             <Image
                                                 x:Name="DefenderImage"
-                                                Source="troll.png"
+                                                Source=""
                                                 Style="{StaticResource ImageBattleMediumStyle}" />
                                             <Label
                                                 x:Name="DefenderName"
@@ -281,15 +282,20 @@
                     Padding="10"
                     HorizontalOptions="Center"
                     VerticalOptions="Center">
-                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Thank you for Playing" />
+                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Game Over" />
+                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Thank you for Playing!" />
 
+                    <StackLayout Style="{StaticResource HorizontalStack}" Spacing="5" HorizontalOptions="Center">
+                        <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Score:" />
+                        <Label Style="{StaticResource CenterMessageLargeStyle}" Text="0" x:Name="TotalScore" />
+                    </StackLayout>
                     <Label
                         Padding="20"
                         HorizontalTextAlignment="Center"
                         LineBreakMode="WordWrap"
                         MaxLines="5"
                         Style="{StaticResource MessageStyle}"
-                        Text="Check your score, or click Exit and return soon" />
+                        Text="Click for more details, or click Exit and return soon" />
 
                     <Button
                         x:Name="ShowScoreButton"

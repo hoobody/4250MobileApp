@@ -22,10 +22,13 @@
 
                 <Label
                     FontSize="Large"
+                    Style="{StaticResource CenterMessageStyle}"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
-                    Text="  Where to&#10; next, Agent"
-                    VerticalOptions="Center" />
+                    Text="Where to&#10; next, Agent?"
+                    VerticalOptions="Center"
+                    Padding="0, 0, 0, 100"
+                    />
 
                 <StackLayout Style="{StaticResource ButtonBox}">
 
