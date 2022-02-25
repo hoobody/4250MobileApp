@@ -110,7 +110,7 @@
                                 IsVisible="False"
                                 Style="{StaticResource PlayerBattleOuterFrame}">
                                 <StackLayout>
-                                    <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
+                                    <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}" Spacing="50">
 
                                         <StackLayout
                                             x:Name="AttackerBox"
@@ -118,7 +118,7 @@
                                             Style="{StaticResource PlayerBattleInfoBox}">
                                             <Image
                                                 x:Name="AttackerImage"
-                                                Source="knight.png"
+                                                Source=""
                                                 Style="{StaticResource ImageBattleMediumStyle}" />
                                             <Label
                                                 x:Name="AttackerName"
@@ -145,10 +145,10 @@
                                         <StackLayout
                                             x:Name="DefenderBox"
                                             HorizontalOptions="End"
-                                            Style="{StaticResource PlayerBattleInfoBox}">
+                                            Style="{StaticResource PlayerBattleInfoBox}" MinimumWidthRequest="150">
                                             <Image
                                                 x:Name="DefenderImage"
-                                                Source="troll.png"
+                                                Source=""
                                                 Style="{StaticResource ImageBattleMediumStyle}" />
                                             <Label
                                                 x:Name="DefenderName"
