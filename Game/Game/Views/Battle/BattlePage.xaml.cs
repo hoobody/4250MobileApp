@@ -922,7 +922,6 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
-            MonsterBox.IsVisible = false;
         }
 
         /// <summary>
@@ -961,7 +960,6 @@ namespace Game.Views
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
-                    MonsterBox.IsVisible = true;
                     MonsterTitle.IsVisible = true;
                     CharacterTitle.IsVisible = true;
                     CharacterBox.Scale = 1;
@@ -972,7 +970,6 @@ namespace Game.Views
                     _ = UpdateMapGrid();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
-                    MonsterBox.IsVisible = true;
                     MonsterTitle.IsVisible = true;
                     CharacterTitle.IsVisible = true;
                     CharacterBox.Scale = 1;
@@ -1002,7 +999,7 @@ namespace Game.Views
                     AbilityButton.IsVisible = true;
                     MonsterTitle.IsVisible = false;
                     CharacterTitle.IsVisible = false;
-                    CharacterBox.Scale = .75;                 
+                    CharacterBox.IsVisible = false;
                     BattleMonster.IsVisible = true;
                     break;
 
