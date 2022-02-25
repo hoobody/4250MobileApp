@@ -841,6 +841,7 @@ namespace Game.Views
         public async void ExitButton_Clicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopModalAsync();
+            _ = await Navigation.PopAsync();
         }
 
         /// <summary>
@@ -860,7 +861,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void StartButton_Clicked(object sender, EventArgs e)
+        public void StartButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
