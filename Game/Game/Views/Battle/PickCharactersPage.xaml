@@ -160,7 +160,9 @@
                             <StackLayout Style="{StaticResource HorizontalStackEnd}">
 
                                 <ImageButton Source="cancel_button.png" 
-                                     Style="{StaticResource SmallIconButton}"/>
+                                     Style="{StaticResource SmallIconButton}"
+                                     x:Name="PopupCloseButton"
+                                     Clicked="ClosePopup_Clicked"/>
                                 <ImageButton Source="delete_button.png" 
                                      Style="{StaticResource SmallIconButton}"/>
 
