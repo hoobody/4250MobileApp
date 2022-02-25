@@ -12,7 +12,7 @@
                             HorizontalOptions="Center"
                             Spacing="80">
 
-                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Padding="0, 0, 0,10">
                     
                     <Image
                          Source="game_logo.png"
