@@ -1041,8 +1041,9 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource SecondaryBackgroundColor}" />
                 <Setter Property="BorderColor" Value="{StaticResource BorderColor}" />
                 <Setter Property="HeightRequest" Value="210" />
-                <Setter Property="WidthRequest" Value="400" />
+                <Setter Property="WidthRequest" Value="410" />
                 <Setter Property="Padding" Value="20,5,5,5" />
+                <Setter Property="HorizontalOptions" Value="Center"/>
             </Style>
 
             <Style x:Key="ValueFrame" TargetType="Frame">
