@@ -22,7 +22,7 @@
                    BackgroundColor="Transparent"/>
 
             <Frame WidthRequest="350"
-                   HeightRequest="200">
+                   HeightRequest="300">
                 
                 <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
