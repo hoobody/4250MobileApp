@@ -74,7 +74,7 @@ namespace Game.Views
             if (ViewModel.PartyCharacterList.Count() < ViewModel.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
                 ViewModel.PartyCharacterList.Add(data);
-                addSelectedCharacter(data);
+                AddSelectedCharacter(data);
             }
 
             UpdateNextButtonState();
@@ -161,46 +161,18 @@ namespace Game.Views
         /// Takes in a character model and updates the grid with the correct headshot image.
         /// </summary>
         /// <param name="data"></param>
-        public void addSelectedCharacter(CharacterModel data)
+        public void AddSelectedCharacter(CharacterModel character)
         {
+            int position = ViewModel.PartyCharacterList.IndexOf(character);
+            ImageButton characterSelectedButton = GetImageButtonByPosition(position);
 
-            int location = ViewModel.PartyCharacterList.IndexOf(data);
-
-            switch (location)
+            if (characterSelectedButton == null)
             {
-                case 0:
-                    SelectedCharacterZero.Source = data.HeadshotImageURI;
-                    SelectedCharacterZero.IsEnabled = true;
-                    SelectedCharacterZero.IsVisible = true;
-                    break;
-                case 1:
-                    SelectedCharacterOne.Source = data.HeadshotImageURI;
-                    SelectedCharacterOne.IsEnabled = true;
-                    SelectedCharacterOne.IsVisible = true;
-                    break;
-                case 2:
-                    SelectedCharacterTwo.Source = data.HeadshotImageURI;
-                    SelectedCharacterTwo.IsEnabled = true;
-                    SelectedCharacterTwo.IsVisible = true;
-                    break;
-                case 3:
-                    SelectedCharacterThree.Source = data.HeadshotImageURI;
-                    SelectedCharacterThree.IsEnabled = true;
-                    SelectedCharacterThree.IsVisible = true;
-                    break;
-                case 4:
-                    SelectedCharacterFour.Source = data.HeadshotImageURI;
-                    SelectedCharacterFour.IsEnabled = true;
-                    SelectedCharacterFour.IsVisible = true;
-                    break;
-                case 5:
-                    SelectedCharacterFive.Source = data.HeadshotImageURI;
-                    SelectedCharacterFive.IsEnabled = true;
-                    SelectedCharacterFive.IsVisible = true;
-                    break;
-                default:
-                    break;
+                return;
             }
+            characterSelectedButton.Source = character.HeadshotImageURI;
+            characterSelectedButton.IsEnabled = true;
+            characterSelectedButton.IsVisible = true;
         }
 
         /// <summary>
@@ -210,7 +182,6 @@ namespace Game.Views
         /// <returns></returns>
         public ImageButton GetImageButtonByPosition(int position)
         {
-
             switch (position)
             {
                 case 0:
