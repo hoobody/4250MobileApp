@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -28,7 +29,7 @@ namespace Game.Views
     {
 
         // The view model, used for data binding
-         BattleEngineViewModel ViewModel = BattleEngineViewModel.Instance;
+        BattleEngineViewModel ViewModel = BattleEngineViewModel.Instance;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
@@ -138,7 +139,6 @@ namespace Game.Views
             await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
 
             _ = await Navigation.PopAsync();
-
         }
 
         /// <summary>
@@ -165,13 +165,14 @@ namespace Game.Views
         {
 
             int location = ViewModel.PartyCharacterList.IndexOf(data);
+
             switch (location)
             {
                 case 0:
                     SelectedCharacterZero.Source = data.HeadshotImageURI;
                     SelectedCharacterZero.IsEnabled = true;
                     SelectedCharacterZero.IsVisible = true;
-                break;
+                    break;
                 case 1:
                     SelectedCharacterOne.Source = data.HeadshotImageURI;
                     SelectedCharacterOne.IsEnabled = true;
@@ -201,6 +202,35 @@ namespace Game.Views
                     break;
             }
         }
+
+        /// <summary>
+        /// finds the image button on the page that correlates to a characters spot in the party
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public ImageButton GetImageButtonByPosition(int position)
+        {
+
+            switch (position)
+            {
+                case 0:
+                    return SelectedCharacterZero;
+                case 1:
+                    return SelectedCharacterOne;
+                case 2:
+                    return SelectedCharacterTwo;
+                case 3:
+                    return SelectedCharacterThree;
+                case 4:
+                    return SelectedCharacterFour;
+                case 5:
+                    return SelectedCharacterFive;
+                default:
+                    return null;
+
+            }
+        }
+
         private void SelectedCharacterZero_Clicked(object sender, EventArgs e)
         {
 
