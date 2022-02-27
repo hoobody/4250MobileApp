@@ -38,7 +38,7 @@
                                     Grid.Row="0"
                                     HorizontalOptions="Center"
                                     Source="{Binding HeadshotImageURI}"
-                                    Style="{StaticResource ImageSmallStyle}" />
+                                    Style="{StaticResource ImageMediumStyle}" />
                                 <StackLayout
                                     Grid.Row="1"
                                     HorizontalOptions="Center"
