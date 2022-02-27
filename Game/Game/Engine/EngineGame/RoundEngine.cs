@@ -183,7 +183,7 @@ namespace Game.Engine.EngineGame
 
             // Add the Monsters
 
-            return null;
+            return base.MakePlayerList();
         }
 
         /// <summary>
