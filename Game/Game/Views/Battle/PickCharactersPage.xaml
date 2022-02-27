@@ -93,42 +93,42 @@
                         Style="{StaticResource CharacterSelectedFrameZero}">
                         <ImageButton x:Name="SelectedCharacterZero"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterZero_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="0"
                         Style="{StaticResource CharacterSelectedFrameOne}">
                         <ImageButton x:Name="SelectedCharacterOne"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterOne_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="0"
                         Style="{StaticResource CharacterSelectedFrameTwo}">
                         <ImageButton x:Name="SelectedCharacterTwo"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterTwo_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameThree}">
                         <ImageButton x:Name="SelectedCharacterThree"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterThree_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameFour}">
                         <ImageButton x:Name="SelectedCharacterFour"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterFour_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                     <Frame Grid.Column="0" Grid.Row="1"
                         Style="{StaticResource CharacterSelectedFrameFive}">
                         <ImageButton x:Name="SelectedCharacterFive"
                             Style="{StaticResource CharacterSelectedButton}"
-                            Clicked="SelectedCharacterFive_Clicked"/>
+                            Clicked="SelectedCharacter_Clicked"/>
                     </Frame>
 
                 </Grid>
@@ -165,7 +165,8 @@
                                      Clicked="ClosePopup_Clicked"/>
                                 <ImageButton Source="delete_button.png" 
                                     Style="{StaticResource SmallIconButton}"
-                                    x:Name="RemovePartyMember"/>
+                                    x:Name="RemovePartyMember"
+                                             />
 
                             </StackLayout>
 

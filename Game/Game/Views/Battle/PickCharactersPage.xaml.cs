@@ -195,10 +195,10 @@ namespace Game.Views
         }
 
 
-        private void SelectedCharacterZero_Clicked(object sender, EventArgs e)
+        private void SelectedCharacter_Clicked(object sender, EventArgs e)
         {
-            int position = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
-            CharacterModel character = ViewModel.PartyCharacterList.ElementAt(position);
+            int CharacterDetailsDisplayIndex = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
+            CharacterModel character = ViewModel.PartyCharacterList.ElementAt(CharacterDetailsDisplayIndex);
 
             CharacterDetailsPotrait.Source = character.HeadshotImageURI;
             PopupNameLabel.Text = character.Name;
@@ -215,126 +215,6 @@ namespace Game.Views
 
             PopupSpeedSlider.Value = character.Speed;
             PopupSpeedLabel.Text = character.Speed.ToString();
-
-            PopupCharacterDetails.IsVisible = true;
-        }
-
-        private void SelectedCharacterOne_Clicked(object sender, EventArgs e)
-        {
-
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(1);
-
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
-
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
-
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
-
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
-
-            PopupCharacterDetails.IsVisible = true;
-        }
-
-        private void SelectedCharacterTwo_Clicked(object sender, EventArgs e)
-        {
-
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(2);
-
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
-
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
-
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
-
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
-
-            PopupCharacterDetails.IsVisible = true;
-        }
-
-        private void SelectedCharacterThree_Clicked(object sender, EventArgs e)
-        {
-
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(3);
-
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
-
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
-
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
-
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
-
-            PopupCharacterDetails.IsVisible = true;
-        }
-
-        private void SelectedCharacterFour_Clicked(object sender, EventArgs e)
-        {
-
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(4);
-
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
-
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
-
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
-
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
-
-            PopupCharacterDetails.IsVisible = true;
-        }
-
-        private void SelectedCharacterFive_Clicked(object sender, EventArgs e)
-        {
-
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(5);
-
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
-
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
-
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
-
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
 
             PopupCharacterDetails.IsVisible = true;
         }
