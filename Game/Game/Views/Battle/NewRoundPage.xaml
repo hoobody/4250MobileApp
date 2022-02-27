@@ -2,7 +2,9 @@
 <ContentPage
     x:Class="Game.Views.NewRoundPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="NewRoundPage">
+    
 
     <ContentPage.Content>
         <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
@@ -91,21 +93,19 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <ImageButton
-                    x:Name="BeginBattleButton"
-                    Clicked="BeginButton_Clicked"
-                    Source="begin_button.png" 
-                    HeightRequest="65"/>
-
                 <Label
                     Style="{StaticResource MessageLargeStyle}"
                     Text="Enemies"
                     TextDecorations="Underline" />
                 
-                <Grid
-                    x:Name="MonsterListFrame"
-                    RowSpacing="-35"
-                    Scale=".85" />
+                <Grid x:Name="MonsterListFrame" 
+                      RowSpacing="-35"/>
+
+                <ImageButton
+                    x:Name="BeginBattleButton"
+                    Clicked="BeginButton_Clicked"
+                    Source="begin_button.png" 
+                    HeightRequest="65"/>
 
                 <StackLayout Padding="1" />
 
