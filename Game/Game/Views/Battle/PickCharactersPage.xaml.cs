@@ -182,10 +182,8 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// finds the image button on the page that correlates to a characters spot in the party
+        /// Populates the button index dictionary
         /// </summary>
-        /// <param name="position"></param>
-        /// <returns></returns>
         public void PopulateButtonIndexDictionary()
         {
             MapIndexButton.Add(0, SelectedCharacterZero);
@@ -199,24 +197,24 @@ namespace Game.Views
 
         private void SelectedCharacterZero_Clicked(object sender, EventArgs e)
         {
+            int position = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
+            CharacterModel character = ViewModel.PartyCharacterList.ElementAt(position);
 
-            CharacterModel data = ViewModel.PartyCharacterList.ElementAt(0);
+            CharacterDetailsPotrait.Source = character.HeadshotImageURI;
+            PopupNameLabel.Text = character.Name;
+            PopupDescriptionLabel.Text = character.Description;
 
-            CharacterDetailsPotrait.Source = data.HeadshotImageURI;
-            PopupNameLabel.Text = data.Name;
-            PopupDescriptionLabel.Text = data.Description;
+            PopupHealthSlider.Value = character.MaxHealth;
+            PopupHealthLabel.Text = character.MaxHealth.ToString();
 
-            PopupHealthSlider.Value = data.MaxHealth;
-            PopupHealthLabel.Text = data.MaxHealth.ToString();
+            PopupAttackSlider.Value = character.Attack;
+            PopupAttackLabel.Text = character.Attack.ToString();
 
-            PopupAttackSlider.Value = data.GetAttackTotal;
-            PopupAttackLabel.Text = data.GetAttackTotal.ToString();
+            PopupDefenseSlider.Value = character.Defense;
+            PopupDefenseLabel.Text = character.Defense.ToString();
 
-            PopupDefenseSlider.Value = data.GetDefenseTotal;
-            PopupDefenseLabel.Text = data.GetDefenseTotal.ToString();
-
-            PopupSpeedSlider.Value = data.GetSpeedTotal;
-            PopupSpeedLabel.Text = data.GetSpeedTotal.ToString();
+            PopupSpeedSlider.Value = character.Speed;
+            PopupSpeedLabel.Text = character.Speed.ToString();
 
             PopupCharacterDetails.IsVisible = true;
         }
