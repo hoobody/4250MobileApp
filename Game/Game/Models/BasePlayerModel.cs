@@ -466,15 +466,26 @@ namespace Game.Models
         /// <returns></returns>
         public virtual string FormatOutput() { return ""; }
 
-        #endregion BasicMethods
-
-        #region GetAttributeValues
-
         /// <summary>
-        /// Return the Range for the Attack Distance
+        /// Takes the existing imageURI and modifies it to find the corresponding HeadshotImageURI
         /// </summary>
+        /// <param name="baseImageURI"> Having it as a param instead of just callng on the existing ImageURI prevents a bug in the update methods</param>
         /// <returns></returns>
-        public int GetRange()
+        public string GetHeadshotURI(string baseImageURI)
+        {
+            return baseImageURI.Replace(".png", "_headshot.png");
+        }
+    
+
+    #endregion BasicMethods
+
+    #region GetAttributeValues
+
+    /// <summary>
+    /// Return the Range for the Attack Distance
+    /// </summary>
+    /// <returns></returns>
+    public int GetRange()
         {
             // Base Attack
             var myReturn = Range;
