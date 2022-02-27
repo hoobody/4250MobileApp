@@ -62,7 +62,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
                 Source = data.ImageURI
             };
 
@@ -70,20 +70,6 @@ namespace Game.Views
             var PlayerLevelLabel = new Label
             {
                 Text = "Lvl: " + data.Level,
-                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 0,
-                LineHeight = 1,
-                MaxLines = 1,
-            };
-
-            // Add the HP
-            var PlayerHPLabel = new Label
-            {
-                Text = "HP: " + data.GetCurrentHealthTotal,
                 Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -110,15 +96,11 @@ namespace Game.Views
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
-                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
-                HorizontalOptions = LayoutOptions.Center,
-                Padding = 0,
-                Spacing = 0,
+                Style = (Style)Application.Current.Resources["MonsterInfoBox"],
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
-                    PlayerLevelLabel,
-                    PlayerHPLabel,
+                    PlayerLevelLabel
                 },
             };
 
