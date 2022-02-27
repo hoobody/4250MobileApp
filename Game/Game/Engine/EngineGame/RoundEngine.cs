@@ -137,7 +137,7 @@ namespace Game.Engine.EngineGame
 
             // Do the turn..
 
-            return RoundEnum.Unknown;
+            return base.RoundNextTurn();
         }
 
         /// <summary>
