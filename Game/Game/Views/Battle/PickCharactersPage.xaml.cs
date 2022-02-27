@@ -30,6 +30,8 @@ namespace Game.Views
 
         // The view model, used for data binding
         BattleEngineViewModel ViewModel = BattleEngineViewModel.Instance;
+        public int CharacterDetailsDisplayIndex;
+        public Dictionary<int, ImageButton> MapIndexButton;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
@@ -50,6 +52,10 @@ namespace Game.Views
 
             // Clear the Database List and the Party List to start
             ViewModel.PartyCharacterList.Clear();
+
+            MapIndexButton = new Dictionary<int, ImageButton>();
+            CharacterDetailsDisplayIndex = -1;
+            PopulateButtonIndexDictionary();
 
             UpdateNextButtonState();
         }
@@ -74,7 +80,7 @@ namespace Game.Views
             if (ViewModel.PartyCharacterList.Count() < ViewModel.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
                 ViewModel.PartyCharacterList.Add(data);
-                AddSelectedCharacter(data);
+                AddSelectedCharacter(ViewModel.PartyCharacterList.IndexOf(data));
             }
 
             UpdateNextButtonState();
@@ -161,10 +167,10 @@ namespace Game.Views
         /// Takes in a character model and updates the grid with the correct headshot image.
         /// </summary>
         /// <param name="data"></param>
-        public void AddSelectedCharacter(CharacterModel character)
+        public void AddSelectedCharacter(int position)
         {
-            int position = ViewModel.PartyCharacterList.IndexOf(character);
-            ImageButton characterSelectedButton = GetImageButtonByPosition(position);
+            ImageButton characterSelectedButton = MapIndexButton[position];
+            CharacterModel character = ViewModel.PartyCharacterList.ElementAt(position);
 
             if (characterSelectedButton == null)
             {
@@ -180,27 +186,16 @@ namespace Game.Views
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        public ImageButton GetImageButtonByPosition(int position)
+        public void PopulateButtonIndexDictionary()
         {
-            switch (position)
-            {
-                case 0:
-                    return SelectedCharacterZero;
-                case 1:
-                    return SelectedCharacterOne;
-                case 2:
-                    return SelectedCharacterTwo;
-                case 3:
-                    return SelectedCharacterThree;
-                case 4:
-                    return SelectedCharacterFour;
-                case 5:
-                    return SelectedCharacterFive;
-                default:
-                    return null;
-
-            }
+            MapIndexButton.Add(0, SelectedCharacterZero);
+            MapIndexButton.Add(1, SelectedCharacterOne);
+            MapIndexButton.Add(2, SelectedCharacterTwo);
+            MapIndexButton.Add(3, SelectedCharacterThree);
+            MapIndexButton.Add(4, SelectedCharacterFour);
+            MapIndexButton.Add(5, SelectedCharacterFive);
         }
+
 
         private void SelectedCharacterZero_Clicked(object sender, EventArgs e)
         {
