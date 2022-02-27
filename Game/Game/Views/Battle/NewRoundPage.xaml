@@ -21,7 +21,7 @@
 
                 <CollectionView
                     HeightRequest="250"
-                    ItemsLayout="VerticalGrid,2"
+                    ItemsLayout="VerticalGrid,3"
                     ItemsSource="{Binding PartyCharacterList, Mode=OneWay}">
 
                     <CollectionView.ItemTemplate>
