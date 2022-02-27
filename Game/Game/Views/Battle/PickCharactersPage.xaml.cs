@@ -228,15 +228,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ClosePopup_Clicked(object sender, EventArgs e)
         {
-            ClosePopup();
-        }
-
-        /// <summary>
-        /// Close the popup
-        /// </summary>
-        public void ClosePopup()
-        {
             PopupCharacterDetails.IsVisible = false;
+            CharacterDetailsDisplayIndex = -1;
         }
     }
 }
