@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
@@ -14,6 +15,9 @@ namespace Game.Engine.EngineGame
     {
         // Hold the BaseEngine
         public new EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
+
+        //Allows pseudo-random number generation
+        public  Random RandomNumGenerator = new Random();
 
         // The Turn Engine
         public new ITurnEngineInterface Turn
@@ -101,8 +105,11 @@ namespace Game.Engine.EngineGame
 
             for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
-                
-                var data = RandomPlayerHelper.GetRandomMonster(targetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+               
+                //spreads the levels of the monsters out a bit creating a range of challenges
+                int randomLevel = targetLevel + RandomNumGenerator.Next(-2, 2);
+
+                var data = RandomPlayerHelper.GetRandomMonster(randomLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
                 // Help identify which Monster it is
                 data.Name += " " + EngineSettings.MonsterList.Count + 1;
