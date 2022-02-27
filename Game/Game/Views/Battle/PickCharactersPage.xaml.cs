@@ -197,7 +197,7 @@ namespace Game.Views
 
         private void SelectedCharacter_Clicked(object sender, EventArgs e)
         {
-            int CharacterDetailsDisplayIndex = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
+            CharacterDetailsDisplayIndex = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
             CharacterModel character = ViewModel.PartyCharacterList.ElementAt(CharacterDetailsDisplayIndex);
 
             CharacterDetailsPotrait.Source = character.HeadshotImageURI;
@@ -230,6 +230,12 @@ namespace Game.Views
         {
             PopupCharacterDetails.IsVisible = false;
             CharacterDetailsDisplayIndex = -1;
+        }
+
+        private void RemovePartyMember_Clicked(object sender, EventArgs e)
+        {
+            ViewModel.PartyCharacterList.RemoveAt(CharacterDetailsDisplayIndex);
+            ClosePopup_Clicked(sender, e);
         }
     }
 }

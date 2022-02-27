@@ -166,7 +166,7 @@
                                 <ImageButton Source="delete_button.png" 
                                     Style="{StaticResource SmallIconButton}"
                                     x:Name="RemovePartyMember"
-                                             />
+                                    Clicked="RemovePartyMember_Clicked"/>
 
                             </StackLayout>
 
@@ -176,8 +176,6 @@
                                 x:Name="PopupDescriptionLabel"/>
 
                         </StackLayout>
-
-
 
                     </StackLayout>
 
