@@ -28,6 +28,9 @@ namespace Game.Views
 
             BindingContext = EngineViewModel;
 
+            int roundCount = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount;
+            NewRoundContentPage.Title = "Prepare for Round " + roundCount.ToString() + "!";
+
             // Draw the Monsters
             foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
             {           
