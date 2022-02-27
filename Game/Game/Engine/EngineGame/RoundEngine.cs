@@ -3,6 +3,7 @@ using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Models;
+using Game.GameRules;
 
 namespace Game.Engine.EngineGame
 {
@@ -84,8 +85,34 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
+            var targetLevel = 1;
+            var totalLevels = 0;
+            var partyCount = EngineSettings.CharacterList.Count;
+
+            for (int charIndex = 0; charIndex < partyCount; charIndex++)
+            {
+                totalLevels += EngineSettings.CharacterList[charIndex].Level;
+            }
+
+            if (partyCount > 0)
+            {
+                targetLevel = totalLevels / partyCount;
+            }
+
+            for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
+            {
+                
+                var data = RandomPlayerHelper.GetRandomMonster(targetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+
+                // Help identify which Monster it is
+                data.Name += " " + EngineSettings.MonsterList.Count + 1;
+
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+            }
+
+
             // TODO: Teams, You need to implement your own Logic can not use mine.
-            return 0;
+            return EngineSettings.MonsterList.Count;
         }
 
         /// <summary>
