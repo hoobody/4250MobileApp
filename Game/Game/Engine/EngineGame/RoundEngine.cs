@@ -167,7 +167,7 @@ namespace Game.Engine.EngineGame
         {
             // TODO Teams: Implement the order
 
-            return null;
+            return base.OrderPlayerListByTurnOrder();
         }
 
         /// <summary>
