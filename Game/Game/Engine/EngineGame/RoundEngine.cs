@@ -149,7 +149,7 @@ namespace Game.Engine.EngineGame
 
             // Get Next Player
 
-            return null;
+            return base.GetNextPlayerTurn();
         }
 
         /// <summary>
