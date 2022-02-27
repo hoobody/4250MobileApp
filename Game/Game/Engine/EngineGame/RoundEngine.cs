@@ -157,7 +157,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override List<PlayerInfoModel> RemoveDeadPlayersFromList()
         {
-            return null;
+            return base.RemoveDeadPlayersFromList();
         }
 
         /// <summary>
