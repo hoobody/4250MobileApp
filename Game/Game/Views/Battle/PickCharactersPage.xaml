@@ -199,7 +199,9 @@
 
                         <Slider Grid.Column="1" Grid.Row="0"
                             Style="{StaticResource ViewOnlySlider}"
-                            x:Name="PopupHealthSlider" />
+                            x:Name="PopupHealthSlider" 
+                            Maximum="100"
+                            Minimum="0"/>
                         <Label Grid.Column="2" Grid.Row="0"
                             Style="{StaticResource LabelStyleXSEnd}"
                             x:Name="PopupHealthLabel"/>
@@ -210,7 +212,9 @@
                             Text="Attack: " />
                         <Slider Grid.Column="1" Grid.Row="1"
                             Style="{StaticResource ViewOnlySlider}"
-                            x:Name="PopupAttackSlider" />
+                            x:Name="PopupAttackSlider"
+                            Maximum="10"
+                            Minimum="0"/>
                         <Label Grid.Column="2" Grid.Row="1"
                             Style="{StaticResource LabelStyleXSEnd}"
                             x:Name="PopupAttackLabel"/>
@@ -221,7 +225,9 @@
                             Text="Defense: " />
                         <Slider Grid.Column="1" Grid.Row="2"
                             Style="{StaticResource ViewOnlySlider}"
-                            x:Name="PopupDefenseSlider" />
+                            x:Name="PopupDefenseSlider" 
+                            Maximum="10"
+                            Minimum="0"/>
                         <Label Grid.Column="2" Grid.Row="2"
                             Style="{StaticResource LabelStyleXSEnd}"
                             x:Name="PopupDefenseLabel"/>
@@ -231,7 +237,9 @@
                             Text="Speed: " />
                         <Slider Grid.Column="1" Grid.Row="3"
                             Style="{StaticResource ViewOnlySlider}"
-                            x:Name="PopupSpeedSlider" />
+                            x:Name="PopupSpeedSlider" 
+                            Maximum="10"
+                            Minimum="0"/>
                         <Label Grid.Column="2" Grid.Row="3"
                             Style="{StaticResource LabelStyleXSEnd}"
                             x:Name="PopupSpeedLabel"/>
