@@ -22,6 +22,8 @@ namespace Game.Models
         [Ignore]
         public bool Alive { get; set; } = true;
 
+        public string HeadshotImageURI { get; set; } = Services.ItemService.DefaultImageURI;
+
         // The type of player, character comes before monster
         [Ignore]
         public PlayerTypeEnum PlayerType { get; set; } = PlayerTypeEnum.Unknown;

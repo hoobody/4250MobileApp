@@ -11,7 +11,6 @@ namespace Game.Models
     {
         public string CodeName { get; set; } = "";
 
-        public string HeadshotImageURI { get; set; } = "";
 
         /// <summary>
         /// Default character
