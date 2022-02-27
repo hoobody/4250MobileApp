@@ -204,7 +204,7 @@ namespace Game.Engine.EngineGame
             // If at the end of the list, return the first element
 
             // Return the next element
-            return null;
+            return base.GetNextPlayerInList();
         }
 
         /// <summary>
