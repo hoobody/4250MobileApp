@@ -63,7 +63,12 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool EndBattle()
         {
-            return base.EndBattle();
+            BattleRunning = false;
+
+            _ = EngineSettings.BattleScore.CalculateScore();
+
+            return true;
         }
+    }
     }
 }
