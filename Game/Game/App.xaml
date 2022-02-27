@@ -418,6 +418,23 @@
             </Style>
 
             <Style
+                x:Key="ImageSmallStyle"
+                BasedOn="{StaticResource ImageLargeStyle}"
+                TargetType="Image">
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+            </Style>
+
+            <Style
+                x:Key="SquareButton"
+                BasedOn="{StaticResource ImageLargeStyle}"
+                TargetType="Image">
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="WidthRequest" Value="70" />
+                <Setter Property="Aspect" Value="AspectFit" />
+            </Style>
+
+            <Style
                 x:Key="CharacterSelecteCheese"
                 BasedOn="{StaticResource ImageLargeStyle}"
                 TargetType="Image">
@@ -436,24 +453,7 @@
                 <Setter Property="WidthRequest" Value="100" />
                 <Setter Property="Margin" Value="0,-5,0,0" />
             </Style>
-
-            <Style
-                x:Key="ImageSmallStyle"
-                BasedOn="{StaticResource ImageLargeStyle}"
-                TargetType="Image">
-                <Setter Property="HeightRequest" Value="30" />
-                <Setter Property="WidthRequest" Value="30" />
-            </Style>
-
-            <Style
-                x:Key="SquareButton"
-                BasedOn="{StaticResource ImageLargeStyle}"
-                TargetType="Image">
-                <Setter Property="HeightRequest" Value="70" />
-                <Setter Property="WidthRequest" Value="70" />
-                <Setter Property="Aspect" Value="AspectFit" />
-            </Style>
-
+            
             <Style
                 x:Key="GamePageButton"
                 BasedOn="{StaticResource ImageLargeStyle}"
@@ -755,6 +755,17 @@
                 <Setter Property="Margin" Value="0" />
             </Style>
 
+            <Style
+                x:Key="MonsterInfoBox"
+                BasedOn="{StaticResource CardImageTextBox}"
+                TargetType="StackLayout">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="Spacing" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+            
             <Style
                 x:Key="CharacterInfoBox"
                 BasedOn="{StaticResource VerticalStack}"
