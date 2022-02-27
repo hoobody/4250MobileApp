@@ -30,8 +30,12 @@ namespace Game.Views
 
         // The view model, used for data binding
         BattleEngineViewModel ViewModel = BattleEngineViewModel.Instance;
+        //helps determine which party member to remove when the remove button is clicked
         public int CharacterDetailsDisplayIndex;
+        //Holds index image button pairs
         public Dictionary<int, ImageButton> MapIndexButton;
+        //Controls max party size
+        public const int MAX_PARTY_SIZE = 6;
 
         // Empty Constructor for UTs
         public PickCharactersPage(bool UnitTest) { }
@@ -46,16 +50,16 @@ namespace Game.Views
             InitializeComponent();
 
             BindingContext = ViewModel;
-            //BindingContext = BattleEngineViewModel.Instance;
 
             var DatabaseCharacterList = ViewModel.DatabaseCharacterList;
 
             // Clear the Database List and the Party List to start
             ViewModel.PartyCharacterList.Clear();
 
+            //prep button index info
             MapIndexButton = new Dictionary<int, ImageButton>();
-            CharacterDetailsDisplayIndex = -1;
             PopulateButtonIndexDictionary();
+            CharacterDetailsDisplayIndex = -1;
 
             UpdateNextButtonState();
         }
@@ -80,7 +84,7 @@ namespace Game.Views
             if (ViewModel.PartyCharacterList.Count() < ViewModel.Engine.EngineSettings.MaxNumberPartyCharacters)
             {
                 ViewModel.PartyCharacterList.Add(data);
-                AddSelectedCharacter(ViewModel.PartyCharacterList.IndexOf(data));
+                DrawSelectedCharacters();
             }
 
             UpdateNextButtonState();
@@ -126,8 +130,6 @@ namespace Game.Views
             {
                 BeginBattleButton.IsEnabled = false;
             }
-
-            //PartyCountLabel.Text = currentCount.ToString();
         }
 
         /// <summary>
@@ -167,18 +169,28 @@ namespace Game.Views
         /// Takes in a character model and updates the grid with the correct headshot image.
         /// </summary>
         /// <param name="data"></param>
-        public void AddSelectedCharacter(int position)
+        public void DrawSelectedCharacters()
         {
-            ImageButton characterSelectedButton = MapIndexButton[position];
-            CharacterModel character = ViewModel.PartyCharacterList.ElementAt(position);
 
-            if (characterSelectedButton == null)
+            for (int charIndex = 0; charIndex < MAX_PARTY_SIZE; charIndex++)
             {
-                return;
+                ImageButton characterSelectedButton = MapIndexButton[charIndex];
+
+                if (charIndex >= ViewModel.PartyCharacterList.Count)
+                {
+                    characterSelectedButton.Source = null;
+                    characterSelectedButton.IsEnabled = false;
+                    characterSelectedButton.IsVisible = false;
+                }
+
+                if (charIndex < ViewModel.PartyCharacterList.Count)
+                {
+                    CharacterModel character = ViewModel.PartyCharacterList.ElementAt(charIndex);
+                    characterSelectedButton.Source = character.HeadshotImageURI;
+                    characterSelectedButton.IsEnabled = true;
+                    characterSelectedButton.IsVisible = true;
+                }
             }
-            characterSelectedButton.Source = character.HeadshotImageURI;
-            characterSelectedButton.IsEnabled = true;
-            characterSelectedButton.IsVisible = true;
         }
 
         /// <summary>
@@ -194,28 +206,40 @@ namespace Game.Views
             MapIndexButton.Add(5, SelectedCharacterFive);
         }
 
-
+        /// <summary>
+        /// Opens the popup for the selected character and fills it with that characters details
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectedCharacter_Clicked(object sender, EventArgs e)
         {
+            //set the display index
             CharacterDetailsDisplayIndex = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
+            //grab the character being looked at
             CharacterModel character = ViewModel.PartyCharacterList.ElementAt(CharacterDetailsDisplayIndex);
 
+            //Set all the details in the popup
             CharacterDetailsPotrait.Source = character.HeadshotImageURI;
             PopupNameLabel.Text = character.Name;
             PopupDescriptionLabel.Text = character.Description;
 
+            //Health details
             PopupHealthSlider.Value = character.MaxHealth;
             PopupHealthLabel.Text = character.MaxHealth.ToString();
 
+            //Attack details
             PopupAttackSlider.Value = character.Attack;
             PopupAttackLabel.Text = character.Attack.ToString();
 
+            //Defense details
             PopupDefenseSlider.Value = character.Defense;
             PopupDefenseLabel.Text = character.Defense.ToString();
 
+            //Speed details
             PopupSpeedSlider.Value = character.Speed;
             PopupSpeedLabel.Text = character.Speed.ToString();
 
+            //Make the popup visible
             PopupCharacterDetails.IsVisible = true;
         }
 
@@ -232,10 +256,16 @@ namespace Game.Views
             CharacterDetailsDisplayIndex = -1;
         }
 
+        /// <summary>
+        /// When the user clicks the trash can in the popup, remove the character from the list and then click the close popup button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemovePartyMember_Clicked(object sender, EventArgs e)
         {
             ViewModel.PartyCharacterList.RemoveAt(CharacterDetailsDisplayIndex);
             ClosePopup_Clicked(sender, e);
+            DrawSelectedCharacters();
         }
     }
 }
