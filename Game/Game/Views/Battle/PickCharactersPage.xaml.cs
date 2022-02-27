@@ -265,6 +265,7 @@ namespace Game.Views
         {
             ViewModel.PartyCharacterList.RemoveAt(CharacterDetailsDisplayIndex);
             ClosePopup_Clicked(sender, e);
+            UpdateNextButtonState();
             DrawSelectedCharacters();
         }
     }
