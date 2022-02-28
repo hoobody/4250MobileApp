@@ -261,7 +261,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool GetItemFromPoolIfBetter(PlayerInfoModel character, ItemLocationEnum setLocation)
         {
-            return false;
+            return base.GetItemFromPoolIfBetter(character, setLocation);
         }
 
         /// <summary>
