@@ -271,7 +271,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override ItemModel SwapCharacterItem(PlayerInfoModel character, ItemLocationEnum setLocation, ItemModel PoolItem)
         {
-            return null;
+            return base.SwapCharacterItem(character, setLocation, PoolItem);
         }
 
         /// <summary>
