@@ -251,7 +251,7 @@ namespace Game.Engine.EngineGame
 
             // I use the same logic for Auto Battle as I do for Manual Battle
 
-            return false;
+            return base.PickupItemsFromPool(character);
         }
 
         /// <summary>
