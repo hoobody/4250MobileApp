@@ -127,8 +127,8 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
                 var myReturn = myList.Where(a =>
-                                           a.ToString() != MonsterJobEnum.Unknown.ToString() ||
-                                           a.ToString() != MonsterJobEnum.Mastermind.ToString() ||
+                                           a.ToString() != MonsterJobEnum.Unknown.ToString() &&
+                                           a.ToString() != MonsterJobEnum.Mastermind.ToString() &&
                                            a.ToString() != MonsterJobEnum.Godfather.ToString()
                                             )
                                             .OrderBy(a => a)
