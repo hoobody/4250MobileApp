@@ -648,8 +648,8 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Hubert",
                     Description = "Don't let the name fool you",
-                    ImageURI = "filler_hitman.png",
-                    MonsterJob = MonsterJobEnum.Hitman,
+                    ImageURI = "filler_bounty_hunter.png",
+                    MonsterJob = MonsterJobEnum.BountyHunter,
                     Attack = 4,
                     Defense = 2,
                     Speed = 1,
