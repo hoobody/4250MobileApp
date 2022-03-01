@@ -195,6 +195,20 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Returns a random monster job
+        /// </summary>
+        /// <returns></returns>
+        public static string GetMonsterStandardJob()
+        {
+            //Get all the jobs
+            var JobList = MonsterJobEnumHelper.GetStandardJobList;
+
+            //return a random item from the list
+            var result = JobList.ElementAt(DiceHelper.RollDice(1, JobList.Count()) - 1);
+            return result;
+        }
+
+        /// <summary>
         /// Get Random Ability Number
         /// </summary>
         /// <returns></returns>
@@ -288,7 +302,7 @@ namespace Game.GameRules
         }
 
         /// <summary>
-        /// Create Random Character for the battle
+        /// Create Random Character for the battle (only returns standard monsters)
         /// </summary>
         /// <param name="MaxLevel"></param>
         /// <returns></returns>
@@ -301,15 +315,15 @@ namespace Game.GameRules
             }
 
             var rnd = DiceHelper.RollDice(1, MonsterIndexViewModel.Instance.Dataset.Count);
-
+           
             var result = new MonsterModel(MonsterIndexViewModel.Instance.Dataset.ElementAt(rnd - 1))
             {
                 Level = DiceHelper.RollDice(1, MaxLevel),
-                
-
                 // Randomize Name
                 Name = GetMonsterName(),
                 Description = GetMonsterDescription(),
+                //randomize job and make sure it's not a boss monster
+                MonsterJob = MonsterJobEnumHelper.ConvertStringToEnum(GetMonsterStandardJob()),
 
                 // Randomize the Attributes
                 Attack = GetAbilityValue(),
@@ -320,6 +334,7 @@ namespace Game.GameRules
 
                 Difficulty = GetMonsterDifficultyValue()
             };
+
 
             // Adjust values based on Difficulty
             result.Attack = result.Difficulty.ToModifier(result.Attack);
@@ -338,11 +353,6 @@ namespace Game.GameRules
             }
 
             int newLevel = result.Level;
-            //level up monster one level if monster is a boss
-            if (result.IsMonsterBoss())
-            {
-                newLevel++;
-            }
 
             // Level up to the new level
             _ = result.LevelUpToValue(newLevel);
@@ -368,5 +378,7 @@ namespace Game.GameRules
 
             return result;
         }
+
+        
     }
 }
