@@ -4,6 +4,7 @@ using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
+using System.Diagnostics;
 
 namespace Game.Engine.EngineGame
 {
@@ -45,7 +46,7 @@ namespace Game.Engine.EngineGame
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
             // Choose Action.  Such as Move, Attack etc.
-
+ 
             // INFO: Teams, if you have other actions they would go here.
 
             // If the action is not set, then try to set it or use Attact
@@ -211,30 +212,69 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
+            if (Attacker == null)
+            {
+                return false;
+            }
+
+            if (Target == null)
+            {
+                return false;
+            }
+
             // Set Messages to empty
+            _ = EngineSettings.BattleMessagesModel.ClearMessages();
 
             // Do the Attack
-
-            // Hackathon
-            // ?? Hackathon Scenario ?? 
+            _ = CalculateAttackStatus(Attacker, Target);
 
             // See if the Battle Settings Overrides the Roll
+            EngineSettings.BattleMessagesModel.HitStatus = BattleSettingsOverride(Attacker);
 
-            // Based on the Hit Status, what to do...
-            // It's a Miss
+            switch (EngineSettings.BattleMessagesModel.HitStatus)
+            {
+                case HitStatusEnum.Miss:
+                    // It's a Miss
 
-            // It's a Hit
+                    break;
 
-            //Calculate Damage
+                case HitStatusEnum.CriticalMiss:
+                    // It's a Critical Miss, so Bad things may happen
+                    _ = DetermineCriticalMissProblem(Attacker);
 
-            // Apply the Damage
+                    break;
 
-            // Check if Dead and Remove
+                case HitStatusEnum.CriticalHit:
+                case HitStatusEnum.Hit:
+                    // It's a Hit
 
-            // If it is a character apply the experience earned
+                    //Calculate Damage
+                    EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
 
-            // Battle Message 
-            return false;
+                    // If critical Hit, double the damage
+                    if (EngineSettings.BattleMessagesModel.HitStatus == HitStatusEnum.CriticalHit)
+                    {
+                        EngineSettings.BattleMessagesModel.DamageAmount *= 2;
+                    }
+
+                    // Apply the Damage
+                    _ = ApplyDamage(Target);
+
+                    EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
+
+                    // Check if Dead and Remove
+                    _ = RemoveIfDead(Target);
+
+                    // If it is a character apply the experience earned
+                    _ = CalculateExperience(Attacker, Target);
+
+                    break;
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+
+            return true;
         }
 
         /// <summary>
