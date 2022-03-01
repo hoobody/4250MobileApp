@@ -92,6 +92,7 @@ namespace Game.Engine.EngineGame
             var targetLevel = 1;
             var totalLevels = 0;
             var partyCount = EngineSettings.CharacterList.Count;
+            var roundCount = EngineSettings.BattleScore.RoundCount;
 
             for (int charIndex = 0; charIndex < partyCount; charIndex++)
             {
@@ -103,7 +104,19 @@ namespace Game.Engine.EngineGame
                 targetLevel = totalLevels / partyCount;
             }
 
-            for (var i = 0; i < EngineSettings.MaxNumberPartyMonsters; i++)
+            if (roundCount % 5 == 0)
+            {
+                var data = RandomPlayerHelper.GetRandomBossMonster(targetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+
+                // Help identify which Monster it is
+                data.Name += " " + EngineSettings.MonsterList.Count + 1;
+
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+            }
+
+
+
+            for (var i = EngineSettings.MonsterList.Count; i < EngineSettings.MaxNumberPartyMonsters; i++)
             {
                
                 //spreads the levels of the monsters out a bit creating a range of challenges
