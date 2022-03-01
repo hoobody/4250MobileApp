@@ -118,6 +118,23 @@ namespace Game.Models
             }
         }
 
+        public static List<string> GetStandardJobList
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
+                var myReturn = myList.Where(a =>
+                                           a.ToString() != MonsterJobEnum.Unknown.ToString() ||
+                                           a.ToString() != MonsterJobEnum.Mastermind.ToString() ||
+                                           a.ToString() != MonsterJobEnum.Godfather.ToString()
+                                            )
+                                            .OrderBy(a => a)
+                                            .ToList();
+
+                return myReturn;
+            }
+        }
+
         /// <summary>
         /// Given the String for an enum, return its value.  That allows for the enums to be numbered 2,4,6 rather than 1,2,3 
         /// </summary>
