@@ -393,5 +393,30 @@ namespace Game.GameRules
             return result;
         }
 
+        /// <summary>
+        /// returns a random boss monster
+        /// </summary>
+        /// <param name="MaxLevel"></param>
+        /// <param name="Items"></param>
+        /// <returns></returns>
+        public static MonsterModel GetRandomBossMonster(int MaxLevel, bool Items = false)
+        {
+            var newBoss = GetRandomMonster(MaxLevel, Items);
+
+            newBoss.MonsterJob = MonsterJobEnumHelper.ConvertStringToEnum(GetMonsterBossJob());
+
+            newBoss.LevelUpToValue(newBoss.Level + 1);
+
+            newBoss.Head = GetItem(ItemLocationEnum.Head);
+            newBoss.Necklass = GetItem(ItemLocationEnum.Necklass);
+            newBoss.PrimaryHand = GetItem(ItemLocationEnum.PrimaryHand);
+            newBoss.OffHand = GetItem(ItemLocationEnum.OffHand);
+            newBoss.RightFinger = GetItem(ItemLocationEnum.Finger);
+            newBoss.LeftFinger = GetItem(ItemLocationEnum.Finger);
+            newBoss.Feet = GetItem(ItemLocationEnum.Feet);
+
+            return newBoss;
+        }
+
     }
 }
