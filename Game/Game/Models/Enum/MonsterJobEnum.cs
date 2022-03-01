@@ -118,6 +118,9 @@ namespace Game.Models
             }
         }
 
+        /// <summary>
+        /// Returns a list of standard (non-boss) monster jobs
+        /// </summary>
         public static List<string> GetStandardJobList
         {
             get
@@ -127,6 +130,25 @@ namespace Game.Models
                                            a.ToString() != MonsterJobEnum.Unknown.ToString() ||
                                            a.ToString() != MonsterJobEnum.Mastermind.ToString() ||
                                            a.ToString() != MonsterJobEnum.Godfather.ToString()
+                                            )
+                                            .OrderBy(a => a)
+                                            .ToList();
+
+                return myReturn;
+            }
+        }
+
+        /// <summary>
+        /// returns a list of ONLY boss monster jobs
+        /// </summary>
+        public static List<string> GetBossJobList
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(MonsterJobEnum)).ToList();
+                var myReturn = myList.Where(a =>
+                                           a.ToString() == MonsterJobEnum.Godfather.ToString() ||
+                                           a.ToString() == MonsterJobEnum.Mastermind.ToString()
                                             )
                                             .OrderBy(a => a)
                                             .ToList();
