@@ -209,6 +209,20 @@ namespace Game.GameRules
         }
 
         /// <summary>
+        /// Returns a random boss monsterjob
+        /// </summary>
+        /// <returns></returns>
+        public static string GetMonsterBossJob()
+        {
+            //Get all the jobs
+            var JobList = MonsterJobEnumHelper.GetBossJobList;
+
+            //return a random item from the list
+            var result = JobList.ElementAt(DiceHelper.RollDice(1, JobList.Count()) - 1);
+            return result;
+        }
+
+        /// <summary>
         /// Get Random Ability Number
         /// </summary>
         /// <returns></returns>
@@ -379,6 +393,5 @@ namespace Game.GameRules
             return result;
         }
 
-        
     }
 }
