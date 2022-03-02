@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
-using Game.ViewModels;
 using Game.GameRules;
 using Game.Models;
+using Game.ViewModels;
 
 namespace Game.Engine.EngineGame
 {
@@ -48,44 +48,10 @@ namespace Game.Engine.EngineGame
             set { base.Battle = Battle; }
         }
 
-        public override bool CreateCharacterParty()
-        {
-            // Picks 6 Characters
-
-            // To use your own characters, populate the List before calling RunAutoBattle
-
-            // Will first pull from existing characters
-            foreach (var data in CharacterIndexViewModel.Instance.Dataset)
-            {
-                if (Battle.EngineSettings.CharacterList.Count() >= Battle.EngineSettings.MaxNumberPartyCharacters)
-                {
-                    break;
-                }
-
-                // Start off with max health if adding a character in
-                data.CurrentHealth = data.GetMaxHealthTotal;
-                _ = Battle.PopulateCharacterList(data);
-            }
-
-            //If there are not enough will add random ones
-            for (var i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
-            {
-                _ = Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
-            }
-
-            return true;
-        }
-
-        public override bool DetectInfinateLoop()
-        {
-            if (Battle.EngineSettings.BattleScore.RoundCount > Battle.EngineSettings.MaxRoundCount)
-            {
-                return true;
-            }
-
-            return Battle.EngineSettings.BattleScore.TurnCount > Battle.EngineSettings.MaxTurnCount;
-        }
-
+        /// <summary>
+        /// Run Auto Battle
+        /// </summary>
+        /// <returns></returns>
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
         public override async Task<bool> RunAutoBattle()
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -132,6 +98,60 @@ namespace Game.Engine.EngineGame
 
             // Wrap up
             _ = Battle.EndBattle();
+
+            return true;
+        }
+
+        /// <summary>
+        /// Check if the Engine is not ending
+        /// 
+        /// Too many Rounds
+        /// Too many Turns in a round
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public override bool DetectInfinateLoop()
+        {
+            if (Battle.EngineSettings.BattleScore.RoundCount > Battle.EngineSettings.MaxRoundCount)
+            {
+                return true;
+            }
+
+            if (Battle.EngineSettings.BattleScore.TurnCount > Battle.EngineSettings.MaxTurnCount)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Create Characters for Party
+        /// </summary>
+        public override bool CreateCharacterParty()
+        {
+            // Picks 6 Characters
+
+            // To use your own characters, populate the List before calling RunAutoBattle
+
+            // Will first pull from existing characters
+            foreach (var data in CharacterIndexViewModel.Instance.Dataset)
+            {
+                if (Battle.EngineSettings.CharacterList.Count() >= Battle.EngineSettings.MaxNumberPartyCharacters)
+                {
+                    break;
+                }
+
+                // Start off with max health if adding a character in
+                data.CurrentHealth = data.GetMaxHealthTotal;
+                _ = Battle.PopulateCharacterList(data);
+            }
+
+            //If there are not enough will add random ones
+            for (var i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
+            {
+                _ = Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
+            }
 
             return true;
         }
