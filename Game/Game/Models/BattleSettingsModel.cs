@@ -15,7 +15,7 @@
         public HitStatusEnum CharacterHitEnum = HitStatusEnum.Default;
 
         // Are Critical Hits Allowed?
-        public bool AllowCriticalHit = false;
+        public bool AllowCriticalHit = true;
 
         // Are Critical Misses Allowed?
         public bool AllowCriticalMiss = false;
