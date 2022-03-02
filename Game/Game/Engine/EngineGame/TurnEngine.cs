@@ -325,21 +325,15 @@ namespace Game.Engine.EngineGame
             {
                 _ = DiceHelper.EnableForcedRolls();
                 _ = DiceHelper.SetForcedRollValue(1);
-
                 // Do Attack
                 _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
-
                 _ = DiceHelper.DisableForcedRolls();
-
                 return true;
             }
-            else
-            {
-                // Do Attack
-                _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            // Do Attack
+            _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
 
-                return true;
-            }
+            return true;
         }
 
         /// <summary>
