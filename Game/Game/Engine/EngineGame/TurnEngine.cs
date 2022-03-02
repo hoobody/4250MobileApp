@@ -321,10 +321,25 @@ namespace Game.Engine.EngineGame
                 }
             }
 
-            // Do Attack
-            _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            if (Attacker.Name == "Doug")
+            {
+                _ = DiceHelper.EnableForcedRolls();
+                _ = DiceHelper.SetForcedRollValue(1);
 
-            return true;
+                // Do Attack
+                _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+
+                _ = DiceHelper.DisableForcedRolls();
+
+                return true;
+            }
+            else
+            {
+                // Do Attack
+                _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+
+                return true;
+            }
         }
 
         /// <summary>
