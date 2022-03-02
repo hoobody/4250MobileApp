@@ -389,7 +389,7 @@ namespace Scenario
         *      None
         * 
         * Test Algrorithm:
-        *      Set up results with each possibilities when attacking
+        *      Set up results with an attack that is set to critical hit.
         *      
         *  
         *      Startup Battle
@@ -399,23 +399,9 @@ namespace Scenario
         *      Default condition is sufficient
         * 
         * Validation:
-        *      Verify Result matches with the Attack results
+        *      Verify Result matches with the Attack result
         *  
         */
-
-        [Test]
-        public void HackathonScenarios_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Hit);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(HitStatusEnum.Hit, result);
-        }
 
         [Test]
         public void HackathonScenarios_BattleSettingsOverrideCriticalHitStatusEnum_Valid_CriticalHit_Should_Pass()
@@ -430,7 +416,33 @@ namespace Scenario
             // Assert
             Assert.AreEqual(HitStatusEnum.CriticalHit, result);
         }
+        #endregion Scenario 4
 
+        #region Scenario 5
+        /* 
+        * Scenario Number:  
+        *      5
+        *      
+        * Description: 
+        *      Added the possibility to critically miss
+        * 
+        * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+        *      None
+        * 
+        * Test Algrorithm:
+        *      Set up results with an attack that is set to critical miss.
+        *      
+        *  
+        *      Startup Battle
+        *      Run Auto Battle
+        * 
+        * Test Conditions:
+        *      Default condition is sufficient
+        * 
+        * Validation:
+        *      Verify Result matches with the Attack results
+        *  
+        */
         [Test]
         public void HackathonScenarios_BattleSettingsOverrideCriticalMissStatusEnum_Valid_CriticalMiss_Should_Pass()
         {
@@ -444,20 +456,6 @@ namespace Scenario
             // Assert
             Assert.AreEqual(HitStatusEnum.CriticalMiss, result);
         }
-
-        [Test]
-        public void HackathonScenarios_BattleSettingsOverrideMissStatusEnum_Valid_Miss_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Miss);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(HitStatusEnum.Miss, result);
-        }
-        #endregion Scenario 4
+        #endregion Scenario 5
     }
 }
