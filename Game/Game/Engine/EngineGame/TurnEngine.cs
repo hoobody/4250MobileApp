@@ -795,7 +795,231 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
         {
-            return false;
+            var d10 = DiceHelper.RollDice(1, 10);
+
+            var droppedItem = new List<ItemModel>();
+
+            // Drop all Items
+            ItemModel myItem;
+
+
+            if (d10 == 1)
+            {
+                attacker.RemoveItem(ItemLocationEnum.PrimaryHand); 
+                return true;
+            }
+
+            if (d10 < 5)
+            {
+                if (attacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    myItem = attacker.RemoveItem(ItemLocationEnum.PrimaryHand);
+                    if (myItem != null)
+                    {
+                        droppedItem.Add(myItem);
+                    }
+
+                    EngineSettings.ItemPool.AddRange(droppedItem);
+                    return true;
+                }
+
+                myItem = attacker.RemoveItem(ItemLocationEnum.PrimaryHand);
+                if (myItem != null)
+                {
+                    droppedItem.Add(myItem);
+                }
+
+                if (myItem == null)
+                {
+                    var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
+                    droppedItem.Add(data);
+                }
+
+                EngineSettings.ItemPool.AddRange(droppedItem);
+                return true;
+
+            }    
+
+            if (d10 < 7)
+            {
+                var d7 = DiceHelper.RollDice(1, 7);
+
+                bool foundItem = false;
+                int originalNum = d7;
+                int looped = 0;
+
+                if (attacker.PlayerType == PlayerTypeEnum.Character)
+                {
+                    while(!foundItem)
+                    {
+                        if (d7 == 1)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.Head);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if(d7 == 2)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.Necklass);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if (d7 == 3)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.PrimaryHand);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if (d7 == 4)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.OffHand);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if (d7 == 5)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.RightFinger);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if (d7 == 6)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.LeftFinger);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+                        }
+                        if (d7 == 7)
+                        {
+                            myItem = attacker.RemoveItem(ItemLocationEnum.Feet);
+                            if (myItem != null)
+                            {
+                                droppedItem.Add(myItem);
+                                EngineSettings.ItemPool.AddRange(droppedItem);
+                                return true;
+                            }
+
+                            d7 = 1;
+                            looped = 1;
+                        }
+                        if(d7 == originalNum && looped == 1)
+                        {
+                            return true;
+                        }
+
+                        d7++;
+                    }
+                }
+                while (!foundItem)
+                {
+                    if (d7 == 1)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.Head);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 2)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.Necklass);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 3)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.PrimaryHand);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 4)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.OffHand);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 5)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.RightFinger);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 6)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.LeftFinger);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+                    }
+                    if (d7 == 7)
+                    {
+                        myItem = attacker.RemoveItem(ItemLocationEnum.Feet);
+                        if (myItem != null)
+                        {
+                            droppedItem.Add(myItem);
+                            EngineSettings.ItemPool.AddRange(droppedItem);
+                            return true;
+                        }
+
+                        d7 = 1;
+                        looped = 1;
+                    }
+                    if (d7 == originalNum && looped == 1)
+                    {
+                        var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
+                        droppedItem.Add(data);
+                        EngineSettings.ItemPool.AddRange(droppedItem);
+                        return true;
+                    }
+
+                    d7++;
+                }
+            }
+            return true;
         }
     }
 }
