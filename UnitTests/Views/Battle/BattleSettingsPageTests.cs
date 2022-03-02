@@ -122,7 +122,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.IsTrue(!current); // Got to here, so it happened...
+            Assert.IsTrue(current); // Got to here, so it happened...
         }
 
         [Test]
@@ -145,7 +145,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.IsTrue(!current); // Got to here, so it happened...
+            Assert.IsTrue(current); // Got to here, so it happened...
         }
 
         [Test]
@@ -164,7 +164,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.IsTrue(!current); // Got to here, so it happened...
+            Assert.IsTrue(current); // Got to here, so it happened...
         }
 
         [Test]
@@ -186,7 +186,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.IsTrue(!current); // Got to here, so it happened...
+            Assert.IsTrue(current); // Got to here, so it happened...
         }
 
         [Test]
