@@ -545,19 +545,19 @@ namespace UnitTests.Views
             Assert.AreEqual(true, result); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattlePage_SetSelectedMonster_Default_Should_Pass()
-        {
-            // Arrange
+        //[Test]
+        //public void BattlePage_SetSelectedMonster_Default_Should_Pass()
+        //{
+        //    // Arrange
 
-            // Act
-            var result = page.SetSelectedMonster(new MapModelLocation());
+        //    // Act
+        //    var result = page.SetSelectedMonster(new MapModelLocation());
 
-            // Reset
+        //    // Reset
 
-            // Assert
-            Assert.AreEqual(true, result); // Got to here, so it happened...
-        }
+        //    // Assert
+        //    Assert.AreEqual(true, result); // Got to here, so it happened...
+        //}
 
         [Test]
         public void BattlePage_SetSelectedEmpty_Default_Should_Pass()
