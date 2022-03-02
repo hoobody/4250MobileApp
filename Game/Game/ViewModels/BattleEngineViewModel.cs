@@ -43,7 +43,7 @@ namespace Game.ViewModels
         public IBattleEngineInterface Engine = new Engine.EngineGame.BattleEngine();
 
         // Auto Battle Engine (used for scneario testing)
-        public IAutoBattleInterface AutoBattleEngine = new Engine.EngineKoenig.AutoBattleEngine();
+        public IAutoBattleInterface AutoBattleEngine = new Engine.EngineGame.AutoBattleEngine();
 
         // Hold the Proposed List of Characters for the Battle to Use
         public ObservableCollection<CharacterModel> PartyCharacterList { get; set; } = new ObservableCollection<CharacterModel>();
