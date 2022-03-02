@@ -399,5 +399,50 @@ namespace UnitTests.Engine.EngineGame
         //    Assert.AreEqual(null, result);
         //}
         #endregion GetNextPlayerTurn
+
+        #region HackathonUnitTests
+        [Test]
+        public void RoundEngine_AddMonstersToRound_Valid_Default_Should_Pass()
+        {
+            /* 
+           * Scenario Number:  
+           *      5
+           *      
+           * Description: 
+           *      Every 5th round, the boss would spawn instead of the usual 6 monsters
+           * 
+           * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+           *      Added boss class and methods for them to be different from the regular monsters
+           * 
+           * Test Algrorithm:
+           *      Start up to round 5
+           *      On 5th round the boss would spawn
+           *  
+           *      Startup Battle
+           *      Run Auto Battle
+           * 
+           * Test Conditions:
+           *      Default condition is sufficient
+           * 
+           * Validation:
+           *      Verify Monster Count is 1
+           *  
+           */
+
+            // Arrange
+            for (int i = 0; i < 5; i++)
+            {
+                Engine.Round.NewRound();
+            }
+
+            Engine.EngineSettings.MonsterList.Clear();
+            // Act
+            var result = Engine.Round.AddMonstersToRound();
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+        #endregion HackathonUnitTests
     }
 }
