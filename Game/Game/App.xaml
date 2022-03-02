@@ -597,6 +597,16 @@
                 <Setter Property="WidthRequest" Value="100" />
             </Style>
 
+            <Style x:Key="DeliveryButton" 
+                   TargetType="Button"
+                   BasedOn="{StaticResource ButtonStyle}">
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="BorderColor" Value="{StaticResource TransparentColor}" />
+                <Setter Property="BorderWidth" Value="0" />
+
+            </Style>
+
+
             <!--  Stack Layouts  -->
             <Style x:Key="HorizontalStack" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal" />
