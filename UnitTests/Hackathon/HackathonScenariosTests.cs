@@ -362,10 +362,11 @@ namespace Scenario
            */
 
             // Arrange
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
             {
                 Engine.Round.NewRound();
             }
+            int roundCount = Engine.EngineSettings.BattleScore.RoundCount;
 
             Engine.EngineSettings.MonsterList.Clear();
             // Act
