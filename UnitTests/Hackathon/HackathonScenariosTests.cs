@@ -10,9 +10,7 @@ using Game.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Mocks;
-
-
-
+using Game.Engine.EngineGame;
 
 namespace Scenario
 {
@@ -22,9 +20,19 @@ namespace Scenario
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
 
+        BattleEngine Engine;
+
         [SetUp]
         public void Setup()
         {
+            Engine = new();
+
+            Engine.Round = new RoundEngine
+            {
+                Turn = new TurnEngine()
+            };
+            _ = Engine.Round.ClearLists();
+
             // Put seed data into the system for all tests
             _ = BattleEngineViewModel.Instance.Engine.Round.ClearLists();
 
@@ -321,6 +329,132 @@ namespace Scenario
         }
         #endregion Scenario1
 
+        #region Scenario 14
+        [Test]
+        public void RoundEngine_AddMonstersToRound_Valid_Default_Should_Pass()
+        {
+            /* 
+           * Scenario Number:  
+           *      14
+           *      
+           * Description: 
+           *      Every 5th round, the boss would spawn instead of the usual 6 monsters
+           * 
+           * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+           *      Added boss class and methods for them to be different from the regular monsters
+           * 
+           * Test Algrorithm:
+           *      Start up to round 5
+           *      On 5th round the boss would spawn
+           *  
+           *      Startup Battle
+           *      Run Auto Battle
+           * 
+           * Test Conditions:
+           *      Default condition is sufficient
+           * 
+           * Validation:
+           *      Verify Monster Count is 1
+           *  
+           */
 
+            // Arrange
+            for (int i = 0; i < 5; i++)
+            {
+                Engine.Round.NewRound();
+            }
+
+            Engine.EngineSettings.MonsterList.Clear();
+            // Act
+            var result = Engine.Round.AddMonstersToRound();
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+        #endregion Scenario 14
+
+        #region Scenario 4
+        /* 
+        * Scenario Number:  
+        *      4
+        *      
+        * Description: 
+        *      Added the possibility to critically hit
+        * 
+        * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+        *      None
+        * 
+        * Test Algrorithm:
+        *      Set up results with each possibilities when attacking
+        *      
+        *  
+        *      Startup Battle
+        *      Run Auto Battle
+        * 
+        * Test Conditions:
+        *      Default condition is sufficient
+        * 
+        * Validation:
+        *      Verify Result matches with the Attack results
+        *  
+        */
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Hit);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Hit, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideCriticalHitStatusEnum_Valid_CriticalHit_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.CriticalHit);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.CriticalHit, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideCriticalMissStatusEnum_Valid_CriticalMiss_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.CriticalMiss);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.CriticalMiss, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideMissStatusEnum_Valid_Miss_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Miss);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Miss, result);
+        }
+        #endregion Scenario 4
     }
 }
