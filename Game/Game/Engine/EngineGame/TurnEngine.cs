@@ -1,10 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
 
 using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
-using System.Diagnostics;
+using Game.Helpers;
+using Game.ViewModels;
+using Game.GameRules;
+
 
 namespace Game.Engine.EngineGame
 {
@@ -46,7 +51,7 @@ namespace Game.Engine.EngineGame
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
             // Choose Action.  Such as Move, Attack etc.
- 
+
             // INFO: Teams, if you have other actions they would go here.
 
             // If the action is not set, then try to set it or use Attact
@@ -59,7 +64,45 @@ namespace Game.Engine.EngineGame
 
             // Reset the Action to unknown for next time
 
-            return false;
+            var result = false;
+
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+            {
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+
+                // When in doubt, attack...
+                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                {
+                    EngineSettings.CurrentAction = ActionEnum.Attack;
+                }
+            }
+
+            switch (EngineSettings.CurrentAction)
+            {
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
+
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
+            }
+
+            EngineSettings.BattleScore.TurnCount++;
+
+            // Save the Previous Action off
+            EngineSettings.PreviousAction = EngineSettings.CurrentAction;
+
+            // Reset the Action to unknown for next time
+            EngineSettings.CurrentAction = ActionEnum.Unknown;
+
+            return result;
         }
 
         /// <summary>
@@ -84,7 +127,40 @@ namespace Game.Engine.EngineGame
             // Check to see if ability is avaiable
 
             // See if Desired Target is within Range, and if so attack away
-            return ActionEnum.Unknown;
+            // If it is the characters turn, and NOT auto battle, use what was sent into the engine
+            if (Attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                if (EngineSettings.BattleScore.AutoBattle == false)
+                {
+                    return EngineSettings.CurrentAction;
+                }
+            }
+
+            /*
+             * The following is Used for Monsters, and Auto Battle Characters
+             * 
+             * Order of Priority
+             * If can attack Then Attack
+             * Next use Ability or Move
+             */
+
+            // Assume Move if nothing else happens
+            EngineSettings.CurrentAction = ActionEnum.Move;
+
+            // Check to see if ability is avaiable
+            if (ChooseToUseAbility(Attacker))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Ability;
+                return EngineSettings.CurrentAction;
+            }
+
+            // See if Desired Target is within Range, and if so attack away
+            if (EngineSettings.MapModel.IsTargetInRange(Attacker, AttackChoice(Attacker)))
+            {
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
+
+            return EngineSettings.CurrentAction;
         }
 
         /// <summary>
@@ -107,21 +183,56 @@ namespace Game.Engine.EngineGame
              * 
              */
 
-            // If the Monster the calculate the options
+            //// If the Monster the calculate the options
+            //if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            //{
+            //    // For Attack, Choose Who
+
+            //    // Get X, Y for Defender
+
+            //    // Get X, Y for the Attacker
+
+            //    // Find Location Nearest to Defender that is Open.
+
+            //    // Get the Open Locations
+
+            //    // Format a message to show
+            //    return false;
+            //}
+
             if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
 
                 // Get X, Y for Defender
+                var locationDefender = EngineSettings.MapModel.GetLocationForPlayer(EngineSettings.CurrentDefender);
+                if (locationDefender == null)
+                {
+                    return false;
+                }
 
-                // Get X, Y for the Attacker
+                var locationAttacker = EngineSettings.MapModel.GetLocationForPlayer(Attacker);
+                if (locationAttacker == null)
+                {
+                    return false;
+                }
 
                 // Find Location Nearest to Defender that is Open.
 
                 // Get the Open Locations
+                var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
 
-                // Format a message to show
-                return false;
+                Debug.WriteLine(string.Format("{0} moves from {1},{2} to {3},{4}", locationAttacker.Player.Name, locationAttacker.Column, locationAttacker.Row, openSquare.Column, openSquare.Row));
+
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
+
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
             }
 
             return true;
@@ -142,6 +253,32 @@ namespace Game.Engine.EngineGame
 
             // Don't try
 
+            // See if healing is needed.
+            EngineSettings.CurrentActionAbility = Attacker.SelectHealingAbility();
+            if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+            {
+                EngineSettings.CurrentAction = ActionEnum.Ability;
+                return true;
+            }
+
+            // If not needed, then role dice to see if other ability should be used
+            // <30% chance
+            if (DiceHelper.RollDice(1, 10) < 3)
+            {
+                EngineSettings.CurrentActionAbility = Attacker.SelectAbilityToUse();
+
+                if (EngineSettings.CurrentActionAbility != AbilityEnum.Unknown)
+                {
+                    // Ability can , switch to unknown to exit
+                    EngineSettings.CurrentAction = ActionEnum.Ability;
+                    return true;
+                }
+
+                // No ability available
+                return false;
+            }
+
+            // Don't try
             return false;
         }
 
@@ -150,7 +287,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            return false;
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
+            return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
         }
 
         /// <summary>
@@ -171,7 +309,22 @@ namespace Game.Engine.EngineGame
             // Manage autobattle
 
             // Do Attack
-            return false;
+            // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+            }
+
+            // Do Attack
+            _ = TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+
+            return true;
         }
 
         /// <summary>
@@ -179,7 +332,15 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            return null;
+            switch (data.PlayerType)
+            {
+                case PlayerTypeEnum.Monster:
+                    return SelectCharacterToAttack();
+
+                case PlayerTypeEnum.Character:
+                default:
+                    return SelectMonsterToAttack();
+            }
         }
 
         /// <summary>
@@ -191,7 +352,24 @@ namespace Game.Engine.EngineGame
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            return null;
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first in the list
+
+            // TODO: Teams, You need to implement your own Logic can not use mine.
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
+                .OrderBy(m => m.ListOrder).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>
@@ -204,7 +382,26 @@ namespace Game.Engine.EngineGame
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
 
-            return null;
+            if (EngineSettings.PlayerList == null)
+            {
+                return null;
+            }
+
+            if (EngineSettings.PlayerList.Count < 1)
+            {
+                return null;
+            }
+
+            // Select first one to hit in the list for now...
+            // Attack the Weakness (lowest HP) MonsterModel first 
+
+            // TODO: Teams, You need to implement your own Logic can not use mine.
+
+            var Defender = EngineSettings.PlayerList
+                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
+                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
+
+            return Defender;
         }
 
         /// <summary>
@@ -283,7 +480,12 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker)
         {
-            return HitStatusEnum.Unknown;
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return BattleSettingsOverrideHitStatusEnum(EngineSettings.BattleSettingsModel.MonsterHitEnum);
+            }
+
+            return BattleSettingsOverrideHitStatusEnum(EngineSettings.BattleSettingsModel.CharacterHitEnum);
         }
 
         /// <summary>
@@ -293,7 +495,30 @@ namespace Game.Engine.EngineGame
         {
             // Based on the Hit Status, establish a message
 
-            return HitStatusEnum.Unknown;
+            switch (myEnum)
+            {
+                case HitStatusEnum.Hit:
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Hit ";
+                    return HitStatusEnum.Hit;
+
+                case HitStatusEnum.CriticalHit:
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Hit ";
+                    return HitStatusEnum.CriticalHit;
+
+                case HitStatusEnum.Miss:
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Missed ";
+                    return HitStatusEnum.Miss;
+
+                case HitStatusEnum.CriticalMiss:
+                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Missed ";
+                    return HitStatusEnum.CriticalMiss;
+
+                case HitStatusEnum.Unknown:
+                case HitStatusEnum.Default:
+                default:
+                    // Return what it was
+                    return EngineSettings.BattleMessagesModel.HitStatus;
+            }
         }
 
         /// <summary>
@@ -301,6 +526,9 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ApplyDamage(PlayerInfoModel Target)
         {
+            _ = Target.TakeDamage(EngineSettings.BattleMessagesModel.DamageAmount);
+            EngineSettings.BattleMessagesModel.CurrentHealth = Target.GetCurrentHealthTotal;
+
             return true;
         }
 
@@ -309,7 +537,20 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return HitStatusEnum.Unknown;
+            // Remember Current Player
+            EngineSettings.BattleMessagesModel.PlayerType = PlayerTypeEnum.Monster;
+
+            // Choose who to attack
+            EngineSettings.BattleMessagesModel.TargetName = Target.Name;
+            EngineSettings.BattleMessagesModel.AttackerName = Attacker.Name;
+
+            // Set Attack and Defense
+            var AttackScore = Attacker.Level + Attacker.GetAttack();
+            var DefenseScore = Target.GetDefense() + Target.Level;
+
+            EngineSettings.BattleMessagesModel.HitStatus = RollToHitTarget(AttackScore, DefenseScore);
+
+            return EngineSettings.BattleMessagesModel.HitStatus;
         }
 
         /// <summary>
@@ -318,7 +559,31 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool CalculateExperience(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return false;
+            if (Attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                var points = " points";
+
+                var experienceEarned = Target.CalculateExperienceEarned(EngineSettings.BattleMessagesModel.DamageAmount);
+
+                if (experienceEarned == 1)
+                {
+                    points = " point";
+                }
+
+                EngineSettings.BattleMessagesModel.ExperienceEarned = " Earned " + experienceEarned + points;
+
+                var LevelUp = Attacker.AddExperience(experienceEarned);
+                if (LevelUp)
+                {
+                    EngineSettings.BattleMessagesModel.LevelUpMessage = Attacker.Name + " is now Level " + Attacker.Level + " With Health Max of " + Attacker.GetMaxHealthTotal;
+                    Debug.WriteLine(EngineSettings.BattleMessagesModel.LevelUpMessage);
+                }
+
+                // Add Experinece to the Score
+                EngineSettings.BattleScore.ExperienceGainedTotal += experienceEarned;
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -326,6 +591,13 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveIfDead(PlayerInfoModel Target)
         {
+            // Check for alive
+            if (Target.Alive == false)
+            {
+                _ = TargetDied(Target);
+                return true;
+            }
+
             return false;
         }
 
@@ -351,7 +623,49 @@ namespace Game.Engine.EngineGame
 
             // Add the MonsterModel to the killed list
 
-            return false;
+            bool found;
+
+            // Mark Status in output
+            EngineSettings.BattleMessagesModel.TurnMessageSpecial = " and causes death. ";
+
+            // Removing the 
+            _ = EngineSettings.MapModel.RemovePlayerFromMap(Target);
+
+            // INFO: Teams, Hookup your Boss if you have one...
+
+            // Using a switch so in the future additional PlayerTypes can be added (Boss...)
+            switch (Target.PlayerType)
+            {
+                case PlayerTypeEnum.Character:
+                    // Add the Character to the killed list
+                    EngineSettings.BattleScore.CharacterAtDeathList += Target.FormatOutput() + "\n";
+
+                    EngineSettings.BattleScore.CharacterModelDeathList.Add(Target);
+
+                    _ = DropItems(Target);
+
+                    found = EngineSettings.CharacterList.Remove(EngineSettings.CharacterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+
+                case PlayerTypeEnum.Monster:
+                default:
+                    // Add one to the monsters killed count...
+                    EngineSettings.BattleScore.MonsterSlainNumber++;
+
+                    // Add the MonsterModel to the killed list
+                    EngineSettings.BattleScore.MonstersKilledList += Target.FormatOutput() + "\n";
+
+                    EngineSettings.BattleScore.MonsterModelDeathList.Add(Target);
+
+                    _ = DropItems(Target);
+
+                    found = EngineSettings.MonsterList.Remove(EngineSettings.MonsterList.Find(m => m.Guid.Equals(Target.Guid)));
+                    found = EngineSettings.PlayerList.Remove(EngineSettings.PlayerList.Find(m => m.Guid.Equals(Target.Guid)));
+
+                    return true;
+            }
         }
 
         /// <summary>
@@ -366,7 +680,34 @@ namespace Game.Engine.EngineGame
 
             // Add to ScoreModel
 
-            return 0;
+            var DroppedMessage = "\nItems Dropped : \n";
+
+            // Drop Items to ItemModel Pool
+            var myItemList = Target.DropAllItems();
+
+            // I feel generous, even when characters die, random drops happen :-)
+            // If Random drops are enabled, then add some....
+            myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+
+            // Add to ScoreModel
+            foreach (var ItemModel in myItemList)
+            {
+                EngineSettings.BattleScore.ItemsDroppedList += ItemModel.FormatOutput() + "\n";
+                DroppedMessage += ItemModel.Name + "\n";
+            }
+
+            EngineSettings.ItemPool.AddRange(myItemList);
+
+            if (myItemList.Count == 0)
+            {
+                DroppedMessage = " Nothing dropped. ";
+            }
+
+            EngineSettings.BattleMessagesModel.DroppedMessage = DroppedMessage;
+
+            EngineSettings.BattleScore.ItemModelDropList.AddRange(myItemList);
+
+            return myItemList.Count();
         }
 
         /// <summary>
@@ -376,7 +717,51 @@ namespace Game.Engine.EngineGame
         /// <param name="DefenseScore"></param>
         public override HitStatusEnum RollToHitTarget(int AttackScore, int DefenseScore)
         {
-            return HitStatusEnum.Unknown;
+            var d20 = DiceHelper.RollDice(1, 20);
+
+            if (d20 == 1)
+            {
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to miss ";
+
+                if (EngineSettings.BattleSettingsModel.AllowCriticalMiss)
+                {
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 1 to completly miss ";
+                    EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalMiss;
+                }
+
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            if (d20 == 20)
+            {
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for hit ";
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Hit;
+
+                if (EngineSettings.BattleSettingsModel.AllowCriticalHit)
+                {
+                    EngineSettings.BattleMessagesModel.AttackStatus = " rolls 20 for lucky hit ";
+                    EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.CriticalHit;
+                }
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            var ToHitScore = d20 + AttackScore;
+            if (ToHitScore < DefenseScore)
+            {
+                EngineSettings.BattleMessagesModel.AttackStatus = " rolls " + d20 + " and misses ";
+
+                // Miss
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+                EngineSettings.BattleMessagesModel.DamageAmount = 0;
+                return EngineSettings.BattleMessagesModel.HitStatus;
+            }
+
+            EngineSettings.BattleMessagesModel.AttackStatus = " rolls " + d20 + " and hits ";
+
+            // Hit
+            EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Hit;
+            return EngineSettings.BattleMessagesModel.HitStatus;
         }
 
         /// <summary>
@@ -391,7 +776,18 @@ namespace Game.Engine.EngineGame
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
 
-            return null;
+            var NumberToDrop = (DiceHelper.RollDice(1, round + 1) - 1);
+
+            var result = new List<ItemModel>();
+
+            for (var i = 0; i < NumberToDrop; i++)
+            {
+                // Get a random Unique Item
+                var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
+                result.Add(data);
+            }
+
+            return result;
         }
 
         /// <summary>
