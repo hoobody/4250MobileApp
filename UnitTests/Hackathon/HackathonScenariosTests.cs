@@ -236,6 +236,7 @@ namespace Scenario
             Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
         }
         #endregion Scenario2
+
         #region Scenario9
         [Test]
         public void HackathonScenario_Scenario_9_Valid_Default_Should_Pass()
