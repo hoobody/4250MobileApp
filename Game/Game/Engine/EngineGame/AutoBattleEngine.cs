@@ -57,7 +57,7 @@ namespace Game.Engine.EngineGame
             // Will first pull from existing characters
             foreach (var data in CharacterIndexViewModel.Instance.Dataset)
             {
-                if (Battle.EngineSettings.CharacterList.Count >= Battle.EngineSettings.MaxNumberPartyCharacters)
+                if (Battle.EngineSettings.CharacterList.Count() >= Battle.EngineSettings.MaxNumberPartyCharacters)
                 {
                     break;
                 }
@@ -68,7 +68,7 @@ namespace Game.Engine.EngineGame
             }
 
             //If there are not enough will add random ones
-            for (var i = Battle.EngineSettings.CharacterList.Count; i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
+            for (var i = Battle.EngineSettings.CharacterList.Count(); i < Battle.EngineSettings.MaxNumberPartyCharacters; i++)
             {
                 _ = Battle.PopulateCharacterList(RandomPlayerHelper.GetRandomCharacter(1));
             }
