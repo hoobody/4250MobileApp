@@ -392,5 +392,10 @@ namespace UnitTests.Engine.EngineGame
         //    Assert.AreEqual(0, result);
         //}
         #endregion DropItems
+
+        #region HackathonUnitTests
+
+
+        #endregion
     }
 }
