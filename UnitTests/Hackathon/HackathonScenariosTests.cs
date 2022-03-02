@@ -246,7 +246,9 @@ namespace Scenario
             *      9
             *      
             * Description: 
-            *       Just in time delivery for better loot at the end of rounds
+            *        Just in time delivery for better loot at the end of rounds.
+            *       Looks through the characters, finds an open slot, and has a 50% chance of returning items from the dataservice to that slot
+            *       If the character has all slots filled it raises the level instead
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
             *      RoundOverPage.xaml: Added a button to do the delivery
