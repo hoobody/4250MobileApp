@@ -310,7 +310,7 @@ namespace Game.Views
         public async void MomAndPopShopInstantDelivery_Clicked(object sender, EventArgs e)
         {
             var number = DiceHelper.RollDice(1, 6); // Get up to 6 random items
-            var level = BattleEngineViewModel.Instance.PartyCharacterList.Min(m => m.Level); // The Min level of character
+            var level = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Min(m => m.Level); // The Min level of character
             var attribute = AttributeEnum.Unknown;  // Any Attribute
             var location = ItemLocationEnum.Unknown;    // Any Location
             var random = true;  // Random between 1 and Level
