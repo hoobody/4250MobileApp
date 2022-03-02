@@ -4,6 +4,7 @@ using Game.Helpers;
 using Game.Services;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -309,16 +310,53 @@ namespace Game.Views
         /// <returns></returns>
         public async void MomAndPopShopInstantDelivery_Clicked(object sender, EventArgs e)
         {
-            var number = DiceHelper.RollDice(1, 6); // Get up to 6 random items
+            var lowestLevel = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Min(m => m.Level);
             var level = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Min(m => m.Level); // The Min level of character
             var attribute = AttributeEnum.Unknown;  // Any Attribute
             var location = ItemLocationEnum.Unknown;    // Any Location
             var random = true;  // Random between 1 and Level
             var updateDataBase = true;  // Add them to the DB
+            var category = 0;
+            List<ItemModel> dataList = new List<ItemModel>();
+            Random rnd = new Random();
 
-            var category = 0;   // What category to filter down to, 0 is all, what team is your team?
+            // Roll a dice for each character. If it's a 1 then look at them for an open item slot and then pull the db for an item that fits
+            //if no open slots exist power up the level of the retrieved weapon
+            foreach ( PlayerInfoModel character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+            {
+                var number = rnd.Next(0, 2);
 
-            var dataList = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
+                if (number == 0)
+                {
+                    continue;
+                }
+                //Find the first open slot on a given character
+                ItemLocationEnum openSlot = FindOpenSlotOnCharacter(character);
+                
+                //if none exist power up the item
+                if(openSlot == ItemLocationEnum.Unknown)
+                {
+                    level++;
+                }
+                //if there are open slots set the location accordingly
+                if(openSlot != ItemLocationEnum.Unknown)
+                {
+                    location = openSlot;
+                }
+                //do a single pull for one item
+
+                List<ItemModel> newItem = new List<ItemModel>();
+                newItem = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
+                dataList.AddRange(newItem);
+
+                //resets level and item location for next item
+                level = lowestLevel;
+                location = ItemLocationEnum.Unknown;
+
+            }
+
+
+            
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.AddRange(dataList);
 
             // Redraw items
@@ -326,7 +364,36 @@ namespace Game.Views
 
             DeliveryButton.IsEnabled = false;
             DeliveryButton.IsVisible = false;
+            DeliveryFrame.IsVisible = false;
 
+        }
+
+        /// <summary>
+        /// Takes a character and looks for the first open item slot
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns></returns>
+        public ItemLocationEnum FindOpenSlotOnCharacter(PlayerInfoModel character)
+        {
+            List<ItemLocationEnum> locations = new List<ItemLocationEnum>();
+
+            locations.Add(ItemLocationEnum.Head);
+            locations.Add(ItemLocationEnum.Necklass);
+            locations.Add(ItemLocationEnum.RightFinger);
+            locations.Add(ItemLocationEnum.LeftFinger);
+            locations.Add(ItemLocationEnum.Feet);
+            locations.Add(ItemLocationEnum.PrimaryHand);
+            locations.Add(ItemLocationEnum.OffHand);
+
+            foreach (ItemLocationEnum slot in locations)
+            {
+                ItemModel item = character.GetItemByLocation(slot);
+                if(item == null)
+                {
+                    return slot;
+                }
+            }
+            return ItemLocationEnum.Unknown;
         }
     }
 }
