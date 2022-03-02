@@ -34,7 +34,9 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool PopulateCharacterList(CharacterModel data)
         {
-            return base.PopulateCharacterList(data);
+            EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+
+            return true;
         }
 
         /// <summary>
