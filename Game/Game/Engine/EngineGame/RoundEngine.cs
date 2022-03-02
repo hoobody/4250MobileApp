@@ -105,7 +105,7 @@ namespace Game.Engine.EngineGame
                 targetLevel = totalLevels / partyCount;
             }
 
-            if (roundCount % 5 == 0)
+            if (roundCount % 5 == 0 && roundCount != 0)
             {
                 var data = RandomPlayerHelper.GetRandomBossMonster(targetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
@@ -115,22 +115,22 @@ namespace Game.Engine.EngineGame
                 EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
             }
 
-
-
-            for (var i = EngineSettings.MonsterList.Count; i < EngineSettings.MaxNumberPartyMonsters; i++)
+            else
             {
-               
-                //spreads the levels of the monsters out a bit creating a range of challenges
-                int randomLevel = targetLevel + RandomNumGenerator.Next(-2, 2);
+                for (var i = EngineSettings.MonsterList.Count; i < EngineSettings.MaxNumberPartyMonsters; i++)
+                {
 
-                var data = RandomPlayerHelper.GetRandomMonster(randomLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
+                    //spreads the levels of the monsters out a bit creating a range of challenges
+                    int randomLevel = targetLevel + RandomNumGenerator.Next(-2, 2);
 
-                // Help identify which Monster it is
-                data.Name += " " + EngineSettings.MonsterList.Count + 1;
+                    var data = RandomPlayerHelper.GetRandomMonster(randomLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
-                EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+                    // Help identify which Monster it is
+                    data.Name += " " + EngineSettings.MonsterList.Count + 1;
+
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(data));
+                }
             }
-
 
             // TODO: Teams, You need to implement your own Logic can not use mine.
             return EngineSettings.MonsterList.Count;
