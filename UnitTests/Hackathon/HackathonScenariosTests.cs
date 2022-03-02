@@ -180,7 +180,9 @@ namespace Scenario
             *      Make a Character called Doug, who misses every attack
             * 
             * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      No Code changes requied 
+            *      In TurnEngine.cs
+            *       in Attack()
+            *           Checked for an attacker named Doug and forced dice to roll a 1 for their attack
             * 
             * Test Algrorithm:
             *      Create Character named Douge
