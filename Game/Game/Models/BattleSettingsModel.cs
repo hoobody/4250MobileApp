@@ -18,7 +18,7 @@
         public bool AllowCriticalHit = true;
 
         // Are Critical Misses Allowed?
-        public bool AllowCriticalMiss = false;
+        public bool AllowCriticalMiss = true;
 
         // Can monsters have Items and weapons?
         public bool AllowMonsterItems = false;
