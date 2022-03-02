@@ -24,6 +24,6 @@
         public bool AllowMonsterItems = false;
 
         // Are Bosses Allowed?
-        public bool BossesEnabled = true;
+        public bool BossesEnabled = false;
     }
 }
