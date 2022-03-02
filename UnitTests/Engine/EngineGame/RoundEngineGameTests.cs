@@ -403,77 +403,51 @@ namespace UnitTests.Engine.EngineGame
         #endregion GetNextPlayerTurn
 
         #region HackathonUnitTests
-        #region Scenario1
-        [Test]
-        public async Task HackathonScenario_Scenario_1_Valid_Default_Should_Pass()
-        {
-            /* 
-            * Scenario Number:  
-            *      1
-            *      
-            * Description: 
-            *      Make a Character called Mike, who dies in the first round
-            * 
-            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      No Code changes requied 
-            * 
-            * Test Algrorithm:
-            *      Create Character named Mike
-            *      Set speed to -1 so he is really slow
-            *      Set Max health to 1 so he is weak
-            *      Set Current Health to 1 so he is weak
-            *  
-            *      Startup Battle
-            *      Run Auto Battle
-            * 
-            * Test Conditions:
-            *      Default condition is sufficient
-            * 
-            * Validation:
-            *      Verify Battle Returned True
-            *      Verify Mike is not in the Player List
-            *      Verify Round Count is 1
-            *  
-            */
+            #region Scenario 14
+                [Test]
+                public void RoundEngine_AddMonstersToRound_Valid_Default_Should_Pass()
+                {
+                    /* 
+                   * Scenario Number:  
+                   *      14
+                   *      
+                   * Description: 
+                   *      Every 5th round, the boss would spawn instead of the usual 6 monsters
+                   * 
+                   * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+                   *      Added boss class and methods for them to be different from the regular monsters
+                   * 
+                   * Test Algrorithm:
+                   *      Start up to round 5
+                   *      On 5th round the boss would spawn
+                   *  
+                   *      Startup Battle
+                   *      Run Auto Battle
+                   * 
+                   * Test Conditions:
+                   *      Default condition is sufficient
+                   * 
+                   * Validation:
+                   *      Verify Monster Count is 1
+                   *  
+                   */
 
-            //Arrange
+                    // Arrange
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Engine.Round.NewRound();
+                    }
 
-            // Set Character Conditions
+                    Engine.EngineSettings.MonsterList.Clear();
+                    // Act
+                    var result = Engine.Round.AddMonstersToRound();
+                    // Reset
 
-            Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+                    // Assert
+                    Assert.AreEqual(1, result);
+                }
+            #endregion Scenario 14
 
-            var CharacterPlayerMike = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = -1, // Will go last...
-                                Level = 1,
-                                CurrentHealth = 1,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                            });
-
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
-
-            // Set Monster Conditions
-
-            // Auto Battle will add the monsters
-
-            // Monsters always hit
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Hit;
-
-            //Act
-            var result = await EngineViewModel.AutoBattleEngine.RunAutoBattle();
-
-            //Reset
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
-
-            //Assert
-            Assert.AreEqual(true, result);
-            Assert.AreEqual(null, EngineViewModel.Engine.EngineSettings.PlayerList.Find(m => m.Name.Equals("Mike")));
-            Assert.AreEqual(1, EngineViewModel.Engine.EngineSettings.BattleScore.RoundCount);
-        }
-        #endregion Scenario1
         #region Scenario 4
         /* 
         * Scenario Number:  
