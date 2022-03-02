@@ -332,7 +332,7 @@ namespace Scenario
 
         #region Scenario 14
         [Test]
-        public void RoundEngine_AddMonstersToRound_Valid_Default_Should_Pass()
+        public void HackathonScenarios_AddMonstersToRound_Valid_Default_Should_Pass()
         {
             /* 
            * Scenario Number:  
@@ -402,7 +402,7 @@ namespace Scenario
         */
 
         [Test]
-        public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
+        public void HackathonScenarios_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
         {
             // Arrange
 
@@ -416,7 +416,7 @@ namespace Scenario
         }
 
         [Test]
-        public void TurnEngine_BattleSettingsOverrideCriticalHitStatusEnum_Valid_CriticalHit_Should_Pass()
+        public void HackathonScenarios_BattleSettingsOverrideCriticalHitStatusEnum_Valid_CriticalHit_Should_Pass()
         {
             // Arrange
 
@@ -430,7 +430,7 @@ namespace Scenario
         }
 
         [Test]
-        public void TurnEngine_BattleSettingsOverrideCriticalMissStatusEnum_Valid_CriticalMiss_Should_Pass()
+        public void HackathonScenarios_BattleSettingsOverrideCriticalMissStatusEnum_Valid_CriticalMiss_Should_Pass()
         {
             // Arrange
 
@@ -444,7 +444,7 @@ namespace Scenario
         }
 
         [Test]
-        public void TurnEngine_BattleSettingsOverrideMissStatusEnum_Valid_Miss_Should_Pass()
+        public void HackathonScenarios_BattleSettingsOverrideMissStatusEnum_Valid_Miss_Should_Pass()
         {
             // Arrange
 
