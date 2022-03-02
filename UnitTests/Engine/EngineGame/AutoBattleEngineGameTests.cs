@@ -3,14 +3,15 @@ using System.Linq;
 
 using NUnit.Framework;
 
-using Game.Engine.EngineGame;
 using Game.Models;
+using Game.Helpers;
 using Game.ViewModels;
+using Game.Engine.EngineGame;
 
 namespace UnitTests.Engine.EngineGame
 {
     [TestFixture]
-    public class AutoBattleEngineGameTests
+    public class AutoBattleEngineKoenigTests
     {
         #region TestSetup
         AutoBattleEngine AutoBattleEngine;
@@ -25,10 +26,7 @@ namespace UnitTests.Engine.EngineGame
             AutoBattleEngine.Battle.EngineSettings.CurrentDefender = null;
             AutoBattleEngine.Battle.EngineSettings.CurrentAttacker = null;
 
-            AutoBattleEngine.Battle.Round = new RoundEngine();
-            AutoBattleEngine.Battle.Round.Turn = new TurnEngine();
-
-            //AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
+            _ = AutoBattleEngine.Battle.StartBattle(true);   // Clear the Engine
         }
 
         [TearDown]
@@ -52,6 +50,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
 
+
         [Test]
         public void AutoBattleEngine_Constructor_Valid_Battle_Round_Turn_Should_Pass()
         {
@@ -68,6 +67,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.IsNotNull(result);
         }
+
         #endregion Constructor
 
         #region RunAutoBattle
@@ -75,6 +75,51 @@ namespace UnitTests.Engine.EngineGame
         public async Task AutoBattleEngine_RunAutoBattle_Valid_Default_Should_Pass()
         {
             //Arrange
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(3);
+
+            var data = new CharacterModel { Level = 1, MaxHealth = 10 };
+
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(new PlayerInfoModel(data));
+
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
+
+            //Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            //Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
+        {
+            //Arrange
+
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = -1,
+                                Level = 10,
+                                CurrentHealth = 11,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            });
+
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
             //Act
             var result = await AutoBattleEngine.RunAutoBattle();
@@ -84,81 +129,24 @@ namespace UnitTests.Engine.EngineGame
             //Assert
             Assert.AreEqual(true, result);
         }
-
-        [Test]
-        public async Task AutoBattleEngine_RunAutoBattle_InValid_DetectInfinateLoop_Should_Return_False()
-        {
-            //Arrange
-
-            // Trigger DetectInfinateLoop Loop
-            var oldRoundCountMax = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount;
-            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = -1;
-
-            //Act
-            var result = await AutoBattleEngine.RunAutoBattle();
-
-            //Reset
-            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = oldRoundCountMax;
-
-            //Assert
-            Assert.AreEqual(false, result);
-        }
-
-        [Test]
-        public async Task AutoBattleEngine_RunAutoBattle_Valid_NewRound_Should_Return_True()
-        {
-            //Arrange
-
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
-            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
-
-            var CharacterPlayerMike = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = 100,
-                                Attack = 100,
-                                Defense = 100,
-                                Level = 1,
-                                CurrentHealth = 111,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                                ListOrder = 1,
-                            });
-
-            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
-
-            var MonsterPlayerSue = new PlayerInfoModel(
-                new MonsterModel
-                {
-                    Speed = 1,
-                    Attack = 1,
-                    Defense = 1,
-                    Level = 1,
-                    CurrentHealth = 1,
-                    ExperienceTotal = 1,
-                    ExperienceRemaining = 1,
-                    Name = "Sue",
-                    ListOrder = 2,
-                });
-
-            AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(MonsterPlayerSue);
-
-            //Act
-            var result = await AutoBattleEngine.RunAutoBattle();
-
-            //Reset
-
-            //Assert
-            Assert.AreEqual(false, result);
-        }
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
         [Test]
-        public void AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
+        public async Task AutoBattleEngine_CreateCharacterParty_Valid_Characters_Should_Assign_6()
         {
             //Arrange
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 6;
+
+            CharacterIndexViewModel.Instance.Dataset.Clear();
+
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "1" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "2" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "3" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "4" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "5" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "6" });
+            _ = await CharacterIndexViewModel.Instance.CreateAsync(new CharacterModel { Name = "7" });
 
             //Act
             var result = AutoBattleEngine.CreateCharacterParty();
@@ -167,6 +155,7 @@ namespace UnitTests.Engine.EngineGame
 
             //Assert
             Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count);
+            Assert.AreEqual("6", AutoBattleEngine.Battle.EngineSettings.CharacterList.ElementAt(5).Name);
         }
 
         [Test]
@@ -186,53 +175,5 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count);
         }
         #endregion CreateCharacterParty   
-
-        #region DetectInfinateLoop
-        [Test]
-        public void AutoBattleEngine_DetectInfinateLoop_InValid_RoundCount_More_Than_Max_Should_Return_True()
-        {
-            // Arrange
-            AutoBattleEngine.Battle.EngineSettings.BattleScore.RoundCount = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount + 1;
-
-            // Act
-            var result = AutoBattleEngine.DetectInfinateLoop();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
-        public void AutoBattleEngine_DetectInfinateLoop_InValid_TurnCount_Count_More_Than_Max_Should_Return_True()
-        {
-            // Arrange
-            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount + 1;
-
-            // Act
-            var result = AutoBattleEngine.DetectInfinateLoop();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
-        public void AutoBattleEngine_DetectInfinateLoop_Valid_Counts_Less_Than_Max_Should_Return_false()
-        {
-            // Arrange
-            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount - 1;
-            AutoBattleEngine.Battle.EngineSettings.BattleScore.RoundCount = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount - 1;
-
-            // Act
-            var result = AutoBattleEngine.DetectInfinateLoop();
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-        #endregion DetectInfinateLoop
     }
 }
