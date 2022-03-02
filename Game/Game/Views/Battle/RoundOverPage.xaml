@@ -33,8 +33,8 @@
                                     Wrap="Wrap"/>
 
 
-                        <Grid Margin="0,30,0,0">
-                        
+                        <Grid Margin="0,30,0,10">
+
                             <StackLayout BackgroundColor="{StaticResource SecondaryBackgroundColor}"
                                          Padding="20">
                                 <Label Style="{StaticResource LabelCenterStyle}"
@@ -50,7 +50,7 @@
                             </Frame>
 
                         </Grid>
-                    
+
                         <StackLayout Style="{StaticResource HorizontalStack}">
                             <Label Text="Found : " Style="{StaticResource LabelStyle}"/>
                             <Label Text="0" x:Name="TotalFound" Style="{StaticResource ValueStyle}"/>
@@ -69,7 +69,17 @@
                                 Clicked="CloseButton_Clicked"/>
 
                         </StackLayout>
-                        
+
+                        <Frame BorderColor="Black"
+                            Margin="10"
+                            CornerRadius="5"
+                            BackgroundColor="{StaticResource ViewBackgroundColor}">
+                            <Button Clicked="MomAndPopShopInstantDelivery_Clicked" 
+                                    Text="Item Delivery"
+                                    Style="{StaticResource DeliveryButton}"
+                                    x:Name="DeliveryButton"/>
+                        </Frame>
+
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
@@ -82,25 +92,34 @@
                     AbsoluteLayout.LayoutBounds=".5, .5,.5,.5" 
                     AbsoluteLayout.LayoutFlags="All">
 
-                <StackLayout 
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand"
-                        WidthRequest="300"
-                        HeightRequest="300"
-                        >
+                <StackLayout VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"
+                    HeightRequest="300">
 
-                    <Frame 
-                             BorderColor="{StaticResource TriciaryTextColor}" Padding="1">
+                    <Frame BorderColor="{StaticResource TriciaryTextColor}" 
+                           Padding="1">
 
-                        <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand" Padding="2">
-                            <Image x:Name="PopupItemImage" Style="{StaticResource ImageLargeStyle}"/>
+                        <StackLayout Style="{StaticResource VerticalStack}" 
+                            HorizontalOptions="CenterAndExpand" 
+                            Padding="2">
+                            <Image x:Name="PopupItemImage" 
+                                Style="{StaticResource ImageLargeStyle}"/>
 
-                            <Label x:Name="PopupItemName" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
-                            <Label x:Name="PopupItemDescription" Style="{StaticResource PopupItemTextStyle}" MaxLines="2" LineBreakMode="WordWrap" />
+                            <Label x:Name="PopupItemName" 
+                                Style="{StaticResource PopupItemTextStyle}" 
+                                MaxLines="2" 
+                                LineBreakMode="WordWrap" />
+                            <Label x:Name="PopupItemDescription" 
+                                Style="{StaticResource PopupItemTextStyle}" 
+                                MaxLines="2" 
+                                LineBreakMode="WordWrap" />
 
                             <StackLayout Style="{StaticResource HorizontalStack}">
-                                <Label Text="Location : " Style="{StaticResource LabelStyle}" />
-                                <Label x:Name="PopupItemLocation" Style="{StaticResource ValueStyle}" />
+                                <Label Text="Location : " 
+                                    Style="{StaticResource LabelStyle}" />
+                                <Label x:Name="PopupItemLocation" 
+                                    Style="{StaticResource ValueStyle}" />
                             </StackLayout>
 
                             <StackLayout Style="{StaticResource HorizontalStack}">

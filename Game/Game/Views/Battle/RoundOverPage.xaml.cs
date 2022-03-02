@@ -1,5 +1,7 @@
 ﻿using Game.Models;
 using Game.ViewModels;
+using Game.Helpers;
+using Game.Services;
 using System;
 using System.Linq;
 using Xamarin.Forms;
@@ -301,5 +303,30 @@ namespace Game.Views
             _ = await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+        /// Get Items using the HTTP Post command
+        /// </summary>
+        /// <returns></returns>
+        public async void MomAndPopShopInstantDelivery_Clicked(object sender, EventArgs e)
+        {
+            var number = DiceHelper.RollDice(1, 6); // Get up to 6 random items
+            var level = BattleEngineViewModel.Instance.PartyCharacterList.Min(m => m.Level); // The Min level of character
+            var attribute = AttributeEnum.Unknown;  // Any Attribute
+            var location = ItemLocationEnum.Unknown;    // Any Location
+            var random = true;  // Random between 1 and Level
+            var updateDataBase = true;  // Add them to the DB
+
+            var category = 0;   // What category to filter down to, 0 is all, what team is your team?
+
+            var dataList = await ItemService.GetItemsFromServerPostAsync(number, level, attribute, location, category, random, updateDataBase);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.AddRange(dataList);
+
+            // Redraw items
+            DrawItemLists();
+
+            DeliveryButton.IsEnabled = false;
+            DeliveryButton.IsVisible = false;
+
+        }
     }
 }
