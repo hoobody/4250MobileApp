@@ -92,6 +92,7 @@
                 <Label 
                     Grid.Row="2" Grid.Column="0"
                     Text="Allow Critical Hit" 
+               
                     Style="{DynamicResource LabelStyle}"/>
 
                 <Switch 
@@ -124,6 +125,18 @@
                     VerticalOptions="Center"
                     x:Name="AllowMonsterItemsSwitch"
                     Toggled="AllowMonsterItems_Toggled"/>
+
+                <Label 
+                    Grid.Row="5" Grid.Column="0"
+                    Text="Allow Boss Encounter" 
+                    Style="{DynamicResource LabelStyle}"/>
+
+                <Switch 
+                    Grid.Row="5" Grid.Column="1"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"
+                    x:Name="Boss_Toggled"
+                    Toggled="BossEnabled_Toggled"/>
             </Grid>
 
             <Button Clicked="CloseButton_Clicked" Text="Close" HorizontalOptions="Center"/>

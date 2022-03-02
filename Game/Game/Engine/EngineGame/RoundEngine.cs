@@ -105,7 +105,7 @@ namespace Game.Engine.EngineGame
                 targetLevel = totalLevels / partyCount;
             }
 
-            if (roundCount % 5 == 0 && roundCount != 0)
+            if (roundCount % 1 == 0 && roundCount != 0 && EngineSettings.BattleSettingsModel.BossesEnabled)
             {
                 var data = RandomPlayerHelper.GetRandomBossMonster(targetLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 

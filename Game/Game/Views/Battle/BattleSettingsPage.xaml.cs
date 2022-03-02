@@ -156,6 +156,23 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Toggle Boss Encounter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void BossEnabled_Toggled(object sender, EventArgs e)
+        {
+            // Flip the settings
+            if (Boss_Toggled.IsToggled == true)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BossesEnabled = true;
+                return;
+            }
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BossesEnabled = false;
+        }
+
+        /// <summary>
         /// Toggle Monster Items
         /// </summary>
         /// <param name="sender"></param>
