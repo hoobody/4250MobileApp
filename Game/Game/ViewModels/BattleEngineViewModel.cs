@@ -40,7 +40,7 @@ namespace Game.ViewModels
         #endregion Singleton
 
         // The Battle Engine
-        public IBattleEngineInterface Engine = new Engine.EngineKoenig.BattleEngine();
+        public IBattleEngineInterface Engine = new Engine.EngineGame.BattleEngine();
 
         // Auto Battle Engine (used for scneario testing)
         public IAutoBattleInterface AutoBattleEngine = new Engine.EngineKoenig.AutoBattleEngine();
