@@ -94,15 +94,14 @@
                     TextDecorations="Underline" 
                     Margin="0,-20, 0, 0"/>
                 
-                <Grid x:Name="MonsterListFrame" 
-                      RowSpacing="-40"/>
+                <Grid x:Name="MonsterListFrame" RowSpacing="-10"/>
 
                 <ImageButton
                     x:Name="BeginBattleButton"
                     Clicked="BeginButton_Clicked"
                     Source="begin_button.png" 
                     HeightRequest="65"
-                    Margin="0,-50,0,0"/>
+                    Margin="0,-30,0,0"/>
 
                 <StackLayout Padding="1" />
 
