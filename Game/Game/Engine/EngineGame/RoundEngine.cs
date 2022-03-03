@@ -228,7 +228,13 @@ namespace Game.Engine.EngineGame
 
             // Get Next Player
 
-            return base.GetNextPlayerTurn();
+            // Remove the Dead
+            _ = RemoveDeadPlayersFromList();
+
+            // Get Next Player
+            var PlayerCurrent = GetNextPlayerInList();
+
+            return PlayerCurrent;
         }
 
         /// <summary>
