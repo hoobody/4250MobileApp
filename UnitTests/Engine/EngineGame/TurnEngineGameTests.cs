@@ -707,6 +707,36 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Levels_Up_Should_Pass()
+        {
+            // Arrange
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            var Character = new CharacterModel();
+
+            var CharacterPlayer = new PlayerInfoModel(Character);
+
+            CharacterPlayer.ExperienceTotal = 300;    // Enough for next level
+
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            // Forece a Miss
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
+
+            // Act
+            var result = Engine.Round.Turn.TurnAsAttack(CharacterPlayer, MonsterPlayer);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+            Assert.AreEqual(2, CharacterPlayer.Level);
+        }
         #endregion TurnAsAttack
 
         #region TargetDied
