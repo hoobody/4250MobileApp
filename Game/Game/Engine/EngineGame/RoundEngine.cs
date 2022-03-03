@@ -254,7 +254,15 @@ namespace Game.Engine.EngineGame
         {
             // TODO Teams: Implement the order
 
-            return base.OrderPlayerListByTurnOrder();
+            EngineSettings.PlayerList = EngineSettings.PlayerList.OrderByDescending(a => a.GetSpeed())
+                .ThenByDescending(a => a.Level)
+                .ThenByDescending(a => a.ExperienceTotal)
+                .ThenByDescending(a => a.PlayerType)
+                .ThenBy(a => a.Name)
+                .ThenBy(a => a.ListOrder)
+                .ToList();
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
