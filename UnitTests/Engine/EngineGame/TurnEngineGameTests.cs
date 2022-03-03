@@ -21,7 +21,7 @@ namespace UnitTests.Engine.EngineGame
             Engine = new BattleEngine();
             Engine.Round = new RoundEngine();
             Engine.Round.Turn = new TurnEngine();
-            //Engine.StartBattle(true);   // Start engine in auto battle mode
+            Engine.StartBattle(true);   // Start engine in auto battle mode
         }
 
         [TearDown]
@@ -45,6 +45,97 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
         #endregion Constructor
+
+        #region BattleSettings
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideHitStatusEnum_Valid_Hit_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Hit);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Hit, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideCriticalHitStatusEnum_Valid_CriticalHit_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.CriticalHit);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.CriticalHit, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideCriticalMissStatusEnum_Valid_CriticalMiss_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.CriticalMiss);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.CriticalMiss, result);
+        }
+
+        [Test]
+        public void TurnEngine_BattleSettingsOverrideMissStatusEnum_Valid_Miss_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Miss);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(HitStatusEnum.Miss, result);
+        }
+
+        [Test]
+        public void TurnEngine_DetermineCriticalMissProblem_InValid_Null_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = Engine.Round.Turn.DetermineCriticalMissProblem(null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_DetermineCriticalMissProblem_Valid_Monster_Drops_Random_Should_Pass()
+        {
+            // Arrange
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(6);
+
+            // Act
+            var result = Engine.Round.Turn.DetermineCriticalMissProblem(MonsterPlayer);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+        #endregion BattleSettings
 
         #region MoveAsTurn
         [Test]
