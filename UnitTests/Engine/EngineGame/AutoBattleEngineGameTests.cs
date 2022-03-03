@@ -11,7 +11,7 @@ using Game.Engine.EngineGame;
 namespace UnitTests.Engine.EngineGame
 {
     [TestFixture]
-    public class AutoBattleEngineKoenigTests
+    public class AutoBattleEngineGameTests
     {
         #region TestSetup
         AutoBattleEngine AutoBattleEngine;
@@ -175,5 +175,53 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(6, AutoBattleEngine.Battle.EngineSettings.CharacterList.Count);
         }
         #endregion CreateCharacterParty   
+
+        #region DetectInfinateLoop
+        [Test]
+        public void AutoBattleEngine_DetectInfinateLoop_InValid_RoundCount_More_Than_Max_Should_Return_True()
+        {
+            // Arrange
+            AutoBattleEngine.Battle.EngineSettings.BattleScore.RoundCount = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount + 1;
+
+            // Act
+            var result = AutoBattleEngine.DetectInfinateLoop();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void AutoBattleEngine_DetectInfinateLoop_InValid_TurnCount_Count_More_Than_Max_Should_Return_True()
+        {
+            // Arrange
+            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount + 1;
+
+            // Act
+            var result = AutoBattleEngine.DetectInfinateLoop();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void AutoBattleEngine_DetectInfinateLoop_Valid_Counts_Less_Than_Max_Should_Return_false()
+        {
+            // Arrange
+            AutoBattleEngine.Battle.EngineSettings.BattleScore.TurnCount = AutoBattleEngine.Battle.EngineSettings.MaxTurnCount - 1;
+            AutoBattleEngine.Battle.EngineSettings.BattleScore.RoundCount = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount - 1;
+
+            // Act
+            var result = AutoBattleEngine.DetectInfinateLoop();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+        #endregion DetectInfinateLoop
     }
 }
