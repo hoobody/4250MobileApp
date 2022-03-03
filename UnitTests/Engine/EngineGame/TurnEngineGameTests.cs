@@ -139,12 +139,21 @@ namespace UnitTests.Engine.EngineGame
 
         #region MoveAsTurn
         [Test]
-        public void RoundEngine_MoveAsTurn_Valid_Default_Should_Pass()
+        public void TurnEngine_MoveAsTurn_Valid_Character_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
-            var result = Engine.Round.Turn.MoveAsTurn(new PlayerInfoModel());
+            var result = Engine.Round.Turn.MoveAsTurn(CharacterPlayer);
 
             // Reset
 
@@ -153,12 +162,101 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void RoundEngine_MoveAsTurn_Valid_Monster_Default_Should_Pass()
+        public void TurnEngine_MoveAsTurn_Valid_Monster_Should_Pass()
         {
-            // Arrange 
+            // Arrange
+
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
-            var result = Engine.Round.Turn.MoveAsTurn(new PlayerInfoModel(new MonsterModel()));
+            var result = Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_MoveAsTurn_Invalid_Monster_InValid_No_Defender_Should_Fail()
+        {
+            // Arrange
+
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+
+            // Remove everyone
+            Engine.EngineSettings.PlayerList.Clear();
+
+            Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_MoveAsTurn_Invalid_Monster_InValid_Defender_Not_On_Map_Should_Fail()
+        {
+            // Arrange
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            // Not on map.... 
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_MoveAsTurn_Invalid_Monster_InValid_Attacker_Not_On_Map_Should_Fail()
+        {
+            // Arrange
+
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            // Add player after map is made, so player is not on the map
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Engine.Round.Turn.MoveAsTurn(MonsterPlayer);
 
             // Reset
 
@@ -964,21 +1062,5 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
         #endregion DetermineCriticalMissProblem
-
-        #region DropItems
-        //[Test]
-        //public void RoundEngine_DropItems_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
-
-        //    // Act
-        //    var result = Engine.Round.Turn.DropItems(new PlayerInfoModel());
-
-        //    // Reset
-
-        //    // Assert
-        //    Assert.AreEqual(0, result);
-        //}
-        #endregion DropItems
     }
 }
