@@ -108,20 +108,6 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void TurnEngine_DetermineCriticalMissProblem_InValid_Null_Should_Fail()
-        {
-            // Arrange
-
-            // Act
-            var result = Engine.Round.Turn.DetermineCriticalMissProblem(null);
-
-            // Reset
-
-            // Assert
-            Assert.AreEqual(true, result);
-        }
-
-        [Test]
         public void TurnEngine_DetermineCriticalMissProblem_Valid_Monster_Drops_Random_Should_Pass()
         {
             // Arrange
