@@ -129,6 +129,74 @@ namespace UnitTests.Engine.EngineGame
             //Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_InValid_DetectInfinateLoop_Should_Return_False()
+        {
+            //Arrange
+
+            // Trigger DetectInfinateLoop Loop
+            var oldRoundCountMax = AutoBattleEngine.Battle.EngineSettings.MaxRoundCount;
+            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = -1;
+
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
+
+            //Reset
+            AutoBattleEngine.Battle.EngineSettings.MaxRoundCount = oldRoundCountMax;
+
+            //Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_Valid_NewRound_Should_Return_True()
+        {
+            //Arrange
+
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyMonsters = 1;
+            AutoBattleEngine.Battle.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 100,
+                                Attack = 100,
+                                Defense = 100,
+                                Level = 1,
+                                CurrentHealth = 111,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                                ListOrder = 1,
+                            });
+
+            AutoBattleEngine.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+
+            var MonsterPlayerSue = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 1,
+                    Attack = 1,
+                    Defense = 1,
+                    Level = 1,
+                    CurrentHealth = 1,
+                    ExperienceTotal = 1,
+                    ExperienceRemaining = 1,
+                    Name = "Sue",
+                    ListOrder = 2,
+                });
+
+            AutoBattleEngine.Battle.EngineSettings.MonsterList.Add(MonsterPlayerSue);
+
+            //Act
+            var result = await AutoBattleEngine.RunAutoBattle();
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(false, result);
+        }
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
