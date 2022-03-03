@@ -5,9 +5,11 @@ using Game.Engine.EngineGame;
 using Game.Models;
 using Game.ViewModels;
 using Game.Helpers;
+using Game.Engine.EngineModels;
 
 using System.Linq;
 using System.Collections.Generic;
+
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -1284,19 +1286,94 @@ namespace UnitTests.Engine.EngineGame
         #endregion TargetDied
 
         #region TakeTurn
-        //[Test]
-        //public void RoundEngine_TakeTurn_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
+        [Test]
+        public void TurnEngine_TakeTurn_Default_Should_Pass()
+        {
+            // Arrange
+            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
 
-        //    // Act
-        //    var result = Engine.Round.Turn.TakeTurn(new PlayerInfoModel());
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
 
-        //    // Reset
+            // Reset
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_TakeTurn_Ability_Should_Pass()
+        {
+            // Arrange
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Bandage;
+
+            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_TakeTurn_Move_Should_Pass()
+        {
+            // Arrange
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+
+            var character = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(new CharacterModel());
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(character);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_TakeTurn_InValid_ActionEnum_Unknown_Should_Set_Action_To_Attack()
+        {
+            // Arrange
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Move;
+
+            var character = new PlayerInfoModel(new CharacterModel());
+            var monster = new PlayerInfoModel(new CharacterModel());
+
+            Engine.EngineSettings.PlayerList.Add(character);
+            Engine.EngineSettings.PlayerList.Add(monster);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            // Set current action to unknonw
+            EngineSettingsModel.Instance.CurrentAction = ActionEnum.Unknown;
+
+            // Set Autobattle to false
+            EngineSettingsModel.Instance.BattleScore.AutoBattle = false;
+
+
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(character);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion TakeTurn
 
         #region RollToHitTarget
