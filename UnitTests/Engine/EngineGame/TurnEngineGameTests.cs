@@ -371,17 +371,123 @@ namespace UnitTests.Engine.EngineGame
 
         #region ChooseToUseAbility
         [Test]
-        public void RoundEngine_ChooseToUseAbility_Valid_Default_Should_Pass()
+        public void TurnEngine_ChooseToUseAbility_Valid_Heal_Should_Return_True()
         {
-            // Arrange 
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            CharacterPlayer.CurrentHealth = 1;
+            CharacterPlayer.MaxHealth = 100;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
 
             // Act
-            var result = Engine.Round.Turn.ChooseToUseAbility(new PlayerInfoModel());
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
 
             // Reset
 
             // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_InValid_Roll_9_Should_Return_False()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(9);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
             Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_InValid_Roll_2_No_Ability_Should_Return_False()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            CharacterPlayer.AbilityTracker.Clear();
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_ChooseToUseAbility_Valid_Roll_2_Yes_Ability_Should_Return_True()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(2);
+            // Act
+            var result = Engine.Round.Turn.ChooseToUseAbility(CharacterPlayer);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(true, result);
         }
         #endregion ChooseToUseAbility
 
