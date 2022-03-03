@@ -517,19 +517,125 @@ namespace UnitTests.Engine.EngineGame
         #endregion SelectCharacterToAttack
 
         #region UseAbility
-        //[Test]
-        //public void RoundEngine_UseAbility_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
+        [Test]
+        public void TurnEngine_UseAbility_InValid_Ability_Null_Should_Fail()
+        {
+            // Arrange
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
 
-        //    // Act
-        //    var result = Engine.Round.Turn.UseAbility(null);
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
 
-        //    // Reset
+            // remove it so it is not found
+            _ = characterPlayer.AbilityTracker.Remove(AbilityEnum.Unknown);
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_UseAbility_InValid_Ability_Count_0_Should_Fail()
+        {
+            // Arrange
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Unknown;
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+
+            // remove it so it is not found
+            characterPlayer.AbilityTracker[AbilityEnum.Unknown] = 0;
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Heal_1_Should_Pass()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Heal, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Heal;
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Toughness_1_Should_Pass()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Toughness, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Toughness;
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Quick_1_Should_Pass()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Quick, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Quick;
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_Curse_1_Should_Pass()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Unknown });
+
+            // remove it so it is not found
+            characterPlayer.AbilityTracker.Add(AbilityEnum.Curse, 1);
+            Engine.EngineSettings.CurrentActionAbility = AbilityEnum.Curse;
+
+            // Act
+            var result = Engine.Round.Turn.UseAbility(characterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion UseAbility
 
         #region DropItems
