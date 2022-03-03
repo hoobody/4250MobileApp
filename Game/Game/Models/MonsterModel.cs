@@ -110,15 +110,17 @@ namespace Game.Models
         /// <returns></returns>
         public bool IsMonsterBoss()
         {
-            switch (MonsterJob)
+            if (MonsterJob == MonsterJobEnum.Mastermind)
             {
-                case MonsterJobEnum.Mastermind:
-                    return true;
-                case MonsterJobEnum.Godfather:
-                    return true;
-                default:
-                    return false;
+                return true;
             }
+
+            if (MonsterJob == MonsterJobEnum.Godfather)
+            {
+                return true;
+            } 
+
+            return false;
                 
         }
 
