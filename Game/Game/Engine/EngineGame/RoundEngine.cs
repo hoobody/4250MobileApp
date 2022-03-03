@@ -278,7 +278,43 @@ namespace Game.Engine.EngineGame
 
             // Add the Monsters
 
-            return base.MakePlayerList();
+            // Start from a clean list of players
+            EngineSettings.PlayerList.Clear();
+
+            // Remember the Insert order, used for Sorting
+            var ListOrder = 0;
+
+            foreach (var data in EngineSettings.CharacterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
+
+                    ListOrder++;
+                }
+            }
+
+            foreach (var data in EngineSettings.MonsterList)
+            {
+                if (data.Alive)
+                {
+                    EngineSettings.PlayerList.Add(
+                        new PlayerInfoModel(data)
+                        {
+                            // Remember the order
+                            ListOrder = ListOrder
+                        });
+
+                    ListOrder++;
+                }
+            }
+
+            return EngineSettings.PlayerList;
         }
 
         /// <summary>
