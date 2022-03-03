@@ -3,6 +3,8 @@ using NUnit.Framework;
 
 using Game.Engine.EngineGame;
 using Game.Models;
+using Game.ViewModels;
+using System.Linq;
 
 namespace UnitTests.Engine.EngineGame
 {
@@ -266,19 +268,76 @@ namespace UnitTests.Engine.EngineGame
         #endregion SelectMonsterToAttack
 
         #region DetermineActionChoice
-        //[Test]
-        //public void RoundEngine_DetermineActionChoice_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
+        [Test]
+        public void TurnEngine_DetermineActionChoice_Valid_Monster_Should_Return_CurrentAction()
+        {
+            // Arrange
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
 
-        //    // Act
-        //    var result = Engine.Round.Turn.DetermineActionChoice(new PlayerInfoModel());
+            MonsterPlayer.CurrentHealth = 1;
+            MonsterPlayer.MaxHealth = 1000;
 
-        //    // Reset
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
 
-        //    // Assert
-        //    Assert.AreEqual(ActionEnum.Unknown, result);
-        //}
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Ability, result);
+        }
+
+        [Test]
+        public void TurnEngine_DetermineActionChoice_Valid_Character_Should_Return_CurrentAction()
+        {
+            // Arrange
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            CharacterPlayer.CurrentHealth = 1;
+            CharacterPlayer.MaxHealth = 1000;
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Ability, result);
+        }
+
+        [Test]
+        public void TurnEngine_DetermineActionChoice_Valid_Character_Range_Should_Return_Attack()
+        {
+            // Arrange
+
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+
+            // Get the longest range weapon in stock.
+            var weapon = ItemIndexViewModel.Instance.Dataset.Where(m => m.Range > 1).ToList().OrderByDescending(m => m.Range).FirstOrDefault();
+            CharacterPlayer.PrimaryHand = weapon.Id;
+            Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+            Engine.EngineSettings.PlayerList.Add(new PlayerInfoModel(Monster));
+
+            _ = Engine.EngineSettings.MapModel.PopulateMapModel(Engine.EngineSettings.PlayerList);
+
+            Engine.EngineSettings.CurrentAction = ActionEnum.Unknown;
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Engine.Round.Turn.DetermineActionChoice(CharacterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ActionEnum.Attack, result);
+        }
         #endregion DetermineActionChoice
 
         #region TurnAsAttack
