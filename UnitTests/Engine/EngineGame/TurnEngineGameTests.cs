@@ -289,37 +289,76 @@ namespace UnitTests.Engine.EngineGame
         //}
         #endregion UseAbility
 
-        #region BattleSettingsOverrideHitStatusEnum
-        //[Test]
-        //public void RoundEngine_BattleSettingsOverrideHitStatusEnum_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
+        #region DropItems
+        [Test]
+        public void TurnEngine_DropItems_Valid_No_Items_Should_Return_0()
+        {
+            // Arrange
+            var player = new CharacterModel();
 
-        //    // Act
-        //    var result = Engine.Round.Turn.BattleSettingsOverrideHitStatusEnum(HitStatusEnum.Unknown);
+            var PlayerInfo = new PlayerInfoModel(player);
 
-        //    // Reset
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(0);
 
-        //    // Assert
-        //    Assert.AreEqual(HitStatusEnum.Unknown, result);
-        //}
-        //#endregion BattleSettingsOverrideHitStatusEnum
+            // Act
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
 
-        //#region BattleSettingsOverride
-        //[Test]
-        //public void RoundEngine_BattleSettingsOverride_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
 
-        //    // Act
-        //    var result = Engine.Round.Turn.BattleSettingsOverride(new PlayerInfoModel());
+            // Assert
+            Assert.AreEqual(0, result);
+        }
 
-        //    // Reset
+        [Test]
+        public void TurnEngine_DropItems_Valid_Character_Items_2_Should_Return_2()
+        {
+            // Arrange
+            var player = new CharacterModel
+            {
+                Head = ItemIndexViewModel.Instance.Dataset.FirstOrDefault().Id,
+                Feet = ItemIndexViewModel.Instance.Dataset.FirstOrDefault().Id,
+            };
 
-        //    // Assert
-        //    Assert.AreEqual(HitStatusEnum.Unknown, result);
-        //}
-        #endregion BattleSettingsOverride
+            var PlayerInfo = new PlayerInfoModel(player);
+
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(0);
+
+            // Act
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(2, result);
+        }
+
+        [Test]
+        public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
+        {
+            // Arrange
+            var player = new CharacterModel();
+
+            var PlayerInfo = new PlayerInfoModel(player);
+
+            _ = DiceHelper.EnableForcedRolls();
+
+            // Drop is 0-Number, so 2 will yield 1
+            _ = DiceHelper.SetForcedRollValue(2);
+
+            // Act
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+        #endregion DropItems
 
         #region CalculateExperience
         //[Test]
