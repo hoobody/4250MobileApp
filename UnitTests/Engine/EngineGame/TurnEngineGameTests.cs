@@ -814,6 +814,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
+        [Test]
         public void TurnEngine_TurnAsAttack_Valid_Character_Attacks_Monster_Levels_Up_Should_Pass()
         {
             // Arrange
