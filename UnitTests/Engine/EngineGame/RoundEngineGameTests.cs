@@ -180,39 +180,42 @@ namespace UnitTests.Engine.EngineGame
         #endregion GetItemFromPoolIfBetter
 
         #region PickupItemsFromPool
-        //[Test]
-        //public void RoundEngine_PickupItemsFromPool_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange
-        //    var Character = new CharacterModel
-        //    {
-        //        Speed = 20,
-        //        Level = 1,
-        //        CurrentHealth = 1,
-        //        ExperienceTotal = 1,
-        //        Name = "Z",
-        //        ListOrder = 1,
-        //        Guid = "me"
-        //    };
+        [Test]
+        public void RoundEngine_PickupItemsFromPool_Valid_Default_Should_Pass()
+        {
+            Engine.EngineSettings.MonsterList.Clear();
 
-        //    // Add each model here to warm up and load it.
-        //    _ = Game.Helpers.DataSetsHelper.WarmUp();
+            // Both need to be character to fall through to the Name Test
+            // Arrange
+            var Character = new CharacterModel
+            {
+                Speed = 20,
+                Level = 1,
+                CurrentHealth = 1,
+                ExperienceTotal = 1,
+                Name = "Z",
+                ListOrder = 1,
+                Guid = "me"
+            };
 
-        //    var CharacterPlayer = new PlayerInfoModel(Character);
-        //    Engine.EngineSettings.CharacterList.Clear();
-        //    Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(Character));
+            // Add each model here to warm up and load it.
+            _ = Game.Helpers.DataSetsHelper.WarmUp();
 
-        //    // Make the List
-        //    Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Clear();
+            Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(Character));
 
-        //    // Act
-        //    var result = Engine.Round.PickupItemsFromPool(CharacterPlayer);
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
 
-        //    // Reset
+            // Act
+            var result = Engine.Round.PickupItemsFromPool(CharacterPlayer);
 
-        //    // Assert
-        //    Assert.AreEqual(false, result);
-        //}
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion PickupItemsFromPool
 
         #region EndRound
