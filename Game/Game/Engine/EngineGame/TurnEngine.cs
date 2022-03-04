@@ -371,12 +371,55 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // Select first in the list
+            // Prep for switch
+            var d20 = DiceHelper.RollDice(1, 20);
+            PlayerInfoModel Defender;
+            
+            //Get a list of living characters
+            var livingCharacters = EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character);
 
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-            var Defender = EngineSettings.PlayerList
-                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Character)
-                .OrderBy(m => m.ListOrder).FirstOrDefault();
+            switch (d20)
+            {
+                case int n when (n < 3):
+                    //Attack the lowest health character
+                    var minHealth = EngineSettings.PlayerList.Min(m => m.CurrentHealth);
+                    Defender = livingCharacters
+                        .Where(m => m.CurrentHealth == minHealth).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 3 && n < 5):
+                    // Attack the highest health character
+                    var maxHealth = EngineSettings.PlayerList.Max(m => m.CurrentHealth);
+                    Defender = livingCharacters
+                        .Where(m => m.CurrentHealth == maxHealth).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 5 && n < 7):
+                    // Attack the weakest character
+                    var minAttack = EngineSettings.PlayerList.Min(m => m.GetAttackTotal);
+                    Defender = livingCharacters
+                        .Where(m => m.GetAttackTotal == minAttack).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 7 && n < 11):
+                    // Attack the Strongest character
+                    var maxAttack = EngineSettings.PlayerList.Max(m => m.GetAttackTotal);
+                    Defender = livingCharacters
+                        .Where(m => m.GetAttackTotal == maxAttack).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 11 && n < 16):
+                    // Attack the slowest character
+                    var minSpeed = EngineSettings.PlayerList.Min(m => m.GetSpeedTotal);
+                    Defender = livingCharacters
+                        .Where(m => m.GetSpeedTotal == minSpeed).FirstOrDefault();
+                    break;
+
+                default:
+                    //Attack the first character
+                    Defender = livingCharacters.FirstOrDefault();
+                    break;
+            }
 
             return Defender;
         }
