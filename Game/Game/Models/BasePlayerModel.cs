@@ -142,15 +142,15 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Add to Defense
+        /// Defense debuff
         /// </summary>
-        public int MinorDeduffDefense()
+        public int MinorDebuffDefense()
         {
             return BuffDefenseValue -= 2;
         }
 
         /// <summary>
-        /// Add to Speed
+        /// Speed debuff
         /// </summary>
         public int MinorDebuffSpeed()
         {
