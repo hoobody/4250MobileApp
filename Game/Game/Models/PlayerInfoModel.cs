@@ -396,6 +396,45 @@ namespace Game.Models
                 case AbilityEnum.Nimble:
                     _ = BuffSpeed();
                     break;
+                case AbilityEnum.Assassin:
+                    _ = BuffAttack();
+                    _ = MinorBuffDefense();
+                    _ = MinorBuffSpeed();
+                    break;
+                case AbilityEnum.Spy:
+                    _ = MinorBuffAttack();
+                    _ = MinorBuffSpeed();
+                    break;
+                case AbilityEnum.Hacker:
+                    _ = MinorDebuffAttack();
+                    _ = MinorBuffSpeed();
+                    _ = BuffDefense();
+                    break;
+                case AbilityEnum.SpecialAgent:
+                    _ = MinorBuffAttack();
+                    _ = MinorBuffDefense();
+                    _ = MinorBuffSpeed();
+                    break;
+                case AbilityEnum.Saboteur:
+                    _ = MinorDebuffAttack();
+                    _ = MinorBuffSpeed();
+                    _ = MinorBuffDefense();
+                    break;
+                case AbilityEnum.SurveillanceOfficer:
+                    _ = BuffSpeed();
+                    _ = MinorBuffAttack();
+                    _ = MinorBuffDefense();
+                    break;
+                case AbilityEnum.Detective:
+                    _ = MinorBuffAttack();
+                    _ = BuffDefense();
+                    _ = MinorDebuffSpeed();
+                    break;
+                case AbilityEnum.Double0:
+                    _ = BuffAttack();
+                    _ = MinorDebuffDefense();
+                    _ = MinorBuffSpeed();
+                    break;
             }
 
             // Reduce the count
