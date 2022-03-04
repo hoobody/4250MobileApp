@@ -785,14 +785,22 @@ namespace Game.Engine.EngineGame
             // The Number drop can be Up to the Round Count, but may be less.  
             // Negative results in nothing dropped
 
-            var NumberToDrop = (DiceHelper.RollDice(1, round + 1) - 1);
+            var levelToScaleTo = round;
+            var NumberToDrop = (DiceHelper.RollDice(1, round) - 1);
 
+            if (EngineSettings.CurrentDefender.isABoss)
+            {
+                NumberToDrop = (DiceHelper.RollDice(1, round) + 1);
+                levelToScaleTo++;
+            }
+            
             var result = new List<ItemModel>();
 
             for (var i = 0; i < NumberToDrop; i++)
             {
                 // Get a random Unique Item
                 var data = ItemIndexViewModel.Instance.GetItem(RandomPlayerHelper.GetMonsterUniqueItem());
+                data.ScaleLevel(levelToScaleTo);
                 result.Add(data);
             }
 
