@@ -453,7 +453,16 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveCharacterBuffs()
         {
-            return base.RemoveCharacterBuffs();
+            foreach (var data in EngineSettings.PlayerList)
+            {
+                _ = data.ClearBuffs();
+            }
+
+            foreach (var data in EngineSettings.CharacterList)
+            {
+                _ = data.ClearBuffs();
+            }
+            return true;
         }
     }
 }
