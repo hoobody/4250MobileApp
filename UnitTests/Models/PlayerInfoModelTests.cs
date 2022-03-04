@@ -357,6 +357,134 @@ namespace UnitTests.Models
         }
 
         [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Assassin_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Assassin });
+            data.AbilityTracker[AbilityEnum.Assassin] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Assassin, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Spy_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Spy });
+            data.AbilityTracker[AbilityEnum.Spy] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Spy, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Hacker_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Hacker });
+            data.AbilityTracker[AbilityEnum.Hacker] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Hacker, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_SpecialAgent_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SpecialAgent });
+            data.AbilityTracker[AbilityEnum.SpecialAgent] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.SpecialAgent, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Sabteur_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Saboteur });
+            data.AbilityTracker[AbilityEnum.Saboteur] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Saboteur, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_SurevillanceOfficer_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SurveillanceOfficer });
+            data.AbilityTracker[AbilityEnum.SurveillanceOfficer] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.SurveillanceOfficer, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Detective_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Detective });
+            data.AbilityTracker[AbilityEnum.Detective] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Detective, result);
+        }
+
+        [Test]
+        public void PlayerInfoModel_SelectAbilityToUse_Double0_Avaiable_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Double0 });
+            data.AbilityTracker[AbilityEnum.Double0] = 1;
+
+            // Act
+            var result = data.SelectAbilityToUse();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(AbilityEnum.Double0, result);
+        }
+
+        [Test]
         public void PlayerInfoModel_SelectAbilityToUse_Monster_Should_Return_False()
         {
             // Arrange
