@@ -1485,19 +1485,34 @@ namespace UnitTests.Engine.EngineGame
         #endregion RollToHitTarget
 
         #region GetRandomMonsterItemDrops
-        //[Test]
-        //public void RoundEngine_GetRandomMonsterItemDrops_Valid_Default_Should_Pass()
-        //{
-        //    // Arrange 
 
-        //    // Act
-        //    var result = Engine.Round.Turn.GetRandomMonsterItemDrops(1);
+        [Test]
+        public void TurnEngine_DropItems_Valid_Monster_Boss_Round_Items_0_Random_Drop_1_Should_Return_1()
+        {
+            // Arrange
+            for (int i = 0; i < 4; i++)
+            {
+                Engine.Round.NewRound();
+            }
 
-        //    // Reset
+            var player = new CharacterModel();
 
-        //    // Assert
-        //    Assert.AreEqual(null, result);
-        //}
+            var PlayerInfo = new PlayerInfoModel(player);
+
+            _ = DiceHelper.EnableForcedRolls();
+
+            // Drop is 0-Number, so 2 will yield 1
+            _ = DiceHelper.SetForcedRollValue(2);
+
+            // Act
+            var result = Engine.Round.Turn.DropItems(PlayerInfo);
+
+            // Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
         #endregion GetRandomMonsterItemDrops
 
         #region DetermineCriticalMissProblem
