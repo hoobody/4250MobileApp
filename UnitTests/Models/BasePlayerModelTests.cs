@@ -1565,5 +1565,77 @@ namespace UnitTests.Models
 
             Assert.AreEqual(2, Result);
         }
+
+        [Test]
+        public void BasePlayerModel_MinorBuffHealth_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorBuffHealth();
+
+            Assert.AreEqual(2, Result);
+        }
+
+
+        [Test]
+        public void BasePlayerModel_MinorBuffAttack_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorBuffAttack();
+
+            Assert.AreEqual(2, Result);
+        }
+
+
+        [Test]
+        public void BasePlayerModel_MinorBuffDefense_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorBuffDefense();
+
+            Assert.AreEqual(2, Result);
+        }
+
+        [Test]
+        public void BasePlayerModel_MinorBuffSpeed_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorBuffSpeed();
+
+            Assert.AreEqual(2, Result);
+        }
+
+        [Test]
+        public void BasePlayerModel_MinorDebuffDefense_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorDebuffDefense();
+
+            Assert.AreEqual(-2, Result);
+        }
+
+        [Test]
+        public void BasePlayerModel_MinorDebuffAttack_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorDebuffAttack();
+
+            Assert.AreEqual(-2, Result);
+        }
+
+        [Test]
+        public void BasePlayerModel_MinorDebuffSpeed_Default_Should_Pass()
+        {
+            var data = new BasePlayerModel<CharacterModel>();
+
+            var Result = data.MinorDebuffSpeed();
+
+            Assert.AreEqual(-2, Result);
+        }
     }
 }
