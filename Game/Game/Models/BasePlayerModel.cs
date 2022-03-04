@@ -133,6 +133,30 @@ namespace Game.Models
             return BuffSpeedValue += 2;
         }
 
+        /// <summary>
+        /// Attack debuff
+        /// </summary>
+        public int MinorDebuffAttack()
+        {
+            return BuffAttackValue -= 2;
+        }
+
+        /// <summary>
+        /// Add to Defense
+        /// </summary>
+        public int MinorDeduffDefense()
+        {
+            return BuffDefenseValue -= 2;
+        }
+
+        /// <summary>
+        /// Add to Speed
+        /// </summary>
+        public int MinorDebuffSpeed()
+        {
+            return BuffSpeedValue -= 2;
+        }
+
         #endregion Buffs
 
         #region PlayerAttributes
