@@ -57,7 +57,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListCleric;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(5, result.Count);
         }
 
         [Test]
@@ -69,7 +69,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListDetective;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -81,7 +81,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListDouble0;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -93,7 +93,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListHacker;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -105,7 +105,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListSaboteur;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -117,7 +117,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListSpecialAgent;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -129,7 +129,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListSpy;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
@@ -141,7 +141,7 @@ namespace UnitTests.Helpers
             var result = AbilityEnumHelper.GetListSurveillanceOfficer;
 
             // Assert
-            Assert.AreEqual(1, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
