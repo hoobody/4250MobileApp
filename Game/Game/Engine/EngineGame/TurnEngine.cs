@@ -843,9 +843,8 @@ namespace Game.Engine.EngineGame
             var levelToScaleTo = round;
             var NumberToDrop = (DiceHelper.RollDice(1, round) - 1);
 
-            if (EngineSettings.CurrentDefender.isABoss)
+            if (round % 5 == 0)
             {
-                NumberToDrop = (DiceHelper.RollDice(1, round) + 1);
                 levelToScaleTo++;
             }
             
