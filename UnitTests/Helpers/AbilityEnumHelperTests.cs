@@ -54,10 +54,10 @@ namespace UnitTests.Helpers
             // Arrange
 
             // Act
-            var result = AbilityEnumHelper.GetListCleric;
+            var result = AbilityEnumHelper.GetListAssassin;
 
             // Assert
-            Assert.AreEqual(5, result.Count);
+            Assert.AreEqual(2, result.Count);
         }
 
         [Test]
