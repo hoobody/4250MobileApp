@@ -172,7 +172,7 @@ namespace Game.Models
                     break;
 
                 case CharacterJobEnum.Detective:
-                    foreach (var item in AbilityEnumHelper.GetListDouble0)
+                    foreach (var item in AbilityEnumHelper.GetListDetective)
                     {
                         AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
                     }
