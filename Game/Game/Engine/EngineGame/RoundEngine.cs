@@ -327,15 +327,28 @@ namespace Game.Engine.EngineGame
             // If not, return first player (looped)
 
             // If List is empty, return null
+            if (EngineSettings.PlayerList.Count == 0)
+            {
+                return null;
+            }
 
             // No current player, so set the first one
+            if (EngineSettings.CurrentAttacker == null)
+            {
+                return EngineSettings.PlayerList.FirstOrDefault();
+            }
 
             // Find current player in the list
+            var index = EngineSettings.PlayerList.FindIndex(m => m.Guid.Equals(EngineSettings.CurrentAttacker.Guid));
 
             // If at the end of the list, return the first element
+            if (index == EngineSettings.PlayerList.Count() - 1)
+            {
+                return EngineSettings.PlayerList.FirstOrDefault();
+            }
 
             // Return the next element
-            return base.GetNextPlayerInList();
+            return EngineSettings.PlayerList[index + 1];
         }
 
         /// <summary>
