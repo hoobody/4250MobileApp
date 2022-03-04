@@ -427,11 +427,6 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
-            // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
-
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-
             if (EngineSettings.PlayerList == null)
             {
                 return null;
@@ -442,14 +437,55 @@ namespace Game.Engine.EngineGame
                 return null;
             }
 
-            // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
+            // Prep for switch
+            var d20 = DiceHelper.RollDice(1, 20);
+            PlayerInfoModel Defender;
 
-            // TODO: Teams, You need to implement your own Logic can not use mine.
+            //Get a list of living monsters
+            var livingMonsters = EngineSettings.PlayerList.Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster);
 
-            var Defender = EngineSettings.PlayerList
-                .Where(m => m.Alive && m.PlayerType == PlayerTypeEnum.Monster)
-                .OrderBy(m => m.CurrentHealth).FirstOrDefault();
+            switch (d20)
+            {
+                case int n when (n < 3):
+                    //Attack the lowest health monster
+                    var minHealth = EngineSettings.PlayerList.Min(m => m.CurrentHealth);
+                    Defender = livingMonsters
+                        .Where(m => m.CurrentHealth == minHealth).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 3 && n < 5):
+                    // Attack the highest health monster
+                    var maxHealth = EngineSettings.PlayerList.Max(m => m.CurrentHealth);
+                    Defender = livingMonsters
+                        .Where(m => m.CurrentHealth == maxHealth).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 5 && n < 7):
+                    // Attack the weakest monster
+                    var minAttack = EngineSettings.PlayerList.Min(m => m.GetAttackTotal);
+                    Defender = livingMonsters
+                        .Where(m => m.GetAttackTotal == minAttack).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 7 && n < 11):
+                    // Attack the Strongest monster
+                    var maxAttack = EngineSettings.PlayerList.Max(m => m.GetAttackTotal);
+                    Defender = livingMonsters
+                        .Where(m => m.GetAttackTotal == maxAttack).FirstOrDefault();
+                    break;
+
+                case int n when (n >= 11 && n < 16):
+                    // Attack the slowest monster
+                    var minSpeed = EngineSettings.PlayerList.Min(m => m.GetSpeedTotal);
+                    Defender = livingMonsters
+                        .Where(m => m.GetSpeedTotal == minSpeed).FirstOrDefault();
+                    break;
+
+                default:
+                    //Attack the first monster
+                    Defender = livingMonsters.FirstOrDefault();
+                    break;
+            }
 
             return Defender;
         }
