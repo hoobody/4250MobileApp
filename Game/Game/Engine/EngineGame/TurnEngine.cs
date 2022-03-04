@@ -359,8 +359,6 @@ namespace Game.Engine.EngineGame
         {
             // Select first in the list
 
-            // TODO: Teams, You need to implement your own Logic can not use mine.
-
             if (EngineSettings.PlayerList == null)
             {
                 return null;
