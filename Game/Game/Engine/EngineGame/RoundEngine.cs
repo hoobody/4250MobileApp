@@ -133,7 +133,6 @@ namespace Game.Engine.EngineGame
                 }
             }
 
-            // TODO: Teams, You need to implement your own Logic can not use mine.
             return EngineSettings.MonsterList.Count;
         }
 
@@ -354,9 +353,6 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool PickupItemsFromPool(PlayerInfoModel character)
         {
-
-            // TODO: Teams, You need to implement your own Logic if not using auto apply
-
             // I use the same logic for Auto Battle as I do for Manual Battle
 
             //if (BaseEngine.BattleScore.AutoBattle)
