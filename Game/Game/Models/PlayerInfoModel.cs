@@ -129,6 +129,62 @@ namespace Game.Models
                     }
                     break;
 
+                case CharacterJobEnum.Assassin:
+                    foreach (var item in AbilityEnumHelper.GetListAssassin)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Spy:
+                    foreach (var item in AbilityEnumHelper.GetListSpy)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Hacker:
+                    foreach (var item in AbilityEnumHelper.GetListHacker)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.SpecialAgent:
+                    foreach (var item in AbilityEnumHelper.GetListSpecialAgent)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Saboteur:
+                    foreach (var item in AbilityEnumHelper.GetListSaboteur)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.SurveillanceOfficer:
+                    foreach (var item in AbilityEnumHelper.GetListSurveillanceOfficer)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Detective:
+                    foreach (var item in AbilityEnumHelper.GetListDouble0)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
+                case CharacterJobEnum.Double0:
+                    foreach (var item in AbilityEnumHelper.GetListDouble0)
+                    {
+                        AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum(item), Level);
+                    }
+                    break;
+
                 default:
                     foreach (var item in AbilityEnumHelper.GetListOthers)
                     {
