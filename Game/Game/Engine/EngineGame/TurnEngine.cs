@@ -438,37 +438,27 @@ namespace Game.Engine.EngineGame
             {
                 case int n when (n < 3):
                     //Attack the lowest health monster
-                    var minHealth = EngineSettings.PlayerList.Min(m => m.CurrentHealth);
-                    Defender = livingMonsters
-                        .Where(m => m.CurrentHealth == minHealth).FirstOrDefault();
+                    Defender = livingMonsters.OrderBy(m => m.CurrentHealth).FirstOrDefault();
                     break;
 
                 case int n when (n >= 3 && n < 5):
                     // Attack the highest health monster
-                    var maxHealth = EngineSettings.PlayerList.Max(m => m.CurrentHealth);
-                    Defender = livingMonsters
-                        .Where(m => m.CurrentHealth == maxHealth).FirstOrDefault();
+                    Defender = livingMonsters.OrderByDescending(m => m.CurrentHealth).FirstOrDefault();
                     break;
 
                 case int n when (n >= 5 && n < 7):
                     // Attack the weakest monster
-                    var minAttack = EngineSettings.PlayerList.Min(m => m.GetAttackTotal);
-                    Defender = livingMonsters
-                        .Where(m => m.GetAttackTotal == minAttack).FirstOrDefault();
+                    Defender = livingMonsters.OrderBy(m => m.GetAttackTotal).FirstOrDefault();
                     break;
 
                 case int n when (n >= 7 && n < 11):
                     // Attack the Strongest monster
-                    var maxAttack = EngineSettings.PlayerList.Max(m => m.GetAttackTotal);
-                    Defender = livingMonsters
-                        .Where(m => m.GetAttackTotal == maxAttack).FirstOrDefault();
+                    Defender = livingMonsters.OrderByDescending(m => m.GetAttackTotal).FirstOrDefault();
                     break;
 
                 case int n when (n >= 11 && n < 16):
                     // Attack the slowest monster
-                    var minSpeed = EngineSettings.PlayerList.Min(m => m.GetSpeedTotal);
-                    Defender = livingMonsters
-                        .Where(m => m.GetSpeedTotal == minSpeed).FirstOrDefault();
+                    Defender = livingMonsters.OrderBy(m => m.GetSpeedTotal).FirstOrDefault();
                     break;
 
                 default:
