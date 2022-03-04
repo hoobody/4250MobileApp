@@ -49,6 +49,102 @@ namespace UnitTests.Helpers
         }
 
         [Test]
+        public void AbilityEnumHelper_GetListAssassin_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListCleric;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListDetective_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListDetective;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListDouble0_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListDouble0;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListHacker_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListHacker;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListSabateur_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListSaboteur;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListSpecialAgent_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListSpecialAgent;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListSpy_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListSpy;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
+        public void AbilityEnumHelper_GetListSurvOfficer_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = AbilityEnumHelper.GetListSurveillanceOfficer;
+
+            // Assert
+            Assert.AreEqual(1, result.Count);
+        }
+
+        [Test]
         public void AbilityEnumHelper_GetListOthers_Should_Pass()
         {
             // Arrange
