@@ -78,7 +78,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Add to Health
+        /// Add to Attack
         /// </summary>
         public int BuffAttack()
         {
@@ -86,7 +86,7 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Add to Health
+        /// Add to Defense
         /// </summary>
         public int BuffDefense()
         {
@@ -94,11 +94,43 @@ namespace Game.Models
         }
 
         /// <summary>
-        /// Add to Health
+        /// Add to Speed
         /// </summary>
         public int BuffSpeed()
         {
             return BuffSpeedValue += 5;
+        }
+
+        /// <summary>
+        /// Minor buff to health
+        /// </summary>
+        public int MinorBuffHealth()
+        {
+            return BuffHealthValue += 2;
+        }
+
+        /// <summary>
+        /// Minor buff to attack
+        /// </summary>
+        public int MinorBuffAttack()
+        {
+            return BuffAttackValue += 2;
+        }
+
+        /// <summary>
+        /// Minor buff to defense
+        /// </summary>
+        public int MinorBuffDefense()
+        {
+            return BuffDefenseValue += 2;
+        }
+
+        /// <summary>
+        /// Minor buff to speed
+        /// </summary>
+        public int MinorBuffSpeed()
+        {
+            return BuffSpeedValue += 2;
         }
 
         #endregion Buffs
