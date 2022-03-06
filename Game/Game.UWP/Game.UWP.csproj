@@ -140,6 +140,14 @@
     <Content Include="begin_button.png" />
     <Content Include="bigger_delete_button.png" />
     <Content Include="brass_knuckles.png" />
+    <Content Include="button_ability.png" />
+    <Content Include="button_agents.png" />
+    <Content Include="button_attack.png" />
+    <Content Include="button_auto_assign.png" />
+    <Content Include="button_cancel.png" />
+    <Content Include="button_enemies.png" />
+    <Content Include="button_icon_cancel.png" />
+    <Content Include="button_next_round.png" />
     <Content Include="cancel_button.png" />
     <Content Include="caution_stamp_medium.png" />
     <Content Include="caution_stamp_small.png" />
