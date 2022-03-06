@@ -99,7 +99,7 @@
                 <ImageButton
                     x:Name="BeginBattleButton"
                     Clicked="BeginButton_Clicked"
-                    Source="button_next_round.png" 
+                    Source="begin_button.png" 
                     HeightRequest="65"
                     Margin="0,-30,0,0"/>
 
