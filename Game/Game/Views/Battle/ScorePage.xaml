@@ -36,7 +36,8 @@
                     </Frame>
                 </Grid>
 
-                <Button Clicked="CloseButton_Clicked" Text="Close"/>
+                <ImageButton Clicked="CloseButton_Clicked"
+                        Source="button_cancel.png"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label Text="Score : " Style="{StaticResource MessageStyle}"/>
