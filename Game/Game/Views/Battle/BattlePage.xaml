@@ -301,17 +301,17 @@
                         Style="{StaticResource MessageStyle}"
                         Text="Click for more details, or click Exit and return soon" />
 
-                    <Button
+                    <ImageButton
                         x:Name="ShowScoreButton"
                         Clicked="ShowScoreButton_Clicked"
-                        Text="Score"
-                        WidthRequest="50" />
+                        HeightRequest="50" 
+                        Source="scores_button.png"/>
 
-                    <Button
+                    <ImageButton
                         x:Name="ExitButton"
                         Clicked="ExitButton_Clicked"
-                        Text="Exit"
-                        WidthRequest="50" />
+                        HeightRequest="50" 
+                        Source="headquarters_button.png"/>
 
                 </StackLayout>
             </StackLayout>
