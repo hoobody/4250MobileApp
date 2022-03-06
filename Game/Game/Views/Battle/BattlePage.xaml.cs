@@ -56,139 +56,6 @@ namespace Game.Views
             ShowBattleMode();
         }
 
-        /// <summary>
-        /// Dray the Player Boxes
-        /// </summary>
-        public void DrawPlayerBoxes()
-        {
-            int i = 0, j = 0; // Counters
-            int c = 2, r = 2; // Grid Locations
-
-            var CharacterGridList = CharacterGrid.Children.ToList();
-            foreach (var data in CharacterGridList)
-            {
-                _ = CharacterGrid.Children.Remove(data);
-            }
-
-            // Draw the Characters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
-            {
-                CharacterGrid.Children.Add(PlayerInfoDisplayBox(data), c, r);
-                i++;
-
-                switch (c)
-                {
-                    case 2:
-                        c = 3;
-                        break;
-                    case 3:
-                        c = 1;
-                        r = 3;
-                        break;
-                    case 1:
-                        c = 4;
-                        break;
-                    case 4:
-                        c = 0;
-                        r = 4;
-                        break;
-                    case 0:
-                        c = 5;
-                        break;
-                    default:
-                        break;
-                }
-
-                if (i == 3)
-                {
-                    j++;
-                }
-            }
-
-            var MonsterBoxList = MonsterBox.Children.ToList();
-            foreach (var data in MonsterBoxList)
-            {
-                _ = MonsterBox.Children.Remove(data);              
-            }
-
-            // Reset counters
-            i = 0;
-            j = 0;
-
-            // Draw the Monsters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-            {
-                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
-                i++;
-
-                if (i == 3)
-                {
-                    j++;
-                }
-            }
-
-
-            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
-
-            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            CharacterGrid.Children.Add(PlayerInfoDisplayBox(null));
-
-        }
-
-        /// <summary>
-        /// Put the Player into a Display Box
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public StackLayout PlayerInfoDisplayBox(PlayerInfoModel data)
-        {
-            if (data == null)
-            {
-                data = new PlayerInfoModel
-                {
-                    ImageURI = "",
-                    Name = "",
-                };
-            }
-
-            // Hookup the image
-            var PlayerImage = new Image
-            {
-                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
-                Source = data.ImageURI
-            };
-
-            var PlayerNameLabel = new Label()
-            {
-                Text = data.Name,
-                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
-                HorizontalOptions = LayoutOptions.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Padding = 0,
-                LineBreakMode = LineBreakMode.TailTruncation,
-                CharacterSpacing = 0,
-                LineHeight = 1,
-                MaxLines = 5,
-            };
-
-            // Put the Image Button and Text inside a layout
-            var PlayerStack = new StackLayout
-            {
-                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
-                HorizontalOptions = LayoutOptions.Center,
-                Padding = 0,
-                Spacing = 0,
-                Children = {
-                    PlayerImage,
-                    PlayerNameLabel,
-                },
-            };
-
-            return PlayerStack;
-        }
-
-
         #region BasicBattleMode
 
         /// <summary>
@@ -491,19 +358,143 @@ namespace Game.Views
         }
         #endregion PageHandelers
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+        #region DisplayControlMethods
 
-            ShowBattleMode();
+        /// <summary>
+        /// Dray the Player Boxes
+        /// </summary>
+        public void DrawPlayerBoxes()
+        {
+            int i = 0, j = 0; // Counters
+            int c = 2, r = 2; // Grid Locations
+
+            var CharacterGridList = CharacterGrid.Children.ToList();
+            foreach (var data in CharacterGridList)
+            {
+                _ = CharacterGrid.Children.Remove(data);
+            }
+
+            // Draw the Characters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
+            {
+                CharacterGrid.Children.Add(PlayerInfoDisplayBox(data), c, r);
+                i++;
+
+                switch (c)
+                {
+                    case 2:
+                        c = 3;
+                        break;
+                    case 3:
+                        c = 1;
+                        r = 3;
+                        break;
+                    case 1:
+                        c = 4;
+                        break;
+                    case 4:
+                        c = 0;
+                        r = 4;
+                        break;
+                    case 0:
+                        c = 5;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (i == 3)
+                {
+                    j++;
+                }
+            }
+
+            var MonsterBoxList = MonsterBox.Children.ToList();
+            foreach (var data in MonsterBoxList)
+            {
+                _ = MonsterBox.Children.Remove(data);
+            }
+
+            // Reset counters
+            i = 0;
+            j = 0;
+
+            // Draw the Monsters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            {
+                MonsterBox.Children.Add(PlayerInfoDisplayBox(data), i % 3, j);
+                i++;
+
+                if (i == 3)
+                {
+                    j++;
+                }
+            }
+
+
+            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
+            MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
+
+            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
+            CharacterGrid.Children.Add(PlayerInfoDisplayBox(null));
+
         }
 
         /// <summary>
-        /// 
+        /// Put the Player into a Display Box
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public StackLayout PlayerInfoDisplayBox(PlayerInfoModel data)
+        {
+            if (data == null)
+            {
+                data = new PlayerInfoModel
+                {
+                    ImageURI = "",
+                    Name = "",
+                };
+            }
+
+            // Hookup the image
+            var PlayerImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                Source = data.ImageURI
+            };
+
+            var PlayerNameLabel = new Label()
+            {
+                Text = data.Name,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                CharacterSpacing = 0,
+                LineHeight = 1,
+                MaxLines = 5,
+            };
+
+            // Put the Image Button and Text inside a layout
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+                Children = {
+                    PlayerImage,
+                    PlayerNameLabel,
+                },
+            };
+
+            return PlayerStack;
+        }
+
+        /// <summary>
         /// Hide the differnt button states
-        /// 
         /// Hide the message display box
-        /// 
         /// </summary>
         public void HideUIElements()
         {
@@ -610,5 +601,7 @@ namespace Game.Views
                     break;
             }
         }
+
+        #endregion
     }
 }
