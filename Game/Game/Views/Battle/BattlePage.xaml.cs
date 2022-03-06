@@ -720,7 +720,8 @@ namespace Game.Views
 
             if (RoundCondition == RoundEnum.NewRound)
             {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+                // Uncomment this to allow the BattlePage to draw a new round screen between rounds
+                //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
                 // Pause
                 _ = Task.Delay(WaitTime);
