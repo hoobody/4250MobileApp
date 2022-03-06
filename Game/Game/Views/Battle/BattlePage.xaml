@@ -163,11 +163,13 @@
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
+                            
+                            <!-- Holds the character grid -->
                             <StackLayout
                                 Margin="0,-145,0,0"
                                 HorizontalOptions="Center"
                                 Style="{StaticResource VerticalStack}">
-                                <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
+                                
                                     <Grid
                                         x:Name="CharacterGrid"
                                         Margin="-20,0,0,0"
@@ -192,7 +194,7 @@
                                         </Grid.ColumnDefinitions>
                                     </Grid>
 
-                                </StackLayout>
+                                    <!--Action Buttons-->
                                 <StackLayout
                                     Margin="0,-155,0,0"
                                     HorizontalOptions="Center"
@@ -205,46 +207,20 @@
                                         IsVisible="False"
                                         Source="button_attack.png"
                                         HeightRequest="50"/>
-                                    
+
                                     <ImageButton
                                         x:Name="AbilityButton"
                                         IsVisible="False"
                                         Source="button_ability.png"
                                         HeightRequest="50"/>
-                                    
+
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
-
-                <!--  The Battle Map Display  -->
-                <StackLayout
-                    x:Name="BattleMapDisplay"
-                    HorizontalOptions="CenterAndExpand"
-                    Style="{StaticResource BattleMapBox}"
-                    VerticalOptions="Start">
-                    <AbsoluteLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        <Image
-                            AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            AbsoluteLayout.LayoutFlags="All"
-                            Aspect="Fill"
-                            Source="battleboard.png" />
-                        <Grid
-                            x:Name="MapGrid"
-                            AbsoluteLayout.LayoutBounds="0,0,1,1"
-                            AbsoluteLayout.LayoutFlags="All"
-                            ColumnSpacing="0"
-                            HorizontalOptions="Center"
-                            RowSpacing="0"
-                            VerticalOptions="Start" />
-                    </AbsoluteLayout>
-                </StackLayout>
-
-
             </StackLayout>
             
-
 
             <!--  The Game Over Screen  -->
             <StackLayout
