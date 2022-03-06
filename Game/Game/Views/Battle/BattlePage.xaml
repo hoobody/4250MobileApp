@@ -198,6 +198,13 @@
                                     HorizontalOptions="Center"
                                     Style="{StaticResource VerticalStack}"
                                     Spacing="0">
+
+                                    <ImageButton
+                                        x:Name="AttackButton"
+                                        Clicked="AttackButton_Clicked"
+                                        IsVisible="False"
+                                        Source="button_attack.png"
+                                        HeightRequest="50"/>
                                     
                                     <ImageButton
                                         x:Name="AbilityButton"
@@ -205,13 +212,6 @@
                                         Source="button_ability.png"
                                         HeightRequest="50"/>
                                     
-                                    <ImageButton
-                                        x:Name="AttackButton"
-                                        Clicked="AttackButton_Clicked"
-                                        IsVisible="False"
-                                        Source="button_attack.png"
-                                        HeightRequest="50"/>
-
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
