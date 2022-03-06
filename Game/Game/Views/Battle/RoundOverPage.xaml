@@ -62,7 +62,7 @@
 
                         <StackLayout Style="{StaticResource HorizontalSpacedBox}">
                             
-                            <ImageButton Source="autobattle_button.png"
+                            <ImageButton Source="button_auto_assign.png"
                                 Clicked="AutoAssignButton_Clicked"/>
 
                             <ImageButton Source="begin_button.png"
