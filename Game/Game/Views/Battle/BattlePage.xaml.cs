@@ -73,13 +73,6 @@ namespace Game.Views
             int i = 0, j = 0; // Counters
             int c = 2, r = 2; // Grid Locations
 
-            var CharacterBoxList = CharacterBox.Children.ToList();
-            foreach (var data in CharacterBoxList)
-            {
-                _ = CharacterBox.Children.Remove(data);
-            }
-
-
             var CharacterGridList = CharacterGrid.Children.ToList();
             foreach (var data in CharacterGridList)
             {
@@ -89,7 +82,6 @@ namespace Game.Views
             // Draw the Characters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                CharacterBox.Children.Add(PlayerInfoDisplayBox(data),i % 3, j);
                 CharacterGrid.Children.Add(PlayerInfoDisplayBox(data), c, r);
                 i++;
 
@@ -144,8 +136,6 @@ namespace Game.Views
                 }
             }
 
-            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
 
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
             MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
@@ -860,18 +850,6 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// The Start Button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void StartButton_Clicked(object sender, EventArgs e)
-        {
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
-
-            ShowBattleMode();
-        }
-
-        /// <summary>
         /// Show the Game Over Screen
         /// </summary>
         /// <param name="sender"></param>
@@ -921,7 +899,6 @@ namespace Game.Views
         public void HideUIElements()
         {
             NextRoundButton.IsVisible = false;
-            StartBattleButton.IsVisible = false;
             AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
@@ -963,10 +940,6 @@ namespace Game.Views
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-                    StartBattleButton.IsVisible = true;
-                    MonsterTitle.IsVisible = true;
-                    CharacterTitle.IsVisible = true;
-                    CharacterBox.Scale = 1;
                     CharacterGrid.IsVisible = false;
                     break;
 
@@ -974,14 +947,10 @@ namespace Game.Views
                     _ = UpdateMapGrid();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
-                    MonsterTitle.IsVisible = true;
-                    CharacterTitle.IsVisible = true;
-                    CharacterBox.Scale = 1;
                     AttackButton.IsVisible = false;
                     AbilityButton.IsVisible = false;
                     MonsterBox.RowSpacing = -10;
                     CharacterGrid.IsVisible = false;
-                    CharacterBox.IsVisible = true;
                     Gem.IsVisible = false;
                     break;
 
@@ -1001,9 +970,6 @@ namespace Game.Views
                     MessageDisplayBox.IsVisible = true;
                     AttackButton.IsVisible = true;
                     AbilityButton.IsVisible = true;
-                    MonsterTitle.IsVisible = false;
-                    CharacterTitle.IsVisible = false;
-                    CharacterBox.IsVisible = false;
                     CharacterGrid.IsVisible = true;
                     Gem.IsVisible = true;
                     break;

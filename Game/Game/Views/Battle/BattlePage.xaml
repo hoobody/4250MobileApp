@@ -61,26 +61,6 @@
                         <Image x:Name="Gem" Source="gem.png"  Style="{StaticResource ImageBattleSmallStyle}"/>
 
                         <StackLayout>
-                            <Label
-                                x:Name="CharacterTitle"
-                                IsVisible="True"
-                                Style="{StaticResource MessageLargeStyle}"
-                                Text="Characters"
-                                TextDecorations="Underline" />
-
-                            <Grid x:Name="CharacterBox" RowSpacing="-20">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="115" />
-                                    <RowDefinition Height="75" />
-                                </Grid.RowDefinitions>
-                            </Grid>
-
-                            <ImageButton
-                                x:Name="StartBattleButton"
-                                Margin="0,20,0,0"
-                                Clicked="StartButton_Clicked"
-                                HeightRequest="65"
-                                Source="begin_button.png" />
 
                             <ImageButton
                                 x:Name="NextRoundButton"
@@ -88,13 +68,6 @@
                                 Clicked="NextRoundButton_Clicked"
                                 IsVisible="False"
                                 Source="button_next_round.png"/>
-
-                            <Label
-                                x:Name="MonsterTitle"
-                                IsVisible="True"
-                                Style="{StaticResource MessageLargeStyle}"
-                                Text="Monsters"
-                                TextDecorations="Underline" />
 
                             <Grid
                                 x:Name="MonsterBox"

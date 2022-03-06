@@ -120,20 +120,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattlePage_StartButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            page.StartButton_Clicked(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
         public void BattlePage_NextRoundButton_Clicked_Default_Should_Pass()
         {
             // Arrange
