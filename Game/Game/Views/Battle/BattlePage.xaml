@@ -38,7 +38,7 @@
             HorizontalOptions="FillAndExpand"
             IsVisible="True"
             VerticalOptions="FillAndExpand">
-
+            
             <!--  The Game UI Screen  -->
             <StackLayout
                 x:Name="GameUIDisplay"
@@ -82,12 +82,12 @@
                                 HeightRequest="65"
                                 Source="begin_button.png" />
 
-                            <Button
+                            <ImageButton
                                 x:Name="NextRoundButton"
                                 Margin="0,60,0,0"
                                 Clicked="NextRoundButton_Clicked"
                                 IsVisible="False"
-                                Text="Next Round" />
+                                Source="button_next_round.png"/>
 
                             <Label
                                 x:Name="MonsterTitle"
@@ -224,22 +224,21 @@
                                     Margin="0,-155,0,0"
                                     HorizontalOptions="Center"
                                     Style="{StaticResource VerticalStack}"
-                                    WidthRequest="100">
-                                    <Button
-                                        x:Name="MoveButton"
+                                    Spacing="0">
+                                    
+                                    <ImageButton
+                                        x:Name="AbilityButton"
                                         IsVisible="False"
-                                        Text="Move" />
-
-                                    <Button
+                                        Source="button_ability.png"
+                                        HeightRequest="50"/>
+                                    
+                                    <ImageButton
                                         x:Name="AttackButton"
                                         Clicked="AttackButton_Clicked"
                                         IsVisible="False"
-                                        Text="Next Attack" />
+                                        Source="button_attack.png"
+                                        HeightRequest="50"/>
 
-                                    <Button
-                                        x:Name="AbilityButton"
-                                        IsVisible="False"
-                                        Text="Ability" />
                                 </StackLayout>
                             </StackLayout>
                         </StackLayout>
@@ -271,6 +270,8 @@
 
 
             </StackLayout>
+            
+
 
             <!--  The Game Over Screen  -->
             <StackLayout
