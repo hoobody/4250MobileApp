@@ -65,7 +65,7 @@
                             <ImageButton Source="button_auto_assign.png"
                                 Clicked="AutoAssignButton_Clicked"/>
 
-                            <ImageButton Source="begin_button.png"
+                            <ImageButton Source="button_next_round.png"
                                 Clicked="CloseButton_Clicked"/>
 
                         </StackLayout>
