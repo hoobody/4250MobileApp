@@ -41,7 +41,7 @@ namespace Game.Views
             InitializeComponent();
 
             // Set initial State to Starting
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Set up the UI to Defaults
             BindingContext = BattleEngineViewModel.Instance;
