@@ -484,6 +484,8 @@ namespace Game.Views
                 {
                     ImageURI = "",
                     Name = "",
+                    MaxHealth = 0,
+                    CurrentHealth = 0,
                 };
             }
 
@@ -507,6 +509,24 @@ namespace Game.Views
                 MaxLines = 5,
             };
 
+            var HP = new Label()
+            {
+                Text = data.CurrentHealth.ToString() + "/" + data.GetMaxHealthTotal,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                CharacterSpacing = 0,
+                LineHeight = 1,
+                MaxLines = 5,
+            };
+
+            if (data.MaxHealth == 0)
+            {
+                HP.Text = "";
+            }
+
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
             {
@@ -517,6 +537,7 @@ namespace Game.Views
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
+                    HP
                 },
             };
 
