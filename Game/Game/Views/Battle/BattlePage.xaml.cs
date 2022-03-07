@@ -498,17 +498,33 @@ namespace Game.Views
                 },
             };
 
-            if(data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
+            HighlightAttackerDefender(data, PlayerStack);
+
+            return PlayerStack;
+        }
+
+
+        /// <summary>
+        /// Checks if battle has started and then highlights the attacker and defender
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="playerStack"></param>
+        public void HighlightAttackerDefender(PlayerInfoModel data, StackLayout playerStack)
+        {
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.Battling)
             {
-                PlayerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
+                return;
+            }
+            
+            if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
+            {
+                playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
             }
 
             if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender)
             {
-                PlayerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
+                playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
             }
-
-            return PlayerStack;
         }
 
         /// <summary>
