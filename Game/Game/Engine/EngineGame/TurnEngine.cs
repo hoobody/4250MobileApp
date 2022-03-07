@@ -565,19 +565,19 @@ namespace Game.Engine.EngineGame
             switch (myEnum)
             {
                 case HitStatusEnum.Hit:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Hit ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " Hits";
                     return HitStatusEnum.Hit;
 
                 case HitStatusEnum.CriticalHit:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Hit ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = " Critical Hit!";
                     return HitStatusEnum.CriticalHit;
 
                 case HitStatusEnum.Miss:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Missed ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = "Missed";
                     return HitStatusEnum.Miss;
 
                 case HitStatusEnum.CriticalMiss:
-                    EngineSettings.BattleMessagesModel.AttackStatus = " somehow Critical Missed ";
+                    EngineSettings.BattleMessagesModel.AttackStatus = "Critical Missed!";
                     return HitStatusEnum.CriticalMiss;
 
                 case HitStatusEnum.Unknown:
