@@ -145,7 +145,7 @@ namespace Game.Engine.EngineGame
              */
 
             // Assume Move if nothing else happens
-            EngineSettings.CurrentAction = ActionEnum.Move;
+            // EngineSettings.CurrentAction = ActionEnum.Move;
 
             // Check to see if ability is avaiable
             if (ChooseToUseAbility(Attacker))
@@ -225,6 +225,7 @@ namespace Game.Engine.EngineGame
 
                 // Find Location Nearest to Defender that is Open.
 
+                
                 // Get the Open Locations
                 var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
 
@@ -232,7 +233,7 @@ namespace Game.Engine.EngineGame
 
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
 
-                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare); 
             }
 
             return true;
