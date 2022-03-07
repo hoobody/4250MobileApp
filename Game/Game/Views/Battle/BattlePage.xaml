@@ -140,7 +140,15 @@
                                                     Style="{StaticResource ValueStyleBattleMicro}"
                                                     Text="" />
                                             </StackLayout>
-                                        </StackLayout>
+
+                                        <ImageButton
+                                            x:Name="ContinueButton"
+                                            Clicked="ContinueButton_Clicked"
+                                            Source="begin_button.png"
+                                            HeightRequest="50"
+                                            IsVisible="false"/>
+                                            
+                                    </StackLayout>
 
 
                                         <!--  The Bottom of the Battle UI  Holds the Player to Player boxes, Buttons, and the Messages  -->

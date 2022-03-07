@@ -178,6 +178,16 @@ namespace Game.Views
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
 
+
+            var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+
+            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                GameMessageWithInput( attacker.Name + " is attacking " + defender.Name );
+            }
+
+
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -668,5 +678,12 @@ namespace Game.Views
         }
 
         #endregion
+
+        private void ContinueButton_Clicked(object sender, EventArgs e)
+        {
+            ContinueButton.IsVisible = false;
+            AttackButton.IsEnabled = true;
+            AbilityButton.IsEnabled = true;
+        }
     }
 }
