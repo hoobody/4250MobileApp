@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.Models;
 using Game.ViewModels;
+using System.Linq;
 
 namespace Game.Views
 {
@@ -23,7 +24,7 @@ namespace Game.Views
         public NewRoundPage()
         {
 
-            int i = 0;
+            int i = 0, j = 0;
             InitializeComponent();
 
             BindingContext = EngineViewModel;
@@ -31,11 +32,30 @@ namespace Game.Views
             int roundCount = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount;
             NewRoundContentPage.Title = "Prepare for Round " + roundCount.ToString() + "!";
 
+            // Draw the Characters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
+            {
+                PartyListFrame.Children.Add(CreatePlayerDisplayBox(data), i%3, j);
+                i++;
+
+                if (i == 3)
+                {
+                    j++;
+                }
+            }
+
+            i = 0;
+
             // Draw the Monsters
             foreach (var data in EngineViewModel.Engine.EngineSettings.MonsterList)
             {           
-                MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data),i%3,i%2);
+                MonsterListFrame.Children.Add(CreatePlayerDisplayBox(data),i%3,j);
                 i++;
+
+                if (i == 3)
+                {
+                    j++;
+                }
             }
 
         }
@@ -70,9 +90,9 @@ namespace Game.Views
             };
 
             // Add the Level
-            var PlayerLevelLabel = new Label
+            var PlayerLevelAndJob = new Label
             {
-                Text = "Lvl: " + data.Level,
+                Text = "Lvl:" + data.Level + "/" + data.Job,
                 Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -80,7 +100,7 @@ namespace Game.Views
                 LineBreakMode = LineBreakMode.TailTruncation,
                 CharacterSpacing = 0,
                 LineHeight = 1,
-                MaxLines = 1,
+                MaxLines = 2,
             };
 
             var PlayerNameLabel = new Label()
@@ -96,9 +116,14 @@ namespace Game.Views
                 MaxLines = 1,
             };
 
-            var Job = new Label()
+            if (data.MonsterJob != MonsterJobEnum.Unknown) 
             {
-                Text = data.MonsterJob.ToString(),
+                PlayerLevelAndJob.Text = "Lvl:" + data.Level + "/" + data.MonsterJob;
+            }
+
+            var Stats = new Label()
+            {
+                Text = "Atk:" + data.Attack + " Spd:" + data.Speed + " Def:" + data.Defense,
                 Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -106,7 +131,7 @@ namespace Game.Views
                 LineBreakMode = LineBreakMode.TailTruncation,
                 CharacterSpacing = 0,
                 LineHeight = 1,
-                MaxLines = 1,
+                MaxLines = 2,
             };
 
             // Put the Image Button and Text inside a layout
@@ -116,8 +141,8 @@ namespace Game.Views
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
-                    PlayerLevelLabel,
-                    Job
+                    PlayerLevelAndJob,
+                    Stats
                 },
             };
 

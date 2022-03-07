@@ -9,102 +9,31 @@
     <ContentPage.Content>
         <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
 
-            <StackLayout Style="{StaticResource OuterBoxStack}">
+            <StackLayout Style="{StaticResource VerticalStack}">
 
                 <Label
                     Style="{StaticResource MessageLargeStyle}"
                     Text="Agents"
                     TextDecorations="Underline" />
 
-                <CollectionView
-                    HeightRequest="250"
-                    ItemsLayout="VerticalGrid,3"
-                    ItemsSource="{Binding PartyCharacterList, Mode=OneWay}">
+                <Grid x:Name="PartyListFrame"/>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-
-                            <Grid Style="{StaticResource GridStyle}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="35*" />
-                                    <RowDefinition Height="35*" />
-                                    <RowDefinition Height="35*" />
-                                </Grid.RowDefinitions>
-                                <Image
-                                    Grid.Row="0"
-                                    HorizontalOptions="Center"
-                                    Source="{Binding HeadshotImageURI}"
-                                    Style="{StaticResource ImageMediumStyle}" />
-                                <StackLayout
-                                    Grid.Row="1"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Lvl: " />
-                                    <Label
-                                        Margin="0,0,10,0"
-                                        Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Level}" />
-
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="HP: " />
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding GetCurrentHealthTotal}" />
-                                </StackLayout>
-
-                                <StackLayout
-                                    Grid.Row="2"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding CodeName}" />
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="/" />
-                                    <Label
-                                        FontAttributes="Italic"
-                                        Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Job}" />
-                                </StackLayout>
-
-                                <StackLayout
-                                    Grid.Row="3"
-                                    HorizontalOptions="Center"
-                                    Style="{StaticResource HorizontalStack}">
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Atk: " />
-                                    <Label
-                                        Margin="0,0,5,0"
-                                        Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Attack}" />
-
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Def: " />
-                                    <Label
-                                        Margin="0,0,5,0"
-                                        Style="{StaticResource TinyTitleStyle}"
-                                        Text="{Binding Defense}" />
-
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="Spd: " />
-                                    <Label Style="{StaticResource TinyTitleStyle}" Text="{Binding Speed}" />
-                                </StackLayout>
-
-                            </Grid>
-
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-
-                <Label
+                <StackLayout Style="{StaticResource VerticalStack}">
+                    <Label
                     Style="{StaticResource MessageLargeStyle}"
                     Text="Enemies"
-                    TextDecorations="Underline" 
-                    Margin="0,-20, 0, 0"/>
-                
-                <Grid x:Name="MonsterListFrame" RowSpacing="-10"/>
+                    TextDecorations="Underline"/>
 
+                    <Grid x:Name="MonsterListFrame" />
+                </StackLayout>
+                
                 <ImageButton
                     x:Name="BeginBattleButton"
                     Clicked="BeginButton_Clicked"
                     Source="begin_button.png" 
                     HeightRequest="65"
-                    Margin="0,-30,0,0"/>
-
-                <StackLayout Padding="1" />
-
+                    Margin="0,-10,0,0"/>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
