@@ -37,7 +37,7 @@ namespace Game.Views
             InitializeComponent();
 
             // Set initial State to Starting
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Starting;
 
             // Set up the UI to Defaults
             BindingContext = BattleEngineViewModel.Instance;
@@ -144,9 +144,9 @@ namespace Game.Views
         /// <summary>
         /// Attack Action
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void AttackButton_Clicked(object sender, EventArgs e)
+        /// <param name = "sender" ></ param >
+        /// < param name="e"></param>
+        public void AttackButton_ClickedClicked(object sender, EventArgs e)
         {
             NextAttackExample();
         }
@@ -324,8 +324,8 @@ namespace Game.Views
         public async void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
             ShowBattleMode();
-            await Navigation.PushModalAsync(new NewRoundPage());
         }
 
         /// <summary>
@@ -368,8 +368,9 @@ namespace Game.Views
         /// </summary>
         public void DrawPlayerBoxes()
         {
+
             int i = 0, j = 0; // Counters
-            int c = 2, r = 2; // Grid Locations
+            int c = 2, r = 0; // Grid Locations
 
             var CharacterGridList = CharacterGrid.Children.ToList();
             foreach (var data in CharacterGridList)
@@ -380,7 +381,12 @@ namespace Game.Views
             // Draw the Characters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                CharacterGrid.Children.Add(PlayerInfoDisplayBox(data), c, r);
+                Frame PlayerFrame = new Frame()
+                {
+                    HeightRequest = 60                    
+                };
+                PlayerFrame.Content = PlayerInfoDisplayBox(data);
+                CharacterGrid.Children.Add(PlayerFrame, c, r);
                 i++;
 
                 switch (c)
@@ -390,14 +396,14 @@ namespace Game.Views
                         break;
                     case 3:
                         c = 1;
-                        r = 3;
+                        r = 1;
                         break;
                     case 1:
                         c = 4;
                         break;
                     case 4:
                         c = 0;
-                        r = 4;
+                        r = 2;
                         break;
                     case 0:
                         c = 5;
@@ -494,6 +500,11 @@ namespace Game.Views
 
             if(data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
             {
+                PlayerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
+            }
+
+            if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender)
+            {
                 PlayerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
             }
 
@@ -506,8 +517,8 @@ namespace Game.Views
         /// </summary>
         public void HideUIElements()
         {
-            NextRoundButton.IsVisible = false;
-            AttackButton.IsVisible = false;
+            //NextRoundButton.IsVisible = false;
+            //AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
             Gem.IsVisible = false;
@@ -518,6 +529,9 @@ namespace Game.Views
         /// </summary>
         public void ShowBattleMode()
         {
+
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+
             // If running in UT mode, 
             if (UnitTestSetting)
             {
@@ -548,14 +562,25 @@ namespace Game.Views
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-                    CharacterGrid.IsVisible = false;
+
+                    GameUIDisplay.IsVisible = true;
+                    BattlePlayerInfomationBox.IsVisible = true;
+                    MessageDisplayBox.IsVisible = true;
+                    NextRoundButton.IsVisible = true;
+                    AttackButton.IsEnabled = false;
+                    AbilityButton.IsEnabled = false;
+                    CharacterGrid.IsVisible = true;
+                    Gem.IsVisible = true;
+                    BattlePlayerBox.IsVisible = false;
+                    BattleBottomBox.IsVisible = false;
+                    BattlePlayerInfomationBox.HeightRequest = 70;
                     break;
 
                 case BattleStateEnum.NewRound:
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
-                    AttackButton.IsVisible = false;
-                    AbilityButton.IsVisible = false;
+                    //AttackButton.IsVisible = false;
+                    //AbilityButton.IsVisible = false;
                     MonsterBox.RowSpacing = -10;
                     CharacterGrid.IsVisible = false;
                     Gem.IsVisible = false;
@@ -575,10 +600,14 @@ namespace Game.Views
                     GameUIDisplay.IsVisible = true;
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
-                    AttackButton.IsVisible = true;
-                    AbilityButton.IsVisible = true;
+                    NextRoundButton.IsVisible = false;
+                    AttackButton.IsEnabled = true;
+                    AbilityButton.IsEnabled = true;
                     CharacterGrid.IsVisible = true;
+                    BattlePlayerBox.IsVisible = true;
+                    BattleBottomBox.IsVisible = true;
                     Gem.IsVisible = true;
+                    BattlePlayerInfomationBox.HeightRequest = 150;
                     break;
 
                 // Based on the State disable buttons
