@@ -290,6 +290,18 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Method to write directly to BattleMessages.Text
+        /// </summary>
+        /// <param name="message"></param>
+        public void GameMessageWithInput(string message)
+        {
+            // Output The Message that happened.
+            BattleMessages.Text = message;
+
+            Debug.WriteLine(BattleMessages.Text);
+        }
+
+        /// <summary>
         ///  Clears the messages on the UX
         /// </summary>
         public void ClearMessages()
@@ -321,7 +333,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public async void NextRoundButton_Clicked(object sender, EventArgs e)
+        public void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
