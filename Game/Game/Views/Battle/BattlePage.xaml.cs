@@ -56,6 +56,12 @@ namespace Game.Views
             ShowBattleMode();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ShowBattleMode();
+        }
+
         #region BasicBattleMode
 
         /// <summary>
@@ -95,8 +101,8 @@ namespace Game.Views
 
             AttackerImage.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.ImageURI;
             AttackerName.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name;
-            AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() + " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
-
+            AttackerHealth.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetCurrentHealthTotal.ToString() +
+                " / " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.GetMaxHealthTotal.ToString();
             // Show what action the Attacker used
             AttackerAttack.Source = BattleEngineViewModel.Instance.Engine.EngineSettings.PreviousAction.ToImageURI();
 
@@ -157,16 +163,13 @@ namespace Game.Views
 
         /// <summary>
         /// Next Attack Example
-        /// 
         /// This code example follows the rule of
         /// 
         /// Auto Select Attacker
         /// Auto Select Defender
-        /// 
         /// Do the Attack and show the result
         /// 
         /// So the pattern is Click Next, Next, Next until game is over
-        /// 
         /// </summary>
         public void NextAttackExample()
         {
@@ -488,6 +491,11 @@ namespace Game.Views
                     PlayerNameLabel,
                 },
             };
+
+            if(data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
+            {
+                PlayerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
+            }
 
             return PlayerStack;
         }
