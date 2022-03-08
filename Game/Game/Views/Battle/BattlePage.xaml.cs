@@ -478,6 +478,8 @@ namespace Game.Views
         /// <returns></returns>
         public StackLayout PlayerInfoDisplayBox(PlayerInfoModel data)
         {
+            var ClickableButton = true;
+
             if (data == null)
             {
                 data = new PlayerInfoModel
@@ -487,6 +489,8 @@ namespace Game.Views
                     MaxHealth = 0,
                     CurrentHealth = 0,
                 };
+
+                ClickableButton = false;
             }
 
             // Hookup the image
@@ -495,6 +499,12 @@ namespace Game.Views
                 Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 Source = data.ImageURI
             };
+
+            if (ClickableButton)
+            {
+                // Need to figure out how to send the right data to attack/defend
+                //PlayerImage.Clicked += (sender, args) => NextAttackExample(data);
+            }
 
             var PlayerNameLabel = new Label()
             {
