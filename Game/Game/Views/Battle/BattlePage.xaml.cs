@@ -183,11 +183,10 @@ namespace Game.Views
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
 
-            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            if (attacker.PlayerType == PlayerTypeEnum.Monster && data != null)
             {
                 GameMessageWithInput( attacker.Name + " is attacking " + defender.Name );
             }
-
 
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
