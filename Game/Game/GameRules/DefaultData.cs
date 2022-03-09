@@ -638,7 +638,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Baxter",
                     Description = "Best guard this side of the milk bowl",
-                    ImageURI = "filler_bodyguard.png",
+                    ImageURI = "monster_bodyguard.png",
                     MonsterJob = MonsterJobEnum.Bodyguard,
                     Attack = 2,
                     Defense = 2,
@@ -648,7 +648,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Hubert",
                     Description = "Don't let the name fool you",
-                    ImageURI = "filler_bounty_hunter.png",
+                    ImageURI = "monster_bountyhunter.png",
                     MonsterJob = MonsterJobEnum.BountyHunter,
                     Attack = 4,
                     Defense = 2,
@@ -658,7 +658,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Whiskers",
                     Description = "The big bad",
-                    ImageURI = "filler_godfather.png",
+                    ImageURI = "monster_godfather.png",
                     MonsterJob = MonsterJobEnum.Godfather,
                     Attack = 4,
                     Defense = 6,
@@ -668,7 +668,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Gary",
                     Description = "Actually a nice guy",
-                    ImageURI = "filler_guard.png",
+                    ImageURI = "monster_guard.png",
                     MonsterJob = MonsterJobEnum.Guard,
                     Attack = 2,
                     Defense = 4,
@@ -678,7 +678,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Henry",
                     Description = "Does the job",
-                    ImageURI = "filler_henchman.png",
+                    ImageURI = "monster_henchman.png",
                     MonsterJob = MonsterJobEnum.Henchman,
                     Attack = 1,
                     Defense = 1,
@@ -688,7 +688,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Alfie",
                     Description = "Line em up, knock em down",
-                    ImageURI = "filler_hitman.png",
+                    ImageURI = "monster_hitman.png",
                     MonsterJob = MonsterJobEnum.Hitman,
                     Attack = 3,
                     Defense = 1,
@@ -698,7 +698,7 @@ namespace Game.GameRules
                 new MonsterModel {
                     Name = "Fluffy",
                     Description = "The one behind it all",
-                    ImageURI = "filler_mastermind.png",
+                    ImageURI = "monster_mastermind.png",
                     MonsterJob = MonsterJobEnum.Mastermind,
                     Attack = 4,
                     Defense = 2,
