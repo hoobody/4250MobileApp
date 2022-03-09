@@ -498,6 +498,7 @@ namespace Game.Views
                     MaxHealth = 0,
                     CurrentHealth = 0,
                 };
+                ClickableButton = false;
             }
 
             // Hookup the image
@@ -509,8 +510,13 @@ namespace Game.Views
 
             if (ClickableButton)
             {
-                // Need to figure out how to send the right data to attack/defend
                 PlayerImage.Clicked += (sender, args) => Attack(data);
+            }
+
+            else
+            {
+                ClickableButton = true;
+                PlayerImage.Clicked += (sender, args) => Attack(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList[0]);
             }
 
             var PlayerNameLabel = new Label()
