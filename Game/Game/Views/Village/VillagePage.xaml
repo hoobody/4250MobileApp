@@ -11,7 +11,7 @@
         <StackLayout Style="{StaticResource ButtonBox}">
 
             <ImageButton
-                    Source="characters_button.png"
+                    Source="button_agents.png"
                     Style="{StaticResource GamePageButton}"
                     Clicked="CharactersButton_Clicked"/>
 
@@ -31,7 +31,7 @@
             <StackLayout Style="{StaticResource ButtonBox}">
 
                 <ImageButton
-                        Source="monsters_button.png"
+                        Source="button_enemies.png"
                         Style="{StaticResource GamePageButton}"
                         Clicked="MonstersButton_Clicked"/>
             </StackLayout>
