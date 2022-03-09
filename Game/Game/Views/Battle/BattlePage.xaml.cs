@@ -141,7 +141,15 @@ namespace Game.Views
             BattlePlayerBoxVersus.Text = string.Empty;
         }
 
-
+        /// <summary>
+        /// Attack Action
+        /// </summary>
+        /// <param name = "sender" ></ param >
+        /// < param name="e"></param>
+        public void AttackButton_Clicked(object sender, EventArgs e)
+        {
+            Attack(null);
+        }
 
         /// <summary>
         /// Settings Page
@@ -235,7 +243,16 @@ namespace Game.Views
                     // User would select who to attack
 
                     // for now just auto selecting
-                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data);
+                    if (data == null)
+                    {
+                        _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    }
+
+                    else
+                    {
+                        _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data);
+                    }
+
                     break;
 
                 case PlayerTypeEnum.Monster:
@@ -519,7 +536,7 @@ namespace Game.Views
                 LineBreakMode = LineBreakMode.TailTruncation,
                 CharacterSpacing = 0,
                 LineHeight = 1,
-                MaxLines = 5,
+                MaxLines = 1,
             };
 
             if (data.MaxHealth == 0)

@@ -204,7 +204,7 @@
                                 <ImageButton 
                                     x:Name="AttackButton"
                                     Source="button_attack.png"
-
+                                    Clicked="AttackButton_Clicked"
                                     HeightRequest="50"/>
                                 
                                 <ImageButton x:Name="AbilityButton"
