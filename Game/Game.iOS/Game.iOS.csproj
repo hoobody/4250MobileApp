@@ -583,4 +583,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\monster_bountyhunter.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_guard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_henchman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_hitman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_mastermind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_bodyguard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_bountyhunter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_headshot_godfather.png" />
+  </ItemGroup>
 </Project>
