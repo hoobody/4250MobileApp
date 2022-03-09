@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Timers;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -722,6 +723,40 @@ namespace Game.Views
             ContinueButton.IsVisible = false;
             AttackButton.IsEnabled = true;
             AbilityButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Waits a set number of time given in milliseconds
+        /// </summary>
+        /// <param name="milliseconds"></param>
+        public void Wait(int milliseconds)
+        {
+            var timer = new Timer();
+            bool timerDone = false;
+
+            if (milliseconds == 0)
+            {
+                return;
+            }
+            if (milliseconds < 0)
+            {
+                return;
+            }
+
+            //prep the timer
+            timer.Interval = milliseconds;
+            timer.Enabled = true;
+            timer.AutoReset = false;
+            //set up complete condition
+            timer.Elapsed += (sender, args) => timerDone = true;
+            timer.Start();
+
+            //wait until the timer is done
+            while (!timerDone)
+            {
+
+            };
+
         }
     }
 }
