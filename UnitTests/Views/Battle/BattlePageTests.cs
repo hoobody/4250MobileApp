@@ -298,7 +298,7 @@ namespace UnitTests.Views
             // Has no monster, so should show next round.
 
             // Act
-            page.NextAttackExample();
+            page.Attack(null);
 
             // Reset
 
@@ -322,7 +322,7 @@ namespace UnitTests.Views
             // Has no Character, so should show end game
 
             // Act
-            page.NextAttackExample();
+            page.Attack(null);
 
             // Reset
 
@@ -379,7 +379,7 @@ namespace UnitTests.Views
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
 
             // Act
-            page.SetAttackerAndDefender();
+            page.SetAttackerAndDefender(null);
 
             // Reset
 
@@ -437,7 +437,7 @@ namespace UnitTests.Views
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
             // Act
-            page.SetAttackerAndDefender();
+            page.SetAttackerAndDefender(null);
 
             // Reset
 
@@ -495,7 +495,7 @@ namespace UnitTests.Views
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(CharacterPlayer);
 
             // Act
-            page.SetAttackerAndDefender();
+            page.SetAttackerAndDefender(null);
 
             // Reset
 
