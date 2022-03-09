@@ -544,4 +544,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\button_next_round.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="headquarters_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\headquarters_image.png" />
+  </ItemGroup>
 </Project>
