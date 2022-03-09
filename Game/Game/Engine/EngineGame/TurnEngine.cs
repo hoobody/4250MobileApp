@@ -102,6 +102,8 @@ namespace Game.Engine.EngineGame
             // Reset the Action to unknown for next time
             EngineSettings.CurrentAction = ActionEnum.Unknown;
 
+            UpdateCharacter(Attacker);
+
             return result;
         }
 
@@ -860,6 +862,18 @@ namespace Game.Engine.EngineGame
             }
 
             return result;
+        }
+
+        public void UpdateCharacter(PlayerInfoModel Attacker)
+        {
+            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            {
+                //Since there can't be duplicates, find instance and replace with updated model.
+                if (EngineSettings.CharacterList[i].Name == Attacker.Name)
+                {
+                    EngineSettings.CharacterList[i] = Attacker;
+                }
+            }
         }
 
         /// <summary>
