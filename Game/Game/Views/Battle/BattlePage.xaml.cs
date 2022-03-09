@@ -758,5 +758,27 @@ namespace Game.Views
             };
 
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void PrepareRoundOne()
+        {
+            var players = BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList;
+
+            //set the first player
+            _ = BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn();
+            var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+
+            DrawPlayerBoxes();
+
+            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                //MonsterAttack(attacker);
+            }
+
+
+        }
     }
 }
