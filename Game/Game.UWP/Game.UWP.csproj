@@ -231,6 +231,7 @@
     <Content Include="multi_vision_goggles.png" />
     <Content Include="save_button.png" />
     <Content Include="scores_button.png" />
+    <Content Include="scores_image.png" />
     <Content Include="stealth_suit.png" />
     <Content Include="item_small.png" />
     <Content Include="lazer_ring.png" />
