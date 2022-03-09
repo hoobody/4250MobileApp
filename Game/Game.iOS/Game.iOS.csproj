@@ -610,4 +610,28 @@
   <ItemGroup>
     <BundleResource Include="Resources\monster_mastermind_headshot.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_surveillanceofficer_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_assassin_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_detective_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_doubleO_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_hacker_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_mozhnogirl_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_saboteur_headshot.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\character_spy_headshot.GIF" />
+  </ItemGroup>
 </Project>
