@@ -508,11 +508,13 @@ namespace Game.Views
                 Source = data.ImageURI
             };
 
+            // Sets up each image for selective targeting of characters
             if (ClickableButton)
             {
                 PlayerImage.Clicked += (sender, args) => Attack(data);
             }
 
+            // Changes the first image button that is null to target the first monster instead
             else
             {
                 ClickableButton = true;
