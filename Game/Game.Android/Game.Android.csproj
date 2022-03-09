@@ -534,25 +534,25 @@
     <AndroidResource Include="Resources\drawable\monster_henchman.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_guard.png" />
+    <AndroidResource Include="Resources\drawable\monster_guard_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_henchman.png" />
+    <AndroidResource Include="Resources\drawable\monster_henchman_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_hitman.png" />
+    <AndroidResource Include="Resources\drawable\monster_hitman_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_mastermind.png" />
+    <AndroidResource Include="Resources\drawable\monster_mastermind_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_bodyguard.png" />
+    <AndroidResource Include="Resources\drawable\monster_bodyguard_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_bountyhunter.png" />
+    <AndroidResource Include="Resources\drawable\monster_bountyhunter_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\monster_headshot_godfather.png" />
+    <AndroidResource Include="Resources\drawable\monster_godfather_headshot.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -584,24 +584,24 @@
     <BundleResource Include="Resources\monster_bountyhunter.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_guard.png" />
+    <BundleResource Include="Resources\monster_guard_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_henchman.png" />
+    <BundleResource Include="Resources\monster_henchman_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_hitman.png" />
+    <BundleResource Include="Resources\monster_hitman_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_mastermind.png" />
+    <BundleResource Include="Resources\monster_mastermind_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_bodyguard.png" />
+    <BundleResource Include="Resources\monster_bodyguard_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_bountyhunter.png" />
+    <BundleResource Include="Resources\monster_bountyhunter_headshot.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\monster_headshot_godfather.png" />
+    <BundleResource Include="Resources\monster_godfather_headshot.png" />
   </ItemGroup>
 </Project>
