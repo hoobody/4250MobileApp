@@ -141,15 +141,7 @@ namespace Game.Views
             BattlePlayerBoxVersus.Text = string.Empty;
         }
 
-        /// <summary>
-        /// Attack Action
-        /// </summary>
-        /// <param name = "sender" ></ param >
-        /// < param name="e"></param>
-        public void AttackButton_ClickedClicked(object sender, EventArgs e)
-        {
-            NextAttackExample();
-        }
+
 
         /// <summary>
         /// Settings Page
@@ -171,12 +163,12 @@ namespace Game.Views
         /// 
         /// So the pattern is Click Next, Next, Next until game is over
         /// </summary>
-        public void NextAttackExample()
+        public void Attack(PlayerInfoModel data)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             // Get the turn, set the current player and attacker to match
-            SetAttackerAndDefender();
+            SetAttackerAndDefender(data);
 
 
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
@@ -233,7 +225,7 @@ namespace Game.Views
         /// <summary>
         /// Decide The Turn and who to Attack
         /// </summary>
-        public void SetAttackerAndDefender()
+        public void SetAttackerAndDefender(PlayerInfoModel data)
         {
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
@@ -243,7 +235,7 @@ namespace Game.Views
                     // User would select who to attack
 
                     // for now just auto selecting
-                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(data);
                     break;
 
                 case PlayerTypeEnum.Monster:
@@ -489,8 +481,6 @@ namespace Game.Views
                     MaxHealth = 0,
                     CurrentHealth = 0,
                 };
-
-                ClickableButton = false;
             }
 
             // Hookup the image
@@ -503,7 +493,7 @@ namespace Game.Views
             if (ClickableButton)
             {
                 // Need to figure out how to send the right data to attack/defend
-                //PlayerImage.Clicked += (sender, args) => NextAttackExample(data);
+                PlayerImage.Clicked += (sender, args) => Attack(data);
             }
 
             var PlayerNameLabel = new Label()
