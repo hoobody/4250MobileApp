@@ -562,4 +562,25 @@
   <ItemGroup>
     <BundleResource Include="Resources\danger_stamp_desinger.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_godfather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_guard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_henchman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_hitman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_mastermind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_bodyguard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_bountyhunter.png" />
+  </ItemGroup>
 </Project>

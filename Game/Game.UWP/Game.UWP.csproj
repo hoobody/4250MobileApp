@@ -229,6 +229,13 @@
     <Content Include="items_button.png" />
     <Content Include="mission_button.png" />
     <Content Include="monsters_button.png" />
+    <Content Include="monster_bodyguard.png" />
+    <Content Include="monster_bountyhunter.png" />
+    <Content Include="monster_godfather.png" />
+    <Content Include="monster_guard.png" />
+    <Content Include="monster_henchman.png" />
+    <Content Include="monster_hitman.png" />
+    <Content Include="monster_mastermind.png" />
     <Content Include="mouse_hole_image.png" />
     <Content Include="multi_vision_goggles.png" />
     <Content Include="save_button.png" />
