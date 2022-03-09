@@ -183,7 +183,7 @@ namespace Game.Views
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
 
-            if (attacker.PlayerType == PlayerTypeEnum.Monster && data != null)
+            if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
                 GameMessageWithInput( attacker.Name + " is attacking " + defender.Name );
             }
