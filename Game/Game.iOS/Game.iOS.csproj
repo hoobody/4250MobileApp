@@ -556,4 +556,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\scores_image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mouse_hole_image.png" />
+  </ItemGroup>
 </Project>
