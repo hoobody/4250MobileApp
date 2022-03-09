@@ -559,4 +559,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\mouse_hole_image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\danger_stamp_desinger.png" />
+  </ItemGroup>
 </Project>
