@@ -554,5 +554,11 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\monster_godfather_headshot.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\monster_godfather_headshot.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\monster_mastermind_headshot.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

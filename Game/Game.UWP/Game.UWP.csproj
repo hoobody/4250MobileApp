@@ -232,6 +232,7 @@
     <Content Include="monster_bodyguard.png" />
     <Content Include="monster_bountyhunter.png" />
     <Content Include="monster_godfather.png" />
+    <Content Include="monster_godfather_headshot.gif" />
     <Content Include="monster_guard.png" />
     <Content Include="monster_bodyguard_headshot.png" />
     <Content Include="monster_bountyhunter_headshot.png" />
@@ -239,6 +240,7 @@
     <Content Include="monster_guard_headshot.png" />
     <Content Include="monster_henchman_headshot.png" />
     <Content Include="monster_hitman_headshot.png" />
+    <Content Include="monster_mastermind_headshot.gif" />
     <Content Include="monster_mastermind_headshot.png" />
     <Content Include="monster_henchman.png" />
     <Content Include="monster_hitman.png" />

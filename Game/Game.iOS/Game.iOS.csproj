@@ -604,4 +604,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\monster_godfather_headshot.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_godfather_headshot.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\monster_mastermind_headshot.gif" />
+  </ItemGroup>
 </Project>
