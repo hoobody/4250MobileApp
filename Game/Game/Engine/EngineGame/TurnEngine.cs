@@ -343,11 +343,11 @@ namespace Game.Engine.EngineGame
             {
                 if (data.Alive)
                 {
-                    data.Defense = data.Defense / 2;
+                    data.DebufDefense(value);
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " halved the enemies defenses by " + value + "!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " reduces the enemies defenses by " + value + "!";
             return true;
         }
 
