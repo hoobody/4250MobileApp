@@ -102,7 +102,7 @@ namespace Game.Engine.EngineGame
             // Reset the Action to unknown for next time
             EngineSettings.CurrentAction = ActionEnum.Unknown;
 
-            UpdateCharacter(Attacker);
+            //UpdateCharacter(Attacker);
 
             return result;
         }
