@@ -649,6 +649,7 @@ namespace Game.Views
                 HorizontalOptions = LayoutOptions.Center,
                 Padding = 0,
                 Spacing = 0,
+                BackgroundColor = (Color)Application.Current.Resources["TransparentColor"],
                 Children = {
                     PlayerImage,
                     PlayerNameLabel,
