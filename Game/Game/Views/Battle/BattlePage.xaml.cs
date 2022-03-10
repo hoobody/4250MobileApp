@@ -942,12 +942,14 @@ namespace Game.Views
 
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                AbilityButton.IsVisible = false;
+                AbilityButton.IsEnabled = false;
+                AttackButton.IsEnabled = true;
             }
 
-            else
+            if (attacker.PlayerType == PlayerTypeEnum.Character)
             {
-                AbilityButton.IsVisible = true;
+                AbilityButton.IsEnabled = true;
+                AttackButton.IsEnabled = false;
             }
 
 
