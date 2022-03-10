@@ -7,43 +7,91 @@
 
 
     <StackLayout Style="{StaticResource OuterBoxStack}">
-        
-        <StackLayout Style="{StaticResource ButtonBox}">
 
-            <ImageButton
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout Style="{StaticResource VillagePageImage}">
+
+                <Image
+                    Source="mouse_hole_image.png"
+                    Style="{StaticResource GamePageButton}"/>
+
+            </StackLayout>
+
+            <StackLayout Style="{StaticResource VillageButtonBox}">
+
+                <ImageButton
                     Source="button_agents.png"
                     Style="{StaticResource GamePageButton}"
                     Clicked="CharactersButton_Clicked"/>
+
+            </StackLayout>
 
         </StackLayout>
 
         <StackLayout  Style="{StaticResource HorizontalStack}"
                       Spacing="50">
-            <StackLayout Style="{StaticResource ButtonBox}">
 
-                <ImageButton
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Style="{StaticResource VillagePageImage}">
+
+                    <Image
+                        Source="mouse_hole_image.png"
+                        Style="{StaticResource GamePageButton}"/>
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource VillageButtonBox}">
+
+                    <ImageButton
                         Source="items_button.png"
                         Style="{StaticResource GamePageButton}"
                         Clicked="ItemsButton_Clicked"/>
 
+                </StackLayout>
             </StackLayout>
-            
-            <StackLayout Style="{StaticResource ButtonBox}">
 
-                <ImageButton
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Style="{StaticResource VillagePageImage}">
+
+                    <Image
+                        Source="mouse_hole_image.png"
+                        Style="{StaticResource GamePageButton}"/>
+
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource VillageButtonBox}">
+
+                    <ImageButton
                         Source="button_enemies.png"
                         Style="{StaticResource GamePageButton}"
                         Clicked="MonstersButton_Clicked"/>
+                </StackLayout>
             </StackLayout>
 
         </StackLayout>
-        <StackLayout Style="{StaticResource ButtonBox}">
 
-            <ImageButton
-                Source="scores_button.png"
-                Style="{StaticResource GamePageButton}"
-                Clicked="ScoresButton_Clicked"/>
+        <StackLayout Orientation="Vertical">
+
+            <StackLayout Style="{StaticResource VillagePageImage}">
+
+                <Image
+                        Source="scores_image.png"
+                        Style="{StaticResource GamePageButton}"/>
+
+            </StackLayout>
+
+
+            <StackLayout Style="{StaticResource VillageButtonBox}">
+
+                <ImageButton
+                    Source="scores_button.png"
+                    Style="{StaticResource GamePageButton}"
+                    Clicked="ScoresButton_Clicked"/>
             
+            </StackLayout>
         </StackLayout>
     </StackLayout>
 </ContentPage>
