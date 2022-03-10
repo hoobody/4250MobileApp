@@ -637,4 +637,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\battle_attack_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add_item_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\empty_item_blue.png" />
+  </ItemGroup>
 </Project>

@@ -108,6 +108,7 @@
     <Content Include="action_attack.png" />
     <Content Include="action_default.png" />
     <Content Include="action_move.png" />
+    <Content Include="add_item_blue.png" />
     <Content Include="AndroidIcon.png" />
     <Content Include="AppleIcon.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
@@ -214,6 +215,7 @@
     <Content Include="elf5.png" />
     <Content Include="elf6.png" />
     <Content Include="elf7.png" />
+    <Content Include="empty_item_blue.png" />
     <Content Include="fancy_hat.png" />
     <Content Include="feet1.png" />
     <Content Include="feet2.png" />
