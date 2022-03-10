@@ -319,7 +319,9 @@ namespace Game.Views
         {
             //ClearMessages();
             // Output The Message that happened.
-            BattleMessages.Text = string.Format("{0} \n{1}", BattleMessages.Text, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
+            string newMessage = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage;
+
+            BattleMessages.Text = string.Format("{0} \n{1}", BattleMessages.Text, newMessage).Trim();
 
             if (!string.IsNullOrEmpty(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage))
             {
