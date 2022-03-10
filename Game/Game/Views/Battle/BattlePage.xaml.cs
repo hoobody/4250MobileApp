@@ -536,7 +536,7 @@ namespace Game.Views
 
             var HP = new Label()
             {
-                Text = data.GetSpeed().ToString(),
+                Text = data.GetCurrentHealth().ToString() + "/" + data.GetMaxHealth().ToString(),
                 Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
