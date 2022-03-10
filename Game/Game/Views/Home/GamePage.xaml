@@ -30,13 +30,24 @@
                     Padding="0, 0, 0, 100"
                     />
 
-                <StackLayout Style="{StaticResource ButtonBox}">
+                <StackLayout Orientation="Vertical">
 
-                    <ImageButton
-                        Clicked="DungeonButton_Clicked"
-                        Source="mission_button.png"
+                    <StackLayout Style="{StaticResource VillagePageImage}">
+
+                        <Image
+                        Source="gem.png"
                         Style="{StaticResource GamePageButton}"/>
 
+                    </StackLayout>
+
+                    <StackLayout Style="{StaticResource GameButtonBox}">
+
+                        <ImageButton
+                            Clicked="DungeonButton_Clicked"
+                            Source="mission_button.png"
+                            Style="{StaticResource GamePageButton}"/>
+
+                    </StackLayout>
                 </StackLayout>
 
                 <StackLayout
@@ -44,16 +55,44 @@
                     Spacing="50"
                     Style="{StaticResource HorizontalStack}">
 
+                    <StackLayout Orientation="Vertical">
 
-                    <ImageButton
-                        Clicked="VillageButton_Clicked"
-                        Source="headquarters_button.png"
-                        Style="{StaticResource GamePageButton}" />
+                        <StackLayout Style="{StaticResource VillagePageImage}">
 
-                    <ImageButton
-                        Clicked="AutobattleButton_Clicked"
-                        Source="autobattle_button.png"
-                        Style="{StaticResource GamePageButton}" />
+                            <Image
+                                Source="headquarters_image.png"
+                                Style="{StaticResource GamePageButton}"/>
+
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource GameButtonBox}">
+
+                            <ImageButton
+                                Clicked="VillageButton_Clicked"
+                                Source="headquarters_button.png"
+                                Style="{StaticResource GamePageButton}" />
+                        </StackLayout>
+                        
+                    </StackLayout>
+
+                    <StackLayout Orientation="Vertical">
+
+                        <StackLayout Style="{StaticResource VillagePageImage}">
+
+                            <Image
+                                Source="gem.png"
+                                Style="{StaticResource GamePageButton}"/>
+
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource GameButtonBox}">
+
+                            <ImageButton
+                                Clicked="AutobattleButton_Clicked"
+                                Source="autobattle_button.png"
+                                Style="{StaticResource GamePageButton}" />
+                        </StackLayout>
+                    </StackLayout>
 
                 </StackLayout>
             </StackLayout>
