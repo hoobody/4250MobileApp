@@ -194,7 +194,6 @@ namespace Game.Views
             //Debug.WriteLine("check if monster");
             if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
-                //GameMessageWithInput(attacker.Name + " is attacking " + defender.Name);
                 //Debug.WriteLine("print message for monster and wait");
                 BattleMessages.Text = attacker.Name + " is attacking " + defender.Name;
                 _ = Task.Delay(WaitTime);
@@ -344,17 +343,6 @@ namespace Game.Views
             Debug.WriteLine(BattleMessages.Text);
             //htmlSource.Html = BattleEngineViewModel.Instance.Engine.BattleMessagesModel.GetHTMLFormattedTurnMessage();
             //HtmlBox.Source = HtmlBox.Source = htmlSource;
-        }
-
-        /// <summary>
-        /// Method to write directly to BattleMessages.Text
-        /// </summary>
-        /// <param name="message"></param>
-        public void GameMessageWithInput(string message)
-        {
-            // Output The Message that happened.
-            BattleMessages.Text = message;
-            Debug.WriteLine(BattleMessages.Text);
         }
 
         /// <summary>
