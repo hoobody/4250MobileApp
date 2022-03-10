@@ -186,6 +186,8 @@ namespace Game.Views
             if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
                 GameMessageWithInput( attacker.Name + " is attacking " + defender.Name );
+                _ = Task.Delay(WaitTime);
+                Debug.WriteLine("Waited one second");
             }
 
             // Hold the current state
@@ -196,6 +198,13 @@ namespace Game.Views
 
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
+
+            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                Wait(1000);
+            }
+
+            Debug.WriteLine("Waited one second");
 
             if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
@@ -229,6 +238,7 @@ namespace Game.Views
                 return;
             }
 
+            PrepareRound();
         }
 
         /// <summary>
@@ -236,7 +246,7 @@ namespace Game.Views
         /// </summary>
         public void SetAttackerAndDefender(PlayerInfoModel data)
         {
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            //_ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
@@ -356,7 +366,7 @@ namespace Game.Views
         public void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
-
+            PrepareRound();
             ShowBattleMode();
         }
 
@@ -501,7 +511,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new Image
             {
-                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                //Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 Source = data.ImageURI
             };
 
@@ -566,7 +576,7 @@ namespace Game.Views
             // Hookup the image
             var PlayerImage = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                //Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
                 Source = data.ImageURI
             };
 
@@ -832,19 +842,17 @@ namespace Game.Views
         /// <summary>
         /// 
         /// </summary>
-        public void PrepareRoundOne()
+        public void PrepareRound()
         {
-            var players = BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList;
-
-            //set the first player
-            _ = BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn();
+            //set next attacker
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
 
             DrawPlayerBoxes();
 
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                //MonsterAttack(attacker);
+                NextAttackExample(attacker);
             }
 
 
