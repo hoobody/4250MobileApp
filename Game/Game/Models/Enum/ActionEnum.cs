@@ -69,7 +69,7 @@
             switch (value)
             {
                 case ActionEnum.Attack:
-                    Message = "action_attack.png";
+                    Message = "battle_attack_icon.png";
                     break;
 
                 case ActionEnum.Move:
