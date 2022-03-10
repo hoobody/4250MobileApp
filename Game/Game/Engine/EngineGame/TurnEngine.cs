@@ -358,12 +358,12 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Assassin(PlayerInfoModel Attacker)
         {
-            int damage = DiceHelper.RollDice(1, 10);
+            int damage = DiceHelper.RollDice(1, 3);
 
             int monsterCount = EngineSettings.MonsterList.Count;
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                data.CurrentHealth -= damage;
+                data.CurrentHealth -= damage * data.Level;
             }
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
@@ -512,7 +512,7 @@ namespace Game.Engine.EngineGame
              
                 if (chance %  2 == 0)
                 {
-                    data.CurrentHealth -= 15;
+                    data.CurrentHealth -= 3 * data.Level;
                 }
             }
 
