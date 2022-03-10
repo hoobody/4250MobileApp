@@ -149,7 +149,7 @@ namespace Game.Views
         /// < param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
-            Attack(null);
+            NextAttackExample(null);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Game.Views
         /// 
         /// So the pattern is Click Next, Next, Next until game is over
         /// </summary>
-        public void Attack(PlayerInfoModel data)
+        public void NextAttackExample(PlayerInfoModel data)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
@@ -228,6 +228,7 @@ namespace Game.Views
                 GameOver();
                 return;
             }
+
         }
 
         /// <summary>
@@ -572,14 +573,14 @@ namespace Game.Views
             // Sets up each image for selective targeting of characters
             if (ClickableButton)
             {
-                PlayerImage.Clicked += (sender, args) => Attack(data);
+                PlayerImage.Clicked += (sender, args) => NextAttackExample(data);
             }
 
             // Changes the first image button that is null to target the first monster instead
             else
             {
                 ClickableButton = true;
-                PlayerImage.Clicked += (sender, args) => Attack(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList[0]);
+                PlayerImage.Clicked += (sender, args) => NextAttackExample(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList[0]);
             }
 
             var PlayerNameLabel = new Label()
