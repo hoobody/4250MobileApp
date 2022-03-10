@@ -190,6 +190,13 @@ namespace Game.Views
                 Debug.WriteLine("Waited one second");
             }
 
+                        if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                Wait(1000);
+            }
+
+            Debug.WriteLine("Waited one second");
+
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -198,13 +205,6 @@ namespace Game.Views
 
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
-
-            if (attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                Wait(1000);
-            }
-
-            Debug.WriteLine("Waited one second");
 
             if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
@@ -852,7 +852,7 @@ namespace Game.Views
 
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                NextAttackExample(attacker);
+                NextAttackExample(null);
             }
 
 
