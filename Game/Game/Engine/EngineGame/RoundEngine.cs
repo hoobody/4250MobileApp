@@ -122,7 +122,7 @@ namespace Game.Engine.EngineGame
                 {
 
                     //spreads the levels of the monsters out a bit creating a range of challenges
-                    int randomLevel = targetLevel + RandomNumGenerator.Next(-2, 2);
+                    int randomLevel = targetLevel + RandomNumGenerator.Next(0, 2);
 
                     var data = RandomPlayerHelper.GetRandomMonster(randomLevel, EngineSettings.BattleSettingsModel.AllowMonsterItems);
 
