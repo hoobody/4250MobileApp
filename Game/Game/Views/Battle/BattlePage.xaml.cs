@@ -197,14 +197,14 @@ namespace Game.Views
             {
                 //Debug.WriteLine("print message for monster and wait");
                 BattleMessages.Text = attacker.Name + " is attacking " + defender.Name;
-                _ = Task.Delay(WaitTime);
+                //_ = Task.Delay(WaitTime);
                 //Debug.WriteLine("Waited one second");
             }
 
             //Debug.WriteLine("set action to attack");
             BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
 
-            Debug.WriteLine("process the round and attack");
+            //Debug.WriteLine("process the round and attack");
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -212,7 +212,7 @@ namespace Game.Views
             // Output the Message of what happened.
             GameMessage();
 
-            Debug.WriteLine("Redraw players with attacker and defender highlighted");
+            //Debug.WriteLine("Redraw players with attacker and defender highlighted");
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
@@ -579,15 +579,22 @@ namespace Game.Views
             {
                 Style = (Style)Application.Current.Resources["ImageButtonBattleMediumStyle"],
                 Source = data.ImageURI,
-                IsEnabled = true
+                IsEnabled = false
             };
 
-            //if a monster is attacking nullify the monster buttons
+            //if it's a monster make it clickable
+            if (data.PlayerType == PlayerTypeEnum.Monster)
+            {
+                PlayerImage.IsEnabled = true;
+            }
+
+            //if a monster is attacking make them unclickable
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             if (attacker != null && attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 PlayerImage.IsEnabled = false;
             }
+
 
             // Sets up each image for selective targeting of characters
             if (ClickableButton)
