@@ -26,6 +26,7 @@ namespace Game.Views
         // Wait time before proceeding
         public int WaitTime = 1500;
 
+
         // Empty Constructor for UTs
         bool UnitTestSetting;
         public BattlePage(bool UnitTest) { UnitTestSetting = UnitTest; }
@@ -591,8 +592,16 @@ namespace Game.Views
             var PlayerImage = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageButtonBattleMediumStyle"],
-                Source = data.ImageURI
+                Source = data.ImageURI,
+                IsEnabled = true
             };
+
+            //if a monster is attacking nullify the monster buttons
+            var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            if (attacker != null && attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                PlayerImage.IsEnabled = false;
+            }
 
             // Sets up each image for selective targeting of characters
             if (ClickableButton)
@@ -940,13 +949,31 @@ namespace Game.Views
             Debug.WriteLine("Attacker set: " + attacker.Name);
             DrawPlayerBoxes();
 
+            //if (attacker.PlayerType == PlayerTypeEnum.Character)
+            //{
+
+            //}
+
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 Debug.WriteLine("Attacker is a monster. Attacking");
+                //ToggleMonsterButtons(false);
                 NextAttackExample(attacker);
             }
 
 
         }
+
+
+        //public void ToggleMonsterButtons(bool isEnabled)
+        //{
+        //    var MonsterBoxList = MonsterBox.Children.ToList();
+        //    foreach (StackLayout monsterStack in MonsterBoxList)
+        //    {
+        //        ImageButton monsterButton = (ImageButton)monsterStack.Children.First();
+        //        monsterButton.IsEnabled = isEnabled;
+        //    }
+        //}
+
     }
 }
