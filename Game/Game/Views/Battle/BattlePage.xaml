@@ -195,7 +195,8 @@
 
                                 <StackLayout Grid.Row="1" Grid.Column="2"
                                          Grid.RowSpan="2" Grid.ColumnSpan="2"
-                                             x:Name="ActionButtonBox">
+                                             x:Name="ActionButtonBox"
+                                             Margin="5">
                                     
                                     <ImageButton 
                                     x:Name="AttackButton"
