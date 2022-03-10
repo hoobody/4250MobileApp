@@ -1613,7 +1613,7 @@ namespace UnitTests.Models
         {
             var data = new BasePlayerModel<CharacterModel>();
 
-            var Result = data.MinorDebuffDefense();
+            var Result = data.DebufDefense();
 
             Assert.AreEqual(-2, Result);
         }
@@ -1623,7 +1623,7 @@ namespace UnitTests.Models
         {
             var data = new BasePlayerModel<CharacterModel>();
 
-            var Result = data.MinorDebuffAttack();
+            var Result = data.DebuffAttack();
 
             Assert.AreEqual(-2, Result);
         }
@@ -1633,7 +1633,7 @@ namespace UnitTests.Models
         {
             var data = new BasePlayerModel<CharacterModel>();
 
-            var Result = data.MinorDebuffSpeed();
+            var Result = data.DebuffSpeed();
 
             Assert.AreEqual(-2, Result);
         }

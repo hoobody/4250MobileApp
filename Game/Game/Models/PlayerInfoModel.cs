@@ -406,7 +406,7 @@ namespace Game.Models
                     _ = MinorBuffSpeed();
                     break;
                 case AbilityEnum.Hacker:
-                    _ = MinorDebuffAttack();
+                    _ = DebuffAttack();
                     _ = MinorBuffSpeed();
                     _ = BuffDefense();
                     break;
@@ -416,7 +416,7 @@ namespace Game.Models
                     _ = MinorBuffSpeed();
                     break;
                 case AbilityEnum.Saboteur:
-                    _ = MinorDebuffAttack();
+                    _ = DebuffAttack();
                     _ = MinorBuffSpeed();
                     _ = MinorBuffDefense();
                     break;
@@ -428,11 +428,11 @@ namespace Game.Models
                 case AbilityEnum.Detective:
                     _ = MinorBuffAttack();
                     _ = BuffDefense();
-                    _ = MinorDebuffSpeed();
+                    _ = DebuffSpeed();
                     break;
                 case AbilityEnum.Double0:
                     _ = BuffAttack();
-                    _ = MinorDebuffDefense();
+                    _ = DebufDefense();
                     _ = MinorBuffSpeed();
                     break;
             }

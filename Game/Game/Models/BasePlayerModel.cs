@@ -136,15 +136,15 @@ namespace Game.Models
         /// <summary>
         /// Attack debuff
         /// </summary>
-        public int MinorDebuffAttack()
+        public int DebuffAttack(int val = 2)
         {
-            return BuffAttackValue -= 2;
+            return BuffAttackValue -= val;
         }
 
         /// <summary>
         /// Defense debuff
         /// </summary>
-        public int MinorDebuffDefense()
+        public int DebufDefense(int val = 2)
         {
             return BuffDefenseValue -= 2;
         }
@@ -152,7 +152,7 @@ namespace Game.Models
         /// <summary>
         /// Speed debuff
         /// </summary>
-        public int MinorDebuffSpeed()
+        public int DebuffSpeed(int val = 2)
         {
             return BuffSpeedValue -= 2;
         }
