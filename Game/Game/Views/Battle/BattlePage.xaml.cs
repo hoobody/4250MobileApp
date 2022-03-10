@@ -185,7 +185,7 @@ namespace Game.Views
 
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
-            Debug.WriteLine("Attacker: {0} - Defender: {1}", attacker.Name, defender.Name);
+            //Debug.WriteLine("Attacker: {0} - Defender: {1}", attacker.Name, defender.Name);
 
             if (attacker.PlayerType == defender.PlayerType)
             {
@@ -828,7 +828,7 @@ namespace Game.Views
         /// </summary>
         public void AbilityButton_Clicked(object sender, EventArgs e)
         {
-            Debug.WriteLine("Attack Beginning");
+            //Debug.WriteLine("Attack Beginning");
             //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             //Debug.WriteLine("Get defender");
@@ -934,7 +934,7 @@ namespace Game.Views
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
 
-            Debug.WriteLine("Attacker set: " + attacker.Name);
+            //Debug.WriteLine("Attacker set: " + attacker.Name);
             DrawPlayerBoxes();
 
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
@@ -950,17 +950,6 @@ namespace Game.Views
 
 
         }
-
-
-        //public void ToggleMonsterButtons(bool isEnabled)
-        //{
-        //    var MonsterBoxList = MonsterBox.Children.ToList();
-        //    foreach (StackLayout monsterStack in MonsterBoxList)
-        //    {
-        //        ImageButton monsterButton = (ImageButton)monsterStack.Children.First();
-        //        monsterButton.IsEnabled = isEnabled;
-        //    }
-        //}
 
     }
 }
