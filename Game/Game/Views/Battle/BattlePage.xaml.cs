@@ -174,38 +174,51 @@ namespace Game.Views
         /// </summary>
         public void NextAttackExample(PlayerInfoModel data)
         {
+            Debug.WriteLine("Attack Beginning");
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
+            //Debug.WriteLine("Get defender");
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender(data);
 
 
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
+            Debug.WriteLine("Attacker: {0} - Defender: {1}", attacker.Name, defender.Name);
 
+            //Debug.WriteLine("check if monster");
             if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
-                GameMessageWithInput( attacker.Name + " is attacking " + defender.Name );
+                //GameMessageWithInput(attacker.Name + " is attacking " + defender.Name);
+                //Debug.WriteLine("print message for monster and wait");
+                BattleMessages.Text = attacker.Name + " is attacking " + defender.Name;
                 _ = Task.Delay(WaitTime);
                 Debug.WriteLine("Waited one second");
             }
 
-                        if (attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                Wait(1000);
-            }
+            //Debug.WriteLine("set action to attack");
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Attack;
 
-            Debug.WriteLine("Waited one second");
-
+            Debug.WriteLine("process the round and attack");
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
+            //Debug.WriteLine("Print messages");
             // Output the Message of what happened.
             GameMessage();
 
+            //Debug.WriteLine("Redraw board");
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
+            //Debug.WriteLine("wait if it's a monster");
+            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                Wait(1000);
+                Debug.WriteLine("waited");
+            }
+
+            //Debug.WriteLine("check for new round");
             if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
                 // Uncomment this to allow the BattlePage to draw a new round screen between rounds
@@ -221,6 +234,7 @@ namespace Game.Views
                 return;
             }
 
+            //Debug.WriteLine("check for game over");
             // Check for Game Over
             if (RoundCondition == RoundEnum.GameOver || BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1)
             {
@@ -238,6 +252,7 @@ namespace Game.Views
                 return;
             }
 
+            Debug.WriteLine("prepare new round");
             PrepareRound();
         }
 
@@ -306,13 +321,15 @@ namespace Game.Views
         public void GameMessage()
         {
             // Output The Message that happened.
-            BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage, BattleMessages.Text);
+            //BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage, BattleMessages.Text);
+            BattleMessages.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage;
 
             Debug.WriteLine(BattleMessages.Text);
 
             if (!string.IsNullOrEmpty(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage))
             {
-                BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
+                //BattleMessages.Text = string.Format("{0} \n{1}", BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage, BattleMessages.Text);
+                BattleMessages.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.LevelUpMessage;
             }
 
             //htmlSource.Html = BattleEngineViewModel.Instance.Engine.BattleMessagesModel.GetHTMLFormattedTurnMessage();
@@ -327,7 +344,6 @@ namespace Game.Views
         {
             // Output The Message that happened.
             BattleMessages.Text = message;
-
             Debug.WriteLine(BattleMessages.Text);
         }
 
@@ -366,8 +382,10 @@ namespace Game.Views
         public void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
             PrepareRound();
             ShowBattleMode();
+
         }
 
         /// <summary>
@@ -425,7 +443,7 @@ namespace Game.Views
             {
                 Frame PlayerFrame = new Frame()
                 {
-                    HeightRequest = 125              
+                    HeightRequest = 125
                 };
                 PlayerFrame.Content = CharacterGridDisplay(data);
                 CharacterGrid.Children.Add(PlayerFrame, c, r);
@@ -651,11 +669,11 @@ namespace Game.Views
         /// <param name="playerStack"></param>
         public void HighlightAttackerDefender(PlayerInfoModel data, StackLayout playerStack)
         {
-            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.Battling)
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.Battling)
             {
                 return;
             }
-            
+
             if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
             {
                 playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
@@ -685,8 +703,7 @@ namespace Game.Views
         /// </summary>
         public void ShowBattleMode()
         {
-
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            //_ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
             // If running in UT mode, 
             if (UnitTestSetting)
@@ -848,11 +865,13 @@ namespace Game.Views
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
 
+            Debug.WriteLine("Attacker set: " + attacker.Name);
             DrawPlayerBoxes();
 
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                NextAttackExample(null);
+                Debug.WriteLine("Attacker is a monster. Attacking");
+                NextAttackExample(attacker);
             }
 
 
