@@ -823,6 +823,7 @@ namespace Game.Views
             ContinueButton.IsVisible = false;
             AttackButton.IsEnabled = true;
             AbilityButton.IsEnabled = true;
+            PrepareRound();
         }
 
         /// <summary>
