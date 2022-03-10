@@ -382,10 +382,8 @@ namespace Game.Views
         public void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
-
-            PrepareRound();
             ShowBattleMode();
-
+            PrepareRound();
         }
 
         /// <summary>
