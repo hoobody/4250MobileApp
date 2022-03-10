@@ -419,10 +419,15 @@ namespace Game.Views
             int i = 0, j = 0; // Counters
             int c = 2, r = 0; // Grid Locations
 
+            //StackLayout buttonBox = ;
+
             var CharacterGridList = CharacterGrid.Children.ToList();
             foreach (var data in CharacterGridList)
             {
-                _ = CharacterGrid.Children.Remove(data);
+                if (data != ActionButtonBox)
+                { 
+                    _ = CharacterGrid.Children.Remove(data);
+                }
             }
 
             // Draw the Characters
