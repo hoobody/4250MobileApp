@@ -126,31 +126,24 @@
                                                     Style="{StaticResource ImageSmallStyle}" />
                                             </StackLayout>
 
-                                            <StackLayout
+                                        <StackLayout
                                                 x:Name="DefenderBox"
                                                 HorizontalOptions="End"
                                                 Style="{StaticResource PlayerBattleInfoBox}" MinimumWidthRequest="150">
-                                                <Image
+                                            <Image
                                                     x:Name="DefenderImage"
                                                     Source=""
                                                     Style="{StaticResource ImageBattleMediumStyle}" />
-                                                <Label
+                                            <Label
                                                     x:Name="DefenderName"
                                                     Style="{StaticResource ValueStyleBattleMicro}"
                                                     Text="" />
-                                                <Label
+                                            <Label
                                                     x:Name="DefenderHealth"
                                                     Style="{StaticResource ValueStyleBattleMicro}"
                                                     Text="" />
-                                            </StackLayout>
+                                        </StackLayout>
 
-                                        <ImageButton
-                                            x:Name="ContinueButton"
-                                            Clicked="ContinueButton_Clicked"
-                                            Source="begin_button.png"
-                                            HeightRequest="50"
-                                            IsVisible="false"/>
-                                            
                                     </StackLayout>
 
 

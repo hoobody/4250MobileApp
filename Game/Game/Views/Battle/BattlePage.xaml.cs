@@ -257,17 +257,7 @@ namespace Game.Views
                 return;
             }
 
-            //Debug.WriteLine("prepare new round");
-            if (attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                ContinueButton.IsVisible = true;
-                AttackButton.IsEnabled = false;
-                AbilityButton.IsEnabled = false;
-            }
-            if (attacker.PlayerType == PlayerTypeEnum.Character)
-            {
-                PrepareRound();
-            }
+            PrepareRound();
         }
 
         /// <summary>
@@ -828,7 +818,6 @@ namespace Game.Views
 
         private void ContinueButton_Clicked(object sender, EventArgs e)
         {
-            ContinueButton.IsVisible = false;
             AttackButton.IsEnabled = true;
             AbilityButton.IsEnabled = true;
             PrepareRound();
@@ -897,9 +886,8 @@ namespace Game.Views
                     GameOver();
                     return;
                 }
+                PrepareRound();
             }
-
-            PrepareRound();
         }
 
         /// <summary>
@@ -949,17 +937,16 @@ namespace Game.Views
             Debug.WriteLine("Attacker set: " + attacker.Name);
             DrawPlayerBoxes();
 
-            //if (attacker.PlayerType == PlayerTypeEnum.Character)
-            //{
-
-            //}
-
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
-                Debug.WriteLine("Attacker is a monster. Attacking");
-                //ToggleMonsterButtons(false);
-                NextAttackExample(attacker);
+                AbilityButton.IsVisible = false;
             }
+
+            else
+            {
+                AbilityButton.IsVisible = true;
+            }
+
 
 
         }
