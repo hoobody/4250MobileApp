@@ -358,23 +358,11 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Assassin(PlayerInfoModel Attacker)
         {
-            int damage = DiceHelper.RollDice(1, 3);
+            int value = DiceHelper.RollDice(1, 5);
 
-            int monsterCount = EngineSettings.MonsterList.Count;
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-            {
-                data.CurrentHealth -= damage * data.Level;
-            }
+            Attacker.BuffAttackValue += value;
 
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-            {
-                if (data.CurrentHealth <= 0)
-                {
-                    TargetDied(data);
-                }
-            }
-
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sneaks around and dealt " + damage + " to all monsters!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sharpens their blade and increased his attack by " + value + "!";
 
             return true;
         }
@@ -504,27 +492,19 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Saboteur(PlayerInfoModel Attacker)
         {
-            int monsterCount = EngineSettings.MonsterList.Count;
+            int chance = DiceHelper.RollDice(1, 30);
 
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            if (chance % 30 == 0)
             {
-                int chance = DiceHelper.RollDice(1, 2);
-             
-                if (chance %  2 == 0)
+                foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
                 {
-                    data.CurrentHealth -= 3 * data.Level;
+                    data.DebuffAttack(data.Attack);
                 }
+                EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " got really lucky and destroyed the enemies weapons";
+                return true;
             }
 
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
-            {
-                if (data.CurrentHealth <= 0)
-                {
-                    TargetDied(data);
-                }
-            }
-
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sprayed their cheese gun at the enemies!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " failed to destroy the enemies supplies";
 
             return true;
         }
