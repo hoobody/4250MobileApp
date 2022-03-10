@@ -152,6 +152,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="autobattle_button.png" />
     <Content Include="battleboard.png" />
+    <Content Include="battle_attack_icon.png" />
     <Content Include="battle_background.png" />
     <Content Include="begin_button.png" />
     <Content Include="bigger_delete_button.png" />
