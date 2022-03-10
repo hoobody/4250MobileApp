@@ -192,26 +192,27 @@
                                     <ColumnDefinition Width="60" />
                                     <ColumnDefinition Width="60" />
                                 </Grid.ColumnDefinitions>
-                            
-                            </Grid>
 
-                            <StackLayout Margin="0,-150,0,0">
-                                <ImageButton 
+                                <StackLayout Grid.Row="1" Grid.Column="2"
+                                         Grid.RowSpan="2" Grid.ColumnSpan="2"
+                                             x:Name="ActionButtonBox">
+                                    
+                                    <ImageButton 
                                     x:Name="AttackButton"
                                     Source="button_attack.png"
                                     Clicked="AttackButton_Clicked"
                                     HeightRequest="50"/>
-                                
-                                <ImageButton x:Name="AbilityButton"
+
+                                    <ImageButton x:Name="AbilityButton"
                                         Source="button_ability.png"
                                         HeightRequest="50"
                                         Clicked="AbilityButton_Clicked"/>
+                                    
+                                </StackLayout>
+                                
+                            </Grid>
 
-
-
-
-
-                            </StackLayout>
+                            
 
                         
                                         
