@@ -498,7 +498,7 @@ namespace Game.Engine.EngineGame
             {
                 foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
                 {
-                    data.DebuffAttack(data.Attack);
+                    data.DebuffAttack(data.GetAttackTotal);
                 }
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " got really lucky and destroyed the enemies weapons";
                 return true;
