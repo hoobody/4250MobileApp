@@ -671,15 +671,17 @@ namespace Game.Views
                 return;
             }
 
+            //Draw defender first in case old defender is somehow new attacker
+            if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender)
+            {
+                playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
+            }
             if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker)
             {
                 playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryBackgroundColor"];
             }
 
-            if (data == BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender)
-            {
-                playerStack.BackgroundColor = (Color)Application.Current.Resources["TriciaryTextColor"];
-            }
+            
         }
 
         /// <summary>
