@@ -209,10 +209,11 @@
                                 
                                 <ImageButton x:Name="AbilityButton"
                                         Source="button_ability.png"
-                                             HeightRequest="50"/>
+                                        HeightRequest="50"
+                                        Clicked="AbilityButton_Clicked"/>
 
 
-                                <!--Clicked="AttackButton_Clicked"-->
+
 
 
                             </StackLayout>

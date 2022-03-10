@@ -222,7 +222,7 @@ namespace Game.Views
             if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
                 // Uncomment this to allow the BattlePage to draw a new round screen between rounds
-                //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
                 // Pause
                 _ = Task.Delay(WaitTime);
@@ -536,7 +536,7 @@ namespace Game.Views
 
             var HP = new Label()
             {
-                Text = data.CurrentHealth.ToString() + "/" + data.GetMaxHealthTotal,
+                Text = data.GetSpeed().ToString(),
                 Style = (Style)Application.Current.Resources["TinyTitleStyle"],
                 HorizontalOptions = LayoutOptions.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -735,7 +735,6 @@ namespace Game.Views
                 case BattleStateEnum.Starting:
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
-
                     GameUIDisplay.IsVisible = true;
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
@@ -751,12 +750,17 @@ namespace Game.Views
 
                 case BattleStateEnum.NewRound:
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
+                    GameUIDisplay.IsVisible = true;
+                    BattlePlayerInfomationBox.IsVisible = true;
+                    MessageDisplayBox.IsVisible = true;
                     NextRoundButton.IsVisible = true;
-                    //AttackButton.IsVisible = false;
-                    //AbilityButton.IsVisible = false;
-                    MonsterBox.RowSpacing = -10;
-                    CharacterGrid.IsVisible = false;
-                    Gem.IsVisible = false;
+                    AttackButton.IsEnabled = false;
+                    AbilityButton.IsEnabled = false;
+                    CharacterGrid.IsVisible = true;
+                    Gem.IsVisible = true;
+                    BattlePlayerBox.IsVisible = false;
+                    BattleBottomBox.IsVisible = false;
+                    BattlePlayerInfomationBox.HeightRequest = 70;
                     break;
 
                 case BattleStateEnum.GameOver:
@@ -819,6 +823,74 @@ namespace Game.Views
             ContinueButton.IsVisible = false;
             AttackButton.IsEnabled = true;
             AbilityButton.IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Character uses ability
+        /// </summary>
+        public void AbilityButton_Clicked(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Attack Beginning");
+            //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
+            //Debug.WriteLine("Get defender");
+            // Get the turn, set the current player and attacker to match
+            SetAttackerAndDefender(null);
+
+            var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            if (attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+
+                //Debug.WriteLine("set action to attack");
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAction = ActionEnum.Ability;
+
+                // Hold the current state
+                var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
+                //Debug.WriteLine("Print messages");
+                // Output the Message of what happened.
+                GameMessage();
+
+                //Debug.WriteLine("Redraw board");
+                // Show the outcome on the Board
+                DrawGameAttackerDefenderBoard();
+
+                //Debug.WriteLine("check for new round");
+                if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
+                {
+                    // Uncomment this to allow the BattlePage to draw a new round screen between rounds
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                    // Pause
+                    _ = Task.Delay(WaitTime);
+
+                    Debug.WriteLine("New Round");
+
+                    // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                    ShowModalRoundOverPage();
+                    return;
+                }
+
+                //Debug.WriteLine("check for game over");
+                // Check for Game Over
+                if (RoundCondition == RoundEnum.GameOver || BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1)
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                    // Wrap up
+                    _ = BattleEngineViewModel.Instance.Engine.EndBattle();
+
+                    // Pause
+                    _ = Task.Delay(WaitTime);
+
+                    Debug.WriteLine("Game Over");
+
+                    GameOver();
+                    return;
+                }
+            }
+
+            PrepareRound();
         }
 
         /// <summary>
