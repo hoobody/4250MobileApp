@@ -174,7 +174,7 @@ namespace Game.Views
         /// </summary>
         public void NextAttackExample(PlayerInfoModel data)
         {
-            Debug.WriteLine("Attack Beginning");
+            //Debug.WriteLine("Attack Beginning");
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
             //Debug.WriteLine("Get defender");
@@ -186,6 +186,11 @@ namespace Game.Views
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             Debug.WriteLine("Attacker: {0} - Defender: {1}", attacker.Name, defender.Name);
 
+            if (attacker.PlayerType == defender.PlayerType)
+            {
+                Debug.WriteLine("ATTACKING OWN TEAM! HOW DID WE GET HERE?!");
+            }
+
             //Debug.WriteLine("check if monster");
             if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
@@ -193,7 +198,7 @@ namespace Game.Views
                 //Debug.WriteLine("print message for monster and wait");
                 BattleMessages.Text = attacker.Name + " is attacking " + defender.Name;
                 _ = Task.Delay(WaitTime);
-                Debug.WriteLine("Waited one second");
+                //Debug.WriteLine("Waited one second");
             }
 
             //Debug.WriteLine("set action to attack");
@@ -207,7 +212,7 @@ namespace Game.Views
             // Output the Message of what happened.
             GameMessage();
 
-            //Debug.WriteLine("Redraw board");
+            Debug.WriteLine("Redraw players with attacker and defender highlighted");
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
@@ -215,7 +220,7 @@ namespace Game.Views
             if (attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 Wait(1000);
-                Debug.WriteLine("waited");
+                //Debug.WriteLine("waited");
             }
 
             //Debug.WriteLine("check for new round");
@@ -252,8 +257,17 @@ namespace Game.Views
                 return;
             }
 
-            Debug.WriteLine("prepare new round");
-            PrepareRound();
+            //Debug.WriteLine("prepare new round");
+            if (attacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                ContinueButton.IsVisible = true;
+                AttackButton.IsEnabled = false;
+                AbilityButton.IsEnabled = false;
+            }
+            if (attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                PrepareRound();
+            }
         }
 
         /// <summary>
