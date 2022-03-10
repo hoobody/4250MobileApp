@@ -338,15 +338,16 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Hacker(PlayerInfoModel Attacker)
         {
-            for (int i = 0; i < EngineSettings.MonsterList.Count; i++)
+            int value = DiceHelper.RollDice(1, 5);
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                if (EngineSettings.MonsterList[i].Alive)
+                if (data.Alive)
                 {
-                    EngineSettings.MonsterList[i].Defense = EngineSettings.MonsterList[i].Defense / 2;
+                    data.Defense = data.Defense / 2;
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " halved the enemies defenses!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " halved the enemies defenses by " + value + "!";
             return true;
         }
 
@@ -357,23 +358,23 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Assassin(PlayerInfoModel Attacker)
         {
-            int damage = DiceHelper.RollDice(1, 20);
+            int damage = DiceHelper.RollDice(1, 10);
 
             int monsterCount = EngineSettings.MonsterList.Count;
-            for (int i = 0; i < monsterCount; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                EngineSettings.MonsterList[i].CurrentHealth -= damage;
+                data.CurrentHealth -= damage;
             }
 
-            foreach (var monster in EngineSettings.MonsterList.ToList())
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                if (monster.CurrentHealth <= 0)
+                if (data.CurrentHealth <= 0)
                 {
-                    TargetDied(monster);
+                    TargetDied(data);
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sneaks around and dealt " + damage.ToString() + " to all monsters!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sneaks around and dealt " + damage + " to all monsters!";
 
             return true;
         }
@@ -385,17 +386,17 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public bool Detective(PlayerInfoModel Attacker)
         {
-            int damage = DiceHelper.RollDice(1, 20);
+            int value = DiceHelper.RollDice(1, 5);
 
-            for (int i = 0; i < EngineSettings.MonsterList.Count; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                if (EngineSettings.MonsterList[i].Alive)
+                if (data.Alive)
                 {
-                    EngineSettings.MonsterList[i].Attack = EngineSettings.MonsterList[i].Attack / (1/2);
+                    data.DebuffAttack(value);
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " looked at their surroundings and lowered the monsters' attacks!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " looked at their surroundings and lowered the monsters' attacks by " + value + "!";
 
             return true;
         }
@@ -409,24 +410,24 @@ namespace Game.Engine.EngineGame
         {
             int value = DiceHelper.RollDice(1, 20);
 
-            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
                 //Only heal character still in game
-                if (EngineSettings.CharacterList[i].Alive)
+                if (data.Alive)
                 {
                     //Heal for the amount
-                    if (EngineSettings.CharacterList[i].GetCurrentHealth() + value <= EngineSettings.CharacterList[i].GetMaxHealth())
+                    if (data.GetCurrentHealth() + value <= data.GetMaxHealth())
                     {
-                        EngineSettings.CharacterList[i].CurrentHealth += value;
+                        data.CurrentHealth += value;
                         continue;
                     }
                 }
 
                 //Heal will overcap, heal to full.
-                EngineSettings.CharacterList[i].CurrentHealth = EngineSettings.CharacterList[i].MaxHealth;
+                data.CurrentHealth = data.MaxHealth;
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in meds to heal everyone " + value.ToString() + "!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in meds to heal everyone by " + value + "!";
 
             return true;
         }
@@ -440,21 +441,11 @@ namespace Game.Engine.EngineGame
         {
             int value = DiceHelper.RollDice(1,5);
 
-            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
-            {
-                if (EngineSettings.CharacterList[i].Alive)
-                {
-                    if (EngineSettings.CharacterList[i].Name == Attacker.Name)
-                    {
-                        EngineSettings.CharacterList[i].BuffAttackValue += value;
-                        EngineSettings.CharacterList[i].BuffDefenseValue += value;
-                        EngineSettings.CharacterList[i].BuffSpeedValue += value;
-                        continue;
-                    }
-                }
-            }
+            EngineSettings.CurrentAttacker.BuffAttackValue += value;
+            EngineSettings.CurrentAttacker.BuffDefenseValue += value;
+            EngineSettings.CurrentAttacker.BuffSpeedValue += value;
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in the big guns and buffs himself ";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in the big guns and buffs himself by " + value + "!";
 
             return true;
         }
@@ -469,16 +460,16 @@ namespace Game.Engine.EngineGame
         {
             int value = DiceHelper.RollDice(1, 2);
 
-            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                if (EngineSettings.CharacterList[i].Alive)
+                if (data.Alive)
                 {
-                    EngineSettings.CharacterList[i].BuffSpeedValue += value;
+                    data.BuffSpeedValue += value;
                     continue;
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " scouted the area and increase their team's speed!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " scouted the area and increase their team's speed by " + value + "!";
 
             return true;
         }
@@ -492,16 +483,16 @@ namespace Game.Engine.EngineGame
         {
             int value = DiceHelper.RollDice(1, 3);
 
-            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                if (EngineSettings.CharacterList[i].Alive)
+                if (data.Alive)
                 {
-                    EngineSettings.CharacterList[i].BuffAttackValue += value;
+                    data.BuffAttackValue += value;
                     continue;
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " found the enemies weaknesses and increase their team's attack!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " found the enemies weaknesses and increase their team's attack by " + value + "!";
 
             return true;
         }
@@ -515,25 +506,25 @@ namespace Game.Engine.EngineGame
         {
             int monsterCount = EngineSettings.MonsterList.Count;
 
-            for (int i = 0; i < monsterCount; i++)
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                int chance = DiceHelper.RollDice(1, 10);
+                int chance = DiceHelper.RollDice(1, 2);
              
-                if (chance % 3 == 0)
+                if (chance %  2 == 0)
                 {
-                    EngineSettings.MonsterList[i].CurrentHealth -= 50;
+                    data.CurrentHealth -= 15;
                 }
             }
 
-            foreach (var monster in EngineSettings.MonsterList.ToList())
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                if (monster.CurrentHealth <= 0)
+                if (data.CurrentHealth <= 0)
                 {
-                    TargetDied(monster);
+                    TargetDied(data);
                 }
             }
 
-            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " attempted to sabotaged the enemeies and dealt damage!";
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sprayed their cheese gun at the enemies!";
 
             return true;
         }
