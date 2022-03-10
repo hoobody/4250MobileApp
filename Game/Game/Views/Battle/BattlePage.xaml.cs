@@ -317,7 +317,7 @@ namespace Game.Views
         /// <param name="message"></param>
         public void GameMessage()
         {
-            ClearMessages();
+            //ClearMessages();
             // Output The Message that happened.
             BattleMessages.Text = string.Format("{0} \n{1}", BattleMessages.Text, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
 
@@ -836,6 +836,7 @@ namespace Game.Views
 
             //Debug.WriteLine("Get defender");
             // Get the turn, set the current player and attacker to match
+            BattleMessages.Text = string.Empty;
             SetAttackerAndDefender(null);
 
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
