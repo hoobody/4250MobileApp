@@ -231,7 +231,7 @@ namespace Game.Views
             {
                 Id = null, // will use null to clear the item
                 Guid = "None", // how to find this item amoung all of them
-                ImageURI = "icon_cancel.png",
+                ImageURI = "empty_item_blue.png",
                 Name = "None",
                 Description = "None"
             };
@@ -305,7 +305,7 @@ namespace Game.Views
             // If it does not exist, show a Plus Icon for the location
 
             // Defualt Image is the Plus
-            var ImageSource = "icon_add.png";
+            var ImageSource = "add_item_blue.png";
 
             var data = ViewModel.Data.GetItemByLocation(location);
             if (data == null)
