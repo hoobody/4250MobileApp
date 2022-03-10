@@ -197,7 +197,7 @@ namespace Game.Views
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
-            if (RoundCondition == RoundEnum.NewRound)
+            if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
                 // Uncomment this to allow the BattlePage to draw a new round screen between rounds
                 //BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
@@ -213,7 +213,7 @@ namespace Game.Views
             }
 
             // Check for Game Over
-            if (RoundCondition == RoundEnum.GameOver)
+            if (RoundCondition == RoundEnum.GameOver || BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count < 1)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
@@ -414,9 +414,9 @@ namespace Game.Views
             {
                 Frame PlayerFrame = new Frame()
                 {
-                    HeightRequest = 60                    
+                    HeightRequest = 125              
                 };
-                PlayerFrame.Content = PlayerInfoDisplayBox(data);
+                PlayerFrame.Content = CharacterGridDisplay(data);
                 CharacterGrid.Children.Add(PlayerFrame, c, r);
                 i++;
 
@@ -478,6 +478,67 @@ namespace Game.Views
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
             CharacterGrid.Children.Add(PlayerInfoDisplayBox(null));
 
+        }
+
+        /// <summary>
+        /// Put the Character into a Display Box
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public StackLayout CharacterGridDisplay(PlayerInfoModel data)
+        {
+            if (data == null)
+            {
+                data = new PlayerInfoModel
+                {
+                    ImageURI = "",
+                    MaxHealth = 0,
+                    CurrentHealth = 0,
+                };
+            }
+
+            // Hookup the image
+            var PlayerImage = new Image
+            {
+                Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
+                Source = data.ImageURI
+            };
+
+
+            var HP = new Label()
+            {
+                Text = data.CurrentHealth.ToString() + "/" + data.GetMaxHealthTotal,
+                Style = (Style)Application.Current.Resources["TinyTitleStyle"],
+                HorizontalOptions = LayoutOptions.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                Padding = 0,
+                LineBreakMode = LineBreakMode.TailTruncation,
+                CharacterSpacing = 0,
+                LineHeight = 1,
+                MaxLines = 1,
+            };
+
+            if (data.MaxHealth == 0)
+            {
+                HP.Text = "";
+            }
+
+            // Put the Image Button and Text inside a layout
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerInfoBox"],
+                HorizontalOptions = LayoutOptions.Center,
+                Padding = 0,
+                Spacing = 0,
+                Children = {
+                    PlayerImage,
+                    HP
+                },
+            };
+
+            HighlightAttackerDefender(data, PlayerStack);
+
+            return PlayerStack;
         }
 
         /// <summary>
