@@ -227,7 +227,7 @@ namespace Game.Engine.EngineGame
 
                 // Find Location Nearest to Defender that is Open.
 
-                
+
                 // Get the Open Locations
                 var openSquare = EngineSettings.MapModel.ReturnClosestEmptyLocation(locationDefender);
 
@@ -235,7 +235,7 @@ namespace Game.Engine.EngineGame
 
                 EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " moves closer to " + EngineSettings.CurrentDefender.Name;
 
-                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare); 
+                return EngineSettings.MapModel.MovePlayerOnMap(locationAttacker, openSquare);
             }
 
             return true;
@@ -291,7 +291,251 @@ namespace Game.Engine.EngineGame
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " Uses Ability " + EngineSettings.CurrentActionAbility.ToMessage();
-            return (Attacker.UseAbility(EngineSettings.CurrentActionAbility));
+
+            var ability = Attacker.Job;
+            bool result = true;
+            switch (ability)
+            {
+                case CharacterJobEnum.Assassin:
+                    result = Assassin(Attacker);
+                    break;
+
+                case CharacterJobEnum.Detective:
+                    result = Detective(Attacker);
+                    break;
+
+                case CharacterJobEnum.SpecialAgent:
+                    result = SpecialAgent(Attacker);
+                    break;
+
+                case CharacterJobEnum.Double0:
+                    result = Double0(Attacker);
+                    break;
+
+                case CharacterJobEnum.SurveillanceOfficer:
+                    result = SurveillanceOfficer(Attacker);
+                    break;
+
+                case CharacterJobEnum.Hacker:
+                    result = Hacker(Attacker);
+                    break;
+
+                case CharacterJobEnum.Spy:
+                    result = Spy(Attacker);
+                    break;
+
+                case CharacterJobEnum.Saboteur:
+                    result = Saboteur(Attacker);
+                    break;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Trigger hacker Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Hacker(PlayerInfoModel Attacker)
+        {
+            for (int i = 0; i < EngineSettings.MonsterList.Count; i++)
+            {
+                if (EngineSettings.MonsterList[i].Alive)
+                {
+                    EngineSettings.MonsterList[i].Defense = EngineSettings.MonsterList[i].Defense / 2;
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " halved the enemies defenses!";
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger Assassin Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Assassin(PlayerInfoModel Attacker)
+        {
+            int damage = DiceHelper.RollDice(1, 20);
+
+            int monsterCount = EngineSettings.MonsterList.Count;
+            for (int i = 0; i < monsterCount; i++)
+            {
+                EngineSettings.MonsterList[i].CurrentHealth -= damage;
+            }
+
+            foreach (var monster in EngineSettings.MonsterList.ToList())
+            {
+                if (monster.CurrentHealth <= 0)
+                {
+                    TargetDied(monster);
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " sneaks around and dealt " + damage.ToString() + " to all monsters!";
+
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger Detective Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Detective(PlayerInfoModel Attacker)
+        {
+            int damage = DiceHelper.RollDice(1, 20);
+
+            for (int i = 0; i < EngineSettings.MonsterList.Count; i++)
+            {
+                if (EngineSettings.MonsterList[i].Alive)
+                {
+                    EngineSettings.MonsterList[i].Attack = EngineSettings.MonsterList[i].Attack / (1/2);
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " looked at their surroundings and lowered the monsters' attacks!";
+
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger SpecialAgent Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool SpecialAgent(PlayerInfoModel Attacker)
+        {
+            int value = DiceHelper.RollDice(1, 20);
+
+            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            {
+                //Only heal character still in game
+                if (EngineSettings.CharacterList[i].Alive)
+                {
+                    //Heal for the amount
+                    if (EngineSettings.CharacterList[i].GetCurrentHealth() + value <= EngineSettings.CharacterList[i].GetMaxHealth())
+                    {
+                        EngineSettings.CharacterList[i].CurrentHealth += value;
+                        continue;
+                    }
+                }
+
+                //Heal will overcap, heal to full.
+                EngineSettings.CharacterList[i].CurrentHealth = EngineSettings.CharacterList[i].MaxHealth;
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in meds to heal everyone " + value.ToString() + "!";
+
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger Double0 Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Double0(PlayerInfoModel Attacker)
+        {
+            int value = DiceHelper.RollDice(1,5);
+
+            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            {
+                if (EngineSettings.CharacterList[i].Alive)
+                {
+                    if (EngineSettings.CharacterList[i].Name == Attacker.Name)
+                    {
+                        EngineSettings.CharacterList[i].BuffAttackValue += value;
+                        EngineSettings.CharacterList[i].BuffDefenseValue += value;
+                        EngineSettings.CharacterList[i].BuffSpeedValue += value;
+                        continue;
+                    }
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in the big guns and buffs himself ";
+
+            return true;
+        }
+
+
+        /// <summary>
+        /// Trigger SurveillanceOfficer Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool SurveillanceOfficer(PlayerInfoModel Attacker)
+        {
+            int value = DiceHelper.RollDice(1, 2);
+
+            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            {
+                if (EngineSettings.CharacterList[i].Alive)
+                {
+                    EngineSettings.CharacterList[i].BuffSpeedValue += value;
+                    continue;
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " scouted the area and increase their team's speed!";
+
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger SurveillanceOfficer Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Spy(PlayerInfoModel Attacker)
+        {
+            int value = DiceHelper.RollDice(1, 3);
+
+            for (int i = 0; i < EngineSettings.CharacterList.Count; i++)
+            {
+                if (EngineSettings.CharacterList[i].Alive)
+                {
+                    EngineSettings.CharacterList[i].BuffAttackValue += value;
+                    continue;
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " found the enemies weaknesses and increase their team's attack!";
+
+            return true;
+        }
+
+        /// <summary>
+        /// Trigger SurveillanceOfficer Ability
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool Saboteur(PlayerInfoModel Attacker)
+        {
+            int monsterCount = EngineSettings.MonsterList.Count;
+
+            for (int i = 0; i < monsterCount; i++)
+            {
+                int chance = DiceHelper.RollDice(1, 10);
+             
+                if (chance % 3 == 0)
+                {
+                    EngineSettings.MonsterList[i].CurrentHealth -= 50;
+                }
+            }
+
+            foreach (var monster in EngineSettings.MonsterList.ToList())
+            {
+                if (monster.CurrentHealth <= 0)
+                {
+                    TargetDied(monster);
+                }
+            }
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " attempted to sabotaged the enemeies and dealt damage!";
+
+            return true;
         }
 
         /// <summary>
