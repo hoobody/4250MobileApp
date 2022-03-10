@@ -65,8 +65,8 @@ namespace Game.Views
         /// <returns></returns>
         public StackLayout GetItemToDisplay(ItemLocationEnum location)
         {
-            // Defualt Image is the Plus
-            var ImageSource = "icon_cancel.png";
+            // Defualt Image is an x
+            var ImageSource = "empty_item_blue.png";
             var ClickableButton = true;
 
             var data = ViewModel.Data.GetItemByLocation(location);
