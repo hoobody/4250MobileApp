@@ -216,13 +216,6 @@ namespace Game.Views
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
-            //Debug.WriteLine("wait if it's a monster");
-            if (attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                Wait(1000);
-                //Debug.WriteLine("waited");
-            }
-
             //Debug.WriteLine("check for new round");
             if (RoundCondition == RoundEnum.NewRound || BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
             {
@@ -324,6 +317,7 @@ namespace Game.Views
         /// <param name="message"></param>
         public void GameMessage()
         {
+            ClearMessages();
             // Output The Message that happened.
             BattleMessages.Text = string.Format("{0} \n{1}", BattleMessages.Text, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleMessagesModel.TurnMessage);
 
@@ -556,9 +550,6 @@ namespace Game.Views
                     HP
                 },
             };
-
-            HighlightAttackerDefender(data, PlayerStack);
-
             return PlayerStack;
         }
 
