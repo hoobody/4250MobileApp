@@ -488,12 +488,18 @@ namespace Game.Views
                 }
             }
 
-
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count() < 1)
+            {
+                MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
+            }
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
 
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Count() < 1)
+            {
+                CharacterGrid.Children.Add(CharacterGridDisplay(null));
+            }
             // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            CharacterGrid.Children.Add(PlayerInfoDisplayBox(null));
+            
 
         }
 
