@@ -47,6 +47,8 @@ namespace Game.Models
             CurrentHealth = data.CurrentHealth;
 
             ImageURI = data.ImageURI;
+            HeadshotImageURI = data.HeadshotImageURI;
+            HeadshotGIFURI = data.HeadshotGIFURI;
 
             // Set the strings for the items
             Head = data.Head;
@@ -89,6 +91,8 @@ namespace Game.Models
             CurrentHealth = data.CurrentHealth;
 
             ImageURI = data.ImageURI;
+            HeadshotImageURI = data.HeadshotImageURI;
+            HeadshotGIFURI = data.HeadshotGIFURI;
 
             // Set the strings for the items
             Head = data.Head;
