@@ -558,6 +558,8 @@ namespace Game.Views
                     HP
                 },
             };
+
+            HighlightAttackerDefender(data, PlayerStack);
             return PlayerStack;
         }
 
@@ -945,6 +947,7 @@ namespace Game.Views
             //set next attacker
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel());
 
             //Debug.WriteLine("Attacker set: " + attacker.Name);
             DrawPlayerBoxes();
@@ -960,8 +963,6 @@ namespace Game.Views
                 AbilityButton.IsEnabled = true;
                 AttackButton.IsEnabled = false;
             }
-
-
 
         }
 
