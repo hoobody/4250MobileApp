@@ -23,6 +23,7 @@ namespace Game.Models
         public bool Alive { get; set; } = true;
 
         public string HeadshotImageURI { get; set; } = Services.ItemService.DefaultImageURI;
+        public string HeadshotGIFURI { get; set; } = Services.ItemService.DefaultImageURI;
 
         // The type of player, character comes before monster
         [Ignore]
@@ -530,6 +531,11 @@ namespace Game.Models
         public string GetHeadshotURI(string baseImageURI)
         {
             return baseImageURI.Replace(".png", "_headshot.png");
+        }
+
+        public string GetHeadshotGIFURI(string baseGIFURI)
+        {
+            return baseGIFURI.Replace(".png", ".gif");
         }
     
 

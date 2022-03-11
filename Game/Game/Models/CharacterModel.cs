@@ -30,6 +30,7 @@ namespace Game.Models
             CodeName = "Cheese";
 
             HeadshotImageURI = GetHeadshotURI(ImageURI);
+            HeadshotGIFURI = GetHeadshotGIFURI(HeadshotImageURI);
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
