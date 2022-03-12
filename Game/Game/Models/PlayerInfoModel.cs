@@ -212,6 +212,7 @@ namespace Game.Models
             Description = data.Description;
             Speed = data.GetSpeed();
             ImageURI = data.ImageURI;
+            HeadshotImageURI = data.HeadshotImageURI;
             MaxHealth = data.GetMaxHealthTotal;
             CurrentHealth = data.GetCurrentHealthTotal;
 
