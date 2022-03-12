@@ -6,7 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
-    BackgroundColor="{StaticResource DeleteBackgroundColor}"
+    BackgroundImageSource="cheese_background.png"
     mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
@@ -207,7 +207,7 @@
                                 Style="{StaticResource MessageStyle}"
                                 Text="Really delete this?" />
 
-                            <StackLayout Spacing="10" Style="{StaticResource HorizontalStack}">
+                            <StackLayout Spacing="10" Style="{StaticResource HorizontalStackMonster}">
                                 <Button
                                     Clicked="Cancel_Clicked"
                                     Style="{StaticResource ButtonStyle}"
