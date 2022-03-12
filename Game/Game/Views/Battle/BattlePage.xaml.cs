@@ -589,7 +589,7 @@ namespace Game.Views
             var PlayerImage = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageButtonBattleMediumStyle"],
-                Source = data.ImageURI,
+                Source = data.HeadshotImageURI,
                 IsEnabled = false
             };
 
