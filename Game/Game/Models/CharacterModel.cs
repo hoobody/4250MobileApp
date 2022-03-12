@@ -65,6 +65,7 @@ namespace Game.Models
             Level = newData.Level;
             ImageURI = newData.ImageURI;
             HeadshotImageURI = GetHeadshotURI(newData.ImageURI);
+            HeadshotGIFURI = GetHeadshotGIFURI(newData.ImageURI);
             // Difficulty = newData.Difficulty;
 
             Speed = newData.Speed;
