@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Game.Views.ItemDeletePage"
              Title="{Binding Title}"
-             BackgroundColor="{StaticResource DeleteBackgroundColor}">
+             BackgroundImageSource="cheese_background.png">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="cancel_button.png"/>
