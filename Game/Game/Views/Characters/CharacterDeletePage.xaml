@@ -6,7 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Title}"
-    BackgroundImageSource="cheese_background.png"
+    BackgroundColor="{StaticResource DeleteBackgroundColor}"
     mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
