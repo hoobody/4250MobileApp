@@ -635,12 +635,18 @@
     <BundleResource Include="Resources\character_spy_headshot.GIF" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\battle_attack_icon.png" />
+    <BundleResource Include="Resources\battle_attack_icon_old.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\add_item_blue.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\empty_item_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\battle_attack_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\battle_ability_icon.png" />
   </ItemGroup>
 </Project>
