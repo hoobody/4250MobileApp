@@ -535,7 +535,7 @@ namespace Game.Models
 
         public string GetHeadshotGIFURI(string baseGIFURI)
         {
-            return baseGIFURI.Replace(".png", ".gif");
+            return baseGIFURI.Replace(".png", "_headshot.gif");
         }
     
 
