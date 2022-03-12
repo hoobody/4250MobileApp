@@ -630,6 +630,15 @@
                 <Setter Property="Spacing" Value="1" />
             </Style>
 
+            <Style x:Key="HorizontalStackMonster" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Spacing" Value="1" />
+            </Style>
+
             <Style x:Key="VerticalStack"
                 BasedOn="{StaticResource HorizontalStack}"
                 TargetType="StackLayout">
