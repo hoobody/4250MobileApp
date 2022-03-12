@@ -77,7 +77,7 @@
                     break;
 
                 case ActionEnum.Ability:
-                    Message = "battle_attack_icon.png";
+                    Message = "battle_ability_icon.png";
                     break;
 
                 case ActionEnum.Unknown:
