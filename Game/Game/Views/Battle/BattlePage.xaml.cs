@@ -524,7 +524,8 @@ namespace Game.Views
             var PlayerImage = new Image
             {
                 Style = (Style)Application.Current.Resources["ImageBattleMediumStyle"],
-                Source = data.ImageURI
+                Source = data.HeadshotGIFURI,
+                IsAnimationPlaying = true,
             };
 
 
