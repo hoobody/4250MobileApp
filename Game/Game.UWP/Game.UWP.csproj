@@ -197,6 +197,7 @@
     <Content Include="character_surveillanceofficer.png" />
     <Content Include="character_surveillanceofficer_headshot.GIF" />
     <Content Include="character_surveillanceofficer_headshot.png" />
+    <Content Include="cheese_background.png" />
     <Content Include="create_button.png" />
     <Content Include="crime_scene.jpg" />
     <Content Include="d10.png" />
@@ -242,6 +243,7 @@
     <Content Include="headquarters_button.png" />
     <Content Include="headquarters_image.png" />
     <Content Include="items_button.png" />
+    <Content Include="knock_out_stamp.png" />
     <Content Include="mission_button.png" />
     <Content Include="monsters_button.png" />
     <Content Include="monster_bodyguard.png" />

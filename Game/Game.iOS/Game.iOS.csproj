@@ -649,4 +649,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\battle_ability_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cheese_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\knock_out_stamp.png" />
+  </ItemGroup>
 </Project>
