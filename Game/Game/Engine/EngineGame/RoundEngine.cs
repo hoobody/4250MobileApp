@@ -57,7 +57,7 @@ namespace Game.Engine.EngineGame
             _ = RemoveCharacterBuffs();
 
             // Populate New Monsters..
-            _ = AddMonstersToRound();
+            //_ = AddMonstersToRound();
 
             // Make the BaseEngine.PlayerList
             _ = MakePlayerList();
@@ -277,6 +277,7 @@ namespace Game.Engine.EngineGame
 
             // Start from a clean list of players
             EngineSettings.PlayerList.Clear();
+            EngineSettings.MonsterList.Clear();
 
             // Remember the Insert order, used for Sorting
             var ListOrder = 0;
@@ -296,20 +297,9 @@ namespace Game.Engine.EngineGame
                 }
             }
 
-            foreach (var data in EngineSettings.MonsterList)
-            {
-                if (data.Alive)
-                {
-                    EngineSettings.PlayerList.Add(
-                        new PlayerInfoModel(data)
-                        {
-                            // Remember the order
-                            ListOrder = ListOrder
-                        });
+            AddMonstersToRound();
 
-                    ListOrder++;
-                }
-            }
+            EngineSettings.PlayerList.AddRange(EngineSettings.MonsterList);
 
             return EngineSettings.PlayerList;
         }
