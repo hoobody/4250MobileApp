@@ -606,6 +606,10 @@ namespace Game.Views
                 PlayerImage.IsEnabled = false;
             }
 
+            if(BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.Starting)
+            {
+                PlayerImage.IsEnabled = false;
+            }
 
             // Sets up each image for selective targeting of characters
             if (ClickableButton)
