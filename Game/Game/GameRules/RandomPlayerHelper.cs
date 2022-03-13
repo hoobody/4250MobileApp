@@ -343,12 +343,14 @@ namespace Game.GameRules
                 Attack = GetAbilityValue(),
                 Speed = GetAbilityValue(),
                 Defense = GetAbilityValue(),
-
                 ImageURI = GetMonsterImage(),
-
                 Difficulty = GetMonsterDifficultyValue()
             };
 
+
+            //make sure headshots are updated correctly
+            result.HeadshotImageURI = result.GetHeadshotURI(result.ImageURI);
+            result.HeadshotGIFURI = result.GetHeadshotGIFURI(result.ImageURI);
 
             // Adjust values based on Difficulty
             result.Attack = result.Difficulty.ToModifier(result.Attack);

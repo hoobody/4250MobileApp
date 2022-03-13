@@ -16711,53 +16711,13 @@ namespace Game.Droid
 			// aapt resource value: 0x7F07009F
 			public const int filler_armor_shoes = 2131165343;
 			
-			// aapt resource value: 0x7F0700A0
-			public const int filler_assassin = 2131165344;
-			
-			// aapt resource value: 0x7F0700A1
-			public const int filler_bodyguard = 2131165345;
-			
-			// aapt resource value: 0x7F0700A2
-			public const int filler_bounty_hunter = 2131165346;
-			
-			// aapt resource value: 0x7F0700A3
-			public const int filler_detective = 2131165347;
-			
-			// aapt resource value: 0x7F0700A4
-			public const int filler_doubleo = 2131165348;
-			
-			// aapt resource value: 0x7F0700A5
-			public const int filler_godfather = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int filler_guard = 2131165350;
-			
-			// aapt resource value: 0x7F0700A7
-			public const int filler_hacker = 2131165351;
-			
-			// aapt resource value: 0x7F0700A8
-			public const int filler_henchman = 2131165352;
-			
-			// aapt resource value: 0x7F0700A9
-			public const int filler_hitman = 2131165353;
-			
 			// aapt resource value: 0x7F0700AA
 			public const int filler_item = 2131165354;
 			
-			// aapt resource value: 0x7F0700AB
-			public const int filler_mastermind = 2131165355;
-			
-			// aapt resource value: 0x7F0700AC
-			public const int filler_saboteur = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
 			public const int filler_speed_shoes = 2131165357;
 			
-			// aapt resource value: 0x7F0700AE
-			public const int filler_spy = 2131165358;
-			
-			// aapt resource value: 0x7F0700AF
-			public const int filler_survey_officer = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
 			public const int game_logo = 2131165360;
