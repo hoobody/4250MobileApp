@@ -25,6 +25,7 @@ namespace Game.Models
             UniqueItem = null;
             ImageURI = "monster_bodyguard.png";
             HeadshotImageURI = GetHeadshotURI(ImageURI);
+            HeadshotGIFURI = GetHeadshotGIFURI(ImageURI);
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
             MonsterJob = MonsterJobEnum.Unknown;
@@ -61,7 +62,8 @@ namespace Game.Models
             Description = newData.Description;
             Level = newData.Level;
             ImageURI = newData.ImageURI;
-            HeadshotImageURI = newData.HeadshotImageURI;
+            HeadshotImageURI = GetHeadshotURI(newData.ImageURI);
+            HeadshotGIFURI = GetHeadshotGIFURI(newData.ImageURI);
 
             Difficulty = newData.Difficulty;
 
