@@ -23,7 +23,7 @@ namespace Game.Models
             Attack = 1;
             Difficulty = DifficultyEnum.Average;
             UniqueItem = null;
-            ImageURI = "filler_bodyguard.png";
+            ImageURI = "monster_bodyguard.png";
             HeadshotImageURI = GetHeadshotURI(ImageURI);
             ExperienceTotal = 0;
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
