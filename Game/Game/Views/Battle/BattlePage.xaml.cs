@@ -767,6 +767,7 @@ namespace Game.Views
                     break;
 
                 case BattleStateEnum.NewRound:
+                    DrawGameBoardClear();
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     GameUIDisplay.IsVisible = true;
                     BattlePlayerInfomationBox.IsVisible = true;
