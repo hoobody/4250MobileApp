@@ -46,6 +46,7 @@ namespace Game.Models
             MaxHealth = data.MaxHealth;
             CurrentHealth = data.CurrentHealth;
 
+            //Set Images
             ImageURI = data.ImageURI;
             HeadshotImageURI = data.HeadshotImageURI;
             HeadshotGIFURI = data.HeadshotGIFURI;
@@ -90,6 +91,7 @@ namespace Game.Models
             MaxHealth = data.MaxHealth;
             CurrentHealth = data.CurrentHealth;
 
+            //Set Images
             ImageURI = data.ImageURI;
             HeadshotImageURI = data.HeadshotImageURI;
             HeadshotGIFURI = data.HeadshotGIFURI;
@@ -213,6 +215,7 @@ namespace Game.Models
             Speed = data.GetSpeed();
             ImageURI = data.ImageURI;
             HeadshotImageURI = data.HeadshotImageURI;
+            HeadshotGIFURI = data.HeadshotGIFURI;
             MaxHealth = data.GetMaxHealthTotal;
             CurrentHealth = data.GetCurrentHealthTotal;
 
