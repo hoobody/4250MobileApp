@@ -178,6 +178,8 @@ namespace Game.Views
             //Debug.WriteLine("Attack Beginning");
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
 
+            BattleMessages.Text = string.Empty;
+
             //Debug.WriteLine("Get defender");
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender(data);
