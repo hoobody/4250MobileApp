@@ -621,7 +621,7 @@ namespace Game.Views
             else
             {
                 ClickableButton = true;
-                PlayerImage.Clicked += (sender, args) => NextAttackExample(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList[0]);
+                PlayerImage.Clicked += (sender, args) => NextAttackExample(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
             }
 
             var PlayerNameLabel = new Label()
