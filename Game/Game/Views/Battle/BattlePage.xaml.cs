@@ -832,7 +832,7 @@ namespace Game.Views
 
         #endregion
 
-        private void ContinueButton_Clicked(object sender, EventArgs e)
+        public void ContinueButton_Clicked(object sender, EventArgs e)
         {
             AttackButton.IsEnabled = true;
             AbilityButton.IsEnabled = true;
