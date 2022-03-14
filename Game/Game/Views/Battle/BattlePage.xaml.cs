@@ -189,11 +189,6 @@ namespace Game.Views
             var defender = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender;
             //Debug.WriteLine("Attacker: {0} - Defender: {1}", attacker.Name, defender.Name);
 
-            if (attacker.PlayerType == defender.PlayerType)
-            {
-                Debug.WriteLine("ATTACKING OWN TEAM! HOW DID WE GET HERE?!");
-            }
-
             //Debug.WriteLine("check if monster");
             if (attacker.PlayerType == PlayerTypeEnum.Monster && defender != null)
             {
