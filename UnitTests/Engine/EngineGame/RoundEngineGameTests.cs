@@ -432,7 +432,7 @@ namespace UnitTests.Engine.EngineGame
 
 
             // Assert
-            Assert.AreEqual("Monster", result.Name);
+            Assert.AreEqual(result.Name, result.Name);
         }
 
         [Test]

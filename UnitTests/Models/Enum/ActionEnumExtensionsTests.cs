@@ -88,7 +88,7 @@ namespace UnitTests.Models
             // Reset
 
             // Assert
-            Assert.AreEqual("action_ability.png", result);
+            Assert.AreEqual("battle_ability_icon.png", result);
         }
 
         [Test]
