@@ -26,6 +26,8 @@ namespace Game.Views
         // Wait time before proceeding
         public int WaitTime = 1500;
 
+        //A handle to let tests reach into the battle engine through the page first
+        public BattleEngineViewModel BattleEngine = BattleEngineViewModel.Instance;
 
         // Empty Constructor for UTs
         bool UnitTestSetting;
