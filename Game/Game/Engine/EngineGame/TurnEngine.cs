@@ -399,21 +399,21 @@ namespace Game.Engine.EngineGame
             int value = DiceHelper.RollDice(1, 20);
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
-            {
+            
                 //Only heal character still in game
                 if (data.Alive)
                 {
                     //Heal for the amount
-                    if (data.GetCurrentHealth() + value <= data.GetMaxHealth())
+                    data.CurrentHealth += value;
+                    continue;
+
+                    if (data.CurrentHealth > data.MaxHealth)
                     {
-                        data.CurrentHealth += value;
-                        continue;
+                        //Heal will overcap, heal to full.
+                        data.CurrentHealth = data.MaxHealth;
                     }
                 }
-
-                //Heal will overcap, heal to full.
-                data.CurrentHealth = data.MaxHealth;
-            }
+            
 
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in meds to heal everyone by " + value + "!";
 
@@ -449,13 +449,13 @@ namespace Game.Engine.EngineGame
             int value = DiceHelper.RollDice(1, 2);
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
-            {
+            
                 if (data.Alive)
                 {
                     data.BuffSpeedValue += value;
                     continue;
                 }
-            }
+            
 
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " scouted the area and increase their team's speed by " + value + "!";
 
@@ -472,13 +472,13 @@ namespace Game.Engine.EngineGame
             int value = DiceHelper.RollDice(1, 3);
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
-            {
+            
                 if (data.Alive)
                 {
                     data.BuffAttackValue += value;
                     continue;
                 }
-            }
+            
 
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " found the enemies weaknesses and increase their team's attack by " + value + "!";
 
