@@ -684,10 +684,27 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void TurnEngine_UseAbility_Valid_Ability_Sabotuer_Should_Pass()
+        public void TurnEngine_UseAbility_Valid_Ability_Sabotuer_Forced_30_Should_Pass()
         {
             // Arrange
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(30);
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Saboteur });
 
+            // Act
+            var result = BattleEngineViewModel.Instance.Engine.Round.Turn.UseAbility(characterPlayer);
+            // Reset
+
+            _ = DiceHelper.DisableForcedRolls();
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_SabotuerShould_Pass()
+        {
+            // Arrange
             var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Saboteur });
 
             // Act
