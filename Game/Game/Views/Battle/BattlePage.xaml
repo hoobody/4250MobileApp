@@ -234,7 +234,11 @@
                         Padding="10"
                         HorizontalOptions="Center"
                         VerticalOptions="Center">
-                        <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Game Over" />
+                    <Image
+                            Source="monster_godfather_headshot.gif"
+                            HeightRequest="50"
+                            IsAnimationPlaying="true"/>
+                    <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Game Over" />
                         <Label Style="{StaticResource CenterMessageLargeStyle}" Text="Thank you for Playing!" />
 
                         <StackLayout Style="{StaticResource HorizontalStack}" Spacing="5" HorizontalOptions="Center">
@@ -255,13 +259,12 @@
                             HeightRequest="50" 
                             Source="scores_button.png"/>
 
-                        <ImageButton
+                    <ImageButton
                             x:Name="ExitButton"
                             Clicked="ExitButton_Clicked"
                             HeightRequest="50" 
                             Source="headquarters_button.png"/>
-
-                    </StackLayout>
+                </StackLayout>
                 </StackLayout>
 
         </AbsoluteLayout>
