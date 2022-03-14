@@ -697,6 +697,21 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void TurnEngine_UseAbility_Valid_Ability_SpecialAgent_Should_Pass()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SpecialAgent });
+
+            // Act
+            var result = BattleEngineViewModel.Instance.Engine.Round.Turn.UseAbility(characterPlayer);
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion UseAbility
 
         #region DropItems
