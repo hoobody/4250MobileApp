@@ -714,7 +714,7 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void ()
+        public void TurnEngine_UseAbility_Valid_Ability_SurveillanceOfficer_Should_Pass()
         {
             // Arrange
 
