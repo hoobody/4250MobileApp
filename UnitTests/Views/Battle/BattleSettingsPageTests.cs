@@ -148,6 +148,7 @@ namespace UnitTests.Views
             Assert.IsTrue(current); // Got to here, so it happened...
         }
 
+
         [Test]
         public void BattleSettingsPage_AllowCriticalHit_Toggled_Default_Should_Pass()
         {
@@ -167,6 +168,24 @@ namespace UnitTests.Views
             Assert.IsTrue(current); // Got to here, so it happened...
         }
 
+        [Test]
+        public void BattleSettingsPage_BossEnabled__Toggled_Default_Should_Pass()
+        {
+            // Arrange
+
+            var control = (Switch)page.FindByName("Boss_Toggled");
+            var current = control.IsToggled;
+
+            ToggledEventArgs args = new ToggledEventArgs(current);
+
+            // Act
+            page.AllowCriticalHit_Toggled(null, args);
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(current); // Got to here, so it happened...
+        }
         [Test]
         public void BattleSettingsPage_AllowCriticalHit_Toggled_True_Default_Should_Pass()
         {
