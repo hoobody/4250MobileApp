@@ -429,9 +429,9 @@ namespace Game.Engine.EngineGame
         {
             int value = DiceHelper.RollDice(1,5);
 
-            EngineSettings.CurrentAttacker.BuffAttackValue += value;
-            EngineSettings.CurrentAttacker.BuffDefenseValue += value;
-            EngineSettings.CurrentAttacker.BuffSpeedValue += value;
+            Attacker.BuffAttackValue += value;
+            Attacker.BuffDefenseValue += value;
+            Attacker.BuffSpeedValue += value;
 
             EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + " brought in the big guns and buffs himself by " + value + "!";
 

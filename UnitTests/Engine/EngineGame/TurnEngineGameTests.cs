@@ -742,6 +742,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
         #endregion UseAbility
 
         #region DropItems
