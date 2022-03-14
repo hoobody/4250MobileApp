@@ -255,7 +255,7 @@ namespace Game.Views
         /// </summary>
         public void SetAttackerAndDefender(PlayerInfoModel data)
         {
-            //_ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
@@ -908,47 +908,11 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Waits a set number of time given in milliseconds
-        /// </summary>
-        /// <param name="milliseconds"></param>
-        public void Wait(int milliseconds)
-        {
-            var timer = new Timer();
-            bool timerDone = false;
-
-            if (milliseconds == 0)
-            {
-                return;
-            }
-            if (milliseconds < 0)
-            {
-                return;
-            }
-
-            //prep the timer
-            timer.Interval = milliseconds;
-            timer.Enabled = true;
-            timer.AutoReset = false;
-            //set up complete condition
-            timer.Elapsed += (sender, args) => timerDone = true;
-            timer.Start();
-
-            //wait until the timer is done
-            while (!timerDone)
-            {
-
-            };
-
-        }
-
-
-        /// <summary>
         /// 
         /// </summary>
         public void PrepareRound()
         {
             //set next attacker
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel());
 

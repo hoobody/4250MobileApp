@@ -92,20 +92,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattlePage_ContinueButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            page.ContinueButton_Clicked(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
         public void BattlePage_ShowScoreButton_Clicked_Default_Should_Pass()
         {
             // Arrange
@@ -126,20 +112,6 @@ namespace UnitTests.Views
 
             // Act
             page.ExitButton_Clicked(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void BattlePage_NextRoundButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            page.NextRoundButton_Clicked(null, null);
 
             // Reset
 

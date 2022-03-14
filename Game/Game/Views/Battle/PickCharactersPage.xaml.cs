@@ -211,7 +211,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void SelectedCharacter_Clicked(object sender, EventArgs e)
+        public void SelectedCharacter_Clicked(object sender, EventArgs e)
         {
             //set the display index
             CharacterDetailsDisplayIndex = MapIndexButton.First(x => x.Value == (ImageButton)sender).Key;
@@ -261,7 +261,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RemovePartyMember_Clicked(object sender, EventArgs e)
+        public void RemovePartyMember_Clicked(object sender, EventArgs e)
         {
             ViewModel.PartyCharacterList.RemoveAt(CharacterDetailsDisplayIndex);
             ClosePopup_Clicked(sender, e);
