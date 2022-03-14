@@ -712,6 +712,21 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void ()
+        {
+            // Arrange
+
+            var characterPlayer = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.SurveillanceOfficer });
+
+            // Act
+            var result = BattleEngineViewModel.Instance.Engine.Round.Turn.UseAbility(characterPlayer);
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion UseAbility
 
         #region DropItems
