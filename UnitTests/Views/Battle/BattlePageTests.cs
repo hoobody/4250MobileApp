@@ -77,19 +77,6 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
-        [Test]
-        public void BattlePage_AttackButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-
-            // Act
-            page.AttackButton_Clicked(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
 
         [Test]
         public void BattlePage_ShowScoreButton_Clicked_Default_Should_Pass()
@@ -270,108 +257,6 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        [Test]
-        public void BattlePage_NextAttackExample_NextRound_Should_Pass()
-        {
-            // Arrange
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
-
-            _ = BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
-
-            // Has no monster, so should show next round.
-
-            // Act
-            page.NextAttackExample(null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void BattlePage_NextAttackExample_GameOver_Should_Pass()
-        {
-            // Arrange
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Clear();
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
-
-            _ = BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
-
-            // Has no Character, so should show end game
-
-            // Act
-            page.NextAttackExample(null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void BattlePage_SetAttackerAndDefender_Character_vs_Monster_Should_Pass()
-        {
-            // Arrange
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
-            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Clear();
-
-            // Make Character
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
-
-            var CharacterPlayer = new PlayerInfoModel(
-                            new CharacterModel
-                            {
-                                Speed = 100,
-                                Level = 10,
-                                CurrentHealth = 11,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                                ListOrder = 1,
-                            });
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
-
-            // Make Monster
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
-
-            var MonsterPlayer = new PlayerInfoModel(
-                            new MonsterModel
-                            {
-                                Speed = -1,
-                                Level = 10,
-                                CurrentHealth = 11,
-                                ExperienceTotal = 1,
-                                ExperienceRemaining = 1,
-                                Name = "Mike",
-                                ListOrder = 1,
-                            });
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
-            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
-
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(MonsterPlayer);
-
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(null);
-
-            // Act
-            page.SetAttackerAndDefender(null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
 
         [Test]
         public void BattlePage_SetAttackerAndDefender_Monster_vs_Character_Should_Pass()
