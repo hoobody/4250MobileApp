@@ -4,8 +4,8 @@
              x:Class="Game.Views.ScorePage">
 
     <ContentPage.Content>
-        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never">
-            <StackLayout Style="{StaticResource OuterBoxStack}">
+        <ScrollView HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" HorizontalOptions="Center">
+            <StackLayout Style="{StaticResource OuterBoxStack}" HorizontalOptions="Center">
 
                 <Image Source="game_logo.png"
                     Style="{StaticResource GameLogoLgStyle}"/>
