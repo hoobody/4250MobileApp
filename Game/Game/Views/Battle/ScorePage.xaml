@@ -23,21 +23,18 @@
                                     x:Name="TotalScore"/>
                             </Frame>
 
-                            <ImageButton Source="scores_button.png"
-                                Margin="5"/>
-
                         </StackLayout>
                     </Frame>
                     <Frame Margin="0,-20,0,0"
                         BorderColor="Black"
                         Padding="15,5,15,5"
                         BackgroundColor="{StaticResource TriciaryBackgroundColor}">
-                        <Label Text="Scores:" Style="{StaticResource TitleCenterStyle}"/>
+                        <Label Text="Score:" Style="{StaticResource TitleCenterStyle}"/>
                     </Frame>
                 </Grid>
 
                 <ImageButton Clicked="CloseButton_Clicked"
-                        Source="button_cancel.png"/>
+                             Source="button_cancel.png"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label Text="Score : " Style="{StaticResource MessageStyle}"/>
@@ -69,10 +66,8 @@
                                     JustifyContent="Start"
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
-                
-                <Button Clicked="CloseButton_Clicked" Text="Close"/>
 
-        </StackLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
