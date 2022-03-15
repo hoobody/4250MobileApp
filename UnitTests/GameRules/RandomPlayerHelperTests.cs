@@ -214,25 +214,6 @@ namespace UnitTests.Helpers
         }
 
         [Test]
-        public void RandomPlayerHelper_GetMonsterUniqueItem_2_Should_Return_2()
-        {
-            // Arrange
-            _ = DiceHelper.EnableForcedRolls();
-            _ = DiceHelper.SetForcedRollValue(2);
-
-            var expected = ItemIndexViewModel.Instance.Dataset.ElementAt(1).Id;
-
-            // Act
-            var result = RandomPlayerHelper.GetMonsterUniqueItem();
-
-            // Reset
-            _ = DiceHelper.DisableForcedRolls();
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-
-        [Test]
         public void RandomPlayerHelper_GetRandomCharacter_InValid_Empty_CharacterList_Should_Return_New()
         {
             // Arrange
