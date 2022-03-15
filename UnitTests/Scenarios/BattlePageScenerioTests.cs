@@ -9,7 +9,7 @@ using Xamarin.Forms.Mocks;
 using Game;
 using Game.Views;
 using Game.Models;
-
+using Game.Helpers;
 
 namespace Scenario
 {
@@ -61,6 +61,14 @@ namespace Scenario
         [Test]
         public void BattlePage_RunBattle_Monsters_1_Should_Pass()
         {
+
+            //----------------
+            //Tests wether the battle goes to game over with a single monster and character
+            // 1 Character, Experience set at next level mark
+            // 1 Monster
+            // Monsteres should win and the battlestate should be game over
+            //----------------
+
             //----------------
             //Arrange
             //----------------
@@ -73,7 +81,7 @@ namespace Scenario
                             {
                                 Speed = 10,
                                 Level = 10,
-                                CurrentHealth = 1,
+                                CurrentHealth = 4,
                                 ExperienceTotal = 1,
                                 ExperienceRemaining = 1,
                                 Name = "Jacob",
@@ -84,11 +92,11 @@ namespace Scenario
 
             // Add Monsters
             var MonsterPlayerJesse = new PlayerInfoModel(
-                           new CharacterModel
+                           new MonsterModel
                            {
                                Speed = 1,
                                Level = 1,
-                               CurrentHealth = 1,
+                               CurrentHealth = 10,
                                ExperienceTotal = 1,
                                ExperienceRemaining = 1,
                                Name = "Jesse",
@@ -107,8 +115,10 @@ namespace Scenario
             page.BattleEngine.Engine.Round.SetCurrentDefender(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
             page.BattleEngine.Engine.Round.SetCurrentAttacker(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
 
-
+            //----------------
             //Act
+            //----------------
+
             RoundEnum result;
 
             //Characters turn
@@ -138,9 +148,98 @@ namespace Scenario
             }
             while (result != RoundEnum.GameOver);
 
-            //Reset
 
+            //----------------
             //Assert
+            //----------------
+            Assert.AreEqual(true, true);
+        }
+
+        [Test]
+        public void BattlePage_RunBattle_Monsters_GoToSecondRound_Should_Pass()
+        {
+            //----------------
+            //Tests wether the battle goes to game over with a single monster and character
+            // 1 Character, Experience set at next level mark
+            // 1 Monster
+            // Monsteres should win and the battlestate should be game over
+            //----------------
+
+
+            //----------------
+            //Arrange
+            //----------------
+
+            BattleStateEnum result;
+            // Add Characters
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters = 1;
+
+            var CharacterPlayerJacob = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = 100,
+                                Level = 10,
+                                Attack = 100,
+                                CurrentHealth = 4,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Jacob",
+                                ListOrder = 1,
+                            });
+
+            page.BattleEngine.Engine.EngineSettings.CharacterList.Add(CharacterPlayerJacob);
+
+            // Add Monsters
+            
+                var MonsterPlayer = new PlayerInfoModel(
+                           new MonsterModel
+                           {
+                               Speed = -1,
+                               Level = 1,
+                               Defense = 0,
+                               CurrentHealth = 1,
+                               ExperienceTotal = 1,
+                               ExperienceRemaining = 1,
+                               Name = "Jesse",
+                               ListOrder = 2,
+                           });
+                page.BattleEngine.Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+
+
+
+
+            //Add them both to playerList
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.MonsterList);
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.CharacterList);
+
+
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            page.BattleEngine.Engine.Round.SetCurrentDefender(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
+            page.BattleEngine.Engine.Round.SetCurrentAttacker(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
+
+            // Controll Rolls,  Hit is always a 3
+            _ = DiceHelper.EnableForcedRolls();
+            _ = DiceHelper.SetForcedRollValue(20);
+
+            //----------------
+            //Act
+            //----------------
+
+            //Characters turn
+            page.NextAttackExample(page.BattleEngine.Engine.EngineSettings.CurrentDefender);
+            result = page.BattleEngine.Engine.EngineSettings.BattleStateEnum;
+            Assert.AreEqual(BattleStateEnum.NewRound, result);
+
+            //Reset
+            _ = DiceHelper.DisableForcedRolls();
+
+            //----------------
+            //Assert
+            //----------------
+
             Assert.AreEqual(true, true);
         }
     }
