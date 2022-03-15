@@ -155,7 +155,6 @@
     <Content Include="battleboard.png" />
     <Content Include="battle_ability_icon.png" />
     <Content Include="battle_attack_icon.png" />
-    <Content Include="battle_attack_icon_old.png" />
     <Content Include="battle_background.png" />
     <Content Include="begin_button.png" />
     <Content Include="bigger_delete_button.png" />
@@ -203,7 +202,6 @@
     <Content Include="d10.png" />
     <Content Include="d10_50x50.png" />
     <Content Include="d20_2.png" />
-    <Content Include="danger_stamp_desinger.png" />
     <Content Include="danger_stamp_extrasmall.png" />
     <Content Include="danger_stamp_medium.png" />
     <Content Include="danger_stamp_small.png" />

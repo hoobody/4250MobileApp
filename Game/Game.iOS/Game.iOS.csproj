@@ -560,9 +560,6 @@
     <BundleResource Include="Resources\mouse_hole_image.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\danger_stamp_desinger.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\monster_godfather.png" />
   </ItemGroup>
   <ItemGroup>
@@ -633,9 +630,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\character_spy_headshot.GIF" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\battle_attack_icon_old.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\add_item_blue.png" />

@@ -510,9 +510,6 @@
     <AndroidResource Include="Resources\drawable\mouse_hole_image.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\danger_stamp_desinger.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\monster_hitman.png" />
   </ItemGroup>
   <ItemGroup>
@@ -583,9 +580,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\character_mozhnogirl_headshot.GIF" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\battle_attack_icon_old.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\add_item_blue.png" />
