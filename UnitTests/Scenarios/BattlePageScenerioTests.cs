@@ -397,10 +397,6 @@ namespace Scenario
                 //if the round ends prepare a new round
                 if (page.BattleEngine.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.NewRound)
                 {
-                    if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount == 3)
-                    {
-                        //i care now
-                    }
                     page.BattleEngine.Engine.Round.NewRound();
                     page.PrepareRound();
                 }
@@ -418,6 +414,98 @@ namespace Scenario
             //----------------
 
             Assert.AreEqual(true, true); //we got here so must be working
+        }
+
+        [Test]
+        public void BattlePage_RunBattle_Use_Abilities_Should_Pass()
+        {
+            //----------------
+            //Tests wether using abilties works as intended
+            // 6 Characters, Experience set at next level mark
+            // 6 Monsters
+            // Monsteres should win and the battlestate should be game over
+            //----------------
+
+
+            //----------------
+            //Arrange
+            //----------------
+
+            CharacterIndexViewModel characters = CharacterIndexViewModel.Instance;
+
+            // Add Characters
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters = 6;
+
+            for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
+            {
+                Random rnd = new Random();
+                CharacterModel addMe = characters.Dataset.ElementAt(rnd.Next(1, characters.Dataset.Count()) - 1);
+                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
+
+            }
+
+            // Add Monsters
+            page.BattleEngine.Engine.Round.AddMonstersToRound();
+
+
+            //Add them both to playerList
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.MonsterList);
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.CharacterList);
+
+            //set order
+            page.BattleEngine.Engine.Round.OrderPlayerListByTurnOrder();
+
+
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            page.BattleEngine.Engine.Round.SetCurrentDefender(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
+            page.BattleEngine.Engine.Round.SetCurrentAttacker(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
+
+
+
+            //----------------
+            //Act
+            //----------------
+
+            //take everyones turn until the round ends. Then do it again until all the characters die
+            while (page.BattleEngine.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.GameOver)
+            {
+                switch (page.BattleEngine.Engine.EngineSettings.CurrentAttacker.PlayerType)
+                {
+                    case PlayerTypeEnum.Character:
+
+                        //sometimes use abilities
+                        if(page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount % 2 == 0)
+                        {
+                            page.AbilityButton_Clicked(null, null);
+                        }
+                        //otherwise use attacks
+                        if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount % 2 != 0)
+                        {
+                            page.NextAttackExample(page.BattleEngine.Engine.EngineSettings.MonsterList.First());
+                        }
+                        break;
+                    case PlayerTypeEnum.Monster:
+                        page.AttackButton_Clicked(null, null);
+                        break;
+                    default:
+                        break;
+                }
+                //if the round ends prepare a new round
+                if (page.BattleEngine.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.NewRound)
+                {
+                    page.BattleEngine.Engine.Round.NewRound();
+                    page.PrepareRound();
+                }
+
+            }
+
+            //----------------
+            //Assert
+            //----------------
+
+            Assert.AreEqual(BattleStateEnum.GameOver, page.BattleEngine.Engine.EngineSettings.BattleStateEnum);
         }
 
     }
