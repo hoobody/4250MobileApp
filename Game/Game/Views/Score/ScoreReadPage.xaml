@@ -19,8 +19,8 @@
             Text="Delete" />
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource OuterBoxStack}">
 
             <Image Source="game_logo.png"
                     Style="{StaticResource GameLogoLgStyle}"/>
@@ -79,5 +79,5 @@
             </Grid>
 
         </StackLayout>
-    </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
