@@ -256,9 +256,7 @@ namespace Game.Views
         /// Decide The Turn and who to Attack
         /// </summary>
         public void SetAttackerAndDefender(PlayerInfoModel data)
-        {
-            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
-
+        { 
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
@@ -915,7 +913,10 @@ namespace Game.Views
         public void PrepareRound()
         {
             //set next attacker
+            _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
             var attacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker;
+
+            //clear defender (setting it to null doesn't work. program retains reference to defender
             _ = BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel());
 
             //Debug.WriteLine("Attacker set: " + attacker.Name);
