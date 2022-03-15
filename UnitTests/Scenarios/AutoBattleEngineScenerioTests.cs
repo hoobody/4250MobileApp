@@ -322,64 +322,64 @@ namespace Scenario
             Assert.AreEqual(true, AutoBattle.Battle.EngineSettings.BattleScore.RoundCount < AutoBattle.Battle.EngineSettings.MaxRoundCount);
         }
 
-        //[Test]
-        //public async Task AutoBattleEngine_RunAutoBattle_GameOver_Round_2_Should_Pass()
-        //{
-        //    /* 
-        //     * 
-        //     * 2 Character, Speed slowest, only 1 HP each
-        //     * 
-        //     * 2 Monsters
-        //     * 
-        //     * Should end in the first round
-        //     * 
-        //     */
+        [Test]
+        public async Task AutoBattleEngine_RunAutoBattle_GameOver_Round_2_Should_Pass()
+        {
+            /* 
+             * 
+             * 2 Character, Speed slowest, only 1 HP each
+             * 
+             * 2 Monsters
+             * 
+             * Should end in the first round
+             * 
+             */
 
-        //    //Arrange
+            //Arrange
 
-        //    // Add Characters
+            // Add Characters
 
-        //    Engine.EngineSettings.MaxNumberPartyCharacters = 2;
+            AutoBattle.Battle.EngineSettings.MaxNumberPartyCharacters = 2;
 
-        //    var CharacterPlayerMike = new PlayerInfoModel(
-        //                    new CharacterModel
-        //                    {
-        //                        Speed = -1, // Will go last...
-        //                        Level = 10,
-        //                        CurrentHealth = 1,
-        //                        ExperienceTotal = 1,
-        //                        ExperienceRemaining = 1,
-        //                        Name = "Mike",
-        //                    });
+            var CharacterPlayerMike = new PlayerInfoModel(
+                            new CharacterModel
+                            {
+                                Speed = -1, // Will go last...
+                                Level = 10,
+                                CurrentHealth = 1,
+                                ExperienceTotal = 1,
+                                ExperienceRemaining = 1,
+                                Name = "Mike",
+                            });
 
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
-        //    Engine.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattle.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
+            AutoBattle.Battle.EngineSettings.CharacterList.Add(CharacterPlayerMike);
 
 
-        //    // Add Monsters
+            // Add Monsters
 
-        //    Engine.EngineSettings.MaxNumberPartyMonsters = 2;
+            AutoBattle.Battle.EngineSettings.MaxNumberPartyMonsters = 2;
 
-        //    var MonsterPlayer = new PlayerInfoModel(
-        //        new MonsterModel
-        //        {
-        //            Speed = 100, // Will go first...
-        //            Level = 10,
-        //            CurrentHealth = 1,
-        //            ExperienceTotal = 1,
-        //            ExperienceRemaining = 1,
-        //        });
+            var MonsterPlayer = new PlayerInfoModel(
+                new MonsterModel
+                {
+                    Speed = 100, // Will go first...
+                    Level = 10,
+                    CurrentHealth = 1,
+                    ExperienceTotal = 1,
+                    ExperienceRemaining = 1,
+                });
 
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
-        //    Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+            AutoBattle.Battle.EngineSettings.MonsterList.Add(MonsterPlayer);
+            AutoBattle.Battle.EngineSettings.MonsterList.Add(MonsterPlayer);
 
-        //    //Act
-        //    var result = await Engine.RunAutoBattle();
+            //Act
+            var result = await AutoBattle.RunAutoBattle();
 
-        //    //Reset
+            //Reset
 
-        //    //Assert
-        //    Assert.AreEqual(true, result);
-        //}
+            //Assert
+            Assert.AreEqual(true, result);
+        }
     }
 }
