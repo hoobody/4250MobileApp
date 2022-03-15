@@ -260,18 +260,27 @@ namespace Scenario
             //----------------
 
             BattleStateEnum result;
-            CharacterIndexViewModel characters = CharacterIndexViewModel.Instance;
 
             // Add Characters
             page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters = 6;
 
             for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
             {
-                Random rnd = new Random();
-                int nextChar = rnd.Next(0, characters.Dataset.Count()- 1);
-                CharacterModel addMe = characters.Dataset.ElementAt(nextChar);
-                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
+                var CharacterPlayer = new PlayerInfoModel(
+                    new CharacterModel
+                    {
+                        Speed = 5,
+                        Attack = 5,
+                        Defense = 5,
+                        Level = 5,
+                        CurrentHealth = 4,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Jacob",
+                        ListOrder = 1,
+                    });
 
+                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
             }
 
             // Add Monsters
@@ -344,17 +353,27 @@ namespace Scenario
             //----------------
 
             BattleStateEnum result;
-            CharacterIndexViewModel characters = CharacterIndexViewModel.Instance;
 
             // Add Characters
             page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters = 6;
 
             for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
             {
-                Random rnd = new Random();
-                int nextChar = rnd.Next(0, characters.Dataset.Count() - 1);
-                CharacterModel addMe = characters.Dataset.ElementAt(nextChar);
-                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
+               
+                var CharacterPlayer = new PlayerInfoModel(
+                    new CharacterModel
+                    {
+                        Speed = 5,
+                        Attack = 5,
+                        Defense = 5,
+                        Level = 5,
+                        CurrentHealth = 4,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Jacob",
+                        ListOrder = 1,
+                    });
+                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
 
             }
 
@@ -440,10 +459,21 @@ namespace Scenario
 
             for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
             {
-                Random rnd = new Random();
-                CharacterModel addMe = characters.Dataset.ElementAt(rnd.Next(1, characters.Dataset.Count()) - 1);
-                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
+                var CharacterPlayer = new PlayerInfoModel(
+                    new CharacterModel
+                    {
+                        Speed = 5,
+                        Attack = 5,
+                        Defense = 5,
+                        Level = 5,
+                        CurrentHealth = 4,
+                        ExperienceTotal = 1,
+                        ExperienceRemaining = 1,
+                        Name = "Jacob",
+                        ListOrder = 1,
+                    });
 
+                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
             }
 
             // Add Monsters
