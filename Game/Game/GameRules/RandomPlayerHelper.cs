@@ -9,8 +9,11 @@ using Game.ViewModels;
 
 namespace Game.GameRules
 {
+
     public static class RandomPlayerHelper
     {
+
+
         public static List<string> ItemImageList = new List<string> {"sniper_item.png", "stinky_gun.png", "water_gun.png", "lazer_ring.png",
                                                                      "filler_speed_shoes.png", "filler_armor_shoes.png", "trench_coat.png", "stealth_suit.png",
                                                                      "fancy_hat.png", "multi_vision_goggles.png" };
@@ -31,8 +34,10 @@ namespace Game.GameRules
         /// <returns></returns>
         public static string GetMonsterUniqueItem()
         {
-            var result = ItemIndexViewModel.Instance.Dataset.ElementAt(DiceHelper.RollDice(1, ItemIndexViewModel.Instance.Dataset.Count()) - 1).Id;
+            Random rnd = new Random();
 
+            var result = ItemIndexViewModel.Instance.Dataset.ElementAt(rnd.Next(1, ItemIndexViewModel.Instance.Dataset.Count()) - 1).Id;
+            
             return result;
         }
 
