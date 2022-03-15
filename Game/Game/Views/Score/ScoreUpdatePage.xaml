@@ -22,34 +22,32 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource OuterBoxStack}">
 
-        <ScrollView>
-            <StackLayout Style="{StaticResource OuterBoxStack}">
-
-                <Image Source="game_logo.png"
+            <Image Source="game_logo.png"
                     Style="{StaticResource GameLogoLgStyle}"/>
 
-                <Label Text="Update a Score" 
+            <Label Text="Update a Score" 
                        Style="{StaticResource HeaderStyle}"/>
 
-                <Grid Style="{StaticResource GridStyle}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20*" />
-                        <ColumnDefinition Width="80*" />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+            <Grid Style="{StaticResource GridStyle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="80*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                    <Frame Grid.Column="0" Grid.Row="0"
+                <Frame Grid.Column="0" Grid.Row="0"
                            Style="{StaticResource GridCellFrame}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                    <Label Style="{StaticResource LabelStyle}" 
                                Text="Name: "/>
-                    </Frame>
+                </Frame>
 
-                    <Entry Grid.Column="1" Grid.Row="0"
+                <Entry Grid.Column="1" Grid.Row="0"
                         Style="{StaticResource EntryStyle}" 
                         PlaceholderColor="{StaticResource WhiteTextColor}"
                         Placeholder="Name" 
@@ -59,35 +57,34 @@
                         x:Name="NameEntry"
                         TextChanged="Name_onTextChange"/>
 
-                    <Frame Grid.Column="0" Grid.Row="1"
+                <Frame Grid.Column="0" Grid.Row="1"
                            Style="{StaticResource GridCellFrame}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                    <Label Style="{StaticResource LabelStyle}" 
                             Text="Rounds: " />
-                    </Frame>
+                </Frame>
 
-                    <Entry Grid.Column="1" Grid.Row="1"
+                <Entry Grid.Column="1" Grid.Row="1"
                         Style="{StaticResource EntryStyle}" 
                         Placeholder="Rounds" 
                         Text="{Binding Data.RoundCount, Mode=TwoWay}" 
                         MaxLength="5"
                         x:Name="RoundsEntry"/>
 
-                    <Frame Grid.Column="0" Grid.Row="2"
+                <Frame Grid.Column="0" Grid.Row="2"
                            Style="{StaticResource GridCellFrame}">
-                        <Label Style="{StaticResource LabelStyle}" 
+                    <Label Style="{StaticResource LabelStyle}" 
                             Text="Score: "/>
-                    </Frame>
+                </Frame>
 
-                    <Entry Grid.Column="1" Grid.Row="2"
+                <Entry Grid.Column="1" Grid.Row="2"
                         Style="{StaticResource EntryStyle}" 
                         Placeholder="Score" 
                         Text="{Binding Data.ScoreTotal, Mode=TwoWay}" 
                         MaxLength="10"
                         x:Name="ScoreEntry"/>
 
-                </Grid>
+            </Grid>
 
-            </StackLayout>
-        </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
