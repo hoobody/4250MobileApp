@@ -344,9 +344,9 @@ namespace Scenario
             var CharacterPlayerMike = new PlayerInfoModel(
                             new CharacterModel
                             {
-                                Speed = -1, // Will go last...
+                                Speed = 1, // Will go last...
                                 Level = 10,
-                                CurrentHealth = 2,
+                                CurrentHealth = 1,
                                 ExperienceTotal = 1,
                                 ExperienceRemaining = 1,
                                 Name = "Mike",
