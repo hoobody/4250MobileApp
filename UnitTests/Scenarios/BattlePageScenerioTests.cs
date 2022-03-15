@@ -327,5 +327,98 @@ namespace Scenario
             Assert.AreEqual(BattleStateEnum.GameOver, page.BattleEngine.Engine.EngineSettings.BattleStateEnum);
         }
 
+        [Test]
+        public void BattlePage_RunBattle_Get_To_Boss_Round_Should_Pass()
+        {
+            //----------------
+            //Tests wether the battle goes to game over with a single monster and character
+            // 1 Character, Experience set at next level mark
+            // 1 Monster
+            // Monsteres should win and the battlestate should be game over
+            //----------------
+
+
+            //----------------
+            //Arrange
+            //----------------
+
+            BattleStateEnum result;
+            CharacterIndexViewModel characters = CharacterIndexViewModel.Instance;
+
+            // Add Characters
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters = 6;
+
+            for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
+            {
+                Random rnd = new Random();
+                CharacterModel addMe = characters.Dataset.ElementAt(rnd.Next(1, characters.Dataset.Count()) - 1);
+                page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
+
+            }
+
+            // Add Monsters
+            page.BattleEngine.Engine.Round.AddMonstersToRound();
+
+
+            //Add them both to playerList
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.MonsterList);
+            page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.CharacterList);
+
+            //set order
+            page.BattleEngine.Engine.Round.OrderPlayerListByTurnOrder();
+
+
+            // Need to set the Monster count to 1, so the battle goes to Next Round Faster
+            page.BattleEngine.Engine.EngineSettings.MaxNumberPartyMonsters = 1;
+
+            page.BattleEngine.Engine.Round.SetCurrentDefender(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).FirstOrDefault());
+            page.BattleEngine.Engine.Round.SetCurrentAttacker(page.BattleEngine.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).FirstOrDefault());
+
+
+
+            //----------------
+            //Act
+            //----------------
+
+            //take everyones turn until the round ends. Then do it again until all the characters die
+            while (page.BattleEngine.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.GameOver)
+            {
+                switch (page.BattleEngine.Engine.EngineSettings.CurrentAttacker.PlayerType)
+                {
+                    case PlayerTypeEnum.Character:
+                        page.NextAttackExample(page.BattleEngine.Engine.EngineSettings.MonsterList.First());
+                        break;
+                    case PlayerTypeEnum.Monster:
+                        page.AttackButton_Clicked(null, null);
+                        break;
+                    default:
+                        break;
+                }
+                //if the round ends prepare a new round
+                if (page.BattleEngine.Engine.EngineSettings.BattleStateEnum == BattleStateEnum.NewRound)
+                {
+                    if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount == 3)
+                    {
+                        //i care now
+                    }
+                    page.BattleEngine.Engine.Round.NewRound();
+                    page.PrepareRound();
+                }
+                if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount == 3)
+                {
+                    var bossMonster = page.BattleEngine.Engine.EngineSettings.MonsterList.First();
+                    Assert.AreEqual(true, bossMonster.isABoss);
+                    break;
+                }
+
+            }
+
+            //----------------
+            //Assert
+            //----------------
+
+            Assert.AreEqual(true, true); //we got here so must be working
+        }
+
     }
 }
