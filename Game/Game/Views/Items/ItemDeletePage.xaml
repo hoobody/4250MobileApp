@@ -78,7 +78,7 @@
                             </StackLayout>
 
                         </Frame>
-
+    
                     </StackLayout>
                 </StackLayout>
             </Frame>
@@ -90,16 +90,17 @@
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center">
 
-                <Button 
-                    Text="Cancel" 
-                    Clicked="Cancel_Clicked"
-                    Style="{StaticResource ButtonStyle}"/>
+                <ImageButton
+                        Clicked="Cancel_Clicked"
+                        Source="cancel_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
 
-
-                <Button 
-                    Text="Delete" 
-                    Clicked="Delete_Clicked"
-                    Style="{StaticResource ButtonStyle}"/>
+                <ImageButton
+                        Clicked="Delete_Clicked"
+                        Source="delete_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
 
             </StackLayout>
             
