@@ -268,14 +268,15 @@ namespace Scenario
             for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
             {
                 Random rnd = new Random();
-                CharacterModel addMe = characters.Dataset.ElementAt(rnd.Next(1, characters.Dataset.Count()) - 1);
+                int nextChar = rnd.Next(0, characters.Dataset.Count()- 1);
+                CharacterModel addMe = characters.Dataset.ElementAt(nextChar);
                 page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
 
             }
 
             // Add Monsters
             page.BattleEngine.Engine.Round.AddMonstersToRound();
-
+            
 
             //Add them both to playerList
             page.BattleEngine.Engine.EngineSettings.PlayerList.AddRange(page.BattleEngine.Engine.EngineSettings.MonsterList);
@@ -351,7 +352,8 @@ namespace Scenario
             for (int i = 0; i < page.BattleEngine.Engine.EngineSettings.MaxNumberPartyCharacters; i++)
             {
                 Random rnd = new Random();
-                CharacterModel addMe = characters.Dataset.ElementAt(rnd.Next(1, characters.Dataset.Count()) - 1);
+                int nextChar = rnd.Next(0, characters.Dataset.Count() - 1);
+                CharacterModel addMe = characters.Dataset.ElementAt(nextChar);
                 page.BattleEngine.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(addMe));
 
             }
