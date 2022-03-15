@@ -346,7 +346,7 @@ namespace Scenario
                             {
                                 Speed = -1, // Will go last...
                                 Level = 10,
-                                CurrentHealth = 1,
+                                CurrentHealth = 2,
                                 ExperienceTotal = 1,
                                 ExperienceRemaining = 1,
                                 Name = "Mike",
