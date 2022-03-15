@@ -33,15 +33,17 @@
                 HorizontalOptions="Center"
                 Spacing="10"
                 Style="{StaticResource HorizontalStack}">
-                    <Button
-                    Clicked="Cancel_Clicked"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="Cancel" />
+                    <ImageButton
+                        Clicked="Cancel_Clicked"
+                        Source="cancel_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
 
-                    <Button
-                    Clicked="Delete_Clicked"
-                    Style="{StaticResource ButtonStyle}"
-                    Text="Delete" />
+                    <ImageButton
+                        Clicked="Delete_Clicked"
+                        Source="delete_button.png"
+                        Style="{StaticResource SquareButton}"
+                        Margin="25"/>
                 </StackLayout>
 
             </StackLayout>
