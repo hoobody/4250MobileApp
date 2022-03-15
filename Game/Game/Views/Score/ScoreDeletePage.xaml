@@ -13,8 +13,8 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="delete_button.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource DeleteScoreOuterBoxStack}">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Style="{StaticResource DeleteScoreOuterBoxStack}">
 
             <Frame Style="{StaticResource DeleteMessageFrame}">
                 <StackLayout Style="{StaticResource DeleteMessageBox}" 
@@ -46,5 +46,5 @@
 
             </StackLayout>
         </StackLayout>
-    </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
