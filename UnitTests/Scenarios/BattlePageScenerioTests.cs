@@ -421,7 +421,7 @@ namespace Scenario
                     page.BattleEngine.Engine.Round.NewRound();
                     page.PrepareRound();
                 }
-                if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount == 3)
+                if (page.BattleEngine.Engine.EngineSettings.BattleScore.RoundCount == 4)
                 {
                     var bossMonster = page.BattleEngine.Engine.EngineSettings.MonsterList.First();
                     Assert.AreEqual(true, bossMonster.isABoss);
